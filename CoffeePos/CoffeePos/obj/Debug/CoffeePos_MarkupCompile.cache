@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\
 CoffeePos
 none
 false
 DEBUG;TRACE
-D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\App.xaml
-3832624122
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\App.xaml
+51904551133
 
-7924865560
-15-78175173
-Login.xaml;MainWindow.xaml;SignIn.xaml;
+10-1965370433
+151355806569
+Home.xaml;Login.xaml;MainWindow.xaml;Order.xaml;SignIn.xaml;
 
-False
+True
 

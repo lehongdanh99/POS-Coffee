@@ -25,3 +25,5 @@ D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\CoffeePos.exe
 D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\CoffeePos.pdb
 D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\SignIn.g.cs
 D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\SignIn.baml
+D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\Home.g.cs
+D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\Home.baml
