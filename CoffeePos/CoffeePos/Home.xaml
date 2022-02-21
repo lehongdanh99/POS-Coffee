@@ -38,8 +38,8 @@
                 <!--<StackPanel HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="10">
                 <materialDesign:PopupBox  PlacementMode="BottomAndAlignRightEdges" StaysOpen="False"></materialDesign:PopupBox>
             </StackPanel>-->
-                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="Gọi Món" Margin="10"></Button>
-                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="Đăng ký thành viên" Margin="10"></Button>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="Gọi Món" Margin="10" Click="OrderClick"></Button>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="Đăng ký thành viên" Margin="10" Click="CreateMemClick"></Button>
             </StackPanel>
             
         </Grid>
@@ -66,33 +66,42 @@
                     </Button>
                     
                 </Grid>
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White">
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
-                            <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
-                            <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
-                            <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
-                            <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
-                        </StackPanel>
-                    </ListViewItem>
-                </ListView>
+                <Grid>
+                    <materialDesign:TransitioningContent x:Name="TransitionMenuContent" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
+                        <Grid x:Name="GridCursor" Margin="0 0 0 0" Background="White" Width="5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="60"></Grid>
+                    </materialDesign:TransitioningContent>
+
+                    <ListView x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White"
+                              SelectionChanged="ListViewMenu_SelectionChanged">
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
+                                <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
+                                <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
+                                <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
+                                <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+
+                </Grid>
             </StackPanel>
         </Grid>
+        <Frame x:Name="HomeFrame" Margin="60 70 0 0"></Frame>
     </Grid>
 </Window>
