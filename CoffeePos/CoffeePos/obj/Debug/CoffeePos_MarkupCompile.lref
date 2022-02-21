@@ -1,4 +1,5 @@
 ﻿
+<<<<<<< Updated upstream
 FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\App.xaml;;
 FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\Home.xaml;;
 FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\Login.xaml;;
@@ -6,4 +7,12 @@ FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\MainWindow.xaml;;
 FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\page\CreateMem.xaml;;
 FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\page\Order.xaml;;
 FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\SignIn.xaml;;
+=======
+FC:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\App.xaml;;
+FC:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\Home.xaml;;
+FC:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\Login.xaml;;
+FC:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\MainWindow.xaml;;
+FC:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\Order.xaml;;
+FC:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\SignIn.xaml;;
+>>>>>>> Stashed changes
 

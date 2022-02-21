@@ -41,7 +41,90 @@
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="Gọi Món" Margin="10" Click="OrderClick"></Button>
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="Đăng ký thành viên" Margin="10" Click="CreateMemClick"></Button>
             </StackPanel>
-            
+        </Grid>
+        <Grid Margin="60 70 0 0" Background="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="5" Background="White" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"></ColumnDefinition>
+                    <ColumnDefinition Width="7*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                        <Rectangle StrokeThickness="1"/>
+                        <TextBox x:Name="SearchBox"
+                                 Height="50" Width="350" Text="{Binding Text}"
+                                 Margin="10" VerticalAlignment="Top"
+                                 VerticalContentAlignment="Center"
+                                 Padding="5"
+                                 Foreground="#CFCFCF"
+                                 HorizontalAlignment="Left"
+                                 BorderThickness="0">
+                        </TextBox>
+                        <TextBlock IsHitTestVisible="False"
+                                   Text="Search"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   Margin="10 0 0 0"
+                                   FontSize="10"
+                                   Foreground="DarkGray"/>
+                    </Grid>
+
+                <Button Grid.Column="1" Height="50" Width="100"> search</Button>
+                
+            </Grid>
+            <Grid Grid.Column="1" Background="White" Margin="5" HorizontalAlignment="Right">
+                <Grid  VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Margin="10" Height="50">An tai ban</Button>
+                    <Button Grid.Column="1" Margin="10" Height="50">Mang di</Button>
+                    <Button Grid.Column="2" Margin="10" Height="50">Giao hang</Button>
+                </Grid>
+                <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="350" Margin="5" Background="LightGray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" Margin="10 0">
+                            <TextBlock Foreground="Black">Mon An</TextBlock>
+                            <TextBlock Foreground="Black" HorizontalAlignment="Right">0</TextBlock>
+                        </Grid>
+                        <Grid Grid.Column="1" Margin="10 0">
+                            <TextBlock Foreground="Black">Ban</TextBlock>
+                            <TextBlock Foreground="Black" HorizontalAlignment="Right">0</TextBlock>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="10 0" VerticalAlignment="Center">
+                        <TextBlock Foreground="Black">Tong tien</TextBlock>
+                        <TextBlock Foreground="Black" HorizontalAlignment="Right">0</TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="2" Margin="10 0" VerticalAlignment="Center">
+                        <TextBlock Foreground="Black">Giam Gia</TextBlock>
+                        <TextBlock Foreground="Black" HorizontalAlignment="Right">0</TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="3" Margin="10 0" VerticalAlignment="Center">
+                        <TextBlock Foreground="Red" FontSize="20">Thanh toan</TextBlock>
+                        <TextBlock Foreground="Red" FontSize="20" HorizontalAlignment="Right">0</TextBlock>
+                    </Grid>
+                    <Button Grid.Row="4" FontSize="20" FontWeight="Bold" Height="50" Margin="5">
+                        Dat mon
+                    </Button>
+                </Grid>
+            </Grid>
         </Grid>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF7F5D00">
             <StackPanel>
