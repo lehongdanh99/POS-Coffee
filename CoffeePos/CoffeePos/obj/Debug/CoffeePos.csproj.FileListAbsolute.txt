@@ -28,7 +28,6 @@ D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\SignIn.baml
 D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\Home.g.cs
 D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\Home.baml
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\CoffeePos.exe.config
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\CoffeePos.exe
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\CoffeePos.pdb
@@ -63,7 +62,6 @@ D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\page\Order.g.cs
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\page\CreateMem.baml
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\page\Order.baml
 =======
-=======
 >>>>>>> Stashed changes
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\CoffeePos.exe.config
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\CoffeePos.exe
@@ -96,7 +94,7 @@ C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.C
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.CopyComplete
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.exe
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.pdb
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\page\CreateMem.g.cs
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\page\Order.g.cs
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\page\CreateMem.baml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\page\Order.baml

@@ -9,27 +9,12 @@ CoffeePos
 none
 false
 DEBUG;TRACE
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\App.xaml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\App.xaml
 639728822
 
-10273736456
-151355806569
-Home.xaml;Login.xaml;MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;SignIn.xaml;
-=======
-C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\App.xaml
-51904551133
-
-=======
-C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\App.xaml
-51904551133
-
->>>>>>> Stashed changes
-13984795472
+15-669648895
 15-1664285709
-Home.xaml;Login.xaml;MainWindow.xaml;Order.xaml;SignIn.xaml;
->>>>>>> Stashed changes
+Home.xaml;Login.xaml;MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;SignIn.xaml;
 
 False
 

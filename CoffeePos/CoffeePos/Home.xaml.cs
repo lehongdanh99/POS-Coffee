@@ -23,6 +23,23 @@ namespace CoffeePos
         public Home()
         {
             InitializeComponent();
+            var foods = GetFoods();
+            if(foods.Count > 0)
+            {
+                ListViewFoods.ItemsSource = foods;
+            }
+        }
+
+        private List<Food> GetFoods()
+        {
+            return new List<Food>()
+            {
+                new Food("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Food("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Food("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Food("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+
+            };
         }
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
@@ -49,14 +66,5 @@ namespace CoffeePos
             GridCursor.Margin = new Thickness(0, (0 + 60 * index), 0, 0);
         }
 
-        private void OrderClick(object sender, RoutedEventArgs e)
-        {
-            HomeFrame.Content = new Order();
-        }
-
-        private void CreateMemClick(object sender, RoutedEventArgs e)
-        {
-            HomeFrame.Content = new CreateMem();
-        }
     }
 }
