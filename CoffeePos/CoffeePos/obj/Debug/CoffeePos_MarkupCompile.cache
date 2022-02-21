@@ -10,6 +10,7 @@ none
 false
 DEBUG;TRACE
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\App.xaml
 639728822
 
@@ -20,6 +21,11 @@ Home.xaml;Login.xaml;MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;SignIn.
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\App.xaml
 51904551133
 
+=======
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\App.xaml
+51904551133
+
+>>>>>>> Stashed changes
 13984795472
 15-1664285709
 Home.xaml;Login.xaml;MainWindow.xaml;Order.xaml;SignIn.xaml;

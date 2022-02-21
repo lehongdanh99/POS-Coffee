@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ﻿#pragma checksum "..\..\Home.xaml" "{8829d00f-11b8-4213-878b-770e8597ac16}" "C2087995F589F310CFF5CB33FF9BEE119CDDBE87A721CC1FFCF5F069A6969DA8"
+=======
+﻿#pragma checksum "..\..\Home.xaml" "{8829d00f-11b8-4213-878b-770e8597ac16}" "60BB91623C4D2FA07E2E03354F88C900035EA4E0A944F93C2858496F7FAF488E"
+>>>>>>> Stashed changes
 =======
 ﻿#pragma checksum "..\..\Home.xaml" "{8829d00f-11b8-4213-878b-770e8597ac16}" "60BB91623C4D2FA07E2E03354F88C900035EA4E0A944F93C2858496F7FAF488E"
 >>>>>>> Stashed changes
@@ -143,6 +147,7 @@ namespace CoffeePos {
             {
             case 1:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             
             #line 41 "..\..\Home.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.OrderClick);
@@ -160,6 +165,9 @@ namespace CoffeePos {
             return;
             case 3:
             this.GridMenu = ((System.Windows.Controls.Grid)(target));
+=======
+            this.SearchBox = ((System.Windows.Controls.TextBox)(target));
+>>>>>>> Stashed changes
             return;
             case 4:
 =======
@@ -169,6 +177,9 @@ namespace CoffeePos {
             this.GridMenu = ((System.Windows.Controls.Grid)(target));
             return;
             case 3:
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             this.ButtonCloseMenu = ((System.Windows.Controls.Button)(target));
             
@@ -179,7 +190,11 @@ namespace CoffeePos {
             #line hidden
             return;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             case 5:
+=======
+            case 4:
+>>>>>>> Stashed changes
 =======
             case 4:
 >>>>>>> Stashed changes

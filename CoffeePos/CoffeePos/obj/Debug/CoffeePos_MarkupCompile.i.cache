@@ -5,7 +5,11 @@ winexe
 C#
 .cs
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\
+=======
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\
+>>>>>>> Stashed changes
 =======
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\
 >>>>>>> Stashed changes
@@ -14,6 +18,7 @@ none
 false
 DEBUG;TRACE
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\App.xaml
 639728822
 
@@ -21,6 +26,8 @@ D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\App.xaml
 151355806569
 Home.xaml;Login.xaml;MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;SignIn.xaml;
 =======
+=======
+>>>>>>> Stashed changes
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\App.xaml
 51904551133
 
