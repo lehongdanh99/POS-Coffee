@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\
 CoffeePos
 none
 false
 DEBUG;TRACE
-D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\App.xaml
-51904551133
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\App.xaml
+639728822
 
-10-1965370433
-15-78175173
-Home.xaml;Login.xaml;MainWindow.xaml;Order.xaml;SignIn.xaml;
+15-940274875
+15-1664285709
+Home.xaml;Login.xaml;MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;SignIn.xaml;
 
 True
 

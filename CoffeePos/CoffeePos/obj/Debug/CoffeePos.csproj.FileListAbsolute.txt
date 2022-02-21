@@ -27,3 +27,76 @@ D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\SignIn.g.cs
 D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\SignIn.baml
 D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\Home.g.cs
 D:\coffee Danh\Coffee new\CoffeePos\CoffeePos\obj\Debug\Home.baml
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\CoffeePos.exe.config
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\CoffeePos.exe
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\CoffeePos.pdb
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\MaterialDesignColors.dll
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\MaterialDesignColors.pdb
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.AssemblyReference.cache
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.SuggestedBindingRedirects.cache
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Home.g.cs
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Login.g.cs
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\MainWindow.g.cs
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\SignIn.g.cs
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\App.g.cs
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos_MarkupCompile.cache
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos_MarkupCompile.lref
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\App.baml
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Home.baml
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Login.baml
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\MainWindow.baml
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\SignIn.baml
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.g.resources
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.Properties.Resources.resources
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.GenerateResource.cache
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.CoreCompileInputs.cache
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.CopyComplete
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.exe
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.pdb
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\page\CreateMem.g.cs
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\page\Order.g.cs
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\page\CreateMem.baml
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\page\Order.baml
+=======
+=======
+>>>>>>> Stashed changes
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\CoffeePos.exe.config
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\CoffeePos.exe
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\CoffeePos.pdb
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\MaterialDesignColors.dll
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.AssemblyReference.cache
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.SuggestedBindingRedirects.cache
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Home.g.cs
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Login.g.cs
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\MainWindow.g.cs
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Order.g.cs
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\SignIn.g.cs
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\App.g.cs
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos_MarkupCompile.cache
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos_MarkupCompile.lref
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\App.baml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Home.baml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Login.baml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\MainWindow.baml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Order.baml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\SignIn.baml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.g.resources
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.Properties.Resources.resources
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.GenerateResource.cache
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.CoreCompileInputs.cache
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.CopyComplete
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.exe
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.pdb
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
