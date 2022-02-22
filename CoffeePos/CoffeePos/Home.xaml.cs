@@ -24,10 +24,26 @@ namespace CoffeePos
         {
             InitializeComponent();
             var foods = GetFoods();
+            var typeFoods = GetTypeFoods();
+            ListTypeFoods.ItemsSource = typeFoods;
             if(foods.Count > 0)
             {
                 ListViewFoods.ItemsSource = foods;
             }
+        }
+
+        private List<TypeFood> GetTypeFoods()
+        {
+            return new List<TypeFood>()
+            {
+                new TypeFood("Ăn chính"),
+                new TypeFood("Ăn kèm"),
+                new TypeFood("Đồ uống"),
+                new TypeFood("Tráng miệng"),
+                new TypeFood("Bánh"),
+                new TypeFood("Bia"),
+                new TypeFood("Nước ngọt")
+            };
         }
 
         private List<Food> GetFoods()

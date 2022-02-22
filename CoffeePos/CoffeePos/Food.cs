@@ -21,4 +21,14 @@ namespace CoffeePos
         }
 
     }
+
+    internal class TypeFood
+    {
+        public string TypeName { get; set; }
+
+        public  TypeFood(string typeName)
+        {
+            TypeName = typeName;
+        }
+    }
 }
