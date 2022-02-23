@@ -26,7 +26,12 @@ namespace CoffeePos
             var foods = GetFoods();
             var typeFoods = GetTypeFoods();
             ListTypeFoods.ItemsSource = typeFoods;
-            if(foods.Count > 0)
+            var foodOrder = GetFoodOrder();
+            if (foodOrder.Count > 0)
+            {
+                ListViewFoodOrder.ItemsSource = foodOrder;
+            }
+            if (foods.Count > 0)
             {
                 ListViewFoods.ItemsSource = foods;
             }
@@ -43,6 +48,18 @@ namespace CoffeePos
                 new TypeFood("Bánh"),
                 new TypeFood("Bia"),
                 new TypeFood("Nước ngọt")
+            };
+        }
+
+        private List<FoodOrder> GetFoodOrder()
+        {
+            return new List<FoodOrder>()
+            {
+                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+
             };
         }
 

@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CoffeePos"
         mc:Ignorable="d"
-        Title="Home" Height="600" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
+        Title="Home" Height="800" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -141,7 +141,67 @@
                     <Button Grid.Column="0" Margin="10" Height="50">An tai ban</Button>
                     <Button Grid.Column="1" Margin="10" Height="50">Mang di</Button>
                 </Grid>
-                <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="300" Margin="5" Background="LightGray">
+                <ScrollViewer Margin="0 70" VerticalScrollBarVisibility="Hidden">
+                    <StackPanel>
+                        <ItemsControl x:Name="ListViewFoodOrder" Margin="5" 
+                                      ItemsSource="{Binding FoodOrder}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Margin="5" Width="272" Height="100" CornerRadius="5" Background="#FFDFDEDE">
+                                        <Border.Effect>
+                                            <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                                        </Border.Effect>
+                                        <Grid >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Border Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5" Margin="5" Width="50" Height="50">
+                                                <Border.Background>
+                                                    <ImageBrush ImageSource="{Binding FoodOrderImage}"/>
+                                                </Border.Background>
+                                            </Border>
+                                            <StackPanel Grid.Column="1" Width="150" Margin="0 5">
+                                                <TextBlock Text="{Binding FoodOrderName}" TextWrapping="Wrap" FontWeight="Bold" FontSize="14" Foreground="Black"></TextBlock>
+                                                <TextBlock Text="{Binding FoodOrderMore}" TextWrapping="Wrap" FontSize="14" Foreground="Black"></TextBlock>
+
+                                                <TextBlock Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
+                                            </StackPanel>
+                                            <Grid Grid.Column="2">
+                                                <TextBlock Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" FontWeight="Bold" Text="{Binding FoodOrderCount}"></TextBlock>
+                                                <Grid VerticalAlignment="Bottom" Margin="5">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                        <ColumnDefinition></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Button Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="25" Height="25" Width="25" >
+                                                        <DockPanel>
+                                                            <Image Source="/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"/>
+                                                        </DockPanel>
+                                                    </Button>
+                                                    <Button Grid.Column="1" materialDesign:ButtonAssist.CornerRadius="25" Height="25" Width="25" ></Button>
+                                                </Grid>
+                                                
+                                            </Grid>
+                                            
+                                        </Grid>
+
+
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+
+                    </StackPanel>
+                </ScrollViewer>
+                <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="280" Margin="5" Background="LightGray">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"></RowDefinition>
                         <RowDefinition Height="30"></RowDefinition>
