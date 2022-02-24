@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CoffeePos"
         mc:Ignorable="d"
-        Title="Login" Height="550" Width="800" ShowInTaskbar="False" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
+        Title="Title" Height="550" Width="800" ShowInTaskbar="False" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <materialDesign:DialogHost>
         <materialDesign:DialogHost.DialogContent>
             <Grid Margin="50">
@@ -64,7 +64,7 @@
                                          Foreground="{Binding ElementName=NameTextBox, Path=BorderBrush}" Margin="0,5,10,0"/>
                 <TextBox x:Name="NameTextBox"
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                           materialDesign:HintAssist.Hint="UserName" Width="170" HorizontalAlignment="Stretch"/>
+                           materialDesign:HintAssist.Hint="Username" Width="170" HorizontalAlignment="Stretch"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0 20 0 0" HorizontalAlignment="Center">
                 <materialDesign:PackIcon Kind="Key"
