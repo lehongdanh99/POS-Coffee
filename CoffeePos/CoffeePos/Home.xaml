@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CoffeePos"
         mc:Ignorable="d"
-        Title="Home" Height="800" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
+        Title="Home" Height="790" Width="1090" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -42,7 +42,7 @@
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="Đăng ký thành viên" Margin="10"></Button>
             </StackPanel>
         </Grid>
-        <Grid Margin="60 70 0 0" Background="LightGray">
+        <Grid Margin="60 70 0 0" Background="#FFF3F3F3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="7*"></ColumnDefinition>
                 <ColumnDefinition Width="3*"></ColumnDefinition>
@@ -80,10 +80,10 @@
                         <ItemsControl x:Name="ListViewFoods" Margin="5" ItemsSource="{Binding Food}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Margin="5" Height="80" CornerRadius="5" Background="#FFDFDEDE">
-                                        <Border.Effect>
+                                    <Border Margin="5" Height="80" CornerRadius="5" Background="#FFF3F3F3">
+                                        <!--<Border.Effect>
                                             <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
-                                        </Border.Effect>
+                                        </Border.Effect>-->
                                         <StackPanel Orientation="Horizontal">
                                             <Border VerticalAlignment="Center" HorizontalAlignment="Left" CornerRadius="5" Margin="5" Width="70" Height="70">
                                                 <Border.Background>
@@ -141,24 +141,28 @@
                     <Button Grid.Column="0" Margin="10" Height="50">An tai ban</Button>
                     <Button Grid.Column="1" Margin="10" Height="50">Mang di</Button>
                 </Grid>
-                <ScrollViewer Margin="0 70" VerticalScrollBarVisibility="Hidden">
+                <ScrollViewer Margin="0 70 0 190" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
                     <StackPanel>
-                        <ItemsControl x:Name="ListViewFoodOrder" Margin="5" 
+                        <ItemsControl x:Name="ListViewFoodOrder" Margin="0 0 0 5" 
                                       ItemsSource="{Binding FoodOrder}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Margin="5" Width="272" Height="100" CornerRadius="5" Background="#FFDFDEDE">
-                                        <Border.Effect>
+                                    <Border Margin="0 0 0 5"  Width="272" Height="100" CornerRadius="5" Background="#FFF3F3F3">
+                                        <!--<Border.Effect>
                                             <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
-                                        </Border.Effect>
+                                        </Border.Effect>-->
                                         <Grid >
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="1*"></ColumnDefinition>
                                                 <ColumnDefinition Width="2*"></ColumnDefinition>
                                                 <ColumnDefinition Width="1*"></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="7*"></RowDefinition>
+                                                <RowDefinition Height="auto"></RowDefinition>
+                                            </Grid.RowDefinitions>
 
-                                            <Border Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5" Margin="5" Width="50" Height="50">
+                                            <Border Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5" Margin="5" Width="50" Height="50">
                                                 <Border.Background>
                                                     <ImageBrush ImageSource="{Binding FoodOrderImage}"/>
                                                 </Border.Background>
@@ -176,6 +180,7 @@
                                                         <ColumnDefinition></ColumnDefinition>
                                                         <ColumnDefinition></ColumnDefinition>
                                                     </Grid.ColumnDefinitions>
+                                                    <Button Content="Chỉnh sửa" Grid.Column="1" materialDesign:ButtonAssist.CornerRadius="25" Height="25" Width="25" ></Button>
                                                     <Button Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="25" Height="25" Width="25" >
                                                         <DockPanel>
                                                             <Image Source="/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"/>
@@ -201,7 +206,7 @@
 
                     </StackPanel>
                 </ScrollViewer>
-                <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="280" Margin="5" Background="LightGray">
+                <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="280" Margin="5" Background="#FFF3F3F3">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"></RowDefinition>
                         <RowDefinition Height="30"></RowDefinition>
