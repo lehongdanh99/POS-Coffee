@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CoffeePos
 {
-    internal class Food
+    public class Foods
     {
         public string FoodName { get; set; }
         public double FoodPrice { get; set; }
-        
+
         public string FoodImage { get; set; }
 
-        public Food(string foodName, double foodPrice, string foodImage)
+        public Foods(string foodName, double foodPrice, string foodImage)
         {
             FoodName = foodName;
             FoodPrice = foodPrice;
@@ -22,7 +22,7 @@ namespace CoffeePos
 
     }
 
-    internal class FoodOrder
+    public class FoodOrder
     {
         public string FoodOrderName { get; set; }
 
@@ -33,7 +33,7 @@ namespace CoffeePos
 
         public string FoodOrderImage { get; set; }
 
-        public FoodOrder(string foodOrderName,string foodOrderMore, int foodOrderCount, double foodOrderPrice, string foodOrderImage)
+        public FoodOrder(string foodOrderName, string foodOrderMore, int foodOrderCount, double foodOrderPrice, string foodOrderImage)
         {
             FoodOrderMore = foodOrderMore;
             FoodOrderCount = foodOrderCount;
@@ -44,11 +44,11 @@ namespace CoffeePos
 
     }
 
-    internal class TypeFood
+    public class TypeFoods
     {
         public string TypeName { get; set; }
 
-        public  TypeFood(string typeName)
+        public TypeFoods(string typeName)
         {
             TypeName = typeName;
         }

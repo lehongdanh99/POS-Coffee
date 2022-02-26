@@ -1,25 +1,9 @@
 ﻿
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 FE:\POS-Coffee\CoffeePos\CoffeePos\App.xaml;;
-FE:\POS-Coffee\CoffeePos\CoffeePos\Home.xaml;;
-FE:\POS-Coffee\CoffeePos\CoffeePos\Login.xaml;;
 FE:\POS-Coffee\CoffeePos\CoffeePos\MainWindow.xaml;;
 FE:\POS-Coffee\CoffeePos\CoffeePos\page\CreateMem.xaml;;
 FE:\POS-Coffee\CoffeePos\CoffeePos\page\Order.xaml;;
-FE:\POS-Coffee\CoffeePos\CoffeePos\SignIn.xaml;;
-=======
-=======
->>>>>>> Stashed changes
-FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\App.xaml;;
-FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\Home.xaml;;
-FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\Login.xaml;;
-FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\MainWindow.xaml;;
-FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\page\CreateMem.xaml;;
-FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\page\Order.xaml;;
-FD:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\SignIn.xaml;;
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+FE:\POS-Coffee\CoffeePos\CoffeePos\Views\HomeView.xaml;;
+FE:\POS-Coffee\CoffeePos\CoffeePos\Views\LoginView.xaml;;
+FE:\POS-Coffee\CoffeePos\CoffeePos\Views\SignInView.xaml;;
 

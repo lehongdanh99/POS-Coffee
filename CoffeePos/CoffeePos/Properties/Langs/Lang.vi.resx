@@ -118,15 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Login" xml:space="preserve">
-    <value>Đăng nhập</value>
-    <comment>Login</comment>
+    <value>Dang Nhap</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Mật khẩu</value>
-    <comment>Password</comment>
+    <value>Mat Khau</value>
   </data>
   <data name="Username" xml:space="preserve">
-    <value>Tên tài khoản</value>
-    <comment>Username</comment>
+    <value>Ten Tai Khoan</value>
   </data>
 </root>

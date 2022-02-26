@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CoffeePos
+namespace CoffeePos.Views
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for SignInView.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class SignInView : Window
     {
-        public Login()
+        public SignInView()
         {
             InitializeComponent();
         }

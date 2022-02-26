@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
-
+using System.Globalization;
 namespace CoffeePos
 {
     /// <summary>
@@ -13,9 +9,11 @@ namespace CoffeePos
     /// </summary>
     public partial class App : Application
     {
-        App()
+        protected override void OnStartup(StartupEventArgs e)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("-VN");
+            var langCode = CoffeePos.Properties.Settings.Default.languageCode;
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(langCode);
+            base.OnStartup(e);
         }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\POS-Coffee\CoffeePos\CoffeePos\App.xaml
-6-446314081
+6-555725139
 
-17301361683
+201334279797
 251164606722
-Home.xaml;Login.xaml;MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;SignIn.xaml;
+MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\SignInView.xaml;
 
 False
 
