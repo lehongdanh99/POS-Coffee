@@ -53,3 +53,6 @@ E:\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.GenerateResource.ca
 E:\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.CoreCompileInputs.cache
 E:\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\vi\CoffeePos.resources.dll
 E:\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.CopyComplete
+E:\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\log4net.dll
+E:\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\log4net.xml
+E:\POS-Coffee\CoffeePos\CoffeePos\bin\Debug\log4net.config
