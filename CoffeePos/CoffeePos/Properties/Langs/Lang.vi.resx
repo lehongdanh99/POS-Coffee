@@ -117,13 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Login" xml:space="preserve">
-    <value>Dang Nhap</value>
+  <data name="Login_Exit" xml:space="preserve">
+    <value>Đóng</value>
   </data>
-  <data name="Password" xml:space="preserve">
-    <value>Mat Khau</value>
+  <data name="Login_Login" xml:space="preserve">
+    <value>Đăng Nhập</value>
   </data>
-  <data name="Username" xml:space="preserve">
-    <value>Ten Tai Khoan</value>
+  <data name="Login_Password" xml:space="preserve">
+    <value>Mật Khẩu</value>
+  </data>
+  <data name="Login_Username" xml:space="preserve">
+    <value>Tên Tài Khoản</value>
+  </data>
+  <data name="OrderDetail_Back" xml:space="preserve">
+    <value>Thoát</value>
+  </data>
+  <data name="OrderDetail_Title" xml:space="preserve">
+    <value>Chi Tiết Món Ăn</value>
   </data>
 </root>
