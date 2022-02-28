@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
 
-namespace CoffeePos.ViewModel
+namespace CoffeePos.ViewModels
 {
     internal class MainViewModel : BaseViewModel
     {

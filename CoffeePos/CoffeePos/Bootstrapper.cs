@@ -12,7 +12,7 @@ namespace CoffeePos
         }
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            DisplayRootViewFor<LoginViewModel>();
+            DisplayRootViewFor<HomeViewModel>();
         }
     }
 }

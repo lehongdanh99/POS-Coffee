@@ -1,5 +1,6 @@
 ﻿using System.Windows;
-
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace CoffeePos.Views
 {
@@ -11,6 +12,11 @@ namespace CoffeePos.Views
         public LoginView()
         {
             InitializeComponent();
+            
+        }
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

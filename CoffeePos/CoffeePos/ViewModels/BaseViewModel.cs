@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoffeePos.ViewModel
+namespace CoffeePos.ViewModels
 {
     internal class BaseViewModel
     {
