@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:ff="clr-namespace:CoffeePos"
         xmlns:cal="http://www.caliburnproject.org"
         xmlns:local="clr-namespace:CoffeePos.Views"
         xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
@@ -73,7 +74,10 @@
                     <materialDesign:PackIcon Kind="Key"
                                          VerticalAlignment="Center"
                                          Foreground="{Binding ElementName=PassWordBox, Path=BorderBrush}" Margin="0,5,10,0"/>
-                    <PasswordBox x:Name="PassWordBox"
+                    <PasswordBox x:Name="PassWordTextBox"
+                                 ff:PasswordBoxAssistant.BindPassword="True"
+                             
+                             ff:PasswordBoxAssistant.BoundPassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                              materialDesign:HintAssist.Foreground="Green"
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"
