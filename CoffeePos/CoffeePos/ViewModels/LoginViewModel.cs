@@ -1,6 +1,7 @@
 ﻿using Caliburn.Micro;
 using CoffeePos.Common;
 using System.Collections.ObjectModel;
+using System.Security;
 using System.Windows;
 
 
@@ -52,6 +53,9 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => LanguageSelected);
             }
         }
+        public string Password { get; set; }
+
+        
         public void btLogin_Click()
         {
             /*Code change language (Create new change language button and put it in)*/
@@ -67,6 +71,7 @@ namespace CoffeePos.ViewModels
             Properties.Settings.Default.Save();
             //string response = restAPI.makeGetRequest();
             log.Debug("Btn login click");
+            Password.ToString();
             //MessageBox.Show("Login success");
         }
 
