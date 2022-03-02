@@ -124,6 +124,33 @@ namespace CoffeePos.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Large.
+        /// </summary>
+        public static string OrderDetail_BigSize {
+            get {
+                return ResourceManager.GetString("OrderDetail_BigSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium.
+        /// </summary>
+        public static string OrderDetail_MediumSize {
+            get {
+                return ResourceManager.GetString("OrderDetail_MediumSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small.
+        /// </summary>
+        public static string OrderDetail_SmallSize {
+            get {
+                return ResourceManager.GetString("OrderDetail_SmallSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Food Detail.
         /// </summary>
         public static string OrderDetail_Title {

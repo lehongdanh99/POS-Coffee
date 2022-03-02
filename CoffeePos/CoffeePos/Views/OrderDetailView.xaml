@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CoffeePos.Views"
         xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
         mc:Ignorable="d"
@@ -35,8 +36,37 @@
                 <Button Height="50" Content="{x:Static language:Lang.OrderDetail_BigSize}" Margin="10"></Button>
                 <Button Height="50" Content="{x:Static language:Lang.OrderDetail_MediumSize}" Margin="10"></Button>
                 <Button Height="50" Content="{x:Static language:Lang.OrderDetail_SmallSize}" Margin="10"></Button>
+                <StackPanel Orientation="Horizontal" Margin="300 0 0 0">
+                    <Button Height="50" Content="-" materialDesign:ButtonAssist.CornerRadius="25" Margin="10" Background="#FFD2D2D2"></Button>
+                    <TextBlock Margin="10" Foreground="Green" Text="1" FontSize="30" 
+                               VerticalAlignment="Center"
+                               />
+                    <Button Height="50" Content="+" materialDesign:ButtonAssist.CornerRadius="25" Margin="10"></Button>
+                </StackPanel>
+               
             </StackPanel>
         </Border>
+        <Grid Grid.Row="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Border Grid.Column="0" Background="White" Height="620" CornerRadius="10" Margin="5 0">
+                <TextBlock Text="Tùy chọn" Foreground="Black" FontWeight="Bold" FontSize="20"
+                           HorizontalAlignment="Center" Margin="10"></TextBlock>
+            </Border>
+            <Border Grid.Column="1" Background="White" Height="620" CornerRadius="10" Margin="5 0">
+                <TextBlock Text="Chọn Thêm" Foreground="Black" FontWeight="Bold" FontSize="20"
+                           HorizontalAlignment="Center" Margin="10"></TextBlock>
+            </Border>
+            <Border Grid.Column="2" Background="White" Height="620" CornerRadius="10" Margin="5 0">
+                <TextBlock Text="Tùy chọn" Foreground="Black" FontWeight="Bold" FontSize="20"
+                           HorizontalAlignment="Center" Margin="10"></TextBlock>
+            </Border>
+        </Grid>
         
     </Grid>
 </Window>

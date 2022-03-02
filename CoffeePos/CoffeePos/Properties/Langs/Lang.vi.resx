@@ -132,6 +132,15 @@
   <data name="OrderDetail_Back" xml:space="preserve">
     <value>Thoát</value>
   </data>
+  <data name="OrderDetail_BigSize" xml:space="preserve">
+    <value>Lớn</value>
+  </data>
+  <data name="OrderDetail_MediumSize" xml:space="preserve">
+    <value>Vừa</value>
+  </data>
+  <data name="OrderDetail_SmallSize" xml:space="preserve">
+    <value>Nhỏ</value>
+  </data>
   <data name="OrderDetail_Title" xml:space="preserve">
     <value>Chi Tiết Món Ăn</value>
   </data>

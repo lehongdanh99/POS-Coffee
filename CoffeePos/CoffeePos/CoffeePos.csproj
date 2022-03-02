@@ -148,6 +148,7 @@
     <Compile Include="page\Order.xaml.cs">
       <DependentUpon>Order.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PasswordBoxAssistant.cs" />
     <Compile Include="Properties\Langs\Lang.Designer.cs">
       <DependentUpon>Lang.resx</DependentUpon>
       <DesignTime>True</DesignTime>
