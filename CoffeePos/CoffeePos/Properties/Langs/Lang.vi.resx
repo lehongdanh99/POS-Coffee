@@ -117,6 +117,33 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Home_Delivery" xml:space="preserve">
+    <value>Mang Đi</value>
+  </data>
+  <data name="Home_Discount" xml:space="preserve">
+    <value>Giảm Giá</value>
+  </data>
+  <data name="Home_Food" xml:space="preserve">
+    <value>Món Ăn</value>
+  </data>
+  <data name="Home_Locally" xml:space="preserve">
+    <value>Ăn Tại Chỗ</value>
+  </data>
+  <data name="Home_Order" xml:space="preserve">
+    <value>Thanh Toán</value>
+  </data>
+  <data name="Home_Price" xml:space="preserve">
+    <value>Tổng Tiền</value>
+  </data>
+  <data name="Home_Register" xml:space="preserve">
+    <value>Đăng kí thành viên</value>
+  </data>
+  <data name="Home_Table" xml:space="preserve">
+    <value>Bàn</value>
+  </data>
+  <data name="Home_Total" xml:space="preserve">
+    <value>Tổng Tiền</value>
+  </data>
   <data name="Login_Exit" xml:space="preserve">
     <value>Đóng</value>
   </data>
@@ -129,6 +156,9 @@
   <data name="Login_Username" xml:space="preserve">
     <value>Tên Tài Khoản</value>
   </data>
+  <data name="OrderDetail_Add" xml:space="preserve">
+    <value>Thêm Món</value>
+  </data>
   <data name="OrderDetail_Back" xml:space="preserve">
     <value>Thoát</value>
   </data>
@@ -137,6 +167,9 @@
   </data>
   <data name="OrderDetail_MediumSize" xml:space="preserve">
     <value>Vừa</value>
+  </data>
+  <data name="OrderDetail_Note" xml:space="preserve">
+    <value>Chú Thích...</value>
   </data>
   <data name="OrderDetail_SmallSize" xml:space="preserve">
     <value>Nhỏ</value>

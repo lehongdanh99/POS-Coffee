@@ -99,6 +99,11 @@ namespace CoffeePos.Views
             };
         }
 
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonOpenMenu.Visibility = Visibility.Collapsed;

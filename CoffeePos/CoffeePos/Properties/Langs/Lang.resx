@@ -117,11 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Home_Delivery" xml:space="preserve">
+    <value>Delivery</value>
+  </data>
+  <data name="Home_Discount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="Home_Food" xml:space="preserve">
+    <value>Food</value>
+  </data>
+  <data name="Home_Locally" xml:space="preserve">
+    <value>Locally</value>
+  </data>
   <data name="Home_Order" xml:space="preserve">
     <value>Order</value>
   </data>
   <data name="Home_Price" xml:space="preserve">
-    <value>Price</value>
+    <value>Amount</value>
+  </data>
+  <data name="Home_Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Home_Table" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="Home_Total" xml:space="preserve">
+    <value>Total</value>
   </data>
   <data name="Login_Exit" xml:space="preserve">
     <value>Exit</value>
@@ -135,6 +156,9 @@
   <data name="Login_Username" xml:space="preserve">
     <value>User name</value>
   </data>
+  <data name="OrderDetail_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
   <data name="OrderDetail_Back" xml:space="preserve">
     <value>Back</value>
   </data>
@@ -143,6 +167,9 @@
   </data>
   <data name="OrderDetail_MediumSize" xml:space="preserve">
     <value>Medium</value>
+  </data>
+  <data name="OrderDetail_Note" xml:space="preserve">
+    <value>Note...</value>
   </data>
   <data name="OrderDetail_SmallSize" xml:space="preserve">
     <value>Small</value>

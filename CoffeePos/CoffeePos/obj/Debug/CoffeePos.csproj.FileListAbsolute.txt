@@ -214,3 +214,5 @@ D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\vi\CoffeePos.resources.d
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.CopyComplete
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.exe
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.pdb
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Views\Table.g.cs
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Views\Table.baml

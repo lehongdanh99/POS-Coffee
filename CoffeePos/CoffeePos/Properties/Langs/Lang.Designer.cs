@@ -61,6 +61,42 @@ namespace CoffeePos.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delivery.
+        /// </summary>
+        public static string Home_Delivery {
+            get {
+                return ResourceManager.GetString("Home_Delivery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount.
+        /// </summary>
+        public static string Home_Discount {
+            get {
+                return ResourceManager.GetString("Home_Discount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Food.
+        /// </summary>
+        public static string Home_Food {
+            get {
+                return ResourceManager.GetString("Home_Food", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Locally.
+        /// </summary>
+        public static string Home_Locally {
+            get {
+                return ResourceManager.GetString("Home_Locally", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Order.
         /// </summary>
         public static string Home_Order {
@@ -70,11 +106,38 @@ namespace CoffeePos.Properties.Langs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Price.
+        ///   Looks up a localized string similar to Amount.
         /// </summary>
         public static string Home_Price {
             get {
                 return ResourceManager.GetString("Home_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string Home_Register {
+            get {
+                return ResourceManager.GetString("Home_Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Table.
+        /// </summary>
+        public static string Home_Table {
+            get {
+                return ResourceManager.GetString("Home_Table", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string Home_Total {
+            get {
+                return ResourceManager.GetString("Home_Total", resourceCulture);
             }
         }
         
@@ -115,6 +178,15 @@ namespace CoffeePos.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string OrderDetail_Add {
+            get {
+                return ResourceManager.GetString("OrderDetail_Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string OrderDetail_Back {
@@ -138,6 +210,15 @@ namespace CoffeePos.Properties.Langs {
         public static string OrderDetail_MediumSize {
             get {
                 return ResourceManager.GetString("OrderDetail_MediumSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note....
+        /// </summary>
+        public static string OrderDetail_Note {
+            get {
+                return ResourceManager.GetString("OrderDetail_Note", resourceCulture);
             }
         }
         
