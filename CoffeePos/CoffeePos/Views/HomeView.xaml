@@ -9,7 +9,7 @@
         xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
         mc:Ignorable="d"
         Title="Home" Height="790" Width="1090" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
-    <Window.Resources>
+    <!--<Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
@@ -31,7 +31,7 @@
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
             <BeginStoryboard Storyboard="{StaticResource MenuClose}"></BeginStoryboard>
         </EventTrigger>
-    </Window.Triggers>
+    </Window.Triggers>-->
 
     <Grid>
         <Grid Height="70" VerticalAlignment="Top" Background="#FFFF7800">

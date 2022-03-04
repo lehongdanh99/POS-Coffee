@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Caliburn.Micro;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -99,33 +100,33 @@ namespace CoffeePos.Views
             };
         }
 
-        private void btnExit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+        //private void btnExit_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.Close();
+        //}
 
-        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
-        {
-            ButtonOpenMenu.Visibility = Visibility.Collapsed;
-            ButtonCloseMenu.Visibility = Visibility.Visible;
-        }
+        //private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ButtonOpenMenu.Visibility = Visibility.Collapsed;
+        //    ButtonCloseMenu.Visibility = Visibility.Visible;
+        //}
 
-        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
-        {
-            ButtonOpenMenu.Visibility = Visibility.Visible;
-            ButtonCloseMenu.Visibility = Visibility.Collapsed;
-        }
+        //private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ButtonOpenMenu.Visibility = Visibility.Visible;
+        //    ButtonCloseMenu.Visibility = Visibility.Collapsed;
+        //}
 
-        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int index = ListViewMenu.SelectedIndex;
-            MoveCursorMenu(index);
-        }
+        //private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    int index = ListViewMenu.SelectedIndex;
+        //    MoveCursorMenu(index);
+        //}
 
-        private void MoveCursorMenu(int index)
-        {
-            TransitionMenuContent.OnApplyTemplate();
-            GridCursor.Margin = new Thickness(0, (0 + 60 * index), 0, 0);
-        }
+        //private void MoveCursorMenu(int index)
+        //{
+        //    TransitionMenuContent.OnApplyTemplate();
+        //    GridCursor.Margin = new Thickness(0, (0 + 60 * index), 0, 0);
+        //}
     }
 }

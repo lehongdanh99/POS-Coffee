@@ -13,7 +13,40 @@ namespace CoffeePos.ViewModels
         
         public OrderDetailViewModel()
         {
+            this.orderCount = 1;
+        }
 
+        private int orderCount;
+
+        public int OrderCount
+        {
+            get 
+            { 
+                return this.orderCount; 
+            }
+            set 
+            { 
+                this.orderCount = value;
+                NotifyOfPropertyChange(() => this.orderCount);
+            }
+        }
+        
+        public void btnLess_Click()
+        {
+            if(this.orderCount > 1)
+            {
+                this.orderCount--;
+            }
+            
+
+            NotifyOfPropertyChange(() => this.orderCount);
+            
+        }
+
+        public void btnAdd_Click()
+        {
+            this.orderCount++;
+            NotifyOfPropertyChange(() => this.orderCount);
         }
     }
 }
