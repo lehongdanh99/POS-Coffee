@@ -8,7 +8,7 @@
         xmlns:cal="http://www.caliburnproject.org"
         xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
         mc:Ignorable="d"
-        Title="Home" Height="790" Width="1090" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
+        Title="Home" Height="790" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
     <!--<Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">

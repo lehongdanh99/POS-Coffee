@@ -177,4 +177,25 @@
   <data name="OrderDetail_Title" xml:space="preserve">
     <value>Food Detail</value>
   </data>
+  <data name="Tables_Empty" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="Tables_Full" xml:space="preserve">
+    <value>Full</value>
+  </data>
+  <data name="Tables_Title" xml:space="preserve">
+    <value>Tables</value>
+  </data>
+  <data name="Table_Detail" xml:space="preserve">
+    <value>Table Detail</value>
+  </data>
+  <data name="Table_Discount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="Table_Payment" xml:space="preserve">
+    <value>Payment</value>
+  </data>
+  <data name="Table_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
 </root>

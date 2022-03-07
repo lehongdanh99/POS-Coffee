@@ -177,4 +177,25 @@
   <data name="OrderDetail_Title" xml:space="preserve">
     <value>Chi Tiết Món Ăn</value>
   </data>
+  <data name="Tables_Empty" xml:space="preserve">
+    <value>Bàn Trống</value>
+  </data>
+  <data name="Tables_Full" xml:space="preserve">
+    <value>Bàn Có Người</value>
+  </data>
+  <data name="Tables_Title" xml:space="preserve">
+    <value>Bàn</value>
+  </data>
+  <data name="Table_Detail" xml:space="preserve">
+    <value>Thông tin đơn hàng</value>
+  </data>
+  <data name="Table_Discount" xml:space="preserve">
+    <value>Giảm giá</value>
+  </data>
+  <data name="Table_Payment" xml:space="preserve">
+    <value>Thanh toán</value>
+  </data>
+  <data name="Table_Total" xml:space="preserve">
+    <value>Tổng tiền</value>
+  </data>
 </root>

@@ -239,5 +239,68 @@ namespace CoffeePos.Properties.Langs {
                 return ResourceManager.GetString("OrderDetail_Title", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Table Detail.
+        /// </summary>
+        public static string Table_Detail {
+            get {
+                return ResourceManager.GetString("Table_Detail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Discount.
+        /// </summary>
+        public static string Table_Discount {
+            get {
+                return ResourceManager.GetString("Table_Discount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment.
+        /// </summary>
+        public static string Table_Payment {
+            get {
+                return ResourceManager.GetString("Table_Payment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string Table_Total {
+            get {
+                return ResourceManager.GetString("Table_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Empty.
+        /// </summary>
+        public static string Tables_Empty {
+            get {
+                return ResourceManager.GetString("Tables_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full.
+        /// </summary>
+        public static string Tables_Full {
+            get {
+                return ResourceManager.GetString("Tables_Full", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tables.
+        /// </summary>
+        public static string Tables_Title {
+            get {
+                return ResourceManager.GetString("Tables_Title", resourceCulture);
+            }
+        }
     }
 }

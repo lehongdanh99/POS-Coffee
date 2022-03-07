@@ -15,13 +15,18 @@ using System.Windows.Shapes;
 namespace CoffeePos.Views
 {
     /// <summary>
-    /// Interaction logic for Table.xaml
+    /// Interaction logic for TableDetailView.xaml
     /// </summary>
-    public partial class Table : Window
+    public partial class TableDetailView : Window
     {
-        public Table()
+        public TableDetailView()
         {
             InitializeComponent();
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
