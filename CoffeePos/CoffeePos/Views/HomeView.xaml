@@ -17,14 +17,21 @@
                 <!--<StackPanel HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="10">
                 <materialDesign:PopupBox  PlacementMode="BottomAndAlignRightEdges" StaysOpen="False"></materialDesign:PopupBox>
             </StackPanel>-->
-                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static language:Lang.Home_Table}" Height="70" Margin="0"
+                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
+                        Content="{x:Static language:Lang.Home_Table}" Height="70" Margin="0"
                         cal:Message.Attach="[Event Click] = [Action btTable_Click()]" Background="#FF079CFF" BorderBrush="{x:Null}" 
                         ></Button>
-                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static language:Lang.Home_Order}" Height="70"
+                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
+                        Content="{x:Static language:Lang.Home_Order}" Height="70"
+                        cal:Message.Attach="[Event Click] = [Action btOrder_Click()]" Background="#FF07D7FF" BorderBrush="{x:Null}"
+                        ></Button>
+                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
+                        Content="{x:Static language:Lang.Home_Order}" Height="70"
                         cal:Message.Attach="[Event Click] = [Action btOrder_Click()]" Background="#FFFF07F0" BorderBrush="{x:Null}"
                         ></Button>
                 <Button cal:Message.Attach="[Event Click] = [Action btRegister_Click()]"
-                    HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static language:Lang.Home_Register}" Height="70" Background="#FF07FF28" BorderBrush="{x:Null}"></Button>
+                        HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
+                        Content="{x:Static language:Lang.Home_Register}" Height="70" Background="#FF07FF28" BorderBrush="{x:Null}"></Button>
             </StackPanel>
         </Grid>
         <Grid Margin="0 70 0 0" Background="#FFF3F3F3">
