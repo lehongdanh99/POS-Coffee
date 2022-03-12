@@ -9,29 +9,6 @@
         xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
         mc:Ignorable="d"
         Title="Home" Height="790" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
-    <!--<Window.Resources>
-        <Storyboard x:Key="MenuOpen">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="200"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-        <Storyboard x:Key="MenuClose">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="60"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-    </Window.Resources>
-
-    <Window.Triggers>
-        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
-            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"></BeginStoryboard>
-        </EventTrigger>
-        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
-            <BeginStoryboard Storyboard="{StaticResource MenuClose}"></BeginStoryboard>
-        </EventTrigger>
-    </Window.Triggers>-->
 
     <Grid>
         <Grid Height="70" VerticalAlignment="Top" Background="#FFFF7800">
@@ -41,15 +18,16 @@
                 <materialDesign:PopupBox  PlacementMode="BottomAndAlignRightEdges" StaysOpen="False"></materialDesign:PopupBox>
             </StackPanel>-->
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static language:Lang.Home_Table}" Height="70" Margin="0"
-                        cal:Message.Attach="[Event Click] = [Action btOrder_Click()]" Background="#FF079CFF" BorderBrush="{x:Null}" 
+                        cal:Message.Attach="[Event Click] = [Action btTable_Click()]" Background="#FF079CFF" BorderBrush="{x:Null}" 
                         ></Button>
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static language:Lang.Home_Order}" Height="70"
                         cal:Message.Attach="[Event Click] = [Action btOrder_Click()]" Background="#FFFF07F0" BorderBrush="{x:Null}"
                         ></Button>
-                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static language:Lang.Home_Register}" Height="70" Background="#FF07FF28" BorderBrush="{x:Null}"></Button>
+                <Button cal:Message.Attach="[Event Click] = [Action btRegister_Click()]"
+                    HorizontalAlignment="Right" VerticalAlignment="Center" Content="{x:Static language:Lang.Home_Register}" Height="70" Background="#FF07FF28" BorderBrush="{x:Null}"></Button>
             </StackPanel>
         </Grid>
-        <Grid Margin="60 70 0 0" Background="#FFF3F3F3">
+        <Grid Margin="0 70 0 0" Background="#FFF3F3F3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="7*"></ColumnDefinition>
                 <ColumnDefinition Width="3*"></ColumnDefinition>
@@ -63,7 +41,7 @@
                     <Grid Grid.Column="0">
                         <Rectangle StrokeThickness="1"/>
                         <TextBox x:Name="SearchBox"
-                                     Height="50" Width="350" Text="{Binding Text}"
+                                     Height="50" Width="350" 
                                      Margin="10" VerticalAlignment="Top"
                                      VerticalContentAlignment="Center"
                                      Padding="5"
@@ -84,7 +62,7 @@
                 </Grid>
                 <ScrollViewer Margin="0 70" VerticalScrollBarVisibility="Hidden">
                     <StackPanel>
-                        <ItemsControl x:Name="ListViewFoods" Margin="5" ItemsSource="{Binding Food}">
+                        <ItemsControl x:Name="ListViewFoods" Margin="5" ItemsSource="{Binding Foods}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border Margin="5" Height="80" CornerRadius="5" Background="#FFF3F3F3"
@@ -103,7 +81,7 @@
                                                 <TextBlock Text="{Binding FoodPrice, StringFormat={}{0:#.###}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
                                             </StackPanel>
 
-                                            <Button Background="{StaticResource Blue}"
+                                            <Button Background="Blue"
                                                 materialDesign:ButtonAssist.CornerRadius="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5"
                                                     cal:Message.Attach="[Event Click] = [Action btOrderDetail_Click()]"></Button>
                                         </StackPanel>
@@ -124,7 +102,7 @@
                 <!--<Grid  VerticalAlignment="Bottom" Height="70">-->
                 <ScrollViewer VerticalAlignment="Bottom" Height="70" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
                     <StackPanel Orientation="Horizontal">
-                        <ItemsControl x:Name="ListTypeFoods" Margin="5" ItemsSource="{Binding TypeFood}">
+                        <ItemsControl x:Name="ListTypeFoods" Margin="5" ItemsSource="{Binding TypeFoods}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Button Margin="5" Height="50" VerticalAlignment="Center" Content="{Binding TypeName}">
@@ -154,7 +132,7 @@
                 <ScrollViewer Margin="0 70 0 190" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
                     <StackPanel>
                         <ItemsControl x:Name="ListViewFoodOrder" Margin="0 0 0 5" 
-                                      ItemsSource="{Binding FoodOrder}">
+                                      ItemsSource="{Binding FoodOrders}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border Margin="0 0 0 5"  Width="272" Height="100" CornerRadius="5" Background="#FFF3F3F3">
@@ -252,70 +230,10 @@
                     </Grid>
                     <Button Grid.Row="4" FontSize="20" FontWeight="Bold" Height="50" Margin="5"
                             Content="{x:Static language:Lang.Home_Order}">
-                        
+
                     </Button>
                 </Grid>
             </Grid>
         </Grid>
-        <!--<Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF7F5D00">
-            <StackPanel Orientation="Vertical">
-                <Grid Height="150" Background="White">
-                    <Button x:Name="ButtonCloseMenu" 
-                            VerticalAlignment="Top" Width="60" Height="60" 
-                            Background="{x:Null}" BorderBrush="{x:Null}" 
-                            HorizontalAlignment="Right" Visibility="Collapsed"
-                            Click="ButtonCloseMenu_Click">
-                        <materialDesign:PackIcon Kind="ArrowLeft" Foreground="#FF7F5D00"
-                                                 Width="25"
-                                                 Height="25"></materialDesign:PackIcon>
-                    </Button>
-                    <Button x:Name="ButtonOpenMenu" 
-                            VerticalAlignment="Top" Width="60" Height="60" 
-                            Background="{x:Null}" BorderBrush="{x:Null}" 
-                            HorizontalAlignment="Right"
-                            Click="ButtonOpenMenu_Click">
-                        <materialDesign:PackIcon Kind="Menu" Foreground="#FF7F5D00"
-                                                 Width="25"
-                                                 Height="25"></materialDesign:PackIcon>
-                    </Button>
-
-                </Grid>
-                <Grid>
-                    <materialDesign:TransitioningContent x:Name="TransitionMenuContent" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
-                        <Grid x:Name="GridCursor" Margin="0 0 0 0" Background="White" Width="5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="60"></Grid>
-                    </materialDesign:TransitioningContent>
-
-                    <ListView x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White"
-                              SelectionChanged="ListViewMenu_SelectionChanged">
-                        <ListViewItem Height="60">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
-                                <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
-                            </StackPanel>
-                        </ListViewItem>
-                        <ListViewItem Height="60">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
-                                <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
-                            </StackPanel>
-                        </ListViewItem>
-                        <ListViewItem Height="60">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
-                                <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
-                            </StackPanel>
-                        </ListViewItem>
-                        <ListViewItem Height="60">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
-                                <TextBlock Text="Danh sách" VerticalAlignment="Center" Margin="20 10"></TextBlock>
-                            </StackPanel>
-                        </ListViewItem>
-                    </ListView>
-                    
-                </Grid>
-                <Button Margin="0 300" VerticalAlignment="Bottom" Content="{x:Static language:Lang.Login_Exit}" Click="btnExit_Click"/>
-            </StackPanel>
-        </Grid>-->
     </Grid>
 </Window>

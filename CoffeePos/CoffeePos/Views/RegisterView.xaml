@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CoffeePos.Views"
         mc:Ignorable="d"
-        Title="RegisterView" Height="450" Width="300" materialDesign:ButtonAssist.CornerRadius="5">
+        Title="RegisterView" Height="450" Width="300" WindowStartupLocation="CenterScreen" materialDesign:ButtonAssist.CornerRadius="5">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>

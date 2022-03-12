@@ -15,13 +15,21 @@ namespace CoffeePos.ViewModels
         //Constructor
         public LoginViewModel()
         {
+            if (Properties.Settings.Default.languageCode.Equals("en-US"))
+            {
+                LanguageSelected = 1;
+            }
+            else
+            {
+                LanguageSelected = 0;
+            }
             
             Language = new ObservableCollection<string>
             {
                 "Viet Nam",
                 "English"
             };
-            LanguageSelected = 0;
+            
         }
 
         //Public Method
@@ -59,7 +67,7 @@ namespace CoffeePos.ViewModels
         public void btLogin_Click()
         {
             /*Code change language (Create new change language button and put it in)*/
-            if (language[LanguageSelected] == language[1])
+            if (language[LanguageSelected].ToString() == "English")
             {
                 Properties.Settings.Default.languageCode = "en-US";
             }
@@ -71,13 +79,17 @@ namespace CoffeePos.ViewModels
             Properties.Settings.Default.Save();
             //string response = restAPI.makeGetRequest();
             log.Debug("Btn login click");
-            Password.ToString();
+            //Password.ToString();
+
+            HomeViewModel homeViewModel = new HomeViewModel();
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowDialogAsync(homeViewModel);
             //MessageBox.Show("Login success");
         }
 
         public void btExit_Click()
         {
-            if (language[LanguageSelected] == language[1])
+            if (language[LanguageSelected] == "English")
             {
                 Properties.Settings.Default.languageCode = "en-US";
             }
@@ -85,7 +97,9 @@ namespace CoffeePos.ViewModels
             {
                 Properties.Settings.Default.languageCode = "vi-VN";
             }
-            
+
         }
+
+        
     }
 }

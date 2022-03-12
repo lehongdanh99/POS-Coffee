@@ -13,11 +13,23 @@ namespace CoffeePos.ViewModels
         public RegisterViewModel()
         {
 
-            Sex = new ObservableCollection<string>
+            if (Properties.Settings.Default.languageCode.Equals ("en-US"))
             {
-                "Nam",
-                "Nữ"
-            };
+                Sex = new ObservableCollection<string>
+                {
+                    "Male",
+                    "Female"
+                };
+            }
+            else
+            {
+                Sex = new ObservableCollection<string>
+                {
+                    "Nam",
+                    "Nữ"
+                };
+            }
+            
             SexSelected = 0;
         }
 

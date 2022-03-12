@@ -71,9 +71,9 @@
                            materialDesign:HintAssist.Hint="{x:Static language:Lang.Login_Username}" Width="170" HorizontalAlignment="Stretch"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0 20 0 0" HorizontalAlignment="Center">
-                    <materialDesign:PackIcon Kind="Key"
+                    <!--<materialDesign:PackIcon Kind="Key"
                                          VerticalAlignment="Center"
-                                         Foreground="{Binding ElementName=PassWordBox, Path=BorderBrush}" Margin="0,5,10,0"/>
+                                         Foreground="{Binding ElementName=PassWordTextBox, Path=BorderBrush}" Margin="0,5,10,0"/>
                     <PasswordBox x:Name="PassWordTextBox"
                                  ff:PasswordBoxAssistant.BindPassword="True"
                              
@@ -81,7 +81,7 @@
                              Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                              materialDesign:HintAssist.Foreground="Green"
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"
-                             materialDesign:HintAssist.Hint="{x:Static language:Lang.Login_Password}" Width="170" HorizontalAlignment="Stretch"/>
+                             materialDesign:HintAssist.Hint="{x:Static language:Lang.Login_Password}" Width="170" HorizontalAlignment="Stretch"/>-->
                 </StackPanel>
                 <materialDesign:TransitioningContent Grid.Row="3" >
                     <materialDesign:TransitioningContent.OpeningEffects>
@@ -90,7 +90,7 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
                         
                         <Button Style="{StaticResource MaterialDesignRaisedButton}"
-                                Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"
+                                
                                 materialDesign:ButtonAssist.CornerRadius="15"
                                 Height="30"
                                 x:Name="btLogin"
@@ -107,8 +107,9 @@
                     <Button Content="{x:Static language:Lang.Login_Exit}"
                            cal:Message.Attach="[Event Click] = [Action btExit_Click()]"
                            Style="{StaticResource MaterialDesignRaisedButton}"
-                           materialDesign:BottomDashedLineAdorner.Brush="Black" VerticalAlignment="Bottom" Margin="0,0,0,-100" >
-                    
+                           materialDesign:BottomDashedLineAdorner.Brush="Black" VerticalAlignment="Bottom" Margin="0,0,0,-100" 
+                           >
+                           
                     </Button>
                 </StackPanel>
                 <ComboBox Name="CbbLanguage" Width="130" Grid.Row="5" Margin="0 150 0 0" VerticalAlignment="Bottom"
