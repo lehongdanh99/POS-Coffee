@@ -218,3 +218,7 @@ C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Views\Table.g.cs
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Views\Table.baml
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Views\TablesView.g.cs
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Views\TablesView.baml
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Views\RegisterView.g.cs
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Views\TableDetailView.g.cs
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Views\RegisterView.baml
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Views\TableDetailView.baml
