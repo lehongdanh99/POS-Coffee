@@ -8,5 +8,7 @@ namespace CoffeePos.Models
 {
     internal class DetailReceipt
     {
+        public int ReceiptID { get; set; }
+
     }
 }

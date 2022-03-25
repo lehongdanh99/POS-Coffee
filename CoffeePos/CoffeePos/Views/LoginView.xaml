@@ -50,7 +50,7 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition Height="3*"></RowDefinition>
                 </Grid.RowDefinitions>
@@ -66,12 +66,12 @@
                     <materialDesign:PackIcon Kind="Account"
                                          VerticalAlignment="Center"
                                          Foreground="{Binding ElementName=NameTextBox, Path=BorderBrush}" Margin="0,5,10,0"/>
-                    <TextBox x:Name="NameTextBox"
+                    <TextBox x:Name="NameTextBox" Text="{Binding UserName}"
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                            materialDesign:HintAssist.Hint="{x:Static language:Lang.Login_Username}" Width="170" HorizontalAlignment="Stretch"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0 20 0 0" HorizontalAlignment="Center">
-                    <!--<materialDesign:PackIcon Kind="Key"
+                    <materialDesign:PackIcon Kind="Key"
                                          VerticalAlignment="Center"
                                          Foreground="{Binding ElementName=PassWordTextBox, Path=BorderBrush}" Margin="0,5,10,0"/>
                     <PasswordBox x:Name="PassWordTextBox"
@@ -81,20 +81,21 @@
                              Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                              materialDesign:HintAssist.Foreground="Green"
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"
-                             materialDesign:HintAssist.Hint="{x:Static language:Lang.Login_Password}" Width="170" HorizontalAlignment="Stretch"/>-->
+                             materialDesign:HintAssist.Hint="{x:Static language:Lang.Login_Password}" Width="170" HorizontalAlignment="Stretch"/>
                 </StackPanel>
                 <materialDesign:TransitioningContent Grid.Row="3" >
+                    
                     <materialDesign:TransitioningContent.OpeningEffects>
                         <materialDesign:TransitionEffect Kind="SlideInFromRight" Duration="0:0:2"></materialDesign:TransitionEffect>
                     </materialDesign:TransitioningContent.OpeningEffects>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
-                        
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,0,0,0">
+                        <TextBlock Text="{Binding ErrorValidate}" Visibility="{Binding ErrorVisible}" HorizontalAlignment="Center" Margin="10" Foreground="Red"></TextBlock>
                         <Button Style="{StaticResource MaterialDesignRaisedButton}"
                                 
                                 materialDesign:ButtonAssist.CornerRadius="15"
                                 Height="30"
                                 x:Name="btLogin"
-                                Width="80" Margin="0,0,0,0" 
+                                Width="80" Margin="0,40,0,0" 
                                 Content="{x:Static language:Lang.Login_Login}"
                                 cal:Message.Attach="[Event Click] = [Action btLogin_Click()]"
                                 >

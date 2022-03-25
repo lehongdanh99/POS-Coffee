@@ -1,5 +1,4 @@
-﻿using Caliburn.Micro;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,19 +15,13 @@ using System.Windows.Shapes;
 namespace CoffeePos.Views
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for MessageBox.xaml
     /// </summary>
-    public partial class HomeView : Window
+    public partial class MessageBox : Window
     {
-        public HomeView()
+        public MessageBox()
         {
             InitializeComponent();
         }
-
-        private void BtnClose_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
     }
 }

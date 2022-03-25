@@ -3,7 +3,7 @@ using CoffeePos.Common;
 using System.Collections.ObjectModel;
 using System.Security;
 using System.Windows;
-
+using System.Windows.Threading;
 
 namespace CoffeePos.ViewModels
 {
@@ -61,30 +61,79 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => LanguageSelected);
             }
         }
-        public string Password { get; set; }
 
-        
+        private string password = "";
+        public string Password
+        {
+            get { return password; }
+            set
+            {
+                password = value;
+                NotifyOfPropertyChange(() => Password);
+            }
+        }
+
+        private string userName = "";
+
+        public string UserName
+        {
+            get { return userName; }
+            set
+            {
+                userName = value;
+                NotifyOfPropertyChange(() => UserName);
+            }
+        }
+
+        public Visibility ErrorVisible { get; set; }
+
+        private string errorValidate;
+
+        public string ErrorValidate
+        {
+            get { return errorValidate; }
+            set { errorValidate = value;
+                NotifyOfPropertyChange(() => ErrorValidate);
+            }
+        }
+
         public void btLogin_Click()
         {
-            /*Code change language (Create new change language button and put it in)*/
-            if (language[LanguageSelected].ToString() == "English")
+
+            if(Password.Equals(string.Empty) || UserName.Equals(string.Empty))
             {
-                Properties.Settings.Default.languageCode = "en-US";
+                ErrorVisible = Visibility.Visible;
+                ErrorValidate = "Please add your user name or password";
+            }
+            else if (Password == "123")
+            {
+                ErrorVisible = Visibility.Visible;
+                ErrorValidate = "Wrong pass or username";
             }
             else
             {
-                Properties.Settings.Default.languageCode = "vi-VN";
-            }
-                
-            Properties.Settings.Default.Save();
-            //string response = restAPI.makeGetRequest();
-            log.Debug("Btn login click");
-            //Password.ToString();
+                ErrorVisible = Visibility.Hidden;
+                /*Code change language (Create new change language button and put it in)*/
+                if (language[LanguageSelected].ToString() == "English")
+                {
+                    Properties.Settings.Default.languageCode = "en-US";
+                }
+                else
+                {
+                    Properties.Settings.Default.languageCode = "vi-VN";
+                }
 
-            HomeViewModel homeViewModel = new HomeViewModel();
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowDialogAsync(homeViewModel);
-            //MessageBox.Show("Login success");
+                Properties.Settings.Default.Save();
+                //string response = restAPI.makeGetRequest();
+                log.Debug("Btn login click");
+                //Password.ToString();
+
+                HomeViewModel homeViewModel = new HomeViewModel();
+                WindowManager windowManager = new WindowManager();
+                windowManager.ShowDialogAsync(homeViewModel);
+                //MessageBox.Show("Login success");
+            }
+
         }
 
         public void btExit_Click()
@@ -97,7 +146,10 @@ namespace CoffeePos.ViewModels
             {
                 Properties.Settings.Default.languageCode = "vi-VN";
             }
-
+            Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
+            {
+                TryCloseAsync();
+            }));
         }
 
         

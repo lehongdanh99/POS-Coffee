@@ -5,6 +5,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Threading;
 
 namespace CoffeePos.ViewModels
 {
@@ -21,6 +23,8 @@ namespace CoffeePos.ViewModels
             FoodOrders = GetFoodOrder();
 
         }
+
+        public Visibility VisibleLocally { get; set; }
 
         private List<Foods> foods;
 
@@ -64,14 +68,7 @@ namespace CoffeePos.ViewModels
         {
             return new List<FoodOrder>()
             {
-                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new FoodOrder("cafe sua","Không có phần thêm", 1, 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                
             };
         }
 
@@ -112,6 +109,7 @@ namespace CoffeePos.ViewModels
 
         public void btOrderDetail_Click()
         {
+            
             OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel();  
             WindowManager windowManager = new WindowManager();
             windowManager.ShowDialogAsync(orderDetailViewModel);
@@ -130,6 +128,15 @@ namespace CoffeePos.ViewModels
             WindowManager windowManager = new WindowManager();
             windowManager.ShowDialogAsync(registerViewModel);
 
+        }
+
+        public void btExit_Click()
+        {
+           
+            Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
+            {
+                TryCloseAsync();
+            }));
         }
     }
 }

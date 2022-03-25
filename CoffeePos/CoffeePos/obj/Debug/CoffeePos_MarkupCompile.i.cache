@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\App.xaml
-101717128359
+111769807287
 
-41-651197819
+421051162249
 381124971455
-MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\OrderDetailView.xaml;Views\RegisterView.xaml;Views\SignInView.xaml;Views\TableDetailView.xaml;Views\TablesView.xaml;
+MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;Views\HomeView.xaml;Views\LoginView.xaml;Views\MessageBox.xaml;Views\OrderDetailView.xaml;Views\RegisterView.xaml;Views\SignInView.xaml;Views\TableDetailView.xaml;Views\TablesView.xaml;
 
-False
+True
 
