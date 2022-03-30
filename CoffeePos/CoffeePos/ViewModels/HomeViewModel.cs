@@ -125,7 +125,7 @@ namespace CoffeePos.ViewModels
             return new List<Foods>()
             {
                 new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("cafe swa da da da", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
                 new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
                 new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
                 new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
@@ -165,7 +165,15 @@ namespace CoffeePos.ViewModels
         }
         public void btTable_Click()
         {
-            TablesViewModel tableViewModel = new TablesViewModel();
+            TablesViewModel tableViewModel = new TablesViewModel(false);
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowDialogAsync(tableViewModel);
+
+        }
+
+        public void btTableChoose_Click()
+        {
+            TablesViewModel tableViewModel = new TablesViewModel(true);
             WindowManager windowManager = new WindowManager();
             windowManager.ShowDialogAsync(tableViewModel);
 

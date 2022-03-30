@@ -20,7 +20,7 @@
                 <Button HorizontalAlignment="Left" VerticalAlignment="Center"
                         materialDesign:ButtonAssist.CornerRadius="20"
                         Margin="10" Click="BtnBack_Click" Background="{x:Null}" BorderBrush="{x:Null}">
-                    <materialDesign:PackIcon Kind="ArrowBack" Foreground="White"/>
+                    <materialDesign:PackIcon Kind="ArrowBack" FontSize="300" Foreground="White"/>
                 </Button>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="400 0" FontWeight="Bold" FontSize="24" 
                            Text="{x:Static language:Lang.Tables_Title}"></TextBlock>
@@ -33,14 +33,16 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
                     <Button  Margin="5" Height="50" Width="150"
-                             Content="Lầu trệt"
-                             cal:Message.Attach="[Event Click] = [Action btDetail_Click()]">
+                             Content="Lầu 1"
+                             cal:Message.Attach="[Event Click] = [Action bt1thFloor_Click()]">
                     </Button>
                     <Button  Margin="5" Height="50" Width="150"
-                             Content="Lầu 1">
+                             Content="Lầu 2"
+                             cal:Message.Attach="[Event Click] = [Action bt2thFloor_Click()]">
                     </Button>
                     <Button  Margin="5" Height="50" Width="150"
-                             Content="Lầu 2">
+                             Content="Lầu 3"
+                             cal:Message.Attach="[Event Click] = [Action bt3thFloor_Click()]">
                     </Button>
 
                 </StackPanel>
@@ -66,14 +68,14 @@
             </Grid>
             
         </Border>
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden">
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
             <StackPanel>
-                <ItemsControl x:Name="ListViewTables" Margin="5" ItemsSource="{Binding Tables}">
+                <ItemsControl x:Name="ListViewTables" Margin="5" ItemsSource="{Binding TablesList}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                                <Border Width="150" Height="150" BorderBrush="Black" 
-                                        Margin="10" BorderThickness="3" CornerRadius="10">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
+                                <Border Width="150" Height="150" BorderBrush="{Binding ColorTable}" 
+                                        Margin="10" BorderThickness="2" CornerRadius="10">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -97,6 +99,11 @@
                             </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
                 </ItemsControl>
             </StackPanel>
             

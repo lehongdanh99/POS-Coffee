@@ -249,7 +249,7 @@
                     <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Grid.Row="4" Grid.Column="0" FontSize="20" FontWeight="Bold" Width="130" Height="50" Margin="5"
                             Content="{x:Static language:Lang.Home_Table}" Background="#FF079CFF" BorderBrush="{x:Null}"
-                            cal:Message.Attach="[Event Click] = [Action btTable_Click()]">
+                            cal:Message.Attach="[Event Click] = [Action btTableChoose_Click()]">
 
                         </Button>
                         <Button Grid.Row="4" FontSize="20" Grid.Column="1" FontWeight="Bold" Width="130" Height="50" Margin="5"

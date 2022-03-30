@@ -8,13 +8,16 @@ namespace CoffeePos.Models
 {
     internal class Table
     {
-        public string Status { get; set; }
+        public bool Status { get; set; }
         public int Floor { get; set; }
 
-        public Table(string status, int floor)
+        public int Seat { get; set; }
+
+        public Table(bool status, int floor, int seat)
         {
-            status = Status;
-            floor = Floor;
+            Status = status;
+            Floor = floor;
+            Seat = seat;
         }
     }
 }
