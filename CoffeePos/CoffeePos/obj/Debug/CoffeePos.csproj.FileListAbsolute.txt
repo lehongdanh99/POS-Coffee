@@ -169,3 +169,6 @@ C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.exe
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\CoffeePos.pdb
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Views\MessageBox.g.cs
 C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Views\MessageBox.baml
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.AssemblyReference.cache
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Views\MessageBox.g.cs
+D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Views\MessageBox.baml

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace CoffeePos.ViewModels
@@ -16,6 +17,9 @@ namespace CoffeePos.ViewModels
         public HomeViewModel()
         {
             
+            bgLocally = new SolidColorBrush(Colors.Orange);
+            bgDelivery = new SolidColorBrush(Colors.LightGray);
+            VisibleLocally = Visibility.Hidden;
             Foods = GetFoods();
 
             TypeFoods = GetTypeFoods();
@@ -24,7 +28,22 @@ namespace CoffeePos.ViewModels
 
         }
 
-        public Visibility VisibleLocally { get; set; }
+        private bool isBgLocally = true; 
+
+        private Visibility visibleLocally;
+        public Visibility VisibleLocally 
+        {
+
+            get
+            {
+                return visibleLocally;
+            }
+            set
+            {
+                visibleLocally = value;
+                NotifyOfPropertyChange(() => VisibleLocally);
+            }
+        }
 
         private List<Foods> foods;
 
@@ -41,6 +60,35 @@ namespace CoffeePos.ViewModels
             get { return typeFoods; }
             set { typeFoods = value; }
         }
+
+        private SolidColorBrush bgLocally;
+        public SolidColorBrush BgLocally
+        {
+            get
+            {
+                return bgLocally;
+            }
+            set
+            {
+                bgLocally = value;
+                NotifyOfPropertyChange(() => BgLocally);
+            }
+        }
+
+        private SolidColorBrush bgDelivery;
+        public SolidColorBrush BgDelivery 
+        {
+            get
+            {
+                return bgDelivery;
+            }
+            set
+            {
+                bgDelivery = value;
+                NotifyOfPropertyChange(() => BgDelivery);
+            }
+        }
+
 
         private List<FoodOrder> foodOrders;
 
@@ -137,6 +185,31 @@ namespace CoffeePos.ViewModels
             {
                 TryCloseAsync();
             }));
+        }
+
+        public void LocallyClick()
+        {
+
+            if(isBgLocally != true)
+            {
+                BgLocally = new SolidColorBrush(Colors.Orange);
+                BgDelivery = new SolidColorBrush(Colors.LightGray);
+                isBgLocally = true;
+                VisibleLocally = Visibility.Hidden;
+            }
+
+        }
+
+        public void DeliveryClick()
+        {
+            if (isBgLocally == true)
+            {
+                BgLocally = new SolidColorBrush(Colors.LightGray);
+                BgDelivery = new SolidColorBrush(Colors.Orange);
+                isBgLocally = false;
+                VisibleLocally = Visibility.Visible;
+            }
+
         }
     }
 }

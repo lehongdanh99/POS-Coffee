@@ -132,6 +132,10 @@ namespace CoffeePos.ViewModels
                 WindowManager windowManager = new WindowManager();
                 windowManager.ShowDialogAsync(homeViewModel);
                 //MessageBox.Show("Login success");
+                Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
+                {
+                    TryCloseAsync();
+                }));
             }
 
         }
