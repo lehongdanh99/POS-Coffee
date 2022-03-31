@@ -17,7 +17,8 @@ namespace CoffeePos.ViewModels
         public TablesViewModel(bool isChooseTable)
         {
             isChoose = isChooseTable;
-            TablesList = GetAllTableList(floor);
+            TablesAllList = GetAllTableList();
+            TablesList = GetTableList(floor, TablesAllList);
         }
 
         private SolidColorBrush colorTable;
@@ -28,26 +29,46 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => ColorTable);
             } }
 
-        private List<Table> GetAllTableList(int floor)
+        private List<Table> GetAllTableList()
         {
             
             return new List<Table>()
             {
                 new Table(true,1,4),
                 new Table(true,2,4),
-                new Table(true,2,3),
+                new Table(false,2,3),
                 new Table(true,3,4),
+                new Table(false,3,4),
+                new Table(false,3,2),
+                new Table(true,1,4),
+                new Table(true,2,4),
+                new Table(false,2,3),
                 new Table(true,3,4),
-                new Table(true,3,2),
+                new Table(false,3,4),
+                new Table(false,3,2),
             };
         }
 
         private List<Table> GetTableList(int floor, List<Table> tablesList)
         {
+            List<Table> list = new List<Table>();
             for (int i = 0; i < tablesList.Count; i++)
             {
+                if(tablesList[i].Floor == floor)
+                {
+                    list.Add(tablesList[i]);
+                    //if(tablesList[i].Status == false)
+                    //{
+                    //    BgStatusTable = new SolidColorBrush(Colors.Red);
+                    //}
+                    //else
+                    //{
+                    //    BgStatusTable = new SolidColorBrush(Colors.Green);
+                    //}
+                }
 
             }
+            return list;
             
         }
 
@@ -97,6 +118,23 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        //private SolidColorBrush bgStatusTable;
+        //public SolidColorBrush BgStatusTable
+        //{
+        //    get
+        //    {
+        //        return bgStatusTable;
+        //    }
+        //    set
+        //    {
+        //        bgStatusTable = value;
+        //        NotifyOfPropertyChange(() => BgStatusTable);
+        //    }
+        //}
+
+
+        private List<Table> TablesAllList;
+
         private List<Table> tables;
         public List<Table> TablesList
         {
@@ -123,7 +161,11 @@ namespace CoffeePos.ViewModels
                 is2thFloor = false;
                 is3thFloor = false;
                 floor = 1;
-                TablesList = GetTableList(floor);
+                TablesList = GetTableList(floor, TablesAllList);
+                NotifyOfPropertyChange(() => TablesList);
+                NotifyOfPropertyChange(() => Bg1thFloor);
+                NotifyOfPropertyChange(() => Bg2thFloor);
+                NotifyOfPropertyChange(() => Bg3thFloor);
             }
         }
 
@@ -138,13 +180,17 @@ namespace CoffeePos.ViewModels
                 is2thFloor = true;
                 is3thFloor = false;
                 floor = 2;
-                TablesList = GetTableList(floor);
+                TablesList = GetTableList(floor, TablesAllList);
+                NotifyOfPropertyChange(() => TablesList);
+                NotifyOfPropertyChange(() => Bg1thFloor);
+                NotifyOfPropertyChange(() => Bg2thFloor);
+                NotifyOfPropertyChange(() => Bg3thFloor);
             }
         }
 
         public void bt3thFloor_Click()
         {
-            if (is2thFloor != true)
+            if (is3thFloor != true)
             {
                 Bg1thFloor = new SolidColorBrush(Colors.LightGray);
                 Bg2thFloor = new SolidColorBrush(Colors.LightGray);
@@ -153,7 +199,11 @@ namespace CoffeePos.ViewModels
                 is2thFloor = false;
                 is3thFloor = true;
                 floor = 3;
-                TablesList = GetTableList(floor);
+                TablesList = GetTableList(floor, TablesAllList);
+                NotifyOfPropertyChange(() => TablesList);
+                NotifyOfPropertyChange(() => Bg1thFloor);
+                NotifyOfPropertyChange(() => Bg2thFloor);
+                NotifyOfPropertyChange(() => Bg3thFloor);
             }
         }
     }
