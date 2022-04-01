@@ -11,6 +11,9 @@ namespace CoffeePos.ViewModels
 {
     internal class OrderDetailViewModel : Screen
     {
+        public SelectedFoodThis eventChange;
+        public delegate void SelectedFoodThis(Foods selected);
+
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         
         public OrderDetailViewModel(Foods foodSelected)
@@ -179,14 +182,13 @@ namespace CoffeePos.ViewModels
             }
             FoodSelected.FoodOrderCount = OrderCount;
             FoodSelected.FoodOrderMore = Note;
-            
-            HomeViewModel homeViewModel = new HomeViewModel(FoodSelected);
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowDialogAsync(homeViewModel);
-            Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
-            {
-                TryCloseAsync();
-            }));
+
+            eventChange?.Invoke(FoodSelected);
+            this.TryCloseAsync();
+            //WindowManager windowManager = new WindowManager();
+            //windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
+
+
         }
     }
 }

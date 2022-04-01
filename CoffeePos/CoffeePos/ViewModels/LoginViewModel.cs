@@ -139,7 +139,7 @@ namespace CoffeePos.ViewModels
             }
 
         }
-
+        
         public void btExit_Click()
         {
             if (language[LanguageSelected] == "English")

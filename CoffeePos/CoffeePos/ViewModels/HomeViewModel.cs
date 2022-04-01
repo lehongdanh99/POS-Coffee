@@ -14,6 +14,18 @@ namespace CoffeePos.ViewModels
     internal class HomeViewModel : Screen
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static HomeViewModel _instance;
+        public static HomeViewModel GetInstance()
+        {
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new HomeViewModel();
+                }
+            }
+            return _instance;
+        }
         public HomeViewModel(Foods foodOrder = default)
         {
             
@@ -25,7 +37,7 @@ namespace CoffeePos.ViewModels
             TypeFoods = GetTypeFoods();
             if(foodOrders== null)
             {
-                foodOrders = new List<Foods>();
+                foodOrders = new BindableCollection<Foods>();
             }
             if(foodOrder != null)
             {
@@ -79,16 +91,9 @@ namespace CoffeePos.ViewModels
                 {
                     return;
                 }
-
-
-                _selectedIndex = value;
-
-                
+                _selectedIndex = value;                     
+                btOrderDetail_Click();
                 NotifyOfPropertyChange(() => SelectedIndex);
-                
-                    btOrderDetail_Click();
-                
-                
             }
         }
 
@@ -170,15 +175,15 @@ namespace CoffeePos.ViewModels
         }
 
 
-        private List<Foods> foodOrders;
+        private BindableCollection<Foods> foodOrders;
 
-        public List<Foods> FoodOrders
+        public BindableCollection<Foods> FoodOrders
         {
             get { return foodOrders; }
             set { foodOrders = value; NotifyOfPropertyChange(() => FoodOrders); }
         }
 
-        private List<TypeFoods> GetTypeFoods()
+        private BindableCollection<TypeFoods> GetTypeFoods()
         {
             return new List<TypeFoods>()
             {
@@ -234,23 +239,28 @@ namespace CoffeePos.ViewModels
                 new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
             };
         }
-
+        
         public void btOrderDetail_Click()
         {
                 FoodSelected = Foods[SelectedIndex];
                 OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(FoodSelected);
+                orderDetailViewModel.eventChange += HandleCallBack;
+
                 WindowManager windowManager = new WindowManager();
-                windowManager.ShowDialogAsync(orderDetailViewModel);
-                
-
-
-
+                windowManager.ShowWindowAsync(orderDetailViewModel);
         }
+
+        public void HandleCallBack(Foods food)
+        {
+            FoodOrders.Add(food);
+        }
+
         public void btTable_Click()
         {
             TablesViewModel tableViewModel = new TablesViewModel(false);
+            
             WindowManager windowManager = new WindowManager();
-            windowManager.ShowDialogAsync(tableViewModel);
+            windowManager.ShowWindowAsync(tableViewModel);
 
         }
 
@@ -259,8 +269,12 @@ namespace CoffeePos.ViewModels
             TablesViewModel tableViewModel = new TablesViewModel(true);
             WindowManager windowManager = new WindowManager();
             windowManager.ShowDialogAsync(tableViewModel);
-
+            Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
+            {
+                TryCloseAsync();
+            }));
         }
+        
         public void btRegister_Click()
         {
             RegisterViewModel registerViewModel = new RegisterViewModel();
