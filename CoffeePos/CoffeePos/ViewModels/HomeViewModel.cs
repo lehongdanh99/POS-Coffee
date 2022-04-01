@@ -14,24 +14,39 @@ namespace CoffeePos.ViewModels
     internal class HomeViewModel : Screen
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public HomeViewModel(FoodOrder foodOrder = default)
+        public HomeViewModel(Foods foodOrder = default)
         {
             
             bgLocally = new SolidColorBrush(Colors.Orange);
             bgDelivery = new SolidColorBrush(Colors.LightGray);
             VisibleLocally = Visibility.Hidden;
             Foods = GetFoods();
-
+            
             TypeFoods = GetTypeFoods();
+            if(foodOrders== null)
+            {
+                foodOrders = new List<Foods>();
+            }
             if(foodOrder != null)
             {
-                FoodOrders.Add(foodOrder);
+                foodOrders.Add(foodOrder);
             }
-            
+            GetFoodOrderTotal();
+            NotifyOfPropertyChange(() => FoodOrders);
+
 
         }
 
-        private bool isBgLocally = true; 
+        private void GetFoodOrderTotal()
+        {
+            FoodOrderCount = foodOrders.Count;
+            for(int i = 0; i < foodOrders.Count; i++)
+            {
+                AmountFood += foodOrders[i].FoodOrderPrice;
+            }
+        }
+
+        private bool isBgLocally = true;
 
         private Visibility visibleLocally;
         public Visibility VisibleLocally 
@@ -75,6 +90,39 @@ namespace CoffeePos.ViewModels
                 
                 
             }
+        }
+
+        private int foodOrderCount = 0;
+
+        public int FoodOrderCount
+        { 
+            get { return foodOrderCount; } 
+            set { foodOrderCount = value; NotifyOfPropertyChange(() => FoodOrderCount); }
+        }
+
+        private double discountOrder = 0;
+
+        public double DiscountOrder
+        {
+            get { return discountOrder; }
+            set { discountOrder = value; NotifyOfPropertyChange(() => DiscountOrder); }
+        }
+
+        private double totalOrder = 0;
+
+        public double TotalOrder
+        {
+            get { return totalOrder; }
+            set { totalOrder = value; NotifyOfPropertyChange(() => TotalOrder); }
+        }
+
+
+        private double amountFood = 0;
+
+        public double AmountFood
+        {
+            get { return amountFood; }
+            set { amountFood = value; NotifyOfPropertyChange(() => AmountFood); }
         }
 
         private List<Foods> foods;
@@ -122,12 +170,12 @@ namespace CoffeePos.ViewModels
         }
 
 
-        private List<FoodOrder> foodOrders;
+        private List<Foods> foodOrders;
 
-        public List<FoodOrder> FoodOrders
+        public List<Foods> FoodOrders
         {
             get { return foodOrders; }
-            set { foodOrders = value; }
+            set { foodOrders = value; NotifyOfPropertyChange(() => FoodOrders); }
         }
 
         private List<TypeFoods> GetTypeFoods()
@@ -193,10 +241,7 @@ namespace CoffeePos.ViewModels
                 OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(FoodSelected);
                 WindowManager windowManager = new WindowManager();
                 windowManager.ShowDialogAsync(orderDetailViewModel);
-                Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
-                {
-                    TryCloseAsync();
-                }));
+                
 
 
 

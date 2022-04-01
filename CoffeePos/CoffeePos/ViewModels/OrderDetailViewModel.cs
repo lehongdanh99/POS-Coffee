@@ -18,19 +18,7 @@ namespace CoffeePos.ViewModels
             FoodSelected = foodSelected;
             GetFoodOrderDetail(FoodSelected);
 
-            FoodSelectedOrder.FoodOrderPrice = FoodPrice;
-            if (isSizeSmall)
-            {
-                FoodSelectedOrder.FoodSize = "S";
-            }
-            else
-            {
-                FoodSelectedOrder.FoodSize = "M";
-            }
-            FoodSelectedOrder.FoodOrderCount = OrderCount;
-            FoodSelectedOrder.FoodOrderMore = Note;
-            FoodSelectedOrder.FoodOrderImage = FoodSelected.FoodImage;
-            FoodSelectedOrder.FoodOrderName = FoodSelected.FoodName;
+            
 
             BgSmallSize = new SolidColorBrush(Colors.Orange);
             bgMediumSize = new SolidColorBrush(Colors.LightGray);
@@ -180,21 +168,19 @@ namespace CoffeePos.ViewModels
 
         public void btnOrder_Click()
         {
-            FoodSelectedOrder.FoodOrderPrice = FoodPrice;
+            FoodSelected.FoodOrderPrice = FoodPrice;
             if(isSizeSmall)
             {
-                FoodSelectedOrder.FoodSize = "S";
+                FoodSelected.FoodSize = "S";
             }
             else
             {
-                FoodSelectedOrder.FoodSize = "M";
+                FoodSelected.FoodSize = "M";
             }
-            FoodSelectedOrder.FoodOrderCount = OrderCount;
-            FoodSelectedOrder.FoodOrderMore = Note;
-            FoodSelectedOrder.FoodOrderImage = FoodSelected.FoodImage;
-            FoodSelectedOrder.FoodOrderName = FoodSelected.FoodName;
+            FoodSelected.FoodOrderCount = OrderCount;
+            FoodSelected.FoodOrderMore = Note;
             
-            HomeViewModel homeViewModel = new HomeViewModel(FoodSelectedOrder);
+            HomeViewModel homeViewModel = new HomeViewModel(FoodSelected);
             WindowManager windowManager = new WindowManager();
             windowManager.ShowDialogAsync(homeViewModel);
             Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>

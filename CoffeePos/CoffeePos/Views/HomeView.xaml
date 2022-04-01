@@ -151,54 +151,46 @@
                 </Grid>
                 <ScrollViewer Margin="0 70 0 190" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
                     <StackPanel>
-                        <ItemsControl x:Name="ListViewFoodOrder" Margin="0 0 0 5" 
+                        <ListBox x:Name="ListViewFoodOrder" Margin="0 0 0 5" 
                                       ItemsSource="{Binding FoodOrders}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Margin="0 0 0 5"  Width="272" Height="100" CornerRadius="5" Background="#FFF3F3F3">
+                                    <Border Margin="0 0 0 5"  Width="272"  CornerRadius="5" Background="#FFF3F3F3">
                                         <!--<Border.Effect>
                                             <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
                                         </Border.Effect>-->
                                         <Grid >
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="1*"></ColumnDefinition>
-                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="2.5*"></ColumnDefinition>
                                                 <ColumnDefinition Width="1*"></ColumnDefinition>
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="7*"></RowDefinition>
+                                                <RowDefinition Height="2*"></RowDefinition>
                                                 <RowDefinition Height="auto"></RowDefinition>
                                             </Grid.RowDefinitions>
 
                                             <Border Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5" Margin="5" Width="50" Height="50">
                                                 <Border.Background>
-                                                    <ImageBrush ImageSource="{Binding FoodOrderImage}"/>
+                                                    <ImageBrush ImageSource="{Binding FoodImage}"/>
                                                 </Border.Background>
                                             </Border>
                                             <StackPanel Grid.Column="1" Width="150" Margin="0 5">
-                                                <TextBlock Text="{Binding FoodOrderName}" TextWrapping="Wrap" FontWeight="Bold" FontSize="14" Foreground="Black"></TextBlock>
-                                                <TextBlock Text="{Binding FoodOrderMore}" TextWrapping="Wrap" FontSize="14" Foreground="Black"></TextBlock>
+                                                <TextBlock Text="{Binding FoodName}" TextWrapping="Wrap" FontWeight="Bold" FontSize="14" Foreground="Black"></TextBlock>
+                                                <TextBlock Text="{Binding FoodOrderMore}" Visibility="{Binding ViOrderMore}" TextWrapping="Wrap" FontSize="14" Foreground="Black"></TextBlock>
 
                                                 <TextBlock Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
                                             </StackPanel>
                                             <Grid Grid.Column="2">
                                                 <TextBlock Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" FontWeight="Bold" Text="{Binding FoodOrderCount}"></TextBlock>
-                                                <Grid VerticalAlignment="Bottom" Margin="5">
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition></ColumnDefinition>
-                                                        <ColumnDefinition></ColumnDefinition>
-                                                    </Grid.ColumnDefinitions>
-                                                    <Button Content="Chỉnh sửa" Grid.Column="1" materialDesign:ButtonAssist.CornerRadius="25" Height="25" Width="25" ></Button>
-                                                    <Button Grid.Column="0" materialDesign:ButtonAssist.CornerRadius="25" Height="25" Width="25" >
-                                                        <DockPanel>
-                                                            <Image Source="/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"/>
-                                                        </DockPanel>
-                                                    </Button>
-                                                    <Button Grid.Column="1" materialDesign:ButtonAssist.CornerRadius="25" Height="25" Width="25" ></Button>
-                                                </Grid>
+                                                
 
                                             </Grid>
+                                            <Grid VerticalAlignment="Bottom" Margin="5" Grid.Row="1" Height="20">
 
+                                                <Button Content="Chỉnh sửa"   ></Button>
+
+                                            </Grid>
                                         </Grid>
 
 
@@ -210,7 +202,7 @@
                                     <WrapPanel/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
-                        </ItemsControl>
+                        </ListBox>
 
                     </StackPanel>
                 </ScrollViewer>
@@ -229,7 +221,7 @@
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0" Margin="10 0">
                             <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Food}"></TextBlock>
-                            <TextBlock Foreground="Black" HorizontalAlignment="Right">0</TextBlock>
+                            <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding FoodOrderCount}"></TextBlock>
                         </Grid>
                         <Grid Grid.Column="1" Margin="10 0">
                             <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Table}"></TextBlock>
@@ -238,15 +230,15 @@
                     </Grid>
                     <Grid Grid.Row="1" Margin="10 0" VerticalAlignment="Center">
                         <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Price}"></TextBlock>
-                        <TextBlock Foreground="Black" HorizontalAlignment="Right">0</TextBlock>
+                        <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding AmountFood}"></TextBlock>
                     </Grid>
                     <Grid Grid.Row="2" Margin="10 0" VerticalAlignment="Center">
                         <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Discount}"></TextBlock>
-                        <TextBlock Foreground="Black" HorizontalAlignment="Right">0</TextBlock>
+                        <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding DiscountOrder}"></TextBlock>
                     </Grid>
                     <Grid Grid.Row="3" Margin="10 0" VerticalAlignment="Center">
                         <TextBlock Foreground="Red" FontSize="20" Text="{x:Static language:Lang.Home_Total}"></TextBlock>
-                        <TextBlock Foreground="Red" FontSize="20" HorizontalAlignment="Right">0</TextBlock>
+                        <TextBlock Foreground="Red" FontSize="20" HorizontalAlignment="Right" Text="{Binding TotalOrder}"></TextBlock>
                     </Grid>
                     <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Grid.Row="4" Grid.Column="0" FontSize="20" FontWeight="Bold" Width="130" Height="50" Margin="5"
