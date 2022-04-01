@@ -35,17 +35,17 @@
                     <Button  Margin="5" Height="50" Width="150"
                              Content="Lầu 1"
                              Background="{Binding Bg1thFloor}"
-                             cal:Message.Attach="[Event Click] = [Action bt1thFloor_Click()]">
+                             cal:Message.Attach="[Event Click] = [Action bt1thFloor_Click()]" BorderBrush="{x:Null}">
                     </Button>
                     <Button  Margin="5" Height="50" Width="150"
                              Content="Lầu 2"
                              Background="{Binding Bg2thFloor}"
-                             cal:Message.Attach="[Event Click] = [Action bt2thFloor_Click()]">
+                             cal:Message.Attach="[Event Click] = [Action bt2thFloor_Click()]" BorderBrush="{x:Null}">
                     </Button>
                     <Button  Margin="5" Height="50" Width="150"
                              Content="Lầu 3"
                              Background="{Binding Bg3thFloor}"
-                             cal:Message.Attach="[Event Click] = [Action bt3thFloor_Click()]">
+                             cal:Message.Attach="[Event Click] = [Action bt3thFloor_Click()]" BorderBrush="{x:Null}">
                     </Button>
 
                 </StackPanel>

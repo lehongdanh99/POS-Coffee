@@ -8,10 +8,11 @@
         xmlns:cal="http://www.caliburnproject.org"
         xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
         mc:Ignorable="d"
-        Title="OrderDetailView" AllowsTransparency="True" Height="400" Width="890" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White" Background="#FFCACACA" >
+        Title="OrderDetailView" AllowsTransparency="True" Height="480" Width="890" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White" Background="#FFCACACA" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
             <RowDefinition Height="80"></RowDefinition>
             <RowDefinition Height="250"></RowDefinition>
         </Grid.RowDefinitions>
@@ -19,7 +20,7 @@
             <Grid Grid.Row="0" >
                 <Button HorizontalAlignment="Left" VerticalAlignment="Center"
                         materialDesign:ButtonAssist.CornerRadius="20"
-                        Margin="10" Click="BtnBack_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+                        Margin="10" cal:Message.Attach="[Event Click] = [Action btBack_Click()]" Background="{x:Null}" BorderBrush="{x:Null}">
                     <materialDesign:PackIcon Kind="ArrowBack" Foreground="White"/>
                 </Button>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300 0" FontWeight="Bold" FontSize="24" 
@@ -30,18 +31,21 @@
             <StackPanel Orientation="Horizontal">
                 <Border VerticalAlignment="Center" HorizontalAlignment="Left" CornerRadius="5" Margin="10" Width="70" Height="70">
                     <Border.Background>
-                        <ImageBrush />
+                        <ImageBrush  ImageSource="{Binding FoodImage}"/>
                     </Border.Background>
                 </Border>
                 <StackPanel Orientation="Vertical" Margin="5">
-                    <TextBlock FontSize="20" Text="Tên món ăn" Foreground="Black" FontWeight="Bold"></TextBlock>
-                    <TextBlock Margin="0 5 0 0" FontSize="18" Text="Giá : " Foreground="Black"></TextBlock>
+                    <TextBlock FontSize="20" Text="{Binding FoodName}" Foreground="Black" FontWeight="Bold"></TextBlock>
+                    <TextBlock Margin="0 5 0 0" FontSize="20" Text="{Binding FoodPrice}" Foreground="LightGreen" FontWeight="Bold"></TextBlock>
                 </StackPanel>
                 <Line X1="5" Y1="5" X2="5" Y2="50" Margin="50 0" VerticalAlignment="Center" Stroke="#FFC8C2C2" StrokeThickness="4"/>
                 
-                <Button Height="50" Content="{x:Static language:Lang.OrderDetail_MediumSize}" Margin="10"></Button>
-                <Button Height="50" Content="{x:Static language:Lang.OrderDetail_SmallSize}" Margin="10"></Button>
-                <StackPanel Orientation="Horizontal" Margin="200 0 0 0">
+                
+                <Button Height="50" Content="{x:Static language:Lang.OrderDetail_SmallSize}" Margin="10"
+                        cal:Message.Attach="[Event Click] = [Action btnSmall_Click()]" Background="{Binding BgSmallSize}" BorderBrush="{x:Null}"></Button>
+                <Button Height="50" Content="{x:Static language:Lang.OrderDetail_MediumSize}" Margin="10"
+                        cal:Message.Attach="[Event Click] = [Action btnMedium_Click()]" Background="{Binding BgMediumSize}" BorderBrush="{x:Null}"></Button>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="50 0 0 0">
                     <Button Height="50" Width="50" Content="-" materialDesign:ButtonAssist.CornerRadius="25"
                             Margin="10" Background="#FFD2D2D2" BorderBrush="{x:Null}"
                             cal:Message.Attach="[Event Click] = [Action btnLess_Click()]"></Button>
@@ -55,7 +59,27 @@
 
             </StackPanel>
         </Border>
-        <Grid Grid.Row="2" >
+        <Border Grid.Row="2" CornerRadius="10" Background="White" Margin="5">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                    <Label VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="10">Đường</Label>
+
+                    <RadioButton  Margin="10" GroupName="ready" IsChecked="True" Foreground="Black">100%</RadioButton>
+                    <RadioButton  Margin="10" GroupName="ready" Foreground="Black">70%</RadioButton>
+                    <RadioButton  Margin="10" GroupName="ready" Foreground="Black">50%</RadioButton>
+                    
+                    <Line X1="5" Y1="5" X2="5" Y2="50" Margin="50 0" VerticalAlignment="Center" Stroke="#FFC8C2C2" StrokeThickness="4"/>
+
+                    <Label VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="10">Đá</Label>
+                    <RadioButton  Margin="10" GroupName="sex" IsChecked="True" Foreground="Black">100%</RadioButton>
+                    <RadioButton  Margin="10" GroupName="sex" Foreground="Black">70%</RadioButton>
+                    <RadioButton  Margin="10" GroupName="sex" Foreground="Black">50%</RadioButton>
+                </StackPanel>
+               
+            </StackPanel>
+        </Border>
+        <Grid Grid.Row="3" >
             <Grid>
                 
 
@@ -66,6 +90,7 @@
                               TextWrapping="Wrap"
                               AcceptsReturn="True"
                                  Height="150"
+                                 Text="{Binding Note}"
                               VerticalScrollBarVisibility="Hidden"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                            materialDesign:HintAssist.Hint="{x:Static language:Lang.OrderDetail_Note}"
@@ -73,7 +98,8 @@
                         </TextBox>
                     </Border>
                     
-                    <Button Height="50" VerticalAlignment="Bottom" Margin="10" Content="{x:Static language:Lang.OrderDetail_Add}">
+                    <Button Height="50" VerticalAlignment="Bottom" Margin="10" Content="{x:Static language:Lang.OrderDetail_Add}"
+                            cal:Message.Attach="[Event Click] = [Action btnOrder_Click()]">
                         
                     </Button>
                 

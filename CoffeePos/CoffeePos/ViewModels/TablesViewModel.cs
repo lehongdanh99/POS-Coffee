@@ -57,14 +57,7 @@ namespace CoffeePos.ViewModels
                 if(tablesList[i].Floor == floor)
                 {
                     list.Add(tablesList[i]);
-                    //if(tablesList[i].Status == false)
-                    //{
-                    //    BgStatusTable = new SolidColorBrush(Colors.Red);
-                    //}
-                    //else
-                    //{
-                    //    BgStatusTable = new SolidColorBrush(Colors.Green);
-                    //}
+                    
                 }
 
             }
@@ -117,21 +110,6 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => Bg3thFloor);
             }
         }
-
-        //private SolidColorBrush bgStatusTable;
-        //public SolidColorBrush BgStatusTable
-        //{
-        //    get
-        //    {
-        //        return bgStatusTable;
-        //    }
-        //    set
-        //    {
-        //        bgStatusTable = value;
-        //        NotifyOfPropertyChange(() => BgStatusTable);
-        //    }
-        //}
-
 
         private List<Table> TablesAllList;
 

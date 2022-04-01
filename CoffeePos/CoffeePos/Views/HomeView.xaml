@@ -45,10 +45,10 @@
         </Grid>
         <Grid Margin="0 70 0 0" Background="#FFF3F3F3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="7*"></ColumnDefinition>
+                <ColumnDefinition Width="8*"></ColumnDefinition>
                 <ColumnDefinition Width="3*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" Margin="5 5 0 5" Background="White" Width="702" >
+            <Grid Grid.Column="0" Margin="5 5 0 5" Background="White" Width="750" >
                 <Grid VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
@@ -76,9 +76,9 @@
 
                     <Button Grid.Column="1" Height="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10">search</Button>
                 </Grid>
-                <ScrollViewer Margin="0 70" VerticalScrollBarVisibility="Hidden">
+                <ScrollViewer Margin="0 70" >
                     <StackPanel>
-                        <ItemsControl x:Name="ListViewFoods" Margin="5" ItemsSource="{Binding Foods}">
+                        <ListBox x:Name="ListViewFoods" Margin="5" ItemsSource="{Binding Foods}" SelectedIndex="{Binding SelectedIndex}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border Margin="5" Height="80" CornerRadius="5" Background="#FFF3F3F3"
@@ -97,9 +97,11 @@
                                                 <TextBlock Text="{Binding FoodPrice, StringFormat={}{0:#.###}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
                                             </StackPanel>
 
-                                            <Button Background="Blue"
-                                                materialDesign:ButtonAssist.CornerRadius="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5"
-                                                    cal:Message.Attach="[Event Click] = [Action btOrderDetail_Click()]"></Button>
+                                            <Label Background="Orange" Height="25" Width="25"
+                                                 HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5"
+                                                    >
+                                                <materialDesign:PackIcon Kind="PlusBold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Label>
                                         </StackPanel>
 
 
@@ -111,7 +113,7 @@
                                     <WrapPanel/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
-                        </ItemsControl>
+                        </ListBox>
 
                     </StackPanel>
                 </ScrollViewer>

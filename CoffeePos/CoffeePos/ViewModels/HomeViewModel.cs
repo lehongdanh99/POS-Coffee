@@ -14,7 +14,7 @@ namespace CoffeePos.ViewModels
     internal class HomeViewModel : Screen
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public HomeViewModel()
+        public HomeViewModel(FoodOrder foodOrder = default)
         {
             
             bgLocally = new SolidColorBrush(Colors.Orange);
@@ -23,8 +23,11 @@ namespace CoffeePos.ViewModels
             Foods = GetFoods();
 
             TypeFoods = GetTypeFoods();
-
-            FoodOrders = GetFoodOrder();
+            if(foodOrder != null)
+            {
+                FoodOrders.Add(foodOrder);
+            }
+            
 
         }
 
@@ -42,6 +45,35 @@ namespace CoffeePos.ViewModels
             {
                 visibleLocally = value;
                 NotifyOfPropertyChange(() => VisibleLocally);
+            }
+        }
+
+        public Foods FoodSelected { get; set; }
+
+        private int _selectedIndex;
+        public int SelectedIndex
+        {
+            get
+            {
+                return _selectedIndex;
+            }
+
+            set
+            {
+                if (_selectedIndex == value)
+                {
+                    return;
+                }
+
+
+                _selectedIndex = value;
+
+                
+                NotifyOfPropertyChange(() => SelectedIndex);
+                
+                    btOrderDetail_Click();
+                
+                
             }
         }
 
@@ -157,11 +189,17 @@ namespace CoffeePos.ViewModels
 
         public void btOrderDetail_Click()
         {
-            
-            OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel();  
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowDialogAsync(orderDetailViewModel);
-            
+                FoodSelected = Foods[SelectedIndex];
+                OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(FoodSelected);
+                WindowManager windowManager = new WindowManager();
+                windowManager.ShowDialogAsync(orderDetailViewModel);
+                Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
+                {
+                    TryCloseAsync();
+                }));
+
+
+
         }
         public void btTable_Click()
         {

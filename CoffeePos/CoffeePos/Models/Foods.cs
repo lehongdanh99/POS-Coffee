@@ -11,6 +11,7 @@ namespace CoffeePos
         public string FoodName { get; set; }
         public double FoodPrice { get; set; }
 
+        public string FoodSize { get; set; }
         public string FoodImage { get; set; }
 
         public Foods(string foodName, double foodPrice, string foodImage)
@@ -32,6 +33,8 @@ namespace CoffeePos
         public double FoodOrderPrice { get; set; }
 
         public string FoodOrderImage { get; set; }
+
+        public string FoodSize { get; set; }
 
         public FoodOrder(string foodOrderName, string foodOrderMore, int foodOrderCount, double foodOrderPrice, string foodOrderImage)
         {
