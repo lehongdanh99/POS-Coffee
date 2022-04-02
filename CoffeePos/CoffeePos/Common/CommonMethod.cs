@@ -28,13 +28,13 @@ namespace CoffeePos.Common
         public TableModel readJsonFileConfig()
         {
             string json = String.Empty;
-            using (StreamReader r = new StreamReader("TableConfig.json"))
+            using (StreamReader r = new StreamReader(GlobalDef.JSON_CONFIG_PATH))
             {
                 json = r.ReadToEnd();
                 model = JsonConvert.DeserializeObject<TableModel>(json);
             }
-            return model;
             log.Info($"Read file Table config to Table model {json.ToString()} ");
+            return model;
         }   
     }
 }
