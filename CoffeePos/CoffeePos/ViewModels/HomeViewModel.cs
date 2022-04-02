@@ -37,11 +37,7 @@ namespace CoffeePos.ViewModels
             TypeFoods = GetTypeFoods();
             if(foodOrders== null)
             {
-                foodOrders = new BindableCollection<Foods>();
-            }
-            if(foodOrder != null)
-            {
-                foodOrders.Add(foodOrder);
+                foodOrders = new ObservableCollection<FoodOrder>();
             }
             GetFoodOrderTotal();
             NotifyOfPropertyChange(() => FoodOrders);
@@ -51,11 +47,17 @@ namespace CoffeePos.ViewModels
 
         private void GetFoodOrderTotal()
         {
-            FoodOrderCount = foodOrders.Count;
-            for(int i = 0; i < foodOrders.Count; i++)
+            foodOrderTotalCount = foodOrders.Count;
+            AmountFood = 0;
+            for (int i = 0; i < foodOrders.Count; i++)
             {
                 AmountFood += foodOrders[i].FoodOrderPrice;
             }
+            TotalOrder = AmountFood - DiscountOrder;
+            NotifyOfPropertyChange(() => FoodOrderTotalCount);
+            NotifyOfPropertyChange(() => AmountFood);
+            NotifyOfPropertyChange(() => TotalOrder);
+
         }
 
         private bool isBgLocally = true;
@@ -75,34 +77,64 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        private bool isOrderSelected = false;
+
         public Foods FoodSelected { get; set; }
 
-        private int _selectedIndex;
-        public int SelectedIndex
+        public FoodOrder FoodOrderSelected { get; set; }
+
+        private int _selectedIndexFood = -1;
+        public int SelectedIndexFood
         {
             get
             {
-                return _selectedIndex;
+                return _selectedIndexFood;
             }
 
             set
             {
-                if (_selectedIndex == value)
+                if (_selectedIndexFood == value)
                 {
                     return;
                 }
-                _selectedIndex = value;                     
-                btOrderDetail_Click();
-                NotifyOfPropertyChange(() => SelectedIndex);
+                _selectedIndexFood = value;
+                isOrderSelected = false;
+                btOrderDetail_Click(_selectedIndexFood);
+                NotifyOfPropertyChange(() => SelectedIndexFood);
             }
         }
 
-        private int foodOrderCount = 0;
+        private int _selectedIndexOrder;
+        public int SelectedIndexOrder
+        {
+            get
+            {
+                return _selectedIndexOrder;
+            }
 
-        public int FoodOrderCount
+            set
+            {
+                if (_selectedIndexOrder == value)
+                {
+                    return;
+                }
+                _selectedIndexOrder = value;
+                isOrderSelected = true;
+                if(_selectedIndexOrder >= 0)
+                {
+                    btOrderCustom_Click(_selectedIndexOrder);
+                }
+                
+                NotifyOfPropertyChange(() => SelectedIndexOrder);
+            }
+        }
+
+        private int foodOrderTotalCount = 0;
+
+        public int FoodOrderTotalCount
         { 
-            get { return foodOrderCount; } 
-            set { foodOrderCount = value; NotifyOfPropertyChange(() => FoodOrderCount); }
+            get { return foodOrderTotalCount; } 
+            set { foodOrderTotalCount = value; NotifyOfPropertyChange(() => FoodOrderTotalCount); }
         }
 
         private double discountOrder = 0;
@@ -130,17 +162,43 @@ namespace CoffeePos.ViewModels
             set { amountFood = value; NotifyOfPropertyChange(() => AmountFood); }
         }
 
-        private List<Foods> foods;
+        private int tableNum = 0;
 
-        public List<Foods> Foods
+        public int TableNum
+        {
+            get { return tableNum; }
+            set { tableNum = value; NotifyOfPropertyChange(() => TableNum);
+                if (tableNum != 0)
+                {
+                    EnableOrder = true;
+                } 
+                else
+                {
+                    EnableOrder = false;
+                }
+                NotifyOfPropertyChange(() => EnableOrder);
+            }
+        }
+
+        private bool enableOrder = false;
+
+        public bool EnableOrder
+        {
+            get { return enableOrder; }
+            set { enableOrder = value; NotifyOfPropertyChange(() => EnableOrder); }
+        }
+
+        private ObservableCollection<Foods> foods;
+
+        public ObservableCollection<Foods> Foods
         {
             get { return foods; }
             set { foods = value; }
         }
 
-        private List<TypeFoods> typeFoods;
+        private ObservableCollection<TypeFoods> typeFoods;
 
-        public List<TypeFoods> TypeFoods
+        public ObservableCollection<TypeFoods> TypeFoods
         {
             get { return typeFoods; }
             set { typeFoods = value; }
@@ -175,17 +233,17 @@ namespace CoffeePos.ViewModels
         }
 
 
-        private BindableCollection<Foods> foodOrders;
+        private ObservableCollection<FoodOrder> foodOrders;
 
-        public BindableCollection<Foods> FoodOrders
+        public ObservableCollection<FoodOrder> FoodOrders
         {
             get { return foodOrders; }
             set { foodOrders = value; NotifyOfPropertyChange(() => FoodOrders); }
         }
 
-        private BindableCollection<TypeFoods> GetTypeFoods()
+        private ObservableCollection<TypeFoods> GetTypeFoods()
         {
-            return new List<TypeFoods>()
+            return new ObservableCollection<TypeFoods>()
             {
                 new TypeFoods("Ăn chính"),
                 new TypeFoods("Ăn kèm"),
@@ -197,52 +255,46 @@ namespace CoffeePos.ViewModels
             };
         }
 
-        private List<FoodOrder> GetFoodOrder()
+        private ObservableCollection<Foods> GetFoodOrder()
         {
-            return new List<FoodOrder>()
+            return new ObservableCollection<Foods>()
             {
-                
+                new Foods("cafe sữa tươi", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("cafe swa da", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("nước cam", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
             };
         }
 
-        private List<Foods> GetFoods()
+        private ObservableCollection<Foods> GetFoods()
         {
-            return new List<Foods>()
+            return new ObservableCollection<Foods>()
             {
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe swa da da da", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("cafe sữa tươi", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("cafe swa da", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("nước cam", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("nước dừa", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("nước bưởi", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("nước táo", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("sữa chua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("trà sữa", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("trà sữa trân châu", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("trà xanh", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("trà táo", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("trà đào", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("soda táo", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("soda dứa", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("bạc sỉu", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("nước mơ", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+               
             };
         }
         
-        public void btOrderDetail_Click()
+        public void btOrderDetail_Click(int SelectedListFood)
         {
-                FoodSelected = Foods[SelectedIndex];
+            
+                FoodSelected = Foods[SelectedListFood];
+            
+                
                 OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(FoodSelected);
                 orderDetailViewModel.eventChange += HandleCallBack;
 
@@ -250,9 +302,42 @@ namespace CoffeePos.ViewModels
                 windowManager.ShowWindowAsync(orderDetailViewModel);
         }
 
-        public void HandleCallBack(Foods food)
+        public void HandleCallBack(FoodOrder food)
         {
-            FoodOrders.Add(food);
+            if(_selectedIndexFood >= 0)
+            {
+                FoodOrders.Add(food);
+            }
+            
+            
+            
+            GetFoodOrderTotal();
+        }
+
+        public void btOrderCustom_Click(int SelectedListFood)
+        {
+            if(SelectedListFood >= 0)
+            {
+                FoodOrderSelected = FoodOrders[SelectedListFood];
+            }
+            
+
+            OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(default,FoodOrderSelected);
+            orderDetailViewModel.eventCustomChange += HandleCallBackCustom;
+
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(orderDetailViewModel);
+        }
+
+        public void HandleCallBackCustom(FoodOrder food)
+        {
+            if (_selectedIndexOrder >= 0)
+            {
+                FoodOrders[SelectedIndexOrder] = food;
+            }
+
+            NotifyOfPropertyChange(() => FoodOrders);
+            GetFoodOrderTotal();
         }
 
         public void btTable_Click()
