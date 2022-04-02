@@ -7,38 +7,45 @@ using System.Windows.Media;
 
 namespace CoffeePos.Models
 {
-    internal class Table
+    public class TableModel
     {
-        private SolidColorBrush defaulColor = new SolidColorBrush(Colors.Green);
-        public bool Status { get; set; }
-        public int Floor { get; set; }
+        public Dictionary<int,Table> TableNumber { get; set; }
+        public class Table
+        {           
+            //public bool? TableStatus { get ; set; }
+            public int TableFloor { get; set; }
+            public int TableSeat { get; set; }
 
-        public int Seat { get; set; }
+            //private SolidColorBrush? defaulColor = new SolidColorBrush(Colors.Green);
 
-        private SolidColorBrush bgStatusTable;
-        public SolidColorBrush BgStatusTable {
-            get {
-                if (Status == false)
-                {
-                    bgStatusTable = new SolidColorBrush(Colors.Red);
-                }
-                else
-                {
-                    bgStatusTable = new SolidColorBrush(Colors.Green);
-                }
-                return bgStatusTable;
-            } 
-            set
-            {
-                bgStatusTable = value;
-            } }
+            //private SolidColorBrush? bgStatusTable;
+            //public SolidColorBrush? BgStatusTable
+            //{
+            //    get
+            //    {
+            //        if (TableStatus == false)
+            //        {
+            //            bgStatusTable = new SolidColorBrush(Colors.Red);
+            //        }
+            //        else
+            //        {
+            //            bgStatusTable = new SolidColorBrush(Colors.Green);
+            //        }
+            //        return bgStatusTable;
+            //    }
+            //    set
+            //    {
+            //        bgStatusTable = value;
+            //    }
+            //}
+            //public Table(bool status, int floor, int seat, SolidColorBrush bgStatusTable = default)
+            //{
+            //    TableStatus = status;
+            //    TableFloor = floor;
+            //    TableSeat = seat;
+            //    BgStatusTable = bgStatusTable;
+            //}
 
-        public Table(bool status, int floor, int seat, SolidColorBrush bgStatusTable = default )
-        {
-            Status = status;
-            Floor = floor;
-            Seat = seat;
-            BgStatusTable = bgStatusTable;
         }
     }
 }
