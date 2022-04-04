@@ -352,14 +352,18 @@ namespace CoffeePos.ViewModels
         public void btTableChoose_Click()
         {
             TablesViewModel tableViewModel = new TablesViewModel(true);
+            tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
             WindowManager windowManager = new WindowManager();
-            windowManager.ShowDialogAsync(tableViewModel);
-            Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
-            {
-                TryCloseAsync();
-            }));
+            windowManager.ShowWindowAsync(tableViewModel);
+            
         }
-        
+
+        public void HandleCallBacChooseTable(int TableChoose)
+        {
+            TableNum = TableChoose;
+            NotifyOfPropertyChange(() => TableNum);
+        }
+
         public void btRegister_Click()
         {
             RegisterViewModel registerViewModel = new RegisterViewModel();

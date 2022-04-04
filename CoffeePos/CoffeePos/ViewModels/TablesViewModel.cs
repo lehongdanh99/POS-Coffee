@@ -14,8 +14,8 @@ namespace CoffeePos.ViewModels
     {
         bool isChoose;
         int floor = 1;
-        public SelectedTableThis eventChange;
-        public delegate void SelectedTableThis(Table selected);
+        public SelectedTableThis eventChooseTableToOrder;
+        public delegate void SelectedTableThis(int SelectedTable);
 
         public TablesViewModel(bool isChooseTable)
         {
@@ -25,7 +25,7 @@ namespace CoffeePos.ViewModels
             ListFloor = GetListFloor();
         }
 
-        private void GetStatusAllTableList(List<Table> listTable)
+        private void GetStatusAllTableList(ObservableCollection<Table> listTable)
         {
             EmtyCount = 0;
             BusyCount = 0;
@@ -98,7 +98,11 @@ namespace CoffeePos.ViewModels
             {
 
                 _selectedIndexTable = value;
-                btTableSelected_Click(_selectedIndexTable);
+                if(_selectedIndexTable >=0)
+                {
+                    btTableSelected_Click(_selectedIndexTable);
+                }
+                
                 NotifyOfPropertyChange(() => SelectedIndexTable);
             }
         }
@@ -106,29 +110,38 @@ namespace CoffeePos.ViewModels
         public void btTableSelected_Click(int SelectedListTable)
         {
 
+            if(TablesList[SelectedIndexTable].Status)
+            {
+                TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
+                //orderDetailViewModel.eventChange += HandleCallBack;
 
-            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
-            //orderDetailViewModel.eventChange += HandleCallBack;
-
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(tableDetailViewModel);
+                WindowManager windowManager = new WindowManager();
+                windowManager.ShowWindowAsync(tableDetailViewModel);
+            }
+            else if(isChoose && !TablesList[SelectedIndexTable].Status)
+            {
+                eventChooseTableToOrder?.Invoke(SelectedListTable);
+                TablesList[SelectedIndexTable].Status = true;
+                this.TryCloseAsync();
+            }
+            NotifyOfPropertyChange(() => TablesList[SelectedIndexTable].BgStatusTable);
         }
 
-        private List<Table> GetAllTableList()
+        private ObservableCollection<Table> GetAllTableList()
         {
             
-            return new List<Table>()
+            return new ObservableCollection<Table>()
             {
-                new Table(true,1,4),
+                new Table(false,1,4),
                 new Table(true,2,4),
-                new Table(true,2,3),
+                new Table(false,2,3),
                 new Table(true,3,4),
-                new Table(true,3,4),
+                new Table(false,3,4),
                 new Table(true,3,2),
                 new Table(true,1,4),
-                new Table(true,2,4),
+                new Table(false,2,4),
                 new Table(true,2,3),
-                new Table(true,3,4),
+                new Table(false,3,4),
                 new Table(true,3,4),
                 new Table(true,3,2),
             };
@@ -157,9 +170,9 @@ namespace CoffeePos.ViewModels
             }
         }
 
-        private List<Table> GetTableList(int floor, List<Table> tablesList)
+        private ObservableCollection<Table> GetTableList(int floor,ObservableCollection<Table> tablesList)
         {
-            List<Table> list = new List<Table>();
+            ObservableCollection<Table> list = new ObservableCollection<Table>();
             for (int i = 0; i < tablesList.Count; i++)
             {
                 if(tablesList[i].Floor == floor)
@@ -175,10 +188,10 @@ namespace CoffeePos.ViewModels
 
 
 
-        private List<Table> TablesAllList;
+        public ObservableCollection<Table> TablesAllList;
 
-        private List<Table> tables;
-        public List<Table> TablesList
+        private ObservableCollection<Table> tables;
+        public ObservableCollection<Table> TablesList
         {
             get { return tables; }
             set { tables = value; NotifyOfPropertyChange(() => TablesList); }
