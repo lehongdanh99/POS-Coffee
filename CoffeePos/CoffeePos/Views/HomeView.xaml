@@ -188,8 +188,9 @@
 
                                                 </Grid>
                                             </Grid>
+                                            <materialDesign:PackIcon Kind="DotsHorizontal" Grid.Row="1" Foreground="Green" Width="40" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20 0"/>
                                             
-                                            <Button Margin="20 10" HorizontalAlignment="Right" Content="Chỉnh sửa" Grid.Row="1" Width="100"  ></Button>
+                                            <!--<Button Margin="20 10" HorizontalAlignment="Right" Content="Chỉnh sửa" Grid.Row="1" Width="100"  ></Button>-->
 
                                         </Grid>
 

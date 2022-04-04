@@ -2,6 +2,7 @@
 using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,21 +14,105 @@ namespace CoffeePos.ViewModels
     {
         bool isChoose;
         int floor = 1;
+        public SelectedTableThis eventChange;
+        public delegate void SelectedTableThis(Table selected);
 
         public TablesViewModel(bool isChooseTable)
         {
             isChoose = isChooseTable;
             TablesAllList = GetAllTableList();
-            TablesList = GetTableList(floor, TablesAllList);
+            GetStatusAllTableList(TablesAllList);
+            ListFloor = GetListFloor();
         }
 
-        private SolidColorBrush colorTable;
-        public SolidColorBrush ColorTable { get { return colorTable; }
+        private void GetStatusAllTableList(List<Table> listTable)
+        {
+            EmtyCount = 0;
+            BusyCount = 0;
+            for (int i=0; i< listTable.Count; i++)
+            {
+                if (listTable[i].Status)
+                {
+                    EmtyCount++;
+                }
+                else
+                    BusyCount++;
+            }
+            NotifyOfPropertyChange(() => EmtyCount);
+            NotifyOfPropertyChange(() => BusyCount);
+        }
+
+        private ObservableCollection<int> GetListFloor()
+        {
+            ObservableCollection<int> listFloors = new ObservableCollection<int>();
+            for(int i = 0; i < TablesAllList.Count; i++)
+            {
+                if(listFloors.Count != 0)
+                {
+                    bool isFloor = false;
+                    for(int j = 0; j < listFloors.Count; j++)
+                    {
+                        if (TablesAllList[i].Floor == listFloors[j])
+                            isFloor = true;
+                    }
+                    if(!isFloor)
+                        listFloors.Add(TablesAllList[i].Floor) ;
+                }
+                else
+                    listFloors.Add(TablesAllList[i].Floor);
+                
+            }
+
+            return listFloors;
+        }
+
+        private int emtycount;
+        public int EmtyCount
+        { get { return emtycount; }
             set
             {
-                colorTable = value;
-                NotifyOfPropertyChange(() => ColorTable);
+                emtycount = value;
+                NotifyOfPropertyChange(() => EmtyCount);
             } }
+
+        private int busycount;
+        public int BusyCount
+        {
+            get { return busycount; }
+            set
+            {
+                busycount = value;
+                NotifyOfPropertyChange(() => BusyCount);
+            }
+        }
+
+        private int _selectedIndexTable = -1;
+        public int SelectedIndexTable
+        {
+            get
+            {
+                return _selectedIndexTable;
+            }
+
+            set
+            {
+
+                _selectedIndexTable = value;
+                btTableSelected_Click(_selectedIndexTable);
+                NotifyOfPropertyChange(() => SelectedIndexTable);
+            }
+        }
+
+        public void btTableSelected_Click(int SelectedListTable)
+        {
+
+
+            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
+            //orderDetailViewModel.eventChange += HandleCallBack;
+
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(tableDetailViewModel);
+        }
 
         private List<Table> GetAllTableList()
         {
@@ -36,17 +121,40 @@ namespace CoffeePos.ViewModels
             {
                 new Table(true,1,4),
                 new Table(true,2,4),
-                new Table(false,2,3),
+                new Table(true,2,3),
                 new Table(true,3,4),
-                new Table(false,3,4),
-                new Table(false,3,2),
+                new Table(true,3,4),
+                new Table(true,3,2),
                 new Table(true,1,4),
                 new Table(true,2,4),
-                new Table(false,2,3),
+                new Table(true,2,3),
                 new Table(true,3,4),
-                new Table(false,3,4),
-                new Table(false,3,2),
+                new Table(true,3,4),
+                new Table(true,3,2),
             };
+        }
+
+        private ObservableCollection<int> listFloor;
+
+        public ObservableCollection<int> ListFloor
+        {
+            get { return listFloor; }
+            set { listFloor = value; NotifyOfPropertyChange(() => ListFloor); }
+        }
+
+        private int listFloorSelected;
+
+        public int ListFloorSelected
+        {
+            get { return listFloorSelected; }
+            set 
+            { 
+                listFloorSelected = value; 
+                NotifyOfPropertyChange(() => ListFloorSelected);
+                TablesList = GetTableList(ListFloorSelected, TablesAllList);
+                GetStatusAllTableList(TablesList);
+                NotifyOfPropertyChange(() => TablesList);
+            }
         }
 
         private List<Table> GetTableList(int floor, List<Table> tablesList)
@@ -65,51 +173,7 @@ namespace CoffeePos.ViewModels
             
         }
 
-        private bool is1thFloor = true;
-        private bool is2thFloor = false;
-        private bool is3thFloor = false;
 
-        private SolidColorBrush bg1thFloor;
-        public SolidColorBrush Bg1thFloor
-        {
-            get
-            {
-                return bg1thFloor;
-            }
-            set
-            {
-                bg1thFloor = value;
-                NotifyOfPropertyChange(() => Bg1thFloor);
-            }
-        }
-
-        private SolidColorBrush bg2thFloor;
-        public SolidColorBrush Bg2thFloor
-        {
-            get
-            {
-                return bg2thFloor;
-            }
-            set
-            {
-                bg2thFloor = value;
-                NotifyOfPropertyChange(() => Bg2thFloor);
-            }
-        }
-
-        private SolidColorBrush bg3thFloor;
-        public SolidColorBrush Bg3thFloor
-        {
-            get
-            {
-                return bg3thFloor;
-            }
-            set
-            {
-                bg3thFloor = value;
-                NotifyOfPropertyChange(() => Bg3thFloor);
-            }
-        }
 
         private List<Table> TablesAllList;
 
@@ -128,62 +192,7 @@ namespace CoffeePos.ViewModels
 
         }
 
-        public void bt1thFloor_Click()
-        {
-            if (is1thFloor != true)
-            {
-                Bg1thFloor = new SolidColorBrush(Colors.Orange);
-                Bg2thFloor = new SolidColorBrush(Colors.LightGray);
-                Bg3thFloor = new SolidColorBrush(Colors.LightGray);
-                is1thFloor = true;
-                is2thFloor = false;
-                is3thFloor = false;
-                floor = 1;
-                TablesList = GetTableList(floor, TablesAllList);
-                NotifyOfPropertyChange(() => TablesList);
-                NotifyOfPropertyChange(() => Bg1thFloor);
-                NotifyOfPropertyChange(() => Bg2thFloor);
-                NotifyOfPropertyChange(() => Bg3thFloor);
-            }
-        }
-
-        public void bt2thFloor_Click()
-        {
-            if (is2thFloor != true)
-            {
-                Bg1thFloor = new SolidColorBrush(Colors.LightGray);
-                Bg2thFloor = new SolidColorBrush(Colors.Orange);
-                Bg3thFloor = new SolidColorBrush(Colors.LightGray);
-                is1thFloor = false;
-                is2thFloor = true;
-                is3thFloor = false;
-                floor = 2;
-                TablesList = GetTableList(floor, TablesAllList);
-                NotifyOfPropertyChange(() => TablesList);
-                NotifyOfPropertyChange(() => Bg1thFloor);
-                NotifyOfPropertyChange(() => Bg2thFloor);
-                NotifyOfPropertyChange(() => Bg3thFloor);
-            }
-        }
-
-        public void bt3thFloor_Click()
-        {
-            if (is3thFloor != true)
-            {
-                Bg1thFloor = new SolidColorBrush(Colors.LightGray);
-                Bg2thFloor = new SolidColorBrush(Colors.LightGray);
-                Bg3thFloor = new SolidColorBrush(Colors.Orange);
-                is1thFloor = false;
-                is2thFloor = false;
-                is3thFloor = true;
-                floor = 3;
-                TablesList = GetTableList(floor, TablesAllList);
-                NotifyOfPropertyChange(() => TablesList);
-                NotifyOfPropertyChange(() => Bg1thFloor);
-                NotifyOfPropertyChange(() => Bg2thFloor);
-                NotifyOfPropertyChange(() => Bg3thFloor);
-            }
-        }
+        
     }
 
     
