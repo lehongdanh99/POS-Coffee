@@ -119,20 +119,21 @@
                 </ScrollViewer>
                 <!--<Grid  VerticalAlignment="Bottom" Height="70">-->
                 <ScrollViewer VerticalAlignment="Bottom" Height="70" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
-                    <StackPanel Orientation="Horizontal">
-                        <ListBox x:Name="ListTypeFoods" ItemsSource="{Binding TypeFoods}" SelectedItem="{Binding SelectedIndexTypeFood}">
+                    <StackPanel>
+                        <ListBox x:Name="ListTypeFoods" ItemsSource="{Binding TypeFoods}" SelectedValue="{Binding SelectedIndexTypeFood}">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation='Horizontal'/>
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Button Margin="5" Height="40" VerticalAlignment="Center" Content="{Binding}">
+                                    <Label Background="Orange" Width="80" VerticalAlignment="Center" Margin="5" Height="40" Content="{Binding}">
 
-                                    </Button>
+                                    </Label>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel/>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
+                            
                         </ListBox>
                     </StackPanel>
                 </ScrollViewer>

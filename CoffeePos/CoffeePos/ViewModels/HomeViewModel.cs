@@ -33,7 +33,7 @@ namespace CoffeePos.ViewModels
             bgDelivery = new SolidColorBrush(Colors.LightGray);
             VisibleLocally = Visibility.Hidden;
             Foods = GetFoods();
-            
+            AllFoods = GetFoods();
             TypeFoods = GetTypeFoods();
             if(foodOrders== null)
             {
@@ -231,6 +231,13 @@ namespace CoffeePos.ViewModels
             set { foods = value; NotifyOfPropertyChange(() => Foods); }
         }
 
+        private ObservableCollection<Foods> allFoods;
+        public ObservableCollection<Foods> AllFoods
+        {
+            get { return allFoods; }
+            set { allFoods = value; NotifyOfPropertyChange(() => AllFoods); }
+        }
+
         private ObservableCollection<string> typeFoods;
 
         public ObservableCollection<string> TypeFoods
@@ -297,7 +304,8 @@ namespace CoffeePos.ViewModels
                     typeFood.Add(Foods[i].FoodType);
             }    
 
-            return typeFood;        }
+            return typeFood;        
+        }
 
         private ObservableCollection<Foods> GetFoodOrder()
         {
@@ -336,11 +344,11 @@ namespace CoffeePos.ViewModels
         private ObservableCollection<Foods> GetFoodByType(string foodType)
         {
             ObservableCollection<Foods> Listfoods = new ObservableCollection<Foods>();
-            for(int i = 0; i < Foods.Count; i++)
+            for(int i = 0; i < AllFoods.Count; i++)
             {
-                if(Foods[i].FoodType == foodType)
+                if(AllFoods[i].FoodType == foodType)
                 {
-                    Listfoods.Add(Foods[i]);
+                    Listfoods.Add(AllFoods[i]);
                 }
             }
 
