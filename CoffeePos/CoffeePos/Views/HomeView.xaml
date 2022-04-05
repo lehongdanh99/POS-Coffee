@@ -120,10 +120,10 @@
                 <!--<Grid  VerticalAlignment="Bottom" Height="70">-->
                 <ScrollViewer VerticalAlignment="Bottom" Height="70" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
                     <StackPanel Orientation="Horizontal">
-                        <ItemsControl x:Name="ListTypeFoods" Margin="5" ItemsSource="{Binding TypeFoods}">
+                        <ListBox x:Name="ListTypeFoods" ItemsSource="{Binding TypeFoods}" SelectedItem="{Binding SelectedIndexTypeFood}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Button Margin="5" Height="50" VerticalAlignment="Center" Content="{Binding TypeName}">
+                                    <Button Margin="5" Height="40" VerticalAlignment="Center" Content="{Binding}">
 
                                     </Button>
                                 </DataTemplate>
@@ -133,7 +133,7 @@
                                     <WrapPanel/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
-                        </ItemsControl>
+                        </ListBox>
                     </StackPanel>
                 </ScrollViewer>
                 <!--</Grid>-->
@@ -225,8 +225,8 @@
                             <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding FoodOrderTotalCount}"></TextBlock>
                         </Grid>
                         <Grid Grid.Column="1" Margin="10 0">
-                            <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Table}"></TextBlock>
-                            <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding TableNum}"></TextBlock>
+                            <TextBlock Foreground="Black" Visibility="{Binding VisibleTable}" Text="{x:Static language:Lang.Home_Table}"></TextBlock>
+                            <TextBlock Foreground="Black" Visibility="{Binding VisibleTable}" HorizontalAlignment="Right" Text="{Binding TableNum}"></TextBlock>
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="1" Margin="10 0" VerticalAlignment="Center">

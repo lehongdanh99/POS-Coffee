@@ -13,13 +13,14 @@ namespace CoffeePos
 
         public string FoodImage { get; set; }
 
-        
+        public string FoodType { get; set; }
 
-        public Foods(string foodName, double foodPrice, string foodImage)
+        public Foods(string foodName, double foodPrice, string foodImage, string foodType)
         {
             FoodName = foodName;
             FoodPrice = foodPrice;
             FoodImage = foodImage;
+            FoodType = foodType;
         }
 
     }

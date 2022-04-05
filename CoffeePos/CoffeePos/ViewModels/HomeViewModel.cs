@@ -77,6 +77,21 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        private Visibility visibleTable;
+        public Visibility VisibleTable
+        {
+
+            get
+            {
+                return visibleTable;
+            }
+            set
+            {
+                visibleTable = value;
+                NotifyOfPropertyChange(() => VisibleTable);
+            }
+        }
+
         private bool isOrderSelected = false;
 
         public Foods FoodSelected { get; set; }
@@ -101,6 +116,26 @@ namespace CoffeePos.ViewModels
                 isOrderSelected = false;
                 btOrderDetail_Click(_selectedIndexFood);
                 NotifyOfPropertyChange(() => SelectedIndexFood);
+            }
+        }
+
+        private string _selectedIndexTypeFood;
+        public string SelectedIndexTypeFood
+        {
+            get
+            {
+                return _selectedIndexTypeFood;
+            }
+
+            set
+            {
+                if (_selectedIndexTypeFood == value)
+                {
+                    return;
+                }
+                _selectedIndexTypeFood = value;
+                btTypeChoose(_selectedIndexTypeFood);
+                NotifyOfPropertyChange(() => SelectedIndexTypeFood);
             }
         }
 
@@ -193,12 +228,12 @@ namespace CoffeePos.ViewModels
         public ObservableCollection<Foods> Foods
         {
             get { return foods; }
-            set { foods = value; }
+            set { foods = value; NotifyOfPropertyChange(() => Foods); }
         }
 
-        private ObservableCollection<TypeFoods> typeFoods;
+        private ObservableCollection<string> typeFoods;
 
-        public ObservableCollection<TypeFoods> TypeFoods
+        public ObservableCollection<string> TypeFoods
         {
             get { return typeFoods; }
             set { typeFoods = value; }
@@ -241,27 +276,36 @@ namespace CoffeePos.ViewModels
             set { foodOrders = value; NotifyOfPropertyChange(() => FoodOrders); }
         }
 
-        private ObservableCollection<TypeFoods> GetTypeFoods()
+        private ObservableCollection<string> GetTypeFoods()
         {
-            return new ObservableCollection<TypeFoods>()
+            ObservableCollection<string> typeFood = new ObservableCollection<string>();
+
+            for(int i = 0; i < Foods.Count; i++)
             {
-                new TypeFoods("Ăn chính"),
-                new TypeFoods("Ăn kèm"),
-                new TypeFoods("Đồ uống"),
-                new TypeFoods("Tráng miệng"),
-                new TypeFoods("Bánh"),
-                new TypeFoods("Bia"),
-                new TypeFoods("Nước ngọt")
-            };
-        }
+                if(typeFood.Count != 0)
+                {
+                    bool isTypeAdd = false;
+                    for(int j = 0; j < typeFood.Count; j++)
+                    {
+                        if(Foods[i].FoodType == typeFood[j])
+                            isTypeAdd = true;
+                    }
+                    if(!isTypeAdd)
+                        typeFood.Add(Foods[i].FoodType);
+                }
+                else
+                    typeFood.Add(Foods[i].FoodType);
+            }    
+
+            return typeFood;        }
 
         private ObservableCollection<Foods> GetFoodOrder()
         {
             return new ObservableCollection<Foods>()
             {
-                new Foods("cafe sữa tươi", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe swa da", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("nước cam", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("cafe sữa tươi", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
+                new Foods("cafe swa da", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
+                new Foods("nước cam", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
             };
         }
 
@@ -269,24 +313,44 @@ namespace CoffeePos.ViewModels
         {
             return new ObservableCollection<Foods>()
             {
-                new Foods("cafe sữa tươi", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe swa da", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("nước cam", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("nước dừa", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("nước bưởi", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("nước táo", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("sữa chua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("trà sữa", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("trà sữa trân châu", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("trà xanh", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("trà táo", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("trà đào", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("soda táo", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("soda dứa", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("bạc sỉu", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("nước mơ", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
+                new Foods("cafe sữa tươi", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
+                new Foods("cafe sữa đá", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
+                new Foods("nước cam", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
+                new Foods("nước dừa", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
+                new Foods("nước bưởi", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
+                new Foods("nước táo", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
+                new Foods("sữa chua", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Món ăn kèm"),
+                new Foods("trà sữa", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
+                new Foods("trà sữa trân châu", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
+                new Foods("trà xanh", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
+                new Foods("trà táo", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
+                new Foods("trà đào", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
+                new Foods("soda táo", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Soda"),
+                new Foods("soda dứa", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Soda"),
+                new Foods("bạc sỉu", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
+                new Foods("nước mơ", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
                
             };
+        }
+
+        private ObservableCollection<Foods> GetFoodByType(string foodType)
+        {
+            ObservableCollection<Foods> Listfoods = new ObservableCollection<Foods>();
+            for(int i = 0; i < Foods.Count; i++)
+            {
+                if(Foods[i].FoodType == foodType)
+                {
+                    Listfoods.Add(Foods[i]);
+                }
+            }
+
+            return Listfoods;
+        }
+
+        public void btTypeChoose(string SelectedTypeFood)
+        {
+            Foods = GetFoodByType(SelectedTypeFood);
+            NotifyOfPropertyChange(() => Foods);
         }
         
         public void btOrderDetail_Click(int SelectedListFood)
@@ -390,6 +454,7 @@ namespace CoffeePos.ViewModels
                 BgDelivery = new SolidColorBrush(Colors.LightGray);
                 isBgLocally = true;
                 VisibleLocally = Visibility.Hidden;
+                VisibleTable = Visibility.Visible;
             }
 
         }
@@ -402,6 +467,7 @@ namespace CoffeePos.ViewModels
                 BgDelivery = new SolidColorBrush(Colors.Orange);
                 isBgLocally = false;
                 VisibleLocally = Visibility.Visible;
+                VisibleTable = Visibility.Hidden;
             }
 
         }

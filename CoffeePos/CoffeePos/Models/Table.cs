@@ -18,7 +18,7 @@ namespace CoffeePos.Models
         private SolidColorBrush bgStatusTable;
         public SolidColorBrush BgStatusTable {
             get {
-                if (Status == false)
+                if (Status)
                 {
                     bgStatusTable = new SolidColorBrush(Colors.Red);
                 }
