@@ -2,59 +2,73 @@
   "TableNumber":
     {
       "1": {
+        "TableID" : 1,
         "TableFloor": 1,
         "TableSeat": 4
       },
       "2": {
+        "TableID": 2,
         "TableFloor": 1,
         "TableSeat": 4
       },
       "3": {
+        "TableID": 3,
         "TableFloor": 1,
         "TableSeat": 4
       },
       "4": {
+        "TableID": 4,
         "TableFloor": 1,
         "TableSeat": 4
       },
       "5": {
+        "TableID": 5,
         "TableFloor": 1,
         "TableSeat": 4
       },
       "6": {
+        "TableID": 6,
         "TableFloor": 1,
         "TableSeat": 4
       },
       "7": {
+        "TableID": 7,
         "TableFloor": 1,
         "TableSeat": 4
       },
       "8": {
+        "TableID": 8,
         "TableFloor": 1,
         "TableSeat": 4
       },
       "9": {
-        "TableFloor": 1,
+        "TableID": 9,
+        "TableFloor": 2,
         "TableSeat": 4
       },
       "10": {
-        "TableFloor": 1,
+        "TableID": 10,
+        "TableFloor": 2,
         "TableSeat": 4
       },
       "11": {
-        "TableFloor": 1,
+        "TableID": 11,
+        "TableFloor": 2,
         "TableSeat": 4
       },
       "12": {
-        "TableFloor": 1,
+        "TableID": 12,
+        "TableFloor": 3,
         "TableSeat": 4
       },
       "13": {
-        "TableFloor": 1,
+        "TableID": 13,
+        "TableFloor": 3,
         "TableSeat": 4
       },
       "14": {
-        "TableFloor": 1,
+        "TableID": 14,
+        "TableFloor": 3,
         "TableSeat": 4
       }
     }

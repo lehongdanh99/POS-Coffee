@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeePos.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,22 @@ namespace CoffeePos.Models
 {
     public class TableModel
     {
+        private static TableModel _instance;
+        public static TableModel GetInstance()
+        {
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new TableModel();
+                }
+            }
+            return _instance;
+        }
         public Dictionary<int, Table> TableNumber { get; set; }
         public class Table
         {
+            public int TableID  { get; set; }
             public bool TableStatus { get; set; }
             public int TableFloor { get; set; }
             public int TableSeat { get; set; }
@@ -23,7 +37,7 @@ namespace CoffeePos.Models
             {
                 get
                 {
-                    if (TableStatus == false)
+                    if (TableStatus == true)
                     {
                         bgStatusTable = new SolidColorBrush(Colors.Red);
                     }

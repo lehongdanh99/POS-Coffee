@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+using CoffeePos.Common;
+using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,7 +30,6 @@ namespace CoffeePos.ViewModels
         }
         public HomeViewModel(Foods foodOrder = default)
         {
-            
             bgLocally = new SolidColorBrush(Colors.Orange);
             bgDelivery = new SolidColorBrush(Colors.LightGray);
             VisibleLocally = Visibility.Hidden;

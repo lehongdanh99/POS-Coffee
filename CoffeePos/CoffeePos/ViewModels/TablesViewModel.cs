@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using CoffeePos.Common;
 using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,12 @@ namespace CoffeePos.ViewModels
         int floor = 1;
         public SelectedTableThis eventChooseTableToOrder;
         public delegate void SelectedTableThis(int SelectedTable);
+        TableModel tablemodel = new TableModel();
 
         public TablesViewModel(bool isChooseTable)
         {
+            tablemodel = CommonMethod.GetInstance().readJsonFileConfig();
+
             isChoose = isChooseTable;
             TablesAllList = GetAllTableList();
             GetStatusAllTableList(TablesAllList);
@@ -133,22 +137,12 @@ namespace CoffeePos.ViewModels
 
         private ObservableCollection<Table> GetAllTableList()
         {
-
-            return new ObservableCollection<Table>()
+            ObservableCollection<Table> tables = new ObservableCollection<Table>();
+            foreach (var item in tablemodel.TableNumber)
             {
-                new Table(false,1,4),
-                new Table(true,2,4),
-                new Table(false,2,3),
-                new Table(true,3,4),
-                new Table(false,3,4),
-                new Table(true,3,2),
-                new Table(true,1,4),
-                new Table(false,2,4),
-                new Table(true,2,3),
-                new Table(false,3,4),
-                new Table(true,3,4),
-                new Table(true,3,2),
-            };
+                tables.Add(item.Value);
+            }           
+            return tables;            
         }
 
         private ObservableCollection<int> listFloor;
