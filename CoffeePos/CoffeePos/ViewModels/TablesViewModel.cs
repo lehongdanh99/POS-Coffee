@@ -23,6 +23,7 @@ namespace CoffeePos.ViewModels
             TablesAllList = GetAllTableList();
             GetStatusAllTableList(TablesAllList);
             ListFloor = GetListFloor();
+            TablesList = GetTableList(listFloorSelected, TablesAllList);
         }
 
         private void GetStatusAllTableList(ObservableCollection<Table> listTable)
@@ -155,7 +156,7 @@ namespace CoffeePos.ViewModels
             set { listFloor = value; NotifyOfPropertyChange(() => ListFloor); }
         }
 
-        private int listFloorSelected;
+        private int listFloorSelected = 1;
 
         public int ListFloorSelected
         {

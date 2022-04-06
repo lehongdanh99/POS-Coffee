@@ -38,7 +38,6 @@
                 <ComboBox HorizontalAlignment="Right"   
                     FontSize="20"
                   VerticalAlignment="Top"   
-                     
                   ItemsSource="{Binding Path=ListFloor}"    
                   SelectedItem="{Binding Path=ListFloorSelected}"  
                   />
