@@ -412,23 +412,23 @@ namespace CoffeePos.ViewModels
             GetFoodOrderTotal();
         }
 
-        //public void btTable_Click()
-        //{
-        //    TablesViewModel tableViewModel = new TablesViewModel(false);
-            
-        //    WindowManager windowManager = new WindowManager();
-        //    windowManager.ShowWindowAsync(tableViewModel);
+        public void btTable_Click()
+        {
+            TablesViewModel tableViewModel = new TablesViewModel(false);
 
-        //}
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(tableViewModel);
 
-        //public void btTableChoose_Click()
-        //{
-        //    TablesViewModel tableViewModel = new TablesViewModel(true);
-        //    tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
-        //    WindowManager windowManager = new WindowManager();
-        //    windowManager.ShowWindowAsync(tableViewModel);
-            
-        //}
+        }
+
+        public void btTableChoose_Click()
+        {
+            TablesViewModel tableViewModel = new TablesViewModel(true);
+            tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(tableViewModel);
+
+        }
 
         public void HandleCallBacChooseTable(int TableChoose)
         {
