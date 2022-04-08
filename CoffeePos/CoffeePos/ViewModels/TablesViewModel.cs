@@ -37,7 +37,7 @@ namespace CoffeePos.ViewModels
             BusyCount = 0;
             for (int i = 0; i < listTable.Count; i++)
             {
-                if (listTable[i].TableStatus)
+                if (!listTable[i].TableStatus)
                 {
                     EmtyCount++;
                 }
@@ -94,8 +94,8 @@ namespace CoffeePos.ViewModels
             }
         }
 
-        private int _selectedIndexTable = -1;
-        public int SelectedIndexTable
+        private Table _selectedIndexTable;
+        public Table SelectedIndexTable
         {
             get
             {
@@ -106,7 +106,7 @@ namespace CoffeePos.ViewModels
             {
 
                 _selectedIndexTable = value;
-                if (_selectedIndexTable >= 0)
+                if (_selectedIndexTable != null)
                 {
                     btTableSelected_Click(_selectedIndexTable);
                 }
@@ -115,10 +115,10 @@ namespace CoffeePos.ViewModels
             }
         }
 
-        public void btTableSelected_Click(int SelectedListTable)
+        public void btTableSelected_Click(Table SelectedListTable)
         {
 
-            if (TablesList[SelectedIndexTable].TableStatus)
+            if (SelectedListTable.TableStatus)
             {
                 TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
                 //orderDetailViewModel.eventChange += HandleCallBack;
@@ -126,13 +126,15 @@ namespace CoffeePos.ViewModels
                 WindowManager windowManager = new WindowManager();
                 windowManager.ShowWindowAsync(tableDetailViewModel);
             }
-            else if (isChoose && !TablesList[SelectedIndexTable].TableStatus)
+            else if (isChoose && !SelectedListTable.TableStatus)
             {
-                eventChooseTableToOrder?.Invoke(SelectedListTable);
-                TablesList[SelectedIndexTable].TableStatus = true;
+                int tableIdChoose = SelectedListTable.TableID;
+                eventChooseTableToOrder?.Invoke(tableIdChoose);
+                //SelectedListTable.TableStatus = true;
+                //GetStatusAllTableList(TablesList);
                 this.TryCloseAsync();
             }
-            NotifyOfPropertyChange(() => TablesList[SelectedIndexTable].BgStatusTable);
+            NotifyOfPropertyChange(() => SelectedListTable.BgStatusTable);
         }
 
         private ObservableCollection<Table> GetAllTableList()
@@ -163,7 +165,7 @@ namespace CoffeePos.ViewModels
                 listFloorSelected = value;
                 NotifyOfPropertyChange(() => ListFloorSelected);
                 TablesList = GetTableList(ListFloorSelected, TablesAllList);
-                //GetStatusAllTableList(TablesList);
+                GetStatusAllTableList(TablesList);
                 NotifyOfPropertyChange(() => TablesList);
             }
         }

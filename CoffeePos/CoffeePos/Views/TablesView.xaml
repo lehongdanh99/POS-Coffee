@@ -67,7 +67,7 @@
         </Border>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
             <StackPanel>
-                <ListBox x:Name="ListViewTables" Margin="5" ItemsSource="{Binding TablesList}" SelectedIndex="{Binding SelectedIndexTable}" >
+                <ListBox x:Name="ListViewTables" Margin="5" ItemsSource="{Binding TablesList}" SelectedValue="{Binding SelectedIndexTable}" >
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="10">

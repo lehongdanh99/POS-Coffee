@@ -204,6 +204,9 @@
   <data name="Table_Detail" xml:space="preserve">
     <value>Thông tin đơn hàng</value>
   </data>
+  <data name="Table_Detail_Confirm" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
   <data name="Table_Discount" xml:space="preserve">
     <value>Giảm giá</value>
   </data>

@@ -249,12 +249,15 @@
 
                         </Button>
                         <Button Grid.Row="4" FontSize="20" Grid.Column="1" FontWeight="Bold" Width="130" Height="50" Margin="5"
-                            Content="{x:Static language:Lang.Home_Order}" IsEnabled="{Binding EnableOrder}" Background="Red" BorderBrush="{x:Null}">
+                            Content="{x:Static language:Lang.Home_Order}" IsEnabled="{Binding EnableOrder}" Background="Red"
+                                cal:Message.Attach="[Event Click] = [Action btOrderLocally_Click()]"
+                                BorderBrush="{x:Null}">
 
                         </Button>
                     </StackPanel>
                     <Button Grid.Row="4" FontSize="20" Grid.Column="1" FontWeight="Bold" Height="50" Margin="5" Visibility="{Binding VisibleLocally}"
-                            Content="{x:Static language:Lang.Home_Order}" Background="Red" BorderBrush="{x:Null}">
+                            Content="{x:Static language:Lang.Home_Order}" Background="Red" BorderBrush="{x:Null}"
+                            cal:Message.Attach="[Event Click] = [Action btOrderDelivery_Click()]">
 
                     </Button>
 

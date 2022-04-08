@@ -204,6 +204,9 @@
   <data name="Table_Detail" xml:space="preserve">
     <value>Table Detail</value>
   </data>
+  <data name="Table_Detail_Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
   <data name="Table_Discount" xml:space="preserve">
     <value>Discount</value>
   </data>

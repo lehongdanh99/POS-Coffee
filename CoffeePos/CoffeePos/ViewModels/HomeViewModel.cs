@@ -17,6 +17,7 @@ namespace CoffeePos.ViewModels
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private static HomeViewModel _instance;
+        TablesViewModel tableViewModel;
         public static HomeViewModel GetInstance()
         {
             if (_instance == null)
@@ -424,10 +425,23 @@ namespace CoffeePos.ViewModels
 
         public void btTableChoose_Click()
         {
-            TablesViewModel tableViewModel = new TablesViewModel(true);
+            if(tableViewModel == null)
+            {
+                tableViewModel = new TablesViewModel(true);
+            }
             tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(tableViewModel);
+
+        }
+
+        public void btOrderLocally_Click()
+        {
+
+        }
+
+        public void btOrderDelivery_Click()
+        {
 
         }
 

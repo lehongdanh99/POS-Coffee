@@ -8,6 +8,9 @@ namespace CoffeePos.ViewModels
 {
     internal class TableDetailViewModel
     {
+        public TableDetailViewModel()
+        {
 
+        }
     }
 }
