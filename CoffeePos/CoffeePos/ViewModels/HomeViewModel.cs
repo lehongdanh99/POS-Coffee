@@ -141,7 +141,7 @@ namespace CoffeePos.ViewModels
             }
         }
 
-        private int _selectedIndexOrder;
+        private int _selectedIndexOrder = -1;
         public int SelectedIndexOrder
         {
             get
@@ -159,7 +159,7 @@ namespace CoffeePos.ViewModels
                 isOrderSelected = true;
                 if(_selectedIndexOrder >= 0)
                 {
-                    btOrderCustom_Click(_selectedIndexOrder);
+                    btOrderCustom_Click();
                 }
                 
                 NotifyOfPropertyChange(() => SelectedIndexOrder);
@@ -388,11 +388,11 @@ namespace CoffeePos.ViewModels
             GetFoodOrderTotal();
         }
 
-        public void btOrderCustom_Click(int SelectedListFood)
+        public void btOrderCustom_Click()
         {
-            if(SelectedListFood >= 0)
+            if(SelectedIndexOrder >= 0)
             {
-                FoodOrderSelected = FoodOrders[SelectedListFood];
+                FoodOrderSelected = FoodOrders[SelectedIndexOrder];
             }
             
 
@@ -437,7 +437,11 @@ namespace CoffeePos.ViewModels
 
         public void btOrderLocally_Click()
         {
+            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(FoodOrders, TableNum, TotalOrder, AmountFood);
+            //orderDetailViewModel.eventChange += HandleCallBack;
 
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(tableDetailViewModel);
         }
 
         public void btOrderDelivery_Click()

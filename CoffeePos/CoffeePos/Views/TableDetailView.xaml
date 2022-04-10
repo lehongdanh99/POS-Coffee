@@ -7,7 +7,7 @@
         xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="TableDetailView" Height="650" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="TableDetailView" Height="650" Width="380" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -22,6 +22,7 @@
                         materialDesign:ButtonAssist.CornerRadius="25" Margin="10 0" BorderBrush="{x:Null}">
                 <materialDesign:PackIcon Kind="SwapHorizontal" Height="25" Width="25" Foreground="White"/>
             </Button>
+
             <Button HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0" BorderBrush="{x:Null}" Background="{x:Null}" Click="BtnBack_Click">
                 <materialDesign:PackIcon HorizontalAlignment="Right" Kind="Close" Width="30" Height="30" Foreground="Black"/>
             </Button>
@@ -40,27 +41,36 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Line Grid.Column="0"
             X1="0" Y1="0" X2="0" Y2="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-1" Stroke="#FFC8C2C2" StrokeThickness="2"/>
             <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{x:Static language:Lang.Home_Table}">
+                </TextBlock>
+                <TextBlock Text="{Binding TableNumOrder}" HorizontalAlignment="Center" Margin="0 5"
+                        FontWeight="Bold"></TextBlock>
+            </StackPanel>
+            <Line Grid.Column="1"
+            X1="0" Y1="0" X2="0" Y2="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-1" Stroke="#FFC8C2C2" StrokeThickness="2"/>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
                 <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{x:Static language:Lang.Table_Total}">
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{Binding TotalOrder}" FontWeight="Black">
                 </TextBlock>
             </StackPanel>
-            <Line Grid.Column="1"
+            <Line Grid.Column="2"
             X1="0" Y1="0" X2="0" Y2="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-1" Stroke="#FFC8C2C2" StrokeThickness="2"/>
-            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <StackPanel Grid.Column="2" VerticalAlignment="Center">
                 <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{x:Static language:Lang.Table_Discount}">
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="0 VND" FontWeight="Black">
                 </TextBlock>
             </StackPanel>
-            <StackPanel Grid.Column="2" VerticalAlignment="Center">
+            <StackPanel Grid.Column="3" VerticalAlignment="Center">
                 <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{x:Static language:Lang.Table_Payment}">
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="140.000 VND" Foreground="Orange" FontWeight="Black">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{Binding PaymentOrder}" Foreground="Orange" FontWeight="Black">
                 </TextBlock>
             </StackPanel>
         </Grid>
@@ -72,12 +82,12 @@
                             <Border Background="#FFEDEDED" Height="70" Margin="10" CornerRadius="10">
                                 <StackPanel>
                                     <Grid>
-                                        <TextBlock Margin="10" Text="Cafe Sữa Đá"></TextBlock>
+                                        <TextBlock Margin="10" Text="{Binding FoodOrderName}"></TextBlock>
                                         <TextBlock Margin="15 0" VerticalAlignment="Center" 
-                                   FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Text="1"/>
+                                   FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Text="{Binding FoodOrderCount}"/>
                                     </Grid>
 
-                                    <TextBlock Margin="10 5" Text="35.000 VND" FontWeight="Bold" FontSize="15" Foreground="Orange"></TextBlock>
+                                    <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="Orange"></TextBlock>
                                 </StackPanel>
                             </Border>
                         </DataTemplate>

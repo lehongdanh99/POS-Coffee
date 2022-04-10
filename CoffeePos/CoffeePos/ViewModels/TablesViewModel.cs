@@ -120,11 +120,11 @@ namespace CoffeePos.ViewModels
 
             if (SelectedListTable.TableStatus)
             {
-                TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
-                //orderDetailViewModel.eventChange += HandleCallBack;
+                //TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
+                ////orderDetailViewModel.eventChange += HandleCallBack;
 
-                WindowManager windowManager = new WindowManager();
-                windowManager.ShowWindowAsync(tableDetailViewModel);
+                //WindowManager windowManager = new WindowManager();
+                //windowManager.ShowWindowAsync(tableDetailViewModel);
             }
             else if (isChoose && !SelectedListTable.TableStatus)
             {
@@ -197,13 +197,13 @@ namespace CoffeePos.ViewModels
             set { tables = value; NotifyOfPropertyChange(() => TablesList); }
         }
 
-        public void btDetail_Click()
-        {
-            TableDetailViewModel registerViewModel = new TableDetailViewModel();
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowDialogAsync(registerViewModel);
+        //public void btDetail_Click()
+        //{
+        //    TableDetailViewModel registerViewModel = new TableDetailViewModel();
+        //    WindowManager windowManager = new WindowManager();
+        //    windowManager.ShowDialogAsync(registerViewModel);
 
-        }
+        //}
 
 
     }

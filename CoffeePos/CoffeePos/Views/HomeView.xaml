@@ -152,8 +152,20 @@
                 </Grid>
                 <ScrollViewer Margin="0 70 0 190" HorizontalAlignment="Center" >
                     <StackPanel>
-                        <ListBox x:Name="ListViewFoodOrder" Margin="0 0 0 5" 
+                        <ListView x:Name="ListViewFoodOrder" Margin="0 0 0 5" 
                                       ItemsSource="{Binding FoodOrders}" SelectedIndex="{Binding SelectedIndexOrder}">
+                            <ListView.Resources>
+                                <Style TargetType="ListViewItem">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                            <Setter Property="IsSelected" Value="True"/>
+
+                                        </Trigger>
+                                    </Style.Triggers>
+                                    <EventSetter Event="PreviewGotKeyboardFocus" Handler="SelectCurrentItem"/>
+                                </Style>
+
+                            </ListView.Resources>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border Margin="0 0 0 0"  Width="260" Height="auto" CornerRadius="5" Background="#FFF3F3F3">
@@ -185,12 +197,38 @@
                                                     <TextBlock Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
                                                 </StackPanel>
                                                 <Grid Grid.Column="2">
-                                                    <TextBlock Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15" FontWeight="Bold" Text="{Binding FoodOrderCount}"></TextBlock>
+                                                    <TextBlock Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20 0" FontWeight="Bold" Text="{Binding FoodOrderCount}"></TextBlock>
 
                                                 </Grid>
                                             </Grid>
-                                            <materialDesign:PackIcon Kind="DotsHorizontal" Grid.Row="1" Foreground="Green" Width="40" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20 0"/>
-                                            
+                                            <Button cal:Message.Attach="[Event Click] = [Action btOrderCustom_Click()]">text</Button>
+
+                                            <Menu Grid.Row="1" HorizontalAlignment="Right" BorderThickness="0" BorderBrush="White" Margin="0 0">
+                                                
+                                                <MenuItem HorizontalAlignment="Left">
+                                                    <MenuItem.Icon>
+                                                        <materialDesign:PackIcon Kind="DotsHorizontal" Foreground="Green" HorizontalAlignment="Right"
+                                                                     Margin="0 0 0 0"/>
+                                                    </MenuItem.Icon>
+                                                    <MenuItem Header="Chỉnh sửa" 
+                                                              Click="OrderCustom_Click">
+                                                        
+                                                    </MenuItem>
+                                                    <MenuItem Header="Xóa"
+                                                              cal:Message.Attach="[Event Click] = [Action btOrderDelivery_Click()]">
+
+                                                    </MenuItem>
+                                                </MenuItem>
+                                                
+                                            </Menu>
+
+                                            <!--<materialDesign:PackIcon Kind="DotsHorizontal" Grid.Row="1" Foreground="Green" Width="20" Height="20"
+                                                                     VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0"/>
+                                            <Button VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0"
+                                                    Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" 
+                                                    cal:Message.Attach="[Event Click] = [Action bt()]">
+                                                <materialDesign:PackIcon Kind="Garbage" Width="20" Height="20" Foreground="Red" />
+                                            </Button>-->
                                             <!--<Button Margin="20 10" HorizontalAlignment="Right" Content="Chỉnh sửa" Grid.Row="1" Width="100"  ></Button>-->
 
                                         </Grid>
@@ -204,7 +242,7 @@
                                     <WrapPanel/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
-                        </ListBox>
+                        </ListView>
 
                     </StackPanel>
                 </ScrollViewer>
