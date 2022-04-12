@@ -32,7 +32,7 @@
                         ></Button>
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
                         Content="List Order" Height="70"
-                        cal:Message.Attach="[Event Click] = [Action btOrder_Click()]" Background="#FF07D7FF" BorderBrush="{x:Null}"
+                        cal:Message.Attach="[Event Click] = [Action btListOrder_Click()]" Background="#FF07D7FF" BorderBrush="{x:Null}"
                         ></Button>
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
                         Content="Voucher" Height="70"
@@ -153,7 +153,7 @@
                 <ScrollViewer Margin="0 70 0 190" HorizontalAlignment="Center" HorizontalScrollBarVisibility="Hidden">
                     <StackPanel>
                         <ListView x:Name="ListViewFoodOrder" Margin="0 0 0 0"
-                                      ItemsSource="{Binding FoodOrders}" SelectedIndex="{Binding SelectedIndexOrder}" SelectionChanged="ListViewFoodOrder_SelectionChanged">
+                                      ItemsSource="{Binding FoodOrders}" SelectedIndex="{Binding SelectedIndexOrder}" >
                             <!--<ListView.Resources>
                                 <Style TargetType="ListViewItem">
                                     <Style.Triggers>

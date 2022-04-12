@@ -339,7 +339,7 @@ namespace CoffeePos.ViewModels
                 new Foods("soda dứa", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Soda"),
                 new Foods("bạc sỉu", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
                 new Foods("nước mơ", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
-               
+                new Foods("Sườn bì chả trứng", 30000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Món ăn kèm"),
             };
         }
 
@@ -362,7 +362,17 @@ namespace CoffeePos.ViewModels
             Foods = GetFoodByType(SelectedTypeFood);
             NotifyOfPropertyChange(() => Foods);
         }
-        
+
+        public void btListOrder_Click()
+        {
+            ListOrderViewModel listOrderViewModel = new ListOrderViewModel();
+            //orderDetailViewModel.eventChange += HandleCallBack;
+
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(listOrderViewModel);
+        }
+
+
         public void btOrderDetail_Click(int SelectedListFood)
         {
             
