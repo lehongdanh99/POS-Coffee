@@ -92,7 +92,11 @@
                                         </StackPanel>-->
                                     </Grid>
                                 </Border>
-                                <TextBlock Text="Bàn 1" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="{Binding BgStatusTable}"></TextBlock>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <TextBlock Text="Bàn " FontSize="30" FontWeight="Bold" Foreground="{Binding BgStatusTable}"></TextBlock>
+                                    <TextBlock Text="{Binding TableID}" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="{Binding BgStatusTable}"></TextBlock>
+                                </StackPanel>
+                                
                             </StackPanel>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
