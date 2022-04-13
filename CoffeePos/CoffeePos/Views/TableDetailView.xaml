@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Button 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding VisibilityCanSwitch}"
                         materialDesign:ButtonAssist.CornerRadius="25" Margin="10 0" BorderBrush="{x:Null}">
                 <materialDesign:PackIcon Kind="SwapHorizontal" Height="25" Width="25" Foreground="White"/>
             </Button>

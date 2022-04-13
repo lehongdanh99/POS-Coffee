@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Caliburn.Micro;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace CoffeePos.ViewModels
 {
-    internal class ListOrderViewModel
+    internal class ListOrderViewModel : Screen
     {
+        public ListOrderViewModel()
+        {
+
+        }
     }
 }

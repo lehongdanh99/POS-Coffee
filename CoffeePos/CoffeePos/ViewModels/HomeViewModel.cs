@@ -64,6 +64,8 @@ namespace CoffeePos.ViewModels
 
         private bool isBgLocally = true;
 
+        private bool confirmFromHome = true;
+
         private Visibility visibleLocally;
         public Visibility VisibleLocally 
         {
@@ -447,8 +449,8 @@ namespace CoffeePos.ViewModels
 
         public void btOrderLocally_Click()
         {
-            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(FoodOrders, TableNum, TotalOrder, AmountFood);
-            //orderDetailViewModel.eventChange += HandleCallBack;
+            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(FoodOrders, TableNum, TotalOrder, AmountFood, confirmFromHome);
+            tableDetailViewModel.eventChange += HandleCallBack;
 
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(tableDetailViewModel);

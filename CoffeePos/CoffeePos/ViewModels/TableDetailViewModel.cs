@@ -5,19 +5,33 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CoffeePos.ViewModels
 {
     internal class TableDetailViewModel : Screen
     {
-        public TableDetailViewModel(ObservableCollection<FoodOrder> listFoodOrder, int tableID, double total, double amount)
+        public TableDetailViewModel(ObservableCollection<FoodOrder> listFoodOrder, int tableID, double total, double amount, bool confirmFromHome)
         {
             orderTable = listFoodOrder;
             TableNumOrder = tableID;
             PaymentOrder = amount;
             TotalOrder = total;
+            ConfirmFromHome = confirmFromHome;
         }
 
+        private bool ConfirmFromHome;
+
+        private Visibility visibilityCanSwitch;
+        public Visibility VisibilityCanSwitch
+        {
+            get { return visibilityCanSwitch; }
+            set 
+            { 
+                visibilityCanSwitch = value;
+                NotifyOfPropertyChange(() => OrderTable);
+            }
+        }
         private ObservableCollection<FoodOrder> orderTable;
 
         public ObservableCollection<FoodOrder> OrderTable
