@@ -152,7 +152,6 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Foods.cs" />
     <Compile Include="Models\HistoryTracking.cs" />
-    <Compile Include="Models\Oder.cs" />
     <Compile Include="Models\Receipt.cs" />
     <Compile Include="Models\Table.cs" />
     <Compile Include="Models\UniqueID.cs" />

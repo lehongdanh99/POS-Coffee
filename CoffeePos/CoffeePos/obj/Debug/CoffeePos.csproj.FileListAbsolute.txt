@@ -172,3 +172,10 @@ C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Views\MessageBox.b
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\CoffeePos.csproj.AssemblyReference.cache
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Views\MessageBox.g.cs
 D:\coffee Danh\POS-Coffee\CoffeePos\CoffeePos\obj\Debug\Views\MessageBox.baml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Views\ListOrderView.g.cs
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\TableConfig.json
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\Views\ListOrderView.baml

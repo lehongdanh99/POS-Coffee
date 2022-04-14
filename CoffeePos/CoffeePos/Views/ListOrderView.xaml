@@ -44,14 +44,14 @@
             </Grid>
 
         </Border>
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
             <StackPanel>
-                <ListBox x:Name="ListViewTables" Margin="5" ItemsSource="{Binding TablesList}" SelectedValue="{Binding SelectedIndexTable}" >
+                <ListBox x:Name="ListViewTables" Margin="0" ItemsSource="{Binding ListReceipts}" >
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="10">
+                            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="0">
                                 <Border Width="250" Height="150"
-                                        Margin="10" BorderThickness="2" CornerRadius="5" BorderBrush="Orange" OpacityMask="#FFFF6363">
+                                        Margin="0" BorderThickness="2" CornerRadius="5" BorderBrush="Orange" OpacityMask="#FFFF6363">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -63,7 +63,7 @@
                                             <TextBlock FontSize="20" Text="{x:Static language:Lang.Tables_Floor}" FontWeight="Bold"  Foreground="Orange" VerticalAlignment="Center"></TextBlock>
                                             <TextBlock FontSize="20" VerticalAlignment="Center" FontWeight="Bold"  Foreground="Orange" Text="1"></TextBlock>
                                             <TextBlock FontSize="20" Text=" - " VerticalAlignment="Center" Foreground="Orange"></TextBlock>
-                                            <TextBlock FontSize="20" Text="10" FontWeight="Bold"  VerticalAlignment="Center" Foreground="Orange"></TextBlock>
+                                            <TextBlock FontSize="20" Text="{Binding Table}" FontWeight="Bold"  VerticalAlignment="Center" Foreground="Orange"></TextBlock>
                                         </StackPanel>
                                         <Grid Grid.Row="1">
                                             <Grid.ColumnDefinitions>
@@ -71,8 +71,8 @@
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
 
-                                            <TextBlock  Grid.Column="0" FontSize="18" VerticalAlignment="Center" Margin="10" Text="09:09:09" Foreground="Orange"></TextBlock>
-                                            <TextBlock  Grid.Column="2" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" Text="Total Price" Foreground="Orange"></TextBlock>
+                                            <TextBlock  Grid.Column="0" FontSize="18" VerticalAlignment="Center" Margin="10" Text="{Binding CheckIn}" Foreground="Orange"></TextBlock>
+                                            <TextBlock  Grid.Column="2" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" Text="{Binding Payment}" Foreground="Orange"></TextBlock>
 
                                         </Grid> 
                                         <Line X1="0" Y1="0" X2="250" Y2="0" Grid.Row="2" Margin="5 5" Stroke="#FFC8C2C2" StrokeThickness="2"></Line>

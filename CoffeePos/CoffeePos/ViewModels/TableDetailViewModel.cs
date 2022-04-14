@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.ViewModels
 {
@@ -13,12 +15,14 @@ namespace CoffeePos.ViewModels
     {
         public TableDetailViewModel(ObservableCollection<FoodOrder> listFoodOrder, int tableID, double total, double amount, bool confirmFromHome)
         {
-            orderTable = listFoodOrder;
+            ListFoodOrder = listFoodOrder;
             TableNumOrder = tableID;
             PaymentOrder = amount;
             TotalOrder = total;
             ConfirmFromHome = confirmFromHome;
         }
+
+        public Receipt Receipt = new Receipt();
 
         private bool ConfirmFromHome;
 
@@ -29,15 +33,15 @@ namespace CoffeePos.ViewModels
             set 
             { 
                 visibilityCanSwitch = value;
-                NotifyOfPropertyChange(() => OrderTable);
+                NotifyOfPropertyChange(() => VisibilityCanSwitch);
             }
         }
         private ObservableCollection<FoodOrder> orderTable;
 
-        public ObservableCollection<FoodOrder> OrderTable
+        public ObservableCollection<FoodOrder> ListFoodOrder
         {
             get { return orderTable; }
-            set { orderTable = value; NotifyOfPropertyChange(() => OrderTable); }
+            set { orderTable = value; NotifyOfPropertyChange(() => ListFoodOrder); }
         }
 
         private int tableNumOrder;
@@ -73,6 +77,20 @@ namespace CoffeePos.ViewModels
                 totalOrder = value;
                 NotifyOfPropertyChange(() => TotalOrder);
             }
+        }
+
+        public void btnConfirmReceipt()
+        {
+            Receipt.Foods = ListFoodOrder;
+            Receipt.Table = TableNumOrder;
+            Receipt.Total = TotalOrder;
+            Receipt.Payment = PaymentOrder;
+            Receipt.CheckOut = DateTime.Now;
+            Receipt.CheckIn = DateTime.Now;
+            Receipt.Note = string.Empty;
+
+            //ListOrderViewModel.GetInstance().AddListReceipt(Receipt);
+            ReceiptModel.GetInstance().ListReceipt.Add(Receipt);
         }
     }
 }

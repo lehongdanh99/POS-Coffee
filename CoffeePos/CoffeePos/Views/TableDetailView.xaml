@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CoffeePos.Views"
+        xmlns:cal="http://www.caliburnproject.org"
         xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
@@ -76,7 +77,7 @@
         </Grid>
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Hidden">
             <StackPanel>
-                <ItemsControl x:Name="ListViewTableOrder" Margin="5" ItemsSource="{Binding OrderTable}">
+                <ItemsControl x:Name="ListViewTableOrder" Margin="5" ItemsSource="{Binding ListFoodOrder}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Border Background="#FFEDEDED" Height="70" Margin="10" CornerRadius="10">
@@ -95,6 +96,7 @@
                 </ItemsControl>
             </StackPanel>
         </ScrollViewer>
-        <Button Grid.Row="4" Content="{x:Static language:Lang.Table_Detail_Confirm}"></Button>
+        <Button Grid.Row="4" Content="{x:Static language:Lang.Table_Detail_Confirm}"
+                 cal:Message.Attach="[Event Click] = [Action btnConfirmReceipt()]"></Button>
     </Grid>
 </Window>

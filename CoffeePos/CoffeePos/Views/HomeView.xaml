@@ -152,7 +152,7 @@
                 </Grid>
                 <ScrollViewer Margin="0 70 0 190" HorizontalAlignment="Center" HorizontalScrollBarVisibility="Hidden">
                     <StackPanel>
-                        <ListView x:Name="ListViewFoodOrder" Margin="0 0 0 0"
+                        <ListBox x:Name="ListViewFoodOrder" Margin="0 0 0 0"
                                       ItemsSource="{Binding FoodOrders}" SelectedIndex="{Binding SelectedIndexOrder}" >
                             <!--<ListView.Resources>
                                 <Style TargetType="ListViewItem">
@@ -212,8 +212,7 @@
                                                     </MenuItem.Icon>
                                                     <MenuItem Header="Chỉnh sửa" 
                                                               x:Name="EditMenuBtn"
-                                                              Command="{Binding EditCommand}" 
-                                                              CommandParameter="{Binding ViewModelItem}">
+                                                              Click="OrderCustom_Click">
                                                         
                                                     </MenuItem>
                                                     <MenuItem Header="Xóa"
@@ -244,7 +243,7 @@
                                     <WrapPanel/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>-->
-                        </ListView>
+                        </ListBox>
 
                     </StackPanel>
                 </ScrollViewer>

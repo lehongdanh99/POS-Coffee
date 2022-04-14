@@ -62,6 +62,8 @@ namespace CoffeePos.ViewModels
 
         }
 
+        ListOrderViewModel listOrderViewModel;
+
         private bool isBgLocally = true;
 
         private bool confirmFromHome = true;
@@ -367,9 +369,11 @@ namespace CoffeePos.ViewModels
 
         public void btListOrder_Click()
         {
-            ListOrderViewModel listOrderViewModel = new ListOrderViewModel();
+
             //orderDetailViewModel.eventChange += HandleCallBack;
 
+                ListOrderViewModel listOrderViewModel = new ListOrderViewModel();
+            
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(listOrderViewModel);
         }
@@ -406,6 +410,8 @@ namespace CoffeePos.ViewModels
             {
                 FoodOrderSelected = FoodOrders[SelectedIndexOrder];
             }
+            else
+            { return; }    
             
 
             OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(default,FoodOrderSelected);
@@ -450,7 +456,7 @@ namespace CoffeePos.ViewModels
         public void btOrderLocally_Click()
         {
             TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(FoodOrders, TableNum, TotalOrder, AmountFood, confirmFromHome);
-            tableDetailViewModel.eventChange += HandleCallBack;
+            //tableDetailViewModel.eventChange += HandleCallBack;
 
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(tableDetailViewModel);
