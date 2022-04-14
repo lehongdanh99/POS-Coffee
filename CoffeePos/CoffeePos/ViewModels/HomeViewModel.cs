@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
+using static CoffeePos.FoodOrderModel;
 
 namespace CoffeePos.ViewModels
 {
@@ -37,23 +38,27 @@ namespace CoffeePos.ViewModels
             Foods = GetFoods();
             AllFoods = GetFoods();
             TypeFoods = GetTypeFoods();
-            if(foodOrders== null)
+            if(listViewFoodOrders == null)
             {
-                foodOrders = new ObservableCollection<FoodOrder>();
+                listViewFoodOrders = new ObservableCollection<FoodOrder>();
             }
+            ListViewFoodOrders = FoodOrderModel.GetInstance().FoodOrders;
             GetFoodOrderTotal();
-            NotifyOfPropertyChange(() => FoodOrders);
 
 
         }
 
         private void GetFoodOrderTotal()
         {
-            foodOrderTotalCount = foodOrders.Count;
-            AmountFood = 0;
-            for (int i = 0; i < foodOrders.Count; i++)
+            if (listViewFoodOrders == null)
             {
-                AmountFood += foodOrders[i].FoodOrderPrice;
+                return;
+            }
+            foodOrderTotalCount = ListViewFoodOrders.Count;
+            AmountFood = 0;
+            for (int i = 0; i < ListViewFoodOrders.Count; i++)
+            {
+                AmountFood += ListViewFoodOrders[i].FoodOrderPrice;
             }
             TotalOrder = AmountFood - DiscountOrder;
             NotifyOfPropertyChange(() => FoodOrderTotalCount);
@@ -161,13 +166,22 @@ namespace CoffeePos.ViewModels
                 }
                 _selectedIndexOrder = value;
                 isOrderSelected = true;
-                if(_selectedIndexOrder >= 0)
-                {
-                    btOrderCustom_Click();
-                }
+                //if(_selectedIndexOrder >= 0)
+                //{
+                //    btOrderCustom_Click();
+                //}
                 
                 NotifyOfPropertyChange(() => SelectedIndexOrder);
             }
+        }
+
+
+        private ObservableCollection<FoodOrder> listViewFoodOrders;
+
+        public ObservableCollection<FoodOrder> ListViewFoodOrders
+        {
+            get { return listViewFoodOrders; }
+            set { listViewFoodOrders = value; NotifyOfPropertyChange(() => ListViewFoodOrders); }
         }
 
         private int foodOrderTotalCount = 0;
@@ -281,13 +295,7 @@ namespace CoffeePos.ViewModels
         }
 
 
-        private ObservableCollection<FoodOrder> foodOrders;
-
-        public ObservableCollection<FoodOrder> FoodOrders
-        {
-            get { return foodOrders; }
-            set { foodOrders = value; NotifyOfPropertyChange(() => FoodOrders); }
-        }
+        
 
         private ObservableCollection<string> GetTypeFoods()
         {
@@ -396,7 +404,7 @@ namespace CoffeePos.ViewModels
         {
             if(_selectedIndexFood >= 0)
             {
-                FoodOrders.Add(food);
+                FoodOrderModel.GetInstance().FoodOrders.Add(food);
             }
             
             
@@ -404,15 +412,11 @@ namespace CoffeePos.ViewModels
             GetFoodOrderTotal();
         }
 
-        public void btOrderCustom_Click()
+
+        public void btOrderCustom_Click(FoodOrder foodOrder)
         {
-            if(SelectedIndexOrder >= 0)
-            {
-                FoodOrderSelected = FoodOrders[SelectedIndexOrder];
-            }
-            else
-            { return; }    
             
+            FoodOrderSelected = foodOrder;
 
             OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(default,FoodOrderSelected);
             orderDetailViewModel.eventCustomChange += HandleCallBackCustom;
@@ -421,14 +425,24 @@ namespace CoffeePos.ViewModels
             windowManager.ShowWindowAsync(orderDetailViewModel);
         }
 
+        public void DeleteFoodListOrder(FoodOrder foodorder)
+        {
+            FoodOrderModel.GetInstance().FoodOrders.Remove(foodorder);
+        }
+
         public void HandleCallBackCustom(FoodOrder food)
         {
-            if (_selectedIndexOrder >= 0)
+            for(int i = 0; i < ListViewFoodOrders.Count; i++)
             {
-                FoodOrders[SelectedIndexOrder] = food;
+                if(food.FoodOrderName == ListViewFoodOrders[i].FoodOrderName)
+                {
+                    ListViewFoodOrders[i]  = food;
+                    
+                    
+                }
             }
+            //ListViewFoodOrders[food] = food;
 
-            NotifyOfPropertyChange(() => FoodOrders);
             GetFoodOrderTotal();
         }
 
@@ -455,7 +469,7 @@ namespace CoffeePos.ViewModels
 
         public void btOrderLocally_Click()
         {
-            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(FoodOrders, TableNum, TotalOrder, AmountFood, confirmFromHome);
+            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(ListViewFoodOrders, TableNum, TotalOrder, AmountFood, confirmFromHome);
             //tableDetailViewModel.eventChange += HandleCallBack;
 
             WindowManager windowManager = new WindowManager();

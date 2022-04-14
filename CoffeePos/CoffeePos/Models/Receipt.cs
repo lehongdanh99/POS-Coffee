@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
-
+using static CoffeePos.FoodOrderModel;
 
 namespace CoffeePos.Models
 {

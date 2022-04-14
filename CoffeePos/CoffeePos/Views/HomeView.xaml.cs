@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static CoffeePos.FoodOrderModel;
 
 namespace CoffeePos.Views
 {
@@ -41,10 +42,15 @@ namespace CoffeePos.Views
         private void OrderCustom_Click(object sender, RoutedEventArgs e)
         {
 
-            HomeViewModel.GetInstance().btOrderCustom_Click();
+            FoodOrder obj = ((FrameworkElement)sender).DataContext as FoodOrder;
+            HomeViewModel.GetInstance().btOrderCustom_Click(obj);
         }
 
-
+        private void DeleteFood_Click(object sender, RoutedEventArgs e)
+        {
+            FoodOrder obj = ((FrameworkElement)sender).DataContext as FoodOrder;
+            HomeViewModel.GetInstance().DeleteFoodListOrder(obj);
+        }
 
     }
 }

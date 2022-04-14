@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using static CoffeePos.FoodOrderModel;
 using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.ViewModels
