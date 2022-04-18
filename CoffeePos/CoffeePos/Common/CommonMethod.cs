@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace CoffeePos.Common
 {
@@ -35,6 +37,16 @@ namespace CoffeePos.Common
             }
             log.Info($"Read file Table config to Table model {json.ToString()} ");
             return model;
+        }
+
+        public ImageSource convertByte(byte[] byteImage)
+        {
+            BitmapImage biImg = new BitmapImage();
+            MemoryStream ms = new MemoryStream(byteImage);
+            biImg.BeginInit();
+            biImg.StreamSource = ms;
+            biImg.EndInit();
+            return biImg as ImageSource;
         }
     }
 }
