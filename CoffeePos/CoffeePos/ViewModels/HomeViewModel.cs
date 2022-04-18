@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+using CoffeePos.Common;
+using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
+using static CoffeePos.FoodOrderModel;
 
 namespace CoffeePos.ViewModels
 {
@@ -15,6 +18,7 @@ namespace CoffeePos.ViewModels
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private static HomeViewModel _instance;
+        TablesViewModel tableViewModel;
         public static HomeViewModel GetInstance()
         {
             if (_instance == null)
@@ -28,37 +32,46 @@ namespace CoffeePos.ViewModels
         }
         public HomeViewModel(Foods foodOrder = default)
         {
-            
             bgLocally = new SolidColorBrush(Colors.Orange);
             bgDelivery = new SolidColorBrush(Colors.LightGray);
             VisibleLocally = Visibility.Hidden;
             Foods = GetFoods();
-            
+            AllFoods = GetFoods();
             TypeFoods = GetTypeFoods();
-            if(foodOrders== null)
+            if(listViewFoodOrders == null)
             {
-                foodOrders = new BindableCollection<Foods>();
+                listViewFoodOrders = new ObservableCollection<FoodOrder>();
             }
-            if(foodOrder != null)
-            {
-                foodOrders.Add(foodOrder);
-            }
+            ListViewFoodOrders = FoodOrderModel.GetInstance().FoodOrders;
             GetFoodOrderTotal();
-            NotifyOfPropertyChange(() => FoodOrders);
 
 
         }
 
         private void GetFoodOrderTotal()
         {
-            FoodOrderCount = foodOrders.Count;
-            for(int i = 0; i < foodOrders.Count; i++)
+            if (listViewFoodOrders == null)
             {
-                AmountFood += foodOrders[i].FoodOrderPrice;
+                return;
             }
+            foodOrderTotalCount = ListViewFoodOrders.Count;
+            AmountFood = 0;
+            for (int i = 0; i < ListViewFoodOrders.Count; i++)
+            {
+                AmountFood += ListViewFoodOrders[i].FoodOrderPrice;
+            }
+            TotalOrder = AmountFood - DiscountOrder;
+            NotifyOfPropertyChange(() => FoodOrderTotalCount);
+            NotifyOfPropertyChange(() => AmountFood);
+            NotifyOfPropertyChange(() => TotalOrder);
+
         }
 
+        ListOrderViewModel listOrderViewModel;
+
         private bool isBgLocally = true;
+
+        private bool confirmFromHome = true;
 
         private Visibility visibleLocally;
         public Visibility VisibleLocally 
@@ -75,34 +88,108 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        private Visibility visibleTable;
+        public Visibility VisibleTable
+        {
+
+            get
+            {
+                return visibleTable;
+            }
+            set
+            {
+                visibleTable = value;
+                NotifyOfPropertyChange(() => VisibleTable);
+            }
+        }
+
+        private bool isOrderSelected = false;
+
         public Foods FoodSelected { get; set; }
 
-        private int _selectedIndex;
-        public int SelectedIndex
+        public FoodOrder FoodOrderSelected { get; set; }
+
+        private int _selectedIndexFood = -1;
+        public int SelectedIndexFood
         {
             get
             {
-                return _selectedIndex;
+                return _selectedIndexFood;
             }
 
             set
             {
-                if (_selectedIndex == value)
+                if (_selectedIndexFood == value)
                 {
                     return;
                 }
-                _selectedIndex = value;                     
-                btOrderDetail_Click();
-                NotifyOfPropertyChange(() => SelectedIndex);
+                _selectedIndexFood = value;
+                isOrderSelected = false;
+                btOrderDetail_Click(_selectedIndexFood);
+                NotifyOfPropertyChange(() => SelectedIndexFood);
             }
         }
 
-        private int foodOrderCount = 0;
+        private string _selectedIndexTypeFood;
+        public string SelectedIndexTypeFood
+        {
+            get
+            {
+                return _selectedIndexTypeFood;
+            }
 
-        public int FoodOrderCount
+            set
+            {
+                if (_selectedIndexTypeFood == value)
+                {
+                    return;
+                }
+                _selectedIndexTypeFood = value;
+                btTypeChoose(_selectedIndexTypeFood);
+                NotifyOfPropertyChange(() => SelectedIndexTypeFood);
+            }
+        }
+
+        private int _selectedIndexOrder = -1;
+        public int SelectedIndexOrder
+        {
+            get
+            {
+                return _selectedIndexOrder;
+            }
+
+            set
+            {
+                if (_selectedIndexOrder == value)
+                {
+                    return;
+                }
+                _selectedIndexOrder = value;
+                isOrderSelected = true;
+                //if(_selectedIndexOrder >= 0)
+                //{
+                //    btOrderCustom_Click();
+                //}
+                
+                NotifyOfPropertyChange(() => SelectedIndexOrder);
+            }
+        }
+
+
+        private ObservableCollection<FoodOrder> listViewFoodOrders;
+
+        public ObservableCollection<FoodOrder> ListViewFoodOrders
+        {
+            get { return listViewFoodOrders; }
+            set { listViewFoodOrders = value; NotifyOfPropertyChange(() => ListViewFoodOrders); }
+        }
+
+        private int foodOrderTotalCount = 0;
+
+        public int FoodOrderTotalCount
         { 
-            get { return foodOrderCount; } 
-            set { foodOrderCount = value; NotifyOfPropertyChange(() => FoodOrderCount); }
+            get { return foodOrderTotalCount; } 
+            set { foodOrderTotalCount = value; NotifyOfPropertyChange(() => FoodOrderTotalCount); }
         }
 
         private double discountOrder = 0;
@@ -130,17 +217,50 @@ namespace CoffeePos.ViewModels
             set { amountFood = value; NotifyOfPropertyChange(() => AmountFood); }
         }
 
-        private List<Foods> foods;
+        private int tableNum = 0;
 
-        public List<Foods> Foods
+        public int TableNum
         {
-            get { return foods; }
-            set { foods = value; }
+            get { return tableNum; }
+            set { tableNum = value; NotifyOfPropertyChange(() => TableNum);
+                if (tableNum != 0)
+                {
+                    EnableOrder = true;
+                } 
+                else
+                {
+                    EnableOrder = false;
+                }
+                NotifyOfPropertyChange(() => EnableOrder);
+            }
         }
 
-        private List<TypeFoods> typeFoods;
+        private bool enableOrder = false;
 
-        public List<TypeFoods> TypeFoods
+        public bool EnableOrder
+        {
+            get { return enableOrder; }
+            set { enableOrder = value; NotifyOfPropertyChange(() => EnableOrder); }
+        }
+
+        private ObservableCollection<Foods> foods;
+
+        public ObservableCollection<Foods> Foods
+        {
+            get { return foods; }
+            set { foods = value; NotifyOfPropertyChange(() => Foods); }
+        }
+
+        private ObservableCollection<Foods> allFoods;
+        public ObservableCollection<Foods> AllFoods
+        {
+            get { return allFoods; }
+            set { allFoods = value; NotifyOfPropertyChange(() => AllFoods); }
+        }
+
+        private ObservableCollection<string> typeFoods;
+
+        public ObservableCollection<string> TypeFoods
         {
             get { return typeFoods; }
             set { typeFoods = value; }
@@ -175,74 +295,104 @@ namespace CoffeePos.ViewModels
         }
 
 
-        private BindableCollection<Foods> foodOrders;
-
-        public BindableCollection<Foods> FoodOrders
-        {
-            get { return foodOrders; }
-            set { foodOrders = value; NotifyOfPropertyChange(() => FoodOrders); }
-        }
-
-        private BindableCollection<TypeFoods> GetTypeFoods()
-        {
-            return new List<TypeFoods>()
-            {
-                new TypeFoods("Ăn chính"),
-                new TypeFoods("Ăn kèm"),
-                new TypeFoods("Đồ uống"),
-                new TypeFoods("Tráng miệng"),
-                new TypeFoods("Bánh"),
-                new TypeFoods("Bia"),
-                new TypeFoods("Nước ngọt")
-            };
-        }
-
-        private List<FoodOrder> GetFoodOrder()
-        {
-            return new List<FoodOrder>()
-            {
-                
-            };
-        }
-
-        private List<Foods> GetFoods()
-        {
-            return new List<Foods>()
-            {
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe swa da da da", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-                new Foods("cafe sua", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg"),
-            };
-        }
         
-        public void btOrderDetail_Click()
+
+        private ObservableCollection<string> GetTypeFoods()
         {
-                FoodSelected = Foods[SelectedIndex];
+            ObservableCollection<string> typeFood = new ObservableCollection<string>();
+
+            for(int i = 0; i < Foods.Count; i++)
+            {
+                if(typeFood.Count != 0)
+                {
+                    bool isTypeAdd = false;
+                    for(int j = 0; j < typeFood.Count; j++)
+                    {
+                        if(Foods[i].FoodType == typeFood[j])
+                            isTypeAdd = true;
+                    }
+                    if(!isTypeAdd)
+                        typeFood.Add(Foods[i].FoodType);
+                }
+                else
+                    typeFood.Add(Foods[i].FoodType);
+            }    
+
+            return typeFood;        
+        }
+
+        private ObservableCollection<Foods> GetFoodOrder()
+        {
+            return new ObservableCollection<Foods>()
+            {
+                new Foods("cafe sữa tươi", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
+                new Foods("cafe swa da", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
+                new Foods("nước cam", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
+            };
+        }
+
+        private ObservableCollection<Foods> GetFoods()
+        {
+            return new ObservableCollection<Foods>()
+            {
+                new Foods("cafe sữa tươi", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
+                new Foods("cafe sữa đá", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
+                new Foods("nước cam", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
+                new Foods("nước dừa", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
+                new Foods("nước bưởi", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
+                new Foods("nước táo", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
+                new Foods("sữa chua", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Món ăn kèm"),
+                new Foods("trà sữa", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
+                new Foods("trà sữa trân châu", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
+                new Foods("trà xanh", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
+                new Foods("trà táo", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
+                new Foods("trà đào", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
+                new Foods("soda táo", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Soda"),
+                new Foods("soda dứa", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Soda"),
+                new Foods("bạc sỉu", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
+                new Foods("nước mơ", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
+                new Foods("Sườn bì chả trứng", 30000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Món ăn kèm"),
+            };
+        }
+
+        private ObservableCollection<Foods> GetFoodByType(string foodType)
+        {
+            ObservableCollection<Foods> Listfoods = new ObservableCollection<Foods>();
+            for(int i = 0; i < AllFoods.Count; i++)
+            {
+                if(AllFoods[i].FoodType == foodType)
+                {
+                    Listfoods.Add(AllFoods[i]);
+                }
+            }
+
+            return Listfoods;
+        }
+
+        public void btTypeChoose(string SelectedTypeFood)
+        {
+            Foods = GetFoodByType(SelectedTypeFood);
+            NotifyOfPropertyChange(() => Foods);
+        }
+
+        public void btListOrder_Click()
+        {
+
+            //orderDetailViewModel.eventChange += HandleCallBack;
+
+                ListOrderViewModel listOrderViewModel = new ListOrderViewModel();
+            
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(listOrderViewModel);
+        }
+
+
+        public void btOrderDetail_Click(int SelectedListFood)
+        {
+            
+                FoodSelected = Foods[SelectedListFood];
+            
+                
                 OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(FoodSelected);
                 orderDetailViewModel.eventChange += HandleCallBack;
 
@@ -250,15 +400,56 @@ namespace CoffeePos.ViewModels
                 windowManager.ShowWindowAsync(orderDetailViewModel);
         }
 
-        public void HandleCallBack(Foods food)
+        public void HandleCallBack(FoodOrder food)
         {
-            FoodOrders.Add(food);
+            if(_selectedIndexFood >= 0)
+            {
+                FoodOrderModel.GetInstance().FoodOrders.Add(food);
+            }
+            
+            
+            
+            GetFoodOrderTotal();
+        }
+
+
+        public void btOrderCustom_Click(FoodOrder foodOrder)
+        {
+            
+            FoodOrderSelected = foodOrder;
+
+            OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(default,FoodOrderSelected);
+            orderDetailViewModel.eventCustomChange += HandleCallBackCustom;
+
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(orderDetailViewModel);
+        }
+
+        public void DeleteFoodListOrder(FoodOrder foodorder)
+        {
+            FoodOrderModel.GetInstance().FoodOrders.Remove(foodorder);
+        }
+
+        public void HandleCallBackCustom(FoodOrder food)
+        {
+            for(int i = 0; i < ListViewFoodOrders.Count; i++)
+            {
+                if(food.FoodOrderName == ListViewFoodOrders[i].FoodOrderName)
+                {
+                    ListViewFoodOrders[i]  = food;
+                    
+                    
+                }
+            }
+            //ListViewFoodOrders[food] = food;
+
+            GetFoodOrderTotal();
         }
 
         public void btTable_Click()
         {
             TablesViewModel tableViewModel = new TablesViewModel(false);
-            
+
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(tableViewModel);
 
@@ -266,15 +457,36 @@ namespace CoffeePos.ViewModels
 
         public void btTableChoose_Click()
         {
-            TablesViewModel tableViewModel = new TablesViewModel(true);
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowDialogAsync(tableViewModel);
-            Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
+            if(tableViewModel == null)
             {
-                TryCloseAsync();
-            }));
+                tableViewModel = new TablesViewModel(true);
+            }
+            tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(tableViewModel);
+
         }
-        
+
+        public void btOrderLocally_Click()
+        {
+            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(ListViewFoodOrders, TableNum, TotalOrder, AmountFood, confirmFromHome);
+            //tableDetailViewModel.eventChange += HandleCallBack;
+
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(tableDetailViewModel);
+        }
+
+        public void btOrderDelivery_Click()
+        {
+
+        }
+
+        public void HandleCallBacChooseTable(int TableChoose)
+        {
+            TableNum = TableChoose;
+            NotifyOfPropertyChange(() => TableNum);
+        }
+
         public void btRegister_Click()
         {
             RegisterViewModel registerViewModel = new RegisterViewModel();
@@ -301,6 +513,7 @@ namespace CoffeePos.ViewModels
                 BgDelivery = new SolidColorBrush(Colors.LightGray);
                 isBgLocally = true;
                 VisibleLocally = Visibility.Hidden;
+                VisibleTable = Visibility.Visible;
             }
 
         }
@@ -313,6 +526,7 @@ namespace CoffeePos.ViewModels
                 BgDelivery = new SolidColorBrush(Colors.Orange);
                 isBgLocally = false;
                 VisibleLocally = Visibility.Visible;
+                VisibleTable = Visibility.Hidden;
             }
 
         }

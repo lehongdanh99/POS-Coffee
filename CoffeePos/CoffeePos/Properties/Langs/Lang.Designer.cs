@@ -142,6 +142,33 @@ namespace CoffeePos.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Order Detail.
+        /// </summary>
+        public static string ListOrder_OrderDetail {
+            get {
+                return ResourceManager.GetString("ListOrder_OrderDetail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment.
+        /// </summary>
+        public static string ListOrder_Payment {
+            get {
+                return ResourceManager.GetString("ListOrder_Payment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List Orders.
+        /// </summary>
+        public static string ListOrder_Title {
+            get {
+                return ResourceManager.GetString("ListOrder_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string Login_Exit {
@@ -295,6 +322,15 @@ namespace CoffeePos.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string Table_Detail_Confirm {
+            get {
+                return ResourceManager.GetString("Table_Detail_Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discount.
         /// </summary>
         public static string Table_Discount {
@@ -327,6 +363,15 @@ namespace CoffeePos.Properties.Langs {
         public static string Tables_Empty {
             get {
                 return ResourceManager.GetString("Tables_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Floor .
+        /// </summary>
+        public static string Tables_Floor {
+            get {
+                return ResourceManager.GetString("Tables_Floor", resourceCulture);
             }
         }
         

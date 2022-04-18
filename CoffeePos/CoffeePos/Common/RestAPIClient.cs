@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using System.Net.Http;
 using static CoffeePos.Common.Enums;
 
 namespace CoffeePos.Common
@@ -16,15 +15,7 @@ namespace CoffeePos.Common
             endPoint = string.Empty;
             httpVerb = httpVerb.GET;
         }
-        HttpClient client = new HttpClient();
-        public async void baseHttpRequest()
-        {
-            client.BaseAddress = new Uri(endPoint);
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            await client.GetStringAsync("");
-        }
+
         public string makeGetRequest()
         {
             string strResValue = string.Empty;

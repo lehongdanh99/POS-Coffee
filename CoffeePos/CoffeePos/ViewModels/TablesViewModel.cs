@@ -1,190 +1,212 @@
-﻿//using Caliburn.Micro;
-//using CoffeePos.Models;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using System.Windows.Media;
+﻿using Caliburn.Micro;
+using CoffeePos.Common;
+using CoffeePos.Models;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Media;
+using static CoffeePos.Models.TableModel;
 
-//namespace CoffeePos.ViewModels
-//{
-//    internal class TablesViewModel : Screen
-//    {
-//        bool isChoose;
-//        int floor = 1;
+namespace CoffeePos.ViewModels
+{
+    internal class TablesViewModel : Screen
+    {
+        bool isChoose;
+        int floor = 1;
+        public SelectedTableThis eventChooseTableToOrder;
+        public delegate void SelectedTableThis(int SelectedTable);
+        TableModel tablemodel = new TableModel();
 
-//        public TablesViewModel(bool isChooseTable)
-//        {
-//            isChoose = isChooseTable;
-//            TablesAllList = GetAllTableList();
-//            TablesList = GetTableList(floor, TablesAllList);
-//        }
+        public TablesViewModel(bool isChooseTable)
+        {
+            tablemodel = CommonMethod.GetInstance().readJsonFileConfig();
 
-//        private SolidColorBrush colorTable;
-//        public SolidColorBrush ColorTable { get { return colorTable; }
-//            set
-//            {
-//                colorTable = value;
-//                NotifyOfPropertyChange(() => ColorTable);
-//            } }
+            isChoose = isChooseTable;
+            TablesAllList = GetAllTableList();
+            GetStatusAllTableList(TablesAllList);
+            ListFloor = GetListFloor();
+            TablesList = GetTableList(listFloorSelected, TablesAllList);
+        }
 
-//        private List<TableModel> GetAllTableList()
-//        {
-            
-//            return new List<TableModel>()
-//            {
-//                new Table(true,1,4),
-//                new Table(true,2,4),
-//                new Table(false,2,3),
-//                new Table(true,3,4),
-//                new Table(false,3,4),
-//                new Table(false,3,2),
-//                new Table(true,1,4),
-//                new Table(true,2,4),
-//                new Table(false,2,3),
-//                new Table(true,3,4),
-//                new Table(false,3,4),
-//                new Table(false,3,2),
-//            };
-//        }
+        private void GetStatusAllTableList(ObservableCollection<Table> listTable)
+        {
+            EmtyCount = 0;
+            BusyCount = 0;
+            for (int i = 0; i < listTable.Count; i++)
+            {
+                if (!listTable[i].TableStatus)
+                {
+                    EmtyCount++;
+                }
+                else
+                    BusyCount++;
+            }
+            NotifyOfPropertyChange(() => EmtyCount);
+            NotifyOfPropertyChange(() => BusyCount);
+        }
 
-//        private List<Table> GetTableList(int floor, List<Table> tablesList)
-//        {
-//            List<Table> list = new List<Table>();
-//            for (int i = 0; i < tablesList.Count; i++)
-//            {
-//                if(tablesList[i].Floor == floor)
-//                {
-//                    list.Add(tablesList[i]);
-                    
-//                }
+        private ObservableCollection<int> GetListFloor()
+        {
+            ObservableCollection<int> listFloors = new ObservableCollection<int>();
+            for (int i = 0; i < TablesAllList.Count; i++)
+            {
+                if (listFloors.Count != 0)
+                {
+                    bool isFloor = false;
+                    for (int j = 0; j < listFloors.Count; j++)
+                    {
+                        if (TablesAllList[i].TableFloor == listFloors[j])
+                            isFloor = true;
+                    }
+                    if (!isFloor)
+                        listFloors.Add(TablesAllList[i].TableFloor);
+                }
+                else
+                    listFloors.Add(TablesAllList[i].TableFloor);
 
-//            }
-//            return list;
-            
-//        }
+            }
 
-//        private bool is1thFloor = true;
-//        private bool is2thFloor = false;
-//        private bool is3thFloor = false;
+            return listFloors;
+        }
 
-//        private SolidColorBrush bg1thFloor;
-//        public SolidColorBrush Bg1thFloor
-//        {
-//            get
-//            {
-//                return bg1thFloor;
-//            }
-//            set
-//            {
-//                bg1thFloor = value;
-//                NotifyOfPropertyChange(() => Bg1thFloor);
-//            }
-//        }
+        private int emtycount;
+        public int EmtyCount
+        {
+            get { return emtycount; }
+            set
+            {
+                emtycount = value;
+                NotifyOfPropertyChange(() => EmtyCount);
+            }
+        }
 
-//        private SolidColorBrush bg2thFloor;
-//        public SolidColorBrush Bg2thFloor
-//        {
-//            get
-//            {
-//                return bg2thFloor;
-//            }
-//            set
-//            {
-//                bg2thFloor = value;
-//                NotifyOfPropertyChange(() => Bg2thFloor);
-//            }
-//        }
+        private int busycount;
+        public int BusyCount
+        {
+            get { return busycount; }
+            set
+            {
+                busycount = value;
+                NotifyOfPropertyChange(() => BusyCount);
+            }
+        }
 
-//        private SolidColorBrush bg3thFloor;
-//        public SolidColorBrush Bg3thFloor
-//        {
-//            get
-//            {
-//                return bg3thFloor;
-//            }
-//            set
-//            {
-//                bg3thFloor = value;
-//                NotifyOfPropertyChange(() => Bg3thFloor);
-//            }
-//        }
+        private Table _selectedIndexTable;
+        public Table SelectedIndexTable
+        {
+            get
+            {
+                return _selectedIndexTable;
+            }
 
-//        private List<Table> TablesAllList;
+            set
+            {
 
-//        private List<Table> tables;
-//        public List<Table> TablesList
-//        {
-//            get { return tables; }
-//            set { tables = value; NotifyOfPropertyChange(() => TablesList); }
-//        }
+                _selectedIndexTable = value;
+                if (_selectedIndexTable != null)
+                {
+                    btTableSelected_Click(_selectedIndexTable);
+                }
 
-//        public void btDetail_Click()
-//        {
-//            TableDetailViewModel registerViewModel = new TableDetailViewModel();
-//            WindowManager windowManager = new WindowManager();
-//            windowManager.ShowDialogAsync(registerViewModel);
+                NotifyOfPropertyChange(() => SelectedIndexTable);
+            }
+        }
 
-//        }
+        public void btTableSelected_Click(Table SelectedListTable)
+        {
 
-//        public void bt1thFloor_Click()
-//        {
-//            if (is1thFloor != true)
-//            {
-//                Bg1thFloor = new SolidColorBrush(Colors.Orange);
-//                Bg2thFloor = new SolidColorBrush(Colors.LightGray);
-//                Bg3thFloor = new SolidColorBrush(Colors.LightGray);
-//                is1thFloor = true;
-//                is2thFloor = false;
-//                is3thFloor = false;
-//                floor = 1;
-//                TablesList = GetTableList(floor, TablesAllList);
-//                NotifyOfPropertyChange(() => TablesList);
-//                NotifyOfPropertyChange(() => Bg1thFloor);
-//                NotifyOfPropertyChange(() => Bg2thFloor);
-//                NotifyOfPropertyChange(() => Bg3thFloor);
-//            }
-//        }
+            if (SelectedListTable.TableStatus)
+            {
+                //TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
+                ////orderDetailViewModel.eventChange += HandleCallBack;
 
-//        public void bt2thFloor_Click()
-//        {
-//            if (is2thFloor != true)
-//            {
-//                Bg1thFloor = new SolidColorBrush(Colors.LightGray);
-//                Bg2thFloor = new SolidColorBrush(Colors.Orange);
-//                Bg3thFloor = new SolidColorBrush(Colors.LightGray);
-//                is1thFloor = false;
-//                is2thFloor = true;
-//                is3thFloor = false;
-//                floor = 2;
-//                TablesList = GetTableList(floor, TablesAllList);
-//                NotifyOfPropertyChange(() => TablesList);
-//                NotifyOfPropertyChange(() => Bg1thFloor);
-//                NotifyOfPropertyChange(() => Bg2thFloor);
-//                NotifyOfPropertyChange(() => Bg3thFloor);
-//            }
-//        }
+                //WindowManager windowManager = new WindowManager();
+                //windowManager.ShowWindowAsync(tableDetailViewModel);
+            }
+            else if (isChoose && !SelectedListTable.TableStatus)
+            {
+                int tableIdChoose = SelectedListTable.TableID;
+                eventChooseTableToOrder?.Invoke(tableIdChoose);
+                //SelectedListTable.TableStatus = true;
+                //GetStatusAllTableList(TablesList);
+                this.TryCloseAsync();
+            }
+            NotifyOfPropertyChange(() => SelectedListTable.BgStatusTable);
+        }
 
-//        public void bt3thFloor_Click()
-//        {
-//            if (is3thFloor != true)
-//            {
-//                Bg1thFloor = new SolidColorBrush(Colors.LightGray);
-//                Bg2thFloor = new SolidColorBrush(Colors.LightGray);
-//                Bg3thFloor = new SolidColorBrush(Colors.Orange);
-//                is1thFloor = false;
-//                is2thFloor = false;
-//                is3thFloor = true;
-//                floor = 3;
-//                TablesList = GetTableList(floor, TablesAllList);
-//                NotifyOfPropertyChange(() => TablesList);
-//                NotifyOfPropertyChange(() => Bg1thFloor);
-//                NotifyOfPropertyChange(() => Bg2thFloor);
-//                NotifyOfPropertyChange(() => Bg3thFloor);
-//            }
-//        }
-//    }
+        private ObservableCollection<Table> GetAllTableList()
+        {
+            ObservableCollection<Table> tables = new ObservableCollection<Table>();
+            foreach (var item in tablemodel.TableNumber)
+            {
+                tables.Add(item.Value);
+            }           
+            return tables;            
+        }
 
-    
-//}
+        private ObservableCollection<int> listFloor;
+
+        public ObservableCollection<int> ListFloor
+        {
+            get { return listFloor; }
+            set { listFloor = value; NotifyOfPropertyChange(() => ListFloor); }
+        }
+
+        private int listFloorSelected = 1;
+
+        public int ListFloorSelected
+        {
+            get { return listFloorSelected; }
+            set
+            {
+                listFloorSelected = value;
+                NotifyOfPropertyChange(() => ListFloorSelected);
+                TablesList = GetTableList(ListFloorSelected, TablesAllList);
+                GetStatusAllTableList(TablesList);
+                NotifyOfPropertyChange(() => TablesList);
+            }
+        }
+
+        private ObservableCollection<Table> GetTableList(int floor, ObservableCollection<Table> tablesList)
+        {
+            ObservableCollection<Table> list = new ObservableCollection<Table>();
+            for (int i = 0; i < tablesList.Count; i++)
+            {
+                if (tablesList[i].TableFloor == floor)
+                {
+                    list.Add(tablesList[i]);
+
+                }
+
+            }
+            return list;
+
+        }
+
+
+
+        public ObservableCollection<Table> TablesAllList;
+
+        private ObservableCollection<Table> tables;
+        public ObservableCollection<Table> TablesList
+        {
+            get { return tables; }
+            set { tables = value; NotifyOfPropertyChange(() => TablesList); }
+        }
+
+        //public void btDetail_Click()
+        //{
+        //    TableDetailViewModel registerViewModel = new TableDetailViewModel();
+        //    WindowManager windowManager = new WindowManager();
+        //    windowManager.ShowDialogAsync(registerViewModel);
+
+        //}
+
+
+    }
+
+
+}

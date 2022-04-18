@@ -151,3 +151,1085 @@
 2022-04-01 20:12:56,058 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
 2022-04-01 20:14:51,484 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
 2022-04-01 20:15:30,788 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 14:44:22,214 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 15:05:05,117 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 15:10:48,303 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 15:11:25,169 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 15:21:57,016 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 15:28:37,851 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 15:41:30,407 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 15:43:43,486 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 15:44:49,756 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 15:47:51,292 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 15:49:33,853 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 15:51:19,186 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:00:31,835 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:06:22,238 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:10:00,661 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:13:38,513 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:16:34,237 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:21:34,734 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:24:15,083 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:27:11,443 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:31:39,288 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:37:05,908 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:45:21,557 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:45:58,733 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:46:51,778 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:49:17,134 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:50:29,910 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:51:59,711 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 16:54:49,149 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 17:00:41,145 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 17:06:04,027 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 17:21:34,393 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 17:28:40,795 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 17:34:40,365 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 17:38:16,226 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:02:50,552 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:03:39,703 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:04:48,140 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:06:01,873 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:11:28,900 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:14:25,976 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:16:28,625 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:19:26,170 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:22:13,554 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:31:11,275 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:33:43,116 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:35:20,721 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 18:49:13,776 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-02 19:00:27,574 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 14:14:52,930 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 15:30:53,719 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 15:36:13,159 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 15:37:40,595 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 15:45:20,093 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 15:48:06,810 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 15:54:00,504 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 15:56:22,876 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 15:57:28,201 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 15:59:20,506 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 16:10:01,420 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 16:13:18,299 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 16:14:17,190 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 16:15:12,492 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-03 16:36:26,352 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 15:22:02,543 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 16:43:22,336 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 16:43:30,821 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 16:50:31,552 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 16:50:42,072 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 16:52:11,746 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 16:52:16,272 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 16:57:42,221 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 16:57:46,307 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 17:01:36,229 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 17:01:39,562 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 17:04:42,514 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 17:04:55,651 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 17:09:27,263 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 17:09:31,292 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 17:26:40,058 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 17:26:43,955 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 17:27:27,769 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 17:27:32,557 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 17:29:23,611 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 17:29:27,495 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 17:39:58,795 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 17:40:03,024 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 17:51:19,413 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 17:51:23,600 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-14 17:59:35,576 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-14 18:01:27,560 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:01:21,464 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:05:50,175 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:12:03,330 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:15:10,521 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:23:19,718 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:23:49,825 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:27:27,096 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:33:08,672 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:40:04,358 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:42:01,151 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:44:56,152 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-15 00:56:00,897 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:57:08,498 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:58:23,414 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 00:58:55,113 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-15 01:07:58,723 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click

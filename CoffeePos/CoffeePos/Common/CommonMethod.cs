@@ -35,6 +35,8 @@ namespace CoffeePos.Common
             }
             log.Info($"Read file Table config to Table model {json.ToString()} ");
             return model;
-        }   
+        }
     }
 }
+
+

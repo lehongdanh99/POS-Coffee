@@ -6,33 +6,78 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Caliburn.Micro;
+using static CoffeePos.FoodOrderModel;
 
 namespace CoffeePos.ViewModels
 {
     internal class OrderDetailViewModel : Screen
     {
         public SelectedFoodThis eventChange;
-        public delegate void SelectedFoodThis(Foods selected);
+        public delegate void SelectedFoodThis(FoodOrder selected);
+
+        public SelectedFoodCustom eventCustomChange;
+        public delegate void SelectedFoodCustom(FoodOrder selectedCustom);
 
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         
-        public OrderDetailViewModel(Foods foodSelected)
+        public OrderDetailViewModel(Foods foodSelected = default, FoodOrder foodOrderSelected = default)
         {
-            FoodSelected = foodSelected;
-            GetFoodOrderDetail(FoodSelected);
-
+            
+            
+            GetFoodOrderDetail(foodSelected , foodOrderSelected);
+            if(foodSelected == default)
+            {
+                FoodSelectedOrder = foodOrderSelected;
+            }
+            else
+            {
+                FoodSelected = foodSelected;
+                FoodSelectedOrder = new FoodOrder();
+            }
             
 
-            BgSmallSize = new SolidColorBrush(Colors.Orange);
-            bgMediumSize = new SolidColorBrush(Colors.LightGray);
-            this.orderCount = 1;
+            
+            
         }
 
-        private void GetFoodOrderDetail(Foods foodSelected)
+        private void GetFoodOrderDetail(Foods foodSelected = default, FoodOrder foodOrderSelected = default)
         {
-            FoodName = foodSelected.FoodName.ToString();
-            FoodImage = foodSelected.FoodImage;
-            FoodPrice = foodSelected.FoodPrice;
+            
+            
+            if(foodOrderSelected == default)
+            {
+                FoodName = foodSelected.FoodName.ToString();
+                FoodImage = foodSelected.FoodImage;
+                this.orderCount = 1;
+                FoodPrice = foodSelected.FoodPrice;
+                BgSmallSize = new SolidColorBrush(Colors.Orange);
+                bgMediumSize = new SolidColorBrush(Colors.LightGray);
+                isSizeSmall = true;
+            }
+            else
+            {
+                FoodName = foodOrderSelected.FoodOrderName.ToString();
+                FoodImage = foodOrderSelected.FoodOrderImage;
+                this.orderCount = foodOrderSelected.FoodOrderCount;
+                FoodPrice = foodOrderSelected.FoodOrderPrice;
+                Note = foodOrderSelected.FoodOrderMore;
+
+                if (foodOrderSelected.FoodSize == "S")
+                {
+                    BgSmallSize = new SolidColorBrush(Colors.Orange);
+                    bgMediumSize = new SolidColorBrush(Colors.LightGray);
+                    isSizeSmall = true;
+                }
+                else
+                {
+                    BgSmallSize = new SolidColorBrush(Colors.LightGray);
+                    bgMediumSize = new SolidColorBrush(Colors.Orange);
+                    isSizeSmall = false;
+                }
+            }
+            
+            
+            
         }
 
         private string note;
@@ -71,6 +116,8 @@ namespace CoffeePos.ViewModels
         public string FoodImage { get; set; }
 
         private bool isSizeSmall= true;
+
+        private bool isOrderSelected = false;
 
         private SolidColorBrush bgSmallSize;
         public SolidColorBrush BgSmallSize
@@ -116,11 +163,19 @@ namespace CoffeePos.ViewModels
         
         public void btnLess_Click()
         {
+
             if(this.orderCount > 1)
             {
+                if (FoodSelected != default)
+                {
+                    FoodPrice = (FoodPrice / OrderCount) * (orderCount - 1);
+                }
+                else
+                {
+                    FoodPrice = FoodPrice / OrderCount * (orderCount - 1);
+                }
                 this.orderCount--;
             }
-            FoodPrice = FoodSelected.FoodPrice * orderCount;
             NotifyOfPropertyChange(() => this.orderCount);
             NotifyOfPropertyChange(() => FoodPrice);
 
@@ -133,7 +188,15 @@ namespace CoffeePos.ViewModels
                 BgSmallSize = new SolidColorBrush(Colors.Orange);
                 BgMediumSize = new SolidColorBrush(Colors.LightGray);
                 isSizeSmall = true;
-                FoodPrice = FoodSelected.FoodPrice;
+                if (FoodSelected != default)
+                {
+                    FoodPrice = FoodSelected.FoodPrice * OrderCount;
+                }
+                else
+                {
+                    FoodPrice = FoodPrice / (1 + 0.1);
+                }
+
                 NotifyOfPropertyChange(() => FoodPrice);
             }
         }
@@ -145,15 +208,45 @@ namespace CoffeePos.ViewModels
                 BgSmallSize = new SolidColorBrush(Colors.LightGray);
                 BgMediumSize = new SolidColorBrush(Colors.Orange);
                 isSizeSmall = false;
-                FoodPrice = FoodSelected.FoodPrice + 10000;
+                if(FoodSelected != default)
+                {
+                    FoodPrice = (FoodSelected.FoodPrice + FoodSelected.FoodPrice * 0.1) * OrderCount;
+                }
+                else
+                {
+                    FoodPrice = FoodPrice * 0.1 + FoodPrice;
+                }
+                
                 NotifyOfPropertyChange(() => FoodPrice);
             }
         }
 
         public void btnAdd_Click()
         {
+            
+            if(isSizeSmall)
+            {
+                if (FoodSelected != default)
+                {
+                    FoodPrice = (FoodPrice / OrderCount) * (orderCount + 1);
+                }
+                else
+                {
+                    FoodPrice = FoodPrice / OrderCount * (orderCount + 1);
+                }
+            }
+            else
+            {
+                if (FoodSelected != default)
+                {
+                    FoodPrice = (FoodPrice / OrderCount) * (orderCount + 1);
+                }
+                else
+                {
+                    FoodPrice = FoodPrice / OrderCount * (orderCount + 1);
+                }
+            }
             this.orderCount++;
-            FoodPrice = FoodSelected.FoodPrice * orderCount;
             NotifyOfPropertyChange(() => this.orderCount);
             NotifyOfPropertyChange(() => FoodPrice);
         }
@@ -171,19 +264,27 @@ namespace CoffeePos.ViewModels
 
         public void btnOrder_Click()
         {
-            FoodSelected.FoodOrderPrice = FoodPrice;
-            if(isSizeSmall)
-            {
-                FoodSelected.FoodSize = "S";
-            }
-            else
-            {
-                FoodSelected.FoodSize = "M";
-            }
-            FoodSelected.FoodOrderCount = OrderCount;
-            FoodSelected.FoodOrderMore = Note;
 
-            eventChange?.Invoke(FoodSelected);
+            
+                FoodSelectedOrder.FoodOrderPrice = FoodPrice;
+                if (isSizeSmall)
+                {
+                    FoodSelectedOrder.FoodSize = "S";
+                }
+                else
+                {
+                    FoodSelectedOrder.FoodSize = "M";
+                }
+                FoodSelectedOrder.FoodOrderCount = OrderCount;
+                FoodSelectedOrder.FoodOrderMore = Note;
+            FoodSelectedOrder.FoodOrderImage = FoodImage;
+            FoodSelectedOrder.FoodOrderName = FoodName;
+            eventCustomChange?.Invoke(FoodSelectedOrder);
+
+            eventChange?.Invoke(FoodSelectedOrder);
+
+
+
             this.TryCloseAsync();
             //WindowManager windowManager = new WindowManager();
             //windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
