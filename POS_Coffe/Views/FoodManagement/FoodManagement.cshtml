@@ -1,0 +1,64 @@
+﻿@model List<POS_Coffe.Models.FoodModel>
+@{
+    ViewBag.Title = "FoodManagement";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<div class="row">
+    <div class="column">
+        @using (Html.BeginForm("FoodManagement", "FoodManagement", FormMethod.Get@*, new { @class = "form-inline" }*@))
+{
+<a class="button" href="#">Search</a>
+<input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />
+}
+        <div class="card">
+            <div class="card-block">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Picture</th>
+                            <th>Type</th>
+                     
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Price</td>
+                                <td>@item.Picture</td>
+                                <td>@item.Type</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {FoodID = item.FoodID })"'>  Edit </button>
+                                    <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger" value="  Delete  " />
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function AddNew() {
+        console.log()
+        window.location.href = "/FoodManagement/AddFood"
+    }
+    function btnConfirm(EmployeeID) {
+        if (confirm('Do you want to delete ?')) {
+            var url = '@Url.Action("FoodManagement", "Employee")?EmployeeID=' + EmployeeID;
+            window.location.href = url;
+        }
+    }
+
+</script>
+
+

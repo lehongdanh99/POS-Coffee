@@ -1,0 +1,111 @@
+﻿@model POS_Coffe.Models.DrinkCakeModel
+@{
+    ViewBag.Title = "AddFood";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<div class="row grid-responsive">
+    <div class="column ">
+        <div class="card">
+            <div class="card-title">
+                <h3>Add Food</h3>
+            </div>
+            <div class="card-block">
+                @using (Html.BeginForm("AddFood", "FoodManagement", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="Name">Name</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="Price">Price</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.Price, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="Picture">Picture</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.Picture, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="Type">Type</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <input class="button-primary" type="submit" value="Send">
+                    @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
+                    <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
+
+<script charset="UTF-8">
+    function GoBack() {
+        window.location.href = "/FoodManagement/FoodManagement"
+
+    }
+
+    //$(function () {
+    //    $("#Birthday").datepicker({
+    //        dateFormat: "mm/dd/yy"
+    //    });
+    //});
+
+    //$(document).ready(function () {
+    //    $(function () {
+    //        $('#btnSaveChange').click(function () {
+    //            var data = {
+    //                Name: $('#Name').val(),
+    //                Permission: $('#Permission').val(),
+    //                Birthday: $('#Birthday').val(),
+    //                Phone: $('#Phone').val(),
+    //                Username: $('#Username').val(),
+    //                Password: $('#Password').val(),
+    //            }
+    //            $.ajax({
+    //                type: "POST",
+    //                url: "/EmployeeManagament/AddEmployee",
+    //                data: data,
+    //                success: function (data) {
+    //                    //GoBack();
+    //                    alert('Success!')
+    //                    location.reload();
+    //                },
+    //                error: function () {
+    //                    alert('Fail!')
+    //                }
+    //            })
+    //        });
+    //    });
+    //});
+
+</script>
+

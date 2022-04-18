@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>HTML5 Admin Template</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/_Layout/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/_Layout/css/normalize.css">
+    <link rel="stylesheet" href="~/Content/_Layout/css/milligram.min.css">
+    <link rel="stylesheet" href="~/Content/_Layout/css/styles.css">
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="row">
+            <div class="column column-30 col-site-title"><a href="#" class="site-title float-left">Coffee</a></div>
+            <div class="column column-40 col-search">
+                <a href="#" class="search-btn fa fa-search"></a>
+                <input type="text" name="" value="" placeholder="Search..." />
+            </div>
+            <div class="column column-30">
+                <div class="user-section">
+                    <a href="#">
+                        <img src="http://via.placeholder.com/50x50" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
+                        <div class="username">
+                            <h4>Employee</h4>
+                            <p>Logout</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="sidebar" class="column">
+            <h5></h5>
+            <ul>
+                <li><a href="~/Home/EmployeeManagement"><em class="fa fa-home"></em> Dashboard</a></li>
+                <li><a href="~/Employee/ViewEmployee"><em class="fa fa-product-hunt"></em> Employee management</a></li>
+                <li><a href="~/Material/MaterialManagement"><em class="fa fa-product-hunt"></em> Material management</a></li>
+                <li><a href="~/Statistic/Index"><em class="fa fa-product-hunt"></em>Statistic</a></li>
+                <li><a href="~/FoodManagement/FoodManagement"><em class="fa fa-user-circle"></em> Food management</a></li>
+                <li><a href="~/VoucherManagement/VoucherManagement"><em class="fa fa-user-circle"></em> Voucher management</a></li>
+                <li><a href="#"><em class="fa fa-user-circle"></em> Account management</a></li>
+            </ul>
+        </div>
+        <section id="main-content" class="column column-offset-20">
+            <div class="row grid-responsive">
+                @RenderBody()
+            </div>
+        </section>
+    </div>
+    <script src="~/Content/_Layout/js/chart.min.js"></script>
+    <script src="~/Content/_Layout/js/chart-data.js"></script>
+    <script>
+        window.onload = function () {
+            var chart1 = document.getElementById("line-chart").getContext("2d");
+            window.myLine = new Chart(chart1).Line(lineChartData, {
+                responsive: true,
+                scaleLineColor: "rgba(0,0,0,.2)",
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleFontColor: "#c5c7cc"
+            });
+            var chart2 = document.getElementById("bar-chart").getContext("2d");
+            window.myBar = new Chart(chart2).Bar(barChartData, {
+                responsive: true,
+                scaleLineColor: "rgba(0,0,0,.2)",
+                scaleGridLineColor: "rgba(0,0,0,.05)",
+                scaleFontColor: "#c5c7cc"
+            });
+            var chart4 = document.getElementById("pie-chart").getContext("2d");
+            window.myPie = new Chart(chart4).Pie(pieData, {
+                responsive: true,
+                segmentShowStroke: false
+            });
+            var chart5 = document.getElementById("radar-chart").getContext("2d");
+            window.myRadarChart = new Chart(chart5).Radar(radarData, {
+                responsive: true,
+                scaleLineColor: "rgba(0,0,0,.05)",
+                angleLineColor: "rgba(0,0,0,.2)"
+            });
+            var chart6 = document.getElementById("polar-area-chart").getContext("2d");
+            window.myPolarAreaChart = new Chart(chart6).PolarArea(polarData, {
+                responsive: true,
+                scaleLineColor: "rgba(0,0,0,.2)",
+                segmentShowStroke: false
+            });
+        };
+    </script>
+
+</body>
+</html> 

@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<div class="row grid-responsive">
+    <div class="column">
+        @using (Html.BeginForm("", "", FormMethod.Get@*, new { @class = "form-inline" }*@))
+            {
+            <a class="button" href="#">Search</a>
+            <input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />
+            }
+
+        <div class="card">
+            <div class="card-block">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Amount Total</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    function AddNew() {
+        window.location.href = "/Ingredients/AddIngredients"
+    }
+</script>
+
+
+

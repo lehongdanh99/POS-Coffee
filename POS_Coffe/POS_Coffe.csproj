@@ -1,0 +1,1076 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9DFECEB3-266D-4FE9-AF8E-66A8A3DC01FF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POS_Coffe</RootNamespace>
+    <AssemblyName>POS_Coffe</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44331</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
+    <Compile Include="Controllers\EmployeeApiController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\FoodManagementController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IngredientsController.cs" />
+    <Compile Include="Controllers\MaterialController.cs" />
+    <Compile Include="Controllers\StatisticController.cs" />
+    <Compile Include="Controllers\VoucherManagementController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\DetailReceiptModel.cs" />
+    <Compile Include="Models\DrinkCakeModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\FoodModel.cs" />
+    <Compile Include="Models\HistoryTrackingModel.cs" />
+    <Compile Include="Models\MaterialsModel.cs" />
+    <Compile Include="Models\ReceiptModel.cs" />
+    <Compile Include="Models\RecipeModel.cs" />
+    <Compile Include="Models\TableModel.cs" />
+    <Compile Include="Models\ToppingModel.cs" />
+    <Compile Include="Models\VoucherModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-datepicker.css" />
+    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.css" />
+    <Content Include="Content\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\_blank\css\style.css" />
+    <Content Include="Content\_blank\images\banner1.jpg" />
+    <Content Include="Content\_blank\images\fac.png" />
+    <Content Include="Content\_blank\images\l.png" />
+    <Content Include="Content\_blank\images\m.png" />
+    <Content Include="Content\_blank\images\tick.png" />
+    <Content Include="Content\_blank\images\twitter.png" />
+    <Content Include="Content\_blank\js\jquery.min.js" />
+    <Content Include="Content\_Layout\css\font-awesome.min.css" />
+    <Content Include="Content\_Layout\css\milligram.min.css" />
+    <Content Include="Content\_Layout\css\normalize.css" />
+    <Content Include="Content\_Layout\css\styles.css" />
+    <Content Include="Content\_Layout\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\_Layout\js\chart-data.js" />
+    <Content Include="Content\_Layout\js\chart.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\_Layout\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\_Layout\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\_Layout\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\_Layout\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\_Layout\fonts\FontAwesome.otf" />
+    <Content Include="Content\_Layout\sass\config.codekit" />
+    <Content Include="Content\_Layout\sass\styles.scss" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker.css.map" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\.csslintrc" />
+    <Content Include="Scripts\jquery-ui-1.11.4\.editorconfig" />
+    <Content Include="Scripts\jquery-ui-1.11.4\.jscsrc" />
+    <Content Include="Scripts\jquery-ui-1.11.4\.jshintrc" />
+    <Content Include="Scripts\jquery-ui-1.11.4\.mailmap" />
+    <Content Include="Scripts\jquery-ui-1.11.4\.travis.yml" />
+    <Content Include="Scripts\jquery-ui-1.11.4\bower.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\build\core.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\build\effect.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\build\interaction.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\build\themes" />
+    <Content Include="Scripts\jquery-ui-1.11.4\build\widget.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\CONTRIBUTING.md" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\search.php" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\ajax\content3-slow.php" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\ajax\content4-broken.php" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\globalize\LICENSE" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jshint\LICENSE\LICENSE" />
+    <Content Include="Scripts\jquery-ui-1.11.4\package.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\README.md" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\.jshintrc" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.accordion.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.autocomplete.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.button.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.core.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.datepicker.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.dialog.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.draggable.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.droppable.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-blind.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-bounce.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-clip.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-drop.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-explode.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-fade.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-fold.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-highlight.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-puff.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-pulsate.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-scale.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-shake.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-size.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-slide.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect-transfer.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.effect.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.menu.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.mouse.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.position.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.progressbar.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.resizable.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.selectable.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.selectmenu.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.slider.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.sortable.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.spinner.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.tabs.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.tooltip.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui.widget.jquery.json" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\.jshintrc" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\.gitattributes" />
+    <Content Include="Scripts\jquery-ui-1.11.4\.gitignore" />
+    <Content Include="Scripts\jquery-ui-1.11.4\AUTHORS.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\build\release.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\build\tasks\build.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\build\tasks\testswarm.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\accordion\collapsible.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\accordion\custom-icons.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\accordion\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\accordion\fillspace.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\accordion\hoverintent.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\accordion\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\accordion\no-auto-height.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\accordion\sortable.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\categories.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\combobox.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\custom-data.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\folding.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\images\jqueryui_32x32.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\images\jquery_32x32.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\images\sizzlejs_32x32.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\images\transparent_1x1.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\london.xml" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\maxheight.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\multiple-remote.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\multiple.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\remote-jsonp.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\remote-with-cache.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\remote.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\autocomplete\xml.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\button\checkbox.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\button\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\button\icons.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\button\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\button\radio.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\button\splitbutton.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\button\toolbar.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\alt-field.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\animation.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\buttonbar.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\date-formats.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\date-range.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\datepicker-ar.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\datepicker-fr.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\datepicker-he.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\datepicker-zh-TW.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\dropdown-month-year.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\icon-trigger.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\images\calendar.gif" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\inline.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\localization.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\min-max.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\multiple-calendars.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\other-months.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\datepicker\show-week.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\demos.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\dialog\animated.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\dialog\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\dialog\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\dialog\modal-confirmation.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\dialog\modal-form.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\dialog\modal-message.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\draggable\constrain-movement.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\draggable\cursor-style.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\draggable\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\draggable\events.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\draggable\handle.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\draggable\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\draggable\revert.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\draggable\scroll.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\draggable\snap-to.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\draggable\sortable.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\draggable\visual-feedback.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\accepted-elements.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\images\high_tatras.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\images\high_tatras2.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\images\high_tatras2_min.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\images\high_tatras3.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\images\high_tatras3_min.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\images\high_tatras4.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\images\high_tatras4_min.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\images\high_tatras_min.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\photo-manager.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\propagation.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\revert.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\shopping-cart.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\droppable\visual-feedback.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\effect\addClass.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\effect\animate.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\effect\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\effect\easing.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\effect\hide.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\effect\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\effect\removeClass.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\effect\show.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\effect\switchClass.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\effect\toggle.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\effect\toggleClass.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\images\calendar.gif" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\images\demo-config-on-tile.gif" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\images\demo-config-on.gif" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\images\demo-spindown-closed.gif" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\images\demo-spindown-open.gif" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\images\icon-docs-info.gif" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\images\pbar-ani.gif" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\menu\categories.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\menu\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\menu\icons.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\menu\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\position\cycler.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\position\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\position\images\earth.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\position\images\flight.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\position\images\rocket.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\position\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\progressbar\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\progressbar\download.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\progressbar\images\pbar-ani.gif" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\progressbar\indeterminate.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\progressbar\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\progressbar\label.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\resizable\animate.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\resizable\aspect-ratio.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\resizable\constrain-area.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\resizable\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\resizable\helper.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\resizable\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\resizable\max-min.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\resizable\snap-to-grid.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\resizable\synchronous-resize.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\resizable\textarea.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\resizable\visual-feedback.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\selectable\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\selectable\display-grid.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\selectable\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\selectable\serialize.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\selectmenu\custom_render.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\selectmenu\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\selectmenu\images\24-podcast-square.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\selectmenu\images\24-rss-square.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\selectmenu\images\24-video-square.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\selectmenu\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\selectmenu\product-selection.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\colorpicker.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\hotelrooms.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\multiple-vertical.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\range-vertical.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\range.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\rangemax.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\rangemin.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\side-scroll.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\slider-vertical.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\slider\steps.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\sortable\connect-lists.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\sortable\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\sortable\display-grid.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\sortable\empty-lists.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\sortable\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\sortable\items.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\sortable\placeholder.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\sortable\portlets.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\spinner\currency.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\spinner\decimal.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\spinner\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\spinner\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\spinner\latlong.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\spinner\overflow.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\spinner\time.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\ajax.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\ajax\content1.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\ajax\content2.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\collapsible.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\manipulation.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\mouseover.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\sortable.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tabs\vertical.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\ajax\content1.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\ajax\content2.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\custom-animation.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\custom-content.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\custom-style.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\forms.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\images\st-stephens.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\images\tower-bridge.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\tracking.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\tooltip\video-player.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\widget\default.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\demos\widget\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\globalize\globalize.culture.de-DE.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\globalize\globalize.culture.ja-JP.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\globalize\globalize.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.10.0\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.10.0\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.10.1\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.10.1\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.10.2\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.10.2\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.6.0\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.6.0\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.6.1\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.6.1\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.6.2\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.6.2\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.6.3\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.6.3\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.6.4\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.6.4\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.7.0\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.7.0\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.7.1\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.7.1\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.7.2\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.7.2\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.8.0\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.8.0\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.8.1\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.8.1\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.8.2\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.8.2\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.8.3\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.8.3\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.9.0\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.9.0\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.9.1\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-1.9.1\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-2.0.0\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-2.0.0\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-2.0.1\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-2.0.1\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-2.0.2\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-2.0.2\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-2.0.3\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-2.0.3\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-mousewheel\jquery.mousewheel.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-mousewheel\LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-simulate\jquery.simulate.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery-simulate\LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jquery\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\jshint\jshint.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\qunit\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\qunit\qunit.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\external\qunit\qunit.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\Gruntfile.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\LICENSE.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\images\jqueryui_32x32.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\images\jquery_521x191.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\index.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\index.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\accordion\accordion.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\accordion\accordion_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\accordion\accordion_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\accordion\accordion_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\accordion\accordion_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\accordion\accordion_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\accordion\accordion_test_helpers.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\accordion\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\autocomplete\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\autocomplete\autocomplete.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\autocomplete\autocomplete_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\autocomplete\autocomplete_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\autocomplete\autocomplete_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\autocomplete\autocomplete_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\autocomplete\autocomplete_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\autocomplete\remote_object_array_labels.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\autocomplete\remote_object_array_values.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\autocomplete\remote_string_array.txt" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\button\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\button\button.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\button\button_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\button\button_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\button\button_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\button\button_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\button\button_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\core\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\core\core.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\core\core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\core\core_deprecated.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\core\core_deprecated.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\core\selector.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\datepicker\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\datepicker\datepicker.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\datepicker\datepicker_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\datepicker\datepicker_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\datepicker\datepicker_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\datepicker\datepicker_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\datepicker\datepicker_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\datepicker\datepicker_test_helpers.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\datepicker\images\calendar.gif" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\dialog\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\dialog\dialog.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\dialog\dialog_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\dialog\dialog_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\dialog\dialog_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\dialog\dialog_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\dialog\dialog_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\dialog\dialog_test_helpers.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\draggable\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\draggable\draggable.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\draggable\draggable_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\draggable\draggable_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\draggable\draggable_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\draggable\draggable_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\draggable\draggable_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\draggable\draggable_test_helpers.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\droppable\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\droppable\droppable.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\droppable\droppable_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\droppable\droppable_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\droppable\droppable_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\droppable\droppable_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\droppable\droppable_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\droppable\droppable_test_helpers.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\effects\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\effects\effects.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\effects\effects_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\effects\effects_scale.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\menu\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\menu\menu.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\menu\menu_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\menu\menu_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\menu\menu_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\menu\menu_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\menu\menu_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\menu\menu_test_helpers.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\position\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\position\position.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\position\position_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\progressbar\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\progressbar\progressbar.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\progressbar\progressbar_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\progressbar\progressbar_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\progressbar\progressbar_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\progressbar\progressbar_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\progressbar\progressbar_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\qunit-composite.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\qunit-composite.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\resizable\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\resizable\images\test.jpg" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\resizable\resizable.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\resizable\resizable_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\resizable\resizable_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\resizable\resizable_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\resizable\resizable_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\resizable\resizable_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\resizable\resizable_test_helpers.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectable\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectable\selectable.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectable\selectable_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectable\selectable_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectable\selectable_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectable\selectable_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectable\selectable_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectmenu\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectmenu\selectmenu.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectmenu\selectmenu_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectmenu\selectmenu_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectmenu\selectmenu_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectmenu\selectmenu_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\selectmenu\selectmenu_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\slider\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\slider\slider.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\slider\slider_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\slider\slider_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\slider\slider_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\slider\slider_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\slider\slider_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\sortable\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\sortable\sortable.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\sortable\sortable_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\sortable\sortable_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\sortable\sortable_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\sortable\sortable_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\sortable\sortable_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\sortable\sortable_test_helpers.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\spinner\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\spinner\spinner.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\spinner\spinner_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\spinner\spinner_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\spinner\spinner_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\spinner\spinner_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\spinner\spinner_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\spinner\spinner_test_helpers.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\subsuite.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\swarminject.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tabs\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tabs\data\test.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tabs\tabs.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tabs\tabs_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tabs\tabs_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tabs\tabs_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tabs\tabs_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tabs\tabs_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tabs\tabs_test_helpers.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\testsuite.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tooltip\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tooltip\tooltip.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tooltip\tooltip_common.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tooltip\tooltip_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tooltip\tooltip_events.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tooltip\tooltip_methods.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\tooltip\tooltip_options.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\widget\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\widget\widget.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\widget\widget_animation.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\widget\widget_core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\unit\widget\widget_extend.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\accordion\icons.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\addClass\queue.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\button\button.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\button\performance.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\compound\accordion_tabs.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\compound\datepicker_dialog.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\compound\dialog_widgets.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\compound\draggable_accordion.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\compound\draggable_accordion_accordion_tabs_draggable.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\compound\draggable_resizable.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\compound\sortable_accordion_sortable_tabs.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\compound\tabs_selectmenu.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\compound\tabs_tabs.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\compound\tabs_tooltips.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\dialog\animated.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\dialog\complex-dialogs.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\dialog\form.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\dialog\performance.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\dialog\stacking.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\draggable\replaced.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\effects\all.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\effects\clip.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\effects\effects.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\effects\effects.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\effects\scale.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\effects\shake.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\index.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\menu\menu.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\position\position.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\position\position_feedback.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\selectmenu\selectmenu.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\theme.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\tooltip\animations.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\tooltip\tooltip.html" />
+    <Content Include="Scripts\jquery-ui-1.11.4\tests\visual\visual.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\accordion.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\all.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\autocomplete.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\base.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\button.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\core.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\datepicker.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\dialog.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\draggable.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\menu.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\progressbar.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\resizable.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\selectable.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\selectmenu.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\slider.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\sortable.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\spinner.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\tabs.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\theme.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\themes\base\tooltip.css" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\accordion.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\autocomplete.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\button.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\core.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\datepicker.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\dialog.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\draggable.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\droppable.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-blind.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-bounce.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-clip.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-drop.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-explode.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-fade.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-fold.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-highlight.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-puff.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-pulsate.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-scale.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-shake.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-size.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-slide.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect-transfer.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\effect.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-af.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ar-DZ.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ar.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-az.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-be.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-bg.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-bs.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ca.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-cs.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-cy-GB.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-da.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-de.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-el.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-en-AU.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-en-GB.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-en-NZ.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-eo.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-es.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-et.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-eu.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-fa.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-fi.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-fo.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-fr-CA.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-fr-CH.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-fr.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-gl.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-he.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-hi.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-hr.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-hu.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-hy.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-id.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-is.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-it-CH.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-it.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ja.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ka.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-kk.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-km.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ko.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ky.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-lb.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-lt.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-lv.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-mk.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ml.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ms.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-nb.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-nl-BE.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-nl.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-nn.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-no.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-pl.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-pt-BR.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-pt.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-rm.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ro.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ru.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-sk.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-sl.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-sq.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-sr-SR.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-sr.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-sv.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-ta.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-th.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-tj.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-tr.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-uk.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-vi.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-zh-CN.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-zh-HK.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\i18n\datepicker-zh-TW.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\menu.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\mouse.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\position.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\progressbar.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\resizable.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\selectable.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\selectmenu.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\slider.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\sortable.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\spinner.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\tabs.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\tooltip.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4\ui\widget.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker-en-CA.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ar-tn.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bn.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.br.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-CA.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-IE.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-NZ.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-ZA.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hi.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.km.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.oc.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.si.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ta.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.tg.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.tk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.uz-cyrl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.uz-latn.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_blank.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\ForgotPassWord.cshtml" />
+    <Content Include="Views\Shared\_example.cshtml" />
+    <Content Include="Views\Shared\_CustomerLayout.cshtml" />
+    <Content Include="Views\Home\EmployeeManagement.cshtml" />
+    <Content Include="Views\Home\CustomerManagement.cshtml" />
+    <Content Include="Views\Shared\_EmployeeLayout.cshtml" />
+    <Content Include="Views\Employee\ViewEmployee.cshtml" />
+    <Content Include="Views\Employee\AddEmployee.cshtml" />
+    <Content Include="Views\Employee\EditEmployee.cshtml" />
+    <Content Include="Views\Ingredients\ViewIngredients.cshtml" />
+    <Content Include="Views\Ingredients\AddIngredients.cshtml" />
+    <Content Include="Views\Ingredients\EditIngredients.cshtml" />
+    <Content Include="Views\Statistic\Index.cshtml" />
+    <Content Include="Views\DashBoard\Index.cshtml" />
+    <Content Include="Views\VoucherManagement\VoucherManagement.cshtml" />
+    <Content Include="Views\VoucherManagement\AddVoucher.cshtml" />
+    <Content Include="Views\VoucherManagement\EditVoucher.cshtml" />
+    <Content Include="Views\FoodManagement\FoodManagement.cshtml" />
+    <Content Include="Views\FoodManagement\AddFood.cshtml" />
+    <Content Include="Views\FoodManagement\EditFood.cshtml" />
+    <Content Include="Views\Material\MaterialManagement.cshtml" />
+    <Content Include="Views\Material\AddMaterial.cshtml" />
+    <Content Include="Views\Material\EditMaterial.cshtml" />
+    <Content Include="Views\Material\DeleteMaterial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49517</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44331/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
