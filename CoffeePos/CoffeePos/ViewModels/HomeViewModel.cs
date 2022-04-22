@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
 using static CoffeePos.FoodOrderModel;
+using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.ViewModels
 {
@@ -30,7 +31,7 @@ namespace CoffeePos.ViewModels
             }
             return _instance;
         }
-        public HomeViewModel(Foods foodOrder = default)
+        public HomeViewModel()
         {
             bgLocally = new SolidColorBrush(Colors.Orange);
             bgDelivery = new SolidColorBrush(Colors.LightGray);
@@ -48,21 +49,21 @@ namespace CoffeePos.ViewModels
 
         }
 
-        private void GetFoodOrderTotal()
+        public void GetFoodOrderTotal()
         {
             if (listViewFoodOrders == null)
             {
                 return;
             }
             foodOrderTotalCount = ListViewFoodOrders.Count;
-            AmountFood = 0;
+            HomePayment = 0;
             for (int i = 0; i < ListViewFoodOrders.Count; i++)
             {
-                AmountFood += ListViewFoodOrders[i].FoodOrderPrice;
+                HomePayment += ListViewFoodOrders[i].FoodOrderPrice;
             }
-            TotalOrder = AmountFood - DiscountOrder;
+            TotalOrder = HomePayment - DiscountOrder;
             NotifyOfPropertyChange(() => FoodOrderTotalCount);
-            NotifyOfPropertyChange(() => AmountFood);
+            NotifyOfPropertyChange(() => HomePayment);
             NotifyOfPropertyChange(() => TotalOrder);
 
         }
@@ -71,7 +72,7 @@ namespace CoffeePos.ViewModels
 
         private bool isBgLocally = true;
 
-        private bool confirmFromHome = true;
+        private bool canSwitchTable = false;
 
         private Visibility visibleLocally;
         public Visibility VisibleLocally 
@@ -209,12 +210,12 @@ namespace CoffeePos.ViewModels
         }
 
 
-        private double amountFood = 0;
+        private double homePayment = 0;
 
-        public double AmountFood
+        public double HomePayment
         {
-            get { return amountFood; }
-            set { amountFood = value; NotifyOfPropertyChange(() => AmountFood); }
+            get { return homePayment; }
+            set { homePayment = value; NotifyOfPropertyChange(() => HomePayment); }
         }
 
         private int tableNum = 0;
@@ -471,10 +472,14 @@ namespace CoffeePos.ViewModels
             windowManager.ShowWindowAsync(tableViewModel);
 
         }
-
+        public Receipt Receipt = new Receipt();
         public void btOrderLocally_Click()
         {
-            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(ListViewFoodOrders, TableNum, TotalOrder, AmountFood, confirmFromHome);
+            Receipt.Foods = ListViewFoodOrders;
+            Receipt.Table = TableNum;
+            Receipt.Total = TotalOrder;
+            Receipt.Payment = HomePayment;
+            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(Receipt, false);
             //tableDetailViewModel.eventChange += HandleCallBack;
 
             WindowManager windowManager = new WindowManager();

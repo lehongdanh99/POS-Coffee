@@ -47,9 +47,19 @@
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
             <StackPanel>
                 <ListBox x:Name="ListViewTables" Margin="0" ItemsSource="{Binding ListReceipts}" >
+
+                    <ListBox.Resources>
+                        <Style x:Key="ViewDetailReceipt" TargetType="Button">
+                            <EventSetter Event="Click" Handler="ViewDetailReceipt_Click"/>
+                        </Style>
+                        <Style x:Key="PaymentReceipt" TargetType="Button">
+                            <EventSetter Event="Click" Handler="PaymentReceipt_Click"/>
+                        </Style>
+                    </ListBox.Resources>
+                    
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="0">
+                            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="0" Background="White">
                                 <Border Width="250" Height="150"
                                         Margin="0" BorderThickness="2" CornerRadius="5" BorderBrush="Orange" OpacityMask="#FFFF6363">
                                     <Grid>
@@ -60,8 +70,8 @@
                                         </Grid.RowDefinitions>
                                         <StackPanel Grid.Row="0" Orientation="Horizontal">
                                             <materialDesign:PackIcon Kind="Paper" Background="Orange" Foreground="White" Width="30" Height="30" VerticalAlignment="Top" Margin="10 0"/>
-                                            <TextBlock FontSize="20" Text="{x:Static language:Lang.Tables_Floor}" FontWeight="Bold"  Foreground="Orange" VerticalAlignment="Center"></TextBlock>
-                                            <TextBlock FontSize="20" VerticalAlignment="Center" FontWeight="Bold"  Foreground="Orange" Text="1"></TextBlock>
+                                            <TextBlock FontSize="20" Text="{x:Static language:Lang.Home_Table}" FontWeight="Bold"  Foreground="Orange" VerticalAlignment="Center"></TextBlock>
+                                            <!--<TextBlock FontSize="20" VerticalAlignment="Center" FontWeight="Bold"  Foreground="Orange" Text="{Binding Floor}"></TextBlock>-->
                                             <TextBlock FontSize="20" Text=" - " VerticalAlignment="Center" Foreground="Orange"></TextBlock>
                                             <TextBlock FontSize="20" Text="{Binding Table}" FontWeight="Bold"  VerticalAlignment="Center" Foreground="Orange"></TextBlock>
                                         </StackPanel>
@@ -82,9 +92,17 @@
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
 
-                                            <Button Grid.Column="0" Margin="5" BorderBrush="{x:Null}" FontWeight="Bold" Background="{x:Null}" Foreground="Orange" Content="{x:Static language:Lang.ListOrder_Payment}"></Button>
+                                            <Button Grid.Column="0" Margin="5" BorderBrush="{x:Null}" 
+                                                    FontWeight="Bold" Background="{x:Null}" 
+                                                    Foreground="Orange" 
+                                                    Content="{x:Static language:Lang.ListOrder_Payment}"
+                                                    Style="{StaticResource PaymentReceipt}"></Button>
                                             <Line X1="0" Y1="0" X2="0" Y2="50" Grid.Column="1" Margin="0 10" Stroke="#FFC8C2C2" StrokeThickness="2"></Line>
-                                            <Button Grid.Column="1" Margin="5" BorderBrush="{x:Null}" FontWeight="Bold" Background="{x:Null}" Foreground="Orange" Content="{x:Static language:Lang.ListOrder_OrderDetail}"></Button>
+                                            <Button Grid.Column="1" Margin="5" BorderBrush="{x:Null}"
+                                                    FontWeight="Bold" Background="{x:Null}" 
+                                                    Foreground="Orange" 
+                                                    Content="{x:Static language:Lang.ListOrder_OrderDetail}"
+                                                    Style="{StaticResource ViewDetailReceipt}"></Button>
                                            
 
                                         </Grid>

@@ -53,5 +53,19 @@ namespace CoffeePos.ViewModels
             set { listReceipts = value; NotifyOfPropertyChange(() => ListReceipts); }
         }
 
+        public void ViewDetailReceipt (Receipt receipt)
+        {
+            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
+            //tableDetailViewModel.eventChange += HandleCallBack;
+
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(tableDetailViewModel);
+        }
+
+        public void PaymentReceipt(Receipt receipt)
+        {
+
+        }
+
     }
 }

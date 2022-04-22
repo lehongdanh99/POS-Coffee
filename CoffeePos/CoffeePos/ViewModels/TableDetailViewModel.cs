@@ -14,23 +14,29 @@ namespace CoffeePos.ViewModels
 {
     internal class TableDetailViewModel : Screen
     {
-        public TableDetailViewModel(ObservableCollection<FoodOrder> listFoodOrder, int tableID, double total, double amount, bool confirmFromHome)
+        public TableDetailViewModel(Receipt receipt, bool canSwitch)
         {
-            ListFoodOrder = listFoodOrder;
-            TableNumOrder = tableID;
-            PaymentOrder = amount;
-            TotalOrder = total;
-            ConfirmFromHome = confirmFromHome;
+            ListFoodOrder = receipt.Foods;
+            TableNumOrder = receipt.Table;
+            PaymentOrder = receipt.Payment;
+            TotalOrder = receipt.Total;
+            CanSwitch = canSwitch;
         }
 
         public Receipt Receipt = new Receipt();
 
-        private bool ConfirmFromHome;
+        private bool CanSwitch;
 
         private Visibility visibilityCanSwitch;
         public Visibility VisibilityCanSwitch
         {
-            get { return visibilityCanSwitch; }
+            get 
+            {
+                if(CanSwitch)
+                    return Visibility.Visible;
+                else
+                    return Visibility.Collapsed;
+            }
             set 
             { 
                 visibilityCanSwitch = value;
@@ -80,8 +86,23 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        public void SwtitchTable()
+        {
+
+            TablesViewModel tableViewModel = new TablesViewModel(true);
+            tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(tableViewModel);
+        }
+        public void HandleCallBacChooseTable(int TableChoose)
+        {
+            TableNumOrder = TableChoose;
+            NotifyOfPropertyChange(() => TableNumOrder);
+        }
+
         public void btnConfirmReceipt()
         {
+            WindowManager windowManager = new WindowManager();
             Receipt.Foods = ListFoodOrder;
             Receipt.Table = TableNumOrder;
             Receipt.Total = TotalOrder;
@@ -89,9 +110,30 @@ namespace CoffeePos.ViewModels
             Receipt.CheckOut = DateTime.Now;
             Receipt.CheckIn = DateTime.Now;
             Receipt.Note = string.Empty;
+            foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
+            {
+                if(receipt.Id == Receipt.Id)
+                {
+                    ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
+                    ListTable.GetInstance().ListTables.TableNumber[receipt.Table].TableStatus = false;
+                    ReceiptModel.GetInstance().ListReceipt[receipt.Id] = Receipt;
+                    this.TryCloseAsync();
+                    TablesViewModel tableViewModel = new TablesViewModel(false);
 
+
+                    windowManager.ShowWindowAsync(tableViewModel);
+                    return;
+                }
+                    
+                
+            }
+            ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
             //ListOrderViewModel.GetInstance().AddListReceipt(Receipt);
             ReceiptModel.GetInstance().ListReceipt.Add(Receipt);
+            this.TryCloseAsync();
+            FoodOrderModel.GetInstance().FoodOrders.Clear();
+            HomeViewModel.GetInstance().GetFoodOrderTotal();
+
         }
     }
 }

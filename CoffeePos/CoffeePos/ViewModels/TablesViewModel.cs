@@ -8,36 +8,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using static CoffeePos.Models.ListTable;
+using static CoffeePos.Models.ReceiptModel;
 using static CoffeePos.Models.TableModel;
 
 namespace CoffeePos.ViewModels
 {
     internal class TablesViewModel : Screen
     {
+        private static TablesViewModel _instance;
+        public static TablesViewModel GetInstance()
+        {
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new TablesViewModel(default);
+                }
+            }
+            return _instance;
+        }
+
+
         bool isChoose;
         int floor = 1;
         public SelectedTableThis eventChooseTableToOrder;
         public delegate void SelectedTableThis(int SelectedTable);
-        TableModel tablemodel = new TableModel();
+        //TableModel tablemodel = new TableModel();
 
         public TablesViewModel(bool isChooseTable)
-        {
-            tablemodel = CommonMethod.GetInstance().readJsonFileConfig();
+        { 
 
             isChoose = isChooseTable;
             TablesAllList = GetAllTableList();
-            GetStatusAllTableList(TablesAllList);
+            GetStatusAllTableList();
             ListFloor = GetListFloor();
             TablesList = GetTableList(listFloorSelected, TablesAllList);
         }
 
-        private void GetStatusAllTableList(ObservableCollection<Table> listTable)
+        private void GetStatusAllTableList()
         {
             EmtyCount = 0;
             BusyCount = 0;
-            for (int i = 0; i < listTable.Count; i++)
+            for (int i = 0; i < TablesAllList.Count; i++)
             {
-                if (!listTable[i].TableStatus)
+                if (!TablesAllList[i].TableStatus)
                 {
                     EmtyCount++;
                 }
@@ -115,16 +130,31 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        public void SwtitchTable()
+        {
+
+        }
+
         public void btTableSelected_Click(Table SelectedListTable)
         {
 
             if (SelectedListTable.TableStatus)
             {
-                //TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
-                ////orderDetailViewModel.eventChange += HandleCallBack;
+                foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
+                {
+                    if(receipt.Table == SelectedListTable.TableID)
+                    {
+                        TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, true);
+                        WindowManager windowManager = new WindowManager();
+                        windowManager.ShowWindowAsync(tableDetailViewModel);
+                        this.TryCloseAsync();
+                        break;
+                    }
+                }    
+                
+                //orderDetailViewModel.eventChange += HandleCallBack;
 
-                //WindowManager windowManager = new WindowManager();
-                //windowManager.ShowWindowAsync(tableDetailViewModel);
+                
             }
             else if (isChoose && !SelectedListTable.TableStatus)
             {
@@ -140,7 +170,7 @@ namespace CoffeePos.ViewModels
         private ObservableCollection<Table> GetAllTableList()
         {
             ObservableCollection<Table> tables = new ObservableCollection<Table>();
-            foreach (var item in tablemodel.TableNumber)
+            foreach (var item in ListTable.GetInstance().ListTables.TableNumber)
             {
                 tables.Add(item.Value);
             }           
@@ -165,7 +195,7 @@ namespace CoffeePos.ViewModels
                 listFloorSelected = value;
                 NotifyOfPropertyChange(() => ListFloorSelected);
                 TablesList = GetTableList(ListFloorSelected, TablesAllList);
-                GetStatusAllTableList(TablesList);
+                GetStatusAllTableList();
                 NotifyOfPropertyChange(() => TablesList);
             }
         }
@@ -178,9 +208,7 @@ namespace CoffeePos.ViewModels
                 if (tablesList[i].TableFloor == floor)
                 {
                     list.Add(tablesList[i]);
-
                 }
-
             }
             return list;
 
@@ -205,6 +233,14 @@ namespace CoffeePos.ViewModels
 
         //}
 
+        public void ChangeTable(Receipt receipt)
+        {
+            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
+            //tableDetailViewModel.eventChange += HandleCallBack;
+
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(tableDetailViewModel);
+        }
 
     }
 

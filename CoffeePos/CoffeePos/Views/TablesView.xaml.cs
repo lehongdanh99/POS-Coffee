@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeePos.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.Views
 {
@@ -26,6 +28,12 @@ namespace CoffeePos.Views
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void ChangeTable_Click(object sender, RoutedEventArgs e)
+        {
+            Receipt obj = ((FrameworkElement)sender).DataContext as Receipt;
+            TablesViewModel.GetInstance().ChangeTable(obj);
         }
     }
 }

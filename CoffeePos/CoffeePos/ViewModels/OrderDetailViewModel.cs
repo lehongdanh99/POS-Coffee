@@ -253,13 +253,8 @@ namespace CoffeePos.ViewModels
 
         public void btBack_Click()
         {
-            HomeViewModel homeViewModel = new HomeViewModel();
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowDialogAsync(homeViewModel);
-            Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
-            {
-                TryCloseAsync();
-            }));
+
+            this.TryCloseAsync();
         }
 
         public void btnOrder_Click()
