@@ -36,6 +36,7 @@ namespace CoffeePos.Models
         {
             public ObservableCollection<FoodOrder> Foods { get; set; }
 
+            public int Id { get; set; }
             public int Table { get; set; }
 
             public double Total { get; set; }

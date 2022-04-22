@@ -8,6 +8,30 @@ using System.Windows.Media;
 
 namespace CoffeePos.Models
 {
+    public class ListTable
+    {
+        private static ListTable _instance;
+        public static ListTable GetInstance()
+        {
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new ListTable();
+                }
+            }
+            return _instance;
+        }
+        private TableModel listTable = CommonMethod.GetInstance().readJsonFileConfig();
+        public TableModel ListTables
+        {
+            get { return listTable; }
+            set
+            {
+                listTable = value;
+            }
+        }
+    }
     public class TableModel
     {
         private static TableModel _instance;
@@ -37,7 +61,7 @@ namespace CoffeePos.Models
             {
                 get
                 {
-                    if (TableStatus == true)
+                    if (TableStatus)
                     {
                         bgStatusTable = new SolidColorBrush(Colors.Red);
                     }
@@ -62,4 +86,5 @@ namespace CoffeePos.Models
 
         }
     }
+
 }
