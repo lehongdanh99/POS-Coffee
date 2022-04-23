@@ -11,7 +11,7 @@ namespace POS_Coffe.Controllers
     {
         public ActionResult ViewEmployee(string Username, string Password, string Phone, string Name, string Birthday, string Permission)
         {
-            IQueryable<EmployeeModel> data = EmployeeModel.GetInstance().LstEmpl.AsQueryable();
+            IQueryable<EmployeeModel> data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.AsQueryable();
             foreach (EmployeeModel model in data)
             {
                 if (model != null)
