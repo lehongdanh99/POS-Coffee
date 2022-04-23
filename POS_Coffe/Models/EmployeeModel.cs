@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 using POS_Coffe.Models;
 
- namespace POS_Coffe.Models
+namespace POS_Coffe.Models
 {
+
     public class EmployeeModel
     {
         private static EmployeeModel _instance;
@@ -46,4 +49,29 @@ using POS_Coffe.Models;
 
     }
 
+    public class EmployeeAPIHandler
+    {
+
+        private static EmployeeAPIHandler _instance;
+        public static EmployeeAPIHandler GetInstance()
+        {
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new EmployeeAPIHandler();
+                }
+            }
+            return _instance;
+        }
+        private List<EmployeeModel> listEmployee = CommonMethod.GetInstance().readJsonFileConfig();
+        public List<EmployeeModel> ListEmployee
+        {
+            get { return listEmployee; }
+            set
+            {
+                listEmployee = value;
+            }
+        }
+    }
 }
