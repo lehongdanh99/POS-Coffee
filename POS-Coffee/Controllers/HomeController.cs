@@ -1,37 +1,46 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using POS_Coffee.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
+using System.Globalization;
+using POS_Coffe.Models;
 
-namespace POS_Coffee.Controllers
+
+namespace POS_Coffe.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
+        public ActionResult EmployeeManagement()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public ActionResult CustomerManagement()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [HttpGet]
+        public ActionResult Login()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            ViewBag.Message = "Your application description page.";
+            
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult Login(EmployeeModel dataLogin)
+        {
+            return Json("",JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult Register()
+        {
+            return View();
+        }
+        public ActionResult ForgotPassWord()
+        {
+            return View();
         }
     }
 }

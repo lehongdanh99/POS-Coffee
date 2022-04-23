@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <div class="card-title">
+                <h2>Bar Chart</h2>
+            </div>
+            <div class="card-block">
+                <div class="canvas-wrapper">
+                    <canvas class="chart" id="bar-chart" height="auto" width="auto"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="card-title">
+                <h2 class="float-left">Projects</h2>
+                <div class="badge float-right">3 In Progress</div>
+                <!--<div class="badge background-success float-right mr-1">5 Complete</div>-->
+                <div class="clearfix"></div>
+            </div>
+            <div class="card-block progress-bars">
+                <h5 class="float-left mt-1">Project Title</h5>
+                <p class="float-right text-small text-muted mt-1">25%</p>
+                <div class="clearfix"></div>
+                <div class="progress-bar">
+                    <div class="progress background-primary" style="width: 25%;"></div>
+                </div>
+                <h5 class="float-left mt-1">Project Title</h5>
+                <p class="float-right text-small text-muted mt-1">50%</p>
+                <div class="clearfix"></div>
+                <div class="progress-bar">
+                    <div class="progress background-primary" style="width: 50%;"></div>
+                </div>
+                <h5 class="float-left mt-1">Project Title</h5>
+                <p class="float-right text-small text-muted mt-1">75%</p>
+                <div class="clearfix"></div>
+                <div class="progress-bar">
+                    <div class="progress background-primary" style="width: 75%;"></div>
+                </div>
+                <h5 class="float-left mt-1">Project Title</h5>
+                <p class="float-right text-small text-muted mt-1">100%</p>
+                <div class="clearfix"></div>
+                <div class="progress-bar">
+                    <div class="progress background-primary" style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   
