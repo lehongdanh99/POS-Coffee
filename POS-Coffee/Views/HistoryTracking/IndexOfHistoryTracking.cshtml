@@ -1,0 +1,70 @@
+﻿@model IEnumerable<POS_Coffe.Models.HistoryTrackingModel>
+@{
+    ViewBag.Title = "IndexOfHistoryTracking";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+    int i = 1;
+}
+
+<div class="row">
+    <div class="column">
+        @using (Html.BeginForm("IndexOfHistoryTracking", "HistoryTracking", FormMethod.Get@*, new { @class = "form-inline" }*@))
+{
+    @*<a class="button" href="#">Search</a>
+    <input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />*@
+    <div class="form-check-label">
+        From date:
+        <input type="date" class="form-check-input" name="FromDate" id="FromDate" />
+    </div>
+
+    <div class="form-check-label">
+        To date:
+        <input type="date" class="form-check-input" name="ToDate" id="ToDate" />
+    </div>
+
+    <input type="submit" class="form-check-inline" value="Send" />
+}
+        <table class="table-responsive bgheader-table table-striped">
+            <tr>
+                <th class="text-center">#</th>
+                <th>Table Effect</th>
+                <th>OccurTime</th>
+                <th>Employee</th>
+                <th></th>
+            </tr>
+            @{i = 1;}
+            <tbody>
+                @*@foreach (var item in Model)
+                {
+                    <tr>
+                        <th class="text-center">@i</th>
+                        <td>@item.TableEffect</td>
+                        <td>@item.OccurTime</td>
+                            <td>
+
+                                <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("CapNhatLichCupNuoc", "LichCupNuoc", new { HistoryID = item.HistoryID })"'>Sửa</button>
+                                <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.HistoryID))" class="btn btn-danger" value="Delete" />
+
+                            </td>
+                    </tr>
+                    i++;
+                }*@
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+    function AddNew() {
+        console.log()
+        window.location.href = "/HistoryTracking/AddFood"
+    }
+    function btnConfirm(HistoryID) {
+        if (confirm('Do you want to delete ?')) {
+            var url = '@Url.Action("FoodManagement", "HistoryTracking")?HistoryID=' + HistoryID;
+            window.location.href = url;
+        }
+    }
+
+</script>
+
