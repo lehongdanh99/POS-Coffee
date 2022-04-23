@@ -146,8 +146,9 @@ namespace CoffeePos.ViewModels
                     {
                         TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, true);
                         WindowManager windowManager = new WindowManager();
+                        tableDetailViewModel.eventSwitchTableCallBack += HandleSwitchTableCallBack;
                         windowManager.ShowWindowAsync(tableDetailViewModel);
-                        this.TryCloseAsync();
+                        //this.TryCloseAsync();
                         break;
                     }
                 }    
@@ -164,7 +165,14 @@ namespace CoffeePos.ViewModels
                 //GetStatusAllTableList(TablesList);
                 this.TryCloseAsync();
             }
-            NotifyOfPropertyChange(() => SelectedListTable.BgStatusTable);
+            //NotifyOfPropertyChange(() => SelectedListTable.BgStatusTable);
+        }
+
+        private void HandleSwitchTableCallBack(int SelectedTable)
+        {
+            TablesAllList[SelectedTable].TableStatus = false;
+            isChoose = true;
+            //NotifyOfPropertyChange(() => TablesAllList[SelectedTable].BgStatusTable);
         }
 
         private ObservableCollection<Table> GetAllTableList()
@@ -215,8 +223,12 @@ namespace CoffeePos.ViewModels
         }
 
 
-
-        public ObservableCollection<Table> TablesAllList;
+        private ObservableCollection<Table> tablesAllList;
+        public ObservableCollection<Table> TablesAllList
+        {
+            get { return tablesAllList; }
+            set { tablesAllList = value; NotifyOfPropertyChange(() => TablesAllList); }
+        }
 
         private ObservableCollection<Table> tables;
         public ObservableCollection<Table> TablesList
@@ -240,6 +252,19 @@ namespace CoffeePos.ViewModels
 
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(tableDetailViewModel);
+        }
+
+        public void btBack_Click()
+        {
+            this.TryCloseAsync(true);
+            //HomeViewModel home ;
+            //tableDetailViewModel.eventChange += HandleCallBack;
+            if(HomeViewModel.GetInstance() == null)
+            {
+
+            }
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(HomeViewModel.GetInstance());
         }
 
     }

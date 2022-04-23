@@ -46,11 +46,24 @@ namespace CoffeePos.Views
             HomeViewModel.GetInstance().btOrderCustom_Click(obj);
         }
 
+        private void Order_Click(object sender, RoutedEventArgs e)
+        {
+
+            Foods obj = ((FrameworkElement)sender).DataContext as Foods;
+            HomeViewModel.GetInstance().btOrderDetail_Click(obj);
+        }
+
         private void DeleteFood_Click(object sender, RoutedEventArgs e)
         {
             FoodOrder obj = ((FrameworkElement)sender).DataContext as FoodOrder;
             HomeViewModel.GetInstance().DeleteFoodListOrder(obj);
         }
 
+        private void ChooseType_Click(object sender, RoutedEventArgs e)
+        {
+
+            string obj = ((FrameworkElement)sender).DataContext as string;
+            HomeViewModel.GetInstance().btTypeChoose(obj);
+        }
     }
 }

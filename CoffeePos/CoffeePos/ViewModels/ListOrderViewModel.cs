@@ -64,7 +64,14 @@ namespace CoffeePos.ViewModels
 
         public void PaymentReceipt(Receipt receipt)
         {
+            PaymentViewModel paymentViewModel = new PaymentViewModel();
+            //tableDetailViewModel.eventChange += HandleCallBack;
 
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(paymentViewModel);
+            //RegisterViewModel registerViewModel = new RegisterViewModel();
+            //WindowManager windowManager = new WindowManager();
+            //windowManager.ShowDialogAsync(registerViewModel);
         }
 
     }

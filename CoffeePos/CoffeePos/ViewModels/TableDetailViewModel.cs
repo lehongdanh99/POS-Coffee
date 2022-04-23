@@ -14,6 +14,11 @@ namespace CoffeePos.ViewModels
 {
     internal class TableDetailViewModel : Screen
     {
+
+        public TableDetailViewModelEvent eventSwitchTableCallBack;
+        public delegate void TableDetailViewModelEvent(int SelectedTable);
+
+
         public TableDetailViewModel(Receipt receipt, bool canSwitch)
         {
             ListFoodOrder = receipt.Foods;
@@ -88,11 +93,11 @@ namespace CoffeePos.ViewModels
 
         public void SwtitchTable()
         {
-
-            TablesViewModel tableViewModel = new TablesViewModel(true);
-            tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(tableViewModel);
+            eventSwitchTableCallBack.Invoke(TableNumOrder);
+            //TablesViewModel tableViewModel = new TablesViewModel(true);
+            TablesViewModel.GetInstance().eventChooseTableToOrder += HandleCallBacChooseTable;
+            //WindowManager windowManager = new WindowManager();
+            //windowManager.ShowWindowAsync(tableViewModel);
         }
         public void HandleCallBacChooseTable(int TableChoose)
         {

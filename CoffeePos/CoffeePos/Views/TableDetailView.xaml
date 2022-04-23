@@ -21,7 +21,7 @@
             <Button 
                 HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding VisibilityCanSwitch}"
                         materialDesign:ButtonAssist.CornerRadius="25" Margin="10 0" BorderBrush="{x:Null}"
-                cal:Message.Attach="[Event Click] = [Action SwtitchTable()]">
+                cal:Message.Attach="[Event Click] = [Action SwtitchTable()]" Click="BtnBack_Click">
                 
                 <materialDesign:PackIcon Kind="SwapHorizontal" Height="25" Width="25" Foreground="White"/>
             </Button>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeePos.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,18 +16,22 @@ using System.Windows.Shapes;
 namespace CoffeePos.Views
 {
     /// <summary>
-    /// Interaction logic for TableDetailView.xaml
+    /// Interaction logic for PaymentView.xaml
     /// </summary>
-    public partial class TableDetailView : Window
+    public partial class PaymentView : Window
     {
-        public TableDetailView()
+        public PaymentView()
         {
             InitializeComponent();
         }
-
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
+        }
+
+        private void MoneySuggest_Click(object sender, RoutedEventArgs e)
+        {
+            MoneySuggest obj = ((FrameworkElement)sender).DataContext as MoneySuggest;
         }
     }
 }

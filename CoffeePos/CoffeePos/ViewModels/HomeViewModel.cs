@@ -36,7 +36,7 @@ namespace CoffeePos.ViewModels
             bgLocally = new SolidColorBrush(Colors.Orange);
             bgDelivery = new SolidColorBrush(Colors.LightGray);
             VisibleLocally = Visibility.Hidden;
-            Foods = GetFoods();
+            FoodsMenu = GetFoods();
             AllFoods = GetFoods();
             TypeFoods = GetTypeFoods();
             if(listViewFoodOrders == null)
@@ -126,7 +126,7 @@ namespace CoffeePos.ViewModels
                 }
                 _selectedIndexFood = value;
                 isOrderSelected = false;
-                btOrderDetail_Click(_selectedIndexFood);
+                //btOrderDetail_Click(_selectedIndexFood);
                 NotifyOfPropertyChange(() => SelectedIndexFood);
             }
         }
@@ -246,10 +246,10 @@ namespace CoffeePos.ViewModels
 
         private ObservableCollection<Foods> foods;
 
-        public ObservableCollection<Foods> Foods
+        public ObservableCollection<Foods> FoodsMenu
         {
             get { return foods; }
-            set { foods = value; NotifyOfPropertyChange(() => Foods); }
+            set { foods = value; NotifyOfPropertyChange(() => FoodsMenu); }
         }
 
         private ObservableCollection<Foods> allFoods;
@@ -302,21 +302,21 @@ namespace CoffeePos.ViewModels
         {
             ObservableCollection<string> typeFood = new ObservableCollection<string>();
 
-            for(int i = 0; i < Foods.Count; i++)
+            for(int i = 0; i < FoodsMenu.Count; i++)
             {
                 if(typeFood.Count != 0)
                 {
                     bool isTypeAdd = false;
                     for(int j = 0; j < typeFood.Count; j++)
                     {
-                        if(Foods[i].FoodType == typeFood[j])
+                        if(FoodsMenu[i].FoodType == typeFood[j])
                             isTypeAdd = true;
                     }
                     if(!isTypeAdd)
-                        typeFood.Add(Foods[i].FoodType);
+                        typeFood.Add(FoodsMenu[i].FoodType);
                 }
                 else
-                    typeFood.Add(Foods[i].FoodType);
+                    typeFood.Add(FoodsMenu[i].FoodType);
             }    
 
             return typeFood;        
@@ -372,8 +372,8 @@ namespace CoffeePos.ViewModels
 
         public void btTypeChoose(string SelectedTypeFood)
         {
-            Foods = GetFoodByType(SelectedTypeFood);
-            NotifyOfPropertyChange(() => Foods);
+            FoodsMenu = GetFoodByType(SelectedTypeFood);
+            NotifyOfPropertyChange(() => FoodsMenu);
         }
 
         public void btListOrder_Click()
@@ -388,15 +388,11 @@ namespace CoffeePos.ViewModels
         }
 
 
-        public void btOrderDetail_Click(int SelectedListFood)
+        public void btOrderDetail_Click(Foods SelectedListFood)
         {
-            if (SelectedListFood >= 0)
-            {
-                FoodSelected = Foods[SelectedListFood];
-            }
 
-            else
-                return;
+            FoodSelected = SelectedListFood;
+
             OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(FoodSelected);
             orderDetailViewModel.eventChange += HandleCallBack;
 
@@ -408,10 +404,9 @@ namespace CoffeePos.ViewModels
 
         public void HandleCallBack(FoodOrder food)
         {
-            if(_selectedIndexFood >= 0)
-            {
-                FoodOrderModel.GetInstance().FoodOrders.Add(food);
-            }
+            
+            FoodOrderModel.GetInstance().FoodOrders.Add(food);
+            
             
             
             
@@ -454,6 +449,7 @@ namespace CoffeePos.ViewModels
 
         public void btTable_Click()
         {
+            //this.TryCloseAsync();
             TablesViewModel tableViewModel = new TablesViewModel(false);
 
             WindowManager windowManager = new WindowManager();

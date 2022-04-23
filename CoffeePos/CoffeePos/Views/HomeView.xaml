@@ -76,12 +76,12 @@
 
                     <Button Grid.Column="1" Height="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10">search</Button>
                 </Grid>
-                <ScrollViewer Margin="0 70" >
+                <ScrollViewer Margin="0 70" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
                     <StackPanel>
-                        <ListBox x:Name="ListViewFoods" ItemsSource="{Binding Foods}" SelectedIndex="{Binding SelectedIndexFood}">
+                        <ItemsControl x:Name="ListViewFoods" ItemsSource="{Binding FoodsMenu}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border  Height="80" CornerRadius="5" Background="#FFF3F3F3"
+                                    <Border  Height="80" CornerRadius="5" Margin="10" Background="#FFF3F3F3"
                                             >
                                         <!--<Border.Effect>
                                             <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
@@ -97,11 +97,11 @@
                                                 <TextBlock Text="{Binding FoodPrice, StringFormat={}{0:#.###}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
                                             </StackPanel>
 
-                                            <Label Background="Orange" Height="25" Width="25"
+                                            <Button Background="Orange" Height="25" Width="25"
                                                  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5"
-                                                    >
+                                                 Click="Order_Click"   >
                                                 <materialDesign:PackIcon Kind="PlusBold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                            </Label>
+                                            </Button>
                                         </StackPanel>
 
 
@@ -113,28 +113,28 @@
                                     <WrapPanel/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>
-                        </ListBox>
+                        </ItemsControl>
 
                     </StackPanel>
                 </ScrollViewer>
                 <!--<Grid  VerticalAlignment="Bottom" Height="70">-->
-                <ScrollViewer VerticalAlignment="Bottom" Height="70" ScrollViewer.HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
+                <ScrollViewer VerticalAlignment="Bottom" Height="70" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
                     <StackPanel>
-                        <ListBox x:Name="ListTypeFoods" ItemsSource="{Binding TypeFoods}" SelectedValue="{Binding SelectedIndexTypeFood}">
-                            <ListBox.ItemsPanel>
+                        <ItemsControl x:Name="ListTypeFoods" ItemsSource="{Binding TypeFoods}" >
+                            <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <StackPanel Orientation='Horizontal'/>
+                                    <WrapPanel/>
                                 </ItemsPanelTemplate>
-                            </ListBox.ItemsPanel>
+                            </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Background="Orange" Width="80" CornerRadius="5" VerticalAlignment="Center" Height="50">
+                                    <Button Click="ChooseType_Click" Margin="10" Background="Orange" Width="80" materialDesign:ButtonAssist.CornerRadius="5" VerticalAlignment="Center" Height="50">
                                         <TextBlock Text="{Binding}" VerticalAlignment="Center" FontWeight="Bold" FontSize="12" HorizontalAlignment="Center"/>
-                                    </Border>
+                                    </Button>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                             
-                        </ListBox>
+                        </ItemsControl>
                     </StackPanel>
                 </ScrollViewer>
                 <!--</Grid>-->
@@ -150,33 +150,14 @@
                     <Button Grid.Column="1" Margin="10" Height="50" Content="{x:Static language:Lang.Home_Delivery}" Background="{Binding BgDelivery}" 
                             cal:Message.Attach="[Event Click] = [Action DeliveryClick()]" BorderBrush="{x:Null}"></Button>
                 </Grid>
-                <ScrollViewer Margin="0 70 0 190" HorizontalAlignment="Center" HorizontalScrollBarVisibility="Hidden">
+                <ScrollViewer Margin="0 70 0 190" HorizontalAlignment="Center" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
                     <StackPanel>
-                        <ListBox x:Name="ListViewFoodOrder" Margin="0 0 0 0"
-                                      ItemsSource="{Binding ListViewFoodOrders}" SelectedIndex="{Binding SelectedIndexOrder}" >
-                            <!--<ListView.Resources>
-                                <Style TargetType="ListViewItem">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                                            <Setter Property="IsSelected" Value="True"/>
+                        <ItemsControl x:Name="ListViewFoodOrder" Margin="0 10 0 0"
+                                      ItemsSource="{Binding ListViewFoodOrders}">
 
-                                        </Trigger>
-                                    </Style.Triggers>
-                                    <EventSetter Event="PreviewGotKeyboardFocus" Handler="SelectCurrentItem"/>
-                                </Style>
-
-                            </ListView.Resources>-->
-                            <ListBox.Resources>
-                                <Style x:Key="EditItemListFoodOrder" TargetType="MenuItem">
-                                    <EventSetter Event="Click" Handler="OrderCustom_Click"/>
-                                </Style>
-                                <Style x:Key="DeleteItemListFoodOrder" TargetType="MenuItem">
-                                    <EventSetter Event="Click" Handler="DeleteFood_Click"/>
-                                </Style>
-                            </ListBox.Resources>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <Border Margin="0 0 0 0"  Width="250" Height="auto" CornerRadius="5" Background="#FFF3F3F3">
+                                    <Border Margin="0 10 0 0"  Width="250" Height="auto" CornerRadius="5" Background="#FFF3F3F3">
                                         <!--<Border.Effect>
                                             <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
                                         </Border.Effect>-->
@@ -221,11 +202,13 @@
                                                     </MenuItem.Icon>
                                                     <MenuItem Header="Chỉnh sửa" 
                                                               x:Name="EditMenuBtn"
-                                                              Style="{StaticResource EditItemListFoodOrder}">
+                                                              Click="OrderCustom_Click"
+                                                              >
                                                         
                                                     </MenuItem>
                                                     <MenuItem Header="Xóa"
-                                                              Style="{StaticResource DeleteItemListFoodOrder}">
+                                                              Click="DeleteFood_Click"
+                                                              >
 
                                                     </MenuItem>
                                                 </MenuItem>
@@ -252,7 +235,7 @@
                                     <WrapPanel/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>-->
-                        </ListBox>
+                        </ItemsControl>
 
                     </StackPanel>
                 </ScrollViewer>
