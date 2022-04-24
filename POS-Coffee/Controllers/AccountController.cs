@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace POS_Coffe.Models
+namespace POS_Coffe.Controllers
 {
     public class AccountController : Controller
     {

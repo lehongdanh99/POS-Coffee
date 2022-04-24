@@ -52,7 +52,7 @@ namespace POS_Coffe.Controllers
             model.Phone = data.Phone;
             model.Username = data.Username;
             model.Password = data.Password;
-            EmployeeModel.GetInstance().LstEmpl.Add(model);
+            //EmployeeModel.GetInstance().LstEmpl.Add(model);
             //return View(model);
             return RedirectToAction("ViewEmployee", "Employee", model);
         }

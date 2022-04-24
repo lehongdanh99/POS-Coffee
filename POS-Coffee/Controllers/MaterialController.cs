@@ -12,13 +12,13 @@ namespace POS_Coffe.Controllers
         // GET: Material
         public ActionResult MaterialManagement()
         {
-            IQueryable<EmployeeModel> data = EmployeeModel.GetInstance().LstEmpl.AsQueryable();
-            foreach (EmployeeModel model in data)
-            {
-                if (model != null)
-                    continue;
-            }
-            return View(data.ToList());
+            //IQueryable<EmployeeModel> data = EmployeeModel.GetInstance().LstEmpl.AsQueryable();
+            //foreach (EmployeeModel model in data)
+            //{
+            //    if (model != null)
+            //        continue;
+            //}
+            return View(/*data.ToList()*/);
         }
         public ActionResult AddMaterial()
         {

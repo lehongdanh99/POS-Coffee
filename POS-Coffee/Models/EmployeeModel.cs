@@ -26,24 +26,7 @@ namespace POS_Coffe.Models
         public string Username { get; set; }
         public string Password { get; set; }
 
-        private List<EmployeeModel> lstEmpl;
-
-        public List<EmployeeModel> LstEmpl
-        {
-            get
-            {
-                if (lstEmpl == null)
-                    lstEmpl = new List<EmployeeModel>();
-                return lstEmpl;
-            }
-            set
-            {
-                lstEmpl = value;
-            }
-        }
-
     }
-
     public class EmployeeAPIHandlerFakeData
     {
 
