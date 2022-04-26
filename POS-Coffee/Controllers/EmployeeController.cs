@@ -60,7 +60,15 @@ namespace POS_Coffe.Controllers
         [HttpGet]
         public ActionResult EditEmployee(int EmployeeID)
         {
-            return View();
+            var EditData = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.EmployeeID == EmployeeID);
+            EmployeeModel data = new EmployeeModel();
+            data.EmployeeID = EmployeeID;
+            data.Name = EditData.ToList().First().Name;
+            data.Permission = EditData.ToList().First().Permission;
+            data.Birthday = EditData.ToList().First().Birthday;
+            data.Phone = EditData.ToList().First().Phone;
+            data.Username = EditData.ToList().First().Username;
+            return View(data);
         }
 
         [HttpPost]
@@ -70,8 +78,8 @@ namespace POS_Coffe.Controllers
         }
         public ActionResult DeleteEmployee(int EmployeeID)
         {
-            //var deleteData = db.where(s => s.UniqueID == ID).firstorDefault;
-            return View();
+            var deleteData = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.EmployeeID != EmployeeID).AsQueryable();
+            return RedirectToAction("ViewEmployee", "Employee", deleteData);
         }
     }
 }

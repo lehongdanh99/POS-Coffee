@@ -47,7 +47,8 @@
                             </div>
 
                             @*<input type="submit" value="Login">*@
-                            <a class="btn btn-gradient-success button " href="~/Account/AccountManagement">Login</a>
+                            @*<a class="btn btn-gradient-success button " href="~/Account/AccountManagement">Login</a>*@
+                            <button type="button" class="btn-success" onclick="Login()">Login</button>
                         </form>
                         @*<div class="header-left-top">
                             <div class="sign-up"> <h2>or</h2> </div>
@@ -68,3 +69,9 @@
 
     <!--footer end here-->
 
+    <script>
+    function Login() {
+        var link = "@Url.Action("AccountManagement", "Account")";
+        window.location.href = link;
+    }
+    </script>
