@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace CoffeePos.Models
@@ -74,6 +75,22 @@ namespace CoffeePos.Models
                 set
                 {
                     bgStatusTable = value;
+                }
+            }
+            private Visibility visibleChoose;
+            public Visibility VisibleChoose
+            {
+                get 
+                { 
+                    if(TableStatus)
+                        visibleChoose = Visibility.Visible;
+                    else
+                        visibleChoose = Visibility.Collapsed;
+                    return visibleChoose; 
+                }
+                set
+                {
+                    visibleChoose = value;
                 }
             }
             public Table(bool status, int floor, int seat, SolidColorBrush bgStatusTable = default)

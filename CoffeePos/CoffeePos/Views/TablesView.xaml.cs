@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static CoffeePos.Models.TableModel;
 using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.Views
@@ -30,10 +31,26 @@ namespace CoffeePos.Views
             this.Close();
         }
 
-        private void ChangeTable_Click(object sender, RoutedEventArgs e)
+        private void PaymentTable_Click(object sender, RoutedEventArgs e)
         {
             Receipt obj = ((FrameworkElement)sender).DataContext as Receipt;
-            TablesViewModel.GetInstance().ChangeTable(obj);
+            ListOrderViewModel.GetInstance().PaymentReceipt(obj);
+        }
+        private void ChooseTable_Click(object sender, RoutedEventArgs e)
+        {
+            Models.TableModel.Table obj = ((FrameworkElement)sender).DataContext as Models.TableModel.Table;
+            //TablesViewModel.GetInstance.btTableSelected_Click(obj);
+            if(obj.TableStatus == true)
+            {
+                TablesViewModel.GetInstance(false).btTableSelected_Click(obj);
+            }    
+            else
+            {
+                if(TablesViewModel.)
+                HomeViewModel.GetInstance().HandleCallBacChooseTable(obj.TableID);
+                this.Hide();
+            }    
+            
         }
     }
 }

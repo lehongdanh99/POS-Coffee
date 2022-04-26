@@ -78,7 +78,7 @@
                 </Grid>
                 <ScrollViewer Margin="0 70" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
                     <StackPanel>
-                        <ItemsControl x:Name="ListViewFoods" ItemsSource="{Binding FoodsMenu}">
+                        <ItemsControl x:Name="ListViewFoods" ItemsSource="{Binding FoodsMenu, Mode=TwoWay, IsAsync=true}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border  Height="80" CornerRadius="5" Margin="10" Background="#FFF3F3F3"
@@ -254,7 +254,7 @@
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0" Margin="10 0">
                             <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Food}"></TextBlock>
-                            <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding FoodOrderTotalCount}"></TextBlock>
+                            <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding FoodOrderTotalCount, Mode=TwoWay, IsAsync=true}"></TextBlock>
                         </Grid>
                         <Grid Grid.Column="1" Margin="10 0">
                             <TextBlock Foreground="Black" Visibility="{Binding VisibleTable}" Text="{x:Static language:Lang.Home_Table}"></TextBlock>
@@ -263,15 +263,15 @@
                     </Grid>
                     <Grid Grid.Row="1" Margin="10 0" VerticalAlignment="Center">
                         <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Price}"></TextBlock>
-                        <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding AmountFood}"></TextBlock>
+                        <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding AmountFood, Mode=TwoWay, IsAsync=true}"></TextBlock>
                     </Grid>
                     <Grid Grid.Row="2" Margin="10 0" VerticalAlignment="Center">
                         <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Discount}"></TextBlock>
-                        <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding DiscountOrder}"></TextBlock>
+                        <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding DiscountOrder, Mode=TwoWay, IsAsync=true}"></TextBlock>
                     </Grid>
                     <Grid Grid.Row="3" Margin="10 0" VerticalAlignment="Center">
                         <TextBlock Foreground="Red" FontSize="20" Text="{x:Static language:Lang.Home_Total}"></TextBlock>
-                        <TextBlock Foreground="Red" FontSize="20" HorizontalAlignment="Right" Text="{Binding TotalOrder}"></TextBlock>
+                        <TextBlock Foreground="Red" FontSize="20" HorizontalAlignment="Right" Text="{Binding TotalOrder, Mode=TwoWay, IsAsync=true}"></TextBlock>
                     </Grid>
                     <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Grid.Row="4" Grid.Column="0" FontSize="20" FontWeight="Bold" Width="130" Height="50" Margin="5"

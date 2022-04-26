@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 using static CoffeePos.Models.ListTable;
 using static CoffeePos.Models.ReceiptModel;
@@ -17,21 +18,18 @@ namespace CoffeePos.ViewModels
     internal class TablesViewModel : Screen
     {
         private static TablesViewModel _instance;
-        public static TablesViewModel GetInstance()
+        public static TablesViewModel GetInstance(bool isChooseTable)
         {
             if (_instance == null)
             {
-                if (_instance == null)
-                {
-                    _instance = new TablesViewModel(default);
-                }
+                _instance = new TablesViewModel(isChooseTable);
             }
             return _instance;
         }
 
 
-        bool isChoose;
-        int floor = 1;
+        public bool isChoose;
+        
         public SelectedTableThis eventChooseTableToOrder;
         public delegate void SelectedTableThis(int SelectedTable);
         //TableModel tablemodel = new TableModel();
@@ -97,6 +95,8 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => EmtyCount);
             }
         }
+
+        
 
         private int busycount;
         public int BusyCount
@@ -245,8 +245,9 @@ namespace CoffeePos.ViewModels
 
         //}
 
-        public void ChangeTable(Receipt receipt)
+        public void Choose(Receipt receipt)
         {
+
             TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
             //tableDetailViewModel.eventChange += HandleCallBack;
 

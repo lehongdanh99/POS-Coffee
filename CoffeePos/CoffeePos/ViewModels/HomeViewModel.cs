@@ -4,6 +4,7 @@ using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace CoffeePos.ViewModels
 {
     internal class HomeViewModel : Screen
     {
+        
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private static HomeViewModel _instance;
         TablesViewModel tableViewModel;
@@ -65,7 +67,7 @@ namespace CoffeePos.ViewModels
             NotifyOfPropertyChange(() => FoodOrderTotalCount);
             NotifyOfPropertyChange(() => HomePayment);
             NotifyOfPropertyChange(() => TotalOrder);
-
+            NotifyOfPropertyChange(() => TableNum);
         }
 
         ListOrderViewModel listOrderViewModel;
@@ -223,16 +225,10 @@ namespace CoffeePos.ViewModels
         public int TableNum
         {
             get { return tableNum; }
-            set { tableNum = value; NotifyOfPropertyChange(() => TableNum);
-                if (tableNum != 0)
-                {
-                    EnableOrder = true;
-                } 
-                else
-                {
-                    EnableOrder = false;
-                }
-                NotifyOfPropertyChange(() => EnableOrder);
+            set { 
+                tableNum = value; 
+                NotifyOfPropertyChange(() => TableNum);
+                
             }
         }
 
@@ -450,22 +446,19 @@ namespace CoffeePos.ViewModels
         public void btTable_Click()
         {
             //this.TryCloseAsync();
-            TablesViewModel tableViewModel = new TablesViewModel(false);
+            //TablesViewModel tableViewModel = new TablesViewModel(false);
 
             WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(tableViewModel);
+            windowManager.ShowWindowAsync(TablesViewModel.GetInstance(false));
 
         }
 
         public void btTableChoose_Click()
         {
-            if(tableViewModel == null)
-            {
-                tableViewModel = new TablesViewModel(true);
-            }
-            tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
+            //TablesViewModel tableViewModel = new TablesViewModel(true);
+            //tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
             WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(tableViewModel);
+            windowManager.ShowWindowAsync(TablesViewModel.GetInstance(true));
 
         }
         public Receipt Receipt = new Receipt();
@@ -489,8 +482,17 @@ namespace CoffeePos.ViewModels
 
         public void HandleCallBacChooseTable(int TableChoose)
         {
-            TableNum = TableChoose;
+            tableNum = TableChoose;
             NotifyOfPropertyChange(() => TableNum);
+            if (tableNum != 0)
+            {
+                EnableOrder = true;
+            }
+            else
+            {
+                EnableOrder = false;
+            }
+            NotifyOfPropertyChange(() => EnableOrder);
         }
 
         public void btRegister_Click()

@@ -95,7 +95,7 @@ namespace CoffeePos.ViewModels
         {
             eventSwitchTableCallBack.Invoke(TableNumOrder);
             //TablesViewModel tableViewModel = new TablesViewModel(true);
-            TablesViewModel.GetInstance().eventChooseTableToOrder += HandleCallBacChooseTable;
+            TablesViewModel.GetInstance(true).eventChooseTableToOrder += HandleCallBacChooseTable;
             //WindowManager windowManager = new WindowManager();
             //windowManager.ShowWindowAsync(tableViewModel);
         }
@@ -117,16 +117,20 @@ namespace CoffeePos.ViewModels
             Receipt.Note = string.Empty;
             foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
             {
-                if(receipt.Id == Receipt.Id)
+                if(receipt.Id == Receipt.Id && receipt.Foods == Receipt.Foods
+                    && receipt.Total == Receipt.Total && receipt.Payment == Receipt.Payment
+                    && receipt.CheckOut == Receipt.CheckOut && receipt.CheckIn == Receipt.CheckIn)
                 {
                     ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
                     ListTable.GetInstance().ListTables.TableNumber[receipt.Table].TableStatus = false;
                     ReceiptModel.GetInstance().ListReceipt[receipt.Id] = Receipt;
                     this.TryCloseAsync();
-                    TablesViewModel tableViewModel = new TablesViewModel(false);
 
-
-                    windowManager.ShowWindowAsync(tableViewModel);
+                    FoodOrderModel.GetInstance().FoodOrders.Clear();
+                    HomeViewModel.GetInstance().TableNum = 0;
+                    HomeViewModel.GetInstance().GetFoodOrderTotal();
+                    
+                    //windowManager.ShowWindowAsync(TablesViewModel.GetInstance());
                     return;
                 }
                     
@@ -137,6 +141,7 @@ namespace CoffeePos.ViewModels
             ReceiptModel.GetInstance().ListReceipt.Add(Receipt);
             this.TryCloseAsync();
             FoodOrderModel.GetInstance().FoodOrders.Clear();
+            HomeViewModel.GetInstance().TableNum = 0;
             HomeViewModel.GetInstance().GetFoodOrderTotal();
 
         }
