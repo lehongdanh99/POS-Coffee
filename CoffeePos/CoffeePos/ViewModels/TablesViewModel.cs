@@ -18,8 +18,12 @@ namespace CoffeePos.ViewModels
     internal class TablesViewModel : Screen
     {
         private static TablesViewModel _instance;
-        public static TablesViewModel GetInstance(bool isChooseTable)
+        public static TablesViewModel GetInstance(bool isChooseTable = default)
         {
+            if(isChooseTable == default)
+            {
+                
+            }
             if (_instance == null)
             {
                 _instance = new TablesViewModel(isChooseTable);
