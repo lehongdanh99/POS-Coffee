@@ -1,4 +1,5 @@
 ﻿using CoffeePos.Models;
+using CoffeePos.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.Views
 {
@@ -32,6 +34,23 @@ namespace CoffeePos.Views
         private void MoneySuggest_Click(object sender, RoutedEventArgs e)
         {
             MoneySuggest obj = ((FrameworkElement)sender).DataContext as MoneySuggest;
+        }
+        private void PaymentCashClick(object sender, RoutedEventArgs e)
+        {
+            MoneyInput.Visibility = Visibility.Visible;
+        }
+        private void PaymentZaloClick(object sender, RoutedEventArgs e)
+        {
+            MoneyInput.Visibility = Visibility.Collapsed;
+        }
+
+        private void PaymentFinalClick(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            
+            //PaymentViewModel.GetInstance().CompletePaymentReceipt();
+            //MessageBoxView view = new MessageBoxView();
+
         }
     }
 }

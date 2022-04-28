@@ -63,6 +63,15 @@ namespace CoffeePos.ViewModels
             {
                 HomePayment += ListViewFoodOrders[i].FoodOrderPrice;
             }
+            if (tableNum != 0 && foodOrderTotalCount != 0)
+            {
+                EnableOrder = true;
+            }
+            else
+            {
+                EnableOrder = false;
+            }
+            NotifyOfPropertyChange(() => EnableOrder);
             TotalOrder = HomePayment - DiscountOrder;
             NotifyOfPropertyChange(() => FoodOrderTotalCount);
             NotifyOfPropertyChange(() => HomePayment);
@@ -425,6 +434,7 @@ namespace CoffeePos.ViewModels
         public void DeleteFoodListOrder(FoodOrder foodorder)
         {
             FoodOrderModel.GetInstance().FoodOrders.Remove(foodorder);
+            GetFoodOrderTotal();
         }
 
         public void HandleCallBackCustom(FoodOrder food)

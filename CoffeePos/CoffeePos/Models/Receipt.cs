@@ -32,6 +32,14 @@ namespace CoffeePos.Models
             set { listReceipt = value; }
         }
 
+        private ObservableCollection<Receipt> listReceiptDone = new ObservableCollection<Receipt>();
+
+        public ObservableCollection<Receipt> ListReceiptDone
+        {
+            get { return listReceiptDone; }
+            set { listReceiptDone = value; }
+        }
+
         public class Receipt
         {
             public ObservableCollection<FoodOrder> Foods = new ObservableCollection<FoodOrder>();

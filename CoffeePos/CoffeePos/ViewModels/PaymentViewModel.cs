@@ -6,15 +6,32 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.ViewModels
 {
     internal class PaymentViewModel : Screen
     {
-        public PaymentViewModel()
+        //private static PaymentViewModel _instance;
+        //public static PaymentViewModel GetInstance()
+        //{
+        //    if (_instance == null)
+        //    {
+        //        if (_instance == null)
+        //        {
+        //            _instance = new PaymentViewModel();
+        //        }
+        //    }
+        //    return _instance;
+        //}
+        public PaymentViewModel(Receipt receipt)
         {
+            receiptPayment = receipt;
+            ListFoodOrder = receipt.Foods;
             MoneySuggestList = getMoneySuggestList();
         }
+
+        private Receipt receiptPayment;
 
         private ObservableCollection<MoneySuggest> getMoneySuggestList()
         {
@@ -36,9 +53,29 @@ namespace CoffeePos.ViewModels
         public ObservableCollection<MoneySuggest> MoneySuggestList
         {
             get { return moneySuggest; }
-            set { moneySuggest = value;
+            set
+            {
+                moneySuggest = value;
                 NotifyOfPropertyChange(() => MoneySuggestList);
             }
+        }
+
+        private ObservableCollection<FoodOrder> listfoodOrder;
+
+        public ObservableCollection<FoodOrder> ListFoodOrder
+        {
+            get { return listfoodOrder; }
+            set { listfoodOrder = value; NotifyOfPropertyChange(() => ListFoodOrder); }
+        }
+
+        public void CompletePaymentReceipt()
+        {
+            MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel();
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(messageBoxViewModel);
+            ReceiptModel.GetInstance().ListReceipt.Remove(receiptPayment);
+            ListTable.GetInstance().ListTables.TableNumber[receiptPayment.Table].TableStatus = false;
+            ReceiptModel.GetInstance().ListReceiptDone.Add(receiptPayment);
         }
     }
 }

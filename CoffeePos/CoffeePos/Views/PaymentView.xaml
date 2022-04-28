@@ -13,6 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition/>
+            <RowDefinition Height="70"/>   
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="Orange" VerticalAlignment="Center" Height="70">
             <TextBlock Margin="20" FontSize="20" FontWeight="DemiBold"
@@ -26,20 +27,21 @@
                 <ColumnDefinition Width="6*"/>
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
+            <Line Grid.Column="0" X1="0" Y1="10" X2="0" Y2="400" Width="2" Stroke="#FFC8C2C2" StrokeThickness="1" HorizontalAlignment="Right" Margin="0 50"/>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="70"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" Background="#FFEEEEEE">
                     <TextBlock Text="Phương thức thanh toán" 
                                VerticalAlignment="Center" Margin="20 0"
                                FontSize="18" Foreground="Black" FontWeight="DemiBold"></TextBlock>
                 </Grid>
-                <StackPanel Grid.Row="1">
+                <StackPanel Grid.Row="1" Name="MoneyInput">
                     <TextBox Height="70" VerticalAlignment="Center" Text="0" Margin="20 0" 
                          Foreground="Black" FontSize="35" FontWeight="Bold" TextAlignment="Right">
                     </TextBox>
@@ -72,10 +74,10 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Tiền Mặt" Margin="5" Height="50" Foreground="White" Background="#FF00DC00" BorderBrush="{x:Null}">
+                    <Button Content="Tiền Mặt" Margin="5" Height="50" Foreground="White" Background="#FF00DC00" BorderBrush="{x:Null}" Click="PaymentCashClick">
 
                     </Button>
-                    <Button Grid.Column="1" Name="btn5" Height="50" Background="White" Margin="5" BorderBrush="{x:Null}">
+                    <Button Grid.Column="1" Name="btn5" Height="50" Background="White" Margin="5" BorderBrush="{x:Null}" Click="PaymentZaloClick">
                         <Image Source="/Image/ZaloPay_Logo.png" Height="30"></Image>
                     </Button>
                 </Grid>
@@ -87,76 +89,97 @@
                                Margin="0"
                                HorizontalAlignment="Right"/>
                 </Grid>
-                <Grid Grid.Row="4" Background="#FFEEEEEE">
-                    <TextBlock Text="Hinh thuc thanh toan" Foreground="Black" FontSize="15" VerticalAlignment="Center"
+                <StackPanel Orientation="Vertical" Grid.Row="4" Background="#FFEEEEEE" >
+                    <Grid Height="49">
+                        <TextBlock Text="Khách hàng thanh toán" Foreground="Black" FontSize="15" VerticalAlignment="Center" FontWeight="DemiBold"
                                Margin="20 0"></TextBlock>
-                    <TextBlock Text="Tien mat" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
-                               Margin="20 0" FontWeight="Bold"></TextBlock>
-                </Grid>
+                        <TextBlock Text="500000" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
+                               Margin="20 0" FontWeight="DemiBold"></TextBlock>
+                    </Grid>
+                    <Line X1="10" Y1="0" X2="630" Y2="0" Stroke="Black" StrokeThickness="0.5" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Center"></Line>
+                    <Grid Height="49">
+                        <TextBlock Text="Tiền trả khách" Foreground="Black" FontSize="15" VerticalAlignment="Center" FontWeight="DemiBold"
+                               Margin="20 0"></TextBlock>
+                        <TextBlock Text="500000" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
+                               Margin="20 0" FontWeight="DemiBold"></TextBlock>
+                    </Grid>
+                </StackPanel>
+                
             </Grid>
             <Grid Grid.Column="1">
-                <!--<Grid.RowDefinitions>
+                <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
-                    <RowDefinition Height="70"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>-->
-				<ScrollViewer Margin="0 70 0 190" HorizontalAlignment="Center" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
-					<StackPanel>
-						<ItemsControl x:Name="ListViewFoodOrder" Margin="0 10 0 0"
-                                      ItemsSource="{Binding ListViewFoodOrders}">
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock Text="Chi tiết hóa đơn" Foreground="Black" FontSize="15" VerticalAlignment="Center" Margin="20 0" FontWeight="DemiBold"/>
+                </Grid>
+                <Line Grid.Row="2" X1="10" Y1="0" X2="300" Y2="0" Stroke="#FFC8C2C2" StrokeThickness="1"  Margin="50"/>
+                <ScrollViewer Grid.Row="1" HorizontalAlignment="Center" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+                    <StackPanel>
+                        <ItemsControl x:Name="ListViewFoodOrder" Margin="0 0 0 0"
+                                      ItemsSource="{Binding ListFoodOrder}">
 
-							<ItemsControl.ItemTemplate>
-								<DataTemplate>
-									<Border Margin="0 10 0 0"  Width="250" Height="auto" CornerRadius="5" Background="#FFF3F3F3">
-										<!--<Border.Effect>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Margin="0 10 0 0" Width="400" Height="auto" CornerRadius="5" Background="#FFF3F3F3">
+                                        <!--<Border.Effect>
                                             <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
                                         </Border.Effect>-->
-										<Grid >
+                                        <Grid >
 
-											<Grid.RowDefinitions>
-												<RowDefinition></RowDefinition>
-												<RowDefinition></RowDefinition>
-											</Grid.RowDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition></RowDefinition>
+                                                <RowDefinition></RowDefinition>
+                                            </Grid.RowDefinitions>
 
-											<Grid Grid.Row="0">
-												<Grid.ColumnDefinitions>
-													<ColumnDefinition Width="*"></ColumnDefinition>
-													<ColumnDefinition Width="2.5*"></ColumnDefinition>
-													<ColumnDefinition Width="1*"></ColumnDefinition>
-												</Grid.ColumnDefinitions>
-												<Border Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5" Margin="5" Width="50" Height="50">
-													<Border.Background>
-														<ImageBrush ImageSource="{Binding FoodOrderImage}"/>
-													</Border.Background>
-												</Border>
-												<StackPanel Grid.Column="1" Width="150" Margin="0 5">
-													<TextBlock Text="{Binding FoodOrderName}" TextWrapping="Wrap" FontWeight="Bold" FontSize="14" Foreground="Black"></TextBlock>
-													<TextBlock Text="{Binding FoodOrderMore}" Visibility="{Binding ViOrderMore}" TextWrapping="Wrap" FontSize="14" Foreground="Black"></TextBlock>
+                                            <Grid Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Border Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5" Margin="5" Width="70" Height="70">
+                                                    <Border.Background>
+                                                        <ImageBrush ImageSource="{Binding FoodOrderImage}"/>
+                                                    </Border.Background>
+                                                </Border>
+                                                <StackPanel Grid.Column="1" Width="250" Margin="10">
+                                                    <TextBlock Text="{Binding FoodOrderName}" TextWrapping="Wrap" FontWeight="Bold" FontSize="14" Foreground="Black"></TextBlock>
+                                                    <TextBlock Text="{Binding FoodOrderMore}" Visibility="{Binding ViOrderMore}" TextWrapping="Wrap" FontSize="14" Foreground="Black"></TextBlock>
 
-													<TextBlock Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
-												</StackPanel>
-												<Grid Grid.Column="2">
-													<TextBlock Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20 0" FontWeight="Bold" Text="{Binding FoodOrderCount}"></TextBlock>
-
-												</Grid>
-											</Grid>
-											
-										</Grid>
-
-
-									</Border>
-								</DataTemplate>
-							</ItemsControl.ItemTemplate>
-							<!--<ItemsControl.ItemsPanel>
+                                                    <TextBlock Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
+                                                </StackPanel>
+                                                <Grid Grid.Column="2">
+                                                    <TextBlock Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" FontWeight="Bold" Text="{Binding FoodOrderCount}"></TextBlock>
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            <!--<ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <WrapPanel/>
                                 </ItemsPanelTemplate>
                             </ItemsControl.ItemsPanel>-->
-						</ItemsControl>
+                        </ItemsControl>
 
-					</StackPanel>
-				</ScrollViewer>
+                    </StackPanel>
+                </ScrollViewer>
+                
             </Grid>
         </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+            
+            <Button Margin="5" Height="50" Width="200" materialDesign:ButtonAssist.CornerRadius="10"
+                    Content="In"></Button>
+            <Button Margin="5" Height="50" Width="200" materialDesign:ButtonAssist.CornerRadius="10" Click="BtnBack_Click"
+                    Content="Đóng" Background="Red"></Button>
+            <Button Margin="5" Height="50" Width="200" materialDesign:ButtonAssist.CornerRadius="10" Click="PaymentFinalClick"
+                    Content="Thanh Toán" Background="#FF00DC00"
+                     cal:Message.Attach="[Event Click] = [Action CompletePaymentReceipt()]"></Button>
+        </StackPanel>
     </Grid>
 </Window>

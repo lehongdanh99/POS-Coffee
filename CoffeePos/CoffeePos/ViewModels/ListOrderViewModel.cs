@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.ViewModels
@@ -32,13 +33,31 @@ namespace CoffeePos.ViewModels
             
         }
 
-        //private ObservableCollection<Receipt> getListOrders()
-        //{
-        //    return new ObservableCollection<Receipt>()
-        //    {
-        //        new Receipt()
-        //    }
-        //}
+        private Visibility visibilityReceiptDone;
+
+        public Visibility VisibilityReceiptDone
+        {
+            get { return visibilityReceiptDone; }
+            set { visibilityReceiptDone = value;
+                NotifyOfPropertyChange(() => VisibilityReceiptDone);
+            }
+        }
+        public void btnShowListReceipt()
+        {
+            //this.Hide();
+            ListReceipts = ReceiptModel.GetInstance().ListReceipt;
+            VisibilityReceiptDone = Visibility.Visible;
+            NotifyOfPropertyChange(() => ListReceipts);
+            NotifyOfPropertyChange(() => VisibilityReceiptDone);
+        }
+
+        public void btnShowListReceiptDone()
+        {
+            ListReceipts = ReceiptModel.GetInstance().ListReceiptDone;
+            VisibilityReceiptDone = Visibility.Hidden;
+            NotifyOfPropertyChange(() => ListReceipts);
+            NotifyOfPropertyChange(() => VisibilityReceiptDone);
+        }
 
         public void AddListReceipt(Receipt receipt)
         {
@@ -65,11 +84,12 @@ namespace CoffeePos.ViewModels
 
         public void PaymentReceipt(Receipt receipt)
         {
-            PaymentViewModel paymentViewModel = new PaymentViewModel();
+            PaymentViewModel paymentViewModel = new PaymentViewModel(receipt);
             //tableDetailViewModel.eventChange += HandleCallBack;
 
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(paymentViewModel);
+            this.TryCloseAsync();
             //RegisterViewModel registerViewModel = new RegisterViewModel();
             //WindowManager windowManager = new WindowManager();
             //windowManager.ShowDialogAsync(registerViewModel);

@@ -15,13 +15,21 @@ using System.Windows.Shapes;
 namespace CoffeePos.Views
 {
     /// <summary>
-    /// Interaction logic for MessageBox.xaml
+    /// Interaction logic for MessageBoxView.xaml
     /// </summary>
-    public partial class MessageBox : Window
+    public partial class MessageBoxView : Window
     {
-        public MessageBox()
+        public MessageBoxView()
         {
             InitializeComponent();
+        }
+        private void ConfirmPaymentClick(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
         }
     }
 }
