@@ -78,8 +78,9 @@ namespace POS_Coffe.Controllers
         }
         public ActionResult DeleteEmployee(int EmployeeID)
         {
-            var deleteData = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.EmployeeID != EmployeeID).AsQueryable();
-            return RedirectToAction("ViewEmployee", "Employee", deleteData);
+        //    var deleteData = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.EmployeeID == EmployeeID).AsQueryable();
+            EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.RemoveAt(EmployeeID - 1);
+            return RedirectToAction("ViewEmployee", "Employee");
         }
     }
 }
