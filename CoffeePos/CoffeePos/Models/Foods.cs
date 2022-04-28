@@ -51,72 +51,74 @@ namespace CoffeePos
 
 
 
-        public class FoodOrder : PropertyChangedBase
+        
+
+    }
+
+    public class FoodOrder : PropertyChangedBase
+    {
+        public string FoodOrderName { get; set; }
+
+        public string FoodOrderImage { get; set; }
+
+        private string foodSize = "S";
+        public string FoodSize
         {
-            public string FoodOrderName { get; set; }
-
-            public string FoodOrderImage { get; set; }
-
-            private string foodSize = "S";
-            public string FoodSize
+            get { return foodSize; }
+            set
             {
-                get { return foodSize; }
-                set
-                {
-                    foodSize = value;
-                    NotifyOfPropertyChange(() => FoodSize);
-                }
+                foodSize = value;
+                NotifyOfPropertyChange(() => FoodSize);
             }
+        }
 
 
-            private string foodOrderMore;
-            public string FoodOrderMore
+        private string foodOrderMore;
+        public string FoodOrderMore
+        {
+            get { return foodOrderMore; }
+            set
             {
-                get { return foodOrderMore; }
-                set
-                {
-                    foodOrderMore = value;
-                    NotifyOfPropertyChange(() => FoodOrderMore);
-                }
+                foodOrderMore = value;
+                NotifyOfPropertyChange(() => FoodOrderMore);
             }
+        }
 
-            private int foodOrderCount = 1;
-            public int FoodOrderCount
+        private int foodOrderCount = 1;
+        public int FoodOrderCount
+        {
+            get { return foodOrderCount; }
+            set
             {
-                get { return foodOrderCount; }
-                set
-                {
-                    foodOrderCount = value;
-                    NotifyOfPropertyChange(() => FoodOrderCount);
-                }
+                foodOrderCount = value;
+                NotifyOfPropertyChange(() => FoodOrderCount);
             }
+        }
 
-            private double foodOrderPrice;
-            public double FoodOrderPrice
+        private double foodOrderPrice;
+        public double FoodOrderPrice
+        {
+            get { return foodOrderPrice; }
+            set
             {
-                get { return foodOrderPrice; }
-                set
-                {
-                    foodOrderPrice = value;
-                    NotifyOfPropertyChange(() => FoodOrderPrice);
-                }
+                foodOrderPrice = value;
+                NotifyOfPropertyChange(() => FoodOrderPrice);
             }
+        }
 
-            public FoodOrder(string foodOrderName = default, string foodOrderMore = default, int foodOrderCount = default, double foodOrderPrice = default, string foodOrderImage = default, string foodSize = default)
-            {
-                FoodOrderMore = foodOrderMore;
-                FoodOrderCount = foodOrderCount;
-                FoodOrderName = foodOrderName;
-                FoodOrderPrice = foodOrderPrice;
-                FoodOrderImage = foodOrderImage;
-                FoodSize = foodSize;
-            }
-
+        public FoodOrder(string foodOrderName = default, string foodOrderMore = default, int foodOrderCount = default, double foodOrderPrice = default, string foodOrderImage = default, string foodSize = default)
+        {
+            FoodOrderMore = foodOrderMore;
+            FoodOrderCount = foodOrderCount;
+            FoodOrderName = foodOrderName;
+            FoodOrderPrice = foodOrderPrice;
+            FoodOrderImage = foodOrderImage;
+            FoodSize = foodSize;
         }
 
     }
 
-    
+
 
     public class TypeFoods
     {

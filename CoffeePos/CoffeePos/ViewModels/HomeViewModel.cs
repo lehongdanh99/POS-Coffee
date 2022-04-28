@@ -48,7 +48,7 @@ namespace CoffeePos.ViewModels
             ListViewFoodOrders = FoodOrderModel.GetInstance().FoodOrders;
             GetFoodOrderTotal();
 
-
+            
         }
 
         public void GetFoodOrderTotal()
@@ -447,9 +447,9 @@ namespace CoffeePos.ViewModels
         {
             //this.TryCloseAsync();
             //TablesViewModel tableViewModel = new TablesViewModel(false);
-
+            GlobalDef.IsChooseTableToOrder = false;
             WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(TablesViewModel.GetInstance(false));
+            windowManager.ShowWindowAsync(TablesViewModel.GetInstance());
 
         }
 
@@ -457,18 +457,20 @@ namespace CoffeePos.ViewModels
         {
             //TablesViewModel tableViewModel = new TablesViewModel(true);
             //tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
+            GlobalDef.IsChooseTableToOrder = true;
             WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(TablesViewModel.GetInstance(true));
+            windowManager.ShowWindowAsync(TablesViewModel.GetInstance());
 
         }
-        public Receipt Receipt = new Receipt();
+        
         public void btOrderLocally_Click()
         {
-            Receipt.Foods = ListViewFoodOrders;
-            Receipt.Table = TableNum;
-            Receipt.Total = TotalOrder;
-            Receipt.Payment = HomePayment;
-            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(Receipt, false);
+            Receipt receipt = new Receipt();
+            receipt.Foods = FoodOrderModel.GetInstance().FoodOrders;
+            receipt.Table = TableNum;
+            receipt.Total = TotalOrder;
+            receipt.Payment = HomePayment;
+            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
             //tableDetailViewModel.eventChange += HandleCallBack;
 
             WindowManager windowManager = new WindowManager();

@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using CoffeePos.Common;
 using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace CoffeePos.ViewModels
             CanSwitch = canSwitch;
         }
 
-        public Receipt Receipt = new Receipt();
+        
 
         private bool CanSwitch;
 
@@ -48,12 +49,12 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => VisibilityCanSwitch);
             }
         }
-        private ObservableCollection<FoodOrder> orderTable;
+        private ObservableCollection<FoodOrder> listfoodOrder;
 
         public ObservableCollection<FoodOrder> ListFoodOrder
         {
-            get { return orderTable; }
-            set { orderTable = value; NotifyOfPropertyChange(() => ListFoodOrder); }
+            get { return listfoodOrder; }
+            set { listfoodOrder = value; NotifyOfPropertyChange(() => ListFoodOrder); }
         }
 
         private int tableNumOrder;
@@ -95,7 +96,8 @@ namespace CoffeePos.ViewModels
         {
             eventSwitchTableCallBack.Invoke(TableNumOrder);
             //TablesViewModel tableViewModel = new TablesViewModel(true);
-            TablesViewModel.GetInstance(true).eventChooseTableToOrder += HandleCallBacChooseTable;
+            
+            TablesViewModel.GetInstance().eventChooseTableToOrder += HandleCallBacChooseTable;
             //WindowManager windowManager = new WindowManager();
             //windowManager.ShowWindowAsync(tableViewModel);
         }
@@ -107,29 +109,30 @@ namespace CoffeePos.ViewModels
 
         public void btnConfirmReceipt()
         {
+            Receipt ReceiptTest = new Receipt();
             WindowManager windowManager = new WindowManager();
-            Receipt.Foods = ListFoodOrder;
-            Receipt.Table = TableNumOrder;
-            Receipt.Total = TotalOrder;
-            Receipt.Payment = PaymentOrder;
-            Receipt.CheckOut = DateTime.Now;
-            Receipt.CheckIn = DateTime.Now;
-            Receipt.Note = string.Empty;
+            ReceiptTest.Foods = ListFoodOrder;
+            ReceiptTest.Table = TableNumOrder;
+            ReceiptTest.Total = TotalOrder;
+            ReceiptTest.Payment = PaymentOrder;
+            ReceiptTest.CheckOut = DateTime.Now;
+            ReceiptTest.CheckIn = DateTime.Now;
+            ReceiptTest.Note = string.Empty;
             foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
             {
-                if(receipt.Id == Receipt.Id && receipt.Foods == Receipt.Foods
-                    && receipt.Total == Receipt.Total && receipt.Payment == Receipt.Payment
-                    && receipt.CheckOut == Receipt.CheckOut && receipt.CheckIn == Receipt.CheckIn)
+                if(receipt.Id == ReceiptTest.Id && receipt.Foods == ReceiptTest.Foods
+                    && receipt.Total == ReceiptTest.Total && receipt.Payment == ReceiptTest.Payment
+                    && receipt.CheckOut == ReceiptTest.CheckOut && receipt.CheckIn == ReceiptTest.CheckIn)
                 {
                     ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
                     ListTable.GetInstance().ListTables.TableNumber[receipt.Table].TableStatus = false;
-                    ReceiptModel.GetInstance().ListReceipt[receipt.Id] = Receipt;
+                    ReceiptModel.GetInstance().ListReceipt[receipt.Id] = ReceiptTest;
                     this.TryCloseAsync();
 
-                    FoodOrderModel.GetInstance().FoodOrders.Clear();
+                    //FoodOrderModel.GetInstance().FoodOrders.Clear();
                     HomeViewModel.GetInstance().TableNum = 0;
                     HomeViewModel.GetInstance().GetFoodOrderTotal();
-                    
+                    HomeViewModel.GetInstance().ListViewFoodOrders.Clear();
                     //windowManager.ShowWindowAsync(TablesViewModel.GetInstance());
                     return;
                 }
@@ -138,12 +141,13 @@ namespace CoffeePos.ViewModels
             }
             ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
             //ListOrderViewModel.GetInstance().AddListReceipt(Receipt);
-            ReceiptModel.GetInstance().ListReceipt.Add(Receipt);
-            this.TryCloseAsync();
-            FoodOrderModel.GetInstance().FoodOrders.Clear();
+            ReceiptModel.GetInstance().ListReceipt.Add(ReceiptTest);
+           
+            //FoodOrderModel.GetInstance().FoodOrders.Clear();
             HomeViewModel.GetInstance().TableNum = 0;
+            HomeViewModel.GetInstance().ListViewFoodOrders.RemoveAt(0);
             HomeViewModel.GetInstance().GetFoodOrderTotal();
-
+            this.TryCloseAsync();
         }
     }
 }

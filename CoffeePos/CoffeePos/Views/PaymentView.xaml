@@ -95,12 +95,67 @@
                 </Grid>
             </Grid>
             <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
+                <!--<Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="70"/>
                     <RowDefinition/>
-                </Grid.RowDefinitions>
-                
+                </Grid.RowDefinitions>-->
+				<ScrollViewer Margin="0 70 0 190" HorizontalAlignment="Center" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+					<StackPanel>
+						<ItemsControl x:Name="ListViewFoodOrder" Margin="0 10 0 0"
+                                      ItemsSource="{Binding ListViewFoodOrders}">
+
+							<ItemsControl.ItemTemplate>
+								<DataTemplate>
+									<Border Margin="0 10 0 0"  Width="250" Height="auto" CornerRadius="5" Background="#FFF3F3F3">
+										<!--<Border.Effect>
+                                            <DropShadowEffect BlurRadius="5" ShadowDepth="1"/>
+                                        </Border.Effect>-->
+										<Grid >
+
+											<Grid.RowDefinitions>
+												<RowDefinition></RowDefinition>
+												<RowDefinition></RowDefinition>
+											</Grid.RowDefinitions>
+
+											<Grid Grid.Row="0">
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition Width="*"></ColumnDefinition>
+													<ColumnDefinition Width="2.5*"></ColumnDefinition>
+													<ColumnDefinition Width="1*"></ColumnDefinition>
+												</Grid.ColumnDefinitions>
+												<Border Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5" Margin="5" Width="50" Height="50">
+													<Border.Background>
+														<ImageBrush ImageSource="{Binding FoodOrderImage}"/>
+													</Border.Background>
+												</Border>
+												<StackPanel Grid.Column="1" Width="150" Margin="0 5">
+													<TextBlock Text="{Binding FoodOrderName}" TextWrapping="Wrap" FontWeight="Bold" FontSize="14" Foreground="Black"></TextBlock>
+													<TextBlock Text="{Binding FoodOrderMore}" Visibility="{Binding ViOrderMore}" TextWrapping="Wrap" FontSize="14" Foreground="Black"></TextBlock>
+
+													<TextBlock Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
+												</StackPanel>
+												<Grid Grid.Column="2">
+													<TextBlock Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20 0" FontWeight="Bold" Text="{Binding FoodOrderCount}"></TextBlock>
+
+												</Grid>
+											</Grid>
+											
+										</Grid>
+
+
+									</Border>
+								</DataTemplate>
+							</ItemsControl.ItemTemplate>
+							<!--<ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>-->
+						</ItemsControl>
+
+					</StackPanel>
+				</ScrollViewer>
             </Grid>
         </Grid>
     </Grid>

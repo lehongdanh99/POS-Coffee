@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using CoffeePos.Common;
 using CoffeePos.Models;
 using System;
 using System.Collections.Generic;

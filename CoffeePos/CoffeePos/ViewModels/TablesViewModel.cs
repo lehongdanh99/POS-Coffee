@@ -18,30 +18,26 @@ namespace CoffeePos.ViewModels
     internal class TablesViewModel : Screen
     {
         private static TablesViewModel _instance;
-        public static TablesViewModel GetInstance(bool isChooseTable = default)
+        public static TablesViewModel GetInstance()
         {
-            if(isChooseTable == default)
-            {
-                
-            }
             if (_instance == null)
             {
-                _instance = new TablesViewModel(isChooseTable);
+                _instance = new TablesViewModel();
             }
             return _instance;
         }
 
 
-        public bool isChoose;
+        //public bool isChoose;
         
         public SelectedTableThis eventChooseTableToOrder;
         public delegate void SelectedTableThis(int SelectedTable);
         //TableModel tablemodel = new TableModel();
 
-        public TablesViewModel(bool isChooseTable)
+        public TablesViewModel()
         { 
 
-            isChoose = isChooseTable;
+            //isChoose = isChooseTable;
             TablesAllList = GetAllTableList();
             GetStatusAllTableList();
             ListFloor = GetListFloor();
@@ -161,7 +157,7 @@ namespace CoffeePos.ViewModels
 
                 
             }
-            else if (isChoose && !SelectedListTable.TableStatus)
+            else if (GlobalDef.IsChooseTableToOrder && !SelectedListTable.TableStatus)
             {
                 int tableIdChoose = SelectedListTable.TableID;
                 eventChooseTableToOrder?.Invoke(tableIdChoose);
@@ -175,7 +171,7 @@ namespace CoffeePos.ViewModels
         private void HandleSwitchTableCallBack(int SelectedTable)
         {
             TablesAllList[SelectedTable].TableStatus = false;
-            isChoose = true;
+            GlobalDef.IsChooseTableToOrder = true;
             //NotifyOfPropertyChange(() => TablesAllList[SelectedTable].BgStatusTable);
         }
 

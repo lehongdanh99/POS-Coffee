@@ -34,7 +34,7 @@ namespace CoffeePos.Models
 
         public class Receipt
         {
-            public ObservableCollection<FoodOrder> Foods { get; set; }
+            public ObservableCollection<FoodOrder> Foods = new ObservableCollection<FoodOrder>();
 
             public int Id { get; set; }
             public int Table { get; set; }

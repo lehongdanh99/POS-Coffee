@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static CoffeePos.Models.TableModel;
 using static CoffeePos.Models.ReceiptModel;
+using CoffeePos.Common;
 
 namespace CoffeePos.Views
 {
@@ -42,13 +43,20 @@ namespace CoffeePos.Views
             //TablesViewModel.GetInstance.btTableSelected_Click(obj);
             if(obj.TableStatus == true)
             {
-                TablesViewModel.GetInstance(false).btTableSelected_Click(obj);
+                TablesViewModel.GetInstance().btTableSelected_Click(obj);
             }    
             else
             {
-                if(TablesViewModel.)
-                HomeViewModel.GetInstance().HandleCallBacChooseTable(obj.TableID);
-                this.Hide();
+                if(GlobalDef.IsChooseTableToOrder)
+                {
+                    HomeViewModel.GetInstance().HandleCallBacChooseTable(obj.TableID);
+                    this.Hide();
+                }    
+                else
+                {
+
+                }
+                
             }    
             
         }
