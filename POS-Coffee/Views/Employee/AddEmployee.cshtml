@@ -3,6 +3,9 @@
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
 
 <div class="row grid-responsive">
     <div class="column ">
@@ -26,9 +29,8 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Permission">Permission</label>
                             <div class="col-sm-9">
-                                @*@Html.EditorFor(model => model.Permission, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Permission, "", new { @class = "text-danger" })*@
-                                @Html.DropDownList("Permission", (IEnumerable<SelectListItem>)ViewBag.Permission, new {@class = "form-control"})
+                                @Html.DropDownList("Permission", (IEnumerable<SelectListItem>)ViewBag.Permission, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Permission, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -36,7 +38,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Birthday">Birthday</label>
                             <div class="col-sm-9">
-                                <input type="date" class="form-control" name="Birthday" id="Birthday" />
+                                @Html.EditorFor(model => model.Birthday, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -45,7 +47,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Phone">Phone</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Phone, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -59,15 +61,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="Password">Password</label>
-                            <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @required = "required", @class = "form-control", type = "password" } })
-                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
 
                     <input class="button-primary" type="submit" value="Send">
                     @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
@@ -78,31 +71,29 @@
     </div>
 </div>
 
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
-<link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
+
 
 <script charset="UTF-8">
     function GoBack() {
         window.location.href = "/Employee/ViewEmployee"
     }
 
-    //$(function () {
-    //    $("#Birthday").datepicker({
-    //        dateFormat: "mm/dd/yy"
-    //    });
-    //});
+    $(function () {
+        $("#Birthday").datepicker({
+            dateFormat: "mm/dd/yy"
+        });
+    });
 
     //$(document).ready(function () {
     //    $(function () {
     //        $('#btnSaveChange').click(function () {
-    //            var data = {                    
+    //            var data = {
     //                Name: $('#Name').val(),
     //                Permission: $('#Permission').val(),
     //                Birthday: $('#Birthday').val(),
     //                Phone: $('#Phone').val(),
     //                Username: $('#Username').val(),
-    //                Password: $('#Password').val(),  
+    //                Password: $('#Password').val(),
     //            }
     //            $.ajax({
     //                type: "POST",

@@ -21,16 +21,40 @@ namespace POS_Coffe
             }
             return _instance;
         }
-        private List<EmployeeModel> model = new List<EmployeeModel>();
-        public List<EmployeeModel> readJsonFileConfig()
+        private List<EmployeeModel> modelEmployee = new List<EmployeeModel>();
+        public List<EmployeeModel> ReadJsonFileConfigEmployee()
         {
             string json = String.Empty;
             using (StreamReader r = new StreamReader(GlobalDef.EMPLOYEE_JSON_CONFIG_PATH))
             {
                 json = r.ReadToEnd();
-                model = JsonConvert.DeserializeObject<List<EmployeeModel>>(json);
+                modelEmployee = JsonConvert.DeserializeObject<List<EmployeeModel>>(json);
             }
-            return model;
+            return modelEmployee;
+        }
+
+        private List<VoucherModel> modelVoucher = new List<VoucherModel>();
+        public List<VoucherModel> ReadJsonFileConfigVoucher()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.EMPLOYEE_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                modelVoucher = JsonConvert.DeserializeObject<List<VoucherModel>>(json);
+            }
+            return modelVoucher;
+        }
+
+        private List<FoodModel> modelFood = new List<FoodModel>();
+        public List<FoodModel> ReadJsonFileConfigFood()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.FOOD_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                modelFood = JsonConvert.DeserializeObject<List<FoodModel>>(json);
+            }
+            return modelFood;
         }
     }
 }

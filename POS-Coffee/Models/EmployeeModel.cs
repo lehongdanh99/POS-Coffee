@@ -42,7 +42,7 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        private List<EmployeeModel> listEmployee = CommonMethod.GetInstance().readJsonFileConfig();
+        private List<EmployeeModel> listEmployee = CommonMethod.GetInstance().ReadJsonFileConfigEmployee();
         public List<EmployeeModel> ListEmployee
         {
             get { return listEmployee; }

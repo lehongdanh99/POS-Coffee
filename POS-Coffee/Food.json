@@ -1,0 +1,158 @@
+[
+    {
+        "Name": "Cà Phê Sữa",
+        "Price": "30000",
+        "Picture": "null",
+        "type": "Cà Phê"
+    },
+    {
+        "Name": "Cà Phê Đá",
+        "Price": "27000",
+        "Picture": "null",
+        "type": "Cà Phê"
+    },
+    {
+        "Name": "Bạc Xỉu",
+        "Price": "30000",
+        "Picture": "null",
+        "type": "Cà Phê"
+    },
+    {
+        "Name": "Cappuccino",
+        "Price": "35000",
+        "Picture": "null",
+        "type": "Cà Phê"
+    },
+    {
+        "Name": "Latte",
+        "Price": "35000",
+        "Picture": "null",
+        "type": "Cà Phê"
+    },
+    {
+        "Name": "Mocha",
+        "Price": "35000",
+        "Picture": "null",
+        "type": "Cà Phê"
+    },
+    {
+        "Name": "Trà Sữa Truyền Thống",
+        "Price": "30000",
+        "Picture": "null",
+        "type": "Trà"
+    },
+    {
+        "Name": "Trà Sữa Matcha",
+        "Price": "35000",
+        "Picture": "null",
+        "type": "Trà"
+    },
+    {
+        "Name": "Trà Sữa Olong",
+        "Price": "35000",
+        "Picture": "null",
+        "type": "Trà"
+    },
+    {
+        "Name": "Sữa Tươi Trân Châu Đường Đen",
+        "Price": "35000",
+        "Picture": "null",
+        "type": "Trà"
+    },
+    {
+        "Name": "Trà Đào",
+        "Price": "35000",
+        "Picture": "null",
+        "type": "Trà"
+    },
+    {
+        "Name": "Trà Vải",
+        "Price": "35000",
+        "Picture": "null",
+        "type": "Trà"
+    },
+    {
+        "Name": "Trà Trái Cây",
+        "Price": "35000",
+        "Picture": "null",
+        "type": "Trà"
+    },
+    {
+        "Name": "Trà Sen Vàng",
+        "Price": "35000",
+        "Picture": "null",
+        "type": "Trà"
+    },
+    {
+        "Name": "Cookie ",
+        "Price": "40000",
+        "Picture": "null",
+        "type": "Đá Xay"
+    },
+    {
+        "Name": "Trà Xanh Đá Xay",
+        "Price": "40000",
+        "Picture": "null",
+        "type": "Đá Xay"
+    },
+    {
+        "Name": "Yaua Việt Quất",
+        "Price": "40000",
+        "Picture": "null",
+        "type": "Đá Xay"
+    },
+    {
+        "Name": "Mocha/Cappuccino Đá Xay",
+        "Price": "40000",
+        "Picture": "null",
+        "type": "Đá Xay"
+    },
+    {
+        "Name": "Yaua Đào",
+        "Price": "40000",
+        "Picture": "null",
+        "type": "Đá Xay"
+    },
+    {
+        "Name": "Chocomint Đá Xay",
+        "Price": "40000",
+        "Picture": "null",
+        "type": "Đá Xay"
+    },
+    {
+        "Name": "Tiramisu",
+        "Price": "29000",
+        "Picture": "null",
+        "type": "Bánh"
+    },
+    {
+        "Name": "Mousse Chanh Dây",
+        "Price": "29000",
+        "Picture": "null",
+        "type": "Bánh"
+    },
+    {
+        "Name": "Mousse Matcha",
+        "Price": "29000",
+        "Picture": "null",
+        "type": "Bánh"
+    },
+    {
+        "Name": "Cheeseake Đào",
+        "Price": "29000",
+        "Picture": "null",
+        "type": "Bánh"
+    },
+    {
+        "Name": "Cheeseake Oreo",
+        "Price": "29000",
+        "Picture": "null",
+        "type": "Bánh"
+    },
+    {
+        "Name": "Flan",
+        "Price": "20000",
+        "Picture": "null",
+        "type": "Bánh"
+    }
+]

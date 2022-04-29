@@ -72,9 +72,17 @@ namespace POS_Coffe.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditEmployee()
+        public ActionResult EditEmployee(EmployeeModel data)
         {
-            return View();
+            var EditData = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.EmployeeID == data.EmployeeID);
+            EmployeeModel model = new EmployeeModel();
+            EditData.ToList().First().Name = data.Name;
+            EditData.ToList().First().Permission = data.Permission;
+            EditData.ToList().First().Birthday = data.Birthday;
+            EditData.ToList().First().Phone = data.Phone;
+            EditData.ToList().First().Username = data.Username;
+
+            return RedirectToAction("ViewEmployee", "Employee");
         }
         public ActionResult DeleteEmployee(int EmployeeID)
         {
