@@ -42,7 +42,7 @@ namespace CoffeePos.Models
 
         public class Receipt
         {
-            public ObservableCollection<FoodOrder> Foods = new ObservableCollection<FoodOrder>();
+            public List<FoodOrder> Foods = new List<FoodOrder>();
 
             public int Id { get; set; }
             public int Table { get; set; }
@@ -61,7 +61,7 @@ namespace CoffeePos.Models
 
             public string Discount { get; set; }
 
-            public Receipt(ObservableCollection<FoodOrder> foods = default, int table = default, double total = default, double payment = default, string note = default, DateTime checkIn = default, DateTime checkOut = default, string voucher = default, string discount = default)
+            public Receipt(List<FoodOrder> foods = default, int table = default, double total = default, double payment = default, string note = default, DateTime checkIn = default, DateTime checkOut = default, string voucher = default, string discount = default)
             {
                 foods = Foods;
                 table = Table;

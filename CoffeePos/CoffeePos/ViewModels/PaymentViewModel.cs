@@ -60,9 +60,9 @@ namespace CoffeePos.ViewModels
             }
         }
 
-        private ObservableCollection<FoodOrder> listfoodOrder;
+        private List<FoodOrder> listfoodOrder;
 
-        public ObservableCollection<FoodOrder> ListFoodOrder
+        public List<FoodOrder> ListFoodOrder
         {
             get { return listfoodOrder; }
             set { listfoodOrder = value; NotifyOfPropertyChange(() => ListFoodOrder); }

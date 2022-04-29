@@ -49,9 +49,9 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => VisibilityCanSwitch);
             }
         }
-        private ObservableCollection<FoodOrder> listfoodOrder;
+        private List<FoodOrder> listfoodOrder;
 
-        public ObservableCollection<FoodOrder> ListFoodOrder
+        public List<FoodOrder> ListFoodOrder
         {
             get { return listfoodOrder; }
             set { listfoodOrder = value; NotifyOfPropertyChange(() => ListFoodOrder); }
@@ -111,7 +111,7 @@ namespace CoffeePos.ViewModels
         {
             Receipt ReceiptTest = new Receipt();
             WindowManager windowManager = new WindowManager();
-            ReceiptTest.Foods = ListFoodOrder;
+            ReceiptTest.Foods = ListFoodOrder.ToList();
             ReceiptTest.Table = TableNumOrder;
             ReceiptTest.Total = TotalOrder;
             ReceiptTest.Payment = PaymentOrder;

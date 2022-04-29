@@ -476,7 +476,7 @@ namespace CoffeePos.ViewModels
         public void btOrderLocally_Click()
         {
             Receipt receipt = new Receipt();
-            receipt.Foods = FoodOrderModel.GetInstance().FoodOrders;
+            receipt.Foods = FoodOrderModel.GetInstance().FoodOrders.ToList();
             receipt.Table = TableNum;
             receipt.Total = TotalOrder;
             receipt.Payment = HomePayment;
