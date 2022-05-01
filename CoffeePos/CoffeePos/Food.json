@@ -1,0 +1,158 @@
+[
+    {
+        "FoodName": "Cà Phê Sữa",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Đá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Bạc Xỉu",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà Sữa Truyền Thống",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sữa Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sữa Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Sữa Tươi Trân Châu Đường Đen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Đào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Vải",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Đá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Đá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Đá Xay"
+    },
+    {
+        "FoodName": "Yaua Việt Quất",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Đá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Đá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Đá Xay"
+    },
+    {
+        "FoodName": "Yaua Đào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Đá Xay"
+    },
+    {
+        "FoodName": "Chocomint Đá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Đá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Đào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+]
