@@ -91,6 +91,16 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => TotalOrder);
             }
         }
+        private bool enableRemoveBtn;
+        public bool EnableDeleteReceiptBtn
+        {
+            get { return enableRemoveBtn; }
+            set
+            {
+                enableRemoveBtn = value;
+                NotifyOfPropertyChange(() => EnableDeleteReceiptBtn);
+            }
+        }
 
         public void SwtitchTable()
         {

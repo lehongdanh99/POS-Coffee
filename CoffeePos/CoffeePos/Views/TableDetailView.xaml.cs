@@ -28,5 +28,15 @@ namespace CoffeePos.Views
         {
             this.Hide();
         }
+        private void btnRemoveFood_Click(object sender, RoutedEventArgs e)
+        {
+            FoodOrder obj = ((FrameworkElement)sender).DataContext as FoodOrder;
+
+        }
+        private void btnComlpleteFood_Click(object sender, RoutedEventArgs e)
+        {
+            FoodOrder obj = ((FrameworkElement)sender).DataContext as FoodOrder;
+
+        }
     }
 }

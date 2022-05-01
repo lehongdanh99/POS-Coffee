@@ -57,6 +57,7 @@ namespace CoffeePos
 
     public class FoodOrder : PropertyChangedBase
     {
+        public bool IsDoneFood { get; set; }
         public string FoodOrderName { get; set; }
 
         public string FoodOrderImage { get; set; }
@@ -106,8 +107,9 @@ namespace CoffeePos
             }
         }
 
-        public FoodOrder(string foodOrderName = default, string foodOrderMore = default, int foodOrderCount = default, double foodOrderPrice = default, string foodOrderImage = default, string foodSize = default)
+        public FoodOrder(bool isDoneFood = default, string foodOrderName = default, string foodOrderMore = default, int foodOrderCount = default, double foodOrderPrice = default, string foodOrderImage = default, string foodSize = default)
         {
+            IsDoneFood = isDoneFood;
             FoodOrderMore = foodOrderMore;
             FoodOrderCount = foodOrderCount;
             FoodOrderName = foodOrderName;

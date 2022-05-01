@@ -144,6 +144,9 @@
   <data name="Home_Total" xml:space="preserve">
     <value>Tổng Tiền</value>
   </data>
+  <data name="ListOrder_Done" xml:space="preserve">
+    <value>Đã Thanh Toán</value>
+  </data>
   <data name="ListOrder_OrderDetail" xml:space="preserve">
     <value>Chi Tiết</value>
   </data>

@@ -144,6 +144,9 @@
   <data name="Home_Total" xml:space="preserve">
     <value>Total</value>
   </data>
+  <data name="ListOrder_Done" xml:space="preserve">
+    <value>Bill Paid</value>
+  </data>
   <data name="ListOrder_OrderDetail" xml:space="preserve">
     <value>Order Detail</value>
   </data>

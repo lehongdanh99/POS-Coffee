@@ -142,6 +142,15 @@ namespace CoffeePos.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bill Paid.
+        /// </summary>
+        public static string ListOrder_Done {
+            get {
+                return ResourceManager.GetString("ListOrder_Done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Order Detail.
         /// </summary>
         public static string ListOrder_OrderDetail {

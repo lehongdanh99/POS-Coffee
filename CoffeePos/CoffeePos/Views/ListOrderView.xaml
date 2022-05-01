@@ -41,7 +41,7 @@
                 <Line X1="0" Y1="0" X2="0" Y2="50" Grid.Column="1" Margin="0 10" Stroke="#FFC8C2C2" StrokeThickness="5"></Line>
                 <Button Grid.Column="1" Margin="5" Height="50" BorderBrush="{x:Null}" FontWeight="Bold" 
                         cal:Message.Attach="[Event Click] = [Action btnShowListReceiptDone()]"
-                        Background="{x:Null}" Foreground="Orange" Content="{x:Static language:Lang.ListOrder_Payment}"></Button>
+                        Background="{x:Null}" Foreground="Orange" Content="{x:Static language:Lang.ListOrder_Done}"></Button>
 
             </Grid>
 

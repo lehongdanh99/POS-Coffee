@@ -33,6 +33,7 @@ namespace CoffeePos.ViewModels
             
         }
 
+        private Receipt ReceiptSelected;
         private Visibility visibilityReceiptDone;
 
         public Visibility VisibilityReceiptDone
@@ -77,7 +78,7 @@ namespace CoffeePos.ViewModels
         {
             TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
             //tableDetailViewModel.eventChange += HandleCallBack;
-
+            ReceiptSelected = receipt;
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(tableDetailViewModel);
         }
@@ -93,6 +94,28 @@ namespace CoffeePos.ViewModels
             //RegisterViewModel registerViewModel = new RegisterViewModel();
             //WindowManager windowManager = new WindowManager();
             //windowManager.ShowDialogAsync(registerViewModel);
+        }
+
+        public void RemoveFoodInReceipt(FoodOrder foodOrder)
+        {
+            if(ReceiptSelected != null)
+            {
+                ReceiptSelected.Foods.Remove(foodOrder);
+            }
+        }
+        public void CompleteFoodInReceipt(FoodOrder foodOrder)
+        {
+            if (ReceiptSelected != null)
+            {
+                foreach(var food in ReceiptSelected.Foods)
+                {
+                    if(food == foodOrder)
+                    {
+                        food.IsDoneFood = true;
+                        break;
+                    }
+                }
+            }
         }
 
     }
