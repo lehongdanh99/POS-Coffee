@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using Caliburn.Micro;
 namespace CoffeePos
 {
@@ -59,6 +60,44 @@ namespace CoffeePos
     {
         public bool IsDoneFood { get; set; }
         public string FoodOrderName { get; set; }
+
+        private string foodDone;
+        public string FoodDone 
+        {
+            get
+            {
+                if (IsDoneFood)
+                    return "Đã hoàn thành";
+                else
+                    return "Chưa xong";
+            }
+            set
+            {
+                foodDone = value;
+                NotifyOfPropertyChange(() => FoodDone);
+            }
+        }
+
+        private SolidColorBrush bgStatusFoodOrder;
+        public SolidColorBrush BgStatusFoodOrder
+        {
+            get
+            {
+                if (IsDoneFood)
+                {
+                    bgStatusFoodOrder = new SolidColorBrush(Colors.Green);
+                }
+                else
+                {
+                    bgStatusFoodOrder = new SolidColorBrush(Colors.Red);
+                }
+                return bgStatusFoodOrder;
+            }
+            set
+            {
+                bgStatusFoodOrder = value;
+            }
+        }
 
         public string FoodOrderImage { get; set; }
 

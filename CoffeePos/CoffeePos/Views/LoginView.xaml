@@ -95,7 +95,7 @@
                                 materialDesign:ButtonAssist.CornerRadius="15"
                                 Height="30"
                                 x:Name="btLogin"
-                                Width="80" Margin="0,40,0,0" 
+                                Margin="0,40,0,0" 
                                 Content="{x:Static language:Lang.Login_Login}"
                                 cal:Message.Attach="[Event Click] = [Action btLogin_Click()]"
                                 >

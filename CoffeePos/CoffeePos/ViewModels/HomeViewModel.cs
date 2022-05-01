@@ -482,7 +482,7 @@ namespace CoffeePos.ViewModels
             receipt.Payment = HomePayment;
             TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
             //tableDetailViewModel.eventChange += HandleCallBack;
-
+            GlobalDef.DetailFromHome = Visibility.Collapsed;
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(tableDetailViewModel);
         }

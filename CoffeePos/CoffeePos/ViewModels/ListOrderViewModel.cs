@@ -78,6 +78,7 @@ namespace CoffeePos.ViewModels
         {
             TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
             //tableDetailViewModel.eventChange += HandleCallBack;
+            GlobalDef.DetailFromHome = Visibility.Visible;
             ReceiptSelected = receipt;
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(tableDetailViewModel);

@@ -28,7 +28,26 @@ namespace CoffeePos.ViewModels
         {
             receiptPayment = receipt;
             ListFoodOrder = receipt.Foods;
+            TotalPayment = receipt.Total;
             MoneySuggestList = getMoneySuggestList();
+        }
+
+        private double totalPayment;
+
+        public double TotalPayment
+        {
+            get { return totalPayment; }
+            set { totalPayment = value; }
+        }
+
+        private double refundMoney;
+
+        public double RefundMoney
+        {
+            get { return refundMoney; }
+            set { refundMoney = value;
+                NotifyOfPropertyChange(() => RefundMoney);
+                    }
         }
 
         private Receipt receiptPayment;

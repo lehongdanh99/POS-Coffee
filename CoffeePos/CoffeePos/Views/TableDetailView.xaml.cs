@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoffeePos.Common;
+using CoffeePos.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.Views
 {
@@ -36,7 +39,19 @@ namespace CoffeePos.Views
         private void btnComlpleteFood_Click(object sender, RoutedEventArgs e)
         {
             FoodOrder obj = ((FrameworkElement)sender).DataContext as FoodOrder;
-
+            for(int i = 0; i < ReceiptModel.GetInstance().ListReceipt.Count(); i++)
+            {
+                if(ReceiptModel.GetInstance().ListReceipt[i] == GlobalDef.ReceiptDetail)
+                {
+                    for(int j = 0; j < ReceiptModel.GetInstance().ListReceipt[i].Foods.Count(); j++)
+                    {
+                        if(ReceiptModel.GetInstance().ListReceipt[i].Foods[j] == obj)
+                        {
+                            ReceiptModel.GetInstance().ListReceipt[i].Foods[j].IsDoneFood = true;
+                        }
+                    }
+                }
+            }
         }
     }
 }

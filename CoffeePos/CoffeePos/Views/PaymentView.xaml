@@ -85,7 +85,7 @@
                     <TextBlock Text="Khách cần trả" Foreground="Black" FontSize="15" 
                                Margin="0 0" VerticalAlignment="Center"
                                HorizontalAlignment="Left"/>
-                    <TextBlock Text="200.000" Foreground="Green" FontSize="25" FontWeight="DemiBold" 
+                    <TextBlock Text="{Binding TotalPayment}" Foreground="Green" FontSize="25" FontWeight="DemiBold" 
                                Margin="0"
                                HorizontalAlignment="Right"/>
                 </Grid>
@@ -100,7 +100,7 @@
                     <Grid Height="49">
                         <TextBlock Text="Tiền trả khách" Foreground="Black" FontSize="15" VerticalAlignment="Center" FontWeight="DemiBold"
                                Margin="20 0"></TextBlock>
-                        <TextBlock Text="500000" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
+                        <TextBlock Text="{Binding RefundMoney}" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
                                Margin="20 0" FontWeight="DemiBold"></TextBlock>
                     </Grid>
                 </StackPanel>

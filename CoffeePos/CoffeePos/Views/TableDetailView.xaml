@@ -14,7 +14,7 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="150"/>
             <RowDefinition Height="80"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition Height="50"/>
@@ -55,7 +55,8 @@
                 </TextBlock>
                 <TextBlock Text="{Binding TableNumOrder}" HorizontalAlignment="Center" Margin="0 5"
                         FontWeight="Bold"></TextBlock>
-                <Button Content="Ghép bàn" FontSize="10" Foreground="Orange" FontWeight="DemiBold" Height="20" Margin="10 0" Background="{x:Null}" BorderBrush="{x:Null}"></Button>
+                <Button Content="Ghép bàn" FontSize="10" Foreground="Orange" FontWeight="DemiBold" Height="20" Margin="0"
+                        Visibility="{Binding DetailFromHome}" Background="{x:Null}" BorderBrush="{x:Null}"></Button>
             </StackPanel>
             <Line Grid.Column="1"
             X1="0" Y1="0" X2="0" Y2="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-1" Stroke="#FFC8C2C2" StrokeThickness="2"/>
@@ -80,7 +81,7 @@
                 </TextBlock>
             </StackPanel>
         </Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="3" Margin="5">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="50" Grid.Row="3" Margin="5" Visibility="{Binding DetailFromHome}">
             <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 0 0" Content="Chỉnh sửa" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
             <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 0 0" Content="Hoàn thành" Background="#FF00DC00" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
             <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 5 0" Content="Hủy đơn" Background="Red" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
@@ -97,16 +98,18 @@
                                 <StackPanel>
                                     <Grid>
                                         <TextBlock Margin="10" Text="{Binding FoodOrderName}"></TextBlock>
-                                        <TextBlock Margin="15 0" VerticalAlignment="Center" 
+                                        <TextBlock Margin="35 0" VerticalAlignment="Center" Foreground="{Binding BgStatusFoodOrder}" Visibility="{Binding DetailFromHome}"
+                                   FontWeight="DemiBold" FontSize="13" HorizontalAlignment="Right" Text="{Binding FoodDone}"/>
+                                        <TextBlock Margin="15 0" VerticalAlignment="Center" Foreground="Green"
                                    FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Text="{Binding FoodOrderCount}"/>
                                     </Grid>
                                     <Grid>
                                         <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="Orange"></TextBlock>
-                                        <Button Margin="0 0 40 0" HorizontalAlignment="Right" IsEnabled="{Binding IsDoneFood}" Click="btnRemoveFood_Click"
+                                        <Button Margin="0 0 40 0" HorizontalAlignment="Right"  Click="btnRemoveFood_Click"  Visibility="{Binding DetailFromHome}"
                                                 BorderBrush="{x:Null}" Background="{x:Null}" Width="30" materialDesign:ButtonAssist.CornerRadius="15">
                                             <materialDesign:PackIcon HorizontalAlignment="Right" Kind="Close" Width="20" Foreground="Red" Height="20" Margin="-10"/>
                                         </Button>
-                                        <Button Margin="0 0 10 0" HorizontalAlignment="Right"  IsEnabled="{Binding IsDoneFood}" Click="btnComlpleteFood_Click"
+                                        <Button Margin="0 0 10 0" HorizontalAlignment="Right"  Click="btnComlpleteFood_Click"  Visibility="{Binding DetailFromHome}"
                                                 BorderBrush="{x:Null}" Background="{x:Null}" Width="30" materialDesign:ButtonAssist.CornerRadius="15">
                                             <materialDesign:PackIcon HorizontalAlignment="Right" Foreground="Green"  Kind="Check" Width="20" Height="20" Margin="-10"/>
                                         </Button>

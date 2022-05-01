@@ -19,9 +19,9 @@ namespace CoffeePos.ViewModels
         public TableDetailViewModelEvent eventSwitchTableCallBack;
         public delegate void TableDetailViewModelEvent(int SelectedTable);
 
-
         public TableDetailViewModel(Receipt receipt, bool canSwitch)
         {
+            GlobalDef.ReceiptDetail = receipt;
             ListFoodOrder = receipt.Foods;
             TableNumOrder = receipt.Table;
             PaymentOrder = receipt.Payment;
@@ -32,6 +32,14 @@ namespace CoffeePos.ViewModels
         
 
         private bool CanSwitch;
+
+        private Visibility detailFromHome;
+
+        public Visibility DetailFromHome
+        {
+            get { return GlobalDef.DetailFromHome; }
+            set { detailFromHome = value; }
+        }
 
         private Visibility visibilityCanSwitch;
         public Visibility VisibilityCanSwitch

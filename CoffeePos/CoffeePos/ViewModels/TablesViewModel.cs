@@ -146,6 +146,7 @@ namespace CoffeePos.ViewModels
                     {
                         TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, true);
                         WindowManager windowManager = new WindowManager();
+                        GlobalDef.DetailFromHome = Visibility.Visible;
                         tableDetailViewModel.eventSwitchTableCallBack += HandleSwitchTableCallBack;
                         windowManager.ShowWindowAsync(tableDetailViewModel);
                         //this.TryCloseAsync();
@@ -250,7 +251,7 @@ namespace CoffeePos.ViewModels
 
             TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
             //tableDetailViewModel.eventChange += HandleCallBack;
-
+            GlobalDef.DetailFromHome = Visibility.Visible;
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(tableDetailViewModel);
         }
