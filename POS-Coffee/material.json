@@ -1,0 +1,122 @@
+[
+    {
+        "Name": "bột cà phê thường",
+        "Type": "cà phê",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "bột cà phê cao cấp",
+        "Type": "cà phê",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "đường",
+        "Type": "Cà phê",
+        "Amount": "5000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "sữa đặc",
+        "Type": "cà phê",
+        "Amount": "5000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "trà gói",
+        "Type": "trà",
+        "Amount": "200",
+        "Quantity": "cái"
+    },
+    {
+        "Name": "trà olong",
+        "Type": "trà",
+        "Amount": "200",
+        "Quantity": "cái"
+    },
+    {
+        "Name": "trà xanh",
+        "Type": "trà",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "đường",
+        "Type": "trà",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "siro đào",
+        "Type": "trà",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "siro vải",
+        "Type": "trà",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "sen vàng",
+        "Type": "trà",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "sữa chua",
+        "Type": "đá xay",
+        "Amount": "100",
+        "Quantity": "cái"
+    },
+    {
+        "Name": "trà xanh",
+        "Type": "đá xay",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "cookie",
+        "Type": "đá xay",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "cookie",
+        "Type": "đá xay",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "việt quốc",
+        "Type": "đá xay",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "mocha",
+        "Type": "đá xay",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "đào",
+        "Type": "đá xay",
+        "Amount": "10000",
+        "Quantity": "gam"
+    },
+    {
+        "Name": "ống hút",
+        "Type": "mang đi",
+        "Amount": "100",
+        "Quantity": "cái"
+    },
+    {
+        "Name": "ly nhựa",
+        "Type": "mang đi",
+        "Amount": "100",
+        "Quantity": "cái"
+    }
+]

@@ -23,6 +23,7 @@ namespace POS_Coffe.Models
         public string Name { get; set; }
         public int IDFood { get; set; }
         public int Value { get; set; }
+        public bool isValue { get; set; }
     }
     public class VoucherAPIHandlerFakeData
     {

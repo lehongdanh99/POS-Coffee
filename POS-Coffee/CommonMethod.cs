@@ -32,19 +32,19 @@ namespace POS_Coffe
             }
             return modelEmployee;
         }
-
+        //Get list voucher
         private List<VoucherModel> modelVoucher = new List<VoucherModel>();
         public List<VoucherModel> ReadJsonFileConfigVoucher()
         {
             string json = String.Empty;
-            using (StreamReader r = new StreamReader(GlobalDef.EMPLOYEE_JSON_CONFIG_PATH))
+            using (StreamReader r = new StreamReader(GlobalDef.VOUCHER_JSON_CONFIG_PATH))
             {
                 json = r.ReadToEnd();
                 modelVoucher = JsonConvert.DeserializeObject<List<VoucherModel>>(json);
             }
             return modelVoucher;
         }
-
+        //Get list Food
         private List<FoodModel> modelFood = new List<FoodModel>();
         public List<FoodModel> ReadJsonFileConfigFood()
         {
@@ -56,5 +56,42 @@ namespace POS_Coffe
             }
             return modelFood;
         }
+        //Get list Recipe
+        private List<RecipeModel> modelRecipe = new List<RecipeModel>();
+        public List<RecipeModel> ReadJsonFileConfigRecipe()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.RECIPE_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                modelRecipe = JsonConvert.DeserializeObject<List<RecipeModel>>(json);
+            }
+            return modelRecipe;
+        }
+        //Get list Customer
+        private List<CustomerModel> modelCustomer = new List<CustomerModel>();
+        public List<CustomerModel> ReadJsonFileConfigCustomer()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.CUSTOMER_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                modelCustomer = JsonConvert.DeserializeObject<List<CustomerModel>>(json);
+            }
+            return modelCustomer;
+        }
+        //Get list Material
+        private List<MaterialsModel> modelMaterial = new List<MaterialsModel>();
+        public List<MaterialsModel> ReadJsonFileConfigMaterial()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.CUSTOMER_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                modelMaterial = JsonConvert.DeserializeObject<List<MaterialsModel>>(json);
+            }
+            return modelMaterial;
+        }
+
     }
 }

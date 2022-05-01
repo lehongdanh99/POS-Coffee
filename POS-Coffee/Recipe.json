@@ -1,0 +1,127 @@
+[
+    {
+        "Amount_for_one": "20",
+        "drink_cake_id": "1",
+        "material_id": "1"
+    },
+    {
+        "Amount_for_one": "20",
+        "drink_cake_id": "1",
+        "material_id": "4"
+    },
+    {
+        "Amount_for_one": "10",
+        "drink_cake_id": "3",
+        "material_id": "1"
+    },
+    {
+        "Amount_for_one": "10",
+        "drink_cake_id": "3",
+        "material_id": "4"
+    },
+    {
+        "Amount_for_one": "20",
+        "drink_cake_id": "3",
+        "material_id": "1"
+    },
+    {
+        "Amount_for_one": "20",
+        "drink_cake_id": "3",
+        "material_id": "4"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "4",
+        "material_id": "2"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "4",
+        "material_id": "4"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "5",
+        "material_id": "2"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "5",
+        "material_id": "4"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "6",
+        "material_id": "5"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "6",
+        "material_id": "8"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "6",
+        "material_id": "5"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "6",
+        "material_id": "8"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "7",
+        "material_id": "7"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "7",
+        "material_id": "8"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "8",
+        "material_id": "6"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "8",
+        "material_id": "8"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "8",
+        "material_id": "6"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "8",
+        "material_id": "8"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "10",
+        "material_id": "6"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "10",
+        "material_id": "8"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "10",
+        "material_id": "9"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "15",
+        "material_id": "14"
+    },
+    {
+        "Amount_for_one": "30",
+        "drink_cake_id": "17",
+        "material_id": "15"
+    }
+]
