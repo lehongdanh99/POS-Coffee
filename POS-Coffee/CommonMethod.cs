@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+
 namespace POS_Coffe
 {
     public class CommonMethod
@@ -91,6 +94,16 @@ namespace POS_Coffe
                 modelMaterial = JsonConvert.DeserializeObject<List<MaterialsModel>>(json);
             }
             return modelMaterial;
+        }
+
+        public ImageSource convertByte(byte[] byteImage)
+        {
+            BitmapImage biImg = new BitmapImage();
+            MemoryStream ms = new MemoryStream(byteImage);
+            biImg.BeginInit();
+            biImg.StreamSource = ms;
+            biImg.EndInit();
+            return biImg as ImageSource;
         }
 
     }
