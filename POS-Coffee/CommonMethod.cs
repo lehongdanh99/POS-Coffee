@@ -96,15 +96,15 @@ namespace POS_Coffe
             return modelMaterial;
         }
 
-        public ImageSource convertByte(byte[] byteImage)
-        {
-            BitmapImage biImg = new BitmapImage();
-            MemoryStream ms = new MemoryStream(byteImage);
-            biImg.BeginInit();
-            biImg.StreamSource = ms;
-            biImg.EndInit();
-            return biImg as ImageSource;
-        }
+        //public ImageSource convertByte(byte[] byteImage)
+        //{
+        //    BitmapImage biImg = new BitmapImage();
+        //    MemoryStream ms = new MemoryStream(byteImage);
+        //    biImg.BeginInit();
+        //    biImg.StreamSource = ms;
+        //    biImg.EndInit();
+        //    return biImg as ImageSource;
+        //}
 
     }
 }
