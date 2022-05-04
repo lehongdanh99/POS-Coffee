@@ -93,7 +93,19 @@ namespace CoffeePos.ViewModels
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(messageBoxViewModel);
             ReceiptModel.GetInstance().ListReceipt.Remove(receiptPayment);
-            ListTable.GetInstance().ListTables.TableNumber[receiptPayment.Table].TableStatus = false;
+            for(int i = 0 ; i < ListTable.GetInstance().ListTables.TableNumber.Count; i++)
+            {
+                var numbersTable = receiptPayment.Table.Split(',').Select(Int32.Parse).ToList();
+                for(int j = 0; j < numbersTable.Count; j++)
+                {
+                    if(ListTable.GetInstance().ListTables.TableNumber[i].TableID == j)
+                    {
+                        ListTable.GetInstance().ListTables.TableNumber[i].TableStatus = false;
+
+                    }    
+                }    
+            }    
+            //ListTable.GetInstance().ListTables.TableNumber[receiptPayment.Table].TableStatus = false;
             ReceiptModel.GetInstance().ListReceiptDone.Add(receiptPayment);
         }
     }

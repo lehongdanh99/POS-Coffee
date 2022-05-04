@@ -483,7 +483,7 @@ namespace CoffeePos.ViewModels
         {
             Receipt receipt = new Receipt();
             receipt.Foods = FoodOrderModel.GetInstance().FoodOrders.ToList();
-            receipt.Table = TableNum;
+            receipt.Table = TableNum.ToString();
             receipt.Total = TotalOrder;
             receipt.Payment = HomePayment;
             TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);

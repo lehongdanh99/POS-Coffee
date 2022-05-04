@@ -142,7 +142,7 @@ namespace CoffeePos.ViewModels
             {
                 foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
                 {
-                    if(receipt.Table == SelectedListTable.TableID)
+                    if(receipt.Table == SelectedListTable.TableID.ToString())
                     {
                         TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, true);
                         WindowManager windowManager = new WindowManager();

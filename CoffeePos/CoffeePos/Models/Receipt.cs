@@ -61,7 +61,7 @@ namespace CoffeePos.Models
 
             public string Discount { get; set; }
 
-            public Receipt(List<FoodOrder> foods = default, int table = default, double total = default, double payment = default, string note = default, DateTime checkIn = default, DateTime checkOut = default, string voucher = default, string discount = default)
+            public Receipt(List<FoodOrder> foods = default, string table = default, double total = default, double payment = default, string note = default, DateTime checkIn = default, DateTime checkOut = default, string voucher = default, string discount = default)
             {
                 foods = Foods;
                 table = Table;
