@@ -45,7 +45,7 @@ namespace CoffeePos.Models
             public List<FoodOrder> Foods = new List<FoodOrder>();
 
             public int Id { get; set; }
-            public int Table { get; set; }
+            public string Table { get; set; }
 
             public double Total { get; set; }
 

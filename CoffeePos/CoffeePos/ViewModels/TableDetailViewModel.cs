@@ -23,7 +23,7 @@ namespace CoffeePos.ViewModels
         {
             GlobalDef.ReceiptDetail = receipt;
             ListFoodOrder = receipt.Foods;
-            TableNumOrder = receipt.Table;
+            TableNumOrder = Int32.Parse(receipt.Table); ;
             PaymentOrder = receipt.Payment;
             TotalOrder = receipt.Total;
             CanSwitch = canSwitch;
@@ -130,7 +130,7 @@ namespace CoffeePos.ViewModels
             Receipt ReceiptTest = new Receipt();
             WindowManager windowManager = new WindowManager();
             ReceiptTest.Foods = ListFoodOrder.ToList();
-            ReceiptTest.Table = TableNumOrder;
+            ReceiptTest.Table = TableNumOrder.ToString();
             ReceiptTest.Total = TotalOrder;
             ReceiptTest.Payment = PaymentOrder;
             ReceiptTest.CheckOut = DateTime.Now;
@@ -143,7 +143,7 @@ namespace CoffeePos.ViewModels
                     && receipt.CheckOut == ReceiptTest.CheckOut && receipt.CheckIn == ReceiptTest.CheckIn)
                 {
                     ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
-                    ListTable.GetInstance().ListTables.TableNumber[receipt.Table].TableStatus = false;
+                    ListTable.GetInstance().ListTables.TableNumber[Int32.Parse(receipt.Table)].TableStatus = false;
                     ReceiptModel.GetInstance().ListReceipt[receipt.Id] = ReceiptTest;
                     this.TryCloseAsync();
 
