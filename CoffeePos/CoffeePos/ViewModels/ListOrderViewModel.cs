@@ -76,7 +76,7 @@ namespace CoffeePos.ViewModels
 
         public void ViewDetailReceipt (Receipt receipt)
         {
-            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
+            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, true);
             //tableDetailViewModel.eventChange += HandleCallBack;
             GlobalDef.DetailFromHome = Visibility.Visible;
             ReceiptSelected = receipt;

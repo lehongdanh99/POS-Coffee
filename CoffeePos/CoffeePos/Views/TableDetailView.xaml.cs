@@ -1,5 +1,6 @@
 ﻿using CoffeePos.Common;
 using CoffeePos.Models;
+using CoffeePos.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,13 @@ namespace CoffeePos.Views
         private void btnRemoveFood_Click(object sender, RoutedEventArgs e)
         {
             FoodOrder obj = ((FrameworkElement)sender).DataContext as FoodOrder;
+
+        }
+
+        private void AddMoreFood_Click(object sender, RoutedEventArgs e)
+        {
+            HomeViewModel.GetInstance()
+                FoodOrderModel.GetInstance().FoodOrders 
 
         }
         private void btnComlpleteFood_Click(object sender, RoutedEventArgs e)

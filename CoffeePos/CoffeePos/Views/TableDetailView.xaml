@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Button 
-                HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding VisibilityCanSwitch}"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding VisibleCanEdit}"
                         materialDesign:ButtonAssist.CornerRadius="25" Margin="10 0" BorderBrush="{x:Null}"
                 cal:Message.Attach="[Event Click] = [Action SwtitchTable()]" Click="BtnBack_Click">
                 
@@ -51,43 +51,50 @@
             <Line Grid.Column="0"
             X1="0" Y1="0" X2="0" Y2="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-1" Stroke="#FFC8C2C2" StrokeThickness="2"/>
             <StackPanel Grid.Column="0" VerticalAlignment="Top">
-                <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{x:Static language:Lang.Home_Table}">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{x:Static language:Lang.Home_Table}">
                 </TextBlock>
-                <TextBlock Text="{Binding TableNumOrder}" HorizontalAlignment="Center" Margin="0 5"
+                <TextBlock Text="{Binding TableNumOrder}" HorizontalAlignment="Center" Margin="0 5 0 0"
                         FontWeight="Bold"></TextBlock>
-                <Button Content="Ghép bàn" FontSize="10" Foreground="Orange" FontWeight="DemiBold" Height="20" Margin="0"
-                        Visibility="{Binding DetailFromHome}" Background="{x:Null}" BorderBrush="{x:Null}"></Button>
+                <Button Content="Ghép bàn" FontSize="10" Foreground="Orange" FontWeight="DemiBold" Visibility="{Binding VisibleCanEdit}"
+                        Height="20" Margin="10 0" Background="{x:Null}" BorderBrush="{x:Null}"></Button>
             </StackPanel>
             <Line Grid.Column="1"
             X1="0" Y1="0" X2="0" Y2="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-1" Stroke="#FFC8C2C2" StrokeThickness="2"/>
             <StackPanel Grid.Column="1" VerticalAlignment="Top">
-                <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{x:Static language:Lang.Table_Total}">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{x:Static language:Lang.Table_Total}">
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{Binding TotalOrder}" FontWeight="Black">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{Binding TotalOrder}" FontWeight="Bold">
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Center" Margin="0" Text="VND" FontWeight="DemiBold">
                 </TextBlock>
             </StackPanel>
             <Line Grid.Column="2"
             X1="0" Y1="0" X2="0" Y2="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-1" Stroke="#FFC8C2C2" StrokeThickness="2"/>
             <StackPanel Grid.Column="2" VerticalAlignment="Top">
-                <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{x:Static language:Lang.Table_Discount}">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{x:Static language:Lang.Table_Discount}">
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="0 VND" FontWeight="Black">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="0" FontWeight="Bold">
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Center" Margin="0" Text="VND" FontWeight="DemiBold">
                 </TextBlock>
             </StackPanel>
             <StackPanel Grid.Column="3" VerticalAlignment="Top">
-                <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{x:Static language:Lang.Table_Payment}">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{x:Static language:Lang.Table_Payment}">
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Center" Margin="0 5" Text="{Binding PaymentOrder}" Foreground="Orange" FontWeight="Black">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{Binding PaymentOrder}" Foreground="Orange" FontWeight="Bold">
+                </TextBlock>
+                <TextBlock HorizontalAlignment="Center" Margin="0" Text="VND" FontWeight="DemiBold">
                 </TextBlock>
             </StackPanel>
         </Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="50" Grid.Row="3" Margin="5" Visibility="{Binding DetailFromHome}">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="50" Grid.Row="3" Margin="5" Visibility="{Binding VisibleCanEdit}">
             <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 0 0" Content="Chỉnh sửa" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
             <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 0 0" Content="Hoàn thành" Background="#FF00DC00" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
             <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 5 0" Content="Hủy đơn" Background="Red" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
         </StackPanel>
         <Grid Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 10 0 0">
-            <Button Height="30" Content="+ Thêm món" FontSize="12" Foreground="Orange" FontWeight="DemiBold" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <Button Height="30" Content="+ Thêm món" FontSize="12" Foreground="Orange" FontWeight="DemiBold" Background="{x:Null}" BorderBrush="{x:Null}"
+                    cal:Message.Attach="[Event Click] = [Action btnConfirmReceipt()]"/>
         </Grid>
         <ScrollViewer Grid.Row="5" VerticalScrollBarVisibility="Hidden">
             <StackPanel>
@@ -98,18 +105,16 @@
                                 <StackPanel>
                                     <Grid>
                                         <TextBlock Margin="10" Text="{Binding FoodOrderName}"></TextBlock>
-                                        <TextBlock Margin="35 0" VerticalAlignment="Center" Foreground="{Binding BgStatusFoodOrder}" Visibility="{Binding DetailFromHome}"
-                                   FontWeight="DemiBold" FontSize="13" HorizontalAlignment="Right" Text="{Binding FoodDone}"/>
-                                        <TextBlock Margin="15 0" VerticalAlignment="Center" Foreground="Green"
+                                        <TextBlock Margin="15 0" VerticalAlignment="Center" 
                                    FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Text="{Binding FoodOrderCount}"/>
                                     </Grid>
                                     <Grid>
                                         <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="Orange"></TextBlock>
-                                        <Button Margin="0 0 40 0" HorizontalAlignment="Right"  Click="btnRemoveFood_Click"  Visibility="{Binding DetailFromHome}"
+                                        <Button Margin="0 0 40 0" HorizontalAlignment="Right" IsEnabled="{Binding IsDoneFood}" Click="btnRemoveFood_Click"
                                                 BorderBrush="{x:Null}" Background="{x:Null}" Width="30" materialDesign:ButtonAssist.CornerRadius="15">
                                             <materialDesign:PackIcon HorizontalAlignment="Right" Kind="Close" Width="20" Foreground="Red" Height="20" Margin="-10"/>
                                         </Button>
-                                        <Button Margin="0 0 10 0" HorizontalAlignment="Right"  Click="btnComlpleteFood_Click"  Visibility="{Binding DetailFromHome}"
+                                        <Button Margin="0 0 10 0" HorizontalAlignment="Right"  IsEnabled="{Binding IsDoneFood}" Click="btnComlpleteFood_Click"
                                                 BorderBrush="{x:Null}" Background="{x:Null}" Width="30" materialDesign:ButtonAssist.CornerRadius="15">
                                             <materialDesign:PackIcon HorizontalAlignment="Right" Foreground="Green"  Kind="Check" Width="20" Height="20" Margin="-10"/>
                                         </Button>
