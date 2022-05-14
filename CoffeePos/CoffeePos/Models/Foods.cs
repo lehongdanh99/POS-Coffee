@@ -58,46 +58,19 @@ namespace CoffeePos
 
     public class FoodOrder : PropertyChangedBase
     {
-        public bool IsDoneFood { get; set; }
+        private bool servedFood = false;
+        public bool ServedFood 
+        {
+            get { return servedFood; }
+            set
+            {
+                servedFood = value;
+                NotifyOfPropertyChange(() => ServedFood);
+            }
+        }
         public string FoodOrderName { get; set; }
 
         private string foodDone;
-        public string FoodDone 
-        {
-            get
-            {
-                if (IsDoneFood)
-                    return "Đã hoàn thành";
-                else
-                    return "Chưa xong";
-            }
-            set
-            {
-                foodDone = value;
-                NotifyOfPropertyChange(() => FoodDone);
-            }
-        }
-
-        private SolidColorBrush bgStatusFoodOrder;
-        public SolidColorBrush BgStatusFoodOrder
-        {
-            get
-            {
-                if (IsDoneFood)
-                {
-                    bgStatusFoodOrder = new SolidColorBrush(Colors.Green);
-                }
-                else
-                {
-                    bgStatusFoodOrder = new SolidColorBrush(Colors.Red);
-                }
-                return bgStatusFoodOrder;
-            }
-            set
-            {
-                bgStatusFoodOrder = value;
-            }
-        }
 
         public string FoodOrderImage { get; set; }
 
@@ -148,7 +121,7 @@ namespace CoffeePos
 
         public FoodOrder(bool isDoneFood = default, string foodOrderName = default, string foodOrderMore = default, int foodOrderCount = default, double foodOrderPrice = default, string foodOrderImage = default, string foodSize = default)
         {
-            IsDoneFood = isDoneFood;
+            ServedFood = isDoneFood;
             FoodOrderMore = foodOrderMore;
             FoodOrderCount = foodOrderCount;
             FoodOrderName = foodOrderName;

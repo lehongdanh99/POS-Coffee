@@ -29,7 +29,15 @@ namespace CoffeePos.ViewModels
             CanEdit = canEdit;
         }
 
-        
+        bool isAllServed = false;
+
+        public bool IsAllServed
+        {
+            get { return isAllServed; }
+            set { isAllServed = value;
+                NotifyOfPropertyChange(() => IsAllServed);
+            }
+        }
 
         private bool CanEdit;
 
@@ -125,6 +133,33 @@ namespace CoffeePos.ViewModels
             NotifyOfPropertyChange(() => TableNumOrder);
         }
 
+        public void BtnServedFood()
+        {
+            
+            foreach(var food in ListFoodOrder)
+            {
+                if(!food.ServedFood)
+                {
+                    IsAllServed = false;
+                    food.ServedFood = true;
+                }
+                
+            }
+
+            if(IsAllServed)
+            {
+                foreach(var food in ListFoodOrder)
+                {
+                    food.ServedFood = false;
+                }
+                IsAllServed = false;
+            }
+            else
+            {
+                IsAllServed = true;
+            }
+        }
+
         public void btnConfirmReceipt()
         {
             Receipt ReceiptTest = new Receipt();
@@ -138,9 +173,8 @@ namespace CoffeePos.ViewModels
             ReceiptTest.Note = string.Empty;
             foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
             {
-                if(receipt.Id == ReceiptTest.Id && receipt.Foods == ReceiptTest.Foods
-                    && receipt.Total == ReceiptTest.Total && receipt.Payment == ReceiptTest.Payment
-                    && receipt.CheckOut == ReceiptTest.CheckOut && receipt.CheckIn == ReceiptTest.CheckIn)
+                if(receipt.Id == ReceiptTest.Id
+                    && receipt.Total == ReceiptTest.Total && receipt.Payment == ReceiptTest.Payment)
                 {
                     ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
                     ListTable.GetInstance().ListTables.TableNumber[Int32.Parse(receipt.Table)].TableStatus = false;
@@ -163,7 +197,7 @@ namespace CoffeePos.ViewModels
            
             //FoodOrderModel.GetInstance().FoodOrders.Clear();
             HomeViewModel.GetInstance().TableNum = 0;
-            HomeViewModel.GetInstance().ListViewFoodOrders.RemoveAt(0);
+            HomeViewModel.GetInstance().ListViewFoodOrders.Clear();
             HomeViewModel.GetInstance().GetFoodOrderTotal();
             this.TryCloseAsync();
         }

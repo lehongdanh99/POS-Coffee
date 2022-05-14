@@ -38,10 +38,17 @@ namespace CoffeePos.Views
 
         }
 
+        private void CheckBoxChanged(object sender, RoutedEventArgs e)
+        {
+
+            btnPayment.IsEnabled = false;
+            MessageBox.Show("Eureka, it changed!");
+        }
+
         private void AddMoreFood_Click(object sender, RoutedEventArgs e)
         {
-            HomeViewModel.GetInstance()
-                FoodOrderModel.GetInstance().FoodOrders 
+            
+                
 
         }
         private void btnComlpleteFood_Click(object sender, RoutedEventArgs e)
@@ -55,7 +62,7 @@ namespace CoffeePos.Views
                     {
                         if(ReceiptModel.GetInstance().ListReceipt[i].Foods[j] == obj)
                         {
-                            ReceiptModel.GetInstance().ListReceipt[i].Foods[j].IsDoneFood = true;
+                            ReceiptModel.GetInstance().ListReceipt[i].Foods[j].ServedFood = true;
                         }
                     }
                 }

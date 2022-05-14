@@ -22,6 +22,8 @@ namespace CoffeePos.Common
         public static Visibility DetailFromHome = Visibility.Collapsed;
         //public static ObservableCollection<Receipt> ListReceipt = new ObservableCollection<Receipt>();
         //
+
+        public static string Password = "";
         public static string JSON_FOOD_CONFIG_PATH = "Food.json";
     }
 }

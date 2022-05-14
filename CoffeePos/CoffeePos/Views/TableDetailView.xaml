@@ -89,7 +89,8 @@
         </Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="50" Grid.Row="3" Margin="5" Visibility="{Binding VisibleCanEdit}">
             <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 0 0" Content="Chỉnh sửa" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
-            <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 0 0" Content="Hoàn thành" Background="#FF00DC00" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
+            <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 0 0" Content="Hoàn thành"
+                     cal:Message.Attach="[Event Click] = [Action BtnServedFood()]" Background="#FF00DC00" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
             <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 5 0" Content="Hủy đơn" Background="Red" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
         </StackPanel>
         <Grid Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 10 0 0">
@@ -110,14 +111,16 @@
                                     </Grid>
                                     <Grid>
                                         <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="Orange"></TextBlock>
-                                        <Button Margin="0 0 40 0" HorizontalAlignment="Right" IsEnabled="{Binding IsDoneFood}" Click="btnRemoveFood_Click"
+                                        <!--<Button Margin="0 0 40 0" HorizontalAlignment="Right" IsEnabled="{Binding IsDoneFood}" Click="btnRemoveFood_Click"
                                                 BorderBrush="{x:Null}" Background="{x:Null}" Width="30" materialDesign:ButtonAssist.CornerRadius="15">
                                             <materialDesign:PackIcon HorizontalAlignment="Right" Kind="Close" Width="20" Foreground="Red" Height="20" Margin="-10"/>
                                         </Button>
                                         <Button Margin="0 0 10 0" HorizontalAlignment="Right"  IsEnabled="{Binding IsDoneFood}" Click="btnComlpleteFood_Click"
                                                 BorderBrush="{x:Null}" Background="{x:Null}" Width="30" materialDesign:ButtonAssist.CornerRadius="15">
                                             <materialDesign:PackIcon HorizontalAlignment="Right" Foreground="Green"  Kind="Check" Width="20" Height="20" Margin="-10"/>
-                                        </Button>
+                                        </Button>-->
+                                        <CheckBox IsChecked="{Binding ServedFood}" Checked="CheckBoxChanged" Unchecked="CheckBoxChanged"
+                                                  HorizontalAlignment="Right" Margin="5" Content="Hoàn Thành" Visibility="{Binding VisibleCanEdit}"/>
                                     </Grid>
                                     
                                 </StackPanel>
@@ -127,7 +130,12 @@
                 </ItemsControl>
             </StackPanel>
         </ScrollViewer>
-        <Button Grid.Row="6" Content="{x:Static language:Lang.Table_Detail_Confirm}"
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="6">
+            <Button x:Name="btnPayment" Content="Thanh Toán" Margin="10" Width="150" materialDesign:ButtonAssist.CornerRadius="5" Visibility="{Binding VisibleCanEdit}"
+                 cal:Message.Attach="[Event Click] = [Action btnConfirmReceipt()]" IsEnabled="{Binding IsAllServed}"></Button>
+            <Button Content="{x:Static language:Lang.Table_Detail_Confirm}" Margin="10" Width="150" materialDesign:ButtonAssist.CornerRadius="5"
                  cal:Message.Attach="[Event Click] = [Action btnConfirmReceipt()]"></Button>
+        </StackPanel>
+        
     </Grid>
 </Window>

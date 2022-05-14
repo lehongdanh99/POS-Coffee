@@ -74,10 +74,11 @@
                     <materialDesign:PackIcon Kind="Key"
                                          VerticalAlignment="Center"
                                          Foreground="{Binding ElementName=PassWordTextBox, Path=BorderBrush}" Margin="0,5,10,0"/>
-                    <PasswordBox x:Name="PassWordTextBox"
+                    <PasswordBox 
+                                 x:Name="passwordBox" PasswordChanged="PasswordBox_OnPasswordChanged"
                                  ff:PasswordBoxAssistant.BindPassword="True"
+                             Password="{Binding Password}"
                              
-                             ff:PasswordBoxAssistant.BoundPassword="{Binding Path=Password, Mode=TwoWay, IsAsync=true}"
                              Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                              materialDesign:HintAssist.Foreground="Green"
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"

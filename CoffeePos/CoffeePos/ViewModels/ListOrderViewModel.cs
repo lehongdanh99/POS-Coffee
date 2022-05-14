@@ -104,20 +104,20 @@ namespace CoffeePos.ViewModels
                 ReceiptSelected.Foods.Remove(foodOrder);
             }
         }
-        public void CompleteFoodInReceipt(FoodOrder foodOrder)
-        {
-            if (ReceiptSelected != null)
-            {
-                foreach(var food in ReceiptSelected.Foods)
-                {
-                    if(food == foodOrder)
-                    {
-                        food.IsDoneFood = true;
-                        break;
-                    }
-                }
-            }
-        }
+        //public void CompleteFoodInReceipt(FoodOrder foodOrder)
+        //{
+        //    if (ReceiptSelected != null)
+        //    {
+        //        foreach(var food in ReceiptSelected.Foods)
+        //        {
+        //            if(food == foodOrder)
+        //            {
+        //                food.IsDoneFood = true;
+        //                break;
+        //            }
+        //        }
+        //    }
+        //}
 
     }
 }
