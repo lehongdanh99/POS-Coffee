@@ -19,27 +19,37 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        public int FoodID { get; set; }
+        public int MaterialID { get; set; }
         public string Name { get; set; }
-        public int Price { get; set; }
-        public byte[] Picture { get; set; }
         public string Type { get; set; }
-
-        private List<MaterialsModel> lstEmpl;
-
-        public List<MaterialsModel> LstEmpl
-        {
-            get
-            {
-                if (lstEmpl == null)
-                    lstEmpl = new List<MaterialsModel>();
-                return lstEmpl;
-            }
-            set
-            {
-                lstEmpl = value;
-            }
-        }
+        public int Amount { get; set; }
+        public string Quantity { get; set; }
 
     }
+    public class MaterialAPIHandlerFakeData
+    {
+
+        private static MaterialAPIHandlerFakeData _instance;
+        public static MaterialAPIHandlerFakeData GetInstance()
+        {
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new MaterialAPIHandlerFakeData();
+                }
+            }
+            return _instance;
+        }
+        private List<MaterialsModel> listMaterial = CommonMethod.GetInstance().ReadJsonFileConfigMaterial();
+        public List<MaterialsModel> ListMaterial
+        {
+            get { return listMaterial; }
+            set
+            {
+                listMaterial = value;
+            }
+        }
+    }
+
 }

@@ -1,0 +1,142 @@
+[
+  {
+    "MaterialID": 1,
+    "Name": "bột cà phê thường",
+    "Type": "cà phê",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 2,
+    "Name": "bột cà phê cao cấp",
+    "Type": "cà phê",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 3,
+    "Name": "đường",
+    "Type": "Cà phê",
+    "Amount": "5000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 4,
+    "Name": "sữa đặc",
+    "Type": "cà phê",
+    "Amount": "5000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 5,
+    "Name": "trà gói",
+    "Type": "trà",
+    "Amount": "200",
+    "Quantity": "cái"
+  },
+  {
+    "MaterialID": 6,
+    "Name": "trà olong",
+    "Type": "trà",
+    "Amount": "200",
+    "Quantity": "cái"
+  },
+  {
+    "MaterialID": 7,
+    "Name": "trà xanh",
+    "Type": "trà",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 8,
+    "Name": "đường",
+    "Type": "trà",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 9,
+    "Name": "siro đào",
+    "Type": "trà",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 10,
+    "Name": "siro vải",
+    "Type": "trà",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 11,
+    "Name": "sen vàng",
+    "Type": "trà",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 12,
+    "Name": "sữa chua",
+    "Type": "đá xay",
+    "Amount": "100",
+    "Quantity": "cái"
+  },
+  {
+    "MaterialID": 13,
+    "Name": "trà xanh",
+    "Type": "đá xay",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 14,
+    "Name": "cookie",
+    "Type": "đá xay",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 15,
+    "Name": "cookie",
+    "Type": "đá xay",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 16,
+    "Name": "việt quốc",
+    "Type": "đá xay",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 17,
+    "Name": "mocha",
+    "Type": "đá xay",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 18,
+    "Name": "đào",
+    "Type": "đá xay",
+    "Amount": "10000",
+    "Quantity": "gam"
+  },
+  {
+    "MaterialID": 19,
+    "Name": "ống hút",
+    "Type": "mang đi",
+    "Amount": "100",
+    "Quantity": "cái"
+  },
+  {
+    "MaterialID": 20,
+    "Name": "ly nhựa",
+    "Type": "mang đi",
+    "Amount": "100",
+    "Quantity": "cái"
+  }
+]

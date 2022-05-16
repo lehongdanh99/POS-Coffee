@@ -23,21 +23,30 @@ namespace POS_Coffe.Models
         public string Name { get; set; }
         public int Price { get; set; }
         public byte[] Picture { get; set; }
-        public string Type { get; set; }
+        public string Type { get; set; }      
+    }
+    public class FoodAPIHandlerFakeData
+    {
 
-        private List<FoodModel> lstEmpl;
-
-        public List<FoodModel> LstEmpl
+        private static FoodAPIHandlerFakeData _instance;
+        public static FoodAPIHandlerFakeData GetInstance()
         {
-            get
+            if (_instance == null)
             {
-                if (lstEmpl == null)
-                    lstEmpl = new List<FoodModel>();
-                return lstEmpl;
+                if (_instance == null)
+                {
+                    _instance = new FoodAPIHandlerFakeData();
+                }
             }
+            return _instance;
+        }
+        private List<FoodModel> listFood = CommonMethod.GetInstance().ReadJsonFileConfigFood();
+        public List<FoodModel> ListFood
+        {
+            get { return listFood; }
             set
             {
-                lstEmpl = value;
+                listFood = value;
             }
         }
     }
