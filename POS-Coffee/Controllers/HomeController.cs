@@ -26,13 +26,28 @@ namespace POS_Coffe.Controllers
         {
             ViewBag.Message = "Your application description page.";
             
-            return View();
+            return View(); 
         }
-
         [HttpPost]
-        public JsonResult Login(EmployeeModel dataLogin)
+        public ActionResult Login(EmployeeModel dataLogin)
         {
-            return Json("",JsonRequestBehavior.AllowGet);
+            string username = dataLogin.Username.ToUpper().Trim();
+            string password = dataLogin.Password.ToUpper().Trim();
+            //string username = dataLogin.Username;
+            //string password = dataLogin.Password;
+            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password) && password != "PASSWORD")
+            {
+                EmployeeModel data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.Username.ToUpper().Trim().Equals(username) && s.Password.Trim().ToUpper().Equals(password)).FirstOrDefault();
+                Session["EmployeeID"] = data.EmployeeID;
+                Session["Name"] = data.Name;
+                Session["Permission"] = data.Permission;
+                Session["Birthday"] = data.Birthday;
+                Session["Phone"] = data.Phone;
+                Session["Username"] = data.Username;
+                Session["Password"] = data.Password;
+                return RedirectToAction("AccountManagement", "Account", data);
+            }
+            return View(false);
         }
         public ActionResult Register()
         {

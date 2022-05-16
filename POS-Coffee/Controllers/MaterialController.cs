@@ -9,28 +9,60 @@ namespace POS_Coffe.Controllers
 {
     public class MaterialController : Controller
     {
-        // GET: Material
         public ActionResult MaterialManagement()
         {
-            //IQueryable<EmployeeModel> data = EmployeeModel.GetInstance().LstEmpl.AsQueryable();
-            //foreach (EmployeeModel model in data)
-            //{
-            //    if (model != null)
-            //        continue;
-            //}
-            return View(/*data.ToList()*/);
+            IQueryable<MaterialsModel> data = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.AsQueryable();
+            foreach (MaterialsModel model in data)
+            {
+                if (model != null)
+                    continue;
+            }
+            return View(data.ToList());
         }
+        [HttpGet]
         public ActionResult AddMaterial()
         {
-            return View();
+            MaterialsModel model = new MaterialsModel();
+            return View(model);
         }
-        public ActionResult EditMaterial()
+        [HttpPost]
+        public ActionResult AddMaterial(MaterialsModel data)
         {
-            return View();
+            MaterialsModel material = new MaterialsModel();
+            material.Name = data.Name;
+            material.Type = data.Type;
+            material.Amount = data.Amount;
+            material.Quantity = data.Quantity;
+            return RedirectToAction("MaterialManagement", "Employee");
         }
-        public ActionResult DeleteMaterial()
+        [HttpGet]
+        public ActionResult EditMaterial(int MaterialID)
         {
-            return View();
+            var EditData = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Where(s => s.MaterialID == MaterialID);
+            MaterialsModel data = new MaterialsModel();
+            data.MaterialID = MaterialID; 
+            data.Name = EditData.ToList().First().Name;
+            data.Type = EditData.ToList().First().Type;
+            data.Amount = EditData.ToList().First().Amount;
+            data.Quantity = EditData.ToList().First().Quantity;
+           
+            return View(data);
+        }
+        [HttpPost]
+        public ActionResult EditMaterial(MaterialsModel data)
+        {
+            var EditData = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Where(s => s.MaterialID == data.MaterialID);
+            MaterialsModel model = new MaterialsModel();
+            EditData.ToList().First().Name = data.Name;
+            EditData.ToList().First().Type = data.Type;
+            EditData.ToList().First().Amount = data.Amount;
+            EditData.ToList().First().Quantity = data.Quantity;
+            return RedirectToAction("MaterialManagement", "Material");
+        }
+        public ActionResult DeleteMaterial(int MaterialID)
+        {
+            MaterialAPIHandlerFakeData.GetInstance().ListMaterial.RemoveAt(MaterialID - 1);
+            return RedirectToAction("MaterialManagement", "Material");
         }
 
     }

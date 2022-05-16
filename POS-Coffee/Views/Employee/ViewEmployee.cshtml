@@ -7,8 +7,12 @@
     <div class="column">
         @using (Html.BeginForm("ViewEmployee", "Employee", FormMethod.Get@*, new { @class = "form-inline" }*@))
 {
-<a class="button" href="#">Search</a>
-<input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />
+    <div class="column column-40 col-search">
+        <a href="#" class="search-btn fa fa-search"></a>
+        <input type="text" name="" value="" placeholder="Search..." />
+    </div>
+    <a class="button" href="#">Search</a>
+    <input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />
 }
         <div class="card">
             <div class="card-block">
@@ -25,21 +29,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            <th>@item.EmployeeID</th>
-                            <td>@item.Name</td>
-                            <td>@item.Permission</td>
-                            <td>@item.Birthday</td>
-                            <td>@item.Phone</td>
-                            <td>@item.Username</td>
-                            <td>
-                                <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditEmployee", "Employee", new {EmployeeID = item.EmployeeID })"'>  Edit </button>
-                                <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.EmployeeID))" class="btn btn-danger" value="  Delete  " />
-                            </td>
-                        </tr>
+                            <tr>
+                                <th>@item.EmployeeID</th>
+                                <td>@item.Name</td>
+                                <td>@item.Permission</td>
+                                <td>@item.Birthday</td>
+                                <td>@item.Phone</td>
+                                <td>@item.Username</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditEmployee", "Employee", new {EmployeeID = item.EmployeeID })"'>  Edit </button>
+                                    <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.EmployeeID))" class="btn btn-danger" value="  Delete  " />
+                                </td>
+                            </tr>
                             i++;
                         }
                     </tbody>

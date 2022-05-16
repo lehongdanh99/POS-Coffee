@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using POS_Coffe.Models;
 
 namespace POS_Coffe.Controllers
 {
@@ -11,19 +12,60 @@ namespace POS_Coffe.Controllers
         // GET: VoucherManagement
         public ActionResult VoucherManagement()
         {
-            return View();
+            IQueryable<VoucherModel> data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.AsQueryable();
+            foreach (VoucherModel model in data)
+            {
+                if (model != null)
+                    continue;
+            }
+            return View(data.ToList());
         }
+        [HttpGet]
         public ActionResult AddVoucher()
         {
-            return View();
+            VoucherModel model = new VoucherModel();
+            return View(model);
         }
-        public ActionResult EditVoucher()
+        [HttpPost]
+        public ActionResult AddVoucher(VoucherModel data)
         {
-            return View();
+            VoucherModel model = new VoucherModel();
+            model.VoucherID = 1;
+            model.Name = data.Name;
+            model.Value = data.Value;
+            
+            model.IDFood = data.IDFood;
+
+            //EmployeeModel.GetInstance().LstEmpl.Add(model);
+            //return View(model);
+            return RedirectToAction("VoucherManagement", "VoucherManagement");
+        }
+        [HttpGet]
+        public ActionResult EditVoucher(int VoucherID)
+        {
+            var EditData = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == VoucherID);
+            VoucherModel data = new VoucherModel();
+            data.VoucherID = VoucherID;
+            data.Name = EditData.ToList().First().Name;
+            data.Value = EditData.ToList().First().Value;
+            data.IDFood = EditData.ToList().First().IDFood;
+            return View(data);
+        }
+        [HttpPost]
+        public ActionResult EditVoucher(VoucherModel data)
+        {
+            var EditData = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == data.VoucherID);
+            VoucherModel model = new VoucherModel();
+            EditData.ToList().First().Name = data.Name;
+            EditData.ToList().First().Value = data.Value;
+            EditData.ToList().First().IDFood = data.IDFood;
+
+            return RedirectToAction("VoucherManagement", "VoucherManagement");
         }
         public ActionResult DeleteVoucher(int VoucherID)
         {
-            return View();
+            VoucherAPIHandlerFakeData.GetInstance().ListVoucher.RemoveAt(VoucherID - 1);
+            return RedirectToAction("VoucherManagement", "VoucherManagement");
         }
     }
 }

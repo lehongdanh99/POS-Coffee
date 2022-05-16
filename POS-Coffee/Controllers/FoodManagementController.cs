@@ -12,13 +12,19 @@ namespace POS_Coffe.Controllers
         // GET: FoodManagement
         public ActionResult FoodManagement()
         {
-            IQueryable<FoodModel> data = FoodAPIHandlerFakeData.GetInstance().ListFood.AsQueryable();
-            foreach (FoodModel model in data)
+            IQueryable<FoodModel> dataModel = FoodAPIHandlerFakeData.GetInstance().ListFood.AsQueryable();
+            RecipeModel lstMaterial = new RecipeModel();
+            foreach (var item in dataModel)
+            {
+                lstMaterial = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.FoodID == item.FoodID).FirstOrDefault();
+            }
+            System.Console.WriteLine(lstMaterial);
+            foreach (FoodModel model in dataModel)
             {
                 if (model != null)
                     continue;
             }
-            return View(data.ToList());
+            return View(dataModel.ToList());
         }
         [HttpGet]
         public ActionResult AddFood()
@@ -29,21 +35,46 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult AddFood(FoodModel data)
         {
-            return View();
+            FoodModel model = new FoodModel();
+            model.Name = data.Name;
+            model.Price = data.Price;
+            model.Picture = data.Picture;
+
+            return RedirectToAction("FoodManagement", "FoodManagement", model);
         }
         [HttpGet]
-        public ActionResult EditFood()
+        public ActionResult EditFood(int FoodID)
         {
-            return View();
+            var EditData = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == FoodID);
+            FoodModel data = new FoodModel();
+            data.FoodID = FoodID;
+            data.Name = EditData.ToList().First().Name;
+            data.Price= EditData.ToList().First().Price;
+            data.Picture = EditData.ToList().First().Picture;
+            return View(data);
         }
         [HttpPost]
         public ActionResult EditFood(FoodModel data)
         {
-            return View();
+            var EditData = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == data.FoodID);
+            FoodModel model = new FoodModel();
+            EditData.ToList().First().Name = data.Name;
+            EditData.ToList().First().Price = data.Price;
+            EditData.ToList().First().Picture = data.Picture;
+            return RedirectToAction("FoodManagement", "FoodManagement");
         }
         public ActionResult DeleteFood(int FoodID)
         {
-            return View();
+            FoodAPIHandlerFakeData.GetInstance().ListFood.RemoveAt(FoodID - 1);
+        
+            return RedirectToAction("FoodManagement", "FoodManagement");
+        }
+
+        public ActionResult Details(int FoodID)
+        {
+            MaterialsModel frnds = new MaterialsModel();
+            //var EditData = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == );
+            return PartialView("_Details", frnds);
         }
     }
 }
