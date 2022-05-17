@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+//using System.Windows.Media;
+//using System.Windows.Media.Imaging;
 
 namespace POS_Coffe
 {
@@ -88,7 +88,7 @@ namespace POS_Coffe
         public List<MaterialsModel> ReadJsonFileConfigMaterial()
         {
             string json = String.Empty;
-            using (StreamReader r = new StreamReader(GlobalDef.CUSTOMER_JSON_CONFIG_PATH))
+            using (StreamReader r = new StreamReader(GlobalDef.MATERIAL_JSON_CONFIG_PATH))
             {
                 json = r.ReadToEnd();
                 modelMaterial = JsonConvert.DeserializeObject<List<MaterialsModel>>(json);

@@ -8,9 +8,10 @@ namespace POS_Coffe.Models
     public class RecipeModel
     {
         public int RecipeID { get; set; }
-        public int Drink_Cake_ID { get; set; }
+        public int drink_cake_id { get; set; }
         public int Amount_For_One { get; set; }
         public string Size { get; set; }
+        public int material_id { get; set; }
     }
     public class RecipeAPIHandlerFakeData
     {

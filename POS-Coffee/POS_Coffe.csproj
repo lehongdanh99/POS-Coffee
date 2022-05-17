@@ -144,6 +144,7 @@
     <Compile Include="Models\DetailReceiptModel.cs" />
     <Compile Include="Models\DrinkCakeModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\FoodDetail.cs" />
     <Compile Include="Models\FoodModel.cs" />
     <Compile Include="Models\HistoryTrackingModel.cs" />
     <Compile Include="Models\MaterialsModel.cs" />
@@ -1023,6 +1024,7 @@
     <Content Include="Views\Account\AccountManagement.cshtml" />
     <Content Include="Views\Account\EditAccount.cshtml" />
     <Content Include="Voucher.json" />
+    <Content Include="Views\FoodManagement\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
