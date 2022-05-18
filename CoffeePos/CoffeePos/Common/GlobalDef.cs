@@ -23,6 +23,7 @@ namespace CoffeePos.Common
         //public static ObservableCollection<Receipt> ListReceipt = new ObservableCollection<Receipt>();
         //
 
+        public static Visibility DetailTable = Visibility.Collapsed;
         public static string Password = "";
         public static string JSON_FOOD_CONFIG_PATH = "Food.json";
     }

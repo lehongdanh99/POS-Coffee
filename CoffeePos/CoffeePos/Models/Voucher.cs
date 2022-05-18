@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace CoffeePos.Models
 {
-    internal class Voucher
+    public class Voucher
     {
+
+        public string Name { get; set; }
+        public string NameFood { get; set; }
+
+        public int Percent { get; set; }
+
+        
+        public Voucher(string name , int percent = 0, string nameFood = default)
+        {
+            Name = name;
+            NameFood = nameFood;
+            Percent = percent;
+        }
     }
 }

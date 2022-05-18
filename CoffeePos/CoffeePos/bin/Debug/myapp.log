@@ -1233,3 +1233,6677 @@
 2022-04-15 00:58:23,414 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
 2022-04-15 00:58:55,113 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
 2022-04-15 01:07:58,723 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-29 13:42:11,971 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-29 13:42:15,942 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-30 16:29:22,978 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-30 16:29:38,766 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-30 21:45:31,890 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-30 21:45:37,038 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-04-30 23:19:25,650 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-04-30 23:19:38,173 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-11 13:36:08,929 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-11 13:36:32,339 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-11 21:38:54,565 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-11 21:39:02,004 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-11 21:52:02,143 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-11 21:52:02,267 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-11 21:52:02,269 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-11 21:52:12,883 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-11 23:04:04,548 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-11 23:04:04,698 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-11 23:04:04,699 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-11 23:04:23,666 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 17:17:31,741 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 17:17:32,025 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 17:17:32,026 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 17:17:49,453 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 17:29:47,625 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 17:29:47,749 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 17:29:47,750 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 17:30:02,037 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 17:56:13,632 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 17:56:13,855 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 17:56:13,856 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 17:56:17,824 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 18:02:45,405 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 18:02:45,539 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 18:02:45,539 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 18:02:50,969 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 18:05:46,416 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 18:05:46,536 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 18:05:46,536 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 18:05:51,972 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 18:06:37,636 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 18:06:37,758 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 18:06:37,758 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 18:06:43,696 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 18:45:31,843 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 18:45:31,979 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 18:45:31,980 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 18:45:38,198 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 21:02:15,557 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 21:02:15,694 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 21:02:15,695 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 21:02:19,887 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 21:05:59,533 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 21:05:59,658 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 21:05:59,659 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 21:06:04,085 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 21:08:56,199 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 21:08:56,325 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 21:08:56,326 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 21:09:26,412 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 21:20:01,567 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 21:20:01,694 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 21:20:01,695 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 21:20:05,888 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-14 22:55:43,660 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-14 22:55:43,841 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 22:55:43,842 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-14 23:32:01,264 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 
+2022-05-17 00:41:48,063 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-17 00:41:48,339 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-17 00:41:48,340 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-17 00:51:24,571 [1] DEBUG CoffeePos.ViewModels.LoginViewModel - Btn login click
+2022-05-17 00:51:24,692 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-17 00:51:24,694 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model [
+    {
+        "FoodName": "Cà Phê S?a",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cà Phê Ðá",
+        "FoodPrice": "27000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "B?c X?u",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Cappuccino",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Latte",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Mocha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Cà Phê"
+    },
+    {
+        "FoodName": "Trà S?a Truy?n Th?ng",
+        "FoodPrice": "30000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Matcha",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà S?a Olong",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "S?a Tuoi Trân Châu Ðu?ng Ðen",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Ðào",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà V?i",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Trái Cây",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Trà Sen Vàng",
+        "FoodPrice": "35000",
+        "FoodImage": "null",
+        "FoodType": "Trà"
+    },
+    {
+        "FoodName": "Cookie ",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Trà Xanh Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Vi?t Qu?t",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Mocha/Cappuccino Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Yaua Ðào",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Chocomint Ðá Xay",
+        "FoodPrice": "40000",
+        "FoodImage": "null",
+        "FoodType": "Ðá Xay"
+    },
+    {
+        "FoodName": "Tiramisu",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Chanh Dây",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Mousse Matcha",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Ðào",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Cheeseake Oreo",
+        "FoodPrice": "29000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    },
+    {
+        "FoodName": "Flan",
+        "FoodPrice": "20000",
+        "FoodImage": "null",
+        "FoodType": "Bánh"
+    }
+] 
+2022-05-17 00:51:28,697 [1] INFO CoffeePos.Common.CommonMethod - Read file Table config to Table model {
+  "TableNumber":
+    {
+      "1": {
+        "TableID" : 1,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "2": {
+        "TableID": 2,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "3": {
+        "TableID": 3,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "4": {
+        "TableID": 4,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "5": {
+        "TableID": 5,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "6": {
+        "TableID": 6,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "7": {
+        "TableID": 7,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "8": {
+        "TableID": 8,
+        "TableFloor": 1,
+        "TableSeat": 4
+      },
+      "9": {
+        "TableID": 9,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "10": {
+        "TableID": 10,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "11": {
+        "TableID": 11,
+        "TableFloor": 2,
+        "TableSeat": 4
+      },
+      "12": {
+        "TableID": 12,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "13": {
+        "TableID": 13,
+        "TableFloor": 3,
+        "TableSeat": 4
+      },
+      "14": {
+        "TableID": 14,
+        "TableFloor": 3,
+        "TableSeat": 4
+      }
+    }
+}
+ 

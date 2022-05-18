@@ -120,11 +120,11 @@ namespace CoffeePos.ViewModels
             set
             {
 
-                _selectedIndexTable = value;
-                if (_selectedIndexTable != null)
-                {
-                    btTableSelected_Click(_selectedIndexTable);
-                }
+                //_selectedIndexTable = value;
+                //if (_selectedIndexTable != null)
+                //{
+                //    btTableSelected_Click(_selectedIndexTable);
+                //}
 
                 NotifyOfPropertyChange(() => SelectedIndexTable);
             }

@@ -6,7 +6,8 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CoffeePos.Views"
         xmlns:cal="http://www.caliburnproject.org"
-        xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
+        xmlns:language="clr-namespace:CoffeePos.Properties.Langs" 
+        xmlns:Control="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
         mc:Ignorable="d"
         Title="Home" Height="790" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
 
@@ -36,7 +37,7 @@
                         ></Button>
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
                         Content="Voucher" Height="70"
-                        cal:Message.Attach="[Event Click] = [Action btOrder_Click()]" Background="#FFFF07F0" BorderBrush="{x:Null}"
+                        cal:Message.Attach="[Event Click] = [Action btListVoucher_Click()]" Background="#FFFF07F0" BorderBrush="{x:Null}"
                         ></Button>
                 <Button cal:Message.Attach="[Event Click] = [Action btRegister_Click()]"
                         HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
@@ -51,7 +52,8 @@
             <Grid Grid.Column="0" Margin="5 5 0 5" Background="White" Width="750" >
                 <Grid VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
@@ -73,8 +75,8 @@
                                        FontSize="10"
                                        Foreground="DarkGray"/>
                     </Grid>
-
-                    <Button Grid.Column="1" Height="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10">search</Button>
+                    <Control:AutoCompleteBox x:Name="CustomerNameCb" Grid.Column="1" Height="30" VerticalAlignment="Center" FilterMode="Contains"></Control:AutoCompleteBox>
+                    <Button Grid.Column="2" Height="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10">search</Button>
                 </Grid>
                 <ScrollViewer Margin="0 70" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
                     <StackPanel>

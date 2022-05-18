@@ -40,9 +40,21 @@ namespace CoffeePos.Views
 
         private void CheckBoxChanged(object sender, RoutedEventArgs e)
         {
-
-            btnPayment.IsEnabled = false;
-            MessageBox.Show("Eureka, it changed!");
+            bool isAllEnable = true;
+            FoodOrder obj = ((FrameworkElement)sender).DataContext as FoodOrder;
+            foreach(var item in GlobalDef.ReceiptDetail.Foods)
+            {
+                if(!item.ServedFood)
+                {
+                    isAllEnable = false;
+                }
+            }
+            if (!isAllEnable)
+            {
+                btnPayment.IsEnabled = false;
+            }
+            else
+                btnPayment.IsEnabled = true;
         }
 
         private void AddMoreFood_Click(object sender, RoutedEventArgs e)

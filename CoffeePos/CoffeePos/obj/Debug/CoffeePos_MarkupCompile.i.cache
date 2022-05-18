@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\obj\Debug\
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Debug\
 CoffeePos
 none
 false
 DEBUG;TRACE
-C:\Users\Tphan\Documents\GitHub\CoffeePos\CoffeePos\App.xaml
-12677788272
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\App.xaml
+14124157420
 
-43-1330383899
-401600201424
-MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;Views\HomeView.xaml;Views\ListOrderView.xaml;Views\LoginView.xaml;Views\MessageBox.xaml;Views\OrderDetailView.xaml;Views\RegisterView.xaml;Views\SignInView.xaml;Views\TableDetailView.xaml;Views\TablesView.xaml;
+49-1256244333
+411281607275
+MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;Views\HomeView.xaml;Views\ListOrderView.xaml;Views\ListVouchersView.xaml;Views\LoginView.xaml;Views\MessageBoxView.xaml;Views\OrderDetailView.xaml;Views\PaymentView.xaml;Views\RegisterView.xaml;Views\SignInView.xaml;Views\TableDetailView.xaml;Views\TablesView.xaml;
 
 True
 

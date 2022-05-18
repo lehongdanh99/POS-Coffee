@@ -55,9 +55,16 @@ namespace CoffeePos.ViewModels
             get 
             {
                 if(CanEdit)
+                {
+                    GlobalDef.DetailTable = Visibility.Visible;
                     return Visibility.Visible;
+                }
+                    
                 else
+                {
+                    GlobalDef.DetailTable = Visibility.Collapsed;
                     return Visibility.Collapsed;
+                }
             }
             set 
             {
@@ -158,6 +165,21 @@ namespace CoffeePos.ViewModels
             {
                 IsAllServed = true;
             }
+        }
+
+        public void BtnChooseDiscount()
+        {
+            HomeViewModel.GetInstance().btListVoucher_Click();
+        }
+
+        public void btnAddFoods()
+        {
+            foreach(var food in ListFoodOrder)
+                HomeViewModel.GetInstance().ListViewFoodOrders.ToList().Add(food);
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
+            HomeViewModel.GetInstance().GetFoodOrderTotal();
+            this.TryCloseAsync();
         }
 
         public void btnConfirmReceipt()

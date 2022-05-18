@@ -498,6 +498,14 @@ namespace CoffeePos.ViewModels
 
         }
 
+        public void btListVoucher_Click()
+        {
+            ListVouchersViewModel listVouchersViewModel = new ListVouchersViewModel();
+            //tableDetailViewModel.eventChange += HandleCallBack;
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(listVouchersViewModel);
+        }
+
         public void HandleCallBacChooseTable(int TableChoose)
         {
             tableNum = TableChoose;

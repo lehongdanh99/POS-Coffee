@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using static CoffeePos.Models.TableModel;
 using static CoffeePos.Models.ReceiptModel;
 using CoffeePos.Common;
+using CoffeePos.Models;
 
 namespace CoffeePos.Views
 {
@@ -34,10 +35,28 @@ namespace CoffeePos.Views
 
         private void PaymentTable_Click(object sender, RoutedEventArgs e)
         {
-            Receipt obj = ((FrameworkElement)sender).DataContext as Receipt;
-            ListOrderViewModel.GetInstance().PaymentReceipt(obj);
+            Models.TableModel.Table obj = ((FrameworkElement)sender).DataContext as Models.TableModel.Table;
+            for (int i = 0; i < ReceiptModel.GetInstance().ListReceipt.Count; i++)
+            {
+                if(ReceiptModel.GetInstance().ListReceipt[i].Table == obj.TableID.ToString())
+                {
+                    ListOrderViewModel.GetInstance().PaymentReceipt(ReceiptModel.GetInstance().ListReceipt[i]);
+                    break;
+                }
+            }    
         }
+
         private void ChooseTable_Click(object sender, RoutedEventArgs e)
+        {
+            Models.TableModel.Table obj = ((FrameworkElement)sender).DataContext as Models.TableModel.Table;
+            if (GlobalDef.IsChooseTableToOrder && !obj.TableStatus)
+            {
+                HomeViewModel.GetInstance().HandleCallBacChooseTable(obj.TableID);
+                this.Hide();
+            }
+        }
+
+        private void DetailTableBtn_Click(object sender, RoutedEventArgs e)
         {
             Models.TableModel.Table obj = ((FrameworkElement)sender).DataContext as Models.TableModel.Table;
             //TablesViewModel.GetInstance.btTableSelected_Click(obj);

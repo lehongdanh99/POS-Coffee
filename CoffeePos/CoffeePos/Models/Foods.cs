@@ -4,8 +4,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 using Caliburn.Micro;
+using CoffeePos.Common;
+
 namespace CoffeePos
 {
     public class Foods : PropertyChangedBase
@@ -70,7 +73,25 @@ namespace CoffeePos
         }
         public string FoodOrderName { get; set; }
 
-        private string foodDone;
+        private Visibility visibleCheckBox;
+
+        public Visibility VisibleCheckBox
+        {
+            get { return visibleCheckBox; }
+            set
+            {
+                visibleCheckBox = value;
+                if(GlobalDef.DetailTable == Visibility.Visible)
+                {
+                    visibleCheckBox = Visibility.Visible;
+                }
+                else
+                {
+                    visibleCheckBox = Visibility.Collapsed;
+                }
+                
+            }
+        }
 
         public string FoodOrderImage { get; set; }
 

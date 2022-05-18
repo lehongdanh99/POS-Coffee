@@ -1,0 +1,79 @@
+﻿<Window x:Class="CoffeePos.Views.ListVouchersView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoffeePos.Views"
+        mc:Ignorable="d"
+        xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="ListVouchersView" Height="590" Width="880" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#FFF3F3F3">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10" Background="Orange" Margin="5">
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center"
+                        materialDesign:ButtonAssist.CornerRadius="20" Click="BtnBack_Click"
+                        Margin="10"  Background="{x:Null}" BorderBrush="{x:Null}">
+                    <materialDesign:PackIcon Kind="ArrowBack" FontSize="300" Foreground="White"/>
+                </Button>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="180 0" FontWeight="Bold" FontSize="24" Foreground="White"
+                           Text="Danh sách giảm giá có thể áp dụng"></TextBlock>
+            </StackPanel>
+
+        </Border>
+
+        <Border Grid.Row="1" HorizontalAlignment="Center" Background="White" CornerRadius="10" Margin="5">
+            <Grid Grid.Column="0">
+                <Rectangle StrokeThickness="1"/>
+                <TextBox x:Name="SearchBox"
+                                     Height="50" Width="850" 
+                                     Margin="10" VerticalAlignment="Top"
+                                     VerticalContentAlignment="Center"
+                                     Padding="5"
+                                     Foreground="#CFCFCF"
+                                     HorizontalAlignment="Left"
+                                     BorderThickness="0">
+                </TextBox>
+                <TextBlock IsHitTestVisible="False"
+                                       Text="Search"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       Margin="20 0 0 0"
+                                       FontSize="13"
+                                       Foreground="DarkGray"/>
+            </Grid>
+        </Border>
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
+            <StackPanel>
+                <ItemsControl x:Name="ListViewTables" Margin="5" ItemsSource="{Binding VoucherList}" >
+
+
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0" >
+                                <Button Width="150" Height="150" BorderBrush="{x:Null}" Background="White" Content="{Binding Name}"
+                                        Margin="10" Foreground="Green" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="5"
+                                        FontSize="20" Click="ChooseVoucher">
+
+                                </Button>
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </StackPanel>
+
+        </ScrollViewer>
+    </Grid>
+</Window>
