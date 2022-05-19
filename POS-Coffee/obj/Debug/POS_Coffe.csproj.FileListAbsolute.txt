@@ -238,3 +238,8 @@ F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.CoreCompileInputs.cache
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.CopyComplete
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.dll
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.pdb
+F:\POS-Coffee\POS-Coffee\bin\Customer.json
+F:\POS-Coffee\POS-Coffee\bin\Recipe.json
+F:\POS-Coffee\POS-Coffee\bin\material.json
+F:\POS-Coffee\POS-Coffee\bin\Voucher.json
+F:\POS-Coffee\POS-Coffee\bin\CommonMethod.cs

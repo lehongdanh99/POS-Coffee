@@ -1,0 +1,72 @@
+[
+  {
+    "VoucherID": 1,
+    "Name": "GIAMGIA10",
+    "IDFood": "null",
+    "Value": "10",
+    "isValid": "false"
+  },
+  {
+    "VoucherID": 2,
+    "Name": "GIAMGIA20",
+    "IDFood": "null",
+    "Value": "20",
+    "isValid": "false"
+  },
+  {
+    "VoucherID": 3,
+    "Name": "GIAMGIA30",
+    "IDFood": "null",
+    "Value": "30",
+    "isValid": "false"
+  },
+  {
+    "VoucherID": 4,
+    "Name": "GIAMGIA40",
+    "IDFood": "null",
+    "Value": "40",
+    "isValid": "false"
+  },
+  {
+    "VoucherID": 5,
+    "Name": "GIAMGIA50",
+    "IDFood": "null",
+    "Value": "50",
+    "isValid": "false"
+  },
+  {
+    "VoucherID": 6,
+    "Name": "CAPHESANG",
+    "IDFood": "1,2",
+    "Value": "10",
+    "isValid": "false"
+  },
+  {
+    "VoucherID": 7,
+    "Name": "MUA1TANG1",
+    "IDFood": "2",
+    "Value": "null",
+    "isValid": "false"
+  },
+  {
+    "VoucherID": 8,
+    "Name": "MUA1TANG1",
+    "IDFood": "5",
+    "Value": "null",
+    "isValid": "false"
+  },
+  {
+    "VoucherID": 9,
+    "Name": "MUA1TANG1",
+    "IDFood": "1",
+    "Value": "null",
+    "isValid": "false"
+  },
+  {
+    "VoucherID": 10,
+    "Name": "MUA1TANG1",
+    "IDFood": "10",
+    "Value": "null",
+    "isValid": "false"
+  }
+]

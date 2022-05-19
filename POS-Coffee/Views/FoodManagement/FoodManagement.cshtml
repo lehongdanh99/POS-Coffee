@@ -26,8 +26,6 @@
                             <th>Picture</th>
                             <th>Type</th>
                             <th>Name materials</th>
-                            <th>Quantites</th>
-                            <th>Type</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -42,30 +40,11 @@
                                 <td><img src="@item.Picture"></td>
                                 <td>@item.Type</td>
                                 <td>
-                                    a
-                                </td>
-                                <td>
-                                    a
-                                </td>
-                                <td></td>
-                                <td>
                                     <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("Details", "FoodManagement", new {FoodID = item.FoodID })"'>  Detail </button>
                                     <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {FoodID = item.FoodID })"'>  Edit </button>
                                     <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger" value="  Delete  " />
                                 </td>
                             </tr>
-                            foreach (var a in item.DSMaterial)
-                            {
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>a</td>
-                                    <td>a</td>
-                                </tr>
-                            }
                         }
                     </tbody>
                 </table>
