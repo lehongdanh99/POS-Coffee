@@ -36,6 +36,18 @@ namespace POS_Coffe
             return modelEmployee;
         }
         //Get list voucher
+        //private List<VoucherModel> modelVoucher = new List<VoucherModel>();
+        //public List<VoucherModel> ReadJsonFileConfigVoucher()
+        //{
+        //    string json = String.Empty;
+        //    using (StreamReader r = new StreamReader(GlobalDef.VOUCHER_JSON_CONFIG_PATH))
+        //    {
+        //        json = r.ReadToEnd();
+        //        modelVoucher = JsonConvert.DeserializeObject<List<VoucherModel>>(json);
+        //    }
+        //    return modelVoucher;
+        //}
+
         private List<VoucherModel> modelVoucher = new List<VoucherModel>();
         public List<VoucherModel> ReadJsonFileConfigVoucher()
         {
@@ -47,6 +59,7 @@ namespace POS_Coffe
             }
             return modelVoucher;
         }
+
         //Get list Food
         private List<FoodModel> modelFood = new List<FoodModel>();
         public List<FoodModel> ReadJsonFileConfigFood()
@@ -88,7 +101,7 @@ namespace POS_Coffe
         public List<MaterialsModel> ReadJsonFileConfigMaterial()
         {
             string json = String.Empty;
-            using (StreamReader r = new StreamReader(GlobalDef.CUSTOMER_JSON_CONFIG_PATH))
+            using (StreamReader r = new StreamReader(GlobalDef.MATERIAL_JSON_CONFIG_PATH))
             {
                 json = r.ReadToEnd();
                 modelMaterial = JsonConvert.DeserializeObject<List<MaterialsModel>>(json);
