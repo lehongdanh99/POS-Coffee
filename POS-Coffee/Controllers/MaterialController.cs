@@ -33,7 +33,7 @@ namespace POS_Coffe.Controllers
             material.Type = data.Type;
             material.Amount = data.Amount;
             material.Quantity = data.Quantity;
-            return RedirectToAction("MaterialManagement", "Material");
+            return RedirectToAction("MaterialManagement", "Employee");
         }
         [HttpGet]
         public ActionResult EditMaterial(int MaterialID)

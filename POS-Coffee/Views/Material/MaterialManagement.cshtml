@@ -37,7 +37,7 @@
                                 <td>@item.Amount</td>
                                 <td>@item.Quantity</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {MaterialID = item.MaterialID })"'>  Edit </button>
+                                    <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditEmployee", "Employee", new {MaterialID = item.MaterialID })"'>  Edit </button>
                                     <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.MaterialID))" class="btn btn-danger" value="  Delete  " />
                                 </td>
                             </tr>

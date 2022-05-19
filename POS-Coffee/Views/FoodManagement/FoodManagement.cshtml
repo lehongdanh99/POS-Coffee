@@ -4,20 +4,16 @@
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
 <div class="row">
     <div class="column">
         @using (Html.BeginForm("FoodManagement", "FoodManagement", FormMethod.Get@*, new { @class = "form-inline" }*@))
 {
-<div class="column column-40 col-search">
-    <a href="#" class="search-btn fa fa-search"></a>
-    <input type="text" name="" value="" placeholder="Search..." />
-</div>
-<a class="button" href="#">Search</a>
-<input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />
+    <div class="column column-40 col-search">
+        <a href="#" class="search-btn fa fa-search"></a>
+        <input type="text" name="" value="" placeholder="Search..." />
+    </div> 
+            <a class="button" href="#">Search</a>
+    <input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />
 }
         <div class="card">
             <div class="card-block">
@@ -29,7 +25,9 @@
                             <th>Price</th>
                             <th>Picture</th>
                             <th>Type</th>
-
+                            <th>Name materials</th>
+                            <th>Quantites</th>
+                            <th>Type</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -43,26 +41,31 @@
                                 <td>@item.Price</td>
                                 <td><img src="@item.Picture"></td>
                                 <td>@item.Type</td>
+                                <td>
+                                    a
+                                </td>
+                                <td>
+                                    a
+                                </td>
                                 <td></td>
                                 <td>
                                     <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("Details", "FoodManagement", new {FoodID = item.FoodID })"'>  Detail </button>
                                     <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {FoodID = item.FoodID })"'>  Edit </button>
                                     <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger" value="  Delete  " />
-                                    <input type="button" onclick="btnTest(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger" value="  test  " name="test" id="test"/>
                                 </td>
                             </tr>
-                            @*foreach (var a in item.DSMaterial)
-                                {
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>a</td>
-                                        <td>a</td>
-                                    </tr>
-                                }*@
+                            foreach (var a in item.DSMaterial)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>a</td>
+                                    <td>a</td>
+                                </tr>
+                            }
                         }
                     </tbody>
                 </table>
@@ -73,24 +76,24 @@
 </div>
 
 @*<div class="panel-group" id="accordition">
-        @foreach (var item in Model)
-                {
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordition" href="#@item.FoodID">
-                                    @item.Name
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="@item.FoodID" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                @item.Type
-                            </div>
+    @foreach (var item in Model)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordition" href="#@item.FoodID">
+                                @item.Name
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="@item.FoodID" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            @item.Type
                         </div>
                     </div>
-                }
-    </div>*@
+                </div>
+            }
+</div>*@
 
 <script>
     function AddNew() {
@@ -103,19 +106,7 @@
             window.location.href = url;
         }
     }
-    function btnTest(FoodID) {
-        var dataGuidi = {
-            FoodID: FoodID
-        };
-        $.ajax({
-            type: 'POST',
-            url: "/FoodManagement/getMaterial",
-            data: dataGuidi,
-            success: function (data) {
-                alert("ngon");
-            }
-        })
-    }
+
 </script>
 
 

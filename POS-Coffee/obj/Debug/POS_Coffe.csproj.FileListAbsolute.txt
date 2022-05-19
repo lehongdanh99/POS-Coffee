@@ -156,8 +156,6 @@ F:\POS-Coffee-Main\POS_Coffe\obj\Debug\POS_Coffe.csproj.CoreCompileInputs.cache
 F:\POS-Coffee-Main\POS_Coffe\obj\Debug\POS_Coffe.csproj.CopyComplete
 F:\POS-Coffee-Main\POS_Coffe\obj\Debug\POS_Coffe.dll
 F:\POS-Coffee-Main\POS_Coffe\obj\Debug\POS_Coffe.pdb
-F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.AssemblyReference.cache
-F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.CoreCompileInputs.cache
 F:\POS-Coffee\POS-Coffee\bin\Employee.json
 F:\POS-Coffee\POS-Coffee\bin\Food.json
 F:\POS-Coffee\POS-Coffee\bin\GlobalDef.cs
@@ -235,6 +233,8 @@ F:\POS-Coffee\POS-Coffee\bin\System.Web.WebPages.Razor.xml
 F:\POS-Coffee\POS-Coffee\bin\Newtonsoft.Json.xml
 F:\POS-Coffee\POS-Coffee\bin\Antlr3.Runtime.pdb
 F:\POS-Coffee\POS-Coffee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.AssemblyReference.cache
+F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.CoreCompileInputs.cache
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.CopyComplete
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.dll
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.pdb

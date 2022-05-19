@@ -1,39 +1,8 @@
-﻿@model List<POS_Coffe.Models.FoodDetail>
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<h2>Details</h2>
 
-<style>
-    table, th, td {
-        border: 1px solid black;
-    }
-</style>
-
-<div class="card">
-    <div class="card-block">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Materia name</th>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Quantity</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.Foodname</td>
-                        <td>@item.MaterialName</td>
-                        <td>@item.Type</td>
-                        <td>@item.Amount</td>
-                        <td>@item.Quantity</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</div>

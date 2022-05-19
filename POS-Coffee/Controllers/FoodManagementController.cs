@@ -16,7 +16,7 @@ namespace POS_Coffe.Controllers
             RecipeModel lstMaterial = new RecipeModel();
             foreach (var item in dataModel)
             {
-                lstMaterial = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.drink_cake_id == item.FoodID).FirstOrDefault();
+                lstMaterial = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.FoodID == item.FoodID).FirstOrDefault();
             }
             System.Console.WriteLine(lstMaterial);
             foreach (FoodModel model in dataModel)
@@ -70,54 +70,11 @@ namespace POS_Coffe.Controllers
             return RedirectToAction("FoodManagement", "FoodManagement");
         }
 
-        [HttpGet]
-        public PartialViewResult Details(int FoodID)
+        public ActionResult Details(int FoodID)
         {
-            FoodModel dataFood = FoodAPIHandlerFakeData.GetInstance().ListFood.Where((s) => s.FoodID == FoodID).FirstOrDefault();
-            int idfood = dataFood.FoodID;
-
-            var dataReceip = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.drink_cake_id == idfood);
-
-            List<FoodDetail> lstfood = new List<FoodDetail>();
-
-            foreach (var item in dataReceip)
-            {
-                FoodDetail foodDetail = new FoodDetail();
-                int iditem = item.material_id;
-                MaterialsModel model = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Where(s => s.MaterialID == iditem).FirstOrDefault();
-                foodDetail.MaterialName = model.Name;
-                foodDetail.Quantity = model.Quantity;
-                foodDetail.Amount = model.Amount;
-                foodDetail.Type = model.Type;
-                foodDetail.Foodname = dataFood.Name;
-                lstfood.Add(foodDetail);
-            }
-            return PartialView(lstfood);
-        }
-
-        [HttpPost]
-        public JsonResult getMaterial(int FoodID)
-        {
-            FoodModel dataFood = FoodAPIHandlerFakeData.GetInstance().ListFood.Where((s) => s.FoodID == FoodID).FirstOrDefault();
-            int idfood = dataFood.FoodID;
-
-            var dataReceip = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.drink_cake_id == idfood);
-
-            List<FoodDetail> lstfood = new List<FoodDetail>();
-
-            foreach (var item in dataReceip)
-            {
-                FoodDetail foodDetail = new FoodDetail();
-                int iditem = item.material_id;
-                MaterialsModel model = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Where(s => s.MaterialID == iditem).FirstOrDefault();
-                foodDetail.MaterialName = model.Name;
-                foodDetail.Quantity = model.Quantity;
-                foodDetail.Amount = model.Amount;
-                foodDetail.Type = model.Type;
-                foodDetail.Foodname = dataFood.Name;
-                lstfood.Add(foodDetail);
-            }
-            return Json(lstfood, JsonRequestBehavior.AllowGet);
+            MaterialsModel frnds = new MaterialsModel();
+            //var EditData = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == );
+            return PartialView("_Details", frnds);
         }
     }
 }
