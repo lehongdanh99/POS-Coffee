@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Caliburn.Micro;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -26,7 +27,8 @@ namespace CoffeePos.Common
         //public static ObservableCollection<Receipt> ListReceipt = new ObservableCollection<Receipt>();
         //
 
-        
+        public static WindowManager windowManager = new WindowManager();
+
         public static Visibility DetailTable = Visibility.Collapsed;
         public static string Password = "";
         public static string JSON_FOOD_CONFIG_PATH = "Food.json";

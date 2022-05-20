@@ -135,8 +135,8 @@ namespace CoffeePos.ViewModels
             //tableDetailViewModel.eventChange += HandleCallBack;
             
             ReceiptSelected = receipt;
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(tableDetailViewModel);
+            //WindowManager windowManager = new WindowManager();
+            GlobalDef.windowManager.ShowWindowAsync(tableDetailViewModel);
         }
 
         public void PaymentReceipt(Receipt receipt)
@@ -145,8 +145,8 @@ namespace CoffeePos.ViewModels
             //PaymentViewModel paymentViewModel = new PaymentViewModel(receipt);
             //tableDetailViewModel.eventChange += HandleCallBack;
 
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(PaymentViewModel.GetInstance());
+            //WindowManager windowManager = new WindowManager();
+            GlobalDef.windowManager.ShowWindowAsync(PaymentViewModel.GetInstance());
             PaymentViewModel.GetInstance().getDataPayment();
             
             //RegisterViewModel registerViewModel = new RegisterViewModel();

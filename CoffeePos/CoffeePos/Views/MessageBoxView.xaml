@@ -16,7 +16,7 @@
             <Button Grid.Row="0" HorizontalAlignment="Right" Width="50" VerticalAlignment="Top" Margin="0" BorderBrush="{x:Null}" Background="{x:Null}" Click="BtnBack_Click">
                 <materialDesign:PackIcon Kind="Close" Width="20" Height="20" Foreground="Black"/>
             </Button>
-            <TextBlock Grid.Row="1" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Thanh toán thành công" Foreground="Black"/>
+            <TextBlock x:Name="MessageBoxText" Grid.Row="1" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Message}" Foreground="Black"/>
             <Button Grid.Row="2" Background="Green" VerticalAlignment="Bottom" Content="Xác nhận" Click="ConfirmPaymentClick" BorderBrush="{x:Null}"></Button>
         </Grid>
         

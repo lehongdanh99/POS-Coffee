@@ -63,6 +63,16 @@ namespace CoffeePos.Views
         {
             //this.Hide();
             Receipt obj = ((FrameworkElement)sender).DataContext as Receipt;
+            foreach(var food in obj.Foods)
+            {
+                if (!food.ServedFood)
+                {
+                    MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Chưa hoàn thành đơn");
+                    //WindowManager windowManager = new WindowManager();
+                    GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
+                    return;
+                }
+            }    
             ListOrderViewModel.GetInstance().PaymentReceipt(obj);
         }
     }

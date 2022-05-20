@@ -40,6 +40,16 @@ namespace CoffeePos.Views
             {
                 if(ReceiptModel.GetInstance().ListReceipt[i].Table == obj.TableID.ToString())
                 {
+                    foreach(var food in ReceiptModel.GetInstance().ListReceipt[i].Foods)
+                    {
+                        if(!food.ServedFood)
+                        {
+                            MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Chưa hoàn thành đơn");
+                            //WindowManager windowManager = new WindowManager();
+                            GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
+                            return;
+                        }
+                    }
                     ListOrderViewModel.GetInstance().PaymentReceipt(ReceiptModel.GetInstance().ListReceipt[i]);
                     break;
                 }

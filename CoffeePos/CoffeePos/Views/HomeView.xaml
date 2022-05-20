@@ -290,7 +290,7 @@
                              IsEnabled="{Binding EnableOrder}" Background="Red" Visibility="{Binding VisibleDelivery}"
                                 cal:Message.Attach="[Event Click] = [Action btOrderLocally_Click()]"
                                 BorderBrush="{x:Null}">
-                            <TextBlock Text="{x:Static language:Lang.Home_Order}" TextWrapping="Wrap"/>
+                            <TextBlock Text="Đặt bàn" TextWrapping="Wrap"/>
                         </Button>
                     </StackPanel>
                     <Button Grid.Row="4" FontSize="20" Grid.Column="1" FontWeight="Bold" Height="50" Margin="5" Visibility="{Binding VisibleLocally}"

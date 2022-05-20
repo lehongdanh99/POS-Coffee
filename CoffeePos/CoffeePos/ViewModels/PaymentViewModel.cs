@@ -125,8 +125,8 @@ namespace CoffeePos.ViewModels
         public void btListVoucher_Click()
         {
             GlobalDef.IsChooseVoucerToPayment = true;
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(ListVouchersViewModel.GetInstance());
+            //WindowManager windowManager = new WindowManager();
+            GlobalDef.windowManager.ShowWindowAsync(ListVouchersViewModel.GetInstance());
         }
 
         private List<FoodOrder> listfoodOrder;
@@ -161,9 +161,9 @@ namespace CoffeePos.ViewModels
             //}    
             //ListTable.GetInstance().ListTables.TableNumber[receiptPayment.Table].TableStatus = false;
             ReceiptModel.GetInstance().ListReceiptDone.Add(receiptPayment);
-            MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel();
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(messageBoxViewModel);
+            MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
+            //WindowManager windowManager = new WindowManager();
+            GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
         }
     }
 }

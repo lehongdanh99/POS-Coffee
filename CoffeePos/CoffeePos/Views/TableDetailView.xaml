@@ -109,18 +109,11 @@
                                     <Grid>
                                         <TextBlock Margin="10" Text="{Binding FoodOrderName}"></TextBlock>
                                         <TextBlock Margin="15 0" VerticalAlignment="Center" 
-                                   FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Text="{Binding FoodOrderCount}"/>
+                                            FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Text="{Binding FoodOrderCount}"/>
                                     </Grid>
                                     <Grid>
                                         <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="Orange"></TextBlock>
-                                        <!--<Button Margin="0 0 40 0" HorizontalAlignment="Right" IsEnabled="{Binding IsDoneFood}" Click="btnRemoveFood_Click"
-                                                BorderBrush="{x:Null}" Background="{x:Null}" Width="30" materialDesign:ButtonAssist.CornerRadius="15">
-                                            <materialDesign:PackIcon HorizontalAlignment="Right" Kind="Close" Width="20" Foreground="Red" Height="20" Margin="-10"/>
-                                        </Button>
-                                        <Button Margin="0 0 10 0" HorizontalAlignment="Right"  IsEnabled="{Binding IsDoneFood}" Click="btnComlpleteFood_Click"
-                                                BorderBrush="{x:Null}" Background="{x:Null}" Width="30" materialDesign:ButtonAssist.CornerRadius="15">
-                                            <materialDesign:PackIcon HorizontalAlignment="Right" Foreground="Green"  Kind="Check" Width="20" Height="20" Margin="-10"/>
-                                        </Button>-->
+                                        
                                         <CheckBox IsChecked="{Binding ServedFood}" Checked="CheckBoxChanged" Unchecked="CheckBoxChanged"
                                                   HorizontalAlignment="Right" Margin="5" Content="Hoàn Thành" Visibility="{Binding VisibleCheckBox}"/>
                                     </Grid>
@@ -132,7 +125,7 @@
                 </ItemsControl>
             </StackPanel>
         </ScrollViewer>
-        <ScrollViewer Grid.Row="5" VerticalScrollBarVisibility="Hidden" Visibility="{Binding VisibleCanEdit}">
+        <ScrollViewer Grid.Row="5" VerticalScrollBarVisibility="Hidden" Visibility="{Binding VisibleShow}">
             <StackPanel>
                 <ItemsControl x:Name="ListViewTableOrder" Margin="5" ItemsSource="{Binding ListFoodOrder}">
                     <ItemsControl.ItemTemplate>
@@ -146,15 +139,7 @@
                                     </Grid>
                                     <Grid>
                                         <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="Orange"></TextBlock>
-                                        <!--<Button Margin="0 0 40 0" HorizontalAlignment="Right" IsEnabled="{Binding IsDoneFood}" Click="btnRemoveFood_Click"
-                                                BorderBrush="{x:Null}" Background="{x:Null}" Width="30" materialDesign:ButtonAssist.CornerRadius="15">
-                                            <materialDesign:PackIcon HorizontalAlignment="Right" Kind="Close" Width="20" Foreground="Red" Height="20" Margin="-10"/>
-                                        </Button>
-                                        <Button Margin="0 0 10 0" HorizontalAlignment="Right"  IsEnabled="{Binding IsDoneFood}" Click="btnComlpleteFood_Click"
-                                                BorderBrush="{x:Null}" Background="{x:Null}" Width="30" materialDesign:ButtonAssist.CornerRadius="15">
-                                            <materialDesign:PackIcon HorizontalAlignment="Right" Foreground="Green"  Kind="Check" Width="20" Height="20" Margin="-10"/>
-                                        </Button>-->
-                                        
+                                     
                                     </Grid>
 
                                 </StackPanel>

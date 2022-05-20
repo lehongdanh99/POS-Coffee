@@ -129,8 +129,8 @@ namespace CoffeePos.ViewModels
                 //Password.ToString();
 
                 //HomeViewModel homeViewModel = new HomeViewModel();
-                WindowManager windowManager = new WindowManager();
-                windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
+                //WindowManager windowManager = new WindowManager();
+                GlobalDef.windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
                 //MessageBox.Show("Login success");
                 Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
                 {

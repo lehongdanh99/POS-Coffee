@@ -74,6 +74,26 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => VisibleCanEdit);
             }
         }
+
+        private Visibility visibleShow;
+        public Visibility VisibleShow
+        {
+            get
+            {
+                if (!CanEdit)
+                {
+                    GlobalDef.DetailTable = Visibility.Visible;
+                    return Visibility.Visible;
+                }
+
+                else
+                {
+                    GlobalDef.DetailTable = Visibility.Collapsed;
+                    return Visibility.Collapsed;
+                }
+            }
+            set { visibleShow = value; }
+        }
         private List<FoodOrder> listfoodOrder;
 
         public List<FoodOrder> ListFoodOrder
@@ -202,8 +222,8 @@ namespace CoffeePos.ViewModels
 
         public void btnPaymentReceipt()
         {
+
             Receipt ReceiptTest = new Receipt();
-            WindowManager windowManager = new WindowManager();
             ReceiptTest.Foods = ListFoodOrder.ToList();
             ReceiptTest.Table = TableNumOrder.ToString();
             ReceiptTest.Total = TotalOrder;
@@ -212,6 +232,7 @@ namespace CoffeePos.ViewModels
             ReceiptTest.CheckOut = DateTime.Now.ToString("HH:mm");
             ReceiptTest.CheckIn = DateTime.Now.ToString("HH:mm");
             ReceiptTest.Note = string.Empty;
+            
             GlobalDef.ReceiptPayment = ReceiptTest;
             ListOrderViewModel.GetInstance().PaymentReceipt(ReceiptTest);
             this.TryCloseAsync();
@@ -222,8 +243,8 @@ namespace CoffeePos.ViewModels
         {
             foreach(var food in ListFoodOrder)
             HomeViewModel.GetInstance().ListViewFoodOrders.ToList().Add(food);
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
+            //WindowManager windowManager = new WindowManager();
+            GlobalDef.windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
             HomeViewModel.GetInstance().GetFoodOrderTotal();
             this.TryCloseAsync();
         }
@@ -231,7 +252,7 @@ namespace CoffeePos.ViewModels
         public void btnConfirmReceipt()
         {
             Receipt ReceiptTest = new Receipt();
-            WindowManager windowManager = new WindowManager();
+            //WindowManager windowManager = new WindowManager();
             ReceiptTest.Foods = ListFoodOrder.ToList();
             ReceiptTest.Table = TableNumOrder.ToString();
             ReceiptTest.Total = TotalOrder;
@@ -242,8 +263,7 @@ namespace CoffeePos.ViewModels
             ReceiptTest.Note = string.Empty;
             foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
             {
-                if(receipt.Id == ReceiptTest.Id
-                    && receipt.Total == ReceiptTest.Total && receipt.Payment == ReceiptTest.Payment)
+                if(receipt.Id == GlobalDef.ReceiptDetail.Id)
                 {
                     ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
                     ListTable.GetInstance().ListTables.TableNumber[Int32.Parse(receipt.Table)].TableStatus = false;
@@ -260,6 +280,14 @@ namespace CoffeePos.ViewModels
                     
                 
             }
+            foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceiptDone)
+            {
+                if(receipt.Id== GlobalDef.ReceiptDetail.Id && GlobalDef.ReceiptDetail.Id != 0)
+                {
+                    this.TryCloseAsync();
+                    return;
+                }    
+            }    
             ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
             //ListOrderViewModel.GetInstance().AddListReceipt(Receipt);
             ReceiptTest.Id = ReceiptModel.GetInstance().ListReceipt.Count();

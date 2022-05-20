@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Caliburn.Micro;
+using CoffeePos.Common;
+using CoffeePos.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +29,16 @@ namespace CoffeePos.Views
         private void ConfirmPaymentClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
+            if(MessageBoxText.Text.ToString() == "Thanh toán thành công")
+            {
+                ListOrderViewModel.GetInstance().TryCloseAsync();
+                TablesViewModel.GetInstance().TryCloseAsync();
+            }   
+            else
+            {
+
+            }    
+            
         }
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
