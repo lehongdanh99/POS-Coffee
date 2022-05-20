@@ -31,23 +31,40 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult Login(EmployeeModel dataLogin)
         {
-            string username = dataLogin.Username.ToUpper().Trim();
-            string password = dataLogin.Password.ToUpper().Trim();
+            string username = "";
+            string password = "";
+            try
+            {
+                username = dataLogin.Username.ToUpper().Trim();
+                password = dataLogin.Password.ToUpper().Trim();
+            }
+            catch (Exception ex)
+            {
+                return View();
+            }
             //string username = dataLogin.Username;
             //string password = dataLogin.Password;
             if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password) && password != "PASSWORD")
             {
                 EmployeeModel data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.Username.ToUpper().Trim().Equals(username) && s.Password.Trim().ToUpper().Equals(password)).FirstOrDefault();
-                Session["EmployeeID"] = data.EmployeeID;
-                Session["Name"] = data.Name;
-                Session["Permission"] = data.Permission;
-                Session["Birthday"] = data.Birthday;
-                Session["Phone"] = data.Phone;
-                Session["Username"] = data.Username;
-                Session["Password"] = data.Password;
-                return RedirectToAction("AccountManagement", "Account", data);
+                if (data == null)
+                {
+                    ViewBag.Login_Fail = "Error Username or Password!";
+                }
+                else
+                {
+                    Session["EmployeeID"] = data.EmployeeID;
+                    Session["Name"] = data.Name;
+                    Session["Permission"] = data.Permission;
+                    Session["Birthday"] = data.Birthday;
+                    Session["Phone"] = data.Phone;
+                    Session["Username"] = data.Username;
+                    Session["Password"] = data.Password;
+                    return RedirectToAction("AccountManagement", "Account", data);
+                }
+                
             }
-            return View(false);
+            return View();
         }
         public ActionResult Register()
         {
@@ -55,6 +72,11 @@ namespace POS_Coffe.Controllers
         }
         public ActionResult ForgotPassWord()
         {
+            return View();
+        }
+        public ActionResult Login(string source)
+        {
+            ViewBag.source = source;
             return View();
         }
     }

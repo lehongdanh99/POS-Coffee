@@ -64,6 +64,5 @@ namespace POS_Coffe.Controllers
             MaterialAPIHandlerFakeData.GetInstance().ListMaterial.RemoveAt(MaterialID - 1);
             return RedirectToAction("MaterialManagement", "Material");
         }
-
     }
 }

@@ -42,7 +42,14 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult EditAccount(EmployeeModel dataEdit)
         {
-            return View();
+
+            var data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.EmployeeID == dataEdit.EmployeeID).FirstOrDefault();
+            MaterialsModel model = new MaterialsModel();
+            data.ToList().First().Name = data.Name;
+            data.ToList().First().Type = data.Type;
+            data.ToList().First().Amount = data.Amount;
+            data.ToList().First().Quantity = data.Quantity;
+            return RedirectToAction("MaterialManagement", "Material");
         }
     }
 }

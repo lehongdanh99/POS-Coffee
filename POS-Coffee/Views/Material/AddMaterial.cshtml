@@ -22,21 +22,39 @@
                             </div>
                         </div>
                     </div>
+                    @*<div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="Price">Price</label>
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model., new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>*@
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="Price">Price</label>
+                            <label class="col-sm-3 col-form-label" for="Type">Type</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Price, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="Type">Type</label>
+                            <label class="col-sm-3 col-form-label" for="Amount">Amount</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Type, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="Quantity">Quantity</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
