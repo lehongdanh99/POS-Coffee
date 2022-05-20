@@ -27,10 +27,10 @@ namespace CoffeePos.ViewModels
 
         }
 
-        public void BacktoHomeView()
-        {
-            WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(HomeViewModel.GetInstance());
-        }
+        //public void BacktoHomeView()
+        //{
+        //    WindowManager windowManager = new WindowManager();
+        //    windowManager.ShowWindowAsync(HomeViewModel.GetInstance());
+        //}
     }
 }

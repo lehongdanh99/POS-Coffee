@@ -74,9 +74,9 @@
             <StackPanel Grid.Column="2" VerticalAlignment="Top">
                 <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{x:Static language:Lang.Table_Discount}">
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="0" FontWeight="Bold">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{Binding DiscountOrder}" FontWeight="Bold">
                 </TextBlock>
-                <Button Content="Chọn mã" FontSize="10" Foreground="Orange" FontWeight="DemiBold" Visibility="{Binding VisibleCanEdit}"
+                <Button Content="Chọn mã" FontSize="10" Foreground="Orange" FontWeight="DemiBold"
                          cal:Message.Attach="[Event Click] = [Action BtnChooseDiscount()]"
                         Height="20" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}"></Button>
             </StackPanel>

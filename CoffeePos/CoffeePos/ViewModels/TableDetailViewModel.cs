@@ -26,6 +26,7 @@ namespace CoffeePos.ViewModels
             TableNumOrder = Int32.Parse(receipt.Table); ;
             PaymentOrder = receipt.Payment;
             TotalOrder = receipt.Total;
+            DiscountOrder = receipt.Discount;
             CanEdit = canEdit;
         }
 
@@ -114,6 +115,19 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => TotalOrder);
             }
         }
+
+        private int discountOrder;
+
+        public int DiscountOrder
+        {
+            get { return discountOrder; }
+            set
+            {
+                discountOrder = value;
+                NotifyOfPropertyChange(() => DiscountOrder);
+            }
+        }
+
         private bool enableRemoveBtn;
         public bool EnableDeleteReceiptBtn
         {
@@ -172,10 +186,11 @@ namespace CoffeePos.ViewModels
             HomeViewModel.GetInstance().btListVoucher_Click();
         }
 
+
         public void btnAddFoods()
         {
             foreach(var food in ListFoodOrder)
-                HomeViewModel.GetInstance().ListViewFoodOrders.ToList().Add(food);
+            HomeViewModel.GetInstance().ListViewFoodOrders.ToList().Add(food);
             WindowManager windowManager = new WindowManager();
             windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
             HomeViewModel.GetInstance().GetFoodOrderTotal();
@@ -189,6 +204,7 @@ namespace CoffeePos.ViewModels
             ReceiptTest.Foods = ListFoodOrder.ToList();
             ReceiptTest.Table = TableNumOrder.ToString();
             ReceiptTest.Total = TotalOrder;
+            ReceiptTest.Discount = DiscountOrder;
             ReceiptTest.Payment = PaymentOrder;
             ReceiptTest.CheckOut = DateTime.Now;
             ReceiptTest.CheckIn = DateTime.Now;

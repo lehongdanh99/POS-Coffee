@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CoffeePos.Common;
+using CoffeePos.Models;
+using CoffeePos.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +33,19 @@ namespace CoffeePos.Views
 
         private void ChooseVoucher(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Voucher obj = ((FrameworkElement)sender).DataContext as Voucher;
+            if(GlobalDef.IsChooseVoucerToOrder == true)
+            {
+                HomeViewModel.GetInstance().HandleCallBackChooseVoucher(obj);
+                this.Hide();
+            }
+            else if (GlobalDef.IsChooseVoucerToPayment == true)
+            {
+                PaymentViewModel.GetInstance().HandleCallBackChooseVoucher(obj);
+                this.Hide();
+            }  
+
+
         }
     }
 }

@@ -17,12 +17,16 @@ namespace CoffeePos.Common
         public static string END_POINT = "";
 
         public static bool IsChooseTableToOrder = false;
-
+        public static bool IsChooseVoucerToOrder = false;
+        public static bool IsChooseVoucerToPayment = false;
+        public static bool IsChooseVoucerToDetail = false;
         public static Receipt ReceiptDetail = new Receipt();
+        public static Receipt ReceiptPayment = new Receipt();
         public static Visibility DetailFromHome = Visibility.Collapsed;
         //public static ObservableCollection<Receipt> ListReceipt = new ObservableCollection<Receipt>();
         //
 
+        
         public static Visibility DetailTable = Visibility.Collapsed;
         public static string Password = "";
         public static string JSON_FOOD_CONFIG_PATH = "Food.json";

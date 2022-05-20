@@ -72,7 +72,7 @@ namespace CoffeePos.ViewModels
                 EnableOrder = false;
             }
             NotifyOfPropertyChange(() => EnableOrder);
-            TotalOrder = HomePayment - DiscountOrder;
+            TotalOrder = HomePayment - (HomePayment*DiscountOrder/100);
             NotifyOfPropertyChange(() => FoodOrderTotalCount);
             NotifyOfPropertyChange(() => HomePayment);
             NotifyOfPropertyChange(() => TotalOrder);
@@ -204,9 +204,9 @@ namespace CoffeePos.ViewModels
             set { foodOrderTotalCount = value; NotifyOfPropertyChange(() => FoodOrderTotalCount); }
         }
 
-        private double discountOrder = 0;
+        private int discountOrder = 0;
 
-        public double DiscountOrder
+        public int DiscountOrder
         {
             get { return discountOrder; }
             set { discountOrder = value; NotifyOfPropertyChange(() => DiscountOrder); }
@@ -392,10 +392,10 @@ namespace CoffeePos.ViewModels
 
             //orderDetailViewModel.eventChange += HandleCallBack;
 
-                ListOrderViewModel listOrderViewModel = new ListOrderViewModel();
+                //ListOrderViewModel listOrderViewModel = new ListOrderViewModel();
             
             WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(listOrderViewModel);
+            windowManager.ShowWindowAsync(ListOrderViewModel.GetInstance());
         }
 
 
@@ -486,6 +486,7 @@ namespace CoffeePos.ViewModels
             receipt.Table = TableNum.ToString();
             receipt.Total = TotalOrder;
             receipt.Payment = HomePayment;
+            receipt.Discount = DiscountOrder;
             TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
             //tableDetailViewModel.eventChange += HandleCallBack;
             GlobalDef.DetailFromHome = Visibility.Collapsed;
@@ -500,10 +501,18 @@ namespace CoffeePos.ViewModels
 
         public void btListVoucher_Click()
         {
-            ListVouchersViewModel listVouchersViewModel = new ListVouchersViewModel();
-            //tableDetailViewModel.eventChange += HandleCallBack;
+            //ListVouchersViewModel listVouchersViewModel = new ListVouchersViewModel();
+            //listVouchersViewModel.eventChooseVoucher = HandleCallBackChooseVoucher;
+            GlobalDef.IsChooseVoucerToOrder = true;
             WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(listVouchersViewModel);
+            windowManager.ShowWindowAsync(ListVouchersViewModel.GetInstance());
+        }
+
+        public void HandleCallBackChooseVoucher(Voucher selectedVoucher)
+        {
+            DiscountOrder = selectedVoucher.Percent;
+            GetFoodOrderTotal();
+            GlobalDef.IsChooseVoucerToOrder = false;
         }
 
         public void HandleCallBacChooseTable(int TableChoose)

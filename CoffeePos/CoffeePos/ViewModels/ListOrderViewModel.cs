@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.ViewModels
@@ -43,9 +44,33 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => VisibilityReceiptDone);
             }
         }
+
+        private SolidColorBrush backgroundShowListDone;
+        public SolidColorBrush BackgroundShowListDone
+        {
+            get { return backgroundShowListDone; }
+            set { backgroundShowListDone = value;
+                NotifyOfPropertyChange(() => BackgroundShowListDone);
+            }
+        }
+
+        private SolidColorBrush backgroundShowList;
+        public SolidColorBrush BackgroundShowList
+        {
+            get { return backgroundShowList; }
+            set
+            {
+                backgroundShowList = value;
+                NotifyOfPropertyChange(() => BackgroundShowList);
+            }
+        }
+
+
         public void btnShowListReceipt()
         {
             //this.Hide();
+            BackgroundShowList = new SolidColorBrush(Colors.White);
+            BackgroundShowListDone = new SolidColorBrush(Colors.Orange);
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
             VisibilityReceiptDone = Visibility.Visible;
             NotifyOfPropertyChange(() => ListReceipts);
@@ -54,6 +79,8 @@ namespace CoffeePos.ViewModels
 
         public void btnShowListReceiptDone()
         {
+            BackgroundShowList = new SolidColorBrush(Colors.Orange);
+            BackgroundShowListDone = new SolidColorBrush(Colors.White);
             ListReceipts = ReceiptModel.GetInstance().ListReceiptDone;
             VisibilityReceiptDone = Visibility.Hidden;
             NotifyOfPropertyChange(() => ListReceipts);
@@ -86,11 +113,13 @@ namespace CoffeePos.ViewModels
 
         public void PaymentReceipt(Receipt receipt)
         {
-            PaymentViewModel paymentViewModel = new PaymentViewModel(receipt);
+            GlobalDef.ReceiptPayment = receipt;
+            //PaymentViewModel paymentViewModel = new PaymentViewModel(receipt);
             //tableDetailViewModel.eventChange += HandleCallBack;
 
             WindowManager windowManager = new WindowManager();
-            windowManager.ShowWindowAsync(paymentViewModel);
+            windowManager.ShowWindowAsync(PaymentViewModel.GetInstance());
+            PaymentViewModel.GetInstance().getDataPayment();
             this.TryCloseAsync();
             //RegisterViewModel registerViewModel = new RegisterViewModel();
             //WindowManager windowManager = new WindowManager();

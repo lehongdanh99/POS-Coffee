@@ -47,9 +47,6 @@ namespace CoffeePos.Views
         private void PaymentFinalClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            
-            //PaymentViewModel.GetInstance().CompletePaymentReceipt();
-            //MessageBoxView view = new MessageBoxView();
 
         }
     }

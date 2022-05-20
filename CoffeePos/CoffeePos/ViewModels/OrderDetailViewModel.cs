@@ -259,19 +259,17 @@ namespace CoffeePos.ViewModels
 
         public void btnOrder_Click()
         {
-
-            
-                FoodSelectedOrder.FoodOrderPrice = FoodPrice;
-                if (isSizeSmall)
-                {
-                    FoodSelectedOrder.FoodSize = "S";
-                }
-                else
-                {
-                    FoodSelectedOrder.FoodSize = "M";
-                }
-                FoodSelectedOrder.FoodOrderCount = OrderCount;
-                FoodSelectedOrder.FoodOrderMore = Note;
+            FoodSelectedOrder.FoodOrderPrice = FoodPrice;
+            if (isSizeSmall)
+            {
+                FoodSelectedOrder.FoodSize = "S";
+            }
+            else
+            {
+                FoodSelectedOrder.FoodSize = "M";
+            }
+            FoodSelectedOrder.FoodOrderCount = OrderCount;
+            FoodSelectedOrder.FoodOrderMore = Note;
             FoodSelectedOrder.FoodOrderImage = FoodImage;
             FoodSelectedOrder.FoodOrderName = FoodName;
             eventCustomChange?.Invoke(FoodSelectedOrder);
@@ -281,8 +279,6 @@ namespace CoffeePos.ViewModels
 
 
             this.TryCloseAsync();
-            //WindowManager windowManager = new WindowManager();
-            //windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
 
 
         }

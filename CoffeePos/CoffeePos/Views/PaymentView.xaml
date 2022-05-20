@@ -93,7 +93,7 @@
                     <Grid Height="49">
                         <TextBlock Text="Khách hàng thanh toán" Foreground="Black" FontSize="15" VerticalAlignment="Center" FontWeight="DemiBold"
                                Margin="20 0"></TextBlock>
-                        <TextBlock Text="500000" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
+                        <TextBlock Text="{Binding CustomerPay}" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
                                Margin="20 0" FontWeight="DemiBold"></TextBlock>
                     </Grid>
                     <Line X1="10" Y1="0" X2="630" Y2="0" Stroke="Black" StrokeThickness="0.5" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Center"></Line>
@@ -109,6 +109,7 @@
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
@@ -168,6 +169,15 @@
 
                     </StackPanel>
                 </ScrollViewer>
+                <Grid Grid.Row="3" Margin="10 0">
+                    <TextBlock Text="Mã giảm giá" Foreground="Black" FontSize="15" VerticalAlignment="Center" Margin="20 0" FontWeight="DemiBold"/>
+                    <Button Content="Chọn mã" FontSize="15" Foreground="Orange" FontWeight="DemiBold" Visibility="{Binding VisibleCanEdit}"
+                            cal:Message.Attach="[Event Click] = [Action btListVoucher_Click()]"
+                            Height="30" Margin="-5,-5,-10,0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top"></Button>
+                    <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding DiscountOrder, Mode=TwoWay, IsAsync=true}"
+                               VerticalAlignment="Center" FontSize="15"   Margin="15 0"></TextBlock>
+                    <TextBlock Foreground="Black" HorizontalAlignment="Right" FontSize="15" VerticalAlignment="Center" Text="%"></TextBlock>
+                </Grid>
                 
             </Grid>
         </Grid>

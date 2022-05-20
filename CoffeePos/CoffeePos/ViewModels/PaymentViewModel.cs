@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using CoffeePos.Common;
 using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
@@ -12,24 +13,39 @@ namespace CoffeePos.ViewModels
 {
     internal class PaymentViewModel : Screen
     {
-        //private static PaymentViewModel _instance;
-        //public static PaymentViewModel GetInstance()
-        //{
-        //    if (_instance == null)
-        //    {
-        //        if (_instance == null)
-        //        {
-        //            _instance = new PaymentViewModel();
-        //        }
-        //    }
-        //    return _instance;
-        //}
-        public PaymentViewModel(Receipt receipt)
+        private static PaymentViewModel _instance;
+        public static PaymentViewModel GetInstance()
         {
-            receiptPayment = receipt;
-            ListFoodOrder = receipt.Foods;
-            TotalPayment = receipt.Total;
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new PaymentViewModel();
+                }
+            }
+            return _instance;
+        }
+        public PaymentViewModel()
+        {
+
+            getDataPayment();
+        }
+        
+        public void getDataPayment()
+        {
+            receiptPayment = GlobalDef.ReceiptPayment;
+            ListFoodOrder = receiptPayment.Foods;
+            TotalPayment = receiptPayment.Total;
+            DiscountOrder = receiptPayment.Discount;
             MoneySuggestList = getMoneySuggestList();
+        }
+
+        private int discountOrder = 0;
+
+        public int DiscountOrder
+        {
+            get { return discountOrder; }
+            set { discountOrder = value; NotifyOfPropertyChange(() => DiscountOrder); }
         }
 
         private double totalPayment;
@@ -37,7 +53,9 @@ namespace CoffeePos.ViewModels
         public double TotalPayment
         {
             get { return totalPayment; }
-            set { totalPayment = value; }
+            set { totalPayment = value;
+                NotifyOfPropertyChange(() => TotalPayment);
+            }
         }
 
         private double refundMoney;
@@ -79,6 +97,26 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        public void HandleCallBackChooseVoucher(Voucher selectedVoucher)
+        {
+            DiscountOrder = selectedVoucher.Percent;
+            GetFoodOrderTotal();
+            GlobalDef.IsChooseVoucerToPayment = false;
+        }
+
+        public void GetFoodOrderTotal()
+        {
+            TotalPayment = receiptPayment.Payment - (receiptPayment.Payment * DiscountOrder / 100);
+            NotifyOfPropertyChange(() => TotalPayment);
+        }
+
+        public void btListVoucher_Click()
+        {
+            GlobalDef.IsChooseVoucerToPayment = true;
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(ListVouchersViewModel.GetInstance());
+        }
+
         private List<FoodOrder> listfoodOrder;
 
         public List<FoodOrder> ListFoodOrder
@@ -89,24 +127,26 @@ namespace CoffeePos.ViewModels
 
         public void CompletePaymentReceipt()
         {
+            
+            ReceiptModel.GetInstance().ListReceipt.Remove(receiptPayment);
+            var numbersTable = receiptPayment.Table.Split(',').Select(Int32.Parse).ToList();
+            //for (int i = 0 ; i < ListTable.GetInstance().ListTables.TableNumber.Count; i++)
+            //{
+                
+                for(int j = 0; j < numbersTable.Count; j++)
+                {
+                    //if(ListTable.GetInstance().ListTables.TableNumber[i].TableID == numbersTable[j])
+                    //{
+                    //    ListTable.GetInstance().ListTables.TableNumber[i].TableStatus = false;
+                    //}
+                    ListTable.GetInstance().ListTables.TableNumber[numbersTable[j]].TableStatus = false;
+                }    
+            //}    
+            //ListTable.GetInstance().ListTables.TableNumber[receiptPayment.Table].TableStatus = false;
+            ReceiptModel.GetInstance().ListReceiptDone.Add(receiptPayment);
             MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel();
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(messageBoxViewModel);
-            ReceiptModel.GetInstance().ListReceipt.Remove(receiptPayment);
-            for(int i = 0 ; i < ListTable.GetInstance().ListTables.TableNumber.Count; i++)
-            {
-                var numbersTable = receiptPayment.Table.Split(',').Select(Int32.Parse).ToList();
-                for(int j = 0; j < numbersTable.Count; j++)
-                {
-                    if(ListTable.GetInstance().ListTables.TableNumber[i].TableID == j)
-                    {
-                        ListTable.GetInstance().ListTables.TableNumber[i].TableStatus = false;
-
-                    }    
-                }    
-            }    
-            //ListTable.GetInstance().ListTables.TableNumber[receiptPayment.Table].TableStatus = false;
-            ReceiptModel.GetInstance().ListReceiptDone.Add(receiptPayment);
         }
     }
 }
