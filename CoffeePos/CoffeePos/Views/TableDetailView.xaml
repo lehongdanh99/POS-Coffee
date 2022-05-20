@@ -76,9 +76,9 @@
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{Binding DiscountOrder}" FontWeight="Bold">
                 </TextBlock>
-                <Button Content="Chọn mã" FontSize="10" Foreground="Orange" FontWeight="DemiBold"
+                <!--<Button Content="Chọn mã" FontSize="10" Foreground="Orange" FontWeight="DemiBold"
                          cal:Message.Attach="[Event Click] = [Action BtnChooseDiscount()]"
-                        Height="20" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}"></Button>
+                        Height="20" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}"></Button>-->
             </StackPanel>
             <StackPanel Grid.Column="3" VerticalAlignment="Top">
                 <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{x:Static language:Lang.Table_Payment}">
@@ -134,7 +134,7 @@
         </ScrollViewer>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="6">
             <Button x:Name="btnPayment" Content="Thanh Toán" Margin="10 10 10 0" Width="150" materialDesign:ButtonAssist.CornerRadius="5" Visibility="{Binding VisibleCanEdit}"
-                 cal:Message.Attach="[Event Click] = [Action btnConfirmReceipt()]" IsEnabled="{Binding IsAllServed}"></Button>
+                 cal:Message.Attach="[Event Click] = [Action btnPaymentReceipt()]" IsEnabled="{Binding IsAllServed}"></Button>
             <Button Content="{x:Static language:Lang.Table_Detail_Confirm}" Margin="10 10 10 0" Width="150" materialDesign:ButtonAssist.CornerRadius="5"
                  cal:Message.Attach="[Event Click] = [Action btnConfirmReceipt()]"></Button>
         </StackPanel>

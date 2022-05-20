@@ -36,7 +36,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" Height="50" Margin="5"  BorderBrush="{x:Null}" FontWeight="Bold" Background="{Binding BackgroundShowListDone}" 
-                        cal:Message.Attach="[Event Click] = [Action btnShowListReceipt()]"
+                        cal:Message.Attach="[Event Click] = [Action btnShowListReceipt()]" Focusable="True"
                         Foreground="{Binding BackgroundShowList}" Content="{x:Static language:Lang.ListOrder_Payment}"></Button>
                 <Line X1="0" Y1="0" X2="0" Y2="50" Grid.Column="1" Margin="0 10" Stroke="#FFC8C2C2" StrokeThickness="5"></Line>
                 <Button Grid.Column="1" Margin="5" Height="50" BorderBrush="{x:Null}" FontWeight="Bold" 
@@ -46,7 +46,7 @@
             </Grid>
 
         </Border>
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center" Visibility="{Binding VisibilityReceipt}">
             <StackPanel>
                 <ItemsControl x:Name="ListViewTables" Margin="0" ItemsSource="{Binding ListReceipts}" >
 
@@ -79,7 +79,7 @@
 
                                         </Grid> 
                                         <Line X1="0" Y1="0" X2="250" Y2="0" Grid.Row="2" Margin="5 5" Stroke="#FFC8C2C2" StrokeThickness="2"></Line>
-                                        <Grid Grid.Row="2" Visibility="{Binding VisibilityReceiptDone}">
+                                        <Grid Grid.Row="2">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
@@ -100,6 +100,61 @@
 
                                         </Grid>
                                         
+                                    </Grid>
+                                </Border>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </StackPanel>
+
+        </ScrollViewer>
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center" Visibility="{Binding VisibilityReceiptDone}">
+            <StackPanel>
+                <ItemsControl x:Name="ListViewOrders" Margin="0" ItemsSource="{Binding ListReceiptsDone}" >
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="5" Background="White">
+                                <Border Width="250" Height="150"
+                                        Margin="0" BorderThickness="2" CornerRadius="5" BorderBrush="Orange" OpacityMask="#FFFF6363">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Paper" Background="Orange" Foreground="White" Width="30" Height="30" VerticalAlignment="Top" Margin="10 0"/>
+                                            <TextBlock FontSize="20" Text="{x:Static language:Lang.Home_Table}" FontWeight="Bold"  Foreground="Orange" VerticalAlignment="Center"></TextBlock>
+                                            <!--<TextBlock FontSize="20" VerticalAlignment="Center" FontWeight="Bold"  Foreground="Orange" Text="{Binding Floor}"></TextBlock>-->
+                                            <TextBlock FontSize="20" Text=" - " VerticalAlignment="Center" Foreground="Orange"></TextBlock>
+                                            <TextBlock FontSize="20" Text="{Binding Table}" FontWeight="Bold"  VerticalAlignment="Center" Foreground="Orange"></TextBlock>
+                                        </StackPanel>
+                                        <Grid Grid.Row="1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock  Grid.Column="0" FontSize="18" VerticalAlignment="Center" Margin="10" Text="{Binding CheckIn}" Foreground="Orange"></TextBlock>
+                                            <TextBlock  Grid.Column="2" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" Text="{Binding Payment}" Foreground="Orange"></TextBlock>
+
+                                        </Grid>
+                                        
+                                            <Button Grid.Row="2" Margin="5" BorderBrush="{x:Null}"
+                                                    FontWeight="Bold" Background="{x:Null}" 
+                                                    Foreground="Orange" 
+                                                    Content="{x:Static language:Lang.ListOrder_OrderDetail}"
+                                                    Click="ViewDetailReceiptDone_Click"></Button>
+
+
+
                                     </Grid>
                                 </Border>
                             </StackPanel>

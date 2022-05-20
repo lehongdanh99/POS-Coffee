@@ -273,7 +273,7 @@
                                    Margin="10 0"></TextBlock>
                         <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="%"></TextBlock>
                         <Button Content="Chọn mã" FontSize="9" Foreground="Orange" FontWeight="DemiBold" Visibility="{Binding VisibleCanEdit}"
-                            cal:Message.Attach="[Event Click] = [Action btListVoucher_Click()]"
+                            cal:Message.Attach="[Event Click] = [Action btChooseVoucher_Click()]"
                             Height="20" Margin="-5,-5,-10,0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top"></Button>
                     </Grid>
                     <Grid Grid.Row="3" Margin="10 0" VerticalAlignment="Center">
@@ -282,22 +282,22 @@
                     </Grid>
                     <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Grid.Row="4" Grid.Column="0" FontSize="18" FontWeight="DemiBold" Width="130" Height="50" Margin="0 0 5 0"
-                            Content="{x:Static language:Lang.Home_Table}" Background="#FF079CFF" BorderBrush="{x:Null}"
+                            Content="{x:Static language:Lang.Home_Table}" Background="#FF079CFF" BorderBrush="{x:Null}" Visibility="{Binding VisibleDelivery}"
                             cal:Message.Attach="[Event Click] = [Action btTableChoose_Click()]">
 
                         </Button>
                         <Button Grid.Row="4" FontSize="18" Grid.Column="1" FontWeight="DemiBold" Width="130" Height="50" Margin="0"
-                             IsEnabled="{Binding EnableOrder}" Background="Red"
+                             IsEnabled="{Binding EnableOrder}" Background="Red" Visibility="{Binding VisibleDelivery}"
                                 cal:Message.Attach="[Event Click] = [Action btOrderLocally_Click()]"
                                 BorderBrush="{x:Null}">
                             <TextBlock Text="{x:Static language:Lang.Home_Order}" TextWrapping="Wrap"/>
                         </Button>
                     </StackPanel>
-                    <!--<Button Grid.Row="4" FontSize="20" Grid.Column="1" FontWeight="Bold" Height="50" Margin="5" Visibility="{Binding VisibleLocally}"
-                            Content="{x:Static language:Lang.Home_Order}" Background="Red" BorderBrush="{x:Null}"
+                    <Button Grid.Row="4" FontSize="20" Grid.Column="1" FontWeight="Bold" Height="50" Margin="5" Visibility="{Binding VisibleLocally}"
+                            Content="{x:Static language:Lang.Home_Order}" Background="Red" BorderBrush="{x:Null}" IsEnabled="{Binding EnableOrder}"
                             cal:Message.Attach="[Event Click] = [Action btOrderDelivery_Click()]">
 
-                    </Button>-->
+                    </Button>
 
                 </Grid>
             </Grid>

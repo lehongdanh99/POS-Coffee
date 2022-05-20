@@ -1,4 +1,5 @@
-﻿using CoffeePos.Models;
+﻿using CoffeePos.Common;
+using CoffeePos.Models;
 using CoffeePos.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,16 @@ namespace CoffeePos.Views
         {
 
             Receipt obj = ((FrameworkElement)sender).DataContext as Receipt;
-            ListOrderViewModel.GetInstance().ViewDetailReceipt(obj);
+            GlobalDef.DetailFromHome = Visibility.Visible;
+            ListOrderViewModel.GetInstance().ViewDetailReceipt(obj, true);
+        }
+
+        private void ViewDetailReceiptDone_Click(object sender, RoutedEventArgs e)
+        {
+
+            Receipt obj = ((FrameworkElement)sender).DataContext as Receipt;
+            GlobalDef.DetailFromHome = Visibility.Hidden;
+            ListOrderViewModel.GetInstance().ViewDetailReceipt(obj, false);
         }
 
         private void PaymentReceipt_Click(object sender, RoutedEventArgs e)

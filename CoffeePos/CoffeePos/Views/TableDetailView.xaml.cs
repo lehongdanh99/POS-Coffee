@@ -37,6 +37,13 @@ namespace CoffeePos.Views
             FoodOrder obj = ((FrameworkElement)sender).DataContext as FoodOrder;
 
         }
+        private void btnPaymentReceipt(object sender, RoutedEventArgs e)
+        {
+            //this.Hide();
+            Receipt obj = ((FrameworkElement)sender).DataContext as Receipt;
+            ListOrderViewModel.GetInstance().PaymentReceipt(obj);
+
+        }
 
         private void CheckBoxChanged(object sender, RoutedEventArgs e)
         {

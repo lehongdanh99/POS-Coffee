@@ -53,15 +53,15 @@ namespace CoffeePos.Models
 
             public string Note { get; set; }
 
-            public DateTime CheckIn { get; set; }
+            public string CheckIn { get; set; }
 
-            public DateTime CheckOut { get; set; }
+            public string CheckOut { get; set; }
 
             public string Voucher { get; set; }
 
             public int Discount { get; set; }
 
-            public Receipt(List<FoodOrder> foods = default, string table = default, double total = default, double payment = default, string note = default, DateTime checkIn = default, DateTime checkOut = default, string voucher = default, int discount = 0)
+            public Receipt(List<FoodOrder> foods = default, string table = default, double total = default, double payment = default, string note = default, string checkIn = default, string checkOut = default, string voucher = default, int discount = 0)
             {
                 foods = Foods;
                 table = Table;

@@ -42,7 +42,7 @@
                                FontSize="18" Foreground="Black" FontWeight="DemiBold"></TextBlock>
                 </Grid>
                 <StackPanel Grid.Row="1" Name="MoneyInput">
-                    <TextBox Height="70" VerticalAlignment="Center" Text="0" Margin="20 0" 
+                    <TextBox x:Name="TxtMoneyInput" Height="70" VerticalAlignment="Center" Margin="20 0" TextChanged="textChangedEventHandler"
                          Foreground="Black" FontSize="35" FontWeight="Bold" TextAlignment="Right">
                     </TextBox>
                     <Grid >
@@ -93,7 +93,7 @@
                     <Grid Height="49">
                         <TextBlock Text="Khách hàng thanh toán" Foreground="Black" FontSize="15" VerticalAlignment="Center" FontWeight="DemiBold"
                                Margin="20 0"></TextBlock>
-                        <TextBlock Text="{Binding CustomerPay}" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
+                        <TextBlock x:Name="TxtMoneyoutput" Text="{Binding CustomerPay}" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
                                Margin="20 0" FontWeight="DemiBold"></TextBlock>
                     </Grid>
                     <Line X1="10" Y1="0" X2="630" Y2="0" Stroke="Black" StrokeThickness="0.5" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Center"></Line>

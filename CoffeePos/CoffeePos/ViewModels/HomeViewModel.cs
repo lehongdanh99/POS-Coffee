@@ -38,6 +38,7 @@ namespace CoffeePos.ViewModels
             bgLocally = new SolidColorBrush(Colors.Orange);
             bgDelivery = new SolidColorBrush(Colors.LightGray);
             VisibleLocally = Visibility.Hidden;
+            VisibleDelivery = Visibility.Visible;
             FoodsMenu = GetFoods();
             AllFoods = GetFoods();
             TypeFoods = GetTypeFoods();
@@ -97,6 +98,21 @@ namespace CoffeePos.ViewModels
             {
                 visibleLocally = value;
                 NotifyOfPropertyChange(() => VisibleLocally);
+            }
+        }
+
+        private Visibility visibleDelivery;
+        public Visibility VisibleDelivery
+        {
+
+            get
+            {
+                return visibleDelivery;
+            }
+            set
+            {
+                visibleDelivery = value;
+                NotifyOfPropertyChange(() => VisibleDelivery);
             }
         }
 
@@ -396,6 +412,7 @@ namespace CoffeePos.ViewModels
             
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(ListOrderViewModel.GetInstance());
+            ListOrderViewModel.GetInstance().getDataListOrder();
         }
 
 
@@ -503,6 +520,15 @@ namespace CoffeePos.ViewModels
         {
             //ListVouchersViewModel listVouchersViewModel = new ListVouchersViewModel();
             //listVouchersViewModel.eventChooseVoucher = HandleCallBackChooseVoucher;
+            GlobalDef.IsChooseVoucerToOrder = false;
+            WindowManager windowManager = new WindowManager();
+            windowManager.ShowWindowAsync(ListVouchersViewModel.GetInstance());
+        }
+
+        public void btChooseVoucher_Click()
+        {
+            //ListVouchersViewModel listVouchersViewModel = new ListVouchersViewModel();
+            //listVouchersViewModel.eventChooseVoucher = HandleCallBackChooseVoucher;
             GlobalDef.IsChooseVoucerToOrder = true;
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(ListVouchersViewModel.GetInstance());
@@ -556,6 +582,7 @@ namespace CoffeePos.ViewModels
                 BgDelivery = new SolidColorBrush(Colors.LightGray);
                 isBgLocally = true;
                 VisibleLocally = Visibility.Hidden;
+                VisibleDelivery = Visibility.Visible;
                 VisibleTable = Visibility.Visible;
             }
 
@@ -569,6 +596,7 @@ namespace CoffeePos.ViewModels
                 BgDelivery = new SolidColorBrush(Colors.Orange);
                 isBgLocally = false;
                 VisibleLocally = Visibility.Visible;
+                VisibleDelivery = Visibility.Hidden;
                 VisibleTable = Visibility.Hidden;
             }
 

@@ -29,9 +29,15 @@ namespace CoffeePos.ViewModels
         }
         public ListOrderViewModel()
         {
-            //ListOrders = getListOrders();
+            getDataListOrder();
+        }
+
+        public void getDataListOrder()
+        {
+            BackgroundShowList = new SolidColorBrush(Colors.White);
+            BackgroundShowListDone = new SolidColorBrush(Colors.Orange);
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
-            
+            ListReceiptsDone = ReceiptModel.GetInstance().ListReceiptDone;
         }
 
         private Receipt ReceiptSelected;
@@ -42,6 +48,18 @@ namespace CoffeePos.ViewModels
             get { return visibilityReceiptDone; }
             set { visibilityReceiptDone = value;
                 NotifyOfPropertyChange(() => VisibilityReceiptDone);
+            }
+        }
+
+        private Visibility visibilityReceipt;
+
+        public Visibility VisibilityReceipt
+        {
+            get { return visibilityReceipt; }
+            set
+            {
+                visibilityReceipt = value;
+                NotifyOfPropertyChange(() => VisibilityReceipt);
             }
         }
 
@@ -72,7 +90,8 @@ namespace CoffeePos.ViewModels
             BackgroundShowList = new SolidColorBrush(Colors.White);
             BackgroundShowListDone = new SolidColorBrush(Colors.Orange);
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
-            VisibilityReceiptDone = Visibility.Visible;
+            VisibilityReceiptDone = Visibility.Hidden;
+            VisibilityReceipt = Visibility.Visible;
             NotifyOfPropertyChange(() => ListReceipts);
             NotifyOfPropertyChange(() => VisibilityReceiptDone);
         }
@@ -82,7 +101,8 @@ namespace CoffeePos.ViewModels
             BackgroundShowList = new SolidColorBrush(Colors.Orange);
             BackgroundShowListDone = new SolidColorBrush(Colors.White);
             ListReceipts = ReceiptModel.GetInstance().ListReceiptDone;
-            VisibilityReceiptDone = Visibility.Hidden;
+            VisibilityReceiptDone = Visibility.Visible;
+            VisibilityReceipt=Visibility.Hidden;
             NotifyOfPropertyChange(() => ListReceipts);
             NotifyOfPropertyChange(() => VisibilityReceiptDone);
         }
@@ -101,11 +121,19 @@ namespace CoffeePos.ViewModels
             set { listReceipts = value; NotifyOfPropertyChange(() => ListReceipts); }
         }
 
-        public void ViewDetailReceipt (Receipt receipt)
+        private ObservableCollection<Receipt> listReceiptsDone = ReceiptModel.GetInstance().ListReceipt;
+
+        public ObservableCollection<Receipt> ListReceiptsDone
         {
-            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, true);
+            get { return listReceiptsDone; }
+            set { listReceiptsDone = value; NotifyOfPropertyChange(() => ListReceiptsDone); }
+        }
+
+        public void ViewDetailReceipt (Receipt receipt , bool isDone)
+        {
+            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, isDone);
             //tableDetailViewModel.eventChange += HandleCallBack;
-            GlobalDef.DetailFromHome = Visibility.Visible;
+            
             ReceiptSelected = receipt;
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(tableDetailViewModel);
@@ -120,7 +148,7 @@ namespace CoffeePos.ViewModels
             WindowManager windowManager = new WindowManager();
             windowManager.ShowWindowAsync(PaymentViewModel.GetInstance());
             PaymentViewModel.GetInstance().getDataPayment();
-            this.TryCloseAsync();
+            
             //RegisterViewModel registerViewModel = new RegisterViewModel();
             //WindowManager windowManager = new WindowManager();
             //windowManager.ShowDialogAsync(registerViewModel);

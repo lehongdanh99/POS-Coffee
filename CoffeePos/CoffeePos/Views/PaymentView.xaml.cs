@@ -44,6 +44,11 @@ namespace CoffeePos.Views
             MoneyInput.Visibility = Visibility.Collapsed;
         }
 
+        private void textChangedEventHandler(object sender, EventArgs e)
+        {
+            TxtMoneyoutput.Text = TxtMoneyInput.Text;
+        }
+
         private void PaymentFinalClick(object sender, RoutedEventArgs e)
         {
             this.Hide();

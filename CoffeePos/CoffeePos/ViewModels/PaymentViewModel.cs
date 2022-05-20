@@ -58,6 +58,18 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        private double customerPay;
+
+        public double CustomerPay
+        {
+            get { return customerPay; }
+            set
+            {
+                customerPay = value;
+                NotifyOfPropertyChange(() => CustomerPay);
+            }
+        }
+
         private double refundMoney;
 
         public double RefundMoney
@@ -127,8 +139,13 @@ namespace CoffeePos.ViewModels
 
         public void CompletePaymentReceipt()
         {
-            
-            ReceiptModel.GetInstance().ListReceipt.Remove(receiptPayment);
+
+            ObservableCollection<Receipt> receipts = ReceiptModel.GetInstance().ListReceipt;
+            if(receipts.Count == 0)
+            {
+                return;
+            }    
+            ReceiptModel.GetInstance().ListReceipt.RemoveAt(receiptPayment.Id);
             var numbersTable = receiptPayment.Table.Split(',').Select(Int32.Parse).ToList();
             //for (int i = 0 ; i < ListTable.GetInstance().ListTables.TableNumber.Count; i++)
             //{

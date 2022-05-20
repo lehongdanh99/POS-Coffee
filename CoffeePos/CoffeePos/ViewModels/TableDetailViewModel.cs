@@ -28,6 +28,7 @@ namespace CoffeePos.ViewModels
             TotalOrder = receipt.Total;
             DiscountOrder = receipt.Discount;
             CanEdit = canEdit;
+            checkServed();
         }
 
         bool isAllServed = false;
@@ -181,9 +182,38 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        public void checkServed()
+        {
+            IsAllServed = true;
+            foreach (var food in ListFoodOrder)
+            {
+                if (!food.ServedFood)
+                {
+                    IsAllServed = false;
+                }
+
+            }
+        }
+
         public void BtnChooseDiscount()
         {
             HomeViewModel.GetInstance().btListVoucher_Click();
+        }
+
+        public void btnPaymentReceipt()
+        {
+            Receipt ReceiptTest = new Receipt();
+            WindowManager windowManager = new WindowManager();
+            ReceiptTest.Foods = ListFoodOrder.ToList();
+            ReceiptTest.Table = TableNumOrder.ToString();
+            ReceiptTest.Total = TotalOrder;
+            ReceiptTest.Discount = DiscountOrder;
+            ReceiptTest.Payment = PaymentOrder;
+            ReceiptTest.CheckOut = DateTime.Now.ToString("HH:mm");
+            ReceiptTest.CheckIn = DateTime.Now.ToString("HH:mm");
+            ReceiptTest.Note = string.Empty;
+            GlobalDef.ReceiptPayment = ReceiptTest;
+            ListOrderViewModel.GetInstance().PaymentReceipt(ReceiptTest);
         }
 
 
@@ -206,8 +236,8 @@ namespace CoffeePos.ViewModels
             ReceiptTest.Total = TotalOrder;
             ReceiptTest.Discount = DiscountOrder;
             ReceiptTest.Payment = PaymentOrder;
-            ReceiptTest.CheckOut = DateTime.Now;
-            ReceiptTest.CheckIn = DateTime.Now;
+            ReceiptTest.CheckOut = DateTime.Now.ToString("HH:mm");
+            ReceiptTest.CheckIn = DateTime.Now.ToString("HH:mm");
             ReceiptTest.Note = string.Empty;
             foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
             {
@@ -231,6 +261,7 @@ namespace CoffeePos.ViewModels
             }
             ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
             //ListOrderViewModel.GetInstance().AddListReceipt(Receipt);
+            ReceiptTest.Id = ReceiptModel.GetInstance().ListReceipt.Count();
             ReceiptModel.GetInstance().ListReceipt.Add(ReceiptTest);
            
             //FoodOrderModel.GetInstance().FoodOrders.Clear();
