@@ -214,6 +214,7 @@ namespace CoffeePos.ViewModels
             ReceiptTest.Note = string.Empty;
             GlobalDef.ReceiptPayment = ReceiptTest;
             ListOrderViewModel.GetInstance().PaymentReceipt(ReceiptTest);
+            this.TryCloseAsync();
         }
 
 
