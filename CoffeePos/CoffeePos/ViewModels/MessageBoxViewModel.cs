@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CoffeePos.ViewModels
 {
@@ -25,6 +26,10 @@ namespace CoffeePos.ViewModels
         public MessageBoxViewModel(string message)
         {
             Message = message;
+            if (message == "Xác nhận hủy đơn")
+            {
+                VisibleButtonConfirm2 = Visibility.Hidden;
+            }    
         }
 
         private string _message;
@@ -33,6 +38,14 @@ namespace CoffeePos.ViewModels
         {
             get { return _message; }
             set { _message = value; }
+        }
+
+        private Visibility visiblebtnConfirm2;
+
+        public Visibility VisibleButtonConfirm2
+        {
+            get { return visiblebtnConfirm2; }
+            set { visiblebtnConfirm2 = value; }
         }
 
         //public void BacktoHomeView()

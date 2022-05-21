@@ -26,6 +26,7 @@ namespace CoffeePos.Common
         public static Visibility DetailFromHome = Visibility.Collapsed;
         //public static ObservableCollection<Receipt> ListReceipt = new ObservableCollection<Receipt>();
         //
+        public static bool canEditDetail = false;
 
         public static WindowManager windowManager = new WindowManager();
 

@@ -34,6 +34,7 @@ namespace CoffeePos.Views
         private void ChooseVoucher(object sender, RoutedEventArgs e)
         {
             Voucher obj = ((FrameworkElement)sender).DataContext as Voucher;
+            
             if(GlobalDef.IsChooseVoucerToOrder == true)
             {
                 HomeViewModel.GetInstance().HandleCallBackChooseVoucher(obj);

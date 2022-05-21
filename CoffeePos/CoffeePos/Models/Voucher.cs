@@ -14,6 +14,13 @@ namespace CoffeePos.Models
 
         public int Percent { get; set; }
 
+        private bool isCanChoose;
+        public bool IsCanChoose 
+        {
+            get { return isCanChoose; }
+            set { isCanChoose = value; 
+            }
+        }
         
         public Voucher(string name , int percent = 0, string nameFood = default)
         {

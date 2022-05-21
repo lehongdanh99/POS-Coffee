@@ -112,6 +112,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <TextBlock Text="Chi tiết hóa đơn" Foreground="Black" FontSize="15" VerticalAlignment="Center" Margin="20 0" FontWeight="DemiBold"/>
@@ -177,6 +178,9 @@
                     <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding DiscountOrder, Mode=TwoWay, IsAsync=true}"
                                VerticalAlignment="Center" FontSize="15"   Margin="15 0"></TextBlock>
                     <TextBlock Foreground="Black" HorizontalAlignment="Right" FontSize="15" VerticalAlignment="Center" Text="%"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="4">
+                    
                 </Grid>
                 
             </Grid>

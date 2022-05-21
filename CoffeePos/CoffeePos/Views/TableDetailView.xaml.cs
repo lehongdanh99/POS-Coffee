@@ -42,7 +42,6 @@ namespace CoffeePos.Views
             //this.Hide();
             Receipt obj = ((FrameworkElement)sender).DataContext as Receipt;
             ListOrderViewModel.GetInstance().PaymentReceipt(obj);
-
         }
 
         private void CheckBoxChanged(object sender, RoutedEventArgs e)

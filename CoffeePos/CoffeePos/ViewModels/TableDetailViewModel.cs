@@ -19,15 +19,32 @@ namespace CoffeePos.ViewModels
         public TableDetailViewModelEvent eventSwitchTableCallBack;
         public delegate void TableDetailViewModelEvent(int SelectedTable);
 
-        public TableDetailViewModel(Receipt receipt, bool canEdit)
+        private static TableDetailViewModel _instance;
+        public static TableDetailViewModel GetInstance()
         {
-            GlobalDef.ReceiptDetail = receipt;
-            ListFoodOrder = receipt.Foods;
-            TableNumOrder = Int32.Parse(receipt.Table); ;
-            PaymentOrder = receipt.Payment;
-            TotalOrder = receipt.Total;
-            DiscountOrder = receipt.Discount;
-            CanEdit = canEdit;
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new TableDetailViewModel();
+                }
+            }
+            return _instance;
+        }
+
+        public TableDetailViewModel()
+        {
+            getdataTableDetail();
+        }
+        public void getdataTableDetail()
+        {
+            //GlobalDef.ReceiptDetail = receipt;
+            ListFoodOrder = GlobalDef.ReceiptDetail.Foods;
+            TableNumOrder = Int32.Parse(GlobalDef.ReceiptDetail.Table); ;
+            PaymentOrder = GlobalDef.ReceiptDetail.Payment;
+            TotalOrder = GlobalDef.ReceiptDetail.Total;
+            DiscountOrder = GlobalDef.ReceiptDetail.Discount;
+            CanEdit = GlobalDef.canEditDetail;
             checkServed();
         }
 
@@ -160,15 +177,15 @@ namespace CoffeePos.ViewModels
             }
         }
 
-        public void SwtitchTable()
-        {
-            eventSwitchTableCallBack.Invoke(TableNumOrder);
-            //TablesViewModel tableViewModel = new TablesViewModel(true);
+        //public void SwtitchTable()
+        //{
+        //    eventSwitchTableCallBack.Invoke(TableNumOrder);
+        //    //TablesViewModel tableViewModel = new TablesViewModel(true);
             
-            TablesViewModel.GetInstance().eventChooseTableToOrder += HandleCallBacChooseTable;
-            //WindowManager windowManager = new WindowManager();
-            //windowManager.ShowWindowAsync(tableViewModel);
-        }
+        //    TablesViewModel.GetInstance().eventChooseTableToOrder += HandleCallBacChooseTable;
+        //    //WindowManager windowManager = new WindowManager();
+        //    //windowManager.ShowWindowAsync(tableViewModel);
+        //}
         public void HandleCallBacChooseTable(int TableChoose)
         {
             TableNumOrder = TableChoose;
@@ -200,6 +217,47 @@ namespace CoffeePos.ViewModels
             {
                 IsAllServed = true;
             }
+        }
+
+        public void BtnDeleteFood()
+        {
+            MessageBoxViewModel messageBoxViewModel;
+            foreach (var food in ListFoodOrder)
+            {
+                if (food.ServedFood)
+                {
+                    messageBoxViewModel = new MessageBoxViewModel("Không thể hủy đơn");
+                    //WindowManager windowManager = new WindowManager();
+                    GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
+                    return;
+                }
+
+            }
+            
+                messageBoxViewModel = new MessageBoxViewModel("Xác nhận hủy đơn");
+                //WindowManager windowManager = new WindowManager();
+                GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
+                return;
+            
+
+            
+        }
+
+        public void BtnEditFood()
+        {
+            TableDetailViewModel.GetInstance().TryCloseAsync();
+            //HomeViewModel.GetInstance().TryCloseAsync();
+            TablesViewModel.GetInstance().TryCloseAsync();
+            ListOrderViewModel.GetInstance().TryCloseAsync();
+            foreach(var food in ListFoodOrder)
+            {
+                FoodOrderModel.GetInstance().FoodOrders.Add(food);
+            }
+            HomeViewModel.GetInstance().TableNum = TableNumOrder;
+            HomeViewModel.GetInstance().ReceiptIdtoEdit = GlobalDef.ReceiptDetail.Id;
+            HomeViewModel.GetInstance().DiscountOrder = DiscountOrder;
+            HomeViewModel.GetInstance().getDataHome();
+            //GlobalDef.windowManager.ShowWindowAsync(HomeViewModel.GetInstance());
         }
 
         public void checkServed()
@@ -253,6 +311,7 @@ namespace CoffeePos.ViewModels
         {
             Receipt ReceiptTest = new Receipt();
             //WindowManager windowManager = new WindowManager();
+            ReceiptTest = GlobalDef.ReceiptDetail;
             ReceiptTest.Foods = ListFoodOrder.ToList();
             ReceiptTest.Table = TableNumOrder.ToString();
             ReceiptTest.Total = TotalOrder;
@@ -263,17 +322,19 @@ namespace CoffeePos.ViewModels
             ReceiptTest.Note = string.Empty;
             foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
             {
-                if(receipt.Id == GlobalDef.ReceiptDetail.Id)
+                if(receipt.Id == GlobalDef.ReceiptDetail.Id && GlobalDef.ReceiptDetail.Id != 0)
                 {
-                    ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
                     ListTable.GetInstance().ListTables.TableNumber[Int32.Parse(receipt.Table)].TableStatus = false;
-                    ReceiptModel.GetInstance().ListReceipt[receipt.Id] = ReceiptTest;
+                    ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
+                    
+                    ReceiptModel.GetInstance().ListReceipt[receipt.Id -1] = ReceiptTest;
                     this.TryCloseAsync();
-
+                    HomeViewModel.GetInstance().ReceiptIdtoEdit = 0;
                     //FoodOrderModel.GetInstance().FoodOrders.Clear();
                     HomeViewModel.GetInstance().TableNum = 0;
                     HomeViewModel.GetInstance().GetFoodOrderTotal();
                     HomeViewModel.GetInstance().ListViewFoodOrders.Clear();
+                    HomeViewModel.GetInstance().GetFoodOrderTotal();
                     //windowManager.ShowWindowAsync(TablesViewModel.GetInstance());
                     return;
                 }
@@ -290,9 +351,17 @@ namespace CoffeePos.ViewModels
             }    
             ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
             //ListOrderViewModel.GetInstance().AddListReceipt(Receipt);
-            ReceiptTest.Id = ReceiptModel.GetInstance().ListReceipt.Count();
+            //ReceiptTest.Id = ReceiptModel.GetInstance().ListReceipt.Count();
             ReceiptModel.GetInstance().ListReceipt.Add(ReceiptTest);
-           
+            for(int i=0;i<ReceiptModel.GetInstance().ListReceipt.Count;i++)
+            {
+                if(ReceiptModel.GetInstance().ListReceipt[i] == ReceiptTest)
+                {
+                    ReceiptModel.GetInstance().ListReceipt[i].Id = ReceiptModel.GetInstance().ListReceipt.Count();
+                }    
+                 
+            }
+            HomeViewModel.GetInstance().ReceiptIdtoEdit = 0;
             //FoodOrderModel.GetInstance().FoodOrders.Clear();
             HomeViewModel.GetInstance().TableNum = 0;
             HomeViewModel.GetInstance().ListViewFoodOrders.Clear();

@@ -35,6 +35,13 @@ namespace CoffeePos.ViewModels
         }
         public HomeViewModel()
         {
+
+            getDataHome();
+            
+        }
+
+        public void getDataHome()
+        {
             bgLocally = new SolidColorBrush(Colors.Orange);
             bgDelivery = new SolidColorBrush(Colors.LightGray);
             VisibleLocally = Visibility.Hidden;
@@ -42,14 +49,12 @@ namespace CoffeePos.ViewModels
             FoodsMenu = GetFoods();
             AllFoods = GetFoods();
             TypeFoods = GetTypeFoods();
-            if(listViewFoodOrders == null)
+            if (listViewFoodOrders == null)
             {
                 listViewFoodOrders = new ObservableCollection<FoodOrder>();
             }
             ListViewFoodOrders = FoodOrderModel.GetInstance().FoodOrders;
             GetFoodOrderTotal();
-
-            
         }
 
         public void GetFoodOrderTotal()
@@ -244,6 +249,8 @@ namespace CoffeePos.ViewModels
             get { return homePayment; }
             set { homePayment = value; NotifyOfPropertyChange(() => HomePayment); }
         }
+
+        public int ReceiptIdtoEdit = 0;
 
         private int tableNum = 0;
 
@@ -504,11 +511,18 @@ namespace CoffeePos.ViewModels
             receipt.Total = TotalOrder;
             receipt.Payment = HomePayment;
             receipt.Discount = DiscountOrder;
-            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
+            if(ReceiptIdtoEdit != 0)
+            {
+                receipt.Id = ReceiptIdtoEdit;
+            }    
+            GlobalDef.ReceiptDetail = receipt;
+            GlobalDef.canEditDetail = false;
+            TableDetailViewModel.GetInstance().getdataTableDetail();
+            //TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
             //tableDetailViewModel.eventChange += HandleCallBack;
             GlobalDef.DetailFromHome = Visibility.Collapsed;
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(tableDetailViewModel);
+            GlobalDef.windowManager.ShowWindowAsync(TableDetailViewModel.GetInstance());
         }
 
         public void btOrderDelivery_Click()
@@ -536,6 +550,16 @@ namespace CoffeePos.ViewModels
 
         public void HandleCallBackChooseVoucher(Voucher selectedVoucher)
         {
+            if(selectedVoucher.Percent == 0)
+            {
+                foreach (var food in FoodOrderModel.GetInstance().FoodOrders)
+                {
+                    if (selectedVoucher.NameFood == food.FoodOrderName)
+                    {
+                        
+                    }
+                }
+            }
             DiscountOrder = selectedVoucher.Percent;
             GetFoodOrderTotal();
             GlobalDef.IsChooseVoucerToOrder = false;

@@ -11,13 +11,18 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <Button Grid.Row="0" HorizontalAlignment="Right" Width="50" VerticalAlignment="Top" Margin="0" BorderBrush="{x:Null}" Background="{x:Null}" Click="BtnBack_Click">
                 <materialDesign:PackIcon Kind="Close" Width="20" Height="20" Foreground="Black"/>
             </Button>
-            <TextBlock x:Name="MessageBoxText" Grid.Row="1" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Message}" Foreground="Black"/>
-            <Button Grid.Row="2" Background="Green" VerticalAlignment="Bottom" Content="Xác nhận" Click="ConfirmPaymentClick" BorderBrush="{x:Null}"></Button>
+            <TextBlock x:Name="MessageBoxText" Grid.Row="1" Margin="0" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Message}" Foreground="Black"/>
+            
+            <StackPanel Grid.Row="2" Margin="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Background="Red" VerticalAlignment="Bottom" Width="90" Content="Hủy" Click="BtnBack_Click" BorderBrush="{x:Null}"></Button>
+                <Button Background="Green" VerticalAlignment="Bottom" Width="90" Content="Xác nhận" Click="ConfirmDeleteClick" BorderBrush="{x:Null}"></Button>
+            </StackPanel>
+            <Button x:Name="btnConfirm2" Margin="5" Visibility="{Binding VisibleButtonConfirm2}" Grid.Row="2" Background="Green" VerticalAlignment="Bottom" Content="Xác nhận" Click="ConfirmPaymentClick" BorderBrush="{x:Null}"></Button>
         </Grid>
         
     </Grid>

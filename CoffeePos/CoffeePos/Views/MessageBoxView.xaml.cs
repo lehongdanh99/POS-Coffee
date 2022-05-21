@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using CoffeePos.Common;
+using CoffeePos.Models;
 using CoffeePos.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,14 @@ namespace CoffeePos.Views
         public MessageBoxView()
         {
             InitializeComponent();
+            //if (MessageBoxText.Text.ToString() == "Xác nhận hủy đơn")
+            //{
+            //    btnConfirm2.Visibility = Visibility.Collapsed;
+            //}
+            //else
+            //{
+            //    btnConfirm2.Visibility = Visibility.Visible;
+            //}    
         }
         private void ConfirmPaymentClick(object sender, RoutedEventArgs e)
         {
@@ -34,11 +43,25 @@ namespace CoffeePos.Views
                 ListOrderViewModel.GetInstance().TryCloseAsync();
                 TablesViewModel.GetInstance().TryCloseAsync();
             }   
-            else
+            else if(MessageBoxText.Text.ToString() == "Hủy đơn thành công")
             {
+                ListOrderViewModel.GetInstance().TryCloseAsync();
+                TablesViewModel.GetInstance().TryCloseAsync();
 
+                TableDetailViewModel.GetInstance().TryCloseAsync();
+                ListTable.GetInstance().ListTables.TableNumber[Int32.Parse(GlobalDef.ReceiptDetail.Table)].TableStatus = false;
             }    
             
+        }
+
+        private void ConfirmDeleteClick(object sender, RoutedEventArgs e)
+        {
+            ReceiptModel.GetInstance().ListReceipt.Remove(GlobalDef.ReceiptDetail);
+            this.Hide();
+            TableDetailViewModel.GetInstance().TryCloseAsync(true);
+            MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Hủy đơn thành công");
+            //WindowManager windowManager = new WindowManager();
+            GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
         }
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {

@@ -131,12 +131,15 @@ namespace CoffeePos.ViewModels
 
         public void ViewDetailReceipt (Receipt receipt , bool isDone)
         {
-            TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, isDone);
+            GlobalDef.ReceiptDetail = receipt;
+            GlobalDef.canEditDetail = isDone;
+            //TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
             //tableDetailViewModel.eventChange += HandleCallBack;
             
             ReceiptSelected = receipt;
+            TableDetailViewModel.GetInstance().getdataTableDetail();
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(tableDetailViewModel);
+            GlobalDef.windowManager.ShowWindowAsync(TableDetailViewModel.GetInstance());
         }
 
         public void PaymentReceipt(Receipt receipt)

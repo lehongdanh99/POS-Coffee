@@ -90,10 +90,12 @@
             </StackPanel>
         </Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="50" Grid.Row="3" Margin="5" Visibility="{Binding VisibleCanEdit}">
-            <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 0 0" Content="Chỉnh sửa" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
+            <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 0 0" Content="Chỉnh sửa" FontWeight="DemiBold" BorderBrush="{x:Null}"
+                    cal:Message.Attach="[Event Click] = [Action BtnEditFood()]"></Button>
             <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 0 0" Content="Hoàn thành"
                      cal:Message.Attach="[Event Click] = [Action BtnServedFood()]" Background="#FF00DC00" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
-            <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 5 0" Content="Hủy đơn" Background="Red" FontWeight="DemiBold" BorderBrush="{x:Null}"></Button>
+            <Button Grid.Row="3" HorizontalAlignment="Right" Width="115" Margin="5 0 5 0" Content="Hủy đơn" Background="Red" FontWeight="DemiBold" BorderBrush="{x:Null}"
+                    cal:Message.Attach="[Event Click] = [Action BtnDeleteFood()]"></Button>
         </StackPanel>
         <Grid Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 10 0 0">
             <Button Height="30" Content="+ Thêm món" FontSize="12" Foreground="Orange" FontWeight="DemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Visibility="{Binding VisibleCanEdit}"
