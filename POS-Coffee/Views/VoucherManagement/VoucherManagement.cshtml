@@ -37,8 +37,8 @@
                                 <td>@item.Value</td>
                                 <td>@item.IDFood</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {VoucherID = item.VoucherID })"'>  Edit </button>
-                                    <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.VoucherID))" class="btn btn-danger" value="  Delete  " />
+                                    @*<button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {VoucherID = item.VoucherID })"'>  Edit </button>*@
+                                    @*<input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.VoucherID))" class="btn btn-danger" value="  Delete  " />*@
                                 </td>
                             </tr>
                         }
