@@ -43,7 +43,7 @@ namespace CoffeePos.ViewModels
         public void getDataHome()
         {
             bgLocally = new SolidColorBrush(Colors.Orange);
-            bgDelivery = new SolidColorBrush(Colors.LightGray);
+            bgDelivery = new SolidColorBrush(Colors.White);
             VisibleLocally = Visibility.Hidden;
             VisibleDelivery = Visibility.Visible;
             FoodsMenu = GetFoods();
@@ -350,15 +350,6 @@ namespace CoffeePos.ViewModels
             return typeFood;        
         }
 
-        private ObservableCollection<Foods> GetFoodOrder()
-        {
-            return new ObservableCollection<Foods>()
-            {
-                new Foods("cafe sữa tươi", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
-                new Foods("cafe swa da", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
-                new Foods("nước cam", 12500,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
-            };
-        }
 
         private ObservableCollection<Foods> GetFoods()
         {
@@ -537,6 +528,7 @@ namespace CoffeePos.ViewModels
             GlobalDef.IsChooseVoucerToOrder = false;
             //WindowManager windowManager = new WindowManager();
             GlobalDef.windowManager.ShowWindowAsync(ListVouchersViewModel.GetInstance());
+            ListVouchersViewModel.GetInstance().GetEnableVoucher();
         }
 
         public void btChooseVoucher_Click()
@@ -603,7 +595,7 @@ namespace CoffeePos.ViewModels
             if(isBgLocally != true)
             {
                 BgLocally = new SolidColorBrush(Colors.Orange);
-                BgDelivery = new SolidColorBrush(Colors.LightGray);
+                BgDelivery = new SolidColorBrush(Colors.White);
                 isBgLocally = true;
                 VisibleLocally = Visibility.Hidden;
                 VisibleDelivery = Visibility.Visible;
@@ -616,7 +608,7 @@ namespace CoffeePos.ViewModels
         {
             if (isBgLocally == true)
             {
-                BgLocally = new SolidColorBrush(Colors.LightGray);
+                BgLocally = new SolidColorBrush(Colors.White);
                 BgDelivery = new SolidColorBrush(Colors.Orange);
                 isBgLocally = false;
                 VisibleLocally = Visibility.Visible;

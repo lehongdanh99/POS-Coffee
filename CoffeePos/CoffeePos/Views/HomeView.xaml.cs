@@ -25,14 +25,15 @@ namespace CoffeePos.Views
         public HomeView()
         {
             InitializeComponent();
-            CustomerNameCb.ItemsSource = new List<string>()
+            FoodSearchCb.ItemsSource = new List<string>()
             {
                 "Anh Tú",
                 "Hồng Danh",
                 "Đăng Khoa",
                 "Bảo Huy"
             };
-            CustomerNameCb.FilterMode = AutoCompleteFilterMode.Contains;
+            FoodSearchCb.FilterMode = AutoCompleteFilterMode.Contains;
+
         }
         private void SelectCurrentItem(object sender, KeyboardFocusChangedEventArgs e)
         {

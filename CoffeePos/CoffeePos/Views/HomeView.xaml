@@ -7,41 +7,81 @@
         xmlns:local="clr-namespace:CoffeePos.Views"
         xmlns:cal="http://www.caliburnproject.org"
         xmlns:language="clr-namespace:CoffeePos.Properties.Langs" 
+        xmlns:editors="http://schemas.syncfusion.com/wpf"
         xmlns:Control="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
         mc:Ignorable="d"
         Title="Home" Height="790" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
 
+    <!--<Window.Resources>
+
+        <Style TargetType="TextBox" x:Key="TextboxStyle2">
+            <Setter Property="MaxLength" Value="74" />
+            <Setter Property="Width" Value="300" />
+        </Style>
+
+        <Style TargetType="Control:AutoCompleteBox" x:Key="TextBoxStyle">
+            <Setter Property="TextBoxStyle" Value="{StaticResource TextboxStyle2}" />
+            <Setter Property="IsTextCompletionEnabled" Value="True" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <materialDesign:PackIcon Kind="Payment" Width="30" Height="30" HorizontalAlignment="Left" Margin="-10"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>-->
     <Grid>
-        <Grid Height="70" VerticalAlignment="Top" Background="#FFFF7800">
-            <Button Content="{x:Static language:Lang.Login_Exit}"
+        <Grid Height="70" VerticalAlignment="Top" Background="Orange">
+            <Button Background="Green"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
                            Click="BtnClose_Click"
+                    Height="50"
+                    materialDesign:ButtonAssist.CornerRadius="25"
                            Style="{StaticResource MaterialDesignRaisedButton}"
-                           materialDesign:BottomDashedLineAdorner.Brush="Black" Margin="10" 
+                           materialDesign:BottomDashedLineAdorner.Brush="Black" Margin="10" BorderBrush="{x:Null}" 
                            >
-
+                <materialDesign:PackIcon Kind="ExitToApp" FontSize="300" Foreground="White"/>
             </Button>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Background="Red"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"
+                           Click="BtnClose_Click"
+                    Height="50"
+                    materialDesign:ButtonAssist.CornerRadius="25"
+                           Style="{StaticResource MaterialDesignRaisedButton}"
+                           materialDesign:BottomDashedLineAdorner.Brush="Black" Margin="10" BorderBrush="{x:Null}" 
+                           >
+                <materialDesign:PackIcon Kind="Close" FontSize="300" Foreground="White"/>
+            </Button>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <!--<TextBlock Text="POS Cofffee" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>-->
                 <!--<StackPanel HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="10">
                 <materialDesign:PopupBox  PlacementMode="BottomAndAlignRightEdges" StaysOpen="False"></materialDesign:PopupBox>
             </StackPanel>-->
+                <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"
+                         Height="70" Margin="0"
+                        cal:Message.Attach="[Event Click] = [Action btTable_Click()]" Background="Orange" BorderBrush="{x:Null}" 
+                        >
+                    <materialDesign:PackIcon Kind="TableChair" FontSize="500" Height="50" Width="30" Foreground="White"/>
+                </Button>
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
-                        Content="{x:Static language:Lang.Home_Table}" Height="70" Margin="0"
-                        cal:Message.Attach="[Event Click] = [Action btTable_Click()]" Background="#FF079CFF" BorderBrush="{x:Null}" 
-                        ></Button>
+                        Height="70"
+                        cal:Message.Attach="[Event Click] = [Action btListOrder_Click()]" Background="Orange" BorderBrush="{x:Null}"
+                        >
+                    <materialDesign:PackIcon Kind="Receipt" FontSize="500" Height="50" Width="30" Foreground="White"/>
+                </Button>
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
-                        Content="List Order" Height="70"
-                        cal:Message.Attach="[Event Click] = [Action btListOrder_Click()]" Background="#FF07D7FF" BorderBrush="{x:Null}"
-                        ></Button>
-                <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
-                        Content="Voucher" Height="70"
-                        cal:Message.Attach="[Event Click] = [Action btListVoucher_Click()]" Background="#FFFF07F0" BorderBrush="{x:Null}"
-                        ></Button>
+                        Height="70"
+                        cal:Message.Attach="[Event Click] = [Action btListVoucher_Click()]" Background="Orange" BorderBrush="{x:Null}"
+                        >
+                    <materialDesign:PackIcon Kind="Voucher" FontSize="500" Height="50" Width="30" Foreground="White"/>
+                </Button>
                 <Button cal:Message.Attach="[Event Click] = [Action btRegister_Click()]"
                         HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
-                        Content="{x:Static language:Lang.Home_Register}" Height="70" Background="#FF07FF28" BorderBrush="{x:Null}"></Button>
+                        Height="70" Background="Orange" BorderBrush="{x:Null}">
+                    <materialDesign:PackIcon Kind="Register" FontSize="500" Height="50" Width="30" Foreground="White"/>
+                </Button>
             </StackPanel>
         </Grid>
         <Grid Margin="0 70 0 0" Background="#FFF3F3F3">
@@ -52,13 +92,19 @@
             <Grid Grid.Column="0" Margin="5 5 0 5" Background="White" Width="750" >
                 <Grid VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
-                        <Rectangle StrokeThickness="1"/>
-                        <TextBox x:Name="SearchBox"
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Foreground="Orange" FontWeight="DemiBold" Margin="45 10 0 -13" Text="Món ăn"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Foreground="Orange" FontWeight="DemiBold" Margin="45 10 0 -13" Text="Khách hàng"/>
+                    <Grid Grid.Column="0" Grid.Row="1" Height="50">
+                        <!--<TextBox x:Name="SearchBox"
                                      Height="50" Width="350" 
                                      Margin="10" VerticalAlignment="Top"
                                      VerticalContentAlignment="Center"
@@ -66,17 +112,37 @@
                                      Foreground="#CFCFCF"
                                      HorizontalAlignment="Left"
                                      BorderThickness="0">
-                        </TextBox>
-                        <TextBlock IsHitTestVisible="False"
+                        </TextBox>-->
+                        <materialDesign:PackIcon Kind="Food" Foreground="Orange" Width="30" Height="30" HorizontalAlignment="Left" Margin="5 5 0 0"/>
+                        <Control:AutoCompleteBox x:Name="FoodSearchCb" Grid.Column="1"
+                                                 VerticalContentAlignment="Center"
+                                                 HorizontalContentAlignment="Center"
+                                                 Margin="40 0 0 0"
+                                                 Height="20" 
+                                                 VerticalAlignment="Center"
+                                                 FilterMode="Contains" BorderBrush="Black"
+                                                 IsTextCompletionEnabled ="True">
+                            
+                        </Control:AutoCompleteBox>
+                        <!--<TextBlock IsHitTestVisible="False"
                                        Text="Search"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"
                                        Margin="10 0 0 0"
                                        FontSize="10"
-                                       Foreground="DarkGray"/>
+                                       Foreground="DarkGray"/>-->
                     </Grid>
-                    <Control:AutoCompleteBox x:Name="CustomerNameCb" Grid.Column="1" Height="30" VerticalAlignment="Center" FilterMode="Contains"></Control:AutoCompleteBox>
-                    <Button Grid.Column="2" Height="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10">search</Button>
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="2" Kind="People" Foreground="Orange" Width="30" Height="30" HorizontalAlignment="Left" Margin="5 10 0 0"/>
+                    <Control:AutoCompleteBox Grid.Row="1" materialDesign:HintAssist.Hint="Search" BorderBrush="Black"
+                                             x:Name="CustomerNameCb" Grid.Column="2" Height="20" VerticalAlignment="Center"
+                                             Margin="40 0 0 0"
+                                             FilterMode="Contains"></Control:AutoCompleteBox>
+                    <Button Grid.Row="1" Grid.Column="3" Height="30" Width="60" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" BorderBrush="{x:Null}">
+                        <materialDesign:PackIcon Kind="Search" FontSize="500" Foreground="White"/>
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="1" Height="30" Width="60" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" BorderBrush="{x:Null}">
+                        <materialDesign:PackIcon Kind="Search" FontSize="500" Foreground="White"/>
+                    </Button>
                 </Grid>
                 <ScrollViewer Margin="0 70" VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
                     <StackPanel>
@@ -147,10 +213,16 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Margin="10" Height="50" Content="{x:Static language:Lang.Home_Locally}" Background="{Binding BgLocally}" 
-                            cal:Message.Attach="[Event Click] = [Action LocallyClick()]" BorderBrush="{x:Null}"></Button>
-                    <Button Grid.Column="1" Margin="10" Height="50" Content="{x:Static language:Lang.Home_Delivery}" Background="{Binding BgDelivery}" 
-                            cal:Message.Attach="[Event Click] = [Action DeliveryClick()]" BorderBrush="{x:Null}"></Button>
+                    <TextBlock Text="Tại bàn" Foreground="Orange" Margin="0 5 0 0" FontSize="12" TextAlignment="Center"/>
+                    <TextBlock Text="Mang đi" Grid.Column="1" Foreground="Orange"  Margin="0 5 0 0" FontSize="12" TextAlignment="Center"/>
+                    <Button Grid.Column="0" Margin="10 0 10 10" Height="50" Background="{Binding BgLocally}" 
+                            cal:Message.Attach="[Event Click] = [Action LocallyClick()]" BorderBrush="{x:Null}">
+                        <materialDesign:PackIcon Padding="20 0 0 0" Kind="LocalCafe" Foreground="{Binding BgDelivery}" Height="22" Width="31" RenderTransformOrigin="0.513,0.5" />
+                    </Button>
+                    <Button Grid.Column="1" Margin="10 0 10 10" Height="50" Background="{Binding BgDelivery}" 
+                            cal:Message.Attach="[Event Click] = [Action DeliveryClick()]" BorderBrush="{x:Null}">
+                        <materialDesign:PackIcon Padding="20 0 0 0" Kind="DeliveryDining" Foreground="{Binding BgLocally}"  Height="22" Width="31" RenderTransformOrigin="0.513,0.5" />
+                    </Button>
                 </Grid>
                 <ScrollViewer Margin="0 70 0 190" HorizontalAlignment="Center" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
                     <StackPanel>
@@ -255,20 +327,24 @@
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0" Margin="10 0">
-                            <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Food}"></TextBlock>
+                            <materialDesign:PackIcon Kind="Food" FontSize="500" Foreground="Orange"/>
+                            <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Food}" Margin="20 0"></TextBlock>
                             <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding FoodOrderTotalCount, Mode=TwoWay, IsAsync=true}"></TextBlock>
                         </Grid>
                         <Grid Grid.Column="1" Margin="10 0">
-                            <TextBlock Foreground="Black" Visibility="{Binding VisibleTable}" Text="{x:Static language:Lang.Home_Table}"></TextBlock>
+                            <materialDesign:PackIcon Kind="TableAccount" FontSize="500" Visibility="{Binding VisibleTable}" Foreground="Orange"/>
+                            <TextBlock Foreground="Black" Visibility="{Binding VisibleTable}" Margin="20 0" Text="{x:Static language:Lang.Home_Table}"></TextBlock>
                             <TextBlock Foreground="Black" Visibility="{Binding VisibleTable}" HorizontalAlignment="Right" Text="{Binding TableNum}"></TextBlock>
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="1" Margin="10 0" VerticalAlignment="Center">
-                        <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Price}"></TextBlock>
+                        <materialDesign:PackIcon Kind="Money" FontSize="500" Foreground="Orange"/>
+                        <TextBlock Foreground="Black" Margin="20 0" Text="{x:Static language:Lang.Home_Price}"></TextBlock>
                         <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding AmountFood, Mode=TwoWay, IsAsync=true}"></TextBlock>
                     </Grid>
                     <Grid Grid.Row="2" Margin="10 0" VerticalAlignment="Center">
-                        <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Discount}"></TextBlock>
+                        <materialDesign:PackIcon Kind="Discount" FontSize="500" Foreground="Orange"/>
+                        <TextBlock Foreground="Black" Text="{x:Static language:Lang.Home_Discount}" Margin="20 0"></TextBlock>
                         <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding DiscountOrder, Mode=TwoWay, IsAsync=true}"
                                    Margin="10 0"></TextBlock>
                         <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="%"></TextBlock>
@@ -277,7 +353,8 @@
                             Height="20" Margin="-5,-5,-10,0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top"></Button>
                     </Grid>
                     <Grid Grid.Row="3" Margin="10 0" VerticalAlignment="Center">
-                        <TextBlock Foreground="Red" FontSize="20" Text="{x:Static language:Lang.Home_Total}"></TextBlock>
+                        <materialDesign:PackIcon Kind="AttachMoney" Margin="0 5" Foreground="red"/>
+                        <TextBlock Foreground="Red" FontSize="20" Margin="20 0" Text="{x:Static language:Lang.Home_Total}"></TextBlock>
                         <TextBlock Foreground="Red" FontSize="20" HorizontalAlignment="Right" Text="{Binding TotalOrder, Mode=TwoWay, IsAsync=true}"></TextBlock>
                     </Grid>
                     <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
@@ -294,7 +371,7 @@
                         </Button>
                     </StackPanel>
                     <Button Grid.Row="4" FontSize="20" Grid.Column="1" FontWeight="Bold" Height="50" Margin="5" Visibility="{Binding VisibleLocally}"
-                            Content="{x:Static language:Lang.Home_Order}" Background="Red" BorderBrush="{x:Null}" IsEnabled="{Binding EnableOrder}"
+                            Content="Thanh Toán" Background="Red" BorderBrush="{x:Null}" IsEnabled="{Binding EnableOrder}"
                             cal:Message.Attach="[Event Click] = [Action btOrderDelivery_Click()]">
 
                     </Button>
