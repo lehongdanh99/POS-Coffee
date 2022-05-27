@@ -152,6 +152,7 @@
     <Compile Include="Models\MaterialsModel.cs" />
     <Compile Include="Models\ReceiptModel.cs" />
     <Compile Include="Models\RecipeModel.cs" />
+    <Compile Include="Models\StatisticModel.cs" />
     <Compile Include="Models\TableModel.cs" />
     <Compile Include="Models\ToppingModel.cs" />
     <Compile Include="Models\VoucherModel.cs" />
@@ -182,6 +183,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Table\Table.css" />
     <Content Include="Content\_blank\css\style.css" />
     <Content Include="Content\_blank\images\banner1.jpg" />
     <Content Include="Content\_blank\images\fac.png" />
@@ -1034,6 +1036,8 @@
     <Content Include="Voucher.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\FoodManagement\Details.cshtml" />
+    <Content Include="Statistic.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

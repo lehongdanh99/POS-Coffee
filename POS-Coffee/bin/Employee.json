@@ -1,7 +1,7 @@
 [
   {
     "EmployeeID": 1,
-    "name": "Lê Hồng Danh",
+    "Name": "Lê Hồng Danh",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "08/21/1998",
     "phone": "0775032233",
@@ -11,7 +11,7 @@
   },
   {
     "EmployeeID": 2,
-    "name": "Đồng Thị Bảo Ngọc",
+    "Name": "Đồng Thị Bảo Ngọc",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "07/22/1999",
     "phone": "0909429033",
@@ -21,7 +21,7 @@
   },
   {
     "EmployeeID": 3,
-    "name": "Phan Anh Tú",
+    "Name": "Phan Anh Tú",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "09/17/1996",
     "phone": "0351462157",
@@ -31,7 +31,7 @@
   },
   {
     "EmployeeID": 4,
-    "name": "Huỳnh Đăng Khoa",
+    "Name": "Huỳnh Đăng Khoa",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "03/19/1997",
     "phone": "0741542361",
@@ -41,7 +41,7 @@
   },
   {
     "EmployeeID": 5,
-    "name": "Nguyễn Thị Mỹ Trâm",
+    "Name": "Nguyễn Thị Mỹ Trâm",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "11/15/1997",
     "phone": "0748238183",
@@ -51,7 +51,7 @@
   },
   {
     "EmployeeID": 5,
-    "name": "Lê Ngọc Minh Thư",
+    "Name": "Lê Ngọc Minh Thư",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "12/16/2000",
     "phone": "0771674534",
@@ -61,7 +61,7 @@
   },
   {
     "EmployeeID": 6,
-    "name": "Trương Quang Tín",
+    "Name": "Trương Quang Tín",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "11/11/1999",
     "phone": "0413554135",
@@ -71,7 +71,7 @@
   },
   {
     "EmployeeID": 7,
-    "name": "Đoàn Khắc Huy",
+    "Name": "Đoàn Khắc Huy",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "03/06/2002",
     "phone": "0985125478",
@@ -81,7 +81,7 @@
   },
   {
     "EmployeeID": 8,
-    "name": "Ngô Minh Huy",
+    "Name": "Ngô Minh Huy",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "04/15/1998",
     "phone": "0845423698",
@@ -91,7 +91,7 @@
   },
   {
     "EmployeeID": 9,
-    "name": "Hoàng Minh Long",
+    "Name": "Hoàng Minh Long",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "02/12/2000",
     "phone": "0845126478",
@@ -101,7 +101,7 @@
   },
   {
     "EmployeeID": 10,
-    "name": "Nguyễn Hoàng Phúc",
+    "Name": "Nguyễn Hoàng Phúc",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "08/10/2001",
     "phone": "0351264789",
@@ -111,7 +111,7 @@
   },
   {
     "EmployeeID": 11,
-    "name": "Phạm Thanh Thư",
+    "Name": "Phạm Thanh Thư",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "10/21/2002",
     "phone": "0334512364",
@@ -121,7 +121,7 @@
   },
   {
     "EmployeeID": 12,
-    "name": "Đỗ Minh Nguyệt",
+    "Name": "Đỗ Minh Nguyệt",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "09/24/1999",
     "phone": "0731258456",

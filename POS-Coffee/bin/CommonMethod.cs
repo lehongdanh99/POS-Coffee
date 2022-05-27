@@ -108,5 +108,17 @@ namespace POS_Coffe
             }
             return modelMaterial;
         }
+        //Get list Statistic
+        private List<StatisticModel> modelStatistic = new List<StatisticModel>();
+        public List<StatisticModel> ReadJsonFileConfigStatistic()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.STATISTIC_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                modelStatistic = JsonConvert.DeserializeObject<List<StatisticModel>>(json);
+            }
+            return modelStatistic;
+        }
     }
 }

@@ -10,9 +10,13 @@ namespace POS_Coffe.Controllers
     public class VoucherManagementController : Controller
     {
         // GET: VoucherManagement
-        public ActionResult VoucherManagement()
+        public ActionResult VoucherManagement(string StringSearch)
         {
             IQueryable<VoucherModel> data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.AsQueryable();
+            if (!String.IsNullOrWhiteSpace(StringSearch))
+            {
+                data = data.Where(s => s.Name.Contains(StringSearch));
+            }
             foreach (VoucherModel model in data)
             {
                 if (model != null)

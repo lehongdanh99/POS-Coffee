@@ -1,30 +1,30 @@
-﻿@*@model List<POS_Coffe.Models.MaterialsModel>*@
+﻿@model List<POS_Coffe.Models.StatisticModel>
 @{
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
+
 <div class="row">
     <div class="column">
-        @using (Html.BeginForm("ViewSales", "Sales", FormMethod.Get@*, new { @class = "form-inline" }*@))
+        @using (Html.BeginForm("Index", "Statistic", FormMethod.Get@*, new { @class = "form-inline" }*@))
 {
 @*<a class="button" href="#">Search</a>
     <input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />*@
-<div class="form-check-label">
-    From date:
-    <input type="date" class="form-check-input" name="FromDate" id="FromDate" />
-</div>
 
-<div class="form-check-label">
-    To date:
-    <input type="date" class="form-check-input" name="ToDate" id="ToDate" />
-</div>
+        <div class="form-check-label">
+            From date:
+            <input type="date" class="form-check-input" name="FromDate" id="FromDate" />
+            To date:
+            <input type="date" class="form-check-input" name="ToDate" id="ToDate" />
+            <input type="submit" value="Search" />
+        </div>
 }
         <div class="card">
             <div class="card-block">
-                <table>
-                    <thead>
+                <table class="styled-table">
+                    <thead >
                         <tr>
-                            <th>#</th>
-                            <th>Date</th>
+                            <th>FromDate</th>
+                            <th>ToDate</th>
                             <th>VoucherName</th>
                             <th>Table</th>
                             <th>Total Price</th>
@@ -32,24 +32,25 @@
                             <th>CustomerPay</th>
                             <th>TypePayment</th>
                             <th>TypeService</th>
-                            <th></th>
+                            
                         </tr>
                     </thead>
                     <tbody>
-
-                        @*@foreach (var item in Model)
+                        @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td>@item.Name</td>
-                                    <td>@item.Type</td>
-                                    <td>@item.Amount</td>
-                                    <td>@item.Quantity</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditEmployee", "Employee", new {MaterialID = item.MaterialID })"'>  Edit </button>
-                                        <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.MaterialID))" class="btn btn-danger" value="  Delete  " />
-                                    </td>
+                                    <td>@item.FromDate</td>
+                                    <td>@item.ToDate</td>
+                                    <td>@item.VoucherName</td>
+                                    <td>@item.Table</td>
+                                    <td>@item.TotalPrice</td>
+                                    <td>@item.DiscountPrice</td>
+                                    <td>@item.CustomerPay</td>
+                                    <td>@item.TypePayment</td>
+                                    <td>@item.TypeService</td>
+                                   
                                 </tr>
-                            }*@
+                            }
                     </tbody>
                 </table>
             </div>

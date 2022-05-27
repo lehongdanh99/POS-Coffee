@@ -1,0 +1,24 @@
+[
+	{
+		"FromDate": "03/19/2021",
+		"ToDate": "11/15/2022",
+		"VoucherName": "Table1",
+		"Table": "1",
+		"TotalPrice": 1000000,
+		"DiscountPrice": 50000,
+		"CustomerPay": 150000,
+		"TypePayment": "Self",
+		"TypeService": "none"
+	},
+	{
+		"FromDate": "03/19/2021",
+		"ToDate": "11/15/2022",
+		"VoucherName": "Table2",
+		"Table": "2",
+		"TotalPrice": 300000,
+		"DiscountPrice": 40000,
+		"CustomerPay": 154200,
+		"TypePayment": "Delivery",
+		"TypeService": "none"
+	},
+]

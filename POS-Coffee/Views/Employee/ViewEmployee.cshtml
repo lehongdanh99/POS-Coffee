@@ -6,17 +6,17 @@
 <div class="row">
     <div class="column">
         @using (Html.BeginForm("ViewEmployee", "Employee", FormMethod.Get@*, new { @class = "form-inline" }*@))
-{
-    <div class="column column-40 col-search">
-        <a href="#" class="search-btn fa fa-search"></a>
-        <input type="text" name="" value="" placeholder="Search..." />
-    </div>
-    <a class="button" href="#">Search</a>
-    <input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />
-}
+        {
+            <div class="form-check-label">
+                <a href="#" class="form-check-input search-btn fa fa-search"></a>
+                <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
+                <input type="submit" value="Search"/>
+                <input type="button" class="form-check-input btn btn-gradient-success" value="Add new" onclick="AddNew()" />
+            </div>
+        }
         <div class="card">
             <div class="card-block">
-                <table>
+                <table class="styled-table">
                     <thead>
                         <tr>
                             <th>#</th>

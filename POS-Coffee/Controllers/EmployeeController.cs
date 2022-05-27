@@ -9,9 +9,16 @@ namespace POS_Coffe.Controllers
 {
     public class EmployeeController : Controller
     {
-        public ActionResult ViewEmployee(string Username, string Password, string Phone, string Name, string Birthday, string Permission)
+        public ActionResult ViewEmployee(string Username, string Password, string Phone, string Name, string Birthday, string Permission, string StringSearch)
         {
             IQueryable<EmployeeModel> data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.AsQueryable();
+
+            if (!String.IsNullOrWhiteSpace(StringSearch))
+            {
+                data = data.Where(s => s.Name.Contains(StringSearch));
+
+            }
+
             foreach (EmployeeModel model in data)
             {
                 if (model != null)

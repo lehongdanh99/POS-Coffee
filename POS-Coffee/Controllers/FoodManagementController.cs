@@ -10,9 +10,15 @@ namespace POS_Coffe.Controllers
     public class FoodManagementController : Controller
     {
         // GET: FoodManagement
-        public ActionResult FoodManagement()
+        public ActionResult FoodManagement(string StringSearch)
         {
             IQueryable<FoodModel> dataModel = FoodAPIHandlerFakeData.GetInstance().ListFood.AsQueryable();
+
+            if (!String.IsNullOrWhiteSpace(StringSearch))
+            {
+                dataModel = dataModel.Where(s => s.Name.Contains(StringSearch));
+            }
+
             RecipeModel lstMaterial = new RecipeModel();
             foreach (var item in dataModel)
             {

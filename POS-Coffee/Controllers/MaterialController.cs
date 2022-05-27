@@ -9,9 +9,15 @@ namespace POS_Coffe.Controllers
 {
     public class MaterialController : Controller
     {
-        public ActionResult MaterialManagement()
+        public ActionResult MaterialManagement(string StringSearch)
         {
             IQueryable<MaterialsModel> data = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.AsQueryable();
+
+            if (!String.IsNullOrWhiteSpace(StringSearch))
+            {
+                data = data.Where(s => s.Name.Contains(StringSearch));
+            }
+
             foreach (MaterialsModel model in data)
             {
                 if (model != null)

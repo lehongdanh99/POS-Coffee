@@ -8,23 +8,22 @@
     <div class="column">
         @using (Html.BeginForm("VoucherManagement", "VoucherManagement", FormMethod.Get@*, new { @class = "form-inline" }*@))
 {
-    <div class="column column-40 col-search">
-        <a href="#" class="search-btn fa fa-search"></a>
-        <input type="text" name="" value="" placeholder="Search..." />
+    <div class="form-check-label">
+            <a href="#" class="form-check-input search-btn fa fa-search"></a>
+            <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
+            <input type="submit" value="Search" />
+        <input type="button" class="form-check-input btn btn-gradient-success" value="Add new" onclick="AddNew()" />
     </div>
-    <a class="button" href="#">Search</a>
-    <input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />
-}
+
+        @*<input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />*@
+        }
         <div class="card">
             <div class="card-block">
-                <table>
+                <table class="styled-table">
                     <thead>
                         <tr>
-                            <th>#</th>
                             <th>Name</th>
                             <th>Value</th>
-                            <th></th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,14 +31,12 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.VoucherID</td>
                                 <td>@item.Name</td>
                                 <td>@item.Value</td>
-                                <td>@item.IDFood</td>
-                                <td>
-                                    @*<button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {VoucherID = item.VoucherID })"'>  Edit </button>*@
-                                    @*<input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.VoucherID))" class="btn btn-danger" value="  Delete  " />*@
-                                </td>
+                                @*<td>
+                                    <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {VoucherID = item.VoucherID })"'>  Edit </button>
+                                    <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.VoucherID))" class="btn btn-danger" value="  Delete  " />
+                                </td>*@
                             </tr>
                         }
                     </tbody>
@@ -48,7 +45,7 @@
         </div>
     </div>
 
-</div>
+    </div>
 
 <script>
     function AddNew() {

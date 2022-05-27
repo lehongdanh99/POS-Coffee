@@ -11,5 +11,6 @@ namespace POS_Coffe
         public static string MATERIAL_JSON_CONFIG_PATH = "F:\\POS-Coffee\\POS-Coffee\\material.json";
         public static string RECIPE_JSON_CONFIG_PATH  = "F:\\POS-Coffee\\POS-Coffee\\Recipe.json";
         public static string VOUCHER_JSON_CONFIG_PATH = "F:\\POS-Coffee\\POS-Coffee\\Voucher.json";
+        public static string STATISTIC_JSON_CONFIG_PATH = "F:\\POS-Coffee\\POS-Coffee\\Statistic.json";
     }
 }
