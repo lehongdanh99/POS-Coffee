@@ -365,6 +365,9 @@
   <ItemGroup>
     <Resource Include="Image\ZaloPay_Logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\voucher.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

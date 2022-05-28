@@ -25,14 +25,14 @@ namespace CoffeePos.Views
         public HomeView()
         {
             InitializeComponent();
-            FoodSearchCb.ItemsSource = new List<string>()
-            {
-                "Anh Tú",
-                "Hồng Danh",
-                "Đăng Khoa",
-                "Bảo Huy"
-            };
-            FoodSearchCb.FilterMode = AutoCompleteFilterMode.Contains;
+            //FoodSearchCb.ItemsSource = new List<string>()
+            //{
+            //    "Anh Tú",
+            //    "Hồng Danh",
+            //    "Đăng Khoa",
+            //    "Bảo Huy"
+            //};
+            //FoodSearchCb.FilterMode = AutoCompleteFilterMode.Contains;
 
         }
         private void SelectCurrentItem(object sender, KeyboardFocusChangedEventArgs e)
@@ -72,6 +72,12 @@ namespace CoffeePos.Views
 
             string obj = ((FrameworkElement)sender).DataContext as string;
             HomeViewModel.GetInstance().btTypeChoose(obj);
+        }
+
+        private void SearchFoodClick(object sender, RoutedEventArgs e)
+        {
+            string obj = ((FrameworkElement)sender).DataContext as string;
+            HomeViewModel.GetInstance().SearchChange(FoodSearchCb.Text);
         }
     }
 }

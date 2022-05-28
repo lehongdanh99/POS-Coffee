@@ -54,8 +54,10 @@ namespace CoffeePos.ViewModels
                         {
                             voucher.IsCanChoose = true;
                         }
+                        else
+                            voucher.IsCanChoose = false;
                     }
-                    voucher.IsCanChoose = false;
+                    
                 }
                 else
                 {

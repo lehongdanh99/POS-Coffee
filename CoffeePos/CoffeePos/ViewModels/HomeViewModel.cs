@@ -55,6 +55,10 @@ namespace CoffeePos.ViewModels
             }
             ListViewFoodOrders = FoodOrderModel.GetInstance().FoodOrders;
             GetFoodOrderTotal();
+            foreach (var foodOrder in FoodsMenu)
+            {
+                SearchFood.Add(foodOrder.FoodName);
+            }
         }
 
         public void GetFoodOrderTotal()
@@ -208,6 +212,13 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        private List<string> searchFood = new List<string>();
+
+        public List<string> SearchFood
+        {
+            get { return searchFood; }
+            set { searchFood = value; NotifyOfPropertyChange(() => SearchFood); }
+        }
 
         private ObservableCollection<FoodOrder> listViewFoodOrders;
 
@@ -329,8 +340,8 @@ namespace CoffeePos.ViewModels
         private ObservableCollection<string> GetTypeFoods()
         {
             ObservableCollection<string> typeFood = new ObservableCollection<string>();
-
-            for(int i = 0; i < FoodsMenu.Count; i++)
+            typeFood.Add("Tất cả");
+            for (int i = 0; i < FoodsMenu.Count; i++)
             {
                 if(typeFood.Count != 0)
                 {
@@ -397,9 +408,36 @@ namespace CoffeePos.ViewModels
 
         public void btTypeChoose(string SelectedTypeFood)
         {
+            if (SelectedTypeFood == "Tất cả")
+            {
+                FoodsMenu = GetFoods();
+                return;
+            }
             FoodsMenu = GetFoodByType(SelectedTypeFood);
             NotifyOfPropertyChange(() => FoodsMenu);
         }
+        public void SearchChange(string search)
+        {
+            if (search == string.Empty)
+            {
+                FoodsMenu = GetFoods();
+            }
+            else
+            {
+                foreach (var food in FoodsMenu)
+                {
+                    if (search == food.FoodName)
+                    {
+                        FoodsMenu.Clear();
+                        FoodsMenu.Add(food);
+                        return;
+                    }
+                }
+            }
+
+
+        }
+
 
         public void btListOrder_Click()
         {
