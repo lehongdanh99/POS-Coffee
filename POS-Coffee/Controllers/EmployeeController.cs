@@ -50,16 +50,16 @@ namespace POS_Coffe.Controllers
             {
                 role = "Manager";
             }
-
+            int count = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Count();
             EmployeeModel model = new EmployeeModel();
-            model.EmployeeID = 1;
+            model.EmployeeID = count + 1;
             model.Name = data.Name;
             model.Permission = role;
             model.Birthday = data.Birthday;
             model.Phone = data.Phone;
             model.Username = data.Username;
             model.Password = data.Password;
-            //EmployeeModel.GetInstance().LstEmpl.Add(model);
+            EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Add(model);
             //return View(model);
             return RedirectToAction("ViewEmployee", "Employee", model);
         }

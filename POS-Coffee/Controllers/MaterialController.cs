@@ -34,11 +34,16 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult AddMaterial(MaterialsModel data)
         {
+            IQueryable countall = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.AsQueryable();
+            var count = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Count();
+
             MaterialsModel material = new MaterialsModel();
+            material.MaterialID = count + 1;
             material.Name = data.Name;
             material.Type = data.Type;
             material.Amount = data.Amount;
             material.Quantity = data.Quantity;
+            MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Add(material);
             return RedirectToAction("MaterialManagement", "Material");
         }
         [HttpGet]

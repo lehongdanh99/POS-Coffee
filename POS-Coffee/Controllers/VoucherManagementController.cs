@@ -33,8 +33,9 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult AddVoucher(VoucherModel data)
         {
+            int count = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Count();
             VoucherModel model = new VoucherModel();
-            model.VoucherID = 1;
+            model.VoucherID = count + 1;
             model.Name = data.Name;
             model.Value = data.Value;
             
@@ -42,6 +43,7 @@ namespace POS_Coffe.Controllers
 
             //EmployeeModel.GetInstance().LstEmpl.Add(model);
             //return View(model);
+            VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Add(model);
             return RedirectToAction("VoucherManagement", "VoucherManagement");
         }
         [HttpGet]

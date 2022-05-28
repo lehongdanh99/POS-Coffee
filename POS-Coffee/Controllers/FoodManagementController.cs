@@ -41,11 +41,13 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult AddFood(FoodModel data)
         {
+            int count = FoodAPIHandlerFakeData.GetInstance().ListFood.Count();
             FoodModel model = new FoodModel();
+            model.FoodID = count + 1;
             model.Name = data.Name;
             model.Price = data.Price;
-            model.Picture = data.Picture;
-
+            //model.Picture = data.Picture;
+            FoodAPIHandlerFakeData.GetInstance().ListFood.Add(model);
             return RedirectToAction("FoodManagement", "FoodManagement", model);
         }
         [HttpGet]
