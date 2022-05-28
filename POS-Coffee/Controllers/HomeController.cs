@@ -46,13 +46,9 @@ namespace POS_Coffe.Controllers
             //string password = dataLogin.Password;
             if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password) && password != "PASSWORD")
             {
-                EmployeeModel data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.Username.ToUpper().Trim().Equals(username) && s.Password.Trim().ToUpper().Equals(password)).FirstOrDefault();
-                if (data == null)
+                try
                 {
-                    ViewBag.Login_Fail = "Error Username or Password!";
-                }
-                else
-                {
+                    EmployeeModel data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.Username.ToUpper().Trim().Equals(username) && s.Password.Trim().ToUpper().Equals(password)).FirstOrDefault();
                     Session["EmployeeID"] = data.EmployeeID;
                     Session["Name"] = data.Name;
                     Session["Permission"] = data.Permission;
@@ -62,12 +58,28 @@ namespace POS_Coffe.Controllers
                     Session["Password"] = data.Password;
                     return RedirectToAction("EmployeeManagement", "Home", data);
                 }
+                catch (Exception ex)
+                {
+                    ViewBag.Login_Fail = "Error Username or Password!";
+                }
             }
             return View();
         }
+        [HttpGet]
         public ActionResult Register()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult Register(string name, string password)
+        {
+            int count = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Count();
+            EmployeeModel data = new EmployeeModel();
+            data.EmployeeID = count + 1;    
+            data.Name = name;
+            data.Password = password;
+            EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Add(data);
+            return RedirectToAction("EmployeeManagement", "Home");
         }
         public ActionResult ForgotPassWord()
         {
