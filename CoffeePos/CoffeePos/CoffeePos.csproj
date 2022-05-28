@@ -304,6 +304,9 @@
     <None Include="Customer.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Employee.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Food.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
