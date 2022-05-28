@@ -209,7 +209,11 @@ namespace CoffeePos.ViewModels
             {
                 foreach(var food in ListFoodOrder)
                 {
-                    food.ServedFood = false;
+                    if(food.IsEnable)
+                    {
+                        food.ServedFood = false;
+                    }
+                    
                 }
                 IsAllServed = false;
             }
@@ -307,8 +311,24 @@ namespace CoffeePos.ViewModels
             this.TryCloseAsync();
         }
 
+        public void CheckIsEnableServe()
+        {
+            foreach (var food in ListFoodOrder)
+            {
+                if(food.ServedFood)
+                {
+                    food.IsEnable = false;
+                }
+                else
+                {
+                    food.IsEnable = true;
+                }
+            }
+        }
+
         public void btnConfirmReceipt()
         {
+            CheckIsEnableServe();
             Receipt ReceiptTest = new Receipt();
             //WindowManager windowManager = new WindowManager();
             ReceiptTest = GlobalDef.ReceiptDetail;

@@ -42,7 +42,7 @@ namespace CoffeePos.ViewModels
 
         public void getDataHome()
         {
-            bgLocally = new SolidColorBrush(Colors.Orange);
+            bgLocally = new SolidColorBrush(Colors.DarkSlateGray);
             bgDelivery = new SolidColorBrush(Colors.White);
             VisibleLocally = Visibility.Hidden;
             VisibleDelivery = Visibility.Visible;
@@ -561,12 +561,13 @@ namespace CoffeePos.ViewModels
 
         public void btListVoucher_Click()
         {
+            ListVouchersViewModel.GetInstance().GetEnableVoucher();
             //ListVouchersViewModel listVouchersViewModel = new ListVouchersViewModel();
             //listVouchersViewModel.eventChooseVoucher = HandleCallBackChooseVoucher;
             GlobalDef.IsChooseVoucerToOrder = false;
             //WindowManager windowManager = new WindowManager();
             GlobalDef.windowManager.ShowWindowAsync(ListVouchersViewModel.GetInstance());
-            ListVouchersViewModel.GetInstance().GetEnableVoucher();
+            
         }
 
         public void btChooseVoucher_Click()
@@ -632,7 +633,7 @@ namespace CoffeePos.ViewModels
 
             if(isBgLocally != true)
             {
-                BgLocally = new SolidColorBrush(Colors.Orange);
+                BgLocally = new SolidColorBrush(Colors.DarkSlateGray);
                 BgDelivery = new SolidColorBrush(Colors.White);
                 isBgLocally = true;
                 VisibleLocally = Visibility.Hidden;
@@ -647,7 +648,7 @@ namespace CoffeePos.ViewModels
             if (isBgLocally == true)
             {
                 BgLocally = new SolidColorBrush(Colors.White);
-                BgDelivery = new SolidColorBrush(Colors.Orange);
+                BgDelivery = new SolidColorBrush(Colors.DarkSlateGray);
                 isBgLocally = false;
                 VisibleLocally = Visibility.Visible;
                 VisibleDelivery = Visibility.Hidden;

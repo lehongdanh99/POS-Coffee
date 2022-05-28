@@ -14,7 +14,7 @@
             <RowDefinition Height="70"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Border CornerRadius="10" Background="Orange" Margin="5">
+        <Border CornerRadius="10" Background="DarkSlateGray" Margin="5">
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <Button HorizontalAlignment="Left" VerticalAlignment="Center"
                         materialDesign:ButtonAssist.CornerRadius="20" Click="BtnBack_Click"

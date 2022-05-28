@@ -33,7 +33,7 @@ namespace CoffeePos.Views
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
            
-            this.Close();
+            this.Hide();
         }
     }
 }

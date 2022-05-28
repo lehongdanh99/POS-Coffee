@@ -15,7 +15,7 @@
             <RowDefinition Height="70"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Border CornerRadius="10" Background="Orange" Margin="5">
+        <Border CornerRadius="10" Background="DarkSlateGray" Margin="5">
 			<StackPanel Grid.Row="0" Orientation="Horizontal">
                 <Button HorizontalAlignment="Left" VerticalAlignment="Center"
                         materialDesign:ButtonAssist.CornerRadius="20"
@@ -54,7 +54,7 @@
                         <DataTemplate>
                             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="5" Background="White">
                                 <Border Width="250" Height="150"
-                                        Margin="0" BorderThickness="2" CornerRadius="5" BorderBrush="Orange" OpacityMask="#FFFF6363">
+                                        Margin="0" BorderThickness="2" CornerRadius="5" BorderBrush="DarkSlateGray" OpacityMask="#FFFF6363">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -62,11 +62,11 @@
                                             <RowDefinition/>
                                         </Grid.RowDefinitions>
                                         <StackPanel Grid.Row="0" Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="Paper" Background="Orange" Foreground="White" Width="30" Height="30" VerticalAlignment="Top" Margin="10 0"/>
-                                            <TextBlock FontSize="20" Text="{x:Static language:Lang.Home_Table}" FontWeight="Bold"  Foreground="Orange" VerticalAlignment="Center"></TextBlock>
-                                            <!--<TextBlock FontSize="20" VerticalAlignment="Center" FontWeight="Bold"  Foreground="Orange" Text="{Binding Floor}"></TextBlock>-->
-                                            <TextBlock FontSize="20" Text=" - " VerticalAlignment="Center" Foreground="Orange"></TextBlock>
-                                            <TextBlock FontSize="20" Text="{Binding Table}" FontWeight="Bold"  VerticalAlignment="Center" Foreground="Orange"></TextBlock>
+                                            <materialDesign:PackIcon Kind="Paper" Background="DarkSlateGray" Foreground="White" Width="30" Height="30" VerticalAlignment="Top" Margin="10 0"/>
+                                            <TextBlock FontSize="20" Text="{x:Static language:Lang.Home_Table}" FontWeight="Bold"  Foreground="DarkSlateGray" VerticalAlignment="Center"></TextBlock>
+                                            <!--<TextBlock FontSize="20" VerticalAlignment="Center" FontWeight="Bold"  Foreground="DarkSlateGray" Text="{Binding Floor}"></TextBlock>-->
+                                            <TextBlock FontSize="20" Text=" - " VerticalAlignment="Center" Foreground="DarkSlateGray"></TextBlock>
+                                            <TextBlock FontSize="20" Text="{Binding Table}" FontWeight="Bold"  VerticalAlignment="Center" Foreground="DarkSlateGray"></TextBlock>
                                         </StackPanel>
                                         <Grid Grid.Row="1">
                                             <Grid.ColumnDefinitions>
@@ -74,8 +74,8 @@
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
 
-                                            <TextBlock  Grid.Column="0" FontSize="18" VerticalAlignment="Center" Margin="10" Text="{Binding CheckIn}" Foreground="Orange"></TextBlock>
-                                            <TextBlock  Grid.Column="2" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" Text="{Binding Payment}" Foreground="Orange"></TextBlock>
+                                            <TextBlock  Grid.Column="0" FontSize="18" VerticalAlignment="Center" Margin="10" Text="{Binding CheckIn}" Foreground="DarkSlateGray"></TextBlock>
+                                            <TextBlock  Grid.Column="2" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" Text="{Binding Payment}" Foreground="DarkSlateGray"></TextBlock>
 
                                         </Grid> 
                                         <Line X1="0" Y1="0" X2="250" Y2="0" Grid.Row="2" Margin="5 5" Stroke="#FFC8C2C2" StrokeThickness="2"></Line>
@@ -87,13 +87,13 @@
 
                                             <Button Grid.Column="0" Margin="5" BorderBrush="{x:Null}" 
                                                     FontWeight="Bold" Background="{x:Null}" 
-                                                    Foreground="Orange" 
+                                                    Foreground="DarkSlateGray" 
                                                     Content="{x:Static language:Lang.ListOrder_Payment}"
                                                     Click="PaymentReceipt_Click"></Button>
                                             <Line X1="0" Y1="0" X2="0" Y2="50" Grid.Column="1" Margin="0 10" Stroke="#FFC8C2C2" StrokeThickness="2"></Line>
                                             <Button Grid.Column="1" Margin="5" BorderBrush="{x:Null}"
                                                     FontWeight="Bold" Background="{x:Null}" 
-                                                    Foreground="Orange" 
+                                                    Foreground="DarkSlateGray" 
                                                     Content="{x:Static language:Lang.ListOrder_OrderDetail}"
                                                     Click="ViewDetailReceipt_Click"></Button>
                                            
@@ -122,7 +122,7 @@
                         <DataTemplate>
                             <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="5" Background="White">
                                 <Border Width="250" Height="150"
-                                        Margin="0" BorderThickness="2" CornerRadius="5" BorderBrush="Orange" OpacityMask="#FFFF6363">
+                                        Margin="0" BorderThickness="2" CornerRadius="5" BorderBrush="DarkSlateGray" OpacityMask="#FFFF6363">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
@@ -130,11 +130,11 @@
                                             <RowDefinition/>
                                         </Grid.RowDefinitions>
                                         <StackPanel Grid.Row="0" Orientation="Horizontal">
-                                            <materialDesign:PackIcon Kind="Paper" Background="Orange" Foreground="White" Width="30" Height="30" VerticalAlignment="Top" Margin="10 0"/>
-                                            <TextBlock FontSize="20" Text="{x:Static language:Lang.Home_Table}" FontWeight="Bold"  Foreground="Orange" VerticalAlignment="Center"></TextBlock>
-                                            <!--<TextBlock FontSize="20" VerticalAlignment="Center" FontWeight="Bold"  Foreground="Orange" Text="{Binding Floor}"></TextBlock>-->
-                                            <TextBlock FontSize="20" Text=" - " VerticalAlignment="Center" Foreground="Orange"></TextBlock>
-                                            <TextBlock FontSize="20" Text="{Binding Table}" FontWeight="Bold"  VerticalAlignment="Center" Foreground="Orange"></TextBlock>
+                                            <materialDesign:PackIcon Kind="Paper" Background="DarkSlateGray" Foreground="White" Width="30" Height="30" VerticalAlignment="Top" Margin="10 0"/>
+                                            <TextBlock FontSize="20" Text="{x:Static language:Lang.Home_Table}" FontWeight="Bold"  Foreground="DarkSlateGray" VerticalAlignment="Center"></TextBlock>
+                                            <!--<TextBlock FontSize="20" VerticalAlignment="Center" FontWeight="Bold"  Foreground="DarkSlateGray" Text="{Binding Floor}"></TextBlock>-->
+                                            <TextBlock FontSize="20" Text=" - " VerticalAlignment="Center" Foreground="DarkSlateGray"></TextBlock>
+                                            <TextBlock FontSize="20" Text="{Binding Table}" FontWeight="Bold"  VerticalAlignment="Center" Foreground="DarkSlateGray"></TextBlock>
                                         </StackPanel>
                                         <Grid Grid.Row="1">
                                             <Grid.ColumnDefinitions>
@@ -142,14 +142,14 @@
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
 
-                                            <TextBlock  Grid.Column="0" FontSize="18" VerticalAlignment="Center" Margin="10" Text="{Binding CheckIn}" Foreground="Orange"></TextBlock>
-                                            <TextBlock  Grid.Column="2" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" Text="{Binding Payment}" Foreground="Orange"></TextBlock>
+                                            <TextBlock  Grid.Column="0" FontSize="18" VerticalAlignment="Center" Margin="10" Text="{Binding CheckIn}" Foreground="DarkSlateGray"></TextBlock>
+                                            <TextBlock  Grid.Column="2" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" Text="{Binding Payment}" Foreground="DarkSlateGray"></TextBlock>
 
                                         </Grid>
                                         
                                             <Button Grid.Row="2" Margin="5" BorderBrush="{x:Null}"
                                                     FontWeight="Bold" Background="{x:Null}" 
-                                                    Foreground="Orange" 
+                                                    Foreground="DarkSlateGray" 
                                                     Content="{x:Static language:Lang.ListOrder_OrderDetail}"
                                                     Click="ViewDetailReceiptDone_Click"></Button>
 

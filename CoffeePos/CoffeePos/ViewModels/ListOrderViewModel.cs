@@ -35,7 +35,7 @@ namespace CoffeePos.ViewModels
         public void getDataListOrder()
         {
             BackgroundShowList = new SolidColorBrush(Colors.White);
-            BackgroundShowListDone = new SolidColorBrush(Colors.Orange);
+            BackgroundShowListDone = new SolidColorBrush(Colors.DarkSlateGray);
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
             ListReceiptsDone = ReceiptModel.GetInstance().ListReceiptDone;
         }
@@ -88,7 +88,7 @@ namespace CoffeePos.ViewModels
         {
             //this.Hide();
             BackgroundShowList = new SolidColorBrush(Colors.White);
-            BackgroundShowListDone = new SolidColorBrush(Colors.Orange);
+            BackgroundShowListDone = new SolidColorBrush(Colors.DarkSlateGray);
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
             VisibilityReceiptDone = Visibility.Hidden;
             VisibilityReceipt = Visibility.Visible;
@@ -98,7 +98,7 @@ namespace CoffeePos.ViewModels
 
         public void btnShowListReceiptDone()
         {
-            BackgroundShowList = new SolidColorBrush(Colors.Orange);
+            BackgroundShowList = new SolidColorBrush(Colors.DarkSlateGray);
             BackgroundShowListDone = new SolidColorBrush(Colors.White);
             ListReceipts = ReceiptModel.GetInstance().ListReceiptDone;
             VisibilityReceiptDone = Visibility.Visible;

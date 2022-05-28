@@ -55,7 +55,7 @@
                 </TextBlock>
                 <TextBlock Text="{Binding TableNumOrder}" HorizontalAlignment="Center" Margin="0 5 0 0"
                         FontWeight="Bold"></TextBlock>
-                <Button Content="Ghép bàn" FontSize="10" Foreground="Orange" FontWeight="DemiBold" Visibility="{Binding VisibleCanEdit}"
+                <Button Content="Ghép bàn" FontSize="10" Foreground="DarkSlateGray" FontWeight="DemiBold" Visibility="{Binding VisibleCanEdit}"
                         
                         Height="20" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}"></Button>
             </StackPanel>
@@ -76,14 +76,14 @@
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{Binding DiscountOrder}" FontWeight="Bold">
                 </TextBlock>
-                <!--<Button Content="Chọn mã" FontSize="10" Foreground="Orange" FontWeight="DemiBold"
+                <!--<Button Content="Chọn mã" FontSize="10" Foreground="DarkSlateGray" FontWeight="DemiBold"
                          cal:Message.Attach="[Event Click] = [Action BtnChooseDiscount()]"
                         Height="20" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}"></Button>-->
             </StackPanel>
             <StackPanel Grid.Column="3" VerticalAlignment="Top">
                 <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{x:Static language:Lang.Table_Payment}">
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{Binding PaymentOrder}" Foreground="Orange" FontWeight="Bold">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{Binding PaymentOrder}" Foreground="DarkSlateGray" FontWeight="Bold">
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center" Margin="0" Text="VND" FontWeight="DemiBold">
                 </TextBlock>
@@ -98,7 +98,7 @@
                     cal:Message.Attach="[Event Click] = [Action BtnDeleteFood()]"></Button>
         </StackPanel>
         <Grid Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0 10 0 0">
-            <Button Height="30" Content="+ Thêm món" FontSize="12" Foreground="Orange" FontWeight="DemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Visibility="{Binding VisibleCanEdit}"
+            <Button Height="30" Content="+ Thêm món" FontSize="12" Foreground="DarkSlateGray" FontWeight="DemiBold" Background="{x:Null}" BorderBrush="{x:Null}" Visibility="{Binding VisibleCanEdit}"
                     cal:Message.Attach="[Event Click] = [Action btnAddFoods()]"/>
         </Grid>
         <ScrollViewer Grid.Row="5" VerticalScrollBarVisibility="Hidden" Visibility="{Binding VisibleCanEdit}">
@@ -114,9 +114,9 @@
                                             FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Text="{Binding FoodOrderCount}"/>
                                     </Grid>
                                     <Grid>
-                                        <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="Orange"></TextBlock>
-                                        
-                                        <CheckBox IsChecked="{Binding ServedFood}" Checked="CheckBoxChanged" Unchecked="CheckBoxChanged"
+                                        <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="DarkSlateGray"></TextBlock>
+
+                                        <CheckBox IsChecked="{Binding ServedFood}" IsEnabled="{Binding IsEnable}" Checked="CheckBoxChanged" Unchecked="CheckBoxChanged"
                                                   HorizontalAlignment="Right" Margin="5" Content="Hoàn Thành" Visibility="{Binding VisibleCheckBox}"/>
                                     </Grid>
                                     
@@ -140,7 +140,7 @@
                                    FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Text="{Binding FoodOrderCount}"/>
                                     </Grid>
                                     <Grid>
-                                        <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="Orange"></TextBlock>
+                                        <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="DarkSlateGray"></TextBlock>
                                      
                                     </Grid>
 

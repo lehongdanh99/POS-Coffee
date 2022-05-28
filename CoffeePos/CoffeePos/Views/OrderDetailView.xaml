@@ -16,7 +16,7 @@
             <RowDefinition Height="80"></RowDefinition>
             <RowDefinition Height="250"></RowDefinition>
         </Grid.RowDefinitions>
-        <Border CornerRadius="10" Background="Orange" Margin="5">
+        <Border CornerRadius="10" Background="DarkSlateGray" Margin="5">
             <Grid Grid.Row="0" >
                 <Button HorizontalAlignment="Left" VerticalAlignment="Center"
                         materialDesign:ButtonAssist.CornerRadius="20"
@@ -36,7 +36,7 @@
                 </Border>
                 <StackPanel Orientation="Vertical" Margin="5">
                     <TextBlock FontSize="20" Text="{Binding FoodName}" Foreground="Black" FontWeight="Bold"></TextBlock>
-                    <TextBlock Margin="0 5 0 0" FontSize="20" Text="{Binding FoodPrice}" Foreground="LightGreen" FontWeight="Bold"></TextBlock>
+                    <TextBlock Margin="0 5 0 0" FontSize="20" Text="{Binding FoodPrice}" Foreground="DarkSlateGray" FontWeight="Bold"></TextBlock>
                 </StackPanel>
                 <Line X1="5" Y1="5" X2="5" Y2="50" Margin="50 0" VerticalAlignment="Center" Stroke="#FFC8C2C2" StrokeThickness="4"/>
                 

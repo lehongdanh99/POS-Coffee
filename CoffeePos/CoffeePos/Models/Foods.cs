@@ -71,6 +71,17 @@ namespace CoffeePos
                 NotifyOfPropertyChange(() => ServedFood);
             }
         }
+
+        private bool isEnable = false;
+        public bool IsEnable
+        {
+            get { return isEnable; }
+            set
+            {
+                isEnable = value;
+                NotifyOfPropertyChange(() => IsEnable);
+            }
+        }
         public string FoodOrderName { get; set; }
 
         private Visibility visibleCheckBox;
@@ -140,8 +151,9 @@ namespace CoffeePos
             }
         }
 
-        public FoodOrder(bool isDoneFood = default, string foodOrderName = default, string foodOrderMore = default, int foodOrderCount = default, double foodOrderPrice = default, string foodOrderImage = default, string foodSize = default)
+        public FoodOrder(bool isDoneFood = default, bool isEnable = default, string foodOrderName = default, string foodOrderMore = default, int foodOrderCount = default, double foodOrderPrice = default, string foodOrderImage = default, string foodSize = default)
         {
+            IsEnable = isEnable;
             ServedFood = isDoneFood;
             FoodOrderMore = foodOrderMore;
             FoodOrderCount = foodOrderCount;

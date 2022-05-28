@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Caliburn.Micro;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoffeePos.Models
 {
-    public class Voucher
+    public class Voucher : PropertyChangedBase
     {
 
         public string Name { get; set; }
@@ -18,7 +19,8 @@ namespace CoffeePos.Models
         public bool IsCanChoose 
         {
             get { return isCanChoose; }
-            set { isCanChoose = value; 
+            set { isCanChoose = value;
+                NotifyOfPropertyChange(() => IsCanChoose);
             }
         }
         
