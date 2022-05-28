@@ -2,7 +2,7 @@
   {
     "VoucherID": 1,
     "Name": "GIAMGIA10",
-    "IDFood": 1,
+    "IDFood": 0,
     "Percent": "10",
     "isValid": true
   },
@@ -16,21 +16,21 @@
   {
     "VoucherID": 3,
     "Name": "GIAMGIA30",
-    "IDFood": 1,
+    "IDFood": 0,
     "Percent": "30",
     "isValid": false
   },
   {
     "VoucherID": 4,
     "Name": "GIAMGIA40",
-    "IDFood": 1,
+    "IDFood": 0,
     "Percent": "40",
     "isValid": true
   },
   {
     "VoucherID": 5,
     "Name": "GIAMGIA50",
-    "IDFood": 1,
+    "IDFood": 0,
     "Percent": "50",
     "isValid": false
   },
@@ -51,7 +51,7 @@
   {
     "VoucherID": 8,
     "Name": "MUA1TANG1",
-    "IDFood": 5,
+    "IDFood": 0,
     "Percent": 100,
     "isValid": true
   },

@@ -62,6 +62,9 @@ namespace CoffeePos
 
     public class FoodOrder : PropertyChangedBase
     {
+
+        public int FoodOrderID { get; set; }
+
         private bool servedFood = false;
         public bool ServedFood 
         {

@@ -12,10 +12,9 @@ namespace CoffeePos.Models
         public double Point { get; set; }
         public string Phone { get; set; }
 
-        public Customer(string name, double point)
+        public Customer()
         {
-            name = Name;
-            point = Point;
+            
         }
     }
 }

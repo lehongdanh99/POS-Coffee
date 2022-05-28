@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using CoffeePos.Common;
 using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
@@ -26,45 +27,58 @@ namespace CoffeePos.ViewModels
 
         public ListVouchersViewModel()
         {
-            VoucherList = new ObservableCollection<Voucher>()
+            
+
+            GetVoucher();
+            getCustomer();
+
+        }
+
+        public void GetVoucher()
+        {
+            VoucherList = new ObservableCollection<Voucher>();
+            foreach (Voucher voucher in CommonMethod.GetInstance().readVoucherJsonFileConfig())
             {
-                //new Voucher("10%",10),
-                //new Voucher("2%",2),
-                //new Voucher("30%",30),
-                //new Voucher("40%",40),
-                //new Voucher("50%",50),
-                //new Voucher("Mua 1 tặng 1",0,"Cà phê Sữa")
+                VoucherList.Add(voucher);
+            }
+        }
 
-
-            };
-
-            
-            
+        public void getCustomer()
+        {
+            ObservableCollection<Customer> customers = new ObservableCollection<Customer>();
+            foreach (Customer cus in CommonMethod.GetInstance().readCustomerJsonFileConfig())
+            {
+                customers.Add(cus);
+            }
         }
         public void GetEnableVoucher()
         {
-            //foreach (var voucher in VoucherList)
-            //{
+            foreach (var voucher in VoucherList)
+            {
+                if(voucher.isValid)
+                {
+                    voucher.IsCanChoose = true;
+                    if (voucher.IDFood != 0)
+                    {
+                        foreach (var food in FoodOrderModel.GetInstance().FoodOrders)
+                        {
+                            if (voucher.IDFood == food.FoodOrderID)
+                            {
+                                voucher.IsCanChoose = true;
+                            }
+                            else
+                                voucher.IsCanChoose = false;
+                        }
 
-            //    if (voucher.IDFood != null)
-            //    {
-            //        foreach (var food in FoodOrderModel.GetInstance().FoodOrders)
-            //        {
-            //            if (voucher.IDFood == food.FoodOrderName)
-            //            {
-            //                voucher.IsCanChoose = true;
-            //            }
-            //            else
-            //                voucher.IsCanChoose = false;
-            //        }
-                    
-            //    }
-            //    else
-            //    {
-            //        voucher.IsCanChoose = true;
-            //    }
+                    }
+                } 
+                else
+                {
+                    voucher.IsCanChoose = false;
+                }    
+                
 
-            //}
+            }
         }
         private ObservableCollection<Voucher> voucherList;
         public ObservableCollection<Voucher> VoucherList

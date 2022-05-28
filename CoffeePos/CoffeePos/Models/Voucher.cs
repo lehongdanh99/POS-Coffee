@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoffeePos.Models
 {
-    public class Voucher : PropertyChangedBase
+    public class Voucher
     {
         public int VoucherID { get; set; }
         public string Name { get; set; }
@@ -16,12 +16,15 @@ namespace CoffeePos.Models
         public int Percent { get; set; }
         public bool isValid { get; set; }
         private bool isCanChoose;
-        public bool IsCanChoose 
+        public bool IsCanChoose
         {
             get { return isCanChoose; }
-            set { isCanChoose = value;
-                NotifyOfPropertyChange(() => IsCanChoose);
+            set { isCanChoose = value;  
             }
+        }
+        public Voucher()
+        {
+
         }
     }
 }

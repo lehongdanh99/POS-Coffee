@@ -1,184 +1,184 @@
 [
   {
     "FoodID": 1,
-    "Name": "Cà Phê Sữa",
-    "Price": 30000,
-    "Picture": null,
-    "type": "Cà Phê"
+    "FoodName": "Cà Phê Sữa",
+    "FoodPrice": 30000,
+    "FoodImage": null,
+    "FoodType": "Cà Phê"
   },
   {
     "FoodID": 2,
-    "Name": "Cà Phê Đá",
-    "Price": 27000,
-    "Picture": null,
-    "type": "Cà Phê"
+    "FoodName": "Cà Phê Đá",
+    "FoodPrice": 27000,
+    "FoodImage": null,
+    "FoodType": "Cà Phê"
   },
   {
     "FoodID": 3,
-    "Name": "Bạc Xỉu",
-    "Price": 30000,
-    "Picture": null,
-    "type": "Cà Phê"
+    "FoodName": "Bạc Xỉu",
+    "FoodPrice": 30000,
+    "FoodImage": null,
+    "FoodType": "Cà Phê"
   },
   {
     "FoodID": 4,
-    "Name": "Cappuccino",
-    "Price": 35000,
-    "Picture": null,
-    "type": "Cà Phê"
+    "FoodName": "Cappuccino",
+    "FoodPrice": 35000,
+    "FoodImage": null,
+    "FoodType": "Cà Phê"
   },
   {
     "FoodID": 5,
-    "Name": "Latte",
-    "Price": 35000,
-    "Picture": null,
-    "type": "Cà Phê"
+    "FoodName": "Latte",
+    "FoodPrice": 35000,
+    "FoodImage": null,
+    "FoodType": "Cà Phê"
   },
   {
     "FoodID": 6,
-    "Name": "Mocha",
-    "Price": 35000,
-    "Picture": null,
-    "type": "Cà Phê"
+    "FoodName": "Mocha",
+    "FoodPrice": 35000,
+    "FoodImage": null,
+    "FoodType": "Cà Phê"
   },
   {
     "FoodID": 7,
-    "Name": "Trà Sữa Truyền Thống",
-    "Price": 30000,
-    "Picture": null,
-    "type": "Trà"
+    "FoodName": "Trà Sữa Truyền Thống",
+    "FoodPrice": 30000,
+    "FoodImage": null,
+    "FoodType": "Trà"
   },
   {
     "FoodID": 8,
-    "Name": "Trà Sữa Matcha",
-    "Price": 35000,
-    "Picture": null,
-    "type": "Trà"
+    "FoodName": "Trà Sữa Matcha",
+    "FoodPrice": 35000,
+    "FoodImage": null,
+    "FoodType": "Trà"
   },
   {
     "FoodID": 9,
-    "Name": "Trà Sữa Olong",
-    "Price": 35000,
-    "Picture": null,
-    "type": "Trà"
+    "FoodName": "Trà Sữa Olong",
+    "FoodPrice": 35000,
+    "FoodImage": null,
+    "FoodType": "Trà"
   },
   {
     "FoodID": 10,
-    "Name": "Sữa Tươi Trân Châu Đường Đen",
-    "Price": 35000,
-    "Picture": null,
-    "type": "Trà"
+    "FoodName": "Sữa Tươi Trân Châu Đường Đen",
+    "FoodPrice": 35000,
+    "FoodImage": null,
+    "FoodType": "Trà"
   },
   {
     "FoodID": 11,
-    "Name": "Trà Đào",
-    "Price": 35000,
-    "Picture": null,
-    "type": "Trà"
+    "FoodName": "Trà Đào",
+    "FoodPrice": 35000,
+    "FoodImage": null,
+    "FoodType": "Trà"
   },
   {
     "FoodID": 12,
-    "Name": "Trà Vải",
-    "Price": 35000,
-    "Picture": null,
-    "type": "Trà"
+    "FoodName": "Trà Vải",
+    "FoodPrice": 35000,
+    "FoodImage": null,
+    "FoodType": "Trà"
   },
   {
     "FoodID": 13,
-    "Name": "Trà Trái Cây",
-    "Price": 35000,
-    "Picture": null,
-    "type": "Trà"
+    "FoodName": "Trà Trái Cây",
+    "FoodPrice": 35000,
+    "FoodImage": null,
+    "FoodType": "Trà"
   },
   {
     "FoodID": 14,
-    "Name": "Trà Sen Vàng",
-    "Price": 35000,
-    "Picture": null,
-    "type": "Trà"
+    "FoodName": "Trà Sen Vàng",
+    "FoodPrice": 35000,
+    "FoodImage": null,
+    "FoodType": "Trà"
   },
   {
     "FoodID": 15,
-    "Name": "Cookie ",
-    "Price": 40000,
-    "Picture": null,
-    "type": "Đá Xay"
+    "FoodName": "Cookie ",
+    "FoodPrice": 40000,
+    "FoodImage": null,
+    "FoodType": "Đá Xay"
   },
   {
     "FoodID": 16,
-    "Name": "Trà Xanh Đá Xay",
-    "Price": 40000,
-    "Picture": null,
-    "type": "Đá Xay"
+    "FoodName": "Trà Xanh Đá Xay",
+    "FoodPrice": 40000,
+    "FoodImage": null,
+    "FoodType": "Đá Xay"
   },
   {
     "FoodID": 17,
-    "Name": "Yaua Việt Quất",
-    "Price": 40000,
-    "Picture": null,
-    "type": "Đá Xay"
+    "FoodName": "Yaua Việt Quất",
+    "FoodPrice": 40000,
+    "FoodImage": null,
+    "FoodType": "Đá Xay"
   },
   {
     "FoodID": 18,
-    "Name": "Mocha/Cappuccino Đá Xay",
-    "Price": 40000,
-    "Picture": null,
-    "type": "Đá Xay"
+    "FoodName": "Mocha/Cappuccino Đá Xay",
+    "FoodPrice": 40000,
+    "FoodImage": null,
+    "FoodType": "Đá Xay"
   },
   {
     "FoodID": 19,
-    "Name": "Yaua Đào",
-    "Price": 40000,
-    "Picture": null,
-    "type": "Đá Xay"
+    "FoodName": "Yaua Đào",
+    "FoodPrice": 40000,
+    "FoodImage": null,
+    "FoodType": "Đá Xay"
   },
   {
     "FoodID": 20,
-    "Name": "Chocomint Đá Xay",
-    "Price": 40000,
-    "Picture": null,
-    "type": "Đá Xay"
+    "FoodName": "Chocomint Đá Xay",
+    "FoodPrice": 40000,
+    "FoodImage": null,
+    "FoodType": "Đá Xay"
   },
   {
     "FoodID": 21,
-    "Name": "Tiramisu",
-    "Price": 29000,
-    "Picture": null,
-    "type": "Bánh"
+    "FoodName": "Tiramisu",
+    "FoodPrice": 29000,
+    "FoodImage": null,
+    "FoodType": "Bánh"
   },
   {
     "FoodID": 22,
-    "Name": "Mousse Chanh Dây",
-    "Price": 29000,
-    "Picture": null,
-    "type": "Bánh"
+    "FoodName": "Mousse Chanh Dây",
+    "FoodPrice": 29000,
+    "FoodImage": null,
+    "FoodType": "Bánh"
   },
   {
     "FoodID": 23,
-    "Name": "Mousse Matcha",
-    "Price": 29000,
-    "Picture": null,
-    "type": "Bánh"
+    "FoodName": "Mousse Matcha",
+    "FoodPrice": 29000,
+    "FoodImage": null,
+    "FoodType": "Bánh"
   },
   {
     "FoodID": 24,
-    "Name": "Cheeseake Đào",
-    "Price": 29000,
-    "Picture": null,
-    "type": "Bánh"
+    "FoodName": "Cheeseake Đào",
+    "FoodPrice": 29000,
+    "FoodImage": null,
+    "FoodType": "Bánh"
   },
   {
     "FoodID": 25,
-    "Name": "Cheeseake Oreo",
-    "Price": 29000,
-    "Picture": null,
-    "type": "Bánh"
+    "FoodName": "Cheeseake Oreo",
+    "FoodPrice": 29000,
+    "FoodImage": null,
+    "FoodType": "Bánh"
   },
   {
     "FoodID": 26,
-    "Name": "Flan",
-    "Price": 20000,
-    "Picture": null,
-    "type": "Bánh"
+    "FoodName": "Flan",
+    "FoodPrice": 20000,
+    "FoodImage": null,
+    "FoodType": "Bánh"
   }
 ]
