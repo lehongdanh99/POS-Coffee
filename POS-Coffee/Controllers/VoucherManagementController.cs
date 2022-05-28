@@ -15,7 +15,7 @@ namespace POS_Coffe.Controllers
             IQueryable<VoucherModel> data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.AsQueryable();
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
-                data = data.Where(s => s.Name.Contains(StringSearch));
+                data = data.Where(s => s.Name.ToLower().Contains(StringSearch.ToLower()));
             }
             foreach (VoucherModel model in data)
             {

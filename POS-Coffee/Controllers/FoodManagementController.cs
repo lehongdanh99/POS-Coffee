@@ -16,7 +16,7 @@ namespace POS_Coffe.Controllers
 
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
-                dataModel = dataModel.Where(s => s.Name.Contains(StringSearch));
+                dataModel = dataModel.Where(s => (s.Name).ToLower().Contains(StringSearch.ToLower()));
             }
 
             RecipeModel lstMaterial = new RecipeModel();

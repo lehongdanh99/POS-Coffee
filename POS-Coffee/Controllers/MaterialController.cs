@@ -15,7 +15,7 @@ namespace POS_Coffe.Controllers
 
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
-                data = data.Where(s => s.Name.Contains(StringSearch));
+                data = data.Where(s => s.Name.ToLower().Contains(StringSearch.ToLower()) || s.Type.ToLower().Contains(StringSearch.ToLower()));
             }
 
             foreach (MaterialsModel model in data)

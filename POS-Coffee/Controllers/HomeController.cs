@@ -90,5 +90,11 @@ namespace POS_Coffe.Controllers
             ViewBag.source = source;
             return View();
         }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Login", "Home");
+        }
     }
 }
