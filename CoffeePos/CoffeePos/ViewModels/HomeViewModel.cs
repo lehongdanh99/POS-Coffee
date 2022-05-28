@@ -581,19 +581,19 @@ namespace CoffeePos.ViewModels
 
         public void HandleCallBackChooseVoucher(Voucher selectedVoucher)
         {
-            if(selectedVoucher.Percent == 0)
-            {
-                foreach (var food in FoodOrderModel.GetInstance().FoodOrders)
-                {
-                    if (selectedVoucher.NameFood == food.FoodOrderName)
-                    {
+            //if(selectedVoucher.Percent == 0)
+            //{
+            //    foreach (var food in FoodOrderModel.GetInstance().FoodOrders)
+            //    {
+            //        if (selectedVoucher.NameFood == food.FoodOrderName)
+            //        {
                         
-                    }
-                }
-            }
-            DiscountOrder = selectedVoucher.Percent;
-            GetFoodOrderTotal();
-            GlobalDef.IsChooseVoucerToOrder = false;
+            //        }
+            //    }
+            //}
+            //DiscountOrder = selectedVoucher.Percent;
+            //GetFoodOrderTotal();
+            //GlobalDef.IsChooseVoucerToOrder = false;
         }
 
         public void HandleCallBacChooseTable(int TableChoose)

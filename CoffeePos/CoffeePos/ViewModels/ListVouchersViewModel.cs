@@ -28,12 +28,12 @@ namespace CoffeePos.ViewModels
         {
             VoucherList = new ObservableCollection<Voucher>()
             {
-                new Voucher("10%",10),
-                new Voucher("2%",2),
-                new Voucher("30%",30),
-                new Voucher("40%",40),
-                new Voucher("50%",50),
-                new Voucher("Mua 1 tặng 1",0,"Cà phê Sữa")
+                //new Voucher("10%",10),
+                //new Voucher("2%",2),
+                //new Voucher("30%",30),
+                //new Voucher("40%",40),
+                //new Voucher("50%",50),
+                //new Voucher("Mua 1 tặng 1",0,"Cà phê Sữa")
 
 
             };
@@ -43,28 +43,28 @@ namespace CoffeePos.ViewModels
         }
         public void GetEnableVoucher()
         {
-            foreach (var voucher in VoucherList)
-            {
+            //foreach (var voucher in VoucherList)
+            //{
 
-                if (voucher.NameFood != null)
-                {
-                    foreach (var food in FoodOrderModel.GetInstance().FoodOrders)
-                    {
-                        if (voucher.NameFood == food.FoodOrderName)
-                        {
-                            voucher.IsCanChoose = true;
-                        }
-                        else
-                            voucher.IsCanChoose = false;
-                    }
+            //    if (voucher.IDFood != null)
+            //    {
+            //        foreach (var food in FoodOrderModel.GetInstance().FoodOrders)
+            //        {
+            //            if (voucher.IDFood == food.FoodOrderName)
+            //            {
+            //                voucher.IsCanChoose = true;
+            //            }
+            //            else
+            //                voucher.IsCanChoose = false;
+            //        }
                     
-                }
-                else
-                {
-                    voucher.IsCanChoose = true;
-                }
+            //    }
+            //    else
+            //    {
+            //        voucher.IsCanChoose = true;
+            //    }
 
-            }
+            //}
         }
         private ObservableCollection<Voucher> voucherList;
         public ObservableCollection<Voucher> VoucherList
@@ -77,7 +77,7 @@ namespace CoffeePos.ViewModels
         {
             eventChooseVoucher?.Invoke(voucher);
 
-            if(voucher.NameFood == "")
+            if(voucher.IDFood == null)
             this.TryCloseAsync();
         }
     }

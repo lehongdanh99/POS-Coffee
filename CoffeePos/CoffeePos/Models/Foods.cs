@@ -13,6 +13,7 @@ namespace CoffeePos
 {
     public class Foods : PropertyChangedBase
     {
+        public int FoodID { get; set; }
         public string FoodName { get; set; }
         public double FoodPrice { get; set; }
 

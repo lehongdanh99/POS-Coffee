@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace CoffeePos.Models
 {
-    internal class Customer
+    public class Customer
     {
         public string Name { get; set; }
         public double Point { get; set; }
+        public string Phone { get; set; }
 
         public Customer(string name, double point)
         {

@@ -9,12 +9,12 @@ namespace CoffeePos.Models
 {
     public class Voucher : PropertyChangedBase
     {
-
+        public int VoucherID { get; set; }
         public string Name { get; set; }
-        public string NameFood { get; set; }
+        public int IDFood { get; set; }
 
         public int Percent { get; set; }
-
+        public bool isValid { get; set; }
         private bool isCanChoose;
         public bool IsCanChoose 
         {
@@ -22,13 +22,6 @@ namespace CoffeePos.Models
             set { isCanChoose = value;
                 NotifyOfPropertyChange(() => IsCanChoose);
             }
-        }
-        
-        public Voucher(string name , int percent = 0, string nameFood = default)
-        {
-            Name = name;
-            NameFood = nameFood;
-            Percent = percent;
         }
     }
 }

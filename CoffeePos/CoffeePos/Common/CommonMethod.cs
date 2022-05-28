@@ -14,7 +14,7 @@ namespace CoffeePos.Common
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private static CommonMethod _instance;
-        private TableModel model = new TableModel();
+        private TableModel model = new TableModel();       
         private List<Foods> foodModel;
         public static CommonMethod GetInstance()
         {
@@ -50,6 +50,30 @@ namespace CoffeePos.Common
             }
             log.Info($"Read file Table config to Table model {json.ToString()} ");
             return model;
+        }
+        private List<Voucher> vouchermodel = new List<Voucher>();
+        public List<Voucher> readVoucherJsonFileConfig()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.VOUCHER_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                vouchermodel = JsonConvert.DeserializeObject<List<Voucher>>(json);
+            }
+            log.Info($"Read file Table config to Table model {json.ToString()} ");
+            return vouchermodel;
+        }
+        private List<Customer> customermodel = new List<Customer>();
+        public List<Customer> readCustomerJsonFileConfig()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.CUSTOMER_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                customermodel = JsonConvert.DeserializeObject<List<Customer>>(json);
+            }
+            log.Info($"Read file Table config to Table model {json.ToString()} ");
+            return customermodel;
         }
 
         public ImageSource convertByte(byte[] byteImage)

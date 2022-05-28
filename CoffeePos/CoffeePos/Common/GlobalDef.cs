@@ -14,7 +14,10 @@ namespace CoffeePos.Common
     {
         public static string USERNAME = "";
         public static int ID_USERNAME = 0;
-        public static string JSON_CONFIG_PATH = "TableConfig.json";
+        public static string JSON_CONFIG_PATH = AppDomain.CurrentDomain.BaseDirectory + "TableConfig.json";
+        public static string VOUCHER_JSON_CONFIG_PATH = AppDomain.CurrentDomain.BaseDirectory + "Voucher.json";
+        public static string CUSTOMER_JSON_CONFIG_PATH = AppDomain.CurrentDomain.BaseDirectory + "Customer.json";
+
         public static string END_POINT = "";
 
         public static bool IsChooseTableToOrder = false;
