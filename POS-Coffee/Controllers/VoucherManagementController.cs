@@ -55,6 +55,7 @@ namespace POS_Coffe.Controllers
             data.Name = EditData.ToList().First().Name;
             data.Value = EditData.ToList().First().Value;
             data.IDFood = EditData.ToList().First().IDFood;
+            data.isValue = EditData.ToList().First().isValue;
             return View(data);
         }
         [HttpPost]
@@ -65,7 +66,7 @@ namespace POS_Coffe.Controllers
             EditData.ToList().First().Name = data.Name;
             EditData.ToList().First().Value = data.Value;
             EditData.ToList().First().IDFood = data.IDFood;
-
+            EditData.ToList().First().isValue = data.isValue;
             return RedirectToAction("VoucherManagement", "VoucherManagement");
         }
         public ActionResult DeleteVoucher(int VoucherID)

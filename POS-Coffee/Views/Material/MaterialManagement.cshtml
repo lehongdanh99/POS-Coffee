@@ -7,10 +7,9 @@
         @using (Html.BeginForm("MaterialManagement", "Material", FormMethod.Get@*, new { @class = "form-inline" }*@))
 {
     <div class="form-check-label">
-        <a href="#" class="form-check-input search-btn fa fa-search"></a>
         <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
-        <input type="submit" value="Search" />
-        <input type="button" class="form-check-input btn btn-gradient-success" value="Add new" onclick="AddNew()" />
+        <button type="submit" value="Search" class="form-check-input search-btn fa fa-search"></button>
+        <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />
     </div>
 }
         <div class="card">
@@ -36,9 +35,9 @@
                                 <td>@item.Type</td>
                                 <td>@item.Amount</td>
                                 <td>@item.Quantity</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {MaterialID = item.MaterialID })"'>  Edit </button>
-                                    <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.MaterialID))" class="btn btn-danger" value="  Delete  " />
+                                <td style="text-align">
+                                    <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {MaterialID = item.MaterialID })"'> </button>
+                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.MaterialID))" class="btn btn-danger fa fa-remove" />
                                 </td>
                             </tr>
                         }

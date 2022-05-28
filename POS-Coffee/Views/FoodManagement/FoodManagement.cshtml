@@ -9,10 +9,10 @@
         @using (Html.BeginForm("FoodManagement", "FoodManagement", FormMethod.Get))
 {
     <div class="form-check-label">
-        <a href="#" class="form-check-input search-btn fa fa-search"></a>
+
         <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
-        <input type="submit" value="Search" />
-        <input type="button" class="form-check-input btn btn-gradient-success" value="Add new" onclick="AddNew()" />
+        <button type="submit" value="Search" class="form-check-input search-btn fa fa-search fa fa-search"></button>
+        <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />
     </div>
 }
         <div class="card">
@@ -38,10 +38,10 @@
                                 <td>@item.Price</td>
                                 <td><div class="img" style="background-image: url(Content/food-1.png);"></div></td>
                                 <td>@item.Type</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("Details", "FoodManagement", new {FoodID = item.FoodID })"'>  Detail </button>
-                                    <button type="button" class="btn btn-primary " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {FoodID = item.FoodID })"'>  Edit </button>
-                                    <input type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger" value="  Delete  " />
+                                <td style="text-align:center">
+                                    <button type="button" class="btn btn-primary fa fa-bookmark" onclick='window.location.href = "@Url.Action("Details", "FoodManagement", new {FoodID = item.FoodID })"'> </button>
+                                    <button type="button" class="btn btn-primary fa fa-edit " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {FoodID = item.FoodID })"'></button>
+                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger fa fa-remove" />
                                 </td>
                             </tr>
                         }

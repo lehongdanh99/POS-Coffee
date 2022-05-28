@@ -15,6 +15,9 @@
             <input type="date" class="form-check-input" name="FromDate" id="FromDate" />
             To date:
             <input type="date" class="form-check-input" name="ToDate" id="ToDate" />
+
+
+
             <input type="submit" value="Search" />
         </div>
 }
@@ -39,8 +42,8 @@
                         @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td>@item.FromDate</td>
-                                    <td>@item.ToDate</td>
+                                    <td>@item.FromDate.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.ToDate.ToString("dd/MM/yyyy")</td>
                                     <td>@item.VoucherName</td>
                                     <td>@item.Table</td>
                                     <td>@item.TotalPrice</td>
@@ -69,7 +72,6 @@
             window.location.href = url;
         }
     }
-
 </script>
 
 
