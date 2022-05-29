@@ -16,15 +16,20 @@ namespace POS_Coffe.Controllers
 
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
-                dataModel = dataModel.Where(s => (s.Name).ToLower().Contains(StringSearch.ToLower()));
+                dataModel = dataModel.Where(s => (s.Name).ToLower().Contains(StringSearch.ToLower()) || s.Type.ToLower().Contains(StringSearch.ToLower()) /*|| s.Price == Convert.ToInt32(StringSearch)*/);
             }
+            System.Console.WriteLine(dataModel);
+            //if(dataModel == null)
+            //{
+            //    dataModel = FoodAPIHandlerFakeData.GetInstance().ListFood.AsQueryable();
+            //}
 
-            RecipeModel lstMaterial = new RecipeModel();
-            foreach (var item in dataModel)
-            {
-                lstMaterial = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.RecipeID == item.FoodID).FirstOrDefault();
-            }
-            System.Console.WriteLine(lstMaterial);
+            //RecipeModel lstMaterial = new RecipeModel();
+            //foreach (var item in dataModel)
+            //{
+            //    lstMaterial = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.RecipeID == item.FoodID).FirstOrDefault();
+            //}
+            //System.Console.WriteLine(lstMaterial);
             foreach (FoodModel model in dataModel)
             {
                 if (model != null)
@@ -73,8 +78,8 @@ namespace POS_Coffe.Controllers
         }
         public ActionResult DeleteFood(int FoodID)
         {
-            FoodAPIHandlerFakeData.GetInstance().ListFood.RemoveAt(FoodID - 1);
-        
+            var data = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == FoodID).FirstOrDefault();
+            FoodAPIHandlerFakeData.GetInstance().ListFood.Remove(data);
             return RedirectToAction("FoodManagement", "FoodManagement");
         }
 

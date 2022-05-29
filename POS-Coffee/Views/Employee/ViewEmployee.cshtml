@@ -35,7 +35,21 @@
                             <tr>
                                 <th>@item.EmployeeID</th>
                                 <td>@item.Name</td>
-                                <td>@item.Permission</td>
+                                
+                                <td>
+                                    @if(item.Permission == "ROLE_EMPLOYEE")
+                {
+                    <h5>Employee</h5>
+                }
+                                    else if (item.Permission == "ROLE_ADMIN")
+                {
+                                <h5>Admin</h5>
+                }
+                                    else if(item.Permission == "ROLE_MANAGER")
+                {
+                                <h5>Manager</h5>
+                }
+                                </td>
                                 <td>@item.Birthday</td>
                                 <td>@item.Phone</td>
                                 <td>@item.Username</td>

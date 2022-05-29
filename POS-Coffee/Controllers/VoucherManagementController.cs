@@ -71,7 +71,8 @@ namespace POS_Coffe.Controllers
         }
         public ActionResult DeleteVoucher(int VoucherID)
         {
-            VoucherAPIHandlerFakeData.GetInstance().ListVoucher.RemoveAt(VoucherID - 1);
+            var data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == VoucherID).FirstOrDefault();
+            VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Remove(data);
             return RedirectToAction("VoucherManagement", "VoucherManagement");
         }
     }

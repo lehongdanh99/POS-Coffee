@@ -72,7 +72,8 @@ namespace POS_Coffe.Controllers
         }
         public ActionResult DeleteMaterial(int MaterialID)
         {
-            MaterialAPIHandlerFakeData.GetInstance().ListMaterial.RemoveAt(MaterialID - 1);
+            var data = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Where(s => s.MaterialID == MaterialID).FirstOrDefault();
+            MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Remove(data);
             return RedirectToAction("MaterialManagement", "Material");
         }
     }

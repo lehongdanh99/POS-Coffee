@@ -126,7 +126,6 @@
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
-    <Compile Include="Controllers\EmployeeApiController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\FoodManagementController.cs" />
     <Compile Include="Controllers\HistoryTrackingController.cs" />
