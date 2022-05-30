@@ -4,13 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using POS_Coffe.Models;
+using PagedList;
 
 namespace POS_Coffe.Controllers
 {
     public class VoucherManagementController : Controller
     {
+        public int pageSize = 15;
         // GET: VoucherManagement
-        public ActionResult VoucherManagement(string StringSearch)
+        public ActionResult VoucherManagement(int? pageNo, string StringSearch)
         {
             IQueryable<VoucherModel> data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.AsQueryable();
             if (!String.IsNullOrWhiteSpace(StringSearch))
@@ -22,7 +24,11 @@ namespace POS_Coffe.Controllers
                 if (model != null)
                     continue;
             }
-            return View(data.ToList());
+            data.ToList();
+
+            var Pagination = new PagedList<VoucherModel>(data, pageNo ?? 1, pageSize);
+
+            return View(Pagination);
         }
         [HttpGet]
         public ActionResult AddVoucher()

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using POS_Coffe.Models;
+using PagedList;
 
 namespace POS_Coffe.Controllers
 {
     public class EmployeeController : Controller
     {
-        public ActionResult ViewEmployee(string Username, string Password, string Phone, string Name, string Birthday, string Permission, string StringSearch)
+        public int pageSize = 15;
+        public ActionResult ViewEmployee(int? pageNo, string Username, string Password, string Phone, string Name, string Birthday, string Permission, string StringSearch)
         {
             IQueryable<EmployeeModel> data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.AsQueryable();
 
@@ -24,7 +26,9 @@ namespace POS_Coffe.Controllers
                 if (model != null)
                     continue;
             }
-            return View(data.ToList());
+            data.ToList();
+            var Pagination = new PagedList<EmployeeModel>(data, pageNo ?? 1, pageSize);
+            return View(Pagination);
         }
         [HttpGet]
         public ActionResult AddEmployee()

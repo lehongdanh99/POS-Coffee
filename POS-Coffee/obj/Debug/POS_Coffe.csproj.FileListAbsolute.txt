@@ -243,3 +243,7 @@ F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.CoreCompileInputs.cache
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.CopyComplete
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.dll
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.pdb
+F:\POS-Coffee\POS-Coffee\bin\PagedList.dll
+F:\POS-Coffee\POS-Coffee\bin\PagedList.Mvc.dll
+F:\POS-Coffee\POS-Coffee\bin\PagedList.xml
+F:\POS-Coffee\POS-Coffee\bin\PagedList.Mvc.xml

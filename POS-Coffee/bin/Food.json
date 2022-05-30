@@ -1,11 +1,11 @@
 [
-    {
-        "FoodID" : 1,
-        "Name": "Cà Phê Sữa",
-        "Price": 30000,
-        "Picture": null,
-        "type": "Cà Phê"
-    },
+  {
+    "FoodID": 1,
+    "Name": "Cà Phê Sữa",
+    "Price": 30000,
+    "Picture": null,
+    "type": "Cà Phê"
+  },
     {
         "FoodID" : 2,
         "Name": "Cà Phê Đá",

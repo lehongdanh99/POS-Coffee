@@ -4,13 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using POS_Coffe.Models;
+using PagedList;
 
 namespace POS_Coffe.Controllers
 {
     public class FoodManagementController : Controller
     {
-        // GET: FoodManagement
-        public ActionResult FoodManagement(string StringSearch)
+        public int pageSize = 15;
+        public ActionResult FoodManagement(string StringSearch, int? pageNo)
         {
             IQueryable<FoodModel> dataModel = FoodAPIHandlerFakeData.GetInstance().ListFood.AsQueryable();
 
@@ -35,7 +36,11 @@ namespace POS_Coffe.Controllers
                 if (model != null)
                     continue;
             }
-            return View(dataModel.ToList());
+            dataModel.ToList();
+
+            var Pagination = new PagedList<FoodModel>(dataModel, pageNo ?? 1, pageSize);
+
+            return View(Pagination);
         }
         [HttpGet]
         public ActionResult AddFood()
@@ -51,7 +56,7 @@ namespace POS_Coffe.Controllers
             model.FoodID = count + 1;
             model.Name = data.Name;
             model.Price = data.Price;
-            //model.Picture = data.Picture;
+            //model.Picture = ;
             FoodAPIHandlerFakeData.GetInstance().ListFood.Add(model);
             return RedirectToAction("FoodManagement", "FoodManagement", model);
         }

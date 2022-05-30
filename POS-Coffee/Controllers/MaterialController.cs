@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using POS_Coffe.Models;
+using PagedList;
 
 namespace POS_Coffe.Controllers
 {
     public class MaterialController : Controller
     {
-        public ActionResult MaterialManagement(string StringSearch)
+        public int pageSize = 15;
+        public ActionResult MaterialManagement(string StringSearch, int? pageNo)
         {
             IQueryable<MaterialsModel> data = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.AsQueryable();
 
@@ -23,7 +25,10 @@ namespace POS_Coffe.Controllers
                 if (model != null)
                     continue;
             }
-            return View(data.ToList());
+            data.ToList();
+
+            var Pagination = new PagedList<MaterialsModel>(data, pageNo ?? 1, pageSize);
+            return View(Pagination);
         }
         [HttpGet]
         public ActionResult AddMaterial()

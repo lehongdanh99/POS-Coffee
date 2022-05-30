@@ -21,4 +21,26 @@
 		"TypePayment": "Delivery",
 		"TypeService": "none"
 	},
+	{
+		"FromDate": "01/19/2019",
+		"ToDate": "10/15/2019",
+		"VoucherName": "Table3",
+		"Table": "3",
+		"TotalPrice": 303000,
+		"DiscountPrice": 402000,
+		"CustomerPay": 1541200,
+		"TypePayment": "Delivery",
+		"TypeService": "none"
+	},
+	{
+		"FromDate": "03/19/2011",
+		"ToDate": "01/15/2012",
+		"VoucherName": "Table4",
+		"Table": "4",
+		"TotalPrice": 2300000,
+		"DiscountPrice": 240000,
+		"CustomerPay": 1354200,
+		"TypePayment": "Self",
+		"TypeService": "none"
+	}
 ]

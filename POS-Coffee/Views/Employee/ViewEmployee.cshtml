@@ -1,4 +1,6 @@
-﻿@model List<POS_Coffe.Models.EmployeeModel>
+﻿@model PagedList<POS_Coffe.Models.EmployeeModel>
+@using PagedList;
+@using PagedList.Mvc;
 @{
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
     var i = 1;
@@ -6,14 +8,14 @@
 <div class="row">
     <div class="column">
         @using (Html.BeginForm("ViewEmployee", "Employee", FormMethod.Get@*, new { @class = "form-inline" }*@))
-        {
-            <div class="form-check-label">
-                <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
-                <button type="submit" class="form-check-input search-btn fa fa-search"></button>
+{
+    <div class="form-check-label">
+        <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
+        <button type="submit" class="form-check-input search-btn fa fa-search"></button>
 
-                <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()"></button>
-            </div>
-        }
+        <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()"></button>
+    </div>
+}
         <div class="card">
             <div class="card-block">
                 <table class="styled-table">
@@ -33,22 +35,22 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <th>@item.EmployeeID</th>
+                                <th>@i</th>
                                 <td>@item.Name</td>
-                                
+
                                 <td>
-                                    @if(item.Permission == "ROLE_EMPLOYEE")
-                {
-                    <h5>Employee</h5>
-                }
+                                    @if (item.Permission == "ROLE_EMPLOYEE")
+                                    {
+                                        <h5>Employee</h5>
+                                    }
                                     else if (item.Permission == "ROLE_ADMIN")
-                {
-                                <h5>Admin</h5>
-                }
-                                    else if(item.Permission == "ROLE_MANAGER")
-                {
-                                <h5>Manager</h5>
-                }
+                                    {
+                                        <h5>Admin</h5>
+                                    }
+                                    else if (item.Permission == "ROLE_MANAGER")
+                                    {
+                                        <h5>Manager</h5>
+                                    }
                                 </td>
                                 <td>@item.Birthday</td>
                                 <td>@item.Phone</td>
@@ -62,6 +64,11 @@
                         }
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div class="column" style="text-align:center; display:inline-block">
+            <div class="pagination ali">
+                @Html.PagedListPager(Model, pageNo => Url.Action("ViewEmployee", new { pageNo = pageNo }))
             </div>
         </div>
     </div>

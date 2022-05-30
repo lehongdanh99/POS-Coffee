@@ -1,20 +1,23 @@
-﻿@model List<POS_Coffe.Models.FoodModel>
+﻿@model PagedList<POS_Coffe.Models.FoodModel>
+@using PagedList
+@using PagedList.Mvc
 @{
     ViewBag.Title = "FoodManagement";
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+    int i = 1;
 }
 
 <div class="row">
     <div class="column">
         @using (Html.BeginForm("FoodManagement", "FoodManagement", FormMethod.Get))
-{
-    <div class="form-check-label">
+        {
+            <div class="form-check-label">
 
-        <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
-        <button type="submit" value="Search" class="form-check-input search-btn fa fa-search fa fa-search"></button>
-        <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />
-    </div>
-}
+                <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
+                <button type="submit" value="Search" class="form-check-input search-btn fa fa-search fa fa-search"></button>
+                <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />
+            </div>
+        }
         <div class="card">
             <div class="card-block">
                 <table class="styled-table">
@@ -33,7 +36,7 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.FoodID</td>
+                                <th>@i</th>
                                 <td>@item.Name</td>
                                 <td>@item.Price</td>
                                 <td><div class="img" style="background-image: url(Content/food-1.png);"></div></td>
@@ -44,9 +47,15 @@
                                     <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger fa fa-remove" />
                                 </td>
                             </tr>
+                            i++;
                         }
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div class="column" style="text-align:center; display:inline-block">
+            <div class="pagination ali">
+                @Html.PagedListPager(Model, pageNo => Url.Action("FoodManagement", new { pageNo = pageNo }))
             </div>
         </div>
     </div>
@@ -54,24 +63,26 @@
 </div>
 
 @*<div class="panel-group" id="accordition">
-    @foreach (var item in Model)
-            {
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordition" href="#@item.FoodID">
-                                @item.Name
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="@item.FoodID" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            @item.Type
+        @foreach (var item in Model)
+                {
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordition" href="#@item.FoodID">
+                                    @item.Name
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="@item.FoodID" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @item.Type
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
-</div>*@
+                }
+    </div>*@
+
+
 
 <script>
     function AddNew() {
