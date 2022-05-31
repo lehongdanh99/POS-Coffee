@@ -30,8 +30,7 @@ namespace CoffeePos.ViewModels
             
 
             GetVoucher();
-            getCustomer();
-
+            GetEnableVoucher();
         }
 
         public void GetVoucher()
@@ -43,14 +42,7 @@ namespace CoffeePos.ViewModels
             }
         }
 
-        public void getCustomer()
-        {
-            ObservableCollection<Customer> customers = new ObservableCollection<Customer>();
-            foreach (Customer cus in CommonMethod.GetInstance().readCustomerJsonFileConfig())
-            {
-                customers.Add(cus);
-            }
-        }
+        
         public void GetEnableVoucher()
         {
             foreach (var voucher in VoucherList)

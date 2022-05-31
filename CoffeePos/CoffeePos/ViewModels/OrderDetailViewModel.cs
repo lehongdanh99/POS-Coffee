@@ -50,7 +50,7 @@ namespace CoffeePos.ViewModels
                 FoodImage = foodSelected.FoodImage;
                 this.orderCount = 1;
                 FoodPrice = foodSelected.FoodPrice;
-                BgSmallSize = new SolidColorBrush(Colors.DarkSlateGray);
+                BgSmallSize = new SolidColorBrush(Colors.Orange);
                 bgMediumSize = new SolidColorBrush(Colors.LightGray);
                 isSizeSmall = true;
             }
@@ -64,14 +64,14 @@ namespace CoffeePos.ViewModels
 
                 if (foodOrderSelected.FoodSize == "S")
                 {
-                    BgSmallSize = new SolidColorBrush(Colors.DarkSlateGray);
+                    BgSmallSize = new SolidColorBrush(Colors.Orange);
                     bgMediumSize = new SolidColorBrush(Colors.LightGray);
                     isSizeSmall = true;
                 }
                 else
                 {
                     BgSmallSize = new SolidColorBrush(Colors.LightGray);
-                    bgMediumSize = new SolidColorBrush(Colors.DarkSlateGray);
+                    bgMediumSize = new SolidColorBrush(Colors.Orange);
                     isSizeSmall = false;
                 }
             }
@@ -185,7 +185,7 @@ namespace CoffeePos.ViewModels
         {
             if (!isSizeSmall)
             {
-                BgSmallSize = new SolidColorBrush(Colors.DarkSlateGray);
+                BgSmallSize = new SolidColorBrush(Colors.Orange);
                 BgMediumSize = new SolidColorBrush(Colors.LightGray);
                 isSizeSmall = true;
                 if (FoodSelected != default)
@@ -206,7 +206,7 @@ namespace CoffeePos.ViewModels
             if (isSizeSmall)
             {
                 BgSmallSize = new SolidColorBrush(Colors.LightGray);
-                BgMediumSize = new SolidColorBrush(Colors.DarkSlateGray);
+                BgMediumSize = new SolidColorBrush(Colors.Orange);
                 isSizeSmall = false;
                 if(FoodSelected != default)
                 {

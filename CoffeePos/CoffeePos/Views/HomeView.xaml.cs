@@ -77,7 +77,12 @@ namespace CoffeePos.Views
         private void SearchFoodClick(object sender, RoutedEventArgs e)
         {
             string obj = ((FrameworkElement)sender).DataContext as string;
-            HomeViewModel.GetInstance().SearchChange(FoodSearchCb.Text);
+            HomeViewModel.GetInstance().SearchFoodChange(FoodSearchCb.Text);
+        }
+        private void SearchCustomerClick(object sender, RoutedEventArgs e)
+        {
+            string obj = ((FrameworkElement)sender).DataContext as string;
+            HomeViewModel.GetInstance().SearchCustomerChange(CustomerNameCb.Text);
         }
     }
 }

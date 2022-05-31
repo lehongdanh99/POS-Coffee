@@ -59,7 +59,7 @@
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0" >
                                 <Button Width="150" Height="150" BorderBrush="{x:Null}"  Padding="25"
                                         Margin="10" Foreground="Green" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="5"
-                                        FontSize="20" Click="ChooseVoucher" IsEnabled="{Binding IsCanChoose}">
+                                        FontSize="15" Click="ChooseVoucher" IsEnabled="{Binding IsCanChoose}">
                                     <Button.Background>
                                         <ImageBrush ImageSource="/Image/voucher.png" Stretch="Fill" />
                                     </Button.Background>

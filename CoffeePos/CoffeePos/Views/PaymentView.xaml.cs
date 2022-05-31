@@ -46,13 +46,43 @@ namespace CoffeePos.Views
 
         private void textChangedEventHandler(object sender, EventArgs e)
         {
-            TxtMoneyoutput.Text = TxtMoneyInput.Text;
+            
+            int txtRefund;
+            PaymentViewModel.GetInstance().CustomerPay = Int32.Parse(TxtMoneyInput.Text);
+            txtRefund = Int32.Parse(TxtMoneyoutput.Text) - Int32.Parse(TxtTotalPayment.Text);
+            PaymentViewModel.GetInstance().RefundMoney = txtRefund;
+            if(PaymentViewModel.GetInstance().CustomerPay == 0)
+            {
+                PaymentViewModel.GetInstance().RefundMoney = 0;
+            }    
+            if(txtRefund < 0)
+            {
+                TxtRefundMoney.Foreground = new SolidColorBrush(Colors.Red);
+                BtnPayment.IsEnabled = false;
+            }    
+            else
+            {
+                BtnPayment.IsEnabled = true;
+                TxtRefundMoney.Foreground = new SolidColorBrush(Colors.Blue);
+            }    
         }
 
         private void PaymentFinalClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
 
+        }
+
+        private void btnChooseVoucher(object sender, RoutedEventArgs e)
+        {
+            PaymentViewModel.GetInstance().GetFoodOrderTotal(Int32.Parse(TxtMoneyoutput.Text));
+        }
+
+        private void SearchCustomerClick(object sender, RoutedEventArgs e)
+        {
+            string obj = ((FrameworkElement)sender).DataContext as string;
+              
+            PaymentViewModel.GetInstance().SearchCustomerChange(CustomerNameCb.Text);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace CoffeePos.ViewModels
         {
 
             getDataHome();
-            
+            getCustomer();
         }
 
         public void getDataHome()
@@ -48,6 +48,7 @@ namespace CoffeePos.ViewModels
             VisibleDelivery = Visibility.Visible;
             FoodsMenu = GetFoods();
             AllFoods = GetFoods();
+            Customer = getCustomer();
             TypeFoods = GetTypeFoods();
             if (listViewFoodOrders == null)
             {
@@ -59,6 +60,20 @@ namespace CoffeePos.ViewModels
             {
                 SearchFood.Add(foodOrder.FoodName);
             }
+            foreach (var customer in Customer)
+            {
+                SearchCustomer.Add(customer.Phone);
+            }
+        }
+
+        public ObservableCollection<Customer> getCustomer()
+        {
+            ObservableCollection<Customer> customers = new ObservableCollection<Customer>();
+            foreach (Customer cus in CommonMethod.GetInstance().readCustomerJsonFileConfig())
+            {
+                customers.Add(cus);
+            }
+            return customers;
         }
 
         public void GetFoodOrderTotal()
@@ -220,6 +235,14 @@ namespace CoffeePos.ViewModels
             set { searchFood = value; NotifyOfPropertyChange(() => SearchFood); }
         }
 
+        private List<string> searchCustomer = new List<string>();
+
+        public List<string> SearchCustomer
+        {
+            get { return searchCustomer; }
+            set { searchCustomer = value; NotifyOfPropertyChange(() => SearchCustomer); }
+        }
+
         private ObservableCollection<FoodOrder> listViewFoodOrders;
 
         public ObservableCollection<FoodOrder> ListViewFoodOrders
@@ -281,6 +304,14 @@ namespace CoffeePos.ViewModels
         {
             get { return enableOrder; }
             set { enableOrder = value; NotifyOfPropertyChange(() => EnableOrder); }
+        }
+
+        private ObservableCollection<Customer> customer;
+
+        public ObservableCollection<Customer> Customer
+        {
+            get { return customer; }
+            set { customer = value; NotifyOfPropertyChange(() => Customer); }
         }
 
         private ObservableCollection<Foods> foods;
@@ -416,7 +447,7 @@ namespace CoffeePos.ViewModels
             FoodsMenu = GetFoodByType(SelectedTypeFood);
             NotifyOfPropertyChange(() => FoodsMenu);
         }
-        public void SearchChange(string search)
+        public void SearchFoodChange(string search)
         {
             if (search == string.Empty)
             {
@@ -438,6 +469,26 @@ namespace CoffeePos.ViewModels
 
         }
 
+        public void SearchCustomerChange(string search)
+        {
+            //if (search == string.Empty)
+            //{
+            //    FoodsMenu = GetFoods();
+            //}
+            //else
+            //{
+                foreach (var customer in Customer)
+                {
+                    if (search == customer.Phone)
+                    {
+                        
+                        return;
+                    }
+                }
+            //}
+
+
+        }
 
         public void btListOrder_Click()
         {
@@ -572,7 +623,7 @@ namespace CoffeePos.ViewModels
 
         public void btChooseVoucher_Click()
         {
-            //ListVouchersViewModel listVouchersViewModel = new ListVouchersViewModel();
+            ListVouchersViewModel.GetInstance().GetEnableVoucher();
             //listVouchersViewModel.eventChooseVoucher = HandleCallBackChooseVoucher;
             GlobalDef.IsChooseVoucerToOrder = true;
             //WindowManager windowManager = new WindowManager();

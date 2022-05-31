@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:CoffeePos.Views"
         xmlns:cal="http://www.caliburnproject.org"
         xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
+        xmlns:Control="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="PaymentView" Height="790" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
@@ -86,7 +87,7 @@
                                Margin="0 0" VerticalAlignment="Center"
                                HorizontalAlignment="Left"/>
                     <TextBlock Text="{Binding TotalPayment}" Foreground="Green" FontSize="25" FontWeight="DemiBold" 
-                               Margin="0"
+                               Margin="0" x:Name="TxtTotalPayment"
                                HorizontalAlignment="Right"/>
                 </Grid>
                 <StackPanel Orientation="Vertical" Grid.Row="4" Background="#FFEEEEEE" >
@@ -100,7 +101,7 @@
                     <Grid Height="49">
                         <TextBlock Text="Tiền trả khách" Foreground="Black" FontSize="15" VerticalAlignment="Center" FontWeight="DemiBold"
                                Margin="20 0"></TextBlock>
-                        <TextBlock Text="{Binding RefundMoney}" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
+                        <TextBlock Text="{Binding RefundMoney}" x:Name="TxtRefundMoney" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
                                Margin="20 0" FontWeight="DemiBold"></TextBlock>
                     </Grid>
                 </StackPanel>
@@ -113,11 +114,14 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <TextBlock Text="Chi tiết hóa đơn" Foreground="Black" FontSize="15" VerticalAlignment="Center" Margin="20 0" FontWeight="DemiBold"/>
                 </Grid>
-                <Line Grid.Row="2" X1="10" Y1="0" X2="300" Y2="0" Stroke="#FFC8C2C2" StrokeThickness="1"  Margin="50"/>
+                <Line Grid.Row="2" X1="10" Y1="0" X2="300" Y2="0" Stroke="#FFC8C2C2" StrokeThickness="1"  Margin="50 30"/>
+                <Line Grid.Row="4" X1="10" Y1="0" X2="300" Y2="0" Stroke="#FFC8C2C2" StrokeThickness="1"  Margin="50 30"/>
                 <ScrollViewer Grid.Row="1" HorizontalAlignment="Center" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
                     <StackPanel>
                         <ItemsControl x:Name="ListViewFoodOrder" Margin="0 0 0 0"
@@ -173,14 +177,33 @@
                 <Grid Grid.Row="3" Margin="10 0">
                     <TextBlock Text="Mã giảm giá" Foreground="Black" FontSize="15" VerticalAlignment="Center" Margin="20 0" FontWeight="DemiBold"/>
                     <Button Content="Chọn mã" FontSize="15" Foreground="DarkSlateGray" FontWeight="DemiBold" Visibility="{Binding VisibleCanEdit}"
-                            cal:Message.Attach="[Event Click] = [Action btListVoucher_Click()]"
-                            Height="30" Margin="-5,-5,-10,0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top"></Button>
+                            cal:Message.Attach="[Event Click] = [Action btListVoucher_Click()]" Click="btnChooseVoucher"
+                            Height="30" Margin="-5,-5,-10,0" Width="100" Background="Orange" BorderBrush="{x:Null}" VerticalAlignment="Top"></Button>
                     <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding DiscountOrder, Mode=TwoWay, IsAsync=true}"
                                VerticalAlignment="Center" FontSize="15"   Margin="15 0"></TextBlock>
                     <TextBlock Foreground="Black" HorizontalAlignment="Right" FontSize="15" VerticalAlignment="Center" Text="%"></TextBlock>
                 </Grid>
-                <Grid Grid.Row="4">
-                    
+                <Grid Grid.Row="5" Margin="10">
+                    <TextBlock Text="Mã khách hàng" Foreground="Black" FontSize="15" VerticalAlignment="Center" Margin="20 0" FontWeight="DemiBold"/>
+                    <Control:AutoCompleteBox Grid.Row="1" materialDesign:HintAssist.Hint="Search" BorderBrush="Black"
+                                             x:Name="CustomerNameCb" Width="100" Height="20" VerticalAlignment="Center"
+                                             Margin="0 5 0 0" ItemsSource="{Binding SearchCustomer}" HorizontalAlignment="Center"
+                                             FilterMode="Contains"></Control:AutoCompleteBox>
+                    <Button Grid.Row="1" Height="23" Width="50" VerticalAlignment="Center" x:Name="btnSearchCustomer"
+                            HorizontalAlignment="center" Margin="180 5 0 0" BorderBrush="{x:Null}"
+                            Click="SearchCustomerClick">
+                        <materialDesign:PackIcon Kind="Search" FontSize="500" Foreground="White"/>
+                    </Button>
+                    <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding PointCustomer, Mode=TwoWay, IsAsync=true}"
+                               VerticalAlignment="Center" FontSize="15"   Margin="40 5"></TextBlock>
+                    <TextBlock Foreground="Orange" HorizontalAlignment="Right" FontSize="15" VerticalAlignment="Center" Text="Điểm"></TextBlock>
+                </Grid>
+                <Grid Grid.Row="6" Margin="10 0">
+                    <materialDesign:PackIcon Kind="ArrowDownCircle" Margin="0 -15 50 0" HorizontalAlignment="Right" FontSize="500" Foreground="Orange"/>
+                    <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding PointTradePercent, Mode=TwoWay, IsAsync=true}"
+                               VerticalAlignment="Center" FontSize="15"   Margin="40 -10"></TextBlock>
+                    <TextBlock Foreground="Orange" HorizontalAlignment="Right" FontSize="15" VerticalAlignment="Center" Text="%" Margin="20 0"></TextBlock>
+                    <TextBlock Foreground="Orange" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center" Text="{Binding CustomerName}" Margin="20 0"></TextBlock>
                 </Grid>
                 
             </Grid>
@@ -192,7 +215,7 @@
             <Button Margin="5" Height="50" Width="200" materialDesign:ButtonAssist.CornerRadius="10" Click="BtnBack_Click"
                     Content="Đóng" Background="Red"></Button>
             <Button Margin="5" Height="50" Width="200" materialDesign:ButtonAssist.CornerRadius="10" Click="PaymentFinalClick"
-                    Content="Thanh Toán" Background="#FF00DC00"
+                    Content="Thanh Toán" Background="#FF00DC00" x:Name="BtnPayment"
                      cal:Message.Attach="[Event Click] = [Action CompletePaymentReceipt()]"></Button>
         </StackPanel>
     </Grid>
