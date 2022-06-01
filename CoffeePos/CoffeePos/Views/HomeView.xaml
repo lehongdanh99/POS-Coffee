@@ -336,8 +336,9 @@
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                            
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0" Margin="10 0">
                             <materialDesign:PackIcon Kind="Food" FontSize="500" Foreground="DarkSlateGray"/>
@@ -371,12 +372,20 @@
                         <TextBlock Foreground="Red" FontSize="20" HorizontalAlignment="Right" Text="{Binding TotalOrder, Mode=TwoWay, IsAsync=true}"></TextBlock>
                     </Grid>
                     <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button Grid.Row="4" Grid.Column="0" FontSize="18" FontWeight="DemiBold" Width="130" Height="50" Margin="0 0 5 0"
-                            Content="{x:Static language:Lang.Home_Table}" Background="#FF079CFF" BorderBrush="{x:Null}" Visibility="{Binding VisibleDelivery}"
+                        <StackPanel Margin="0 5 0 0">
+                            <Button Grid.Row="4" Grid.Column="0" FontSize="15" FontWeight="DemiBold" Width="130" Height="25" Margin="0 0 5 0"
+                            Content="Ghép bàn" Background="#FF079CFF" BorderBrush="{x:Null}" Visibility="{Binding VisibleDelivery}"
                             cal:Message.Attach="[Event Click] = [Action btTableChoose_Click()]">
 
-                        </Button>
-                        <Button Grid.Row="4" FontSize="18" Grid.Column="1" FontWeight="DemiBold" Width="130" Height="50" Margin="0"
+                            </Button>
+                            <Button Grid.Row="4" Grid.Column="1" FontSize="15" FontWeight="DemiBold" Width="130" Height="25" Margin="0 0 5 0"
+                            Content="Chọn bàn" Background="#FF079CFF" BorderBrush="{x:Null}" Visibility="{Binding VisibleDelivery}"
+                            cal:Message.Attach="[Event Click] = [Action btTableChoose_Click()]">
+
+                            </Button>
+                        </StackPanel>
+                        
+                        <Button Grid.Row="4" FontSize="18" Grid.Column="2" FontWeight="DemiBold" Width="120" Height="50" Margin="0"
                              IsEnabled="{Binding EnableOrder}" Background="Red" Visibility="{Binding VisibleDelivery}"
                                 cal:Message.Attach="[Event Click] = [Action btOrderLocally_Click()]"
                                 BorderBrush="{x:Null}">
