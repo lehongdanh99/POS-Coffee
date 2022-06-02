@@ -88,7 +88,7 @@ namespace CoffeePos.ViewModels
             {
                 HomePayment += ListViewFoodOrders[i].FoodOrderPrice;
             }
-            if (tableNum != 0 && foodOrderTotalCount != 0)
+            if (tableNum != "0" && foodOrderTotalCount != 0)
             {
                 EnableOrder = true;
             }
@@ -286,9 +286,9 @@ namespace CoffeePos.ViewModels
 
         public int ReceiptIdtoEdit = 0;
 
-        private int tableNum = 0;
+        private string tableNum = "0";
 
-        public int TableNum
+        public string TableNum
         {
             get { return tableNum; }
             set { 
@@ -582,12 +582,25 @@ namespace CoffeePos.ViewModels
             GlobalDef.windowManager.ShowWindowAsync(TablesViewModel.GetInstance());
 
         }
-        
+
+        public void btMoreTableChoose_Click()
+        {
+            //TablesViewModel tableViewModel = new TablesViewModel(true);
+            ////tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
+            //GlobalDef.IsChooseTableToOrder = true;
+
+            GlobalDef.IsChooseMoreTable = true;
+            //WindowManager windowManager = new WindowManager();
+            GlobalDef.windowManager.ShowWindowAsync(TablesViewModel.GetInstance());
+
+        }
+
         public void btOrderLocally_Click()
         {
+            var numbersTable = TableNum.Split(',').Select(Int32.Parse).ToList();
             Receipt receipt = new Receipt();
             receipt.Foods = FoodOrderModel.GetInstance().FoodOrders.ToList();
-            receipt.Table = TableNum.ToString();
+            receipt.Table = TableNum;
             receipt.Total = TotalOrder;
             receipt.Payment = HomePayment;
             receipt.Discount = DiscountOrder;
@@ -647,11 +660,26 @@ namespace CoffeePos.ViewModels
             //GlobalDef.IsChooseVoucerToOrder = false;
         }
 
-        public void HandleCallBacChooseTable(int TableChoose)
+        public void HandleCallBacChooseTable(string TableChoose)
         {
             tableNum = TableChoose;
             NotifyOfPropertyChange(() => TableNum);
-            if (tableNum != 0)
+            if (tableNum != "0")
+            {
+                EnableOrder = true;
+            }
+            else
+            {
+                EnableOrder = false;
+            }
+            NotifyOfPropertyChange(() => EnableOrder);
+        }
+
+        public void HandleCallBacChooseMoreTable(List<int> TableChoose)
+        {
+            TableNum = string.Join(", ", TableChoose);
+            NotifyOfPropertyChange(() => TableNum);
+            if (TableChoose.Count > 0)
             {
                 EnableOrder = true;
             }

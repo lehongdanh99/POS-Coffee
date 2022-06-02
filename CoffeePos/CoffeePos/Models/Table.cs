@@ -1,4 +1,5 @@
-﻿using CoffeePos.Common;
+﻿using Caliburn.Micro;
+using CoffeePos.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,99 +10,112 @@ using System.Windows.Media;
 
 namespace CoffeePos.Models
 {
-    public class ListTable
+    //public class ListTable
+    //{
+    //    private static ListTable _instance;
+    //    public static ListTable GetInstance()
+    //    {
+    //        if (_instance == null)
+    //        {
+    //            if (_instance == null)
+    //            {
+    //                _instance = new ListTable();
+    //            }
+    //        }
+    //        return _instance;
+    //    }
+    //    private TableModel listTable = CommonMethod.GetInstance().readJsonFileConfig();
+    //    public TableModel ListTables
+    //    {
+    //        get { return listTable; }
+    //        set
+    //        {
+    //            listTable = value;
+    //        }
+    //    }
+    //}
+    //public class TableModel : PropertyChangedBase
+    //{
+    //    private static TableModel _instance;
+    //    public static TableModel GetInstance()
+    //    {
+    //        if (_instance == null)
+    //        {
+    //            if (_instance == null)
+    //            {
+    //                _instance = new TableModel();
+    //            }
+    //        }
+    //        return _instance;
+    //    }
+    //    public Dictionary<int, Table> TableNumber { get; set; }
+        
+    //}
+    public class Table 
     {
-        private static ListTable _instance;
-        public static ListTable GetInstance()
+        public int TableID { get; set; }
+        public bool TableStatus { get; set; }
+        public int TableFloor { get; set; }
+        public int TableSeat { get; set; }
+
+        private SolidColorBrush bgStatusTable;
+        public SolidColorBrush BgStatusTable
         {
-            if (_instance == null)
+            get
             {
-                if (_instance == null)
+                if (TableStatus)
                 {
-                    _instance = new ListTable();
+                    bgStatusTable = new SolidColorBrush(Colors.Red);
                 }
+                else
+                {
+                    bgStatusTable = new SolidColorBrush(Colors.Green);
+                }
+                return bgStatusTable;
             }
-            return _instance;
-        }
-        private TableModel listTable = CommonMethod.GetInstance().readJsonFileConfig();
-        public TableModel ListTables
-        {
-            get { return listTable; }
             set
             {
-                listTable = value;
+                bgStatusTable = value;
             }
         }
-    }
-    public class TableModel
-    {
-        private static TableModel _instance;
-        public static TableModel GetInstance()
+        private Visibility visibleChoose;
+        public Visibility VisibleChoose
         {
-            if (_instance == null)
+            get
             {
-                if (_instance == null)
-                {
-                    _instance = new TableModel();
-                }
+                if (TableStatus)
+                    visibleChoose = Visibility.Visible;
+                else
+                    visibleChoose = Visibility.Collapsed;
+                return visibleChoose;
             }
-            return _instance;
+            set
+            {
+                visibleChoose = value;
+            }
         }
-        public Dictionary<int, Table> TableNumber { get; set; }
-        public class Table
+
+        private Visibility isCheckChoose = Visibility.Collapsed;
+        public Visibility IsCheckChoose
         {
-            public int TableID  { get; set; }
-            public bool TableStatus { get; set; }
-            public int TableFloor { get; set; }
-            public int TableSeat { get; set; }
-
-            private SolidColorBrush defaulColor = new SolidColorBrush(Colors.Green);
-
-            private SolidColorBrush bgStatusTable;
-            public SolidColorBrush BgStatusTable
+            get
             {
-                get
-                {
-                    if (TableStatus)
-                    {
-                        bgStatusTable = new SolidColorBrush(Colors.Red);
-                    }
-                    else
-                    {
-                        bgStatusTable = new SolidColorBrush(Colors.Green);
-                    }
-                    return bgStatusTable;
-                }
-                set
-                {
-                    bgStatusTable = value;
-                }
+                return isCheckChoose;
             }
-            private Visibility visibleChoose;
-            public Visibility VisibleChoose
+            set
             {
-                get 
-                { 
-                    if(TableStatus)
-                        visibleChoose = Visibility.Visible;
-                    else
-                        visibleChoose = Visibility.Collapsed;
-                    return visibleChoose; 
-                }
-                set
-                {
-                    visibleChoose = value;
-                }
+                isCheckChoose = value;
             }
-            public Table(bool status, int floor, int seat, SolidColorBrush bgStatusTable = default)
-            {
-                TableStatus = status;
-                TableFloor = floor;
-                TableSeat = seat;
-                BgStatusTable = bgStatusTable;
-            }
-
         }
+
+        public Table(bool status, int floor, int seat, SolidColorBrush bgStatusTable = default)
+        {
+            TableStatus = status;
+            TableFloor = floor;
+            TableSeat = seat;
+            BgStatusTable = bgStatusTable;
+        }
+
     }
 
 }

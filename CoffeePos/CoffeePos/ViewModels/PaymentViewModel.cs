@@ -237,11 +237,11 @@ namespace CoffeePos.ViewModels
                 
                 for(int j = 0; j < numbersTable.Count; j++)
                 {
-                    //if(ListTable.GetInstance().ListTables.TableNumber[i].TableID == numbersTable[j])
-                    //{
-                    //    ListTable.GetInstance().ListTables.TableNumber[i].TableStatus = false;
-                    //}
-                    ListTable.GetInstance().ListTables.TableNumber[numbersTable[j]].TableStatus = false;
+                //if(ListTable.GetInstance().ListTables.TableNumber[i].TableID == numbersTable[j])
+                //{
+                //    ListTable.GetInstance().ListTables.TableNumber[i].TableStatus = false;
+                //}
+                TablesViewModel.GetInstance().TablesAllList[numbersTable[j]].TableStatus = false;
                 }    
             //}    
             //ListTable.GetInstance().ListTables.TableNumber[receiptPayment.Table].TableStatus = false;

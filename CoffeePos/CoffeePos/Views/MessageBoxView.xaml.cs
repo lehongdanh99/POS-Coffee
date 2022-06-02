@@ -49,7 +49,7 @@ namespace CoffeePos.Views
                 TablesViewModel.GetInstance().TryCloseAsync();
 
                 TableDetailViewModel.GetInstance().TryCloseAsync();
-                ListTable.GetInstance().ListTables.TableNumber[Int32.Parse(GlobalDef.ReceiptDetail.Table)].TableStatus = false;
+                TablesViewModel.GetInstance().TablesAllList[Int32.Parse(GlobalDef.ReceiptDetail.Table)].TableStatus = false;
             }    
             
         }

@@ -40,7 +40,7 @@ namespace CoffeePos.ViewModels
         {
             //GlobalDef.ReceiptDetail = receipt;
             ListFoodOrder = GlobalDef.ReceiptDetail.Foods;
-            TableNumOrder = Int32.Parse(GlobalDef.ReceiptDetail.Table); ;
+            TableNumOrder = GlobalDef.ReceiptDetail.Table;
             PaymentOrder = GlobalDef.ReceiptDetail.Payment;
             TotalOrder = GlobalDef.ReceiptDetail.Total;
             DiscountOrder = GlobalDef.ReceiptDetail.Discount;
@@ -119,9 +119,9 @@ namespace CoffeePos.ViewModels
             set { listfoodOrder = value; NotifyOfPropertyChange(() => ListFoodOrder); }
         }
 
-        private int tableNumOrder;
+        private string tableNumOrder;
 
-        public int TableNumOrder
+        public string TableNumOrder
         {
             get { return tableNumOrder; }
             set
@@ -186,11 +186,11 @@ namespace CoffeePos.ViewModels
         //    //WindowManager windowManager = new WindowManager();
         //    //windowManager.ShowWindowAsync(tableViewModel);
         //}
-        public void HandleCallBacChooseTable(int TableChoose)
-        {
-            TableNumOrder = TableChoose;
-            NotifyOfPropertyChange(() => TableNumOrder);
-        }
+        //public void HandleCallBacChooseTable(int TableChoose)
+        //{
+        //    TableNumOrder = TableChoose;
+        //    NotifyOfPropertyChange(() => TableNumOrder);
+        //}
 
         public void BtnServedFood()
         {
@@ -344,14 +344,18 @@ namespace CoffeePos.ViewModels
             {
                 if(receipt.Id == GlobalDef.ReceiptDetail.Id && GlobalDef.ReceiptDetail.Id != 0)
                 {
-                    ListTable.GetInstance().ListTables.TableNumber[Int32.Parse(receipt.Table)].TableStatus = false;
-                    ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
-                    
+                    TablesViewModel.GetInstance().TablesAllList[Int32.Parse(receipt.Table)].TableStatus = false;
+                    foreach (var table in TableNumOrder.Split(',').Select(Int32.Parse).ToList())
+                    {
+                        TablesViewModel.GetInstance().TablesAllList[table].TableStatus = true;
+                    }
+
+
                     ReceiptModel.GetInstance().ListReceipt[receipt.Id -1] = ReceiptTest;
                     this.TryCloseAsync();
                     HomeViewModel.GetInstance().ReceiptIdtoEdit = 0;
                     //FoodOrderModel.GetInstance().FoodOrders.Clear();
-                    HomeViewModel.GetInstance().TableNum = 0;
+                    HomeViewModel.GetInstance().TableNum = "0";
                     HomeViewModel.GetInstance().GetFoodOrderTotal();
                     HomeViewModel.GetInstance().ListViewFoodOrders.Clear();
                     HomeViewModel.GetInstance().GetFoodOrderTotal();
@@ -369,7 +373,11 @@ namespace CoffeePos.ViewModels
                     return;
                 }    
             }    
-            ListTable.GetInstance().ListTables.TableNumber[TableNumOrder].TableStatus = true;
+            foreach(var table in TableNumOrder.Split(',').Select(Int32.Parse).ToList())
+            {
+                TablesViewModel.GetInstance().TablesAllList[table].TableStatus = true;
+            }    
+            
             //ListOrderViewModel.GetInstance().AddListReceipt(Receipt);
             //ReceiptTest.Id = ReceiptModel.GetInstance().ListReceipt.Count();
             ReceiptModel.GetInstance().ListReceipt.Add(ReceiptTest);
@@ -383,7 +391,7 @@ namespace CoffeePos.ViewModels
             }
             HomeViewModel.GetInstance().ReceiptIdtoEdit = 0;
             //FoodOrderModel.GetInstance().FoodOrders.Clear();
-            HomeViewModel.GetInstance().TableNum = 0;
+            HomeViewModel.GetInstance().TableNum = "0";
             HomeViewModel.GetInstance().ListViewFoodOrders.Clear();
             HomeViewModel.GetInstance().GetFoodOrderTotal();
             this.TryCloseAsync();

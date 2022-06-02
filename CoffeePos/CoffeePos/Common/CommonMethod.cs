@@ -13,8 +13,7 @@ namespace CoffeePos.Common
     public class CommonMethod
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        private static CommonMethod _instance;
-        private TableModel model = new TableModel();       
+        private static CommonMethod _instance;     
         private List<Foods> foodModel;
         public static CommonMethod GetInstance()
         {
@@ -39,14 +38,14 @@ namespace CoffeePos.Common
             log.Info($"Read file Table config to Table model {json.ToString()} ");
             return foodModel;
         }
-
-        public TableModel readJsonFileConfig()
+        private List<Table> model;
+        public List<Table> readTableJsonFileConfig()
         {
             string json = String.Empty;
             using (StreamReader r = new StreamReader(GlobalDef.JSON_CONFIG_PATH))
             {
                 json = r.ReadToEnd();
-                model = JsonConvert.DeserializeObject<TableModel>(json);
+                model = JsonConvert.DeserializeObject<List<Table>>(json);
             }
             log.Info($"Read file Table config to Table model {json.ToString()} ");
             return model;

@@ -57,6 +57,11 @@
                             <TextBlock HorizontalAlignment="Center" Text="{x:Static language:Lang.Tables_Full}" Foreground="Red"></TextBlock>
                         </StackPanel>
                     </StackPanel>
+                    <Button Width="100" Content="Xác nhận" materialDesign:ButtonAssist.CornerRadius="10" 
+                            Visibility="{Binding ConfirmChooseMoreBtn}"
+                            Click="ConfirmChooseMoreBtn_Click">
+                        
+                    </Button>
                 </StackPanel>
                 
             </Grid>
@@ -96,6 +101,7 @@
                                                 <TextBlock FontWeight="Bold" FontSize="30" Text="1" Foreground="{Binding BgStatusTable}"></TextBlock>
                                                 <materialDesign:PackIcon Kind="ChairAccentOutline" Foreground="{Binding BgStatusTable}" Width="40" Height="40" HorizontalAlignment="Right" Margin="5"/>
                                             </StackPanel>
+                                            <materialDesign:PackIcon Visibility="{Binding IsCheckChoose}" Grid.Row="2" Kind="Check" Foreground="Green" Width="40" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5"/>
                                             <!--<StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                                             <TextBlock FontWeight="Bold" FontSize="25" Text="1"></TextBlock>
                                         </StackPanel>-->

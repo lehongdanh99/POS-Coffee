@@ -9,9 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using static CoffeePos.Models.ListTable;
 using static CoffeePos.Models.ReceiptModel;
-using static CoffeePos.Models.TableModel;
 
 namespace CoffeePos.ViewModels
 {
@@ -35,10 +33,16 @@ namespace CoffeePos.ViewModels
         //TableModel tablemodel = new TableModel();
 
         public TablesViewModel()
-        { 
-
-            //isChoose = isChooseTable;
+        {
             TablesAllList = GetAllTableList();
+            getData();
+
+
+        }
+
+        public void getData()
+        {
+            
             GetStatusAllTableList();
             ListFloor = GetListFloor();
             TablesList = GetTableList(listFloorSelected, TablesAllList);
@@ -96,7 +100,25 @@ namespace CoffeePos.ViewModels
             }
         }
 
-        
+        private Visibility confirmChooseMoreBtn;
+        public Visibility ConfirmChooseMoreBtn
+        {
+            get 
+            { 
+                if(GlobalDef.IsChooseMoreTable)
+                {
+                    return Visibility.Visible;
+                }    
+                else
+                {
+                    return Visibility.Collapsed;
+                }    
+                
+            }
+            set { confirmChooseMoreBtn = value;
+                NotifyOfPropertyChange(() => ConfirmChooseMoreBtn);
+            }
+        }
 
         private int busycount;
         public int BusyCount
@@ -169,6 +191,11 @@ namespace CoffeePos.ViewModels
                 //GetStatusAllTableList(TablesList);
                 this.TryCloseAsync();
             }
+            else if (GlobalDef.IsChooseMoreTable && !SelectedListTable.TableStatus)
+            {
+                int tableIdChoose = SelectedListTable.TableID;
+                eventChooseTableToOrder?.Invoke(tableIdChoose);
+            }
             //NotifyOfPropertyChange(() => SelectedListTable.BgStatusTable);
         }
 
@@ -182,10 +209,10 @@ namespace CoffeePos.ViewModels
         private ObservableCollection<Table> GetAllTableList()
         {
             ObservableCollection<Table> tables = new ObservableCollection<Table>();
-            foreach (var item in ListTable.GetInstance().ListTables.TableNumber)
+            foreach (Table table in CommonMethod.GetInstance().readTableJsonFileConfig())
             {
-                tables.Add(item.Value);
-            }           
+                tables.Add(table);
+            }
             return tables;            
         }
 

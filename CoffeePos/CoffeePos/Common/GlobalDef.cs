@@ -20,6 +20,7 @@ namespace CoffeePos.Common
 
         public static string END_POINT = "";
 
+        public static bool IsChooseMoreTable = false;
         public static bool IsChooseTableToOrder = false;
         public static bool IsChooseVoucerToOrder = false;
         public static bool IsChooseVoucerToPayment = false;
