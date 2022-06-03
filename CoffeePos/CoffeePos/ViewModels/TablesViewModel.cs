@@ -164,19 +164,23 @@ namespace CoffeePos.ViewModels
             {
                 foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
                 {
-                    if(receipt.Table == SelectedListTable.TableID.ToString())
+                    foreach(var table in receipt.Table.Split(',').Select(Int32.Parse).ToList())
                     {
-                        GlobalDef.ReceiptDetail = receipt;
-                        GlobalDef.canEditDetail = true;
-                        //TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
-                        //WindowManager windowManager = new WindowManager();
-                        GlobalDef.DetailFromHome = Visibility.Visible;
-                        TableDetailViewModel.GetInstance().getdataTableDetail();
-                        //tableDetailViewModel.eventSwitchTableCallBack += HandleSwitchTableCallBack;
-                        GlobalDef.windowManager.ShowWindowAsync(TableDetailViewModel.GetInstance());
-                        //this.TryCloseAsync();
-                        break;
-                    }
+                        if (table == SelectedListTable.TableID)
+                        {
+                            GlobalDef.ReceiptDetail = receipt;
+                            GlobalDef.canEditDetail = true;
+                            //TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
+                            //WindowManager windowManager = new WindowManager();
+                            GlobalDef.DetailFromHome = Visibility.Visible;
+                            TableDetailViewModel.GetInstance().getdataTableDetail();
+                            //tableDetailViewModel.eventSwitchTableCallBack += HandleSwitchTableCallBack;
+                            GlobalDef.windowManager.ShowDialogAsync(TableDetailViewModel.GetInstance());
+                            //this.TryCloseAsync();
+                            break;
+                        }
+                    }    
+                    
                 }    
                 
                 //orderDetailViewModel.eventChange += HandleCallBack;
@@ -285,7 +289,7 @@ namespace CoffeePos.ViewModels
             GlobalDef.DetailFromHome = Visibility.Visible;
             //WindowManager windowManager = new WindowManager();
             TableDetailViewModel.GetInstance().getdataTableDetail();
-            GlobalDef.windowManager.ShowWindowAsync(TableDetailViewModel.GetInstance());
+            GlobalDef.windowManager.ShowDialogAsync(TableDetailViewModel.GetInstance());
         }
 
         public void btBack_Click()
@@ -298,7 +302,7 @@ namespace CoffeePos.ViewModels
 
             }
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(HomeViewModel.GetInstance());
+            GlobalDef.windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
         }
 
     }

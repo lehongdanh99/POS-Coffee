@@ -25,6 +25,7 @@ namespace CoffeePos.Views
         public PaymentView()
         {
             InitializeComponent();
+            BtnPayment.IsEnabled = false;
         }
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -34,6 +35,10 @@ namespace CoffeePos.Views
         private void MoneySuggest_Click(object sender, RoutedEventArgs e)
         {
             MoneySuggest obj = ((FrameworkElement)sender).DataContext as MoneySuggest;
+
+            int i = 0;
+            TxtMoneyoutput.Text = obj.Value.ToString();
+            TxtMoneyInput.Text = obj.Value.ToString();
         }
         private void PaymentCashClick(object sender, RoutedEventArgs e)
         {

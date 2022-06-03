@@ -55,9 +55,9 @@
                 </TextBlock>
                 <TextBlock Text="{Binding TableNumOrder}" HorizontalAlignment="Center" Margin="0 5 0 0"
                         FontWeight="Bold"></TextBlock>
-                <Button Content="Ghép bàn" FontSize="10" Foreground="DarkSlateGray" FontWeight="DemiBold" Visibility="{Binding VisibleCanEdit}"
+                <!--<Button Content="Sửa bàn" FontSize="10" Foreground="DarkSlateGray" FontWeight="DemiBold" Visibility="{Binding VisibleCanEdit}"
                         
-                        Height="20" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}"></Button>
+                        Height="20" Margin="5" Background="Orange" BorderBrush="{x:Null}"></Button>-->
             </StackPanel>
             <Line Grid.Column="1"
             X1="0" Y1="0" X2="0" Y2="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="-1" Stroke="#FFC8C2C2" StrokeThickness="2"/>

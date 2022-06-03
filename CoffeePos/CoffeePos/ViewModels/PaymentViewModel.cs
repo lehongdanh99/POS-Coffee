@@ -149,7 +149,7 @@ namespace CoffeePos.ViewModels
         public void HandleCallBackChooseVoucher(Voucher selectedVoucher)
         {
             DiscountOrder = selectedVoucher.Percent;
-            TotalPayment = TotalPayment - (TotalPayment * DiscountOrder / 100);
+            TotalPayment = receiptPayment.Total - (receiptPayment.Total * DiscountOrder / 100) - (receiptPayment.Total * PointTradePercent / 100);
             RefundMoney = CustomerPay - TotalPayment;
             GlobalDef.IsChooseVoucerToPayment = false;
         }
@@ -171,7 +171,7 @@ namespace CoffeePos.ViewModels
             ListVouchersViewModel.GetInstance().GetEnableVoucher();
             GlobalDef.IsChooseVoucerToPayment = true;
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(ListVouchersViewModel.GetInstance());
+            GlobalDef.windowManager.ShowDialogAsync(ListVouchersViewModel.GetInstance());
         }
 
         public void SearchCustomerChange(string search)
@@ -186,7 +186,7 @@ namespace CoffeePos.ViewModels
                     break;
                 }
             }
-            TotalPayment = TotalPayment - (TotalPayment * PointTradePercent/100);
+            TotalPayment = receiptPayment.Total - (receiptPayment.Total * PointTradePercent/100) - (receiptPayment.Total * DiscountOrder / 100);
             RefundMoney = CustomerPay - TotalPayment;
         }
 
@@ -226,29 +226,37 @@ namespace CoffeePos.ViewModels
         {
 
             ObservableCollection<Receipt> receipts = ReceiptModel.GetInstance().ListReceipt;
-            if(receipts.Count == 0)
+            if(receipts.Count == 0 && !GlobalDef.IsDeliveryPayment)
             {
                 return;
             }    
-            ReceiptModel.GetInstance().ListReceipt.RemoveAt(receiptPayment.Id);
-            var numbersTable = receiptPayment.Table.Split(',').Select(Int32.Parse).ToList();
-            //for (int i = 0 ; i < ListTable.GetInstance().ListTables.TableNumber.Count; i++)
-            //{
-                
-                for(int j = 0; j < numbersTable.Count; j++)
-                {
-                //if(ListTable.GetInstance().ListTables.TableNumber[i].TableID == numbersTable[j])
+            else if(!GlobalDef.IsDeliveryPayment)
+            {
+                ReceiptModel.GetInstance().ListReceipt.RemoveAt(receiptPayment.Id);
+                var numbersTable = receiptPayment.Table.Split(',').Select(Int32.Parse).ToList();
+                //for (int i = 0 ; i < ListTable.GetInstance().ListTables.TableNumber.Count; i++)
                 //{
-                //    ListTable.GetInstance().ListTables.TableNumber[i].TableStatus = false;
-                //}
-                TablesViewModel.GetInstance().TablesAllList[numbersTable[j]].TableStatus = false;
-                }    
+                if (numbersTable.Count != 0)
+                {
+                    foreach (var table in numbersTable)
+                    {
+                        //if(ListTable.GetInstance().ListTables.TableNumber[i].TableID == numbersTable[j])
+                        //{
+                        //    ListTable.GetInstance().ListTables.TableNumber[i].TableStatus = false;
+                        //}
+                        TablesViewModel.GetInstance().TablesAllList[table - 1].TableStatus = false;
+                    }
+                }
+
+            }
+            
+                   
             //}    
             //ListTable.GetInstance().ListTables.TableNumber[receiptPayment.Table].TableStatus = false;
             ReceiptModel.GetInstance().ListReceiptDone.Add(receiptPayment);
             MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
+            GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
         }
     }
 }

@@ -61,7 +61,7 @@ namespace CoffeePos.Views
             TableDetailViewModel.GetInstance().TryCloseAsync(true);
             MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Hủy đơn thành công");
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
+            GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
         }
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {

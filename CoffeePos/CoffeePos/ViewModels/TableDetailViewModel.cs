@@ -184,7 +184,7 @@ namespace CoffeePos.ViewModels
             
         //    TablesViewModel.GetInstance().eventChooseTableToOrder += HandleCallBacChooseTable;
         //    //WindowManager windowManager = new WindowManager();
-        //    //windowManager.ShowWindowAsync(tableViewModel);
+        //    //windowManager.ShowDialogAsync(tableViewModel);
         //}
         //public void HandleCallBacChooseTable(int TableChoose)
         //{
@@ -232,7 +232,7 @@ namespace CoffeePos.ViewModels
                 {
                     messageBoxViewModel = new MessageBoxViewModel("Không thể hủy đơn");
                     //WindowManager windowManager = new WindowManager();
-                    GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
+                    GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
                     return;
                 }
 
@@ -240,7 +240,7 @@ namespace CoffeePos.ViewModels
             
                 messageBoxViewModel = new MessageBoxViewModel("Xác nhận hủy đơn");
                 //WindowManager windowManager = new WindowManager();
-                GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
+                GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
                 return;
             
 
@@ -257,11 +257,24 @@ namespace CoffeePos.ViewModels
             {
                 FoodOrderModel.GetInstance().FoodOrders.Add(food);
             }
+            List<int> listTable = TableNumOrder.Split(',').Select(Int32.Parse).ToList();
+            if(listTable.Count > 1)
+            {
+                foreach (var table in listTable)
+                {
+                    TablesViewModel.GetInstance().TablesAllList[table - 1].TableStatus = false;
+                    TablesViewModel.GetInstance().TablesAllList[table - 1].IsCheckChoose = Visibility.Visible;
+                }
+            }
+            else
+            {
+                TablesViewModel.GetInstance().TablesAllList[listTable[0]].TableStatus = false;
+            }
             HomeViewModel.GetInstance().TableNum = TableNumOrder;
             HomeViewModel.GetInstance().ReceiptIdtoEdit = GlobalDef.ReceiptDetail.Id;
             HomeViewModel.GetInstance().DiscountOrder = DiscountOrder;
             HomeViewModel.GetInstance().getDataHome();
-            //GlobalDef.windowManager.ShowWindowAsync(HomeViewModel.GetInstance());
+            //GlobalDef.windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
         }
 
         public void checkServed()
@@ -347,7 +360,8 @@ namespace CoffeePos.ViewModels
                     TablesViewModel.GetInstance().TablesAllList[Int32.Parse(receipt.Table)].TableStatus = false;
                     foreach (var table in TableNumOrder.Split(',').Select(Int32.Parse).ToList())
                     {
-                        TablesViewModel.GetInstance().TablesAllList[table].TableStatus = true;
+                        TablesViewModel.GetInstance().TablesAllList[table - 1].TableStatus = true;
+                        TablesViewModel.GetInstance().TablesAllList[table - 1].IsCheckChoose = Visibility.Collapsed;
                     }
 
 
@@ -359,7 +373,7 @@ namespace CoffeePos.ViewModels
                     HomeViewModel.GetInstance().GetFoodOrderTotal();
                     HomeViewModel.GetInstance().ListViewFoodOrders.Clear();
                     HomeViewModel.GetInstance().GetFoodOrderTotal();
-                    //windowManager.ShowWindowAsync(TablesViewModel.GetInstance());
+                    //windowManager.ShowDialogAsync(TablesViewModel.GetInstance());
                     return;
                 }
                     
@@ -375,9 +389,11 @@ namespace CoffeePos.ViewModels
             }    
             foreach(var table in TableNumOrder.Split(',').Select(Int32.Parse).ToList())
             {
-                TablesViewModel.GetInstance().TablesAllList[table].TableStatus = true;
-            }    
-            
+                TablesViewModel.GetInstance().TablesAllList[table -1].TableStatus = true;
+                TablesViewModel.GetInstance().TablesAllList[table - 1].IsCheckChoose = Visibility.Collapsed;
+
+            }
+
             //ListOrderViewModel.GetInstance().AddListReceipt(Receipt);
             //ReceiptTest.Id = ReceiptModel.GetInstance().ListReceipt.Count();
             ReceiptModel.GetInstance().ListReceipt.Add(ReceiptTest);
@@ -392,6 +408,7 @@ namespace CoffeePos.ViewModels
             HomeViewModel.GetInstance().ReceiptIdtoEdit = 0;
             //FoodOrderModel.GetInstance().FoodOrders.Clear();
             HomeViewModel.GetInstance().TableNum = "0";
+            HomeViewModel.GetInstance().DiscountOrder = 0;
             HomeViewModel.GetInstance().ListViewFoodOrders.Clear();
             HomeViewModel.GetInstance().GetFoodOrderTotal();
             this.TryCloseAsync();

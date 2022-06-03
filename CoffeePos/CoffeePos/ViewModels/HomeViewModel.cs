@@ -498,7 +498,7 @@ namespace CoffeePos.ViewModels
                 //ListOrderViewModel listOrderViewModel = new ListOrderViewModel();
             
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(ListOrderViewModel.GetInstance());
+            GlobalDef.windowManager.ShowDialogAsync(ListOrderViewModel.GetInstance());
             ListOrderViewModel.GetInstance().getDataListOrder();
         }
 
@@ -512,7 +512,7 @@ namespace CoffeePos.ViewModels
             orderDetailViewModel.eventChange += HandleCallBack;
 
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(orderDetailViewModel);
+            GlobalDef.windowManager.ShowDialogAsync(orderDetailViewModel);
 
 
         }
@@ -538,7 +538,7 @@ namespace CoffeePos.ViewModels
             orderDetailViewModel.eventCustomChange += HandleCallBackCustom;
 
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(orderDetailViewModel);
+            GlobalDef.windowManager.ShowDialogAsync(orderDetailViewModel);
         }
 
         public void DeleteFoodListOrder(FoodOrder foodorder)
@@ -568,8 +568,9 @@ namespace CoffeePos.ViewModels
             //this.TryCloseAsync();
             //TablesViewModel tableViewModel = new TablesViewModel(false);
             GlobalDef.IsChooseTableToOrder = false;
+            TablesViewModel.GetInstance().getData();
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(TablesViewModel.GetInstance());
+            GlobalDef.windowManager.ShowDialogAsync(TablesViewModel.GetInstance());
 
         }
 
@@ -579,7 +580,7 @@ namespace CoffeePos.ViewModels
             //tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
             GlobalDef.IsChooseTableToOrder = true;
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(TablesViewModel.GetInstance());
+            GlobalDef.windowManager.ShowDialogAsync(TablesViewModel.GetInstance());
 
         }
 
@@ -591,7 +592,7 @@ namespace CoffeePos.ViewModels
 
             GlobalDef.IsChooseMoreTable = true;
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(TablesViewModel.GetInstance());
+            GlobalDef.windowManager.ShowDialogAsync(TablesViewModel.GetInstance());
 
         }
 
@@ -615,12 +616,26 @@ namespace CoffeePos.ViewModels
             //tableDetailViewModel.eventChange += HandleCallBack;
             GlobalDef.DetailFromHome = Visibility.Collapsed;
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(TableDetailViewModel.GetInstance());
+            GlobalDef.windowManager.ShowDialogAsync(TableDetailViewModel.GetInstance());
         }
 
         public void btOrderDelivery_Click()
         {
-
+            Receipt receipt = new Receipt();
+            receipt.Foods = FoodOrderModel.GetInstance().FoodOrders.ToList();
+            receipt.Total = TotalOrder;
+            receipt.Discount = DiscountOrder;
+            receipt.Payment = HomePayment;
+            receipt.CheckOut = DateTime.Now.ToString("HH:mm");
+            receipt.Note = string.Empty;
+            GlobalDef.IsDeliveryPayment = true;
+            GlobalDef.ReceiptPayment = receipt;
+            ListOrderViewModel.GetInstance().PaymentReceipt(receipt);
+            //FoodOrderModel.GetInstance().FoodOrders.Clear();
+            TableNum = "0";
+            ListViewFoodOrders.Clear();
+            GetFoodOrderTotal();
+            DiscountOrder = 0;
         }
 
         public void btListVoucher_Click()
@@ -630,7 +645,7 @@ namespace CoffeePos.ViewModels
             //listVouchersViewModel.eventChooseVoucher = HandleCallBackChooseVoucher;
             GlobalDef.IsChooseVoucerToOrder = false;
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(ListVouchersViewModel.GetInstance());
+            GlobalDef.windowManager.ShowDialogAsync(ListVouchersViewModel.GetInstance());
             
         }
 
@@ -640,7 +655,7 @@ namespace CoffeePos.ViewModels
             //listVouchersViewModel.eventChooseVoucher = HandleCallBackChooseVoucher;
             GlobalDef.IsChooseVoucerToOrder = true;
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowWindowAsync(ListVouchersViewModel.GetInstance());
+            GlobalDef.windowManager.ShowDialogAsync(ListVouchersViewModel.GetInstance());
         }
 
         public void HandleCallBackChooseVoucher(Voucher selectedVoucher)

@@ -38,21 +38,25 @@ namespace CoffeePos.Views
             Table obj = ((FrameworkElement)sender).DataContext as Table;
             for (int i = 0; i < ReceiptModel.GetInstance().ListReceipt.Count; i++)
             {
-                if(ReceiptModel.GetInstance().ListReceipt[i].Table == obj.TableID.ToString())
+                foreach (var table in ReceiptModel.GetInstance().ListReceipt[i].Table.Split(',').Select(Int32.Parse).ToList())
                 {
-                    foreach(var food in ReceiptModel.GetInstance().ListReceipt[i].Foods)
+                    if (table == obj.TableID)
                     {
-                        if(!food.ServedFood)
+                        foreach (var food in ReceiptModel.GetInstance().ListReceipt[i].Foods)
                         {
-                            MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Chưa hoàn thành đơn");
-                            //WindowManager windowManager = new WindowManager();
-                            GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
-                            return;
+                            if (!food.ServedFood)
+                            {
+                                MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Chưa hoàn thành đơn");
+                                //WindowManager windowManager = new WindowManager();
+                                GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
+                                return;
+                            }
                         }
+                        ListOrderViewModel.GetInstance().PaymentReceipt(ReceiptModel.GetInstance().ListReceipt[i]);
+                        break;
                     }
-                    ListOrderViewModel.GetInstance().PaymentReceipt(ReceiptModel.GetInstance().ListReceipt[i]);
-                    break;
-                }
+                }    
+                
             }    
         }
 
@@ -63,12 +67,21 @@ namespace CoffeePos.Views
             {
                 HomeViewModel.GetInstance().HandleCallBacChooseTable(obj.TableID.ToString());
                 this.Hide();
+                return;
+            }
+            else if (GlobalDef.IsChooseMoreTable && TablesViewModel.GetInstance().TablesAllList[obj.TableID - 1].IsCheckChoose == Visibility.Visible)
+            {
+                TablesViewModel.GetInstance().TablesAllList[obj.TableID - 1].IsCheckChoose = Visibility.Collapsed;
+                TablesViewModel.GetInstance().getData();
+                return;
             }
             else if(GlobalDef.IsChooseMoreTable && !obj.TableStatus)
             {
                 TablesViewModel.GetInstance().TablesAllList[obj.TableID-1].IsCheckChoose = Visibility.Visible;
                 TablesViewModel.GetInstance().getData();
+                return;
             }
+            
         }
 
         private void ConfirmChooseMoreBtn_Click(object sender, RoutedEventArgs e)

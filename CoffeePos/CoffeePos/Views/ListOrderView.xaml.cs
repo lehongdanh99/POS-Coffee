@@ -69,7 +69,7 @@ namespace CoffeePos.Views
                 {
                     MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Chưa hoàn thành đơn");
                     //WindowManager windowManager = new WindowManager();
-                    GlobalDef.windowManager.ShowWindowAsync(messageBoxViewModel);
+                    GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
                     return;
                 }
             }    

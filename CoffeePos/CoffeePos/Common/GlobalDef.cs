@@ -28,6 +28,8 @@ namespace CoffeePos.Common
         public static Receipt ReceiptDetail = new Receipt();
         public static Receipt ReceiptPayment = new Receipt();
         public static Visibility DetailFromHome = Visibility.Collapsed;
+
+        public static bool IsDeliveryPayment = false;
         //public static ObservableCollection<Receipt> ListReceipt = new ObservableCollection<Receipt>();
         //
         public static bool canEditDetail = false;
