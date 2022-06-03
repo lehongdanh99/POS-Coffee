@@ -56,7 +56,7 @@ namespace POS_Coffe.Controllers
                     Session["Phone"] = data.Phone;
                     Session["Username"] = data.Username;
                     Session["Password"] = data.Password;
-                    return RedirectToAction("EmployeeManagement", "Home", data);
+                    return RedirectToAction("Index", "Statistic", data);
                 }
                 catch (Exception ex)
                 {

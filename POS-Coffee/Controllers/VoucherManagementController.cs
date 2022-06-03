@@ -12,13 +12,25 @@ namespace POS_Coffe.Controllers
     {
         public int pageSize = 15;
         // GET: VoucherManagement
-        public ActionResult VoucherManagement(int? pageNo, string StringSearch)
+        public ActionResult VoucherManagement(int? pageNo, string StringSearch, string sortOrder)
         {
+            ViewBag.ValueSortParm = String.IsNullOrEmpty(sortOrder) ? "Value_desc" : "";
+
             IQueryable<VoucherModel> data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.AsQueryable();
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
                 data = data.Where(s => s.Name.ToLower().Contains(StringSearch.ToLower()));
             }
+
+
+            switch (sortOrder)
+            {
+                case "Value_desc":
+                    data = data.OrderByDescending(s => s.Value);
+                    break;
+            }
+
+
             foreach (VoucherModel model in data)
             {
                 if (model != null)

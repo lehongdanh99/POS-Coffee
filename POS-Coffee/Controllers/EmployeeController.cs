@@ -11,14 +11,27 @@ namespace POS_Coffe.Controllers
     public class EmployeeController : Controller
     {
         public int pageSize = 15;
-        public ActionResult ViewEmployee(int? pageNo, string Username, string Password, string Phone, string Name, string Birthday, string Permission, string StringSearch)
+        public ActionResult ViewEmployee(int? pageNo, string Username, string Password, string Phone, string Name, string Birthday, string Permission, string StringSearch, string sortOrder)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
             IQueryable<EmployeeModel> data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.AsQueryable();
 
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
                 data = data.Where(s => (s.Name).ToLower().Contains(StringSearch.ToLower()) );
 
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    data = data.OrderByDescending(s => s.Name);
+                    break;
+                case "Date":
+                    data = data.OrderBy(s => s.Birthday);
+                    break;
             }
 
             foreach (EmployeeModel model in data)

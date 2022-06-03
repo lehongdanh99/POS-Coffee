@@ -11,8 +11,12 @@ namespace POS_Coffe.Controllers
     public class FoodManagementController : Controller
     {
         public int pageSize = 15;
-        public ActionResult FoodManagement(string StringSearch, int? pageNo)
+        public ActionResult FoodManagement(string StringSearch, int? pageNo, string sortOrder)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.PriceSortParm = String.IsNullOrEmpty(sortOrder) ? "Price_desc" : "";
+
+
             IQueryable<FoodModel> dataModel = FoodAPIHandlerFakeData.GetInstance().ListFood.AsQueryable();
 
             if (!String.IsNullOrWhiteSpace(StringSearch))
@@ -31,6 +35,17 @@ namespace POS_Coffe.Controllers
             //    lstMaterial = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.RecipeID == item.FoodID).FirstOrDefault();
             //}
             //System.Console.WriteLine(lstMaterial);
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    dataModel = dataModel.OrderByDescending(s => s.Name);
+                    break;
+                case "Price_desc":
+                    dataModel = dataModel.OrderBy(s => s.Price);
+                    break;
+            }
+
             foreach (FoodModel model in dataModel)
             {
                 if (model != null)

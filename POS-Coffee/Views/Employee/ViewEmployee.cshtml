@@ -22,9 +22,9 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
+                            <th>@Html.ActionLink("Name", "ViewEmployee", new { sortOrder = ViewBag.NameSortParm })</th>
                             <th>Permission</th>
-                            <th>Birthday</th>
+                            <th>@Html.ActionLink("Birthday", "ViewEmployee", new { sortOrder = ViewBag.DateSortParm })</th>
                             <th>Phone</th>
                             <th>Username</th>
                             <th></th>
