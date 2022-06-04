@@ -22,6 +22,14 @@ namespace POS_Coffe.Controllers
                 data = data.Where(s => s.Name.ToLower().Contains(StringSearch.ToLower()));
             }
 
+            
+            foreach(var item in data)
+            {
+                FoodModel foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == item.IDFood).FirstOrDefault();
+                item.StrIDFood = foodModel.Name;
+            }
+
+            System.Console.WriteLine(data);
 
             switch (sortOrder)
             {
@@ -45,7 +53,18 @@ namespace POS_Coffe.Controllers
         [HttpGet]
         public ActionResult AddVoucher()
         {
+            List<string> dataIDFood = new List<string>();
+            dataIDFood.Add("--none--");
+            List<FoodModel> foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.ToList();
+            foreach(var item in foodModel)
+            {
+                dataIDFood.Add(item.Name);
+            }
+            dataIDFood.Distinct();
+            ViewBag.StrIDFood = new SelectList(dataIDFood, "");
+            ViewBag.Error = GlobalDef.ERROR_MESSAGE_VOUCHER_VALUE_AND_IDFOOD;
             VoucherModel model = new VoucherModel();
+
             return View(model);
         }
         [HttpPost]
@@ -56,8 +75,10 @@ namespace POS_Coffe.Controllers
             model.VoucherID = count + 1;
             model.Name = data.Name;
             model.Value = data.Value;
-            
-            model.IDFood = data.IDFood;
+
+            FoodModel foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.Name.Equals(data.StrIDFood)).FirstOrDefault();
+
+            model.IDFood = foodModel.FoodID;
 
             //EmployeeModel.GetInstance().LstEmpl.Add(model);
             //return View(model);

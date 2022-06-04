@@ -29,7 +29,7 @@
                             <th>Valid</th>
                             <th>Name</th>
                             <th>@Html.ActionLink("Value", "VoucherManagement", new { sortOrder = ViewBag.ValueSortParm })</th>
-                            <th>Value</th>
+                            <th>IDFood</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -51,6 +51,7 @@
                             </td>
                             <td>@item.Name</td>
                             <td>@item.Value</td>
+                            <td>@item.StrIDFood</td>
                             <td style="text-align:center">
                                 <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditVoucher", "VoucherManagement", new {VoucherID = item.VoucherID })"'></button>
                                 <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.VoucherID))" class="btn btn-danger fa fa-remove" />

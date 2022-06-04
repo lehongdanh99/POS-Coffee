@@ -5,12 +5,22 @@
 }
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
+
+<style>
+    .user-section {
+        margin-top: -50px;
+        margin-right: 40px;
+    }
+</style>
 
 <div class="row grid-responsive">
     <div class="column ">
         <div class="card">
             <div class="card-title">
-                <h3>Add Food</h3>
+                <h3>Add Voucher</h3>
             </div>
             <div class="card-block">
                 @using (Html.BeginForm("AddVoucher", "VoucherManagement", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -35,16 +45,26 @@
                         </div>
                     </div>
 
-                    <input class="button-primary" type="submit" value="Send">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="StrIDFood">IDFood</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownList("StrIDFood", (IEnumerable<SelectListItem>)ViewBag.StrIDFood, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.StrIDFood, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <input class="button-primary" type="submit" value="Send" name="btnSaveChange" id="btnSaveChange" />
                     @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
                     <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />
+                    <h5 name="error" id="error" style="display:none; color:red">@ViewBag.Error</h5>
                 }
             </div>
         </div>
     </div>
 </div>
 
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
 <link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
 
@@ -53,6 +73,26 @@
         window.location.href = "/VoucherManagement/VoucherManagement"
 
     }
+
+    $('#btnSaveChange').click(function () {
+        if ($('#StrIDFood').val() != 0 && $('#Value').val() != "--none--") {
+            document.getElementById("error").style.display = "block"
+            return false;
+        }
+        if ($('#Value').val() < 0 || $('#Value').val() > 100) {
+            document.getElementById("error").style.display = "block"
+            return false;
+        }
+    })
+
+    $('#StrIDFood').click(function () {
+        document.getElementById("error").style.display = "none"
+    })
+
+    $('#Value').click(function () {
+        document.getElementById("error").style.display = "none"
+    })
+
 
     //$(function () {
     //    $("#Birthday").datepicker({
@@ -63,17 +103,15 @@
     //$(document).ready(function () {
     //    $(function () {
     //        $('#btnSaveChange').click(function () {
+    //            var StrIDFood = $('#StrIDFood').text();
+
+
     //            var data = {
-    //                Name: $('#Name').val(),
-    //                Permission: $('#Permission').val(),
-    //                Birthday: $('#Birthday').val(),
-    //                Phone: $('#Phone').val(),
-    //                Username: $('#Username').val(),
-    //                Password: $('#Password').val(),
+    //                StrIDFood: StrIDFood,
     //            }
     //            $.ajax({
     //                type: "POST",
-    //                url: "/EmployeeManagament/AddEmployee",
+    //                url: "/VoucherManagement/AddVoucher",
     //                data: data,
     //                success: function (data) {
     //                    //GoBack();
