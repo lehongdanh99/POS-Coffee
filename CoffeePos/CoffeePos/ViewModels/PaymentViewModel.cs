@@ -44,6 +44,20 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        public void ClearDataPayment()
+        {
+            receiptPayment = new Receipt();
+            ListFoodOrder.Clear() ;
+            CustomerName = "";
+            TotalPayment = 0;
+            DiscountOrder = 0;
+            CustomerPay = 0;
+            RefundMoney = 0;
+            PointTradePercent = 0;
+            PointCustomer = 0;
+            MoneySuggestList = getMoneySuggestList();
+        }
+
         private int discountOrder = 0;
 
         public int DiscountOrder
@@ -176,6 +190,11 @@ namespace CoffeePos.ViewModels
 
         public void SearchCustomerChange(string search)
         {
+            if(search == "")
+            {
+                PointCustomer = 0;
+                TradePoint(PointCustomer);
+            }    
             foreach (var customer in HomeViewModel.GetInstance().Customer)
             {
                 if (search == customer.Phone)
@@ -228,6 +247,7 @@ namespace CoffeePos.ViewModels
             ObservableCollection<Receipt> receipts = ReceiptModel.GetInstance().ListReceipt;
             if(receipts.Count == 0 && !GlobalDef.IsDeliveryPayment)
             {
+                ClearDataPayment();
                 return;
             }    
             else if(!GlobalDef.IsDeliveryPayment)
@@ -256,6 +276,7 @@ namespace CoffeePos.ViewModels
             ReceiptModel.GetInstance().ListReceiptDone.Add(receiptPayment);
             MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
             //WindowManager windowManager = new WindowManager();
+            ClearDataPayment();
             GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
         }
     }

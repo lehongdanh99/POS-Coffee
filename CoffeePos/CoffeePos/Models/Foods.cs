@@ -108,6 +108,8 @@ namespace CoffeePos
             }
         }
 
+        public int FoodID { get; set; }
+
         public string FoodOrderImage { get; set; }
 
         private string foodSize = "S";

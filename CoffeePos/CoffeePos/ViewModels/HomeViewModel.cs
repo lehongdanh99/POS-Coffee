@@ -396,26 +396,7 @@ namespace CoffeePos.ViewModels
         private ObservableCollection<Foods> GetFoods()
         {
             ObservableCollection<Foods> getFood = new ObservableCollection<Foods>();
-            //return new ObservableCollection<Foods>()
-            //{
-            //    new Foods("cafe sữa tươi", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
-            //    new Foods("cafe sữa đá", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
-            //    new Foods("nước cam", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
-            //    new Foods("nước dừa", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
-            //    new Foods("nước bưởi", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
-            //    new Foods("nước táo", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
-            //    new Foods("sữa chua", 10000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Món ăn kèm"),
-            //    new Foods("trà sữa", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
-            //    new Foods("trà sữa trân châu", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
-            //    new Foods("trà xanh", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
-            //    new Foods("trà táo", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
-            //    new Foods("trà đào", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Trà"),
-            //    new Foods("soda táo", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Soda"),
-            //    new Foods("soda dứa", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Soda"),
-            //    new Foods("bạc sỉu", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Cafe"),
-            //    new Foods("nước mơ", 15000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Nước ép"),
-            //    new Foods("Sườn bì chả trứng", 30000,"/Image/clem-onojeghuo-zlABb6Gke24-unsplash.jpg", "Món ăn kèm"),
-            //};
+
             foreach (Foods food in CommonMethod.GetInstance().readFoodJsonFileConfig())
             {
                 getFood.Add(food);
@@ -495,11 +476,12 @@ namespace CoffeePos.ViewModels
 
             //orderDetailViewModel.eventChange += HandleCallBack;
 
-                //ListOrderViewModel listOrderViewModel = new ListOrderViewModel();
-            
+            //ListOrderViewModel listOrderViewModel = new ListOrderViewModel();
+
             //WindowManager windowManager = new WindowManager();
-            GlobalDef.windowManager.ShowDialogAsync(ListOrderViewModel.GetInstance());
             ListOrderViewModel.GetInstance().getDataListOrder();
+            GlobalDef.windowManager.ShowDialogAsync(ListOrderViewModel.GetInstance());
+            
         }
 
 
@@ -519,7 +501,7 @@ namespace CoffeePos.ViewModels
 
         public void HandleCallBack(FoodOrder food)
         {
-            
+            food.FoodOrderID = FoodOrderModel.GetInstance().FoodOrders.Count() + 1;
             FoodOrderModel.GetInstance().FoodOrders.Add(food);
             
             
@@ -551,7 +533,7 @@ namespace CoffeePos.ViewModels
         {
             for(int i = 0; i < ListViewFoodOrders.Count; i++)
             {
-                if(food.FoodOrderName == ListViewFoodOrders[i].FoodOrderName)
+                if(food.FoodOrderID == ListViewFoodOrders[i].FoodOrderID)
                 {
                     ListViewFoodOrders[i]  = food;
                     
@@ -586,9 +568,6 @@ namespace CoffeePos.ViewModels
 
         public void btMoreTableChoose_Click()
         {
-            //TablesViewModel tableViewModel = new TablesViewModel(true);
-            ////tableViewModel.eventChooseTableToOrder += HandleCallBacChooseTable;
-            //GlobalDef.IsChooseTableToOrder = true;
 
             GlobalDef.IsChooseMoreTable = true;
             //WindowManager windowManager = new WindowManager();
@@ -660,19 +639,26 @@ namespace CoffeePos.ViewModels
 
         public void HandleCallBackChooseVoucher(Voucher selectedVoucher)
         {
-            //if(selectedVoucher.Percent == 0)
-            //{
-            //    foreach (var food in FoodOrderModel.GetInstance().FoodOrders)
-            //    {
-            //        if (selectedVoucher.NameFood == food.FoodOrderName)
-            //        {
-                        
-            //        }
-            //    }
-            //}
-            //DiscountOrder = selectedVoucher.Percent;
-            //GetFoodOrderTotal();
-            //GlobalDef.IsChooseVoucerToOrder = false;
+            if (selectedVoucher.Percent == 0)
+            {
+                foreach (var food in FoodOrderModel.GetInstance().FoodOrders)
+                {
+                    if (selectedVoucher.IDFood == food.FoodID)
+                    {
+                        DiscountOrder = 1;
+                        if(food.FoodOrderCount > 1)
+                        {
+                            TotalOrder = HomePayment - food.FoodOrderPrice;
+                            GlobalDef.IsChooseVoucerToOrder = false;
+
+                            return;
+                        }
+                    }
+                }
+            }
+            DiscountOrder = selectedVoucher.Percent;
+            GetFoodOrderTotal();
+            GlobalDef.IsChooseVoucerToOrder = false;
         }
 
         public void HandleCallBacChooseTable(string TableChoose)

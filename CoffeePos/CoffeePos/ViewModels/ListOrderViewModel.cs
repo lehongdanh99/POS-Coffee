@@ -29,6 +29,7 @@ namespace CoffeePos.ViewModels
         }
         public ListOrderViewModel()
         {
+            
             getDataListOrder();
         }
 
@@ -36,6 +37,8 @@ namespace CoffeePos.ViewModels
         {
             BackgroundShowList = new SolidColorBrush(Colors.White);
             BackgroundShowListDone = new SolidColorBrush(Colors.DarkSlateGray);
+            VisibilityReceiptDone = Visibility.Hidden;
+            VisibilityReceipt = Visibility.Visible;
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
             ListReceiptsDone = ReceiptModel.GetInstance().ListReceiptDone;
         }
@@ -147,10 +150,10 @@ namespace CoffeePos.ViewModels
             GlobalDef.ReceiptPayment = receipt;
             //PaymentViewModel paymentViewModel = new PaymentViewModel(receipt);
             //tableDetailViewModel.eventChange += HandleCallBack;
-
+            PaymentViewModel.GetInstance().getDataPayment();
             //WindowManager windowManager = new WindowManager();
             GlobalDef.windowManager.ShowDialogAsync(PaymentViewModel.GetInstance());
-            PaymentViewModel.GetInstance().getDataPayment();
+            
             
             //RegisterViewModel registerViewModel = new RegisterViewModel();
             //WindowManager windowManager = new WindowManager();

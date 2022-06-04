@@ -375,16 +375,16 @@
                     </Grid>
                     <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
                         <StackPanel Margin="0 5 0 0">
-                            <Button Grid.Row="4" Grid.Column="0" FontSize="13" FontWeight="DemiBold" Width="130" Height="25" Margin="0 0 5 0"
-                            Content="Ghép bàn" Background="#FF079CFF" BorderBrush="{x:Null}" Visibility="{Binding VisibleDelivery}"
+                            <Button Grid.Row="4" Grid.Column="0" FontSize="13" FontWeight="DemiBold" Width="130" Height="50" Margin="0 0 5 0"
+                            Content="Chọn bàn" Background="#FF079CFF" BorderBrush="{x:Null}" Visibility="{Binding VisibleDelivery}"
                             cal:Message.Attach="[Event Click] = [Action btMoreTableChoose_Click()]">
 
                             </Button>
-                            <Button Grid.Row="4" Grid.Column="1" FontSize="13" FontWeight="DemiBold" Width="130" Height="25" Margin="0 0 5 0"
+                            <!--<Button Grid.Row="4" Grid.Column="1" FontSize="13" FontWeight="DemiBold" Width="130" Height="25" Margin="0 0 5 0"
                             Content="Chọn bàn" Background="Orange" BorderBrush="{x:Null}" Visibility="{Binding VisibleDelivery}"
                             cal:Message.Attach="[Event Click] = [Action btTableChoose_Click()]">
 
-                            </Button>
+                            </Button>-->
                         </StackPanel>
                         
                         <Button Grid.Row="4" FontSize="18" Grid.Column="2" FontWeight="DemiBold" Width="120" Height="50" Margin="0"

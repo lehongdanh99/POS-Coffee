@@ -309,6 +309,7 @@ namespace CoffeePos.ViewModels
             ReceiptTest.Note = string.Empty;
             
             GlobalDef.ReceiptPayment = ReceiptTest;
+            PaymentViewModel.GetInstance().getDataPayment();
             ListOrderViewModel.GetInstance().PaymentReceipt(ReceiptTest);
             this.TryCloseAsync();
         }

@@ -49,6 +49,7 @@ namespace CoffeePos.ViewModels
                 FoodName = foodSelected.FoodName.ToString();
                 FoodImage = foodSelected.FoodImage;
                 this.orderCount = 1;
+                FoodID = foodSelected.FoodID;
                 FoodPrice = foodSelected.FoodPrice;
                 BgSmallSize = new SolidColorBrush(Colors.Orange);
                 bgMediumSize = new SolidColorBrush(Colors.LightGray);
@@ -59,6 +60,7 @@ namespace CoffeePos.ViewModels
                 FoodName = foodOrderSelected.FoodOrderName.ToString();
                 FoodImage = foodOrderSelected.FoodOrderImage;
                 this.orderCount = foodOrderSelected.FoodOrderCount;
+                FoodID = foodOrderSelected.FoodID;
                 FoodPrice = foodOrderSelected.FoodOrderPrice;
                 Note = foodOrderSelected.FoodOrderMore;
 
@@ -95,6 +97,8 @@ namespace CoffeePos.ViewModels
         }
 
         private Foods FoodSelected;
+
+        private int FoodID;
 
         private FoodOrder FoodSelectedOrder;
         public String FoodName { get; set; }
@@ -272,6 +276,7 @@ namespace CoffeePos.ViewModels
             FoodSelectedOrder.FoodOrderMore = Note;
             FoodSelectedOrder.FoodOrderImage = FoodImage;
             FoodSelectedOrder.FoodOrderName = FoodName;
+            FoodSelectedOrder.FoodID = FoodID;
             eventCustomChange?.Invoke(FoodSelectedOrder);
 
             eventChange?.Invoke(FoodSelectedOrder);
