@@ -58,6 +58,18 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        bool canSwitch = false;
+
+        public bool CanSwitch
+        {
+            get { return canSwitch; }
+            set
+            {
+                canSwitch = value;
+                NotifyOfPropertyChange(() => CanSwitch);
+            }
+        }
+
         private bool CanEdit;
 
         private Visibility detailFromHome;
@@ -194,7 +206,6 @@ namespace CoffeePos.ViewModels
 
         public void BtnServedFood()
         {
-            
             foreach(var food in ListFoodOrder)
             {
                 if(!food.ServedFood)
@@ -202,8 +213,7 @@ namespace CoffeePos.ViewModels
                     IsAllServed = false;
                     food.ServedFood = true;
                 }
-                
-            }
+            } 
 
             if(IsAllServed)
             {
@@ -280,11 +290,16 @@ namespace CoffeePos.ViewModels
         public void checkServed()
         {
             IsAllServed = true;
+            CanSwitch = false;
             foreach (var food in ListFoodOrder)
             {
                 if (!food.ServedFood)
                 {
                     IsAllServed = false;
+                }
+                if (food.IsEnable)
+                {
+                    CanSwitch = true;
                 }
 
             }
