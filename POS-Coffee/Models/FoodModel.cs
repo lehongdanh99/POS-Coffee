@@ -22,7 +22,7 @@ namespace POS_Coffe.Models
         public int FoodID { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
-        public byte[] Picture { get; set; }
+        public string Picture { get; set; }
         public string Type { get; set; }      
     }
     public class FoodAPIHandlerFakeData

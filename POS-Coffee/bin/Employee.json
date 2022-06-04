@@ -7,6 +7,7 @@
     "phone": "0775032233",
     "address": "Đông Bắc Quận 12",
     "Username": "employee01",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "password": "123456"
   },
   {
@@ -17,6 +18,7 @@
     "phone": "0909429033",
     "address": "Vũ Tùng Quận Bình Thạnh",
     "Username": "employee02",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "password": "123456"
   },
   {
@@ -27,6 +29,7 @@
     "phone": "0351462157",
     "address": "Song Hành Quận 2",
     "Username": "employee03",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "password": "123456"
   },
   {
@@ -37,6 +40,7 @@
     "phone": "0741542361",
     "address": "Nguyễn Xí Quận Bình Thạnh",
     "Username": "employee04",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "password": "123456"
   },
   {
@@ -47,6 +51,7 @@
     "phone": "0748238183",
     "address": "Bùi Hữu Nghĩa Quận Bình Thạnh",
     "Username": "employee05",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "password": "123456"
   },
   {
@@ -55,6 +60,7 @@
     "permission": "ROLE_EMPLOYEE",
     "birthday": "12/16/2000",
     "phone": "0771674534",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "address": "Trần Quang Khải Quận 1",
     "Username": "employee06",
     "password": "123456"
@@ -66,6 +72,7 @@
     "birthday": "11/11/1999",
     "phone": "0413554135",
     "address": "Đinh Bộ Lĩnh Quận Bình Thạnh",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "Username": "employee07",
     "password": "123456"
   },
@@ -75,6 +82,7 @@
     "permission": "ROLE_EMPLOYEE",
     "birthday": "03/06/2002",
     "phone": "0985125478",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "address": "Điện Biên Phủ Quận 3",
     "Username": "employee08",
     "password": "123456"
@@ -85,6 +93,7 @@
     "permission": "ROLE_EMPLOYEE",
     "birthday": "04/15/1998",
     "phone": "0845423698",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "address": "Cách Mạng Tháng 8 Quận 3",
     "Username": "employee09",
     "password": "123456"
@@ -95,6 +104,7 @@
     "permission": "ROLE_EMPLOYEE",
     "birthday": "02/12/2000",
     "phone": "0845126478",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "address": "Bạch Đằng Quận 5",
     "Username": "employee10",
     "password": "123456"
@@ -104,6 +114,7 @@
     "Name": "Nguyễn Hoàng Phúc",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "08/10/2001",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "phone": "0351264789",
     "address": "Mai Thị Lựu Quận 1",
     "Username": "employee11",
@@ -114,6 +125,7 @@
     "Name": "Phạm Thanh Thư",
     "permission": "ROLE_EMPLOYEE",
     "birthday": "10/21/2002",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "phone": "0334512364",
     "address": "Bùi Đình Túy Quận Bình Thạnh",
     "Username": "employee12",
@@ -123,6 +135,7 @@
     "EmployeeID": 12,
     "Name": "Đỗ Minh Nguyệt",
     "permission": "ROLE_EMPLOYEE",
+    "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
     "birthday": "09/24/1999",
     "phone": "0731258456",
     "address": "Hoàng Hoa Thám Quận Tân Bình",

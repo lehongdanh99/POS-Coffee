@@ -10,7 +10,7 @@ namespace POS_Coffe.Controllers
 {
     public class VoucherManagementController : Controller
     {
-        public int pageSize = 15;
+        public int pageSize = 10;
         // GET: VoucherManagement
         public ActionResult VoucherManagement(int? pageNo, string StringSearch, string sortOrder)
         {

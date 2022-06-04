@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using POS_Coffe.Models;
 using PagedList;
+using System.IO;
 
 namespace POS_Coffe.Controllers
 {
     public class EmployeeController : Controller
     {
-        public int pageSize = 15;
+        public int pageSize = 10;
         public ActionResult ViewEmployee(int? pageNo, string Username, string Password, string Phone, string Name, string Birthday, string Permission, string StringSearch, string sortOrder)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -56,7 +57,7 @@ namespace POS_Coffe.Controllers
             return View(model);
         }
         [HttpPost]
-        public ActionResult AddEmployee(EmployeeModel data)
+        public ActionResult AddEmployee(EmployeeModel data, HttpPostedFileWrapper Picture)
         {
             string role = "Employee";
             if (data.Permission == "ROLE_ADMIN")
@@ -67,6 +68,8 @@ namespace POS_Coffe.Controllers
             {
                 role = "Manager";
             }
+            var test = Path.Combine(Server.MapPath("~/Content/images"), Picture.FileName);
+            System.Console.WriteLine(data.Picture);
             int count = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Count();
             EmployeeModel model = new EmployeeModel();
             model.EmployeeID = count + 1;
@@ -76,6 +79,7 @@ namespace POS_Coffe.Controllers
             model.Phone = data.Phone;
             model.Username = data.Username;
             model.Password = data.Password;
+            model.Picture = test;
             EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Add(model);
             //return View(model);
             return RedirectToAction("ViewEmployee", "Employee", model);

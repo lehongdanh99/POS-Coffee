@@ -4,13 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using POS_Coffe.Models;
+using PagedList;
 
 namespace POS_Coffe.Controllers
 {
     public class StatisticController : Controller
     {
         // GET: Statistic
-        public ActionResult Index(string FromDate, string ToDate, string sortOrder)
+        public int pageSize = 10;
+        public ActionResult Index(string FromDate, string ToDate, string sortOrder, int? pageNo)
         {
             ViewBag.FromDateSortParm = String.IsNullOrEmpty(sortOrder) ? "FromDate_desc" : "";
             ViewBag.ToDateSortParm = String.IsNullOrEmpty(sortOrder) ? "ToDate_desc" : "";
@@ -18,6 +20,7 @@ namespace POS_Coffe.Controllers
             ViewBag.DiscountPriceSortParm = String.IsNullOrEmpty(sortOrder) ? "DiscountPrice_desc" : "";
             ViewBag.TotalPriceSortParm = String.IsNullOrEmpty(sortOrder) ? "TotalPrice_desc" : "";
             IQueryable<StatisticModel> lstStatistic = StatisticAPIHandlerFakeData.GetInstance().ListStatistic.AsQueryable();
+
             if (!String.IsNullOrWhiteSpace(FromDate) || !String.IsNullOrWhiteSpace(ToDate))
             {
                 DateTime FromDateSearch = DateTime.Now;
@@ -68,7 +71,11 @@ namespace POS_Coffe.Controllers
                     if (model != null)
                         continue;
                 }
-                return View(lstStatistic.ToList());
+                lstStatistic.ToList();
+                var Pagination1 = new PagedList<StatisticModel>(lstStatistic, pageNo ?? 1, pageSize);
+
+                return View(Pagination1);
+     
             }
             switch (sortOrder)
             {
@@ -93,7 +100,10 @@ namespace POS_Coffe.Controllers
                 if (model != null)
                     continue;
             }
-            return View(lstStatistic.ToList());
+            lstStatistic.ToList();
+            var Pagination = new PagedList<StatisticModel>(lstStatistic, pageNo ?? 1, pageSize);
+
+            return View(Pagination);
         }
     }
 }

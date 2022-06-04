@@ -10,7 +10,7 @@ namespace POS_Coffe.Controllers
 {
     public class MaterialController : Controller
     {
-        public int pageSize = 15;
+        public int pageSize = 10;
         public ActionResult MaterialManagement(string StringSearch, int? pageNo)
         {
             IQueryable<MaterialsModel> data = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.AsQueryable();

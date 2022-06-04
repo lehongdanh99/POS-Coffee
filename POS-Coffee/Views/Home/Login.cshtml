@@ -49,7 +49,7 @@
                             @*<input type="submit" value="Login">*@
                             @*<a class="btn btn-gradient-success button " href="~/Account/AccountManagement">Login</a>*@
                             @*<button type="button" class="btn-success" onclick="Login()">Login</button>*@
-                            <input class="button-primary" type="submit" value="Send">
+                            <input class="button-primary" type="submit" value="Login" name="LoginBtn" id="LoginBtn">
                         }
                         @*<div class="header-left-top">
             <div class="sign-up"> <h2>or</h2> </div>
@@ -75,4 +75,30 @@
         var link = "@Url.Action("AccountManagement", "Account")";
         window.location.href = link;
     }
+
+        $(document).ready(function () {
+                    $(function () {
+                        $('#LoginBtn').click(function () {
+                            var username = $('#username').text()
+                            var password = $('#password').text()
+
+                            var data = {
+                                username: username,
+                                ValueDuong: password,
+                            };
+                            $.ajax({
+                                type: "POST",
+                                url: "/Home/Login",
+                                data: dataGuidi,
+                                success: function (data) {
+                                    alert('Success!');
+                                    Login();
+                                },
+                                error: function () {
+                                    alert('Login fail!');
+                                }
+                            })
+                        });
+                    });
+                });
     </script>

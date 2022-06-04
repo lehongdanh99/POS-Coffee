@@ -61,10 +61,30 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="Picture">Picture</label>
+                            <div class="col-sm-9">
+                                @*@Html.EditorFor(model => model.Picture, new { @type = "picture",htmlAttributes = new { @required = "required", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })*@
+                                @Html.TextBoxFor(model => model.Picture, new { type = "file", accept = "FileUploadLocation/*" })
+                                @Html.ValidationMessageFor(model => model.Picture)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Username">Username</label>
                             <div class="col-sm-9">
                                 @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="Password">Password</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>

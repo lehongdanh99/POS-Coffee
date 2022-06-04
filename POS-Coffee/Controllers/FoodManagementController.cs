@@ -10,7 +10,7 @@ namespace POS_Coffe.Controllers
 {
     public class FoodManagementController : Controller
     {
-        public int pageSize = 15;
+        public int pageSize = 10;
         public ActionResult FoodManagement(string StringSearch, int? pageNo, string sortOrder)
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";

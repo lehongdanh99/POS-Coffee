@@ -1,4 +1,6 @@
-﻿@model List<POS_Coffe.Models.StatisticModel>
+﻿@model PagedList<POS_Coffe.Models.StatisticModel>
+@using PagedList;
+@using PagedList.Mvc;
 @{
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
     int i = 1;
@@ -11,21 +13,21 @@
 @*<a class="button" href="#">Search</a>
     <input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />*@
 
-        <div class="form-check-label">
-            From date:
-            <input type="date" class="form-check-input" name="FromDate" id="FromDate" />
-            To date:
-            <input type="date" class="form-check-input" name="ToDate" id="ToDate" />
+<div class="form-check-label">
+    From date:
+    <input type="date" class="form-check-input" name="FromDate" id="FromDate" />
+    To date:
+    <input type="date" class="form-check-input" name="ToDate" id="ToDate" />
 
 
 
-            <input type="submit" value="Search" />
-        </div>
+    <input type="submit" value="Search" />
+</div>
 }
         <div class="card">
             <div class="card-block">
                 <table class="styled-table">
-                    <thead >
+                    <thead>
                         <tr>
                             <th>#</th>
                             <th>@Html.ActionLink("FromDate", "Index", new { sortOrder = ViewBag.FromDateSortParm })</th>
@@ -42,24 +44,30 @@
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <th>@i</th>
-                                    <td>@item.FromDate.ToString("dd/MM/yyyy")</td>
-                                    <td>@item.ToDate.ToString("dd/MM/yyyy")</td>
-                                    <td>@item.VoucherName</td>
-                                    <td>@item.Table</td>
-                                    <td>@item.TotalPrice</td>
-                                    <td>@item.DiscountPrice</td>
-                                    <td>@item.CustomerPay</td>
-                                    <td>@item.TypePayment</td>
-                                    <td>@item.TypeService</td>
-                                   
-                                </tr>
+                        {
+                            <tr>
+                                <th>@i</th>
+                                <td>@item.FromDate.ToString("dd/MM/yyyy")</td>
+                                <td>@item.ToDate.ToString("dd/MM/yyyy")</td>
+                                <td>@item.VoucherName</td>
+                                <td>@item.Table</td>
+                                <td>@item.TotalPrice</td>
+                                <td>@item.DiscountPrice</td>
+                                <td>@item.CustomerPay</td>
+                                <td>@item.TypePayment</td>
+                                <td>@item.TypeService</td>
+
+                            </tr>
                             i++;
                         }
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <div class="column" style="text-align:center; display:inline-block">
+            <div class="pagination ali">
+                @Html.PagedListPager(Model, pageNo => Url.Action("Index", new { pageNo = pageNo }))
             </div>
         </div>
     </div>

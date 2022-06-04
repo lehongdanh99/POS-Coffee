@@ -26,6 +26,7 @@
                             <th>Permission</th>
                             <th>@Html.ActionLink("Birthday", "ViewEmployee", new { sortOrder = ViewBag.DateSortParm })</th>
                             <th>Phone</th>
+                            <th>Picture</th>
                             <th>Username</th>
                             <th></th>
                         </tr>
@@ -34,32 +35,33 @@
 
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <th>@i</th>
-                                <td>@item.Name</td>
+                        <tr>
+                            <th>@i</th>
+                            <td>@item.Name</td>
 
-                                <td>
-                                    @if (item.Permission == "ROLE_EMPLOYEE")
-                                    {
-                                        <h5>Employee</h5>
-                                    }
-                                    else if (item.Permission == "ROLE_ADMIN")
-                                    {
-                                        <h5>Admin</h5>
-                                    }
-                                    else if (item.Permission == "ROLE_MANAGER")
-                                    {
-                                        <h5>Manager</h5>
-                                    }
-                                </td>
-                                <td>@item.Birthday</td>
-                                <td>@item.Phone</td>
-                                <td>@item.Username</td>
-                                <td style="text-align: center">
-                                    <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditEmployee", "Employee", new {EmployeeID = item.EmployeeID })"'></button>
-                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.EmployeeID))" class="btn btn-danger fa fa-remove" value="  Delete  "></button>
-                                </td>
-                            </tr>
+                            <td>
+                                @if (item.Permission == "ROLE_EMPLOYEE")
+                                {
+                                    <h5>Employee</h5>
+                                }
+                                else if (item.Permission == "ROLE_ADMIN")
+                                {
+                                    <h5>Admin</h5>
+                                }
+                                else if (item.Permission == "ROLE_MANAGER")
+                                {
+                                    <h5>Manager</h5>
+                                }
+                            </td>
+                            <td>@item.Birthday</td>
+                            <td>@item.Phone</td>
+                            <td style="text-align:center"> <img src=@item.Picture alt="profile photo" class="float-left profile-photo" width="120" height="auto"></td>
+                            <td>@item.Username</td>
+                            <td style="text-align: center">
+                                <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditEmployee", "Employee", new {EmployeeID = item.EmployeeID })"'></button>
+                                <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.EmployeeID))" class="btn btn-danger fa fa-remove" value="  Delete  "></button>
+                            </td>
+                        </tr>
                             i++;
                         }
                     </tbody>

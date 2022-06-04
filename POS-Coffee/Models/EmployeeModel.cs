@@ -23,6 +23,7 @@ namespace POS_Coffe.Models
         public string Permission { get; set; }
         public string Birthday { get; set; }
         public string Phone { get; set; }
+        public string Picture { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
 
