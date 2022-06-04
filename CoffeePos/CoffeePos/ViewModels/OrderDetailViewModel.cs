@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Caliburn.Micro;
+using CoffeePos.Common;
 using static CoffeePos.FoodOrderModel;
 
 namespace CoffeePos.ViewModels
@@ -22,8 +24,8 @@ namespace CoffeePos.ViewModels
         
         public OrderDetailViewModel(Foods foodSelected = default, FoodOrder foodOrderSelected = default)
         {
-            
-            
+
+            isCakeChoose = GlobalDef.IsCakeChoose;
             GetFoodOrderDetail(foodSelected , foodOrderSelected);
             if(foodSelected == default)
             {
@@ -50,6 +52,7 @@ namespace CoffeePos.ViewModels
                 FoodImage = foodSelected.FoodImage;
                 this.orderCount = 1;
                 FoodID = foodSelected.FoodID;
+                FoodType = foodSelected.FoodType;
                 FoodPrice = foodSelected.FoodPrice;
                 BgSmallSize = new SolidColorBrush(Colors.Orange);
                 bgMediumSize = new SolidColorBrush(Colors.LightGray);
@@ -61,6 +64,7 @@ namespace CoffeePos.ViewModels
                 FoodImage = foodOrderSelected.FoodOrderImage;
                 this.orderCount = foodOrderSelected.FoodOrderCount;
                 FoodID = foodOrderSelected.FoodID;
+                FoodType = foodOrderSelected.FoodType;
                 FoodPrice = foodOrderSelected.FoodOrderPrice;
                 Note = foodOrderSelected.FoodOrderMore;
 
@@ -96,9 +100,25 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        private Visibility isCakeChoose;
+        public Visibility IsCakeChoose
+        {
+            get
+            {
+                return isCakeChoose;
+            }
+            set
+            {
+                isCakeChoose = value;
+                NotifyOfPropertyChange(() => IsCakeChoose);
+            }
+        }
+
         private Foods FoodSelected;
 
         private int FoodID;
+
+        private string FoodType;
 
         private FoodOrder FoodSelectedOrder;
         public String FoodName { get; set; }
@@ -277,6 +297,8 @@ namespace CoffeePos.ViewModels
             FoodSelectedOrder.FoodOrderImage = FoodImage;
             FoodSelectedOrder.FoodOrderName = FoodName;
             FoodSelectedOrder.FoodID = FoodID;
+            FoodSelectedOrder.FoodType = FoodType;
+            FoodSelectedOrder.FoodOrderMore = GlobalDef.SugarPercent + " " + GlobalDef.IcePercent + " " + Note;
             eventCustomChange?.Invoke(FoodSelectedOrder);
 
             eventChange?.Invoke(FoodSelectedOrder);

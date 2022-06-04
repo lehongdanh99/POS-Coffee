@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeePos.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,11 +23,42 @@ namespace CoffeePos.Views
         public OrderDetailView()
         {
             InitializeComponent();
+
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void SugarClick(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToBoolean(RadioBtnSugar100.IsChecked))
+            {
+                GlobalDef.SugarPercent = "";
+            }
+            else if(Convert.ToBoolean(RadioBtnSugar70.IsChecked))
+            {
+                GlobalDef.SugarPercent = "Đường 70";
+            }
+            else if (Convert.ToBoolean(RadioBtnSugar50.IsChecked))
+            {
+                GlobalDef.SugarPercent = "Đường 50";
+            }
+        }
+        private void IceClick(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToBoolean(RadioBtnIce100.IsChecked))
+            {
+                GlobalDef.IcePercent = "";
+            }
+            else if (Convert.ToBoolean(RadioBtnIce70.IsChecked))
+            {
+                GlobalDef.IcePercent = "Đá 70";
+            }
+            else if (Convert.ToBoolean(RadioBtnIce50.IsChecked))
+            {
+                GlobalDef.IcePercent = "Đá 50";
+            }
         }
     }
 }

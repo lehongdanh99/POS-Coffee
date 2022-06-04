@@ -489,7 +489,14 @@ namespace CoffeePos.ViewModels
         {
 
             FoodSelected = SelectedListFood;
-
+            if(SelectedListFood.FoodType == "Bánh")
+            {
+                GlobalDef.IsCakeChoose = Visibility.Collapsed;
+            }    
+            else
+            {
+                GlobalDef.IsCakeChoose = Visibility.Visible;
+            }    
             OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(FoodSelected);
             orderDetailViewModel.eventChange += HandleCallBack;
 
@@ -515,7 +522,14 @@ namespace CoffeePos.ViewModels
         {
             
             FoodOrderSelected = foodOrder;
-
+            if (foodOrder.FoodType == "Bánh")
+            {
+                GlobalDef.IsCakeChoose = Visibility.Collapsed;
+            }
+            else
+            {
+                GlobalDef.IsCakeChoose = Visibility.Visible;
+            }
             OrderDetailViewModel orderDetailViewModel = new OrderDetailViewModel(default,FoodOrderSelected);
             orderDetailViewModel.eventCustomChange += HandleCallBackCustom;
 

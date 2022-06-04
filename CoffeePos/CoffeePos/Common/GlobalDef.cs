@@ -32,7 +32,12 @@ namespace CoffeePos.Common
         public static bool IsDeliveryPayment = false;
         //public static ObservableCollection<Receipt> ListReceipt = new ObservableCollection<Receipt>();
         //
+
+        public static Visibility IsCakeChoose = Visibility.Collapsed; 
         public static bool canEditDetail = false;
+
+        public static string SugarPercent = "0";
+        public static string IcePercent = "0";
 
         public static WindowManager windowManager = new WindowManager();
 

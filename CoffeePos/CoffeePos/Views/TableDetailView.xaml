@@ -8,7 +8,7 @@
         xmlns:language="clr-namespace:CoffeePos.Properties.Langs"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="TableDetailView" Height="650" Width="380" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="TableDetailView" Height="750" Width="380" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -106,21 +106,37 @@
                 <ItemsControl x:Name="ListViewTableOrderCanEdit" Margin="5" ItemsSource="{Binding ListFoodOrder}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Border Background="#FFEDEDED" Height="70" Margin="10" CornerRadius="10">
-                                <StackPanel>
-                                    <Grid>
-                                        <TextBlock Margin="10" Text="{Binding FoodOrderName}"></TextBlock>
-                                        <TextBlock Margin="15 0" VerticalAlignment="Center" 
+                            <Border Background="#FFEDEDED" Margin="10" CornerRadius="10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5" Margin="5" Width="70" Height="70">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="{Binding FoodOrderImage}" Stretch="UniformToFill" />
+                                        </Border.Background>
+                                    </Border>
+                                    <StackPanel Grid.Column="1">
+                                        <Grid>
+                                            <TextBlock Margin="10" Text="{Binding FoodOrderName}"></TextBlock>
+                                            <TextBlock Margin="15 0" VerticalAlignment="Center" 
                                             FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Text="{Binding FoodOrderCount}"/>
-                                    </Grid>
-                                    <Grid>
-                                        <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="DarkSlateGray"></TextBlock>
+                                        </Grid>
+                                        <Grid>
+                                            <TextBlock Margin="20 0" Text="{Binding FoodOrderMore}"  FontSize="12" Foreground="DarkSlateGray"></TextBlock>
 
-                                        <CheckBox IsChecked="{Binding ServedFood}" IsEnabled="{Binding IsEnable}" Checked="CheckBoxChanged" Unchecked="CheckBoxChanged"
+                                        </Grid>
+                                        <Grid>
+                                            <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="DarkSlateGray"></TextBlock>
+
+                                            <CheckBox IsChecked="{Binding ServedFood}" IsEnabled="{Binding IsEnable}" Checked="CheckBoxChanged" Unchecked="CheckBoxChanged"
                                                   HorizontalAlignment="Right" Margin="5" Content="Hoàn Thành" Visibility="{Binding VisibleCheckBox}"/>
-                                    </Grid>
+                                        </Grid>
+
+                                    </StackPanel>
                                     
-                                </StackPanel>
+                                </Grid>
                             </Border>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
@@ -132,19 +148,35 @@
                 <ItemsControl x:Name="ListViewTableOrder" Margin="5" ItemsSource="{Binding ListFoodOrder}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Border Background="#FFEDEDED" Height="70" Margin="10" CornerRadius="10">
-                                <StackPanel>
-                                    <Grid>
-                                        <TextBlock Margin="10" Text="{Binding FoodOrderName}"></TextBlock>
-                                        <TextBlock Margin="15 0" VerticalAlignment="Center" 
+                            <Border Background="#FFEDEDED" Margin="10" CornerRadius="10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" CornerRadius="5" Margin="5" Width="70" Height="70">
+                                        <Border.Background>
+                                            <ImageBrush ImageSource="{Binding FoodOrderImage}" Stretch="UniformToFill" />
+                                        </Border.Background>
+                                    </Border>
+                                    <StackPanel Grid.Column="1">
+                                        <Grid >
+                                            <TextBlock Margin="10" Text="{Binding FoodOrderName}"></TextBlock>
+                                            <TextBlock Margin="15 0" VerticalAlignment="Center" 
                                    FontWeight="Bold" FontSize="15" HorizontalAlignment="Right" Text="{Binding FoodOrderCount}"/>
-                                    </Grid>
-                                    <Grid>
-                                        <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="DarkSlateGray"></TextBlock>
-                                     
-                                    </Grid>
+                                        </Grid>
+                                        <Grid>
+                                            <TextBlock Margin="20 0" Text="{Binding FoodOrderMore}"  FontSize="12" Foreground="DarkSlateGray"></TextBlock>
 
-                                </StackPanel>
+                                        </Grid>
+                                        <Grid>
+                                            <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="DarkSlateGray"></TextBlock>
+
+                                        </Grid>
+
+                                    </StackPanel>
+                                    
+                                </Grid>
                             </Border>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
