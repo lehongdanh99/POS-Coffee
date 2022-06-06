@@ -209,8 +209,8 @@
             </Grid>
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
-            
-            <Button Margin="5" Height="50" Width="200" materialDesign:ButtonAssist.CornerRadius="10"
+
+            <Button Margin="5" Height="50" Width="200" materialDesign:ButtonAssist.CornerRadius="10" Click="BtnIn_Click"
                     Content="In"></Button>
             <Button Margin="5" Height="50" Width="200" materialDesign:ButtonAssist.CornerRadius="10" Click="BtnBack_Click"
                     Content="Đóng" Background="Red"></Button>

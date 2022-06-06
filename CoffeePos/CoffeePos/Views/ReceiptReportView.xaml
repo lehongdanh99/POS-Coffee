@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CoffeePos.Views"
         mc:Ignorable="d"
-        Title="ReceiptReportView" Height="750" Width="380" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="ReceiptReportView" Height="auto" Width="380" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid Margin="20 40 20 20">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="80"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -54,19 +55,113 @@
                 <TextBlock Text="16:05"/>
             </StackPanel>
         </Grid>
+        <Grid Grid.Row="3" Margin="0 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="110"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="0.5">
+                <TextBlock Text="TT" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="0.5">
+                <TextBlock Text="Tên món" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="2" BorderBrush="Black" BorderThickness="0.5">
+                <TextBlock Text="SL" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="3" BorderBrush="Black" BorderThickness="0.5">
+                <TextBlock Text="Đơn giá" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+            <Border Grid.Column="4" BorderBrush="Black" BorderThickness="0.5">
+                <TextBlock Text="Thành tiền" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+                <StackPanel VerticalAlignment="Center">
+                    <ItemsControl x:Name="ListTypeFoods" ItemsSource="{Binding Stt}">
+                        
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Height="25" Text="{Binding}" Foreground="Black" VerticalAlignment="Center" FontSize="12" HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+            <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+                <StackPanel VerticalAlignment="Center">
+                    <ItemsControl ItemsSource="{Binding NameFood}">
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Height="25" Text="{Binding}" Foreground="Black" VerticalAlignment="Center" Margin="10 0" FontSize="12" HorizontalAlignment="Left"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+            <ScrollViewer Grid.Row="1" Grid.Column="2" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+                <StackPanel VerticalAlignment="Center">
+                    <ItemsControl ItemsSource="{Binding FoodCount}">
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Height="25" Text="{Binding}" Foreground="Black" VerticalAlignment="Center" FontSize="12" HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+            <ScrollViewer Grid.Row="1" Grid.Column="3" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+                <StackPanel VerticalAlignment="Center">
+                    <ItemsControl ItemsSource="{Binding FoodPrice}">
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Height="25" Text="{Binding}" Foreground="Black" VerticalAlignment="Center" Margin="10 0" FontSize="12" HorizontalAlignment="Right"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+            <ScrollViewer Grid.Row="1" Grid.Column="4" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+                <StackPanel VerticalAlignment="Center">
+                    <ItemsControl ItemsSource="{Binding FoodPayment}">
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Height="25" Text="{Binding}" Foreground="Black" VerticalAlignment="Center" FontSize="12" Margin="10 0" HorizontalAlignment="Right"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
         <Grid Grid.Row="4" Height="80" VerticalAlignment="Center">
             
             <Grid VerticalAlignment="Top">
                 <TextBlock Text="Thành tiền: " FontWeight="Bold" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <TextBlock Text="30,000" FontWeight="Bold" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBlock Text="{Binding TotalPayment}" FontWeight="Bold" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
             </Grid>
             <Grid VerticalAlignment="Center">
                 <TextBlock Text="Tổng tiền: " FontWeight="Bold" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <TextBlock Text="30,000" FontWeight="Bold" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBlock Text="{Binding TotalPayment}" FontWeight="Bold" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
             </Grid>
             <Grid VerticalAlignment="Bottom">
                 <TextBlock Text="+ Thanh toán tiền mặt " Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                <TextBlock Text="30,000" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <TextBlock Text="{Binding TotalPayment}" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
             </Grid>
         </Grid>
         <StackPanel Grid.Row="5">
@@ -75,5 +170,9 @@
                 <TextBlock Text="Powered by HCMUTEPOS.vn" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </StackPanel>
+        <Button Grid.Row="6" Content="Đóng" VerticalAlignment="Bottom"
+                Click="BtnBack_Click" HorizontalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}">
+            
+        </Button>
     </Grid>
 </Window>

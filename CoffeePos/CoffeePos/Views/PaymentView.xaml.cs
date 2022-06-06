@@ -1,4 +1,5 @@
-﻿using CoffeePos.Models;
+﻿using CoffeePos.Common;
+using CoffeePos.Models;
 using CoffeePos.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -81,6 +82,13 @@ namespace CoffeePos.Views
         private void btnChooseVoucher(object sender, RoutedEventArgs e)
         {
             PaymentViewModel.GetInstance().GetFoodOrderTotal(Int32.Parse(TxtMoneyoutput.Text));
+        }
+
+        private void BtnIn_Click(object sender, RoutedEventArgs e)
+        {
+            ReceiptReportViewModel.GetInstance().getDataReport();
+            GlobalDef.windowManager.ShowDialogAsync(ReceiptReportViewModel.GetInstance());
+
         }
 
         private void SearchCustomerClick(object sender, RoutedEventArgs e)

@@ -46,7 +46,6 @@ namespace CoffeePos.ViewModels
 
         public void ClearDataPayment()
         {
-            receiptPayment = new Receipt();
             ListFoodOrder.Clear() ;
             CustomerName = "";
             TotalPayment = 0;
