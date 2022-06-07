@@ -71,10 +71,10 @@ namespace POS_Coffe.Controllers
                     if (model != null)
                         continue;
                 }
-                lstStatistic.ToList();
-                var Pagination1 = new PagedList<StatisticModel>(lstStatistic, pageNo ?? 1, pageSize);
+                
+                //var Pagination1 = new PagedList<StatisticModel>(lstStatistic, pageNo ?? 1, pageSize);
 
-                return View(Pagination1);
+                return View(lstStatistic.ToList());
      
             }
             switch (sortOrder)
@@ -100,10 +100,8 @@ namespace POS_Coffe.Controllers
                 if (model != null)
                     continue;
             }
-            lstStatistic.ToList();
-            var Pagination = new PagedList<StatisticModel>(lstStatistic, pageNo ?? 1, pageSize);
 
-            return View(Pagination);
+            return View(lstStatistic.ToList());
         }
     }
 }

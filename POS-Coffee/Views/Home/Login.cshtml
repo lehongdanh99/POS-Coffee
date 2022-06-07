@@ -28,8 +28,10 @@
                     <div class="header-left-bottom agileinfo">
                         @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
                         {
-                            <input type="text" value="Login" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}" />
-                            <input type="password" value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}" />
+                            @*<input type="text" value="Login" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}" />
+                            <input type="password" value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}" />*@
+                            <input type="text" placeholder="Login" name="username" />
+                            <input type="password" placeholder="Password" name="password" />
                             <div class="remember">
                                 <span class="checkbox1">
                                     <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
@@ -49,6 +51,7 @@
                             @*<input type="submit" value="Login">*@
                             @*<a class="btn btn-gradient-success button " href="~/Account/AccountManagement">Login</a>*@
                             @*<button type="button" class="btn-success" onclick="Login()">Login</button>*@
+                            <h4 style="color:red; display:none" name="error" id="error">Wrong username or password</h4>
                             <input class="button-primary" type="submit" value="Login" name="LoginBtn" id="LoginBtn">
                         }
                         @*<div class="header-left-top">
@@ -76,29 +79,35 @@
         window.location.href = link;
     }
 
-        $(document).ready(function () {
-                    $(function () {
-                        $('#LoginBtn').click(function () {
-                            var username = $('#username').text()
-                            var password = $('#password').text()
+        window.onload(function () {
+            if (@ViewBag.Login_Fail != null) {
+                document.getElementById("error").style.display = "block";
+            }
+        })
 
-                            var data = {
-                                username: username,
-                                ValueDuong: password,
-                            };
-                            $.ajax({
-                                type: "POST",
-                                url: "/Home/Login",
-                                data: dataGuidi,
-                                success: function (data) {
-                                    alert('Success!');
-                                    Login();
-                                },
-                                error: function () {
-                                    alert('Login fail!');
-                                }
-                            })
-                        });
-                    });
-                });
+        //$(document).ready(function () {
+        //            $(function () {
+        //                $('#LoginBtn').click(function () {
+        //                    var username = $('#username').text()
+        //                    var password = $('#password').text()
+
+        //                    var data = {
+        //                        username: username,
+        //                        ValueDuong: password,
+        //                    };
+        //                    $.ajax({
+        //                        type: "POST",
+        //                        url: "/Home/Login",
+        //                        data: dataGuidi,
+        //                        success: function (data) {
+        //                            alert('Success!');
+        //                            Login();
+        //                        },
+        //                        error: function () {
+        //                            alert('Login fail!');
+        //                        }
+        //                    })
+        //                });
+        //            });
+        //        });
     </script>

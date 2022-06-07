@@ -71,18 +71,20 @@
 <script charset="UTF-8">
     function GoBack() {
         window.location.href = "/VoucherManagement/VoucherManagement"
-
     }
 
     $('#btnSaveChange').click(function () {
-        if ($('#StrIDFood').val() != 0 && $('#Value').val() != "--none--") {
-            document.getElementById("error").style.display = "block"
-            return false;
-        }
-        if ($('#Value').val() < 0 || $('#Value').val() > 100) {
-            document.getElementById("error").style.display = "block"
-            return false;
-        }
+        var value = $('#StrIDFood').val();
+        var IDFood = $('#Value').val();
+
+        //if (value != 0 && IDFood != "--none--") {
+        //    document.getElementById("error").style.display = "block"
+        //    return false;
+        //}
+        //if ($('#Value').val() < 0 || $('#Value').val() > 100) {
+        //    document.getElementById("error").style.display = "block"
+        //    return false;
+        //}
     })
 
     $('#StrIDFood').click(function () {
