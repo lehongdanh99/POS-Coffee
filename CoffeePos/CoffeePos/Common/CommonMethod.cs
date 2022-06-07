@@ -74,6 +74,18 @@ namespace CoffeePos.Common
             log.Info($"Read file Table config to Table model {json.ToString()} ");
             return customermodel;
         }
+        private List<Employee> employeemodel = new List<Employee>();
+        public List<Employee> readEmployeeJsonFileConfig()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.EMPLOYEE_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                employeemodel = JsonConvert.DeserializeObject<List<Employee>>(json);
+            }
+            log.Info($"Read file Table config to Table model {json.ToString()} ");
+            return employeemodel;
+        }
 
         public ImageSource convertByte(byte[] byteImage)
         {

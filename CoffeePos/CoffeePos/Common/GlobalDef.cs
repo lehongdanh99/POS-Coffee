@@ -17,6 +17,7 @@ namespace CoffeePos.Common
         public static string JSON_CONFIG_PATH = AppDomain.CurrentDomain.BaseDirectory + "TableConfig.json";
         public static string VOUCHER_JSON_CONFIG_PATH = AppDomain.CurrentDomain.BaseDirectory + "Voucher.json";
         public static string CUSTOMER_JSON_CONFIG_PATH = AppDomain.CurrentDomain.BaseDirectory + "Customer.json";
+        public static string EMPLOYEE_JSON_CONFIG_PATH = AppDomain.CurrentDomain.BaseDirectory + "Employee.json";
 
         public static string END_POINT = "";
 

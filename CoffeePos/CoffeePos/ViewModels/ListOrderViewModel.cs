@@ -124,7 +124,7 @@ namespace CoffeePos.ViewModels
             set { listReceipts = value; NotifyOfPropertyChange(() => ListReceipts); }
         }
 
-        private ObservableCollection<Receipt> listReceiptsDone = ReceiptModel.GetInstance().ListReceipt;
+        private ObservableCollection<Receipt> listReceiptsDone = ReceiptModel.GetInstance().ListReceiptDone;
 
         public ObservableCollection<Receipt> ListReceiptsDone
         {

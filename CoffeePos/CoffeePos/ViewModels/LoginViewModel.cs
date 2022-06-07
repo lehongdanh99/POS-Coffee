@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
 using CoffeePos.Common;
+using CoffeePos.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Security;
 using System.Windows;
@@ -15,6 +17,7 @@ namespace CoffeePos.ViewModels
         //Constructor
         public LoginViewModel()
         {
+            Employee = getEmployees();
             if (Properties.Settings.Default.languageCode.Equals("en-US"))
             {
                 LanguageSelected = 1;
@@ -96,46 +99,73 @@ namespace CoffeePos.ViewModels
                 NotifyOfPropertyChange(() => ErrorValidate);
             }
         }
+        public ObservableCollection<Employee> getEmployees()
+        {
+            ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
+            foreach (Employee em in CommonMethod.GetInstance().readEmployeeJsonFileConfig())
+            {
+                employees.Add(em);
+            }
+            return employees;
+        }
 
+        private ObservableCollection<Employee> employee;
+
+        public ObservableCollection<Employee> Employee
+        {
+            get { return employee; }
+            set { employee = value; NotifyOfPropertyChange(() => Employee); }
+        }
         public void btLogin_Click()
         {
-
-            if(Password.Equals(string.Empty) || UserName.Equals(string.Empty))
+            char[] newPass = Password.ToCharArray();
+            Array.Reverse(newPass);
+            string revertPass = new string(newPass);
+            if (Password.Equals(string.Empty) || UserName.Equals(string.Empty))
             {
                 ErrorVisible = Visibility.Visible;
                 ErrorValidate = "Please add your user name or password";
             }
-            else if (Password == "123")
-            {
-                ErrorVisible = Visibility.Visible;
-                ErrorValidate = "Wrong pass or username";
-            }
+
             else
             {
-                ErrorVisible = Visibility.Hidden;
-                /*Code change language (Create new change language button and put it in)*/
-                if (language[LanguageSelected].ToString() == "English")
+                foreach (Employee em in Employee)
                 {
-                    Properties.Settings.Default.languageCode = "en-US";
-                }
-                else
-                {
-                    Properties.Settings.Default.languageCode = "vi-VN";
-                }
+                    if (em != null)
+                    {
+                        if (em.Username == UserName && em.password == revertPass)
+                        {
+                            ErrorVisible = Visibility.Hidden;
+                            /*Code change language (Create new change language button and put it in)*/
+                            if (language[LanguageSelected].ToString() == "English")
+                            {
+                                Properties.Settings.Default.languageCode = "en-US";
+                            }
+                            else
+                            {
+                                Properties.Settings.Default.languageCode = "vi-VN";
+                            }
 
-                Properties.Settings.Default.Save();
-                //string response = restAPI.makeGetRequest();
-                log.Debug("Btn login click");
-                //Password.ToString();
+                            Properties.Settings.Default.Save();
+                            //string response = restAPI.makeGetRequest();
+                            log.Debug("Btn login click");
+                            //Password.ToString();
 
-                //HomeViewModel homeViewModel = new HomeViewModel();
-                //WindowManager windowManager = new WindowManager();
-                GlobalDef.windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
-                //MessageBox.Show("Login success");
-                Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
-                {
-                    TryCloseAsync();
-                }));
+                            //HomeViewModel homeViewModel = new HomeViewModel();
+                            //WindowManager windowManager = new WindowManager();
+                            GlobalDef.windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
+                            //MessageBox.Show("Login success");
+                            Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
+                            {
+                                TryCloseAsync();
+                            }));
+                            return;
+                        }
+                    }
+                }
+                ErrorVisible = Visibility.Visible;
+                ErrorValidate = "Wrong pass or username";
+
             }
 
         }
