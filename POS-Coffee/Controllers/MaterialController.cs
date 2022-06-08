@@ -11,13 +11,22 @@ namespace POS_Coffe.Controllers
     public class MaterialController : Controller
     {
         public int pageSize = 10;
-        public ActionResult MaterialManagement(string StringSearch, int? pageNo)
+        public ActionResult MaterialManagement(string StringSearch, int? pageNo, string sortOrder)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            
             IQueryable<MaterialsModel> data = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.AsQueryable();
 
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
                 data = data.Where(s => s.Name.ToLower().Contains(StringSearch.ToLower()) || s.Type.ToLower().Contains(StringSearch.ToLower()));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    data = data.OrderBy(s => s.Name);
+                    break;
             }
 
             foreach (MaterialsModel model in data)

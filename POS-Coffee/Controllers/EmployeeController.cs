@@ -28,7 +28,7 @@ namespace POS_Coffe.Controllers
             switch (sortOrder)
             {
                 case "name_desc":
-                    data = data.OrderByDescending(s => s.Name);
+                    data = data.OrderBy(s => s.Name);
                     break;
                 case "Date":
                     data = data.OrderBy(s => s.Birthday);
@@ -48,9 +48,9 @@ namespace POS_Coffe.Controllers
         public ActionResult AddEmployee()
         {
             List<string> dataPermission = new List<string>();
-            dataPermission.Add("ROLE_ADMIN");
-            dataPermission.Add("ROLE_EMPLOYEE");
-            dataPermission.Add("ROLE_MANAGER");
+            dataPermission.Add("ADMIN");
+            dataPermission.Add("EMPLOYEE");
+            dataPermission.Add("MANAGER");
 
             ViewBag.Permission = new SelectList(dataPermission, "");
             EmployeeModel model = new EmployeeModel();
@@ -59,22 +59,13 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult AddEmployee(EmployeeModel data, HttpPostedFileWrapper Picture)
         {
-            string role = "Employee";
-            if (data.Permission == "ROLE_ADMIN")
-            {
-                role = "Admin";
-            }
-            else if (data.Permission == "ROLE_MANAGER")
-            {
-                role = "Manager";
-            }
             var test = Path.Combine(Server.MapPath("~/Content/images"), Picture.FileName);
             System.Console.WriteLine(data.Picture);
             int count = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Count();
             EmployeeModel model = new EmployeeModel();
             model.EmployeeID = count + 1;
             model.Name = data.Name;
-            model.Permission = role;
+            model.Permission = data.Permission;
             model.Birthday = data.Birthday;
             model.Phone = data.Phone;
             model.Username = data.Username;

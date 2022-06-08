@@ -62,7 +62,6 @@ namespace POS_Coffe.Controllers
             }
             dataIDFood.Distinct();
             ViewBag.StrIDFood = new SelectList(dataIDFood, "");
-            ViewBag.Error = GlobalDef.ERROR_MESSAGE_VOUCHER_VALUE_AND_IDFOOD;
             VoucherModel model = new VoucherModel();
 
             return View(model);
@@ -70,6 +69,21 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult AddVoucher(VoucherModel data)
         {
+            if (data.Value != 0 && data.StrIDFood != "--none--")
+            {
+                ViewBag.error = GlobalDef.ERROR_MESSAGE_VOUCHER_VALUE_AND_IDFOOD;
+                List<string> dataIDFood = new List<string>();
+                dataIDFood.Add("--none--");
+                List<FoodModel> foodModel1 = FoodAPIHandlerFakeData.GetInstance().ListFood.ToList();
+                foreach (var item in foodModel1)
+                {
+                    dataIDFood.Add(item.Name);
+                }
+                dataIDFood.Distinct();
+                ViewBag.StrIDFood = new SelectList(dataIDFood, "");
+                return View(data);
+            }
+
             int count = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Count();
             VoucherModel model = new VoucherModel();
             model.VoucherID = count + 1;

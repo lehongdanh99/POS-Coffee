@@ -50,10 +50,11 @@ namespace POS_Coffe.Controllers
                 switch (sortOrder)
                 {
                     case "FromDate_desc":
-                        lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate);
+                        //lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate.Year).ThenByDescending(s => s.FromDate.Month).ThenByDescending(s => s.FromDate.Day);
+                        lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate.Date);
                         break;
                     case "ToDate_desc":
-                        lstStatistic = lstStatistic.OrderByDescending(s => s.ToDate);
+                        lstStatistic = lstStatistic.OrderByDescending(s => s.ToDate.Year).ThenByDescending(s => s.ToDate.Month).ThenByDescending(s => s.ToDate.Day);
                         break;
                     case "CustomerPay_desc":
                         lstStatistic = lstStatistic.OrderByDescending(s => s.CustomerPay);

@@ -39,7 +39,7 @@
                             <th>@i</th>
                             <td>@item.Name</td>
 
-                            <td>
+                            @*<td>
                                 @if (item.Permission == "ROLE_EMPLOYEE")
                                 {
                                     <h5>Employee</h5>
@@ -52,7 +52,8 @@
                                 {
                                     <h5>Manager</h5>
                                 }
-                            </td>
+                            </td>*@
+                            <td>@item.Permission</td>
                             <td>@item.Birthday</td>
                             <td>@item.Phone</td>
                             <td style="text-align:center"> <img src=@item.Picture alt="profile photo" class="float-left profile-photo" width="120" height="auto"></td>

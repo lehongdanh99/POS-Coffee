@@ -41,15 +41,15 @@
                             </div>
                         </div>
                     </div>
-                    @*<div class="col-md-6">
+                    <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="Picture">Picture</label>
+                            <label class="col-sm-3 col-form-label" for="Type">Type</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Picture, new { @type = "image", htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
+                                @Html.DropDownList("Type", (IEnumerable<SelectListItem>)ViewBag.foodtype, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                    </div>*@
+                    </div>
                     <input class="button-primary" type="submit" value="Send">
                     @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
                     <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />

@@ -58,7 +58,7 @@
                     <input class="button-primary" type="submit" value="Send" name="btnSaveChange" id="btnSaveChange" />
                     @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
                     <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />
-                    <h5 name="error" id="error" style="display:none; color:red">@ViewBag.Error</h5>
+                    <h5 name="error" id="error" style="color:red">@ViewBag.error</h5>
                 }
             </div>
         </div>
@@ -87,13 +87,13 @@
         //}
     })
 
-    $('#StrIDFood').click(function () {
-        document.getElementById("error").style.display = "none"
-    })
+    //$('#StrIDFood').click(function () {
+    //    document.getElementById("error").style.display = "none"
+    //})
 
-    $('#Value').click(function () {
-        document.getElementById("error").style.display = "none"
-    })
+    //$('#Value').click(function () {
+    //    document.getElementById("error").style.display = "none"
+    //})
 
 
     //$(function () {

@@ -30,8 +30,8 @@
                         {
                             @*<input type="text" value="Login" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}" />
                             <input type="password" value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}" />*@
-                            <input type="text" placeholder="Login" name="username" />
-                            <input type="password" placeholder="Password" name="password" />
+                            <input type="text" placeholder="Login" name="username" id="username"/>
+                            <input type="password" placeholder="Password" name="password" id="password"/>
                             <div class="remember">
                                 <span class="checkbox1">
                                     <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
@@ -51,8 +51,8 @@
                             @*<input type="submit" value="Login">*@
                             @*<a class="btn btn-gradient-success button " href="~/Account/AccountManagement">Login</a>*@
                             @*<button type="button" class="btn-success" onclick="Login()">Login</button>*@
-                            <h4 style="color:red; display:none" name="error" id="error">Wrong username or password</h4>
-                            <input class="button-primary" type="submit" value="Login" name="LoginBtn" id="LoginBtn">
+                            <h4 style="color:red" name="error" id="error">@ViewBag.error</h4>
+                            <input class="button-primary" type="submit" value="Login">
                         }
                         @*<div class="header-left-top">
             <div class="sign-up"> <h2>or</h2> </div>

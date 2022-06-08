@@ -65,7 +65,7 @@
                             <div class="col-sm-9">
                                 @*@Html.EditorFor(model => model.Picture, new { @type = "picture",htmlAttributes = new { @required = "required", @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })*@
-                                @Html.TextBoxFor(model => model.Picture, new { type = "file", accept = "FileUploadLocation/*" })
+                                @Html.TextBoxFor(model => model.Picture, new { type = "file", accept = "~/Content/images" })
                                 @Html.ValidationMessageFor(model => model.Picture)
                             </div>
                         </div>

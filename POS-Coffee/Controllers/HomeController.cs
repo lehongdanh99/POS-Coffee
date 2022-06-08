@@ -31,6 +31,11 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult Login(EmployeeModel dataLogin)
         {
+            if(dataLogin.Username == null || dataLogin.Password == null)
+            {
+                ViewBag.error = "Please fill in Username and Password!";
+                return View(dataLogin);
+            }
             string username = "";
             string password = "";
             try
@@ -60,7 +65,8 @@ namespace POS_Coffe.Controllers
                 }
                 catch (Exception ex)
                 {
-                    ViewBag.Login_Fail = "Error Username or Password!";
+                    ViewBag.error = GlobalDef.ERROR_MESSAGE_LOGIN;
+                    return View(dataLogin);
                 }
             }
             return View();
@@ -71,15 +77,16 @@ namespace POS_Coffe.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Register(string name, string password)
+        public ActionResult Register(string username, string password, string Name)
         {
             int count = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Count();
             EmployeeModel data = new EmployeeModel();
             data.EmployeeID = count + 1;    
-            data.Name = name;
+            data.Username = username;
+            data.Name = Name;
             data.Password = password;
             EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Add(data);
-            return RedirectToAction("EmployeeManagement", "Home");
+            return RedirectToAction("Login", "Home");
         }
         public ActionResult ForgotPassWord()
         {

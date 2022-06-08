@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using POS_Coffe.Models;
 using PagedList;
+using System.IO;
 
 namespace POS_Coffe.Controllers
 {
@@ -39,7 +40,7 @@ namespace POS_Coffe.Controllers
             switch (sortOrder)
             {
                 case "name_desc":
-                    dataModel = dataModel.OrderByDescending(s => s.Name);
+                    dataModel = dataModel.OrderBy(s => s.Name);
                     break;
                 case "Price_desc":
                     dataModel = dataModel.OrderBy(s => s.Price);
@@ -60,30 +61,57 @@ namespace POS_Coffe.Controllers
         [HttpGet]
         public ActionResult AddFood()
         {
+            List<string> foodtype = new List<string>();
+            List<MaterialsModel> materialdata = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.ToList();
+            foreach (var item in materialdata)
+            {
+                string foodtypename = item.Type;
+                foodtype.Add(foodtypename);
+            }
+            foodtype = foodtype.Distinct().ToList();
+            ViewBag.foodtype = new SelectList(foodtype, "");
+
             FoodModel model = new FoodModel();
             return View(model);
         }
+
         [HttpPost]
-        public ActionResult AddFood(FoodModel data)
+        public ActionResult AddFood(FoodModel data, HttpPostedFileWrapper Picture)
         {
+            var test = Path.Combine(Server.MapPath("~/Content/images"), Picture.FileName);
+            System.Console.WriteLine(data.Picture);
             int count = FoodAPIHandlerFakeData.GetInstance().ListFood.Count();
             FoodModel model = new FoodModel();
             model.FoodID = count + 1;
             model.Name = data.Name;
             model.Price = data.Price;
+            model.Type = data.Type;
+            model.Picture = test;
             //model.Picture = ;
             FoodAPIHandlerFakeData.GetInstance().ListFood.Add(model);
             return RedirectToAction("FoodManagement", "FoodManagement", model);
         }
+
         [HttpGet]
         public ActionResult EditFood(int FoodID)
         {
+            List<string> foodtype = new List<string>();
+            List<MaterialsModel> materialdata = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.ToList();
+            foreach (var item in materialdata)
+            {
+                string foodtypename = item.Type;
+                foodtype.Add(foodtypename);
+            }
+            foodtype = foodtype.Distinct().ToList();
+            ViewBag.foodtype = new SelectList(foodtype, "");
+
             var EditData = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == FoodID);
             FoodModel data = new FoodModel();
             data.FoodID = FoodID;
             data.Name = EditData.ToList().First().Name;
             data.Price= EditData.ToList().First().Price;
             data.Picture = EditData.ToList().First().Picture;
+            data.Type = EditData.ToList().First().Type;
             return View(data);
         }
         [HttpPost]
@@ -94,6 +122,7 @@ namespace POS_Coffe.Controllers
             EditData.ToList().First().Name = data.Name;
             EditData.ToList().First().Price = data.Price;
             EditData.ToList().First().Picture = data.Picture;
+            EditData.ToList().First().Type = data.Type;
             return RedirectToAction("FoodManagement", "FoodManagement");
         }
         public ActionResult DeleteFood(int FoodID)
