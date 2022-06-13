@@ -22,24 +22,23 @@
 <body>
     <div class="navbar">
         <div class="row">
-            <div class="column column-30 col-site-title"><a href="#" class="site-title float-left">Coffee</a></div>
-            @*<div class="column column-40 col-search">
+            <div class="column column-40 col-search" style="padding-left:30px">
                 <a href="#" class="search-btn fa fa-search"></a>
                 <input type="text" name="" value="" placeholder="Search..." />
-            </div>*@
+            </div>
             <div class="column column-30">
                 <div class="user-section">
                     <a href="#">
                         <img src="https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg" alt="profile photo" class="circle float-left profile-photo" width="50" height="auto">
                         <div class="username">
-                            @*@if (Session["Name"] == null)
+                            @if (Session["Name"] == null)
                             {
                                 
                             }
                             else
-                            {*@
+                            {
                             <h4>@Session["Name"].ToString()</h4>
-                            @*}*@
+                            }
                             
                             <p id="LogOut">Logout</p>
                         </div>
@@ -51,7 +50,7 @@
 
     <div class="row">
         <div id="sidebar" class="column">
-            <h5></h5>
+            <h3 style="height:80px">Coffee POS</h3>
             <ul>
                 <li><a href="~/Statistic/Index"><em class="fa fa-bar-chart"></em>Statistic</a></li>
                 @*<li><a href="~/Home/EmployeeManagement"><em class="fa fa-home"></em> Dashboard</a></li>*@

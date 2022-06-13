@@ -22,7 +22,7 @@ namespace POS_Coffe.Controllers
 
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
-                dataModel = dataModel.Where(s => (s.Name).ToLower().Contains(StringSearch.ToLower()) || s.Type.ToLower().Contains(StringSearch.ToLower()) /*|| s.Price == Convert.ToInt32(StringSearch)*/);
+                dataModel = dataModel.Where(s => (s.FoodName).ToLower().Contains(StringSearch.ToLower()) || s.FoodType.ToLower().Contains(StringSearch.ToLower()) /*|| s.Price == Convert.ToInt32(StringSearch)*/);
             }
             System.Console.WriteLine(dataModel);
             //if(dataModel == null)
@@ -40,10 +40,10 @@ namespace POS_Coffe.Controllers
             switch (sortOrder)
             {
                 case "name_desc":
-                    dataModel = dataModel.OrderBy(s => s.Name);
+                    dataModel = dataModel.OrderBy(s => s.FoodName);
                     break;
                 case "Price_desc":
-                    dataModel = dataModel.OrderBy(s => s.Price);
+                    dataModel = dataModel.OrderBy(s => s.FoodPrice);
                     break;
             }
 
@@ -79,14 +79,14 @@ namespace POS_Coffe.Controllers
         public ActionResult AddFood(FoodModel data, HttpPostedFileWrapper Picture)
         {
             var test = Path.Combine(Server.MapPath("~/Content/images"), Picture.FileName);
-            System.Console.WriteLine(data.Picture);
+            System.Console.WriteLine(data.FoodImage);
             int count = FoodAPIHandlerFakeData.GetInstance().ListFood.Count();
             FoodModel model = new FoodModel();
             model.FoodID = count + 1;
-            model.Name = data.Name;
-            model.Price = data.Price;
-            model.Type = data.Type;
-            model.Picture = test;
+            model.FoodName = data.FoodName;
+            model.FoodPrice = data.FoodPrice;
+            model.FoodType = data.FoodType;
+            model.FoodImage = test;
             //model.Picture = ;
             FoodAPIHandlerFakeData.GetInstance().ListFood.Add(model);
             return RedirectToAction("FoodManagement", "FoodManagement", model);
@@ -108,10 +108,10 @@ namespace POS_Coffe.Controllers
             var EditData = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == FoodID);
             FoodModel data = new FoodModel();
             data.FoodID = FoodID;
-            data.Name = EditData.ToList().First().Name;
-            data.Price= EditData.ToList().First().Price;
-            data.Picture = EditData.ToList().First().Picture;
-            data.Type = EditData.ToList().First().Type;
+            data.FoodName = EditData.ToList().First().FoodName;
+            data.FoodPrice= EditData.ToList().First().FoodPrice;
+            data.FoodImage = EditData.ToList().First().FoodImage;
+            data.FoodType = EditData.ToList().First().FoodType;
             return View(data);
         }
         [HttpPost]
@@ -119,10 +119,10 @@ namespace POS_Coffe.Controllers
         {
             var EditData = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == data.FoodID);
             FoodModel model = new FoodModel();
-            EditData.ToList().First().Name = data.Name;
-            EditData.ToList().First().Price = data.Price;
-            EditData.ToList().First().Picture = data.Picture;
-            EditData.ToList().First().Type = data.Type;
+            EditData.ToList().First().FoodName = data.FoodName;
+            EditData.ToList().First().FoodPrice = data.FoodPrice;
+            EditData.ToList().First().FoodImage = data.FoodImage;
+            EditData.ToList().First().FoodType = data.FoodType;
             return RedirectToAction("FoodManagement", "FoodManagement");
         }
         public ActionResult DeleteFood(int FoodID)
@@ -151,7 +151,7 @@ namespace POS_Coffe.Controllers
                 foodDetail.Quantity = model.Quantity;
                 foodDetail.Amount = model.Amount;
                 foodDetail.Type = model.Type;
-                foodDetail.Foodname = dataFood.Name;
+                foodDetail.Foodname = dataFood.FoodName;
                 lstfood.Add(foodDetail);
             }
             return PartialView(lstfood);

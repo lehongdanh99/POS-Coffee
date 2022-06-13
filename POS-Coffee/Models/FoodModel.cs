@@ -20,10 +20,10 @@ namespace POS_Coffe.Models
             return _instance;
         }
         public int FoodID { get; set; }
-        public string Name { get; set; }
-        public int Price { get; set; }
-        public string Picture { get; set; }
-        public string Type { get; set; }      
+        public string FoodName { get; set; }
+        public int FoodPrice { get; set; }
+        public string FoodImage { get; set; }
+        public string FoodType { get; set; }      
     }
     public class FoodAPIHandlerFakeData
     {

@@ -21,15 +21,15 @@
         <div class="card">
             <div class="card-block">
                 <table class="styled-table">
-                    <thead>
+                    <thead class="header-style">
                         <tr>
-                            <th>#</th>
+                            <th></th>
   
-                            <th>@Html.ActionLink("Name", "FoodManagement", new { sortOrder = ViewBag.NameSortParm })</th>
-                            <th>@Html.ActionLink("Price", "FoodManagement", new { sortOrder = ViewBag.PriceSortParm })</th>
+                            <th>@Html.ActionLink("Tên", "FoodManagement", new { sortOrder = ViewBag.NameSortParm })</th>
+                            <th>@Html.ActionLink("Giá", "FoodManagement", new { sortOrder = ViewBag.PriceSortParm })</th>
 
-                            <th>Picture</th>
-                            <th>Type</th>
+                            @*<th>Hình</th>*@
+                            <th>Loại</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -37,17 +37,25 @@
 
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <th>@i</th>
-                                <td>@item.Name</td>
-                                <td>@item.Price</td>
-                                <td style="text-align:center"> <img src=@item.Picture alt="profile photo" class="float-left profile-photo" width="120" height="auto"></td>
-                                <td>@item.Type</td>
+                            <tr class="items-style">
+                                @*<th>@i</th>*@
+
+                                <td style="text-align:center ;width:80px; padding-left:20px; padding-right:0px">
+                                    <img src=@item.FoodImage alt="profile photo" border-style="10px" class="circle float-left profile-photo" width="60" height="60">
+                                </td>
+                                <td>@item.FoodName</td>
+                                <td>@item.FoodPrice</td>
+
+                                <td>@item.FoodType</td>
                                 <td style="text-align:center">
-                                    <button type="button" class="btn btn-primary fa fa-bookmark" onclick='window.location.href = "@Url.Action("Details", "FoodManagement", new {FoodID = item.FoodID })"'> </button>
+                                    <button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "FoodManagement", new {FoodID = item.FoodID })"'> </button>
                                     <button type="button" class="btn btn-primary fa fa-edit " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {FoodID = item.FoodID })"'></button>
                                     <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger fa fa-remove" />
                                 </td>
+                            <tr style="">
+                                <td>@item.FoodPrice</td>
+                            </tr>
+
                             </tr>
                             i++;
                         }

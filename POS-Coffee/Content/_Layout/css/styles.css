@@ -199,7 +199,10 @@ input[type='email'], input[type='number'], input[type='password'], input[type='s
   box-shadow: none; }
 
 input[type='email'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='text'], input[type='url'], select {
-  max-width: 60rem; }
+    max-width: 60rem;
+    border-radius: 499rem;
+    background-color: white;
+}
 
 input[type='email']:focus, input[type='number']:focus, input[type='password']:focus, input[type='search']:focus, input[type='tel']:focus, input[type='text']:focus, input[type='url']:focus, textarea:focus, select:focus {
   border-color: #35cebe;
@@ -213,13 +216,16 @@ select:focus {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 29 14" width="29"><path fill="#f02563" d="M9.37727 3.625l5.08154 6.93523L19.54036 3.625"/></svg>'); }
 
 .navbar {
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  background: #fff;
-  height: 80px;
-  padding: 20px 0;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05); }
+    position: fixed;
+    z-index: 1;
+    width: 80%;
+    padding-left: 80px;
+    background: #f9f9f9;
+    height: 80px;
+    margin-left: 20%;
+    justify-self: end;
+    padding: 20px 0;
+}
   .navbar a.site-title {
     color: #222;
     color: #35cebe;
@@ -247,14 +253,16 @@ select:focus {
     height: 50px; }
 
 #sidebar {
-  position: fixed;
-  z-index: 0;
-  width: 20% !important;
-  background: #fff;
-  padding: 10px 30px !important;
-  box-shadow: 3px 0px 8px rgba(0, 0, 0, 0.05);
-  margin-top: 80px;
-  height: 100%; }
+    position: fixed;
+    z-index: 0;
+    width: 20% !important;
+    background: #fff;
+    padding: 10px 30px !important;
+    box-shadow: 3px 0px 8px rgba(0, 0.25, 0.25, 0.25);
+    margin-top: 20px;
+    height: 100%;
+    border-radius: 30px;
+}
   #sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5, #sidebar h6 {
     color: #333;
     margin-top: 20px;
@@ -266,7 +274,10 @@ select:focus {
     #sidebar ul li {
       list-style: none;
       margin: 0;
-      padding: 0; }
+      height: 60px;
+      padding: 0; 
+      padding-left: 10px;
+    }
       #sidebar ul li a {
         display: block;
         padding: 10px 20px;
@@ -287,6 +298,7 @@ select:focus {
 
 .card {
   background: #fff;
+  border-radius: 30px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
   margin-bottom: 2.2rem; }
   .card .canvas-wrapper {

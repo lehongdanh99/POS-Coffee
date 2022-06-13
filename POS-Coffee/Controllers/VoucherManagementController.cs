@@ -26,7 +26,7 @@ namespace POS_Coffe.Controllers
             foreach(var item in data)
             {
                 FoodModel foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == item.IDFood).FirstOrDefault();
-                item.StrIDFood = foodModel.Name;
+                item.StrIDFood = foodModel.FoodName;
             }
 
             System.Console.WriteLine(data);
@@ -58,7 +58,7 @@ namespace POS_Coffe.Controllers
             List<FoodModel> foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.ToList();
             foreach(var item in foodModel)
             {
-                dataIDFood.Add(item.Name);
+                dataIDFood.Add(item.FoodName);
             }
             dataIDFood.Distinct();
             ViewBag.StrIDFood = new SelectList(dataIDFood, "");
@@ -77,7 +77,7 @@ namespace POS_Coffe.Controllers
                 List<FoodModel> foodModel1 = FoodAPIHandlerFakeData.GetInstance().ListFood.ToList();
                 foreach (var item in foodModel1)
                 {
-                    dataIDFood.Add(item.Name);
+                    dataIDFood.Add(item.FoodName);
                 }
                 dataIDFood.Distinct();
                 ViewBag.StrIDFood = new SelectList(dataIDFood, "");
@@ -90,7 +90,7 @@ namespace POS_Coffe.Controllers
             model.Name = data.Name;
             model.Value = data.Value;
 
-            FoodModel foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.Name.Equals(data.StrIDFood)).FirstOrDefault();
+            FoodModel foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodName.Equals(data.StrIDFood)).FirstOrDefault();
 
             model.IDFood = foodModel.FoodID;
 
