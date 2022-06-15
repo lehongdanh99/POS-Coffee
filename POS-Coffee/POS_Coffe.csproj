@@ -188,7 +188,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\images\food-1.png" />
+    <Content Include="Content\_Layout\css\images\backgroundmenu.jpg" />
+    <Content Include="Content\_Layout\css\images\cflogo.png" />
+    <Content Include="Content\_Layout\css\images\food-1.png" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Table\Table.css" />
     <Content Include="Content\_blank\css\style.css" />

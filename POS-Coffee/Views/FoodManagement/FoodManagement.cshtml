@@ -52,9 +52,7 @@
                                     <button type="button" class="btn btn-primary fa fa-edit " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {FoodID = item.FoodID })"'></button>
                                     <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger fa fa-remove" />
                                 </td>
-                            <tr style="">
-                                <td>@item.FoodPrice</td>
-                            </tr>
+                            
 
                             </tr>
                             i++;

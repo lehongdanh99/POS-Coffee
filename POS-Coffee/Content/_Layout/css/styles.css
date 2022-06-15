@@ -256,7 +256,9 @@ select:focus {
     position: fixed;
     z-index: 0;
     width: 20% !important;
-    background: #fff;
+    background-image: url(./images/backgroundmenu.jpg);
+
+    background-color: lightsteelblue;
     padding: 10px 30px !important;
     box-shadow: 3px 0px 8px rgba(0, 0.25, 0.25, 0.25);
     margin-top: 20px;
@@ -283,10 +285,19 @@ select:focus {
         padding: 10px 20px;
         color: #888; }
         #sidebar ul li a .fa {
+            
           margin-right: 5px; }
-      #sidebar ul li a:hover {
-        color: #35cebe;
-        background-color: #f9f9f9; }
+        #sidebar ul li a:hover {
+            color: wheat;
+            border-radius: 10px;
+            margin-left: 0px;
+            margin-right: 10px;
+            background-color: saddlebrown;
+        }
+
+      #sidebar .fa:hover {
+          background-color: aqua;
+      }
 
 #main-content {
   width: 80% !important;
