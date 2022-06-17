@@ -62,14 +62,18 @@ namespace CoffeePos.Views
 
         private void ChooseTable_Click(object sender, RoutedEventArgs e)
         {
-            Table obj = ((FrameworkElement)sender).DataContext as Table;
-            if (GlobalDef.IsChooseTableToOrder && !obj.TableStatus)
+            if(!GlobalDef.IsChooseTableToOrder)
             {
-                HomeViewModel.GetInstance().HandleCallBacChooseTable(obj.TableID.ToString());
-                this.Hide();
                 return;
-            }
-            else if (GlobalDef.IsChooseMoreTable && TablesViewModel.GetInstance().TablesAllList[obj.TableID - 1].IsCheckChoose == Visibility.Visible)
+            }    
+            Table obj = ((FrameworkElement)sender).DataContext as Table;
+            //if (GlobalDef.IsChooseTableToOrder && !obj.TableStatus)
+            //{
+            //    HomeViewModel.GetInstance().HandleCallBacChooseTable(obj.TableID.ToString());
+            //    this.Hide();
+            //    return;
+            //}
+            if (GlobalDef.IsChooseMoreTable && TablesViewModel.GetInstance().TablesAllList[obj.TableID - 1].IsCheckChoose == Visibility.Visible)
             {
                 TablesViewModel.GetInstance().TablesAllList[obj.TableID - 1].IsCheckChoose = Visibility.Collapsed;
                 TablesViewModel.GetInstance().getData();

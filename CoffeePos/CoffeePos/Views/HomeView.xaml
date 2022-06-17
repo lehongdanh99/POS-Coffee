@@ -60,25 +60,25 @@
                 <materialDesign:PopupBox  PlacementMode="BottomAndAlignRightEdges" StaysOpen="False"></materialDesign:PopupBox>
             </StackPanel>-->
                 <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"
-                         Height="70" Margin="0"
+                         Height="70" Margin="0" IsEnabled="{Binding IsEditting}"
                         cal:Message.Attach="[Event Click] = [Action btTable_Click()]" Background="DarkSlateGray" BorderBrush="{x:Null}" 
                         >
                     <materialDesign:PackIcon Kind="TableChair" FontSize="500" Height="50" Width="30" Foreground="White"/>
                 </Button>
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
-                        Height="70"
+                        Height="70" IsEnabled="{Binding IsEditting}"
                         cal:Message.Attach="[Event Click] = [Action btListOrder_Click()]" Background="DarkSlateGray" BorderBrush="{x:Null}"
                         >
                     <materialDesign:PackIcon Kind="Receipt" FontSize="500" Height="50" Width="30" Foreground="White"/>
                 </Button>
                 <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
-                        Height="70"
+                        Height="70" IsEnabled="{Binding IsEditting}"
                         cal:Message.Attach="[Event Click] = [Action btListVoucher_Click()]" Background="DarkSlateGray" BorderBrush="{x:Null}"
                         >
                     <materialDesign:PackIcon Kind="Voucher" FontSize="500" Height="50" Width="30" Foreground="White"/>
                 </Button>
                 <Button cal:Message.Attach="[Event Click] = [Action btRegister_Click()]"
-                        HorizontalAlignment="Right" VerticalAlignment="Center" Width="100"
+                        HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" IsEnabled="{Binding IsEditting}"
                         Height="70" Background="DarkSlateGray" BorderBrush="{x:Null}">
                     <materialDesign:PackIcon Kind="Register" FontSize="500" Height="50" Width="30" Foreground="White"/>
                 </Button>
@@ -226,11 +226,11 @@
                     </Grid.ColumnDefinitions>
                     <!--<TextBlock Text="Tại bàn" Foreground="DarkSlateGray" Margin="0 5 0 0" FontSize="12" TextAlignment="Center"/>
                     <TextBlock Text="Mang đi" Grid.Column="1" Foreground="DarkSlateGray"  Margin="0 5 0 0" FontSize="12" TextAlignment="Center"/>-->
-                    <Button Grid.Column="0" Margin="10 10 10 10" Height="50" Background="{Binding BgLocally}" 
+                    <Button Grid.Column="0" Margin="10 10 10 10" Height="50" Background="{Binding BgLocally}"  IsEnabled="{Binding IsEditting}"
                             cal:Message.Attach="[Event Click] = [Action LocallyClick()]" BorderBrush="{x:Null}">
                         <materialDesign:PackIcon Padding="20 0 0 0" Kind="LocalCafe" Foreground="{Binding BgDelivery}" Height="22" Width="31" RenderTransformOrigin="0.513,0.5" />
                     </Button>
-                    <Button Grid.Column="1" Margin="10 10 10 10" Height="50" Background="{Binding BgDelivery}" 
+                    <Button Grid.Column="1" Margin="10 10 10 10" Height="50" Background="{Binding BgDelivery}" IsEnabled="{Binding IsEditting}"
                             cal:Message.Attach="[Event Click] = [Action DeliveryClick()]" BorderBrush="{x:Null}">
                         <materialDesign:PackIcon Padding="20 0 0 0" Kind="DeliveryDining" Foreground="{Binding BgLocally}"  Height="22" Width="31" RenderTransformOrigin="0.513,0.5" />
                     </Button>
@@ -376,7 +376,7 @@
                     <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
                         <StackPanel Margin="0 5 0 0">
                             <Button Grid.Row="4" Grid.Column="0" FontSize="13" FontWeight="DemiBold" Width="130" Height="50" Margin="0 0 5 0"
-                            Content="Chọn bàn" Background="#FF079CFF" BorderBrush="{x:Null}" Visibility="{Binding VisibleDelivery}"
+                            Content="Chọn bàn" Background="#FF079CFF" BorderBrush="{x:Null}" Visibility="{Binding VisibleDelivery}" 
                             cal:Message.Attach="[Event Click] = [Action btMoreTableChoose_Click()]">
 
                             </Button>
@@ -389,13 +389,13 @@
                         
                         <Button Grid.Row="4" FontSize="18" Grid.Column="2" FontWeight="DemiBold" Width="120" Height="50" Margin="0"
                              IsEnabled="{Binding EnableOrder}" Background="Red" Visibility="{Binding VisibleDelivery}"
-                                cal:Message.Attach="[Event Click] = [Action btOrderLocally_Click()]"
+                                cal:Message.Attach="[Event Click] = [Action btOrderLocally_Click()]"  Foreground="White"
                                 BorderBrush="{x:Null}">
                             <TextBlock Text="Đặt bàn" TextWrapping="Wrap"/>
                         </Button>
                     </StackPanel>
                     <Button Grid.Row="4" FontSize="20" Grid.Column="1" FontWeight="Bold" Height="50" Margin="5" Visibility="{Binding VisibleLocally}"
-                            Content="Thanh Toán" Background="Red" BorderBrush="{x:Null}"
+                            Content="Thanh Toán" Background="Red" BorderBrush="{x:Null}" Foreground="White"
                             cal:Message.Attach="[Event Click] = [Action btOrderDelivery_Click()]">
 
                     </Button>

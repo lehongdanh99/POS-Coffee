@@ -263,6 +263,7 @@ namespace CoffeePos.ViewModels
             //HomeViewModel.GetInstance().TryCloseAsync();
             TablesViewModel.GetInstance().TryCloseAsync();
             ListOrderViewModel.GetInstance().TryCloseAsync();
+            HomeViewModel.GetInstance().IsEditting = false;
             foreach(var food in ListFoodOrder)
             {
                 FoodOrderModel.GetInstance().FoodOrders.Add(food);
@@ -369,7 +370,8 @@ namespace CoffeePos.ViewModels
             ReceiptTest.CheckOut = DateTime.Now.ToString("HH:mm");
             ReceiptTest.CheckIn = DateTime.Now.ToString("HH:mm");
             ReceiptTest.Note = string.Empty;
-            foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
+            HomeViewModel.GetInstance().IsEditting = true;
+            foreach (Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
             {
                 try
                 {
@@ -391,9 +393,11 @@ namespace CoffeePos.ViewModels
                         this.TryCloseAsync(true);
                         HomeViewModel.GetInstance().ReceiptIdtoEdit = 0;
                         //FoodOrderModel.GetInstance().FoodOrders.Clear();
-                        HomeViewModel.GetInstance().TableNum = "0";
-                        HomeViewModel.GetInstance().GetFoodOrderTotal();
+                        
+                        
                         HomeViewModel.GetInstance().ListViewFoodOrders.Clear();
+                        HomeViewModel.GetInstance().GetFoodOrderTotal();
+                        HomeViewModel.GetInstance().TableNum = "0";
                         //windowManager.ShowDialogAsync(TablesViewModel.GetInstance());
                         return;
                     }

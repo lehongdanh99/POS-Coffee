@@ -420,6 +420,14 @@ namespace CoffeePos.ViewModels
             return Listfoods;
         }
 
+        private bool isEditting = true;
+
+        public bool IsEditting
+        {
+            get { return isEditting; }
+            set { isEditting = value; NotifyOfPropertyChange(() => IsEditting); }
+        }
+
         public void btTypeChoose(string SelectedTypeFood)
         {
             if (SelectedTypeFood == "Tất cả")
@@ -566,6 +574,7 @@ namespace CoffeePos.ViewModels
             //this.TryCloseAsync();
             //TablesViewModel tableViewModel = new TablesViewModel(false);
             GlobalDef.IsChooseTableToOrder = false;
+            GlobalDef.IsChooseMoreTable = false;
             TablesViewModel.GetInstance().getData();
             //WindowManager windowManager = new WindowManager();
             GlobalDef.windowManager.ShowDialogAsync(TablesViewModel.GetInstance());
@@ -584,7 +593,7 @@ namespace CoffeePos.ViewModels
 
         public void btMoreTableChoose_Click()
         {
-
+            GlobalDef.IsChooseTableToOrder = true;
             GlobalDef.IsChooseMoreTable = true;
             //WindowManager windowManager = new WindowManager();
             GlobalDef.windowManager.ShowDialogAsync(TablesViewModel.GetInstance());
