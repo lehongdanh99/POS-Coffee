@@ -27,6 +27,7 @@ namespace POS_Coffe.Models
         public int CustomerPay { get; set; }
         public string TypePayment { get; set; }
         public string TypeService { get; set; }
+        public int Sum { get; set; }
     }
     public class StatisticAPIHandlerFakeData
     {

@@ -19,7 +19,7 @@ namespace POS_Coffe.Controllers
             ViewBag.DiscountPriceSortParm = String.IsNullOrEmpty(sortOrder) ? "DiscountPrice_desc" : "";
             ViewBag.TotalPriceSortParm = String.IsNullOrEmpty(sortOrder) ? "TotalPrice_desc" : "";
             IQueryable<StatisticModel> lstStatistic = StatisticAPIHandlerFakeData.GetInstance().ListStatistic.AsQueryable();
-
+            int count = 0;
             if (!String.IsNullOrWhiteSpace(FromDate) || !String.IsNullOrWhiteSpace(ToDate))
             {
                 DateTime FromDateSearch = DateTime.Now;
@@ -67,6 +67,11 @@ namespace POS_Coffe.Controllers
                         break;
                 }
 
+                foreach (var item in lstStatistic)
+                {
+                    count = item.CustomerPay + count;
+                }
+                ViewBag.Count = count;
                 foreach (StatisticModel model in lstStatistic)
                 {
                     if (model != null)
@@ -96,6 +101,13 @@ namespace POS_Coffe.Controllers
                     lstStatistic = lstStatistic.OrderByDescending(s => s.TotalPrice);
                     break;
             }
+
+            foreach (var item in lstStatistic)
+            {
+                count = item.CustomerPay + count;
+            }
+
+            ViewBag.Count = count;
             foreach (StatisticModel model in lstStatistic)
             {
                 if (model != null)
