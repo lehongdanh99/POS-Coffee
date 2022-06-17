@@ -23,7 +23,7 @@
                     <materialDesign:PackIcon Kind="ArrowBack" FontSize="300" Foreground="White"/>
                 </Button>
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="400 0" FontWeight="Bold" FontSize="24" 
-                           Text="{x:Static language:Lang.ListOrder_Title}"></TextBlock>
+                          Foreground="White" Text="{x:Static language:Lang.ListOrder_Title}"></TextBlock>
 				
             </StackPanel>
 
