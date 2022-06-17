@@ -19,8 +19,7 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        public DateTime FromDate { get; set; }
-        public DateTime ToDate { get; set; }
+        public DateTime Day { get; set; }
         public string VoucherName { get; set; }
         public string Table { get; set; }
         public int TotalPrice { get; set; }

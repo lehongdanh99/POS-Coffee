@@ -90,5 +90,15 @@ namespace POS_Coffe.Controllers
             MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Remove(data);
             return RedirectToAction("MaterialManagement", "Material");
         }
+
+        public ActionResult FilterMaterial()
+        {
+            return View();
+        }
+
+        public ActionResult SortMaterial()
+        {
+            return View();
+        }
     }
 }

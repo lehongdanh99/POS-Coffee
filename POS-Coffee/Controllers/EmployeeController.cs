@@ -119,5 +119,15 @@ namespace POS_Coffe.Controllers
             EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Remove(data);
             return RedirectToAction("ViewEmployee", "Employee");
         }
+
+        public ActionResult FilterEmployee()
+        {
+            return View();
+        }
+
+        public ActionResult SortEmployee()
+        {
+            return View();
+        }
     }
 }

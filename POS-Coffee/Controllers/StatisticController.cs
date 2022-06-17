@@ -14,7 +14,6 @@ namespace POS_Coffe.Controllers
         public int pageSize = 10;
         public ActionResult Index(string FromDate, string ToDate, string sortOrder, int? pageNo)
         {
-            ViewBag.FromDateSortParm = String.IsNullOrEmpty(sortOrder) ? "FromDate_desc" : "";
             ViewBag.ToDateSortParm = String.IsNullOrEmpty(sortOrder) ? "ToDate_desc" : "";
             ViewBag.CustomerPaySortParm = sortOrder == "CustomerPay" ? "CustomerPay_desc" : "CustomerPay";
             ViewBag.DiscountPriceSortParm = String.IsNullOrEmpty(sortOrder) ? "DiscountPrice_desc" : "";
@@ -44,17 +43,18 @@ namespace POS_Coffe.Controllers
                 System.Console.WriteLine(FromDateSearch);
                 System.Console.WriteLine(FromDateSearch);
 
-                lstStatistic = lstStatistic.Where(s => s.FromDate > FromDateSearch);
-                lstStatistic = lstStatistic.Where(s => s.ToDate < ToDateSearch);
+                //lstStatistic = lstStatistic.Where(s => s.FromDate > FromDateSearch);
+                //lstStatistic = lstStatistic.Where(s => s.ToDate < ToDateSearch);
+                lstStatistic = lstStatistic.Where(s => s.Day > FromDateSearch && s.Day < ToDateSearch);
 
                 switch (sortOrder)
                 {
-                    case "FromDate_desc":
-                        //lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate.Year).ThenByDescending(s => s.FromDate.Month).ThenByDescending(s => s.FromDate.Day);
-                        lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate.Date);
-                        break;
+                    //case "FromDate_desc":
+                    //    //lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate.Year).ThenByDescending(s => s.FromDate.Month).ThenByDescending(s => s.FromDate.Day);
+                    //    lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate.Date);
+                    //    break;
                     case "ToDate_desc":
-                        lstStatistic = lstStatistic.OrderByDescending(s => s.ToDate.Year).ThenByDescending(s => s.ToDate.Month).ThenByDescending(s => s.ToDate.Day);
+                        lstStatistic = lstStatistic.OrderByDescending(s => s.Day.Year).ThenByDescending(s => s.Day.Month).ThenByDescending(s => s.Day.Day);
                         break;
                     case "CustomerPay_desc":
                         lstStatistic = lstStatistic.OrderByDescending(s => s.CustomerPay);
@@ -80,11 +80,11 @@ namespace POS_Coffe.Controllers
             }
             switch (sortOrder)
             {
-                case "FromDate_desc":
-                    lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate);
-                    break;
+                //case "FromDate_desc":
+                //    lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate);
+                //    break;
                 case "ToDate_desc":
-                    lstStatistic = lstStatistic.OrderByDescending(s => s.ToDate);
+                    lstStatistic = lstStatistic.OrderByDescending(s => s.Day);
                     break;
                 case "CustomerPay_desc":
                     lstStatistic = lstStatistic.OrderByDescending(s => s.CustomerPay);
@@ -103,6 +103,12 @@ namespace POS_Coffe.Controllers
             }
 
             return View(lstStatistic.ToList());
+        }
+        
+        public PartialViewResult GetDetails(string Table)
+        {
+            StatisticModel lstStatistic = StatisticAPIHandlerFakeData.GetInstance().ListStatistic.Where(s => s.Table.Equals(Table)).FirstOrDefault();
+            return PartialView(lstStatistic);
         }
     }
 }

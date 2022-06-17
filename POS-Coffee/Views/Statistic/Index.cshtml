@@ -22,14 +22,14 @@
     <button type="submit" value="Search" class="btn fa fa-search"/>
 </div>
 <div class="form-check-label">
-    Filter:
+    @*Filter:
     <select class="form-check-input">
         <option disabled selected>--none--</option>
         <option>Day</option>
         <option>Month</option>
         <option>Year</option>
-    </select>
-    <button type="submit" value="Apply" class="btn fa fa-filter"/>
+    </select>*@
+    @*<button type="submit" value="Apply" class="btn fa fa-filter"/>*@
 </div>
 }
         <div class="card">
@@ -38,34 +38,36 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>@Html.ActionLink("FromDate", "Index", new { sortOrder = ViewBag.FromDateSortParm })</th>
-                            <th>@Html.ActionLink("ToDate", "Index", new { sortOrder = ViewBag.ToDateSortParm })</th>
-                            <th>VoucherName</th>
-                            <th>Table</th>
+                            @*<th>@Html.ActionLink("FromDate", "Index", new { sortOrder = ViewBag.FromDateSortParm })</th>*@
+                            <th>@Html.ActionLink("Day", "Index", new { sortOrder = ViewBag.ToDateSortParm })</th>
+                            @*<th>VoucherName</th>
+                            <th>Table</th>*@
                             <th>@Html.ActionLink("TotalPrice", "Index", new { sortOrder = ViewBag.TotalPriceSortParm })</th>
                             <th>@Html.ActionLink("DiscountPrice", "Index", new { sortOrder = ViewBag.DiscountPriceSortParm })</th>
                             <th>@Html.ActionLink("CustomerPay", "Index", new { sortOrder = ViewBag.CustomerPaySortParm })</th>
-                            <th>TypePayment</th>
-                            <th>TypeService</th>
-
+                            @*<th>TypePayment</th>
+                            <th>TypeService</th>*@
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <th>@i</th>
-                                <td>@item.FromDate.ToString("dd/MM/yyyy")</td>
-                                <td>@item.ToDate.ToString("dd/MM/yyyy")</td>
-                                <td>@item.VoucherName</td>
-                                <td>@item.Table</td>
-                                <td>@item.TotalPrice</td>
-                                <td>@item.DiscountPrice</td>
-                                <td>@item.CustomerPay</td>
-                                <td>@item.TypePayment</td>
-                                <td>@item.TypeService</td>
-
-                            </tr>
+                        <tr>
+                            <th>@i</th>
+                            <td>@item.Day.ToString("dd/MM/yyyy")</td>
+                            @*<td>@item.VoucherName</td>
+        <td>@item.Table</td>*@
+                            <td>@item.TotalPrice</td>
+                            <td>@item.DiscountPrice</td>
+                            <td>@item.CustomerPay</td>
+                            @*<td>@item.TypePayment</td>
+        <td>@item.TypeService</td>*@
+                        <td>
+                            <button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("GetDetails", "Statistic", new {Table = item.Table })"'> </button>
+                        </td>
+                            
+                        </tr>
                             i++;
                         }
                     </tbody>

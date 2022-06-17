@@ -42,5 +42,9 @@ namespace POS_Coffe.Controllers
             }
             return PartialView();
         }
+        public ActionResult SortDay()
+        {
+            return View();
+        }
     }
 }

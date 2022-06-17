@@ -50,5 +50,15 @@ namespace POS_Coffe.Controllers
             data.ToList().First().Birthday = data.First().Birthday;
             return RedirectToAction("AccountManagement", "Account");
         }
+
+        public ActionResult DeleteAccount()
+        {
+            return View();
+        }
+
+        public ActionResult CloneAccount() 
+        { 
+            return View(); 
+        }
     }
 }

@@ -156,5 +156,14 @@ namespace POS_Coffe.Controllers
             }
             return PartialView(lstfood);
         }
+        public ActionResult FilterFood()
+        {
+            return View();
+        }
+
+        public ActionResult SortFood()
+        {
+            return View();
+        }
     }
 }

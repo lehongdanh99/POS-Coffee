@@ -13,7 +13,7 @@ namespace POS_Coffe
         public static string VOUCHER_JSON_CONFIG_PATH = System.AppDomain.CurrentDomain.BaseDirectory + "Voucher.json";
         public static string HISTORYTRACKING_JSON_CONFIG_PATH = System.AppDomain.CurrentDomain.BaseDirectory + "HistoryTracking.json";
         public static string STATISTIC_JSON_CONFIG_PATH = System.AppDomain.CurrentDomain.BaseDirectory + "Statistic.json";
-        public static string ERROR_MESSAGE_VOUCHER_VALUE_AND_IDFOOD = "Please choose only Value or IdFood";
+        public static string ERROR_MESSAGE_VOUCHER_VALUE_AND_IDFOOD = "Please Fill in IdFood";
         public static string ERROR_MESSAGE_LOGIN = "Error Username or Password!";
     }
 }

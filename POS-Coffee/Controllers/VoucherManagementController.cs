@@ -69,7 +69,7 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult AddVoucher(VoucherModel data)
         {
-            if (data.Value != 0 && data.StrIDFood != "--none--")
+            if (data.StrIDFood == "--none--")
             {
                 ViewBag.error = GlobalDef.ERROR_MESSAGE_VOUCHER_VALUE_AND_IDFOOD;
                 List<string> dataIDFood = new List<string>();
@@ -139,6 +139,15 @@ namespace POS_Coffe.Controllers
             var data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == VoucherID).FirstOrDefault();
             VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Remove(data);
             return RedirectToAction("VoucherManagement", "VoucherManagement");
+        }
+        public ActionResult FilterVoucher()
+        {
+            return View();
+        }
+
+        public ActionResult SortVoucher()
+        {
+            return View();
         }
     }
 }
