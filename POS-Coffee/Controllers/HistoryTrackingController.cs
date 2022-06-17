@@ -31,9 +31,15 @@ namespace POS_Coffe.Controllers
             return View(Pagination);
         }
 
+        [HttpGet]
         public PartialViewResult Details(int HistoryID)
         {
-
+            HistoryTrackingModel dataTracking = HistoryTrackingAPIHandlerFakeData.GetInstance().ListHistoryTracking.Where(x => x.HistoryID == HistoryID).FirstOrDefault();
+            if (dataTracking.TableEffect == "Employee")
+            {
+                EmployeeModel dataEmp = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(x => x.EmployeeID == dataTracking.EmpID).FirstOrDefault();
+                return PartialView(dataEmp);
+            }
             return PartialView();
         }
     }

@@ -1051,6 +1051,7 @@
     </Content>
     <Content Include="Views\FoodManagement\Details.cshtml" />
     <Content Include="Statistic.json" />
+    <Content Include="Views\HistoryTracking\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
