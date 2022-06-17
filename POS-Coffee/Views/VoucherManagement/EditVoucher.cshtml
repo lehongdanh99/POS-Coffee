@@ -36,8 +36,17 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Value">Value</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Value, new {  htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.EditorFor(model => model.Value, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Value, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="StrIDFood">IDFood</label>
+                            <div class="col-sm-9">
+                                @Html.DropDownList("StrIDFood", (IEnumerable<SelectListItem>)ViewBag.StrIDFood, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.StrIDFood, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>

@@ -94,6 +94,7 @@ namespace POS_Coffe.Controllers
             data.Birthday = EditData.ToList().First().Birthday;
             data.Phone = EditData.ToList().First().Phone;
             data.Username = EditData.ToList().First().Username;
+            data.Password = EditData.ToList().First().Password;
             return View(data);
         }
 
@@ -107,6 +108,7 @@ namespace POS_Coffe.Controllers
             EditData.ToList().First().Birthday = data.Birthday;
             EditData.ToList().First().Phone = data.Phone;
             EditData.ToList().First().Username = data.Username;
+            EditData.ToList().First().Password = data.Password;
 
             return RedirectToAction("ViewEmployee", "Employee");
         }

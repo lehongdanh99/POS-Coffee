@@ -102,23 +102,35 @@ namespace POS_Coffe.Controllers
         [HttpGet]
         public ActionResult EditVoucher(int VoucherID)
         {
+            List<string> dataIDFood = new List<string>();
+            dataIDFood.Add("--none--");
+            List<FoodModel> foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.ToList();
+            foreach (var item in foodModel)
+            {
+                dataIDFood.Add(item.FoodName);
+            }
+            dataIDFood.Distinct();
+            ViewBag.StrIDFood = new SelectList(dataIDFood, "");
+
             var EditData = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == VoucherID);
             VoucherModel data = new VoucherModel();
             data.VoucherID = VoucherID;
             data.Name = EditData.ToList().First().Name;
             data.Value = EditData.ToList().First().Value;
-            data.IDFood = EditData.ToList().First().IDFood;
+            //data.IDFood = EditData.ToList().First().IDFood;
             data.isValue = EditData.ToList().First().isValue;
             return View(data);
         }
         [HttpPost]
         public ActionResult EditVoucher(VoucherModel data)
         {
+            FoodModel foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodName.Equals(data.StrIDFood)).FirstOrDefault();
+
             var EditData = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == data.VoucherID);
             VoucherModel model = new VoucherModel();
             EditData.ToList().First().Name = data.Name;
             EditData.ToList().First().Value = data.Value;
-            EditData.ToList().First().IDFood = data.IDFood;
+            EditData.ToList().First().IDFood = foodModel.FoodID;
             EditData.ToList().First().isValue = data.isValue;
             return RedirectToAction("VoucherManagement", "VoucherManagement");
         }

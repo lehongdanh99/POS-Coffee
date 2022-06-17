@@ -45,7 +45,7 @@
                             <label class="col-sm-3 col-form-label" for="Permission">Permission</label>
                             <div class="col-sm-9">
                                 @*@Html.EditorFor(model => model.Permission, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Permission, "", new { @class = "text-danger" })*@
+                        @Html.ValidationMessageFor(model => model.Permission, "", new { @class = "text-danger" })*@
                                 @*@Html.DropDownList("Permission", (IEnumerable<SelectListItem>)ViewBag.Permission, new { @class = "form-control" })*@
                                 <select class="form-control" name="Permission" id="Permission">
                                     <option>ADMIN</option>
@@ -80,6 +80,15 @@
                             <div class="col-sm-9">
                                 @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="Password">Password</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
