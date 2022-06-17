@@ -8,7 +8,12 @@
     "address": "Đông Bắc Quận 12",
     "Username": "employee01",
     "Picture": "https://axcelavietnam.com/wp-content/uploads/2020/04/the-big-picture-la-tu-vung-duoc-su-dung-pho-bien-trong-tieng-anh-thuong-mai.jpg",
-    "password": "123456"
+    "password": "123456",
+    "CreatedDate": "08/21/2021",
+    "CreatedBy": "Đồng Thị Bảo Ngọc",
+    "UpdatedDate": "08/21/2021",
+    "UpdatedBy": "Phan Anh Tú"
+
   },
   {
     "EmployeeID": 2,

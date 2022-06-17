@@ -59,7 +59,7 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult AddEmployee(EmployeeModel data, HttpPostedFileWrapper Picture)
         {
-            var test = Path.Combine(Server.MapPath("~/Content/images"), Picture.FileName);
+            //var test = Path.Combine(Server.MapPath("~/Content/images"), Picture.FileName);
             System.Console.WriteLine(data.Picture);
             int count = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Count();
             EmployeeModel model = new EmployeeModel();
@@ -70,8 +70,15 @@ namespace POS_Coffe.Controllers
             model.Phone = data.Phone;
             model.Username = data.Username;
             model.Password = data.Password;
-            model.Picture = test;
+            //model.Picture = test;
             EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Add(model);
+
+            HistoryTrackingModel history = new HistoryTrackingModel();
+            history.OccurTime = DateTime.Now.ToString("mm/dd/yyyy");
+            history.TableEffect = "Employee table";
+            history.ActionType = "Add";
+            history.EmpID = Convert.ToInt32(Session["EmployeeID"]);
+            HistoryTrackingAPIHandlerFakeData.GetInstance().ListHistoryTracking.Add(history);
             //return View(model);
             return RedirectToAction("ViewEmployee", "Employee", model);
         }

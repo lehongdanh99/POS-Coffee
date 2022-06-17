@@ -120,5 +120,18 @@ namespace POS_Coffe
             }
             return modelStatistic;
         }
+
+        //Get list HistoryTracking
+        private List<HistoryTrackingModel> modelHistoryTracking = new List<HistoryTrackingModel>();
+        public List<HistoryTrackingModel> ReadJsonFileConfigHistoryTracking()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.HISTORYTRACKING_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                modelHistoryTracking = JsonConvert.DeserializeObject<List<HistoryTrackingModel>>(json);
+            }
+            return modelHistoryTracking;
+        }
     }
 }

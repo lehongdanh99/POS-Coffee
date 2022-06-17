@@ -4,7 +4,7 @@
 namespace POS_Coffe.Models
 {
 
-    public class EmployeeModel
+    public class EmployeeModel : BaseModel
     {
         private static EmployeeModel _instance;
         public static EmployeeModel GetInstance()

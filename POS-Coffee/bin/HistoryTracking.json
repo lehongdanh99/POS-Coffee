@@ -1,0 +1,79 @@
+[
+  {
+    "HistoryID": 1,
+    "EmpID": 1,
+    "TableEffect": "Employee",
+    "OccurTime": "08/21/2021",
+    "ActionType": "Edit"
+  },
+  {
+    "HistoryID": 2,
+    "EmpID": 3,
+    "TableEffect": "Valid",
+    "OccurTime": "08/21/2021",
+    "ActionType": ""
+  },
+  {
+    "HistoryID": 3,
+    "EmpID": 5,
+    "TableEffect": "Invalid",
+    "OccurTime": "03/12/2021",
+    "ActionType": ""
+  },
+  {
+    "HistoryID": 4,
+    "EmpID": 6,
+    "TableEffect": "Valid",
+    "OccurTime": "11/25/2021",
+    "ActionType": ""
+  },
+  {
+    "HistoryID": 5,
+    "EmpID": 7,
+    "TableEffect": "Invalid",
+    "OccurTime": "08/03/2020",
+    "ActionType": ""
+  },
+  {
+    "HistoryID": 6,
+    "EmpID": 8,
+    "TableEffect": "Valid",
+    "OccurTime": "11/16/2022",
+    "ActionType": ""
+  },
+  {
+    "HistoryID": 7,
+    "EmpID": 9,
+    "TableEffect": "Invalid",
+    "OccurTime": "01/13/2021",
+    "ActionType": ""
+  },
+  {
+    "HistoryID": 8,
+    "EmpID": 3,
+    "TableEffect": "Valid",
+    "OccurTime": "09/15/2022",
+    "ActionType": ""
+  },
+  {
+    "HistoryID": 9,
+    "EmpID": 1,
+    "TableEffect": "Invalid",
+    "OccurTime": "03/05/2022",
+    "ActionType": ""
+  },
+  {
+    "HistoryID": 10,
+    "EmpID": 1,
+    "TableEffect": "Valid",
+    "OccurTime": "08/21/2019",
+    "ActionType": ""
+  },
+  {
+    "HistoryID": 11,
+    "EmpID": 1,
+    "TableEffect": "Valid",
+    "OccurTime": "01/22/2021",
+    "ActionType": ""
+  }
+]

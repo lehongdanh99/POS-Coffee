@@ -45,12 +45,12 @@
                             <label class="col-sm-3 col-form-label" for="Permission">Permission</label>
                             <div class="col-sm-9">
                                 @*@Html.EditorFor(model => model.Permission, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.Permission, "", new { @class = "text-danger" })*@
+                                @Html.ValidationMessageFor(model => model.Permission, "", new { @class = "text-danger" })*@
                                 @*@Html.DropDownList("Permission", (IEnumerable<SelectListItem>)ViewBag.Permission, new { @class = "form-control" })*@
                                 <select class="form-control" name="Permission" id="Permission">
-                                    <option>ROLE_ADMIN</option>
-                                    <option>ROLE_EMPLOYEE</option>
-                                    <option>ROLE_MANAGER</option>
+                                    <option>ADMIN</option>
+                                    <option>EMPLOYEE</option>
+                                    <option>MANAGER</option>
                                 </select>
                                 @Html.ValidationMessageFor(model => model.Permission, "", new { @class = "text-danger" })
                             </div>

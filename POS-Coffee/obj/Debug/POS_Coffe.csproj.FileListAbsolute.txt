@@ -247,3 +247,4 @@ F:\POS-Coffee\POS-Coffee\bin\PagedList.dll
 F:\POS-Coffee\POS-Coffee\bin\PagedList.Mvc.dll
 F:\POS-Coffee\POS-Coffee\bin\PagedList.xml
 F:\POS-Coffee\POS-Coffee\bin\PagedList.Mvc.xml
+F:\POS-Coffee\POS-Coffee\bin\HistoryTracking.json
