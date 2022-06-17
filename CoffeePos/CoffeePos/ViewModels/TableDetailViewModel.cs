@@ -371,27 +371,44 @@ namespace CoffeePos.ViewModels
             ReceiptTest.Note = string.Empty;
             foreach(Receipt receipt in ReceiptModel.GetInstance().ListReceipt)
             {
-                if(receipt.Id == GlobalDef.ReceiptDetail.Id && GlobalDef.ReceiptDetail.Id != 0)
+                try
                 {
-                    TablesViewModel.GetInstance().TablesAllList[Int32.Parse(receipt.Table)].TableStatus = false;
-                    foreach (var table in TableNumOrder.Split(',').Select(Int32.Parse).ToList())
+                    if (receipt.Id == GlobalDef.ReceiptDetail.Id && GlobalDef.ReceiptDetail.Id != 0)
                     {
-                        TablesViewModel.GetInstance().TablesAllList[table - 1].TableStatus = true;
-                        TablesViewModel.GetInstance().TablesAllList[table - 1].IsCheckChoose = Visibility.Collapsed;
+                        foreach (var table in receipt.Table.Split(',').Select(Int32.Parse).ToList())
+                        {
+                            TablesViewModel.GetInstance().TablesAllList[table - 1].TableStatus = false;
+                        }
+                        //TablesViewModel.GetInstance().TablesAllList[Int32.Parse(receipt.Table)].TableStatus = false;
+                        foreach (var table in TableNumOrder.Split(',').Select(Int32.Parse).ToList())
+                        {
+                            TablesViewModel.GetInstance().TablesAllList[table - 1].TableStatus = true;
+                            TablesViewModel.GetInstance().TablesAllList[table - 1].IsCheckChoose = Visibility.Collapsed;
+                        }
+
+
+                        ReceiptModel.GetInstance().ListReceipt[receipt.Id - 1] = ReceiptTest;
+                        this.TryCloseAsync(true);
+                        HomeViewModel.GetInstance().ReceiptIdtoEdit = 0;
+                        //FoodOrderModel.GetInstance().FoodOrders.Clear();
+                        HomeViewModel.GetInstance().TableNum = "0";
+                        HomeViewModel.GetInstance().GetFoodOrderTotal();
+                        HomeViewModel.GetInstance().ListViewFoodOrders.Clear();
+                        //windowManager.ShowDialogAsync(TablesViewModel.GetInstance());
+                        return;
                     }
+                    else
+                    {
+                        int Id = GlobalDef.ReceiptDetail.Id;
+                        int re = receipt.Id;
+                    }    
+                }catch (Exception ex)
+                {
+                    var table = TableNumOrder.Split(',').Select(Int32.Parse).ToList();
+                    MessageBox.Show(ex.Message);
 
-
-                    ReceiptModel.GetInstance().ListReceipt[receipt.Id -1] = ReceiptTest;
-                    this.TryCloseAsync();
-                    HomeViewModel.GetInstance().ReceiptIdtoEdit = 0;
-                    //FoodOrderModel.GetInstance().FoodOrders.Clear();
-                    HomeViewModel.GetInstance().TableNum = "0";
-                    HomeViewModel.GetInstance().GetFoodOrderTotal();
-                    HomeViewModel.GetInstance().ListViewFoodOrders.Clear();
-                    HomeViewModel.GetInstance().GetFoodOrderTotal();
-                    //windowManager.ShowDialogAsync(TablesViewModel.GetInstance());
-                    return;
                 }
+                  
                     
                 
             }

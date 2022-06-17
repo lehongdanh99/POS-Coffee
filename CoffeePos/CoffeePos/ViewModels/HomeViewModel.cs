@@ -96,7 +96,9 @@ namespace CoffeePos.ViewModels
             {
                 EnableOrder = false;
             }
+            DiscountOrder = 0;
             NotifyOfPropertyChange(() => EnableOrder);
+            NotifyOfPropertyChange(() => DiscountOrder);
             TotalOrder = HomePayment - (HomePayment*DiscountOrder/100);
             NotifyOfPropertyChange(() => FoodOrderTotalCount);
             NotifyOfPropertyChange(() => HomePayment);

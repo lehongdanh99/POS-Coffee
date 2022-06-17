@@ -20,7 +20,9 @@ namespace CoffeePos.ViewModels
             Employee = getEmployees();
             if (Properties.Settings.Default.languageCode.Equals("en-US"))
             {
-                LanguageSelected = 1;
+                Properties.Settings.Default.languageCode = "vi-VN";
+                Properties.Settings.Default.Save();
+                LanguageSelected = 0;
             }
             else
             {
@@ -124,7 +126,7 @@ namespace CoffeePos.ViewModels
             if (Password.Equals(string.Empty) || UserName.Equals(string.Empty))
             {
                 ErrorVisible = Visibility.Visible;
-                ErrorValidate = "Please add your user name or password";
+                ErrorValidate = "Vui lòng nhập tên đăng nhập và mật khẩu";
             }
 
             else
@@ -164,7 +166,7 @@ namespace CoffeePos.ViewModels
                     }
                 }
                 ErrorVisible = Visibility.Visible;
-                ErrorValidate = "Wrong pass or username";
+                ErrorValidate = "Sai mật khẩu hoặc tên đăng nhập";
 
             }
 

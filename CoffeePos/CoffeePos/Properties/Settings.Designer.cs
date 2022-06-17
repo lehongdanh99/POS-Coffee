@@ -25,7 +25,7 @@ namespace CoffeePos.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("en-US")]
+        [global::System.Configuration.DefaultSettingValueAttribute("vi-VN")]
         public string languageCode {
             get {
                 return ((string)(this["languageCode"]));

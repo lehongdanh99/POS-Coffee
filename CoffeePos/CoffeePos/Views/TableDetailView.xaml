@@ -20,13 +20,13 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Button 
+            <!--<Button 
                 HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding VisibleCanEdit}"
                         materialDesign:ButtonAssist.CornerRadius="25" Margin="10 0" BorderBrush="{x:Null}"
                 cal:Message.Attach="[Event Click] = [Action SwtitchTable()]" Click="BtnBack_Click">
                 
                 <materialDesign:PackIcon Kind="SwapHorizontal" Height="25" Width="25" Foreground="White"/>
-            </Button>
+            </Button>-->
 
             <Button HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0" BorderBrush="{x:Null}" Background="{x:Null}" Click="BtnBack_Click">
                 <materialDesign:PackIcon HorizontalAlignment="Right" Kind="Close" Width="30" Height="30" Foreground="Black"/>
