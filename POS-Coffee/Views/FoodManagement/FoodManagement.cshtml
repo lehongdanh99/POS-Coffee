@@ -1,10 +1,10 @@
-﻿@model PagedList<POS_Coffe.Models.FoodDetail>
+﻿@model PagedList<POS_Coffe.Models.AllFood>
 @using PagedList
 @using PagedList.Mvc
 @{
     ViewBag.Title = "FoodManagement";
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
-    int i = 1;
+    int counting = 1;
 }
 
 <div class="row">
@@ -34,6 +34,7 @@
 
                         @foreach (var item in Model)
                         {
+                            @*Display Food*@
                             <tr class="items-style">
                                 @*<th>@i</th>*@
 
@@ -42,20 +43,41 @@
                                 </td>
                                 <td>@item.FoodName</td>
                                 <td>@item.FoodPrice</td>
-
                                 <td>@item.FoodType</td>
                                 <td style="text-align:center">
-                                    <button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "FoodManagement", new {FoodID = item.FoodID })"'> </button>
+                                    @*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "FoodManagement", new {FoodID = item.FoodID })"'> </button>*@
+                                    <button type="button" class="btn btn-primary fa fa-sticky-note" onclick="changeStatus(@counting)"></button>
                                     <button type="button" class="btn btn-primary fa fa-edit " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {FoodID = item.FoodID })"'></button>
                                     <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger fa fa-remove" />
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td></td>
+                            @*Display Materials of Food*@
+
+                            //Title
+
+                            @*<tr class="items-style">
+                                <th>Foodname</th>
+                                <th>MaterialName</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Quantity</th>
+                                <th>Type</th>
+                            </tr>*@
+
+                            <tr style="display:none" name="@counting" id="@counting">
+                                @foreach (var Material in item.LstFoods)
+                                {
+                                    <td>@Material.Foodname</td>
+                                    <td>@Material.MaterialName</td>
+                                    <td>@Material.Type</td>
+                                    <td>@Material.Amount</td>
+                                    <td>@Material.Quantity</td>
+                                }
                             </tr>
-                            i++;
-                        }
+                                counting++;
+
+                                }
                     </tbody>
                 </table>
             </div>

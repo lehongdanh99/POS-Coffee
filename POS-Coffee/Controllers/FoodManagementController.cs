@@ -18,43 +18,77 @@ namespace POS_Coffe.Controllers
             ViewBag.PriceSortParm = String.IsNullOrEmpty(sortOrder) ? "Price_desc" : "";
 
 
+
             IQueryable<FoodModel> dataModel = FoodAPIHandlerFakeData.GetInstance().ListFood.AsQueryable();
 
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
                 dataModel = dataModel.Where(s => (s.FoodName).ToLower().Contains(StringSearch.ToLower()) || s.FoodType.ToLower().Contains(StringSearch.ToLower()) /*|| s.Price == Convert.ToInt32(StringSearch)*/);
             }
-            System.Console.WriteLine(dataModel);
-            //if(dataModel == null)
-            //{
-            //    dataModel = FoodAPIHandlerFakeData.GetInstance().ListFood.AsQueryable();
-            //}
 
-            //RecipeModel lstMaterial = new RecipeModel();
-            //foreach (var item in dataModel)
-            //{
-            //    lstMaterial = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.RecipeID == item.FoodID).FirstOrDefault();
-            //}
-            //System.Console.WriteLine(lstMaterial);
+            List<AllFood> allFoodList = new List<AllFood>();
 
-            switch (sortOrder)
+            foreach (var item in dataModel)
             {
-                case "name_desc":
-                    dataModel = dataModel.OrderBy(s => s.FoodName);
-                    break;
-                case "Price_desc":
-                    dataModel = dataModel.OrderBy(s => s.FoodPrice);
-                    break;
+                AllFood allFood = new AllFood();
+                //Insert data of Food to AllFood Model
+                allFood.FoodName = item.FoodName;
+                allFood.FoodType = item.FoodType;
+                allFood.FoodID = item.FoodID;
+                allFood.FoodImage = item.FoodImage;
+                allFood.FoodPrice = item.FoodPrice;
+
+                //Insert Materials of each Food
+
+                int idfood = item.FoodID;
+
+                List<RecipeModel> dataReceip = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.Drink_Cake_ID == idfood).ToList();
+
+                List<FoodDetail> lstfood = new List<FoodDetail>();
+
+                foreach (var receip in dataReceip)
+                {
+                    int iditem = receip.RecipeID;
+
+                    FoodDetail foodDetail = new FoodDetail();
+
+                    MaterialsModel model = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Where(s => s.MaterialID == iditem).FirstOrDefault();
+                    if(model != null)
+                    {
+                        foodDetail.MaterialName = model.Name;
+                        foodDetail.Quantity = model.Quantity;
+                        foodDetail.Amount = model.Amount;
+                        foodDetail.Type = model.Type;
+                        foodDetail.Foodname = item.FoodName;
+                        lstfood.Add(foodDetail);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                allFood.LstFoods = lstfood;
+                allFoodList.Add(allFood);
             }
 
-            foreach (FoodModel model in dataModel)
+            //switch (sortOrder)
+            //{
+            //    case "name_desc":
+            //        dataModel = dataModel.OrderBy(s => s.FoodName);
+            //        break;
+            //    case "Price_desc":
+            //        dataModel = dataModel.OrderBy(s => s.FoodPrice);
+            //        break;
+            //}
+
+            foreach (AllFood model in allFoodList)
             {
                 if (model != null)
                     continue;
             }
-            dataModel.ToList();
+            allFoodList.ToList();
 
-            var Pagination = new PagedList<FoodModel>(dataModel, pageNo ?? 1, pageSize);
+            var Pagination = new PagedList<AllFood>(allFoodList, pageNo ?? 1, pageSize);
 
             return View(Pagination);
         }

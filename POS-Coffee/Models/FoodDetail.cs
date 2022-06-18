@@ -16,4 +16,14 @@ namespace POS_Coffe.Models
         public string Quantity { get; set; }
 
     }
+
+    public class AllFood
+    {
+        public int FoodID { get; set; }
+        public string FoodName { get; set; }
+        public int FoodPrice { get; set; }
+        public string FoodImage { get; set; }
+        public string FoodType { get; set; }
+        public List<FoodDetail> LstFoods { get; set; }
+    }
 }

@@ -24,7 +24,6 @@ namespace POS_Coffe.Models
         public string Type { get; set; }
         public int Amount { get; set; }
         public string Quantity { get; set; }
-
     }
     public class MaterialAPIHandlerFakeData
     {

@@ -138,5 +138,47 @@
     "Type": "mang đi",
     "Amount": "100",
     "Quantity": "cái"
+  },
+  {
+    "MaterialID": 21,
+    "Name": "ly nhựa",
+    "Type": "mang đi",
+    "Amount": "100",
+    "Quantity": "cái"
+  },
+  {
+    "MaterialID": 22,
+    "Name": "ly nhựa",
+    "Type": "mang đi",
+    "Amount": "100",
+    "Quantity": "cái"
+  },
+  {
+    "MaterialID": 23,
+    "Name": "ly nhựa",
+    "Type": "mang đi",
+    "Amount": "100",
+    "Quantity": "cái"
+  },
+  {
+    "MaterialID": 24,
+    "Name": "ly nhựa",
+    "Type": "mang đi",
+    "Amount": "100",
+    "Quantity": "cái"
+  },
+  {
+    "MaterialID": 25,
+    "Name": "ly nhựa",
+    "Type": "mang đi",
+    "Amount": "100",
+    "Quantity": "cái"
+  },
+  {
+    "MaterialID": 26,
+    "Name": "ly nhựa",
+    "Type": "mang đi",
+    "Amount": "100",
+    "Quantity": "cái"
   }
 ]
