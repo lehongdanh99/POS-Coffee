@@ -92,7 +92,7 @@ namespace POS_Coffe.Controllers
         {
             return View();
         }
-        public ActionResult Login(string source)
+        public ActionResult Validation(string source)
         {
             ViewBag.source = source;
             return View();

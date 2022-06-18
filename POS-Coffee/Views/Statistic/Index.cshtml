@@ -3,7 +3,7 @@
 @using PagedList.Mvc;
 @{
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
-    int i = 1;
+    int counting = 1;
 }
 
 <div class="row">
@@ -21,17 +21,18 @@
 
     <button type="submit" value="Search" class="btn fa fa-search"></button>
 
-    <h4 class="form-check-input" style="color: palevioletred">Customer pay: @ViewBag.Count vnd</h4>
+
 </div>
 <div class="form-check-label">
-    @*Filter:
+    Filter:
     <select class="form-check-input">
         <option disabled selected>--none--</option>
         <option>Day</option>
         <option>Month</option>
         <option>Year</option>
-    </select>*@
-    @*<button type="submit" value="Apply" class="btn fa fa-filter"/>*@
+    </select>
+    <button type="submit" value="Apply" class="btn fa fa-filter"></button>
+    <h4 class="form-check-input" style="color: palevioletred">Customer pay: @ViewBag.Count vnd</h4>
 </div>
 }
         <div class="card">
@@ -39,51 +40,51 @@
                 <table class="styled-table">
                     <thead>
                         <tr>
-                            <th>#</th>
+
                             @*<th>@Html.ActionLink("FromDate", "Index", new { sortOrder = ViewBag.FromDateSortParm })</th>*@
                             <th>@Html.ActionLink("Day", "Index", new { sortOrder = ViewBag.ToDateSortParm })</th>
                             @*<th>VoucherName</th>
-                            <th>Table</th>*@
+                                <th>Table</th>*@
                             <th>@Html.ActionLink("TotalPrice", "Index", new { sortOrder = ViewBag.TotalPriceSortParm })</th>
                             <th>@Html.ActionLink("DiscountPrice", "Index", new { sortOrder = ViewBag.DiscountPriceSortParm })</th>
                             <th>@Html.ActionLink("CustomerPay", "Index", new { sortOrder = ViewBag.CustomerPaySortParm })</th>
                             @*<th>TypePayment</th>
-                            <th>TypeService</th>*@
+                                <th>TypeService</th>*@
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            <th>@i</th>
-                            <td>@item.Day.ToString("dd/MM/yyyy")</td>
-                            @*<td>@item.VoucherName</td>
-        <td>@item.Table</td>*@
-                            <td>@item.TotalPrice</td>
-                            <td>@item.DiscountPrice</td>
-                            <td>@item.CustomerPay</td>
-                            @*<td>@item.TypePayment</td>
-        <td>@item.TypeService</td>*@
-                        <td>
-                            <button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("GetDetails", "Statistic", new {Table = item.Table })"'> </button>
-                        </td>
-                            
-                        </tr>
-                            i++;
+                            <tr>
+                                <td>@item.Day.ToString("dd/MM/yyyy")</td>
+                                <td>@item.TotalPrice</td>
+                                <td>@item.DiscountPrice</td>
+                                <td>@item.CustomerPay</td>
+                                @*<td><button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("GetDetails", "Statistic", new {Table = item.Table })"'></button></td>*@
+                                <td><button type="button" class="btn btn-primary fa fa-sticky-note" onclick="changeStatus(@counting)"></button></td>
+                            </tr>
+
+                            <tr style="display:none" name="@counting" id="@counting">
+                                <td>@item.VoucherName</td>
+                                <td>@counting</td>
+                            </tr>
+                            counting++;
+
                         }
                     </tbody>
                 </table>
+
             </div>
+
         </div>
 
-        @*<div class="column" style="text-align:center; display:inline-block">
-            <div class="pagination ali">
-                @Html.PagedListPager(Model, pageNo => Url.Action("Index", new { pageNo = pageNo }))
-            </div>
-        </div>*@
+
     </div>
 </div>
+
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
 
 <script>
     function AddNew() {
@@ -96,7 +97,32 @@
             window.location.href = url;
         }
     }
+
+    function changeStatus(counting) { 
+        if (document.getElementById(counting).style.display == "none") {
+            document.getElementById(counting).style.display = "block";
+        }
+        else if (document.getElementById(counting).style.display == "block") {
+            document.getElementById(counting).style.display = "none";
+        }
+    }
 </script>
 
 
+@*//if (value != 0 && IDFood != "--none--") {
+        //    document.getElementById("error").style.display = "block"
+        //    return false;
+        //}
+        //if ($('#Value').val() < 0 || $('#Value').val() > 100) {
+        //    document.getElementById("error").style.display = "block"
+        //    return false;
+        //}
+    })
 
+    //$('#StrIDFood').click(function () {
+    //    document.getElementById("error").style.display = "none"
+    //})
+
+    //$('#Value').click(function () {
+    //    document.getElementById("error").style.display = "none"
+    //})*@

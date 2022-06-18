@@ -1,4 +1,4 @@
-﻿@model PagedList<POS_Coffe.Models.FoodModel>
+﻿@model PagedList<POS_Coffe.Models.FoodDetail>
 @using PagedList
 @using PagedList.Mvc
 @{
@@ -24,12 +24,9 @@
                     <thead class="header-style">
                         <tr>
                             <th></th>
-  
-                            <th>@Html.ActionLink("Tên", "FoodManagement", new { sortOrder = ViewBag.NameSortParm })</th>
-                            <th>@Html.ActionLink("Giá", "FoodManagement", new { sortOrder = ViewBag.PriceSortParm })</th>
-
-                            @*<th>Hình</th>*@
-                            <th>Loại</th>
+                            <th>@Html.ActionLink("Name", "FoodManagement", new { sortOrder = ViewBag.NameSortParm })</th>
+                            <th>@Html.ActionLink("Price", "FoodManagement", new { sortOrder = ViewBag.PriceSortParm })</th>
+                            <th>Type</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -52,8 +49,10 @@
                                     <button type="button" class="btn btn-primary fa fa-edit " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {FoodID = item.FoodID })"'></button>
                                     <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger fa fa-remove" />
                                 </td>
-                            
+                            </tr>
 
+                            <tr>
+                                <td></td>
                             </tr>
                             i++;
                         }
@@ -67,30 +66,7 @@
             </div>
         </div>
     </div>
-
 </div>
-
-@*<div class="panel-group" id="accordition">
-        @foreach (var item in Model)
-                {
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordition" href="#@item.FoodID">
-                                    @item.Name
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="@item.FoodID" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                @item.Type
-                            </div>
-                        </div>
-                    </div>
-                }
-    </div>*@
-
-
 
 <script>
     function AddNew() {
@@ -104,6 +80,14 @@
         }
     }
 
+    function changeStatus(counting) {
+        if (document.getElementById(counting).style.display == "none") {
+            document.getElementById(counting).style.display = "block";
+        }
+        else if (document.getElementById(counting).style.display == "block") {
+            document.getElementById(counting).style.display = "none";
+        }
+    }
 </script>
 
 

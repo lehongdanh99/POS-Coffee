@@ -27,8 +27,8 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Name">Name</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.FoodName, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FoodName, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -36,8 +36,8 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Price">Price</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Price, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.FoodPrice, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FoodPrice, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -45,8 +45,8 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Type">Type</label>
                             <div class="col-sm-9">
-                                @Html.DropDownList("Type", (IEnumerable<SelectListItem>)ViewBag.foodtype, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                                @Html.DropDownList("FoodType", (IEnumerable<SelectListItem>)ViewBag.foodtype, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.FoodType, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>

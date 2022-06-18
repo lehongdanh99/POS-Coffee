@@ -9,48 +9,53 @@
 
 <div class="row">
     <div class="column">
+        <div class="card">
+            <div class="card-block">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>OccurTime</th>
+                            <th>Table Effect</th>
+                            <th>Employee</th>
+                            <th>Action type</th>
+                            <th></th>
+                        </tr>
+                        @{i = 1;}
+                    <thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th class="text-center">@i</th>
 
-        <table class="table-responsive bgheader-table table-striped">
-            <tr>
-                <th class="text-center">#</th>
-                <th>OccurTime</th>
-                <th>Table Effect</th>
-                <th>Employee</th>
-                <th>Action type</th>
-                <th></th>
-            </tr>
-            @{i = 1;}
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <th class="text-center">@i</th>
+                                <td>@item.OccurTime</td>
+                                <td>@item.TableEffect</td>
+                                <td>@item.EmpID</td>
+                                <td>@item.ActionType</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "HistoryTracking", new {HistoryID = item.HistoryID })"'> </button>
+                                </td>
+                                @*<td>
 
-                        <td>@item.OccurTime</td>
-                        <td>@item.TableEffect</td>
-                        <td>@item.EmpID</td>
-                        <td>@item.ActionType</td>
-                        <td>
-                            <button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "HistoryTracking", new {HistoryID = item.HistoryID })"'> </button>
-                        </td>
-                        @*<td>
+                        <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("IndexOfHistoryTracking", "HistoryTracking", new { HistoryID = item.HistoryID })"'> </button>
+                        <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.HistoryID))" class="btn btn-danger fa fa-remove" />
 
-                            <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("IndexOfHistoryTracking", "HistoryTracking", new { HistoryID = item.HistoryID })"'> </button>
-                            <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.HistoryID))" class="btn btn-danger fa fa-remove" />
-
-                        </td>*@
-                    </tr>
-                    i++;
-                }
-            </tbody>
-        </table>
-        <div class="column" style="text-align:center; display:inline-block">
-            <div class="pagination ali">
-                @Html.PagedListPager(Model, pageNo => Url.Action("IndexOfHistoryTracking", new { pageNo = pageNo }))
+                    </td>*@
+                            </tr>
+                            i++;
+                        }
+                    </tbody>
+                </table>
+                </div>
+            </div>
+                <div class="column" style="text-align:center; display:inline-block">
+                    <div class="pagination ali">
+                        @Html.PagedListPager(Model, pageNo => Url.Action("IndexOfHistoryTracking", new { pageNo = pageNo }))
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
 <script>
 
