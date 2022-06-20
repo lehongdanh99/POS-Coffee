@@ -2,7 +2,6 @@
 using CoffeePos.Common;
 using CoffeePos.Models;
 using Newtonsoft.Json;
-using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -63,14 +62,14 @@ namespace CoffeePos.ViewModels
             }
             foreach (var customer in Customer)
             {
-                SearchCustomer.Add(customer.Phone);
+                SearchCustomer.Add(customer.phone);
             }
         }
 
         public ObservableCollection<Customer> getCustomer()
         {
             ObservableCollection<Customer> customers = new ObservableCollection<Customer>();
-            foreach (Customer cus in CommonMethod.GetInstance().readCustomerJsonFileConfig())
+            foreach (var cus in RestAPIClient<Customer>.parseJsonToModel(GlobalDef.CUSTOMER_API))
             {
                 customers.Add(cus);
             }
@@ -399,8 +398,8 @@ namespace CoffeePos.ViewModels
         private ObservableCollection<Foods> GetFoods()
         {
             ObservableCollection<Foods> getFood = new ObservableCollection<Foods>();
-            
-            foreach (Foods food in CommonMethod.GetInstance().readFoodJsonFileConfig())
+
+            foreach (Foods food in RestAPIClient<Foods>.parseJsonToModel(GlobalDef.FOOD_API))
             {
                 food.FoodPrice = food.drinkCakeVariations[0].price;
                 getFood.Add(food);
@@ -472,7 +471,7 @@ namespace CoffeePos.ViewModels
             //{
                 foreach (var customer in Customer)
                 {
-                    if (search == customer.Phone)
+                    if (search == customer.phone)
                     {
                         
                         return;

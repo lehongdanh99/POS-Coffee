@@ -13,7 +13,6 @@ namespace CoffeePos.ViewModels
     {
         //Properties
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        RestAPIClient restAPI;
         //Constructor
         public LoginViewModel()
         {
@@ -131,43 +130,30 @@ namespace CoffeePos.ViewModels
 
             else
             {
-                foreach (Employee em in Employee)
+                string token = CommonMethod.Login(UserName.ToString(), revertPass);
+                if(token != string.Empty)
                 {
-                    if (em != null)
+                    ErrorVisible = Visibility.Hidden;
+                    /*Code change language (Create new change language button and put it in)*/
+                    if (language[LanguageSelected].ToString() == "English")
                     {
-                        if (em.Username == UserName && em.password == revertPass)
-                        {
-                            ErrorVisible = Visibility.Hidden;
-                            /*Code change language (Create new change language button and put it in)*/
-                            if (language[LanguageSelected].ToString() == "English")
-                            {
-                                Properties.Settings.Default.languageCode = "en-US";
-                            }
-                            else
-                            {
-                                Properties.Settings.Default.languageCode = "vi-VN";
-                            }
-
-                            Properties.Settings.Default.Save();
-                            //string response = restAPI.makeGetRequest();
-                            log.Debug("Btn login click");
-                            //Password.ToString();
-
-                            //HomeViewModel homeViewModel = new HomeViewModel();
-                            //WindowManager windowManager = new WindowManager();
-                            GlobalDef.windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
-                            //MessageBox.Show("Login success");
-                            Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
-                            {
-                                TryCloseAsync();
-                            }));
-                            return;
-                        }
+                        Properties.Settings.Default.languageCode = "en-US";
                     }
+                    else
+                    {
+                        Properties.Settings.Default.languageCode = "vi-VN";
+                    }
+                    Properties.Settings.Default.Save();
+                    log.Debug("Btn login click");
+                    GlobalDef.windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
+                    Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
+                    {
+                        TryCloseAsync();
+                    }));
+                    return;
                 }
                 ErrorVisible = Visibility.Visible;
                 ErrorValidate = "Sai mật khẩu hoặc tên đăng nhập";
-
             }
 
         }

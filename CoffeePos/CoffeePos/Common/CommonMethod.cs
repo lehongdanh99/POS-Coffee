@@ -1,10 +1,10 @@
 ﻿using CoffeePos.Models;
 using DocumentFormat.OpenXml.Office.CustomUI;
 using Newtonsoft.Json;
-using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Media;
@@ -31,40 +31,40 @@ namespace CoffeePos.Common
 
         public static void getFoodData()
         {
-            var client = new RestClient("http://34.126.139.165:8080/api/");
+            //var client = new RestClient("http://34.126.139.165:8080/api/");
             
-            var request = new RestRequest("drink-cake");
-            var response = client.Get(request);
+            //var request = new RestRequest("drink-cake");
+            //var response = client.Get(request);
 
-            if(response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                string raw = response.Content;
-                List<Foods> result = JsonConvert.DeserializeObject<List<Foods>>(raw);
-            }
-
-        }    
-        public List<Foods> readFoodJsonFileConfig()
-        {
-            var client = new RestClient("http://34.126.139.165:8080/api/");
-            var request = new RestRequest("drink-cake");
-            var response = client.Get(request);
-
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
-                string raw = response.Content;
-                List<Foods> result = JsonConvert.DeserializeObject<List<Foods>>(raw);
-  
-                foodModel = result;
-            }
-            //string json = String.Empty;
-            //using (StreamReader r = new StreamReader(GlobalDef.JSON_TEST))
+            //if(response.StatusCode == System.Net.HttpStatusCode.OK)
             //{
-            //    json = r.ReadToEnd();
-            //    foodModel = JsonConvert.DeserializeObject<List<Foods>>(json);
+            //    string raw = response.Content;
+            //    List<Foods> result = JsonConvert.DeserializeObject<List<Foods>>(raw);
             //}
-            //log.Info($"Read file Table config to Table model {json.ToString()} ");
-            return foodModel;
+
         }
+        //public List<Foods> readFoodJsonFileConfig(string path)
+        //{
+        //    try
+        //    {
+        //        using (var client = new HttpClient())
+        //        {
+        //            client.BaseAddress = new Uri("http://34.126.139.165:8080/api/");
+        //            var result = client.GetAsync(client.BaseAddress + path).Result;
+        //            if (result.StatusCode == System.Net.HttpStatusCode.OK)
+        //            {
+        //                var json = result.Content.ReadAsStringAsync().Result;
+        //                List<Foods> foods = JsonConvert.DeserializeObject<List<Foods>>(json);
+        //                foodModel = foods;
+        //            }
+        //        }
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }  
+        //    return foodModel;
+        //}
         private List<Table> model;
         public List<Table> readTableJsonFileConfig()
         {
@@ -122,6 +122,37 @@ namespace CoffeePos.Common
             biImg.StreamSource = ms;
             biImg.EndInit();
             return biImg as ImageSource;
+        }
+
+        public static string Login(string usr, string pwd)
+        {
+            string token = string.Empty;
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://34.126.139.165:8080/api/");
+                    Employee employee = new Employee()
+                    {
+                        username = usr,
+                        password = pwd
+                    };
+                    var json = JsonConvert.SerializeObject(employee);
+                    var payload = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                    var response = client.PostAsync(client.BaseAddress + "employee/login", payload).Result;
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        token = response.Content.ReadAsStringAsync().Result;
+                        Employee emp = JsonConvert.DeserializeObject<Employee>(token);
+                        token = emp.token;
+                    }
+                }               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return token;
         }
     }
 }

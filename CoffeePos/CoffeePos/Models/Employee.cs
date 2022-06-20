@@ -9,9 +9,10 @@ namespace CoffeePos.Models
     public class Employee
     {
         public int Id { get; set; }
-        public string Username { get; set; }
+        public string username { get; set; }
         public string Name { get; set; }
         public string password { get; set; }
+        public string token { get; set; }
         public Employee()
         {
 

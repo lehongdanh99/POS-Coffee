@@ -46,6 +46,8 @@ namespace CoffeePos.Common
         public static Visibility DetailTable = Visibility.Collapsed;
         public static string Password = "";
         public static string JSON_FOOD_CONFIG_PATH = "Food.json";
-        public static string JSON_TEST = "testJson.json";
+        public static string FOOD_API = "drink-cake";
+        public static string CUSTOMER_API = "customer";
+
     }
 }

@@ -40,7 +40,7 @@ namespace CoffeePos.ViewModels
             MoneySuggestList = getMoneySuggestList();
             foreach (var customer in HomeViewModel.GetInstance().Customer)
             {
-                SearchCustomer.Add(customer.Phone);
+                SearchCustomer.Add(customer.phone);
             }
         }
 
@@ -196,11 +196,11 @@ namespace CoffeePos.ViewModels
             }    
             foreach (var customer in HomeViewModel.GetInstance().Customer)
             {
-                if (search == customer.Phone)
+                if (search == customer.phone)
                 {
-                    PointCustomer = customer.Point;
+                    PointCustomer = customer.point;
                     TradePoint(PointCustomer);
-                    CustomerName = customer.Name;
+                    CustomerName = customer.name;
                     break;
                 }
             }
