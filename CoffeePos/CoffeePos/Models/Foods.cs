@@ -11,24 +11,32 @@ using CoffeePos.Common;
 
 namespace CoffeePos
 {
-    public class Foods : PropertyChangedBase
+    public class Foods
     {
-        public int FoodID { get; set; }
-        public string FoodName { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
         public double FoodPrice { get; set; }
 
-        public string FoodImage { get; set; }
+        public List<FoodVariations> drinkCakeVariations { get; set; }
 
-        public string FoodType { get; set; }
+        public string picture { get; set; }
+
+        public string type { get; set; }
 
         public Foods(string foodName, double foodPrice, string foodImage, string foodType)
         {
-            FoodName = foodName;
+            name = foodName;
             FoodPrice = foodPrice;
-            FoodImage = foodImage;
-            FoodType = foodType;
+            picture = foodImage;
+            type = foodType;
         }
 
+    }
+
+    public class FoodVariations
+    {
+        public string name { get; set; }
+        public int price { get; set; }
     }
 
     public class FoodOrderModel : PropertyChangedBase
@@ -107,6 +115,8 @@ namespace CoffeePos
                 
             }
         }
+
+        public List<FoodVariations> foodOrderVariations { get; set; }
 
         public string FoodType { get; set; }
 

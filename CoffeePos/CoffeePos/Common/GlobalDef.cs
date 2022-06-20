@@ -33,6 +33,7 @@ namespace CoffeePos.Common
         public static bool IsDeliveryPayment = false;
         //public static ObservableCollection<Receipt> ListReceipt = new ObservableCollection<Receipt>();
         //
+        public static bool IsEditing = false;
 
         public static Visibility IsCakeChoose = Visibility.Collapsed; 
         public static bool canEditDetail = false;
@@ -45,5 +46,6 @@ namespace CoffeePos.Common
         public static Visibility DetailTable = Visibility.Collapsed;
         public static string Password = "";
         public static string JSON_FOOD_CONFIG_PATH = "Food.json";
+        public static string JSON_TEST = "testJson.json";
     }
 }

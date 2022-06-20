@@ -48,11 +48,12 @@ namespace CoffeePos.ViewModels
             
             if(foodOrderSelected == default)
             {
-                FoodName = foodSelected.FoodName.ToString();
-                FoodImage = foodSelected.FoodImage;
+                FoodName = foodSelected.name.ToString();
+                FoodImage = foodSelected.picture;
+                FoodVariations = foodSelected.drinkCakeVariations;
                 this.orderCount = 1;
-                FoodID = foodSelected.FoodID;
-                FoodType = foodSelected.FoodType;
+                FoodID = foodSelected.id;
+                FoodType = foodSelected.type;
                 FoodPrice = foodSelected.FoodPrice;
                 BgSmallSize = new SolidColorBrush(Colors.Orange);
                 bgMediumSize = new SolidColorBrush(Colors.LightGray);
@@ -61,6 +62,7 @@ namespace CoffeePos.ViewModels
             else
             {
                 FoodName = foodOrderSelected.FoodOrderName.ToString();
+                FoodVariations = foodOrderSelected.foodOrderVariations;
                 FoodImage = foodOrderSelected.FoodOrderImage;
                 this.orderCount = foodOrderSelected.FoodOrderCount;
                 FoodID = foodOrderSelected.FoodID;
@@ -122,6 +124,8 @@ namespace CoffeePos.ViewModels
 
         private FoodOrder FoodSelectedOrder;
         public String FoodName { get; set; }
+
+        public List<FoodVariations> FoodVariations { get; set; }
 
         private double foodPrice;
         public double FoodPrice
@@ -218,7 +222,7 @@ namespace CoffeePos.ViewModels
                 }
                 else
                 {
-                    FoodPrice = FoodPrice / (1 + 0.1);
+                    FoodPrice = FoodSelectedOrder.FoodOrderPrice * OrderCount;
                 }
 
                 NotifyOfPropertyChange(() => FoodPrice);
@@ -234,11 +238,11 @@ namespace CoffeePos.ViewModels
                 isSizeSmall = false;
                 if(FoodSelected != default)
                 {
-                    FoodPrice = (FoodSelected.FoodPrice + FoodSelected.FoodPrice * 0.1) * OrderCount;
+                    FoodPrice = (FoodSelected.drinkCakeVariations[1].price) * OrderCount;
                 }
                 else
                 {
-                    FoodPrice = FoodPrice * 0.1 + FoodPrice;
+                    FoodPrice = FoodSelectedOrder.foodOrderVariations[1].price * OrderCount;
                 }
                 
                 NotifyOfPropertyChange(() => FoodPrice);
@@ -294,6 +298,7 @@ namespace CoffeePos.ViewModels
             }
             FoodSelectedOrder.FoodOrderCount = OrderCount;
             FoodSelectedOrder.FoodOrderMore = Note;
+            FoodSelectedOrder.foodOrderVariations = FoodVariations;
             FoodSelectedOrder.FoodOrderImage = FoodImage;
             FoodSelectedOrder.FoodOrderName = FoodName;
             FoodSelectedOrder.FoodID = FoodID;

@@ -1,11 +1,14 @@
 ﻿using Caliburn.Micro;
 using CoffeePos.Common;
 using CoffeePos.Models;
+using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,7 +38,6 @@ namespace CoffeePos.ViewModels
         }
         public HomeViewModel()
         {
-
             getDataHome();
             getCustomer();
         }
@@ -47,7 +49,6 @@ namespace CoffeePos.ViewModels
             VisibleLocally = Visibility.Hidden;
             VisibleDelivery = Visibility.Visible;
             FoodsMenu = GetFoods();
-            AllFoods = GetFoods();
             Customer = getCustomer();
             TypeFoods = GetTypeFoods();
             if (listViewFoodOrders == null)
@@ -58,7 +59,7 @@ namespace CoffeePos.ViewModels
             GetFoodOrderTotal();
             foreach (var foodOrder in FoodsMenu)
             {
-                SearchFood.Add(foodOrder.FoodName);
+                SearchFood.Add(foodOrder.name);
             }
             foreach (var customer in Customer)
             {
@@ -381,14 +382,14 @@ namespace CoffeePos.ViewModels
                     bool isTypeAdd = false;
                     for(int j = 0; j < typeFood.Count; j++)
                     {
-                        if(FoodsMenu[i].FoodType == typeFood[j])
+                        if(FoodsMenu[i].type == typeFood[j])
                             isTypeAdd = true;
                     }
                     if(!isTypeAdd)
-                        typeFood.Add(FoodsMenu[i].FoodType);
+                        typeFood.Add(FoodsMenu[i].type);
                 }
                 else
-                    typeFood.Add(FoodsMenu[i].FoodType);
+                    typeFood.Add(FoodsMenu[i].type);
             }    
 
             return typeFood;        
@@ -398,9 +399,10 @@ namespace CoffeePos.ViewModels
         private ObservableCollection<Foods> GetFoods()
         {
             ObservableCollection<Foods> getFood = new ObservableCollection<Foods>();
-
+            
             foreach (Foods food in CommonMethod.GetInstance().readFoodJsonFileConfig())
             {
+                food.FoodPrice = food.drinkCakeVariations[0].price;
                 getFood.Add(food);
             }
             return getFood;
@@ -411,7 +413,7 @@ namespace CoffeePos.ViewModels
             ObservableCollection<Foods> Listfoods = new ObservableCollection<Foods>();
             for(int i = 0; i < AllFoods.Count; i++)
             {
-                if(AllFoods[i].FoodType == foodType)
+                if(AllFoods[i].type == foodType)
                 {
                     Listfoods.Add(AllFoods[i]);
                 }
@@ -448,7 +450,7 @@ namespace CoffeePos.ViewModels
             {
                 foreach (var food in FoodsMenu)
                 {
-                    if (search == food.FoodName)
+                    if (search == food.name)
                     {
                         FoodsMenu.Clear();
                         FoodsMenu.Add(food);
@@ -499,7 +501,7 @@ namespace CoffeePos.ViewModels
         {
 
             FoodSelected = SelectedListFood;
-            if(SelectedListFood.FoodType == "Bánh")
+            if(SelectedListFood.type == "Bánh")
             {
                 GlobalDef.IsCakeChoose = Visibility.Collapsed;
             }    

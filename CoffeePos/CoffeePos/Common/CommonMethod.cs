@@ -1,10 +1,12 @@
 ﻿using CoffeePos.Models;
 using DocumentFormat.OpenXml.Office.CustomUI;
 using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -27,15 +29,40 @@ namespace CoffeePos.Common
             return _instance;
         }
 
+        public static void getFoodData()
+        {
+            var client = new RestClient("http://34.126.139.165:8080/api/");
+            
+            var request = new RestRequest("drink-cake");
+            var response = client.Get(request);
+
+            if(response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                string raw = response.Content;
+                List<Foods> result = JsonConvert.DeserializeObject<List<Foods>>(raw);
+            }
+
+        }    
         public List<Foods> readFoodJsonFileConfig()
         {
-            string json = String.Empty;
-            using (StreamReader r = new StreamReader(GlobalDef.JSON_FOOD_CONFIG_PATH))
+            var client = new RestClient("http://34.126.139.165:8080/api/");
+            var request = new RestRequest("drink-cake");
+            var response = client.Get(request);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                json = r.ReadToEnd();
-                foodModel = JsonConvert.DeserializeObject<List<Foods>>(json);
+                string raw = response.Content;
+                List<Foods> result = JsonConvert.DeserializeObject<List<Foods>>(raw);
+  
+                foodModel = result;
             }
-            log.Info($"Read file Table config to Table model {json.ToString()} ");
+            //string json = String.Empty;
+            //using (StreamReader r = new StreamReader(GlobalDef.JSON_TEST))
+            //{
+            //    json = r.ReadToEnd();
+            //    foodModel = JsonConvert.DeserializeObject<List<Foods>>(json);
+            //}
+            //log.Info($"Read file Table config to Table model {json.ToString()} ");
             return foodModel;
         }
         private List<Table> model;
