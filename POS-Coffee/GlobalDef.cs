@@ -15,5 +15,7 @@ namespace POS_Coffe
         public static string STATISTIC_JSON_CONFIG_PATH = System.AppDomain.CurrentDomain.BaseDirectory + "Statistic.json";
         public static string ERROR_MESSAGE_VOUCHER_VALUE_AND_IDFOOD = "Please Fill in IdFood";
         public static string ERROR_MESSAGE_LOGIN = "Error Username or Password!";
+        public static string BASE_URI = "http://34.126.139.165:8080/api/";
+        
     }
 }
