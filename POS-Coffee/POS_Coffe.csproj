@@ -138,6 +138,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngredientsController.cs" />
     <Compile Include="Controllers\MaterialController.cs" />
+    <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Controllers\VoucherManagementController.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="Models\FoodModel.cs" />
     <Compile Include="Models\HistoryTrackingModel.cs" />
     <Compile Include="Models\MaterialsModel.cs" />
+    <Compile Include="Models\ReceipDetail.cs" />
     <Compile Include="Models\ReceiptModel.cs" />
     <Compile Include="Models\RecipeModel.cs" />
     <Compile Include="Models\StatisticModel.cs" />
@@ -1053,6 +1055,8 @@
     <Content Include="Statistic.json" />
     <Content Include="Views\HistoryTracking\Details.cshtml" />
     <Content Include="Views\Statistic\GetDetails.cshtml" />
+    <Content Include="Views\Recipe\RecipeManagement.cshtml" />
+    <Content Include="Views\Recipe\AddRecipe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

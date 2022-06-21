@@ -1,0 +1,89 @@
+﻿@model List<POS_Coffe.Models.ReceipDetail>
+@{
+    ViewBag.Title = "RecipeManagement";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="column">
+        @using (Html.BeginForm("FoodManagement", "FoodManagement", FormMethod.Get))
+        {
+            <div class="form-check-label">
+
+                <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
+                <button type="submit" value="Search" class="form-check-input search-btn fa fa-search fa fa-search"></button>
+                <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />
+            </div>
+        }
+        <div class="card">
+            <div class="card-block">
+                <table class="styled-table">
+                    <thead class="header-style">
+                        <tr>
+                            <th>Food name</th>
+                            <th>Material name</th>
+                            <th>Amount for one</th>
+                            <th>MaterialID</th>
+                            <th>FoodID</th>
+                            <th>Recipe ID</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            @*Display Food*@
+                            <tr class="items-style">
+                                <td>@item.FoodName</td>
+                                <td>@item.MaterialName</td>
+                                <td>@item.Amount_For_One</td>
+                                <td>@item.MaterialID</td>
+                                <td>@item.Drink_Cake_ID</td>
+                                <td>@item.RecipeID</td>
+                                <td style="text-align:center">
+                                    @*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "FoodManagement", new {FoodID = item.FoodID })"'> </button>*@
+                                    @*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick="changeStatus(@counting)"></button>*@
+                                    <button type="button" class="btn btn-primary fa fa-edit " onclick='window.location.href = "@Url.Action("EditRecipe", "RecipeManagement", new {RecipeID = item.RecipeID })"'></button>
+                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.RecipeID))" class="btn btn-danger fa fa-remove" />
+                                </td>
+                            </tr>
+
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        @*<div class="column" style="text-align:center; display:inline-block">
+            <div class="pagination ali">
+                @Html.PagedListPager(Model, pageNo => Url.Action("FoodManagement", new { pageNo = pageNo }))
+            </div>
+        </div>*@
+    </div>
+</div>
+
+<script>
+    function AddNew() {
+        console.log()
+        window.location.href = "/Recipe/AddRecipe"
+    }
+    function btnConfirm(RecipeID) {
+        if (confirm('Do you want to delete ?')) {
+            var url = '@Url.Action("DeleteRecipe", "RecipeManagement")?RecipeID=' + RecipeID;
+            window.location.href = url;
+        }
+    }
+
+
+
+    function changeStatus(counting) {
+        if (document.getElementById(counting).style.display == "none") {
+            document.getElementById(counting).style.display = "block";
+        }
+        else if (document.getElementById(counting).style.display == "block") {
+            document.getElementById(counting).style.display = "none";
+        }
+    }
+</script>

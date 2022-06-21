@@ -11,6 +11,7 @@ namespace POS_Coffe.Models
         public int Drink_Cake_ID { get; set; }
         public int Amount_For_One { get; set; }
         public string Size { get; set; }
+        public int MaterialID { get; set; }
     }
     public class RecipeAPIHandlerFakeData
     {
