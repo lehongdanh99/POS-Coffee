@@ -205,12 +205,15 @@ namespace CoffeePos.ViewModels
                     PointCustomer = customer.point;
                     TradePoint(PointCustomer);
                     CustomerName = customer.name;
+                    Customer = customer;
                     break;
                 }
             }
             TotalPayment = receiptPayment.TotalPrice - (receiptPayment.TotalPrice * PointTradePercent/100) - (receiptPayment.TotalPrice * DiscountOrder / 100);
             RefundMoney = CustomerPay - TotalPayment;
         }
+
+        public Customer Customer = new Customer();
 
         public void TradePoint(double point)
         {
@@ -276,51 +279,62 @@ namespace CoffeePos.ViewModels
             //}    
             //ListTable.GetInstance().ListTables.TableNumber[receiptPayment.Table].TableStatus = false;
             ReceiptModel.GetInstance().ListReceiptDone.Add(receiptPayment);
-              
-            try
-            {
-                using (var client = new HttpClient())
-                {
-                    client.BaseAddress = new Uri("http://34.126.139.165:8080/api/");
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", GlobalDef.token);
-                    ReceiptToPush receipt = new ReceiptToPush();
 
-                    receipt.serviceType = "AWAY";
-                    receipt.customerId = 1;
-                    receipt.paymentType = "CASH";
-                    receipt.voucherId = receiptPayment.DiscountPrice.id;
-                    foreach (var food in receiptPayment.Foods)
-                    {
-                        ReceiptDetailToPush receiptDetails = new ReceiptDetailToPush();
-                        receiptDetails.note = food.FoodOrderMore;
-                        receiptDetails.amount = food.FoodOrderCount;
-                        if (food.FoodSize == "M")
-                        {
-                            receiptDetails.drinkCakeVariationId = food.foodOrderVariations[0].id;
-                        }
-                        else
-                        {
-                            receiptDetails.drinkCakeVariationId = food.foodOrderVariations[1].id;
-                        }
-                        receipt.receiptDetail.Add(receiptDetails);
-                    }
-                    var json = JsonConvert.SerializeObject(receipt);
-                    var payload = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                    var response = client.PostAsync(client.BaseAddress + "receipt", payload).Result;
-                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
-                        //WindowManager windowManager = new WindowManager();
-                        ClearDataPayment();
-                        GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
-                    }
-                }
-            }
-            catch (Exception ex)
+
+            ReceiptToPush receipt = new ReceiptToPush();
+
+            receipt.serviceType = "AWAY";
+            receipt.customerId = Customer.Id;
+            receipt.paymentType = "CASH";
+            receipt.voucherId = receiptPayment.DiscountPrice.id;
+            foreach (var food in receiptPayment.Foods)
             {
-                MessageBox.Show(ex.Message);
+                ReceiptDetailToPush receiptDetails = new ReceiptDetailToPush();
+                receiptDetails.note = food.FoodOrderMore;
+                receiptDetails.amount = food.FoodOrderCount;
+                if (food.FoodSize == "M")
+                {
+                    receiptDetails.drinkCakeVariationId = food.foodOrderVariations[0].id;
+                }
+                else
+                {
+                    receiptDetails.drinkCakeVariationId = food.foodOrderVariations[1].id;
+                }
+                receipt.receiptDetail.Add(receiptDetails);
             }
-            
+            bool result = RestAPIClient<ReceiptToPush>.PostData(receipt, GlobalDef.RECEIPTDONE_API,GlobalDef.token);
+
+            if (result)
+            {
+                MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
+                //WindowManager windowManager = new WindowManager();
+                ClearDataPayment();
+                GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
+            }
+            //try
+            //{
+            //    using (var client = new HttpClient())
+            //    {
+            //        client.BaseAddress = new Uri("http://34.126.139.165:8080/api/");
+            //        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", GlobalDef.token);
+
+            //        var json = JsonConvert.SerializeObject(receipt);
+            //        var payload = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+            //        var response = client.PostAsync(client.BaseAddress + "receipt", payload).Result;
+            //        if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            //        {
+            //            MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
+            //            //WindowManager windowManager = new WindowManager();
+            //            ClearDataPayment();
+            //            GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
         }
     }
 }

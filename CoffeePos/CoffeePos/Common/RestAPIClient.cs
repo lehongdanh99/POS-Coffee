@@ -51,9 +51,13 @@ namespace CoffeePos.Common
                     var response = client.PostAsync(client.BaseAddress + path, payload).Result;
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        token = response.Content.ReadAsStringAsync().Result;
-                        T emp = JsonConvert.DeserializeObject<T>(token);
+                        var resul = response.Content.ReadAsStringAsync().Result;
+                        
                     }
+                    else
+                    {
+                        return false;
+                    }    
                 }
             }
             catch (Exception ex)

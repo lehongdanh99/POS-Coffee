@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+using CoffeePos.Common;
+using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,6 +12,18 @@ namespace CoffeePos.ViewModels
 {
     internal class RegisterViewModel : Screen
     {
+        private static RegisterViewModel _instance;
+        public static RegisterViewModel GetInstance()
+        {
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new RegisterViewModel();
+                }
+            }
+            return _instance;
+        }
         public RegisterViewModel()
         {
 
@@ -61,6 +75,46 @@ namespace CoffeePos.ViewModels
                 sexSelected = value;
                 NotifyOfPropertyChange(() => SexSelected);
             }
+        }
+
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value;
+                NotifyOfPropertyChange(() => Name);
+            }
+        }
+
+        private string phone;
+
+        public string Phone
+        {
+            get { return phone; }
+            set { phone = value;
+                NotifyOfPropertyChange(() => Phone);
+            }
+        }
+
+
+        public void RegistCustomer()
+        {
+            Customer customer = new Customer();
+            customer.name = Name;
+            customer.phone = Phone;
+            bool result = RestAPIClient<Customer>.PostData(customer, GlobalDef.CUSTOMER_CREATE_API, GlobalDef.token);
+
+            if (result)
+            {
+                MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Đăng ký thành công");
+                //WindowManager windowManager = new WindowManager();
+                GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
+            }
+            else
+            {
+                MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Lỗi cmnr");
+            }    
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoffeePos.Models;
+using CoffeePos.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,5 +29,22 @@ namespace CoffeePos.Views
         {
             this.Hide();
         }
+        //private void BtnRegist_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Customer customer = new Customer();
+        //    //if(nameTxb.ToString() != null || phoneTxb != null)
+        //    //{
+        //    //    errTxt.Visibility = Visibility.Visible;
+        //    //}    
+        //    //else
+        //    //{
+        //    //    customer.name = nameTxb.ToString();
+        //    //    customer.phone = phoneTxb.ToString();
+        //    //    errTxt.Visibility = Visibility.Collapsed;
+        //    //}    
+        //    RegisterViewModel.GetInstance().RegistCustomer(customer);
+        //    this.Hide();
+
+        //}
     }
 }

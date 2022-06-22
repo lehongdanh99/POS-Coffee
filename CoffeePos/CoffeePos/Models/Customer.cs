@@ -8,6 +8,7 @@ namespace CoffeePos.Models
 {
     public class Customer
     {
+        public int Id { get; set; }
         public string name { get; set; }
         public double point { get; set; }
         public string phone { get; set; }
