@@ -5,7 +5,7 @@ using System.Web;
 
 namespace POS_Coffe.Models
 {
-    public class FoodModel
+    public class FoodModel : BaseModel
     {
         private static FoodModel _instance;
         public static FoodModel GetInstance()
@@ -40,7 +40,7 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        private List<FoodModel> listFood = CommonMethod.GetInstance().ReadJsonFileConfigFood();
+        private List<FoodModel> listFood = RestAPIHandler<FoodModel>.parseJsonToModel(GlobalDef.FOOD_JSON_CONFIG_PATH);
         public List<FoodModel> ListFood
         {
             get { return listFood; }

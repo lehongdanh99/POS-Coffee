@@ -1,0 +1,35 @@
+﻿@model List<POS_Coffe.Models.CustomerModel>
+@{
+    ViewBag.Title = "CustomerManagement";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <div class="card-block">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Phone</td>
+                            <td>Point</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Phone</td>
+                                <td>@item.Point</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

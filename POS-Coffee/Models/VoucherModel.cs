@@ -3,7 +3,7 @@
 
 namespace POS_Coffe.Models
 {
-    public class VoucherModel
+    public class VoucherModel : BaseModel
     {
         private static VoucherModel _instance;
         public static VoucherModel GetInstance()
@@ -39,7 +39,7 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        private List<VoucherModel> listVoucher = CommonMethod.GetInstance().ReadJsonFileConfigVoucher();
+        private List<VoucherModel> listVoucher = RestAPIHandler<VoucherModel>.parseJsonToModel(GlobalDef.VOUCHER_JSON_CONFIG_PATH);
         public List<VoucherModel> ListVoucher
         {
             get { return listVoucher; }

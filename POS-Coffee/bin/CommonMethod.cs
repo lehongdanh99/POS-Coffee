@@ -85,6 +85,7 @@ namespace POS_Coffe
             }
             return modelRecipe;
         }
+
         //Get list Customer
         private List<CustomerModel> modelCustomer = new List<CustomerModel>();
         public List<CustomerModel> ReadJsonFileConfigCustomer()
@@ -97,6 +98,7 @@ namespace POS_Coffe
             }
             return modelCustomer;
         }
+
         //Get list Material
         private List<MaterialsModel> modelMaterial = new List<MaterialsModel>();
         public List<MaterialsModel> ReadJsonFileConfigMaterial()

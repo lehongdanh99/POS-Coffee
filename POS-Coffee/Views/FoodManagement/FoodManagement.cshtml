@@ -6,6 +6,16 @@
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
     int counting = 1;
 }
+<style>
+    #nav ul {
+        display: none;
+    }
+
+    #nav li:hover > ul {
+        display: block;
+    }
+</style>
+
 
 <div class="row">
     <div class="column">
@@ -20,66 +30,38 @@
         }
         <div class="card">
             <div class="card-block">
-                <table class="styled-table">
-                    <thead class="header-style">
-                        <tr>
-                            <th></th>
-                            <th>@Html.ActionLink("Name", "FoodManagement", new { sortOrder = ViewBag.NameSortParm })</th>
-                            <th>@Html.ActionLink("Price", "FoodManagement", new { sortOrder = ViewBag.PriceSortParm })</th>
-                            <th>Type</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <ul id="nav">
+                    <li>
+                        <a href="#">Menu4</a>
+                        <a href="#">Menu4</a>
+                        <a href="#">Menu4</a>
+                    </li>
+                </ul>
+                @foreach (var item in Model)
+                {
+                    <ul id="nav">
+                        <li>
+                            <img src=@item.FoodImage alt="profile photo" border-style="10px" class="circle profile-photo" width="60" height="60">
+                            <a>@item.FoodName</a>
+                            <a>@item.FoodPrice</a>
+                            <a>@item.FoodType</a>
 
-                        @foreach (var item in Model)
-                        {
-                            @*Display Food*@
-                            <tr class="items-style">
-                                @*<th>@i</th>*@
+                            @foreach (var Material in item.LstFoods)
+                            {
+                                <ul id="nav">
+                                    <li>
+                                        <a href="#">@Material.MaterialName</a>
+                                        <a>@Material.Type</a>
+                                        <a>@Material.Amount</a>
+                                        <a href="#">@Material.Quantity</a>
+                                    </li>
+                                </ul>
 
-                                <td style="text-align:center ;width:80px; padding-left:20px; padding-right:0px">
-                                    <img src=@item.FoodImage alt="profile photo" border-style="10px" class="circle float-left profile-photo" width="60" height="60">
-                                </td>
-                                <td>@item.FoodName</td>
-                                <td>@item.FoodPrice</td>
-                                <td>@item.FoodType</td>
-                                <td style="text-align:center">
-                                    @*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "FoodManagement", new {FoodID = item.FoodID })"'> </button>*@
-                                    <button type="button" class="btn btn-primary fa fa-sticky-note" onclick="changeStatus(@counting)"></button>
-                                    <button type="button" class="btn btn-primary fa fa-edit " onclick='window.location.href = "@Url.Action("EditFood", "FoodManagement", new {FoodID = item.FoodID })"'></button>
-                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.FoodID))" class="btn btn-danger fa fa-remove" />
-                                </td>
-                            </tr>
+                            }
+                        </li>
+                    </ul>
+                }
 
-                            @*Display Materials of Food*@
-
-                            //Title
-
-                            @*<tr class="items-style">
-                                <th>Foodname</th>
-                                <th>MaterialName</th>
-                                <th>Type</th>
-                                <th>Amount</th>
-                                <th>Quantity</th>
-                                <th>Type</th>
-                            </tr>*@
-
-                            <tr style="display:none" name="@counting" id="@counting">
-                                @foreach (var Material in item.LstFoods)
-                                {
-                                    <td>@Material.Foodname</td>
-                                    <td>@Material.MaterialName</td>
-                                    <td>@Material.Type</td>
-                                    <td>@Material.Amount</td>
-                                    <td>@Material.Quantity</td>
-                                }
-                            </tr>
-                                counting++;
-
-                                }
-                    </tbody>
-                </table>
             </div>
         </div>
         <div class="column" style="text-align:center; display:inline-block">

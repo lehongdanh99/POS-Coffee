@@ -5,7 +5,7 @@ using System.Web;
 
 namespace POS_Coffe.Models
 {
-    public class HistoryTrackingModel
+    public class HistoryTrackingModel: BaseModel
     {
         private static HistoryTrackingModel _instance;
         public static HistoryTrackingModel GetInstance()
@@ -40,7 +40,7 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        private List<HistoryTrackingModel> listHistoryTracking = CommonMethod.GetInstance().ReadJsonFileConfigHistoryTracking();
+        private List<HistoryTrackingModel> listHistoryTracking = RestAPIHandler<HistoryTrackingModel>.parseJsonToModel(GlobalDef.HISTORYTRACKING_JSON_CONFIG_PATH);
         public List<HistoryTrackingModel> ListHistoryTracking
         {
             get { return listHistoryTracking; }

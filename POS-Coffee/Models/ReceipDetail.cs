@@ -5,7 +5,7 @@ using System.Web;
 
 namespace POS_Coffe.Models
 {
-    public class ReceipDetail
+    public class ReceipDetail : BaseModel
     {
         public int RecipeID { get; set; }
         public int Drink_Cake_ID { get; set; }

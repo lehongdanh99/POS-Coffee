@@ -5,7 +5,7 @@ using System.Web;
 
 namespace POS_Coffe.Models
 {
-    public class StatisticModel
+    public class StatisticModel : BaseModel
     {
         private static StatisticModel _instance;
         public static StatisticModel GetInstance()
@@ -44,7 +44,7 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        private List<StatisticModel> listStatistic = CommonMethod.GetInstance().ReadJsonFileConfigStatistic();
+        private List<StatisticModel> listStatistic = RestAPIHandler<StatisticModel>.parseJsonToModel(StatisticModel);
         public List<StatisticModel> ListStatistic
         {
             get { return listStatistic; }

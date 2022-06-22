@@ -77,10 +77,10 @@ namespace POS_Coffe.Controllers
                     if (model != null)
                         continue;
                 }
-                
-                //var Pagination1 = new PagedList<StatisticModel>(lstStatistic, pageNo ?? 1, pageSize);
 
-                return View(lstStatistic.ToList());
+                var Pagination1 = new PagedList<StatisticModel>(lstStatistic, pageNo ?? 1, pageSize);
+
+                return View(Pagination1);
      
             }
             switch (sortOrder)

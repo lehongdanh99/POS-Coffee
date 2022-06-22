@@ -5,7 +5,7 @@ using System.Web;
 
 namespace POS_Coffe.Models
 {
-    public class TableModel
+    public class TableModel : BaseModel
     {
         public int UniqueID { get; set; }
         public string Status { get; set; }

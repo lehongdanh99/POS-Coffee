@@ -5,9 +5,9 @@ using System.Web;
 
 namespace POS_Coffe.Models
 {
-    public class CustomerModel
+    public class CustomerModel : BaseModel
     {
-        public int CusID { get; set; }
+        public int ID { get; set; }
         public string Phone { get; set; }
         public string Name { get; set; }
         public int Point { get; set; }
@@ -27,7 +27,7 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        private List<CustomerModel> listCustomer = CommonMethod.GetInstance().ReadJsonFileConfigCustomer();
+        private List<CustomerModel> listCustomer = RestAPIHandler<CustomerModel>.parseJsonToModel(GlobalDef.CUSTOMER_JSON_CONFIG_PATH);
         public List<CustomerModel> ListCustomer
         {
             get { return listCustomer; }

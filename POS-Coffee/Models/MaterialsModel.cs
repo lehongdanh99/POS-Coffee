@@ -5,7 +5,7 @@ using System.Web;
 
 namespace POS_Coffe.Models
 {
-    public class MaterialsModel
+    public class MaterialsModel : BaseModel
     {
         private static MaterialsModel _instance;
         public static MaterialsModel GetInstance()
@@ -40,7 +40,7 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        private List<MaterialsModel> listMaterial = CommonMethod.GetInstance().ReadJsonFileConfigMaterial();
+        private List<MaterialsModel> listMaterial = RestAPIHandler<MaterialsModel>.parseJsonToModel(GlobalDef.MATERIALS_JSON_CONFIG_PATH);
         public List<MaterialsModel> ListMaterial
         {
             get { return listMaterial; }

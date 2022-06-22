@@ -85,6 +85,7 @@ namespace POS_Coffe
             }
             return modelRecipe;
         }
+
         //Get list Customer
         private List<CustomerModel> modelCustomer = new List<CustomerModel>();
         public List<CustomerModel> ReadJsonFileConfigCustomer()
@@ -97,6 +98,7 @@ namespace POS_Coffe
             }
             return modelCustomer;
         }
+
         //Get list Material
         private List<MaterialsModel> modelMaterial = new List<MaterialsModel>();
         public List<MaterialsModel> ReadJsonFileConfigMaterial()
@@ -133,6 +135,19 @@ namespace POS_Coffe
                 modelHistoryTracking = JsonConvert.DeserializeObject<List<HistoryTrackingModel>>(json);
             }
             return modelHistoryTracking;
+        }
+
+        //Get list Receipt
+        private List<ReceiptModel> modelReceipt = new List<ReceiptModel>();
+        public List<ReceiptModel> ReadJsonFileConfigReceipt()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.RECEIPT_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                modelReceipt = JsonConvert.DeserializeObject<List<ReceiptModel>>(json);
+            }
+            return modelReceipt;
         }
 
         public static string Login(string usr, string pwd)

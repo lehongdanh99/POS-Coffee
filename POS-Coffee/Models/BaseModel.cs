@@ -7,11 +7,27 @@ namespace POS_Coffe.Models
 {
     public abstract class BaseModel
     {
-        public string CreatedBy { get; set; }
-        public string UpdatedBy { get; set; } 
+        public createBy CreateBy { get; set; }
+        public updateBy UpdateBy { get; set; }
 
-        public DateTime CreatedDate { get; set; }
-
-        public DateTime UpdatedDate { get; set; }
+        public class createBy
+        {
+            public string createdBy { get; set; }
+            public string updatedBy { get; set; }
+            public int id { get; set; }
+            public string name { get; set; }
+            public DateTime createdAtFormatVN { get; set; }
+            public DateTime updatedAtFormatVN { get; set; }
+        }
+        public class updateBy
+        {
+            public string createdBy { get; set; }
+            public string updatedBy { get; set; }
+            public int id { get; set; }
+            public string name { get; set; }
+            public DateTime createdAtFormatVN { get; set; }
+            public DateTime updatedAtFormatVN { get; set; }
+        }
     }
+
 }

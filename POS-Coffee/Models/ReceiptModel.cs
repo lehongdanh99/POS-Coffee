@@ -5,7 +5,7 @@ using System.Web;
 
 namespace POS_Coffe.Models
 {
-    public class ReceiptModel
+    public class ReceiptModel : BaseModel
     {
         public int ReceiptID { get; set; }
         public int EmpID { get; set; }
@@ -17,5 +17,30 @@ namespace POS_Coffe.Models
         public int TypeService { get; set; }
         public int Table { get; set; }
         public string VoucherName { get; set; }
+    }
+    public class ReceiptAPIHandler
+    {
+
+        private static ReceiptAPIHandler _instance;
+        public static ReceiptAPIHandler GetInstance()
+        {
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new ReceiptAPIHandler();
+                }
+            }
+            return _instance;
+        }
+        private List<ReceiptModel> listReceipt = RestAPIHandler<ReceiptModel>.parseJsonToModel(GlobalDef.RECEIPT_JSON_CONFIG_PATH);
+        public List<ReceiptModel> ListReipt
+        {
+            get { return listReceipt; }
+            set
+            {
+                listReceipt = value;
+            }
+        }
     }
 }
