@@ -14,6 +14,8 @@ namespace CoffeePos.Common
     {
         internal static HttpClient client = new HttpClient();
         internal static List<T> model = new List<T>();
+        public T data;
+
         public static List<T> parseJsonToModel(string path)
         {
             try
@@ -35,5 +37,31 @@ namespace CoffeePos.Common
             }
             return model;
         }
+
+        public static bool PostData(T data, string path, string token)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://34.126.139.165:8080/api/");
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                    var json = JsonConvert.SerializeObject(data);
+                    var payload = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                    var response = client.PostAsync(client.BaseAddress + path, payload).Result;
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        token = response.Content.ReadAsStringAsync().Result;
+                        T emp = JsonConvert.DeserializeObject<T>(token);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return true;
+        }
     }
+    
 }
