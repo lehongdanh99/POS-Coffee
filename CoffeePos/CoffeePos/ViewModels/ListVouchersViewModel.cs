@@ -36,7 +36,7 @@ namespace CoffeePos.ViewModels
         public void GetVoucher()
         {
             VoucherList = new ObservableCollection<Voucher>();
-            foreach (Voucher voucher in CommonMethod.GetInstance().readVoucherJsonFileConfig())
+            foreach (Voucher voucher in RestAPIClient<Voucher>.parseJsonToModel(GlobalDef.VOUCHER_API))
             {
                 VoucherList.Add(voucher);
             }

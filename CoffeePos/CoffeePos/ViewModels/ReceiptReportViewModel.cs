@@ -35,7 +35,7 @@ namespace CoffeePos.ViewModels
                 FoodPrice.Add(food.FoodOrderPrice);
                 FoodPayment.Add(food.FoodOrderPrice);
             }
-            TotalPayment = GlobalDef.ReceiptPayment.Total;
+            TotalPayment = GlobalDef.ReceiptPayment.TotalPrice;
         }
         private List<int> stt = new List<int>();
         public List<int> Stt

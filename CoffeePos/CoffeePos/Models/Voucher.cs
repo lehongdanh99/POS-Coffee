@@ -9,11 +9,13 @@ namespace CoffeePos.Models
 {
     public class Voucher
     {
-        public int VoucherID { get; set; }
-        public string Name { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
         public int IDFood { get; set; }
 
-        public int Percent { get; set; }
+        public DateTime endDate { get; set; }
+
+        public int value { get; set; }
         public bool isValid { get; set; }
         private bool isCanChoose;
         public bool IsCanChoose

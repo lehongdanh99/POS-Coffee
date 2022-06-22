@@ -42,8 +42,8 @@ namespace CoffeePos.ViewModels
             ListFoodOrder = GlobalDef.ReceiptDetail.Foods;
             TableNumOrder = GlobalDef.ReceiptDetail.Table;
             PaymentOrder = GlobalDef.ReceiptDetail.Payment;
-            TotalOrder = GlobalDef.ReceiptDetail.Total;
-            DiscountOrder = GlobalDef.ReceiptDetail.Discount;
+            TotalOrder = GlobalDef.ReceiptDetail.TotalPrice;
+            DiscountOrder = GlobalDef.ReceiptDetail.DiscountPrice.value;
             CanEdit = GlobalDef.canEditDetail;
             checkServed();
         }
@@ -284,6 +284,7 @@ namespace CoffeePos.ViewModels
             HomeViewModel.GetInstance().TableNum = TableNumOrder;
             HomeViewModel.GetInstance().ReceiptIdtoEdit = GlobalDef.ReceiptDetail.Id;
             HomeViewModel.GetInstance().DiscountOrder = DiscountOrder;
+            HomeViewModel.GetInstance().voucherToOrder = GlobalDef.ReceiptDetail.DiscountPrice;
             HomeViewModel.GetInstance().getDataHome();
             //GlobalDef.windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
         }
@@ -317,8 +318,8 @@ namespace CoffeePos.ViewModels
             Receipt ReceiptTest = new Receipt();
             ReceiptTest.Foods = ListFoodOrder.ToList();
             ReceiptTest.Table = TableNumOrder.ToString();
-            ReceiptTest.Total = TotalOrder;
-            ReceiptTest.Discount = DiscountOrder;
+            ReceiptTest.TotalPrice = TotalOrder;
+            ReceiptTest.DiscountPrice = GlobalDef.ReceiptDetail.DiscountPrice;
             ReceiptTest.Payment = PaymentOrder;
             ReceiptTest.CheckOut = DateTime.Now.ToString("HH:mm");
             ReceiptTest.CheckIn = DateTime.Now.ToString("HH:mm");
@@ -364,8 +365,8 @@ namespace CoffeePos.ViewModels
             ReceiptTest = GlobalDef.ReceiptDetail;
             ReceiptTest.Foods = ListFoodOrder.ToList();
             ReceiptTest.Table = TableNumOrder.ToString();
-            ReceiptTest.Total = TotalOrder;
-            ReceiptTest.Discount = DiscountOrder;
+            ReceiptTest.TotalPrice = TotalOrder;
+            ReceiptTest.DiscountPrice = GlobalDef.ReceiptDetail.DiscountPrice;
             ReceiptTest.Payment = PaymentOrder;
             ReceiptTest.CheckOut = DateTime.Now.ToString("HH:mm");
             ReceiptTest.CheckIn = DateTime.Now.ToString("HH:mm");
@@ -446,6 +447,7 @@ namespace CoffeePos.ViewModels
             //FoodOrderModel.GetInstance().FoodOrders.Clear();
             HomeViewModel.GetInstance().TableNum = "0";
             HomeViewModel.GetInstance().DiscountOrder = 0;
+            HomeViewModel.GetInstance().voucherToOrder = new Voucher();
             HomeViewModel.GetInstance().ListViewFoodOrders.Clear();
             HomeViewModel.GetInstance().GetFoodOrderTotal();
             this.TryCloseAsync();

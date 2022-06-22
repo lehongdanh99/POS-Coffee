@@ -607,9 +607,9 @@ namespace CoffeePos.ViewModels
             Receipt receipt = new Receipt();
             receipt.Foods = FoodOrderModel.GetInstance().FoodOrders.ToList();
             receipt.Table = TableNum;
-            receipt.Total = TotalOrder;
+            receipt.TotalPrice = TotalOrder;
             receipt.Payment = HomePayment;
-            receipt.Discount = DiscountOrder;
+            receipt.DiscountPrice = voucherToOrder;
             if(ReceiptIdtoEdit != 0)
             {
                 receipt.Id = ReceiptIdtoEdit;
@@ -628,8 +628,8 @@ namespace CoffeePos.ViewModels
         {
             Receipt receipt = new Receipt();
             receipt.Foods = FoodOrderModel.GetInstance().FoodOrders.ToList();
-            receipt.Total = TotalOrder;
-            receipt.Discount = DiscountOrder;
+            receipt.TotalPrice = TotalOrder;
+            receipt.DiscountPrice = voucherToOrder;
             receipt.Payment = HomePayment;
             receipt.CheckOut = DateTime.Now.ToString("HH:mm");
             receipt.Note = string.Empty;
@@ -663,9 +663,10 @@ namespace CoffeePos.ViewModels
             GlobalDef.windowManager.ShowDialogAsync(ListVouchersViewModel.GetInstance());
         }
 
+        public Voucher voucherToOrder = new Voucher();
         public void HandleCallBackChooseVoucher(Voucher selectedVoucher)
         {
-            if (selectedVoucher.Percent == 0)
+            if (selectedVoucher.value == 0)
             {
                 foreach (var food in FoodOrderModel.GetInstance().FoodOrders)
                 {
@@ -682,7 +683,8 @@ namespace CoffeePos.ViewModels
                     }
                 }
             }
-            DiscountOrder = selectedVoucher.Percent;
+            voucherToOrder = selectedVoucher;
+            DiscountOrder = selectedVoucher.value;
             GetFoodOrderTotal();
             GlobalDef.IsChooseVoucerToOrder = false;
         }

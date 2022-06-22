@@ -133,6 +133,7 @@ namespace CoffeePos.ViewModels
                 string token = CommonMethod.Login(UserName.ToString(), revertPass);
                 if(token != string.Empty)
                 {
+                    GlobalDef.token = token;
                     ErrorVisible = Visibility.Hidden;
                     /*Code change language (Create new change language button and put it in)*/
                     if (language[LanguageSelected].ToString() == "English")

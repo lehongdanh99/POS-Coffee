@@ -40,7 +40,10 @@ namespace CoffeePos.ViewModels
             VisibilityReceiptDone = Visibility.Hidden;
             VisibilityReceipt = Visibility.Visible;
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
-            ListReceiptsDone = ReceiptModel.GetInstance().ListReceiptDone;
+            foreach (ReceiptDetails receipt in RestAPIClient<ReceiptDetails>.parseJsonToModel(GlobalDef.RECEIPTDONE_API))
+            {
+                ListReceiptsDone.Add(receipt);
+            }
         }
 
         private Receipt ReceiptSelected;
@@ -124,9 +127,9 @@ namespace CoffeePos.ViewModels
             set { listReceipts = value; NotifyOfPropertyChange(() => ListReceipts); }
         }
 
-        private ObservableCollection<Receipt> listReceiptsDone = ReceiptModel.GetInstance().ListReceiptDone;
+        private ObservableCollection<ReceiptDetails> listReceiptsDone = new ObservableCollection<ReceiptDetails>();
 
-        public ObservableCollection<Receipt> ListReceiptsDone
+        public ObservableCollection<ReceiptDetails> ListReceiptsDone
         {
             get { return listReceiptsDone; }
             set { listReceiptsDone = value; NotifyOfPropertyChange(() => ListReceiptsDone); }
@@ -160,13 +163,13 @@ namespace CoffeePos.ViewModels
             //windowManager.ShowDialogAsync(registerViewModel);
         }
 
-        public void RemoveFoodInReceipt(FoodOrder foodOrder)
-        {
-            if(ReceiptSelected != null)
-            {
-                ReceiptSelected.Foods.Remove(foodOrder);
-            }
-        }
+        //public void RemoveFoodInReceipt(FoodOrder foodOrder)
+        //{
+        //    if(ReceiptSelected != null)
+        //    {
+        //        ReceiptSelected.Foods.Remove(foodOrder);
+        //    }
+        //}
         //public void CompleteFoodInReceipt(FoodOrder foodOrder)
         //{
         //    if (ReceiptSelected != null)

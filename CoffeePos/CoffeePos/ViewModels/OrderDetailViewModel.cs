@@ -290,11 +290,11 @@ namespace CoffeePos.ViewModels
             FoodSelectedOrder.FoodOrderPrice = FoodPrice;
             if (isSizeSmall)
             {
-                FoodSelectedOrder.FoodSize = "S";
+                FoodSelectedOrder.FoodSize = "M";
             }
             else
             {
-                FoodSelectedOrder.FoodSize = "M";
+                FoodSelectedOrder.FoodSize = "L";
             }
             FoodSelectedOrder.FoodOrderCount = OrderCount;
             FoodSelectedOrder.FoodOrderMore = Note;
