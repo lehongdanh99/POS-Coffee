@@ -153,6 +153,11 @@ namespace CoffeePos.ViewModels
                     }));
                     return;
                 }
+                GlobalDef.windowManager.ShowDialogAsync(HomeViewModel.GetInstance());
+                Dispatcher.CurrentDispatcher.BeginInvoke(new System.Action(() =>
+                {
+                    TryCloseAsync();
+                }));
                 ErrorVisible = Visibility.Visible;
                 ErrorValidate = "Sai mật khẩu hoặc tên đăng nhập";
             }

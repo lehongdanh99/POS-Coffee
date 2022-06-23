@@ -40,7 +40,7 @@ namespace CoffeePos.ViewModels
             VisibilityReceiptDone = Visibility.Hidden;
             VisibilityReceipt = Visibility.Visible;
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
-            foreach (ReceiptDetails receipt in RestAPIClient<ReceiptDetails>.parseJsonToModel(GlobalDef.RECEIPTDONE_API))
+            foreach (ReceiptDone receipt in RestAPIClient<ReceiptDone>.parseJsonToModel(GlobalDef.RECEIPTDONE_API))
             {
                 ListReceiptsDone.Add(receipt);
             }
@@ -127,9 +127,9 @@ namespace CoffeePos.ViewModels
             set { listReceipts = value; NotifyOfPropertyChange(() => ListReceipts); }
         }
 
-        private ObservableCollection<ReceiptDetails> listReceiptsDone = new ObservableCollection<ReceiptDetails>();
+        private ObservableCollection<ReceiptDone> listReceiptsDone = new ObservableCollection<ReceiptDone>();
 
-        public ObservableCollection<ReceiptDetails> ListReceiptsDone
+        public ObservableCollection<ReceiptDone> ListReceiptsDone
         {
             get { return listReceiptsDone; }
             set { listReceiptsDone = value; NotifyOfPropertyChange(() => ListReceiptsDone); }

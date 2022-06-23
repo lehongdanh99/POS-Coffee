@@ -359,10 +359,11 @@ namespace CoffeePos.ViewModels
 
             if (result)
             {
-                MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
-                //WindowManager windowManager = new WindowManager();
                 ClearDataPayment();
-                GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
+                ReceiptReportViewModel.GetInstance().getDataReport();
+                GlobalDef.windowManager.ShowDialogAsync(ReceiptReportViewModel.GetInstance());
+
+                
             }
             else
             {

@@ -27,12 +27,22 @@ namespace CoffeePos.ViewModels
         }
         public void getDataReport()
         {
+
             foreach (var food in GlobalDef.ReceiptPayment.Foods)
             {
                 Stt.Add(food.FoodOrderID);
                 NameFood.Add(food.FoodOrderName);
+                FoodSize.Add(food.FoodSize);
+                if(food.FoodSize == "S")
+                {
+                    FoodPrice.Add(food.foodOrderVariations[0].price);
+                }    
+                else
+                {
+                    FoodPrice.Add(food.foodOrderVariations[1].price);
+                }    
                 FoodCount.Add(food.FoodOrderCount);
-                FoodPrice.Add(food.FoodOrderPrice);
+                
                 FoodPayment.Add(food.FoodOrderPrice);
             }
             TotalPayment = GlobalDef.ReceiptPayment.TotalPrice;
@@ -54,6 +64,38 @@ namespace CoffeePos.ViewModels
             set { tableID = value; }
         }
 
+        private List<string> foodSize;
+
+        public List<string> FoodSize
+        {
+            get { return foodSize; }
+            set { foodSize = value; }
+        }
+
+
+        private int receiptID;
+
+        public int ReceiptID
+        {
+            get { return receiptID; }
+            set { receiptID = value; }
+        }
+
+        private DateTime dateReceipt;
+
+        public DateTime DateReceipt
+        {
+            get { return dateReceipt; }
+            set { dateReceipt = value; }
+        }
+
+        private DateTime timeReceipt;
+
+        public DateTime TimeReceipt
+        {
+            get { return timeReceipt; }
+            set { timeReceipt = value; }
+        }
 
         private List<int> stt = new List<int>();
         public List<int> Stt

@@ -100,7 +100,7 @@ namespace CoffeePos.Models
 
             public double TotalPrice { get; set; }
 
-            public double PaymentType { get; set; }
+            public string PaymentType { get; set; }
 
             public int customerId { get; set; }
 

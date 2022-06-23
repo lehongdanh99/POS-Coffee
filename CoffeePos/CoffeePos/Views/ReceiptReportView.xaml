@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CoffeePos.Views"
         mc:Ignorable="d"
-        Title="ReceiptReportView" Height="auto" Width="380" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="Hóa đơn" Height="auto" Width="380" WindowStartupLocation="CenterScreen">
     <Grid Margin="20 40 20 20">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -20,7 +20,7 @@
             <TextBlock Text="HÓA ĐƠN THANH TOÁN" Foreground="Black" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="Số HĐ: " Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <TextBlock Text="20022002" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding ReceiptID}" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
             
         </StackPanel>
@@ -48,11 +48,11 @@
             </StackPanel>-->
             <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
                 <TextBlock Text="Ngày:  " FontWeight="Bold"/>
-                <TextBlock Text="04 tháng 6 2022"/>
+                <TextBlock Text="{Binding DateReceipt}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
                 <TextBlock Text="Giờ:  " FontWeight="Bold"/>
-                <TextBlock Text="16:05"/>
+                <TextBlock Text="{Binding TimeReceipt}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="3" Margin="0 10 0 0">
@@ -170,7 +170,7 @@
                 <TextBlock Text="Powered by HCMUTEPOS.vn" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </StackPanel>
-        <Button Grid.Row="6" Content="Đóng" VerticalAlignment="Bottom"
+        <Button Grid.Row="6" Content="Xác nhận" VerticalAlignment="Bottom"
                 Click="BtnBack_Click" HorizontalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}">
             
         </Button>
