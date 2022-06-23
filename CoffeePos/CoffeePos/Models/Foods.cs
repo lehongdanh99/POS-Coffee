@@ -184,7 +184,34 @@ namespace CoffeePos
 
     }
 
+    public class FoodHooby
+    {
+        private string foodName;
 
+        public string FoodName
+        {
+            get { return foodName; }
+            set { foodName = value; }
+        }
+
+        private int price;
+
+        public int Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+
+        private string note;
+
+        public string Note
+        {
+            get { return note; }
+            set { note = value; }
+        }
+
+
+    }    
 
     public class TypeFoods
     {

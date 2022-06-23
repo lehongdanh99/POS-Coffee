@@ -48,6 +48,7 @@ namespace CoffeePos.ViewModels
             VisibleLocally = Visibility.Hidden;
             VisibleDelivery = Visibility.Visible;
             FoodsMenu = GetFoods();
+            AllFoods = GetFoods();
             Customer = getCustomer();
             TypeFoods = GetTypeFoods();
             if (listViewFoodOrders == null)
@@ -389,7 +390,8 @@ namespace CoffeePos.ViewModels
                 }
                 else
                     typeFood.Add(FoodsMenu[i].type);
-            }    
+            }
+            typeFood.Add("Sở thích");
 
             return typeFood;        
         }
@@ -410,6 +412,19 @@ namespace CoffeePos.ViewModels
         private ObservableCollection<Foods> GetFoodByType(string foodType)
         {
             ObservableCollection<Foods> Listfoods = new ObservableCollection<Foods>();
+            if(foodType == "Sở thích")
+            {
+                if(CustomerSearch != null)
+                {
+
+                    //foreach (FoodHooby food in RestAPIClient<FoodHooby>.parseJsonToModel(GlobalDef.FOODHOBBY_API + CustomerSearch.Id))
+                    //{
+                    //    food.FoodPrice = food.drinkCakeVariations[0].price;
+                    //    Listfoods.Add(food);
+                    //}
+                }    
+                
+            }    
             for(int i = 0; i < AllFoods.Count; i++)
             {
                 if(AllFoods[i].type == foodType)
@@ -461,6 +476,14 @@ namespace CoffeePos.ViewModels
 
         }
 
+        private Customer customerSearch;
+
+        public Customer CustomerSearch
+        {
+            get { return customerSearch; }
+            set { customerSearch = value; }
+        }
+
         public void SearchCustomerChange(string search)
         {
             //if (search == string.Empty)
@@ -473,7 +496,7 @@ namespace CoffeePos.ViewModels
                 {
                     if (search == customer.phone)
                     {
-                        
+                        CustomerSearch = customer;
                         return;
                     }
                 }
@@ -616,6 +639,7 @@ namespace CoffeePos.ViewModels
             }    
             GlobalDef.ReceiptDetail = receipt;
             GlobalDef.canEditDetail = false;
+            GlobalDef.IsDeliveryPayment = false;
             TableDetailViewModel.GetInstance().getdataTableDetail();
             //TableDetailViewModel tableDetailViewModel = new TableDetailViewModel(receipt, false);
             //tableDetailViewModel.eventChange += HandleCallBack;

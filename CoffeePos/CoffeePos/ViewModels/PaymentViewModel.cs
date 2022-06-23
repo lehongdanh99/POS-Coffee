@@ -247,6 +247,59 @@ namespace CoffeePos.ViewModels
             set { listfoodOrder = value; NotifyOfPropertyChange(() => ListFoodOrder); }
         }
 
+        public void CompletePaymentZaloPay()
+        {
+            ObservableCollection<Receipt> receipts = ReceiptModel.GetInstance().ListReceipt;
+            if (receipts.Count == 0 && !GlobalDef.IsDeliveryPayment)
+            {
+                ClearDataPayment();
+                return;
+            }
+            ReceiptToPush receipt = new ReceiptToPush();
+            if(GlobalDef.IsDeliveryPayment)
+            {
+                receipt.serviceType = "AWAY";
+            }    
+            else
+            {
+                receipt.serviceType = "EATIN";
+            }    
+            
+            receipt.customerId = Customer.Id;
+            receipt.paymentType = "ZALOPAY";
+            receipt.voucherId = receiptPayment.DiscountPrice.id;
+            foreach (var food in receiptPayment.Foods)
+            {
+                ReceiptDetailToPush receiptDetails = new ReceiptDetailToPush();
+                receiptDetails.note = food.FoodOrderMore;
+                receiptDetails.amount = food.FoodOrderCount;
+                if (food.FoodSize == "M")
+                {
+                    receiptDetails.drinkCakeVariationId = food.foodOrderVariations[0].id;
+                }
+                else
+                {
+                    receiptDetails.drinkCakeVariationId = food.foodOrderVariations[1].id;
+                }
+                receipt.receiptDetail.Add(receiptDetails);
+            }
+            System.Diagnostics.Process.Start("https://www.google.com.vn/?hl=vi");
+            //bool result = RestAPIClient<ReceiptToPush>.PostData(receipt, GlobalDef.ZALOPAY_API, GlobalDef.token);
+
+            //if (result)
+            //{
+            //    MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
+            //    //WindowManager windowManager = new WindowManager();
+            //    ClearDataPayment();
+            //    GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
+            //}
+            //else
+            //{
+            //    MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán không thành công");
+            //}
+        }
+
+
         public void CompletePaymentReceipt()
         {
             ObservableCollection<Receipt> receipts = ReceiptModel.GetInstance().ListReceipt;
@@ -283,7 +336,7 @@ namespace CoffeePos.ViewModels
 
             ReceiptToPush receipt = new ReceiptToPush();
 
-            receipt.serviceType = "AWAY";
+            receipt.serviceType = "EATIN";
             receipt.customerId = Customer.Id;
             receipt.paymentType = "CASH";
             receipt.voucherId = receiptPayment.DiscountPrice.id;
@@ -311,6 +364,10 @@ namespace CoffeePos.ViewModels
                 ClearDataPayment();
                 GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
             }
+            else
+            {
+                MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán không thành công");
+            }    
             //try
             //{
             //    using (var client = new HttpClient())

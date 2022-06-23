@@ -140,7 +140,7 @@
                                              FilterMode="Contains"></Control:AutoCompleteBox>
                     <Button Grid.Row="1" Grid.Column="3" Height="30" Width="60" VerticalAlignment="Center" 
                             HorizontalAlignment="Right" Margin="10" BorderBrush="{x:Null}"
-                            Click="SearchFoodClick">
+                            Click="SearchCustomerClick">
                         <materialDesign:PackIcon Kind="Search" FontSize="500" Foreground="White"/>
                     </Button>
                     <Button Grid.Row="1" Grid.Column="1" Height="30" Width="60" VerticalAlignment="Center"

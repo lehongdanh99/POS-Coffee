@@ -78,7 +78,8 @@
                     <Button Content="Tiền Mặt" Margin="5" Height="50" Foreground="White" Background="#FF00DC00" BorderBrush="{x:Null}" Click="PaymentCashClick">
 
                     </Button>
-                    <Button Grid.Column="1" Name="btn5" Height="50" Background="White" Margin="5" BorderBrush="{x:Null}" Click="PaymentZaloClick">
+                    <Button Grid.Column="1" Name="btn5" Height="50" Background="White" Margin="5" BorderBrush="{x:Null}" Click="PaymentZaloClick"
+                            cal:Message.Attach="[Event Click] = [Action CompletePaymentZaloPay()]">
                         <Image Source="/Image/ZaloPay_Logo.png" Height="30"></Image>
                     </Button>
                 </Grid>

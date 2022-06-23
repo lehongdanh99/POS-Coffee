@@ -49,7 +49,9 @@ namespace CoffeePos.Common
         public static string Password = "";
         public static string JSON_FOOD_CONFIG_PATH = "Food.json";
         public static string FOOD_API = "drink-cake";
+        public static string FOODHOBBY_API = "customer/hobby/";
         public static string RECEIPTDONE_API = "receipt";
+        public static string ZALOPAY_API = "zalo-pay/get-code";
         public static string CUSTOMER_CREATE_API = "customer";
         public static string CUSTOMER_API = "customer";
         public static string VOUCHER_API = "voucher/getList";
