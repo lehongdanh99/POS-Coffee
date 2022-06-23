@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\App.xaml
-14124157420
+15-376912581
 
-48825844285
-411281607275
-MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;Views\HomeView.xaml;Views\ListOrderView.xaml;Views\ListVouchersView.xaml;Views\LoginView.xaml;Views\MessageBoxView.xaml;Views\OrderDetailView.xaml;Views\PaymentView.xaml;Views\RegisterView.xaml;Views\SignInView.xaml;Views\TableDetailView.xaml;Views\TablesView.xaml;
+50-525981991
+432137578250
+MainWindow.xaml;page\CreateMem.xaml;page\Order.xaml;Views\HomeView.xaml;Views\ListOrderView.xaml;Views\ListVouchersView.xaml;Views\LoginView.xaml;Views\MessageBoxView.xaml;Views\OrderDetailView.xaml;Views\PaymentView.xaml;Views\ReceiptReportView.xaml;Views\RegisterView.xaml;Views\SignInView.xaml;Views\TableDetailView.xaml;Views\TablesView.xaml;
 
 False
 

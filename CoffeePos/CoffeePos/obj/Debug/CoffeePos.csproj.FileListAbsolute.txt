@@ -279,3 +279,13 @@ D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Debug\DotNetProjects.Input.Toolkit.dll
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Debug\Views\ListVouchersView.g.cs
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Debug\Views\ListVouchersView.baml
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Debug\Customer.json
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Debug\Employee.json
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Debug\Voucher.json
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Debug\Views\ReceiptReportView.g.cs
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Debug\Views\ReceiptReportView.baml
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Debug\RestSharp.dll
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Debug\System.Net.Http.Formatting.dll
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Debug\RestSharp.xml
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Debug\System.Net.Http.Formatting.xml
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Debug\testJson.json

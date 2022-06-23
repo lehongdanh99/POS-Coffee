@@ -1,0 +1,152 @@
+[
+  {
+    "createdBy": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "19/06/2022 09:37",
+      "updatedAtFormatVN": "19/06/2022 09:37"
+    },
+    "updatedBy": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "19/06/2022 09:37",
+      "updatedAtFormatVN": "19/06/2022 09:37"
+    },
+    "id": 1,
+    "name": "Tra chanh",
+    "picture": null,
+    "type": "nuoc",
+    "drinkCakeVariations": [
+      {
+        "id": 1,
+        "name": "M",
+        "description": "string",
+        "price": 10000
+      },
+      {
+        "id": 2,
+        "name": "L",
+        "description": "string",
+        "price": 15000
+      }
+    ],
+    "createdAtFormatVN": "19/06/2022 09:48",
+    "updatedAtFormatVN": "19/06/2022 09:48"
+  },
+  {
+    "createdBy": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "19/06/2022 09:37",
+      "updatedAtFormatVN": "19/06/2022 09:37"
+    },
+    "updatedBy": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "19/06/2022 09:37",
+      "updatedAtFormatVN": "19/06/2022 09:37"
+    },
+    "id": 2,
+    "name": "Tra sua",
+    "picture": null,
+    "type": "nuoc",
+    "drinkCakeVariations": [
+      {
+        "id": 3,
+        "name": "M",
+        "description": "string",
+        "price": 15000
+      },
+      {
+        "id": 4,
+        "name": "L",
+        "description": "string",
+        "price": 20000
+      }
+    ],
+    "createdAtFormatVN": "19/06/2022 09:48",
+    "updatedAtFormatVN": "19/06/2022 09:48"
+  },
+  {
+    "createdBy": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "19/06/2022 09:37",
+      "updatedAtFormatVN": "19/06/2022 09:37"
+    },
+    "updatedBy": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "19/06/2022 09:37",
+      "updatedAtFormatVN": "19/06/2022 09:37"
+    },
+    "id": 3,
+    "name": "Hong tra",
+    "picture": null,
+    "type": "nuoc",
+    "drinkCakeVariations": [
+      {
+        "id": 5,
+        "name": "M",
+        "description": "string",
+        "price": 15000
+      },
+      {
+        "id": 6,
+        "name": "L",
+        "description": "string",
+        "price": 20000
+      }
+    ],
+    "createdAtFormatVN": "19/06/2022 09:48",
+    "updatedAtFormatVN": "19/06/2022 09:48"
+  }
+]

@@ -5,9 +5,12 @@ FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePo
 FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\page\Order.xaml;;
 FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\HomeView.xaml;;
 FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\ListOrderView.xaml;;
+FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\ListVouchersView.xaml;;
 FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\LoginView.xaml;;
-FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\MessageBox.xaml;;
+FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\MessageBoxView.xaml;;
 FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\OrderDetailView.xaml;;
+FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\PaymentView.xaml;;
+FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\ReceiptReportView.xaml;;
 FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\RegisterView.xaml;;
 FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\SignInView.xaml;;
 FD:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\Views\TableDetailView.xaml;;

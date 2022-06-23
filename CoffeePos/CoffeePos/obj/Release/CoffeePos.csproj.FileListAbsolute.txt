@@ -146,7 +146,6 @@ D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\HomeView.g.cs
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\ListOrderView.g.cs
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\LoginView.g.cs
-D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\MessageBox.g.cs
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\OrderDetailView.g.cs
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\RegisterView.g.cs
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\SignInView.g.cs
@@ -163,7 +162,6 @@ D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\HomeView.baml
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\ListOrderView.baml
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\LoginView.baml
-D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\MessageBox.baml
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\OrderDetailView.baml
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\RegisterView.baml
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\SignInView.baml
@@ -179,3 +177,20 @@ D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\CoffeePos.csproj.CopyComplete
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\CoffeePos.exe
 D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\CoffeePos.pdb
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Release\Customer.json
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Release\Employee.json
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Release\Food.json
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Release\Voucher.json
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Release\DotNetProjects.Input.Toolkit.dll
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\ListVouchersView.g.cs
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\MessageBoxView.g.cs
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\PaymentView.g.cs
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\ReceiptReportView.g.cs
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\ListVouchersView.baml
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\MessageBoxView.baml
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\PaymentView.baml
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\obj\Release\Views\ReceiptReportView.baml
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Release\RestSharp.dll
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Release\RestSharp.xml
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Release\System.Net.Http.Formatting.dll
+D:\coffee Danh\POS-Coffee-Application-MVVM\POS-Coffee-Application-MVVM\CoffeePos\CoffeePos\bin\Release\System.Net.Http.Formatting.xml
