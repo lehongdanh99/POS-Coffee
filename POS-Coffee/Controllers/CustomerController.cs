@@ -12,7 +12,7 @@ namespace POS_Coffe.Controllers
         // GET: Customer
         public ActionResult CustomerManagement()
         {
-            List<CustomerModel> dataCustomer = CustomerAPIHandlerFakeData.GetInstance().ListCustomer.ToList();
+            List<CustomerModel> dataCustomer = CustomerAPIHandlerData.GetInstance().ListCustomer.ToList();
             return View(dataCustomer);
         }
     }

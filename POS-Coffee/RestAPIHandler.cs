@@ -32,35 +32,64 @@ namespace POS_Coffe
             }
             return model;
         }
-        public static string Login(string usr, string pwd)
+
+        public static bool PostData(T data, string path, string token)
         {
-            string token = string.Empty;
             try
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(GlobalDef.BASE_URI);
-                    //Employee employee = new Employee()
-                    //{
-                    //    username = usr,
-                    //    password = pwd
-                    //};
-                    //var json = JsonConvert.SerializeObject(employee);
-                    //var payload = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                    //var response = client.PostAsync(client.BaseAddress + "employee/login", payload).Result;
-                    //if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    //{
-                    //    token = response.Content.ReadAsStringAsync().Result;
-                    //    Employee emp = JsonConvert.DeserializeObject<Employee>(token);
-                    //    token = emp.token;
-                    //}
+                    client.BaseAddress = new Uri("http://34.126.139.165:8080/api/");
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                    var json = JsonConvert.SerializeObject(data);
+                    var payload = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                    var response = client.PostAsync(client.BaseAddress + path, payload).Result;
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var resul = response.Content.ReadAsStringAsync().Result;
+                        return true;
+
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
             }
-            return token;
+            return true;
         }
 
+        public static bool PutData(T data, string path, string token)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://34.126.139.165:8080/api/");
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                    var json = JsonConvert.SerializeObject(data);
+                    var payload = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                    var response = client.PutAsync(client.BaseAddress + path, payload).Result;
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var resul = response.Content.ReadAsStringAsync().Result;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return true;
+        }
     }
 }

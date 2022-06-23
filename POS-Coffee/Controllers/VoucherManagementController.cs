@@ -25,7 +25,7 @@ namespace POS_Coffe.Controllers
             
             foreach(var item in data)
             {
-                FoodModel foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == item.IDFood).FirstOrDefault();
+                FoodModel foodModel = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodID == item.IDFood).FirstOrDefault();
                 item.StrIDFood = foodModel.FoodName;
             }
 
@@ -55,7 +55,7 @@ namespace POS_Coffe.Controllers
         {
             List<string> dataIDFood = new List<string>();
             dataIDFood.Add("--none--");
-            List<FoodModel> foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.ToList();
+            List<FoodModel> foodModel = FoodAPIHandlerData.GetInstance().ListFood.ToList();
             foreach(var item in foodModel)
             {
                 dataIDFood.Add(item.FoodName);
@@ -74,7 +74,7 @@ namespace POS_Coffe.Controllers
                 ViewBag.error = GlobalDef.ERROR_MESSAGE_VOUCHER_VALUE_AND_IDFOOD;
                 List<string> dataIDFood = new List<string>();
                 dataIDFood.Add("--none--");
-                List<FoodModel> foodModel1 = FoodAPIHandlerFakeData.GetInstance().ListFood.ToList();
+                List<FoodModel> foodModel1 = FoodAPIHandlerData.GetInstance().ListFood.ToList();
                 foreach (var item in foodModel1)
                 {
                     dataIDFood.Add(item.FoodName);
@@ -90,7 +90,7 @@ namespace POS_Coffe.Controllers
             model.Name = data.Name;
             model.Value = data.Value;
 
-            FoodModel foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodName.Equals(data.StrIDFood)).FirstOrDefault();
+            FoodModel foodModel = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodName.Equals(data.StrIDFood)).FirstOrDefault();
 
             model.IDFood = foodModel.FoodID;
 
@@ -104,7 +104,7 @@ namespace POS_Coffe.Controllers
         {
             List<string> dataIDFood = new List<string>();
             dataIDFood.Add("--none--");
-            List<FoodModel> foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.ToList();
+            List<FoodModel> foodModel = FoodAPIHandlerData.GetInstance().ListFood.ToList();
             foreach (var item in foodModel)
             {
                 dataIDFood.Add(item.FoodName);
@@ -124,7 +124,7 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult EditVoucher(VoucherModel data)
         {
-            FoodModel foodModel = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodName.Equals(data.StrIDFood)).FirstOrDefault();
+            FoodModel foodModel = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodName.Equals(data.StrIDFood)).FirstOrDefault();
 
             var EditData = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == data.VoucherID);
             VoucherModel model = new VoucherModel();

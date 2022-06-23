@@ -17,7 +17,7 @@ namespace POS_Coffe.Controllers
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
-            IQueryable<EmployeeModel> data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.AsQueryable();
+            IQueryable<EmployeeModel> data = EmployeeAPIHandlerData.GetInstance().ListEmployee.AsQueryable();
 
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
@@ -57,66 +57,66 @@ namespace POS_Coffe.Controllers
             return View(model);
         }
         [HttpPost]
-        public ActionResult AddEmployee(EmployeeModel data, HttpPostedFileWrapper Picture)
+        public ActionResult AddEmployee(EmployeeModel data/*, HttpPostedFileWrapper Picture*/)
         {
             //var test = Path.Combine(Server.MapPath("~/Content/images"), Picture.FileName);
-            System.Console.WriteLine(data.Picture);
-            int count = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Count();
-            EmployeeModel model = new EmployeeModel();
-            model.EmployeeID = count + 1;
-            model.Name = data.Name;
-            model.Permission = data.Permission;
-            model.Birthday = data.Birthday;
-            model.Phone = data.Phone;
-            model.Username = data.Username;
-            model.Password = data.Password;
-            //model.Picture = test;
-            EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Add(model);
+            //System.Console.WriteLine(data.Picture);
+            //int count = EmployeeAPIHandlerData.GetInstance().ListEmployee.Count();
+            //EmployeeModel model = new EmployeeModel();
+            //model.EmployeeID = count + 1;
+            //model.Name = data.Name;
+            //model.Permission = data.Permission;
+            //model.Birthday = data.Birthday;
+            //model.Phone = data.Phone;
+            //model.Username = data.Username;
+            //model.Password = data.Password;
+            ////model.Picture = test;
+            //EmployeeAPIHandlerData.GetInstance().ListEmployee.Add(model);
 
-            HistoryTrackingModel history = new HistoryTrackingModel();
-            history.OccurTime = DateTime.Now.ToString("mm/dd/yyyy");
-            history.TableEffect = "Employee table";
-            history.ActionType = "Add";
-            history.EmpID = Convert.ToInt32(Session["EmployeeID"]);
-            HistoryTrackingAPIHandlerFakeData.GetInstance().ListHistoryTracking.Add(history);
+            //HistoryTrackingModel history = new HistoryTrackingModel();
+            //history.OccurTime = DateTime.Now.ToString("mm/dd/yyyy");
+            //history.TableEffect = "Employee table";
+            //history.ActionType = "Add";
+            //history.EmpID = Convert.ToInt32(Session["EmployeeID"]);
+            //HistoryTrackingAPIHandlerFakeData.GetInstance().ListHistoryTracking.Add(history);
             //return View(model);
-            return RedirectToAction("ViewEmployee", "Employee", model);
+            return RedirectToAction("ViewEmployee", "Employee"/*, model*/);
         }
 
         [HttpGet]
         public ActionResult EditEmployee(int EmployeeID)
         {
-            var EditData = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.EmployeeID == EmployeeID);
+            var EditData = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.EmployeeID == EmployeeID);
             EmployeeModel data = new EmployeeModel();
             data.EmployeeID = EmployeeID;
             data.Name = EditData.ToList().First().Name;
             data.Permission = EditData.ToList().First().Permission;
             data.Birthday = EditData.ToList().First().Birthday;
             data.Phone = EditData.ToList().First().Phone;
-            data.Username = EditData.ToList().First().Username;
-            data.Password = EditData.ToList().First().Password;
+            data.username = EditData.ToList().First().username;
+            data.password = EditData.ToList().First().password;
             return View(data);
         }
 
         [HttpPost]
         public ActionResult EditEmployee(EmployeeModel data)
         {
-            var EditData = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.EmployeeID == data.EmployeeID);
+            var EditData = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.EmployeeID == data.EmployeeID);
             EmployeeModel model = new EmployeeModel();
             EditData.ToList().First().Name = data.Name;
             EditData.ToList().First().Permission = data.Permission;
             EditData.ToList().First().Birthday = data.Birthday;
             EditData.ToList().First().Phone = data.Phone;
-            EditData.ToList().First().Username = data.Username;
-            EditData.ToList().First().Password = data.Password;
+            EditData.ToList().First().username = data.username;
+            EditData.ToList().First().password = data.password;
 
             return RedirectToAction("ViewEmployee", "Employee");
         }
         public ActionResult DeleteEmployee(int EmployeeID)
         {
-        //    var deleteData = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.EmployeeID == EmployeeID).AsQueryable();
-            var data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.EmployeeID == EmployeeID).FirstOrDefault();
-            EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Remove(data);
+        //    var deleteData = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.EmployeeID == EmployeeID).AsQueryable();
+            var data = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.EmployeeID == EmployeeID).FirstOrDefault();
+            EmployeeAPIHandlerData.GetInstance().ListEmployee.Remove(data);
             return RedirectToAction("ViewEmployee", "Employee");
         }
 

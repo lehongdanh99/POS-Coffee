@@ -133,6 +133,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
+    <Compile Include="Controllers\DrinkCakeController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\FoodManagementController.cs" />
     <Compile Include="Controllers\HistoryTrackingController.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\DetailReceiptModel.cs" />
+    <Compile Include="Models\DrinkCakeDetail.cs" />
     <Compile Include="Models\DrinkCakeModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\FoodDetail.cs" />
@@ -238,7 +240,7 @@
     <Content Include="Employee.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Food.json">
+    <Content Include="DrinkCake.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Customer.json">
@@ -1060,6 +1062,8 @@
     <Content Include="Views\Recipe\RecipeManagement.cshtml" />
     <Content Include="Views\Recipe\AddRecipe.cshtml" />
     <Content Include="Views\Customer\CustomerManagement.cshtml" />
+    <Content Include="Views\DrinkCake\DrinkCakeManagement.cshtml" />
+    <Content Include="Views\DrinkCake\AddDrinkCake.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -19,7 +19,7 @@ namespace POS_Coffe.Controllers
 
 
 
-            IQueryable<FoodModel> dataModel = FoodAPIHandlerFakeData.GetInstance().ListFood.AsQueryable();
+            IQueryable<FoodModel> dataModel = FoodAPIHandlerData.GetInstance().ListFood.AsQueryable();
 
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
@@ -52,11 +52,11 @@ namespace POS_Coffe.Controllers
 
                     FoodDetail foodDetail = new FoodDetail();
 
-                    MaterialsModel model = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Where(s => s.MaterialID == iditem).FirstOrDefault();
+                    MaterialsModel model = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.ID == iditem).FirstOrDefault();
                     if(model != null)
                     {
                         foodDetail.MaterialName = model.Name;
-                        foodDetail.Quantity = model.Quantity;
+                        //foodDetail.Quantity = model.Quantity;
                         foodDetail.Amount = model.Amount;
                         foodDetail.Type = model.Type;
                         foodDetail.Foodname = item.FoodName;
@@ -96,7 +96,7 @@ namespace POS_Coffe.Controllers
         public ActionResult AddFood()
         {
             List<string> foodtype = new List<string>();
-            List<MaterialsModel> materialdata = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.ToList();
+            List<MaterialsModel> materialdata = MaterialAPIHandlerData.GetInstance().ListMaterial.ToList();
             foreach (var item in materialdata)
             {
                 string foodtypename = item.Type;
@@ -114,7 +114,7 @@ namespace POS_Coffe.Controllers
         {
             var test = Path.Combine(Server.MapPath("~/Content/images"), Picture.FileName);
             System.Console.WriteLine(data.FoodImage);
-            int count = FoodAPIHandlerFakeData.GetInstance().ListFood.Count();
+            int count = FoodAPIHandlerData.GetInstance().ListFood.Count();
             FoodModel model = new FoodModel();
             model.FoodID = count + 1;
             model.FoodName = data.FoodName;
@@ -122,7 +122,7 @@ namespace POS_Coffe.Controllers
             model.FoodType = data.FoodType;
             model.FoodImage = test;
             //model.Picture = ;
-            FoodAPIHandlerFakeData.GetInstance().ListFood.Add(model);
+            FoodAPIHandlerData.GetInstance().ListFood.Add(model);
             return RedirectToAction("FoodManagement", "FoodManagement", model);
         }
 
@@ -130,7 +130,7 @@ namespace POS_Coffe.Controllers
         public ActionResult EditFood(int FoodID)
         {
             List<string> foodtype = new List<string>();
-            List<MaterialsModel> materialdata = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.ToList();
+            List<MaterialsModel> materialdata = MaterialAPIHandlerData.GetInstance().ListMaterial.ToList();
             foreach (var item in materialdata)
             {
                 string foodtypename = item.Type;
@@ -139,7 +139,7 @@ namespace POS_Coffe.Controllers
             foodtype = foodtype.Distinct().ToList();
             ViewBag.foodtype = new SelectList(foodtype, "");
 
-            var EditData = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == FoodID);
+            var EditData = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodID == FoodID);
             FoodModel data = new FoodModel();
             data.FoodID = FoodID;
             data.FoodName = EditData.ToList().First().FoodName;
@@ -151,7 +151,7 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult EditFood(FoodModel data)
         {
-            var EditData = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == data.FoodID);
+            var EditData = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodID == data.FoodID);
             FoodModel model = new FoodModel();
             EditData.ToList().First().FoodName = data.FoodName;
             EditData.ToList().First().FoodPrice = data.FoodPrice;
@@ -161,15 +161,15 @@ namespace POS_Coffe.Controllers
         }
         public ActionResult DeleteFood(int FoodID)
         {
-            var data = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID == FoodID).FirstOrDefault();
-            FoodAPIHandlerFakeData.GetInstance().ListFood.Remove(data);
+            var data = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodID == FoodID).FirstOrDefault();
+            FoodAPIHandlerData.GetInstance().ListFood.Remove(data);
             return RedirectToAction("FoodManagement", "FoodManagement");
         }
 
         [HttpGet]
         public PartialViewResult Details(int FoodID)
         {
-            FoodModel dataFood = FoodAPIHandlerFakeData.GetInstance().ListFood.Where((s) => s.FoodID == FoodID).FirstOrDefault();
+            FoodModel dataFood = FoodAPIHandlerData.GetInstance().ListFood.Where((s) => s.FoodID == FoodID).FirstOrDefault();
             int idfood = dataFood.FoodID;
 
             var dataReceip = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.Drink_Cake_ID == idfood);
@@ -180,9 +180,9 @@ namespace POS_Coffe.Controllers
             {
                 FoodDetail foodDetail = new FoodDetail();
                 int iditem = item.RecipeID;
-                MaterialsModel model = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.Where(s => s.MaterialID == iditem).FirstOrDefault();
+                MaterialsModel model = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.ID == iditem).FirstOrDefault();
                 foodDetail.MaterialName = model.Name;
-                foodDetail.Quantity = model.Quantity;
+                //foodDetail.Quantity = model.Quantity;
                 foodDetail.Amount = model.Amount;
                 foodDetail.Type = model.Type;
                 foodDetail.Foodname = dataFood.FoodName;

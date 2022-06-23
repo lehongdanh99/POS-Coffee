@@ -1,0 +1,71 @@
+﻿@model List<POS_Coffe.Models.DrinkCakeModel>
+@{
+    ViewBag.Title = "DrinkCakeManagement";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="column">
+        @using (Html.BeginForm("MaterialManagement", "Material", FormMethod.Get@*, new { @class = "form-inline" }*@))
+{
+<div class="form-check-label">
+    <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
+    <button type="submit" value="Search" class="form-check-input search-btn fa fa-search"></button>
+    <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />
+</div>
+}
+        <div class="card">
+            <div class="card-block">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Picture</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td style="text-align:center ;width:80px; padding-left:20px; padding-right:0px">
+                                <img src=@item.Picture alt="profile photo" border-style="10px" class="circle float-left profile-photo" width="60" height="60">
+                            </td>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Type</td>
+                            <td style="text-align:center">
+                                <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {Id = item.Id })"'> </button>
+                                <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.Id))" class="btn btn-danger fa fa-remove" />
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        @*<div class="column" style="text-align:center; display:inline-block">
+            <div class="pagination ali">
+                @Html.PagedListPager(Model, pageNo => Url.Action("MaterialManagement", new { pageNo = pageNo }))
+            </div>
+        </div>*@
+    </div>
+</div>
+
+<script>
+    function AddNew() {
+        console.log()
+        window.location.href = "/DrinkCake/AddDrinkCake"
+    }
+    function btnConfirm(Id) {
+        if (confirm('Do you want to delete ?')) {
+            var url = '@Url.Action("DeleteMaterial", "Material")?Id=' + Id;
+            window.location.href = url;
+        }
+    }
+
+</script>

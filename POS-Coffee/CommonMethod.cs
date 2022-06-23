@@ -150,6 +150,19 @@ namespace POS_Coffe
             return modelReceipt;
         }
 
+        //Get list DrinkCake
+        private List<DrinkCakeModel> modelDrinkCake = new List<DrinkCakeModel>();
+        public List<DrinkCakeModel> ReadJsonFileConfigDrinkCake()
+        {
+            string json = String.Empty;
+            using (StreamReader r = new StreamReader(GlobalDef.RECEIPT_JSON_CONFIG_PATH))
+            {
+                json = r.ReadToEnd();
+                modelDrinkCake = JsonConvert.DeserializeObject<List<DrinkCakeModel>>(json);
+            }
+            return modelDrinkCake;
+        }
+
         public static string Login(string usr, string pwd)
         {
             string token = string.Empty;
@@ -157,26 +170,26 @@ namespace POS_Coffe
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri(GlobalDef.BASE_URI);
-                    //TODO:
-                    //Employee employee = new Employee()
-                    //{
-                    //    username = usr,
-                    //    password = pwd
-                    //};
-                    //var json = JsonConvert.SerializeObject(employee);
-                    //var payload = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                    //var response = client.PostAsync(client.BaseAddress + "employee/login", payload).Result;
-                    //if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                    //{
-                    //    token = response.Content.ReadAsStringAsync().Result;
-                    //    Employee emp = JsonConvert.DeserializeObject<Employee>(token);
-                    //    token = emp.token;
-                    //}
+                    client.BaseAddress = new Uri("http://34.126.139.165:8080/api/");
+                    EmployeeModel employee = new EmployeeModel()
+                    {
+                        username = usr,
+                        password = pwd
+                    };
+                    var json = JsonConvert.SerializeObject(employee);
+                    var payload = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                    var response = client.PostAsync(client.BaseAddress + "employee/login", payload).Result;
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        token = response.Content.ReadAsStringAsync().Result;
+                        EmployeeModel emp = JsonConvert.DeserializeObject<EmployeeModel>(token);
+                        token = emp.Token;
+                    }
                 }
             }
             catch (Exception ex)
             {
+                //MessageBox.Show(ex.Message);
             }
             return token;
         }

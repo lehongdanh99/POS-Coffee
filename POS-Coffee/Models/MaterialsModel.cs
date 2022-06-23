@@ -19,23 +19,23 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        public int MaterialID { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
+        public string Unit { get; set; }
         public int Amount { get; set; }
-        public string Quantity { get; set; }
     }
-    public class MaterialAPIHandlerFakeData
+    public class MaterialAPIHandlerData
     {
 
-        private static MaterialAPIHandlerFakeData _instance;
-        public static MaterialAPIHandlerFakeData GetInstance()
+        private static MaterialAPIHandlerData _instance;
+        public static MaterialAPIHandlerData GetInstance()
         {
             if (_instance == null)
             {
                 if (_instance == null)
                 {
-                    _instance = new MaterialAPIHandlerFakeData();
+                    _instance = new MaterialAPIHandlerData();
                 }
             }
             return _instance;

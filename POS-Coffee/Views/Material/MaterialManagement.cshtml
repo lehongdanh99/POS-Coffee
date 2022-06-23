@@ -1,4 +1,4 @@
-﻿@model PagedList<POS_Coffe.Models.MaterialsModel>
+﻿@model List<POS_Coffe.Models.MaterialsModel>
 @using PagedList
 @using PagedList.Mvc
 @{
@@ -35,11 +35,11 @@
                                 
                                 <td>@item.Name</td>
                                 <td>@item.Type</td>
+                                <td>@item.Unit</td>
                                 <td>@item.Amount</td>
-                                <td>@item.Quantity</td>
                                 <td style="text-align:center">
-                                    <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {MaterialID = item.MaterialID })"'> </button>
-                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.MaterialID))" class="btn btn-danger fa fa-remove" />
+                                    <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {ID = item.ID })"'> </button>
+                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.ID))" class="btn btn-danger fa fa-remove" />
                                 </td>
                             </tr>
                         }
@@ -47,11 +47,11 @@
                 </table>
             </div>
         </div>
-        <div class="column" style="text-align:center; display:inline-block">
+        @*<div class="column" style="text-align:center; display:inline-block">
             <div class="pagination ali">
                 @Html.PagedListPager(Model, pageNo => Url.Action("MaterialManagement", new { pageNo = pageNo }))
             </div>
-        </div>
+        </div>*@
     </div>
 </div>
 
@@ -60,9 +60,9 @@
         console.log()
         window.location.href = "/Material/AddMaterial"
     }
-    function btnConfirm(FoodID) {
+    function btnConfirm(ID) {
         if (confirm('Do you want to delete ?')) {
-            var url = '@Url.Action("DeleteMaterial", "Material")?MaterialID=' + MaterialID;
+            var url = '@Url.Action("DeleteMaterial", "Material")?ID=' + ID;
             window.location.href = url;
         }
     }

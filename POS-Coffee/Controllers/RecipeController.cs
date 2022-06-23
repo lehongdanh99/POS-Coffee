@@ -13,14 +13,14 @@ namespace POS_Coffe.Controllers
         public ActionResult RecipeManagement()
         {
             List<RecipeModel> recipes = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.ToList();
-            List<FoodModel> lstFood = FoodAPIHandlerFakeData.GetInstance().ListFood.ToList();
-            List<MaterialsModel> lstMaterial = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.ToList();
+            List<FoodModel> lstFood = FoodAPIHandlerData.GetInstance().ListFood.ToList();
+            List<MaterialsModel> lstMaterial = MaterialAPIHandlerData.GetInstance().ListMaterial.ToList();
 
             List<ReceipDetail> LstReceipDetail = new List<ReceipDetail>();
             foreach (var recipe in recipes)
             {
                 FoodModel fooddata = lstFood.Where(s => s.FoodID == recipe.Drink_Cake_ID).FirstOrDefault(); 
-                MaterialsModel materialdata = lstMaterial.Where(s => s.MaterialID == recipe.MaterialID).FirstOrDefault();
+                MaterialsModel materialdata = lstMaterial.Where(s => s.ID == recipe.MaterialID).FirstOrDefault();
 
                 var recipeDe = new ReceipDetail();
                 recipeDe.RecipeID = recipe.RecipeID;
@@ -54,10 +54,10 @@ namespace POS_Coffe.Controllers
         {
             RecipeModel model = new RecipeModel();
 
-            List<FoodModel> foods = FoodAPIHandlerFakeData.GetInstance().ListFood.ToList();
+            List<FoodModel> foods = FoodAPIHandlerData.GetInstance().ListFood.ToList();
             ViewBag.Food = foods;
 
-            List<MaterialsModel> materials = MaterialAPIHandlerFakeData.GetInstance().ListMaterial.ToList();
+            List<MaterialsModel> materials = MaterialAPIHandlerData.GetInstance().ListMaterial.ToList();
             materials.ForEach(material => material.Name.Distinct());
             ViewBag.Materials = materials;
 
@@ -67,7 +67,7 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult AddRecipe(int Food, List<int> Material)
         {
-            List<FoodModel> foods = FoodAPIHandlerFakeData.GetInstance().ListFood.Where(s => s.FoodID.ToString().Equals(Food)).ToList();
+            List<FoodModel> foods = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodID.ToString().Equals(Food)).ToList();
 
             List<RecipeModel> recipes = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.ToList();
             int ID = recipes.Count;

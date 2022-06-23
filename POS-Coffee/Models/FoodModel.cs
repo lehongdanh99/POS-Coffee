@@ -25,17 +25,17 @@ namespace POS_Coffe.Models
         public string FoodImage { get; set; }
         public string FoodType { get; set; }      
     }
-    public class FoodAPIHandlerFakeData
+    public class FoodAPIHandlerData
     {
 
-        private static FoodAPIHandlerFakeData _instance;
-        public static FoodAPIHandlerFakeData GetInstance()
+        private static FoodAPIHandlerData _instance;
+        public static FoodAPIHandlerData GetInstance()
         {
             if (_instance == null)
             {
                 if (_instance == null)
                 {
-                    _instance = new FoodAPIHandlerFakeData();
+                    _instance = new FoodAPIHandlerData();
                 }
             }
             return _instance;

@@ -7,10 +7,43 @@ namespace POS_Coffe.Models
 {
     public class DrinkCakeModel :BaseModel
     {
-        public int FoodID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public int Price { get; set; }
-        public byte[] Picture { get; set; }
+        public string Picture { get; set; }
         public string Type { get; set; }
+        public List<DrinkCakeVariations> DrinkCakeVariations { get; set; }
+    }
+
+    public class DrinkCakeVariations
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public int price { get; set; }
+    }
+    public class DrinkCakeAPIHandlerData
+    {
+
+        private static DrinkCakeAPIHandlerData _instance;
+        public static DrinkCakeAPIHandlerData GetInstance()
+        {
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new DrinkCakeAPIHandlerData();
+                }
+            }
+            return _instance;
+        }
+        private List<DrinkCakeModel> listDrinkCake = RestAPIHandler<DrinkCakeModel>.parseJsonToModel(GlobalDef.DRINKCAKE_JSON_CONFIG_PATH);
+        public List<DrinkCakeModel> ListDrinkCake
+        {
+            get { return listDrinkCake; }
+            set
+            {
+                listDrinkCake = value;
+            }
+        }
     }
 }

@@ -24,21 +24,22 @@ namespace POS_Coffe.Models
         public string Birthday { get; set; }
         public string Phone { get; set; }
         public string Picture { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string Token { get; set; }
 
     }
-    public class EmployeeAPIHandlerFakeData
+    public class EmployeeAPIHandlerData
     {
 
-        private static EmployeeAPIHandlerFakeData _instance;
-        public static EmployeeAPIHandlerFakeData GetInstance()
+        private static EmployeeAPIHandlerData _instance;
+        public static EmployeeAPIHandlerData GetInstance()
         {
             if (_instance == null)
             {
                 if (_instance == null)
                 {
-                    _instance = new EmployeeAPIHandlerFakeData();
+                    _instance = new EmployeeAPIHandlerData();
                 }
             }
             return _instance;

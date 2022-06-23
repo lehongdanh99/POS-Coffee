@@ -12,17 +12,17 @@ namespace POS_Coffe.Models
         public string Name { get; set; }
         public int Point { get; set; }
     }
-    public class CustomerAPIHandlerFakeData
+    public class CustomerAPIHandlerData
     {
 
-        private static CustomerAPIHandlerFakeData _instance;
-        public static CustomerAPIHandlerFakeData GetInstance()
+        private static CustomerAPIHandlerData _instance;
+        public static CustomerAPIHandlerData GetInstance()
         {
             if (_instance == null)
             {
                 if (_instance == null)
                 {
-                    _instance = new CustomerAPIHandlerFakeData();
+                    _instance = new CustomerAPIHandlerData();
                 }
             }
             return _instance;

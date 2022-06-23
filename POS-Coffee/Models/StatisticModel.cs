@@ -44,7 +44,7 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        private List<StatisticModel> listStatistic = RestAPIHandler<StatisticModel>.parseJsonToModel(StatisticModel);
+        private List<StatisticModel> listStatistic = RestAPIHandler<StatisticModel>.parseJsonToModel(GlobalDef.STATISTIC_JSON_CONFIG_PATH);
         public List<StatisticModel> ListStatistic
         {
             get { return listStatistic; }

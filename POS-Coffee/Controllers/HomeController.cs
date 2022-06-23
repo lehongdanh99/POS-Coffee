@@ -31,7 +31,7 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult Login(EmployeeModel dataLogin)
         {
-            if(dataLogin.Username == null || dataLogin.Password == null)
+            if(dataLogin.username == null || dataLogin.password == null)
             {
                 ViewBag.error = "Please fill in Username and Password!";
                 return View(dataLogin);
@@ -40,8 +40,8 @@ namespace POS_Coffe.Controllers
             string password = "";
             try
             {
-                username = dataLogin.Username.ToUpper().Trim();
-                password = dataLogin.Password.ToUpper().Trim();
+                username = dataLogin.username.Trim();
+                password = dataLogin.password.Trim();
             }
             catch (Exception ex)
             {
@@ -53,15 +53,28 @@ namespace POS_Coffe.Controllers
             {
                 try
                 {
-                    EmployeeModel data = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Where(s => s.Username.ToUpper().Trim().Equals(username) && s.Password.Trim().ToUpper().Equals(password)).FirstOrDefault();
-                    Session["EmployeeID"] = data.EmployeeID;
-                    Session["Name"] = data.Name;
-                    Session["Permission"] = data.Permission;
-                    Session["Birthday"] = data.Birthday;
-                    Session["Phone"] = data.Phone;
-                    Session["Username"] = data.Username;
-                    Session["Password"] = data.Password;
-                    return RedirectToAction("Index", "Statistic", data);
+                    //EmployeeModel data = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.Username.ToUpper().Trim().Equals(username) && s.Password.Trim().ToUpper().Equals(password)).FirstOrDefault();
+                    EmployeeModel model = new EmployeeModel();
+
+                    if(!String.IsNullOrEmpty(CommonMethod.Login(username, password)))
+                    {
+                        GlobalDef.TOKEN = CommonMethod.Login(username, password);
+                        //RestAPIHandler<EmployeeModel>.parseJsonToModel(GlobalDef.) 
+                    }
+                    else
+                    {
+                        ViewBag.error = GlobalDef.ERROR_MESSAGE_LOGIN;
+                        return View(dataLogin);
+                    }
+
+                    //Session["EmployeeID"] = data.EmployeeID;
+                    //Session["Name"] = data.Name;
+                    //Session["Permission"] = data.Permission;
+                    //Session["Birthday"] = data.Birthday;
+                    //Session["Phone"] = data.Phone;
+                    //Session["Username"] = data.Username;
+                    //Session["Password"] = data.Password;
+                    return RedirectToAction("Index", "Statistic");
                 }
                 catch (Exception ex)
                 {
@@ -79,13 +92,13 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult Register(string username, string password, string Name)
         {
-            int count = EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Count();
+            int count = EmployeeAPIHandlerData.GetInstance().ListEmployee.Count();
             EmployeeModel data = new EmployeeModel();
             data.EmployeeID = count + 1;    
-            data.Username = username;
+            data.username = username;
             data.Name = Name;
-            data.Password = password;
-            EmployeeAPIHandlerFakeData.GetInstance().ListEmployee.Add(data);
+            data.password = password;
+            EmployeeAPIHandlerData.GetInstance().ListEmployee.Add(data);
             return RedirectToAction("Login", "Home");
         }
         public ActionResult ForgotPassWord()

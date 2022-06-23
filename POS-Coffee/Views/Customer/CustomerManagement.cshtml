@@ -3,19 +3,30 @@
     ViewBag.Title = "CustomerManagement";
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
+
 <div class="row">
     <div class="column">
+        @using (Html.BeginForm("ViewEmployee", "Employee", FormMethod.Get@*, new { @class = "form-inline" }*@))
+{
+<div class="form-check-label">
+    <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
+    <button type="submit" class="form-check-input search-btn fa fa-search"></button>
+
+    <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()"></button>
+</div>
+}
         <div class="card">
             <div class="card-block">
-                <table>
+                <table class="styled-table">
                     <thead>
                         <tr>
-                            <td>Name</td>
-                            <td>Phone</td>
-                            <td>Point</td>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Point</th>
                         </tr>
                     </thead>
                     <tbody>
+
                         @foreach (var item in Model)
                         {
                             <tr>
@@ -28,8 +39,11 @@
                 </table>
             </div>
         </div>
+        @*<div class="column" style="text-align:center; display:inline-block">
+            <div class="pagination ali">
+                @Html.PagedListPager(Model, pageNo => Url.Action("ViewEmployee", new { pageNo = pageNo }))
+            </div>
+        </div>*@
     </div>
 </div>
-
-
 
