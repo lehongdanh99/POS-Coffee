@@ -25,6 +25,17 @@ namespace CoffeePos.ViewModels
         public ReceiptReportViewModel()
         {
         }
+
+        public void ClearDataReport()
+        {
+            Stt.Clear();
+            NameFood.Clear();
+            FoodSize.Clear();
+            FoodPrice.Clear();
+            FoodCount.Clear();
+            FoodPayment.Clear();
+
+        }
         public void getDataReport()
         {
 
@@ -33,7 +44,7 @@ namespace CoffeePos.ViewModels
                 Stt.Add(food.FoodOrderID);
                 NameFood.Add(food.FoodOrderName);
                 FoodSize.Add(food.FoodSize);
-                if(food.FoodSize == "S")
+                if(food.FoodSize == "M")
                 {
                     FoodPrice.Add(food.foodOrderVariations[0].price);
                 }    
@@ -46,6 +57,26 @@ namespace CoffeePos.ViewModels
                 FoodPayment.Add(food.FoodOrderPrice);
             }
             TotalPayment = GlobalDef.ReceiptPayment.TotalPrice;
+        }
+
+        public void getDataDone()
+        {
+            foreach (var food in GlobalDef.ReceiptDoneDetail.receiptDetails)
+            {
+                int i = 1;
+                Stt.Add(i);
+                i++;
+                NameFood.Add(food.Name);
+                FoodSize.Add(food.drinkCakeVariation.name);
+                FoodPrice.Add(food.drinkCakeVariation.price);
+
+                FoodCount.Add(food.Amount);
+
+                FoodPayment.Add(food.Price);
+            }
+            TotalPayment = GlobalDef.ReceiptDoneDetail.TotalPrice;
+            DateReceipt = GlobalDef.ReceiptDoneDetail.createdAtFormatVN;
+            ReceiptID = GlobalDef.ReceiptDoneDetail.Id;
         }
 
         private string employeeName;
@@ -64,7 +95,7 @@ namespace CoffeePos.ViewModels
             set { tableID = value; }
         }
 
-        private List<string> foodSize;
+        private List<string> foodSize = new List<string>();
 
         public List<string> FoodSize
         {

@@ -54,9 +54,9 @@ namespace CoffeePos.Views
         private void ViewDetailReceiptDone_Click(object sender, RoutedEventArgs e)
         {
 
-            Receipt obj = ((FrameworkElement)sender).DataContext as Receipt;
+            ReceiptDone obj = ((FrameworkElement)sender).DataContext as ReceiptDone;
             GlobalDef.DetailFromHome = Visibility.Hidden;
-            ListOrderViewModel.GetInstance().ViewDetailReceipt(obj, false);
+            ListOrderViewModel.GetInstance().ViewDetailReceiptDone(obj);
         }
 
         private void PaymentReceipt_Click(object sender, RoutedEventArgs e)

@@ -28,6 +28,7 @@ namespace CoffeePos.Common
         public static bool IsChooseVoucerToDetail = false;
         public static Receipt ReceiptDetail = new Receipt();
         public static Receipt ReceiptPayment = new Receipt();
+        public static ReceiptDone ReceiptDoneDetail = new ReceiptDone();
         public static Visibility DetailFromHome = Visibility.Collapsed;
 
         public static bool IsDeliveryPayment = false;

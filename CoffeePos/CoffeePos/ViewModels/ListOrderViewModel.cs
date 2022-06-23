@@ -42,11 +42,29 @@ namespace CoffeePos.ViewModels
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
             foreach (ReceiptDone receipt in RestAPIClient<ReceiptDone>.parseJsonToModel(GlobalDef.RECEIPTDONE_API))
             {
-                ListReceiptsDone.Add(receipt);
+                bool check = false;
+                foreach (ReceiptDone receiptCheck in RestAPIClient<ReceiptDone>.parseJsonToModel(GlobalDef.RECEIPTDONE_API))
+                {
+                    if(receiptCheck == receipt)
+                    {
+                        check = true;
+                    }
+                    else
+                    {
+                        check = false;
+                    }    
+                }
+                if (!check)
+                {
+                    ListReceiptsDone.Add(receipt);
+                }
+
             }
         }
 
         private Receipt ReceiptSelected;
+
+        private ReceiptDone ReceiptSelectedDone;
         private Visibility visibilityReceiptDone;
 
         public Visibility VisibilityReceiptDone
@@ -146,6 +164,19 @@ namespace CoffeePos.ViewModels
             TableDetailViewModel.GetInstance().getdataTableDetail();
             //WindowManager windowManager = new WindowManager();
             GlobalDef.windowManager.ShowDialogAsync(TableDetailViewModel.GetInstance());
+        }
+
+        public void ViewDetailReceiptDone(ReceiptDone receipt)
+        {
+            //GlobalDef.ReceiptDetail = receipt;
+            //GlobalDef.canEditDetail = isDone;
+            //TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
+            //tableDetailViewModel.eventChange += HandleCallBack;
+
+            ReceiptSelectedDone = receipt;
+            ReceiptReportViewModel.GetInstance().ClearDataReport();
+            ReceiptReportViewModel.GetInstance().getDataDone();
+            GlobalDef.windowManager.ShowDialogAsync(ReceiptReportViewModel.GetInstance());
         }
 
         public void PaymentReceipt(Receipt receipt)

@@ -80,7 +80,7 @@ namespace CoffeePos.Models
             public int id { get; set; }
 
             private FoodVariations foodVariations = new FoodVariations();
-            public FoodVariations drinkCakeVariationId
+            public FoodVariations drinkCakeVariation
             {
                 get { return foodVariations; }
                 set { foodVariations = value; }
@@ -88,6 +88,10 @@ namespace CoffeePos.Models
             public int Amount { get; set; }
             public int Price { get; set; }
             public string Note { get; set; }
+
+            public string Name { get; set; }
+
+            public int DrinkCakeId { get; set; }
 
         }
 
@@ -113,6 +117,8 @@ namespace CoffeePos.Models
             public int voucherId { get; set; }
 
             public int DiscountPrice { get; set; }
+
+            public DateTime createdAtFormatVN { get; set; }
         }
 
         public class ReceiptToPush

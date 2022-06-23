@@ -284,19 +284,19 @@ namespace CoffeePos.ViewModels
                 receipt.receiptDetail.Add(receiptDetails);
             }
             System.Diagnostics.Process.Start("https://www.google.com.vn/?hl=vi");
-            //bool result = RestAPIClient<ReceiptToPush>.PostData(receipt, GlobalDef.ZALOPAY_API, GlobalDef.token);
+            bool result = RestAPIClient<ReceiptToPush>.PostData(receipt, GlobalDef.ZALOPAY_API, GlobalDef.token);
 
-            //if (result)
-            //{
-            //    MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
-            //    //WindowManager windowManager = new WindowManager();
-            //    ClearDataPayment();
-            //    GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
-            //}
-            //else
-            //{
-            //    MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán không thành công");
-            //}
+            if (result)
+            {
+                MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
+                //WindowManager windowManager = new WindowManager();
+                ClearDataPayment();
+                GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
+            }
+            else
+            {
+                MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán không thành công");
+            }
         }
 
 
@@ -360,6 +360,7 @@ namespace CoffeePos.ViewModels
             if (result)
             {
                 ClearDataPayment();
+                ReceiptReportViewModel.GetInstance().ClearDataReport();
                 ReceiptReportViewModel.GetInstance().getDataReport();
                 GlobalDef.windowManager.ShowDialogAsync(ReceiptReportViewModel.GetInstance());
 
