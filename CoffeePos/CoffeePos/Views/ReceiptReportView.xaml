@@ -32,26 +32,26 @@
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
+                <!--<RowDefinition Height="auto"/>-->
             </Grid.RowDefinitions>
             <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal">
                 <TextBlock Text="TN:  " FontWeight="Bold"/>
-                <TextBlock Text="Phan Anh Tú"/>
+                <TextBlock Text="{Binding EmployeeName}"/>
             </StackPanel>
             <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal">
                 <TextBlock Text="Bàn:  " FontWeight="Bold"/>
-                <TextBlock Text="02"/>
+                <TextBlock Text="{Binding TableID}"/>
             </StackPanel>
-            <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
+            <!--<StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
                 <TextBlock Text="Giờ vào:  " FontWeight="Bold"/>
                 <TextBlock Text="16:05"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+            </StackPanel>-->
+            <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
                 <TextBlock Text="Ngày:  " FontWeight="Bold"/>
                 <TextBlock Text="04 tháng 6 2022"/>
             </StackPanel>
-            <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal">
-                <TextBlock Text="Giờ ra:  " FontWeight="Bold"/>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Text="Giờ:  " FontWeight="Bold"/>
                 <TextBlock Text="16:05"/>
             </StackPanel>
         </Grid>

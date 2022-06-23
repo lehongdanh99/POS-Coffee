@@ -37,6 +37,24 @@ namespace CoffeePos.ViewModels
             }
             TotalPayment = GlobalDef.ReceiptPayment.TotalPrice;
         }
+
+        private string employeeName;
+
+        public string EmployeeName
+        {
+            get { return employeeName; }
+            set { employeeName = value; }
+        }
+
+        private int tableID;
+
+        public int TableID
+        {
+            get { return tableID; }
+            set { tableID = value; }
+        }
+
+
         private List<int> stt = new List<int>();
         public List<int> Stt
         {
