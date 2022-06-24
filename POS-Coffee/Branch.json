@@ -28,11 +28,42 @@
       "createdAtFormatVN": "23/06/2022 14:34",
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
+    "id": 10000,
+    "branchName": "V� V?n Ng�n - Th? ??c",
+    "createdAtFormatVN": "22/06/2022 00:00",
+    "updatedAtFormatVN": "22/06/2022 00:00"
+  },
+  {
+    "createdBy": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "updatedBy": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
     "id": 10001,
-    "name": "bột cà phê thường",
-    "type": "cà phê",
-    "unit": "gam",
-    "amount": 10000,
+    "branchName": "Qu?n 1",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -66,10 +97,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10002,
-    "name": "bột cà phê cao cấp",
-    "type": "cà phê",
-    "unit": "gam",
-    "amount": 10000,
+    "branchName": "Qu?n 2",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -103,10 +131,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10003,
-    "name": "đường",
-    "type": "cà phê",
-    "unit": "gam",
-    "amount": 10000,
+    "branchName": "Qu?n 3",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -140,10 +165,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10004,
-    "name": "sữa đặc",
-    "type": "cà phê",
-    "unit": "gam",
-    "amount": 10000,
+    "branchName": "Qu?n 4",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -177,10 +199,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10005,
-    "name": "trà gói",
-    "type": "trà",
-    "unit": "cái",
-    "amount": 200,
+    "branchName": "Qu?n 5",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -214,10 +233,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10006,
-    "name": "trà olong",
-    "type": "trà",
-    "unit": "cái",
-    "amount": 200,
+    "branchName": "Qu?n 6",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -251,10 +267,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10007,
-    "name": "trà xanh",
-    "type": "trà",
-    "unit": "gam",
-    "amount": 1000,
+    "branchName": "Qu?n 7",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -288,10 +301,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10008,
-    "name": "đường",
-    "type": "trà",
-    "unit": "gam",
-    "amount": 1000,
+    "branchName": "Qu?n 8",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -325,10 +335,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10009,
-    "name": "siro đào",
-    "type": "trà",
-    "unit": "gam",
-    "amount": 1000,
+    "branchName": "Qu?n 9",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -362,10 +369,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10010,
-    "name": "siro vải",
-    "type": "trà",
-    "unit": "gam",
-    "amount": 1000,
+    "branchName": "Qu?n 10",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -399,10 +403,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10011,
-    "name": "sen vàng",
-    "type": "trà",
-    "unit": "gam",
-    "amount": 1000,
+    "branchName": "Qu?n 11",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -436,10 +437,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10012,
-    "name": "sữa chua",
-    "type": "trà",
-    "unit": "gam",
-    "amount": 1000,
+    "branchName": "Qu?n 12",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -473,10 +471,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10013,
-    "name": "trà xanh",
-    "type": "trà",
-    "unit": "gam",
-    "amount": 1000,
+    "branchName": "Qu?n T�n B�nh",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
@@ -510,158 +505,7 @@
       "updatedAtFormatVN": "23/06/2022 14:34"
     },
     "id": 10014,
-    "name": "cookie",
-    "type": "đá xay",
-    "unit": "gam",
-    "amount": 1000,
-    "createdAtFormatVN": "22/06/2022 00:00",
-    "updatedAtFormatVN": "22/06/2022 00:00"
-  },
-  {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "branch": null,
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "branch": null,
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "id": 10015,
-    "name": "việt quốc",
-    "type": "đáy xay",
-    "unit": "gam",
-    "amount": 1000,
-    "createdAtFormatVN": "22/06/2022 00:00",
-    "updatedAtFormatVN": "22/06/2022 00:00"
-  },
-  {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "branch": null,
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "branch": null,
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "id": 10016,
-    "name": "mocha",
-    "type": "đá xay",
-    "unit": "gam",
-    "amount": 1000,
-    "createdAtFormatVN": "22/06/2022 00:00",
-    "updatedAtFormatVN": "22/06/2022 00:00"
-  },
-  {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "branch": null,
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "branch": null,
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "id": 10017,
-    "name": "ống hút",
-    "type": "mang đi",
-    "unit": "gam",
-    "amount": 1000,
-    "createdAtFormatVN": "22/06/2022 00:00",
-    "updatedAtFormatVN": "22/06/2022 00:00"
-  },
-  {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "branch": null,
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "branch": null,
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "id": 10018,
-    "name": "Ly nhựa",
-    "type": "mang đi",
-    "unit": "gam",
-    "amount": 1000,
+    "branchName": "Qu?n T�n Ph�",
     "createdAtFormatVN": "22/06/2022 00:00",
     "updatedAtFormatVN": "22/06/2022 00:00"
   }

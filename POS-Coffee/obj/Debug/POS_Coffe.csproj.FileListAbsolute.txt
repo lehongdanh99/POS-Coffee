@@ -156,7 +156,12 @@ F:\POS-Coffee-Main\POS_Coffe\obj\Debug\POS_Coffe.csproj.CoreCompileInputs.cache
 F:\POS-Coffee-Main\POS_Coffe\obj\Debug\POS_Coffe.csproj.CopyComplete
 F:\POS-Coffee-Main\POS_Coffe\obj\Debug\POS_Coffe.dll
 F:\POS-Coffee-Main\POS_Coffe\obj\Debug\POS_Coffe.pdb
+F:\POS-Coffee\POS-Coffee\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\POS-Coffee\POS-Coffee\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\POS-Coffee\POS-Coffee\bin\roslyn\System.ValueTuple.dll
+F:\POS-Coffee\POS-Coffee\bin\roslyn\VBCSCompiler.exe
 F:\POS-Coffee\POS-Coffee\bin\Employee.json
+F:\POS-Coffee\POS-Coffee\bin\DrinkCake.json
 F:\POS-Coffee\POS-Coffee\bin\Customer.json
 F:\POS-Coffee\POS-Coffee\bin\Recipe.json
 F:\POS-Coffee\POS-Coffee\bin\material.json
@@ -180,8 +185,6 @@ F:\POS-Coffee\POS-Coffee\bin\roslyn\Microsoft.CodeAnalysis.dll
 F:\POS-Coffee\POS-Coffee\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
 F:\POS-Coffee\POS-Coffee\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 F:\POS-Coffee\POS-Coffee\bin\roslyn\Microsoft.CSharp.Core.targets
-F:\POS-Coffee\POS-Coffee\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-F:\POS-Coffee\POS-Coffee\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 F:\POS-Coffee\POS-Coffee\bin\roslyn\Microsoft.Managed.Core.targets
 F:\POS-Coffee\POS-Coffee\bin\roslyn\Microsoft.VisualBasic.Core.targets
 F:\POS-Coffee\POS-Coffee\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -206,7 +209,6 @@ F:\POS-Coffee\POS-Coffee\bin\roslyn\System.Security.Cryptography.Primitives.dll
 F:\POS-Coffee\POS-Coffee\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
 F:\POS-Coffee\POS-Coffee\bin\roslyn\System.Text.Encoding.CodePages.dll
 F:\POS-Coffee\POS-Coffee\bin\roslyn\System.Threading.Tasks.Extensions.dll
-F:\POS-Coffee\POS-Coffee\bin\roslyn\System.ValueTuple.dll
 F:\POS-Coffee\POS-Coffee\bin\roslyn\System.Xml.ReaderWriter.dll
 F:\POS-Coffee\POS-Coffee\bin\roslyn\System.Xml.XmlDocument.dll
 F:\POS-Coffee\POS-Coffee\bin\roslyn\System.Xml.XPath.dll
@@ -214,7 +216,6 @@ F:\POS-Coffee\POS-Coffee\bin\roslyn\System.Xml.XPath.XDocument.dll
 F:\POS-Coffee\POS-Coffee\bin\roslyn\vbc.exe
 F:\POS-Coffee\POS-Coffee\bin\roslyn\vbc.exe.config
 F:\POS-Coffee\POS-Coffee\bin\roslyn\vbc.rsp
-F:\POS-Coffee\POS-Coffee\bin\roslyn\VBCSCompiler.exe
 F:\POS-Coffee\POS-Coffee\bin\roslyn\VBCSCompiler.exe.config
 F:\POS-Coffee\POS-Coffee\bin\Antlr3.Runtime.dll
 F:\POS-Coffee\POS-Coffee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
@@ -247,4 +248,3 @@ F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.CoreCompileInputs.cache
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.CopyComplete
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.dll
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.pdb
-F:\POS-Coffee\POS-Coffee\bin\DrinkCake.json

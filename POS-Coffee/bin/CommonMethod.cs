@@ -36,18 +36,6 @@ namespace POS_Coffe
             }
             return modelEmployee;
         }
-        //Get list voucher
-        //private List<VoucherModel> modelVoucher = new List<VoucherModel>();
-        //public List<VoucherModel> ReadJsonFileConfigVoucher()
-        //{
-        //    string json = String.Empty;
-        //    using (StreamReader r = new StreamReader(GlobalDef.VOUCHER_JSON_CONFIG_PATH))
-        //    {
-        //        json = r.ReadToEnd();
-        //        modelVoucher = JsonConvert.DeserializeObject<List<VoucherModel>>(json);
-        //    }
-        //    return modelVoucher;
-        //}
 
         private List<VoucherModel> modelVoucher = new List<VoucherModel>();
         public List<VoucherModel> ReadJsonFileConfigVoucher()

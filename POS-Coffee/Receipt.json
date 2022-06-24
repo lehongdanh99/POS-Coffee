@@ -1,0 +1,557 @@
+[
+  {
+    "id": 3,
+    "employee": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "customer": {
+      "createdBy": {
+        "createdBy": null,
+        "updatedBy": null,
+        "id": 1,
+        "name": "admin",
+        "permission": "ADMIN",
+        "birthday": null,
+        "phone": null,
+        "address": null,
+        "username": "admin",
+        "branch": null,
+        "createdAtFormatVN": "23/06/2022 14:34",
+        "updatedAtFormatVN": "23/06/2022 14:34"
+      },
+      "updatedBy": {
+        "createdBy": null,
+        "updatedBy": null,
+        "id": 1,
+        "name": "admin",
+        "permission": "ADMIN",
+        "birthday": null,
+        "phone": null,
+        "address": null,
+        "username": "admin",
+        "branch": null,
+        "createdAtFormatVN": "23/06/2022 14:34",
+        "updatedAtFormatVN": "23/06/2022 14:34"
+      },
+      "id": 10001,
+      "phone": "0934445332",
+      "name": "Hu?nh Quang Minh",
+      "point": 173,
+      "createdAtFormatVN": "22/06/2022 00:00",
+      "updatedAtFormatVN": "23/06/2022 16:18"
+    },
+    "totalPrice": 54000,
+    "originalPrice": 54000,
+    "paymentType": "NA",
+    "serviceType": "AWAY",
+    "customerPay": 0,
+    "voucher": null,
+    "discountPrice": 0,
+    "branch": null,
+    "receiptDetails": [
+      {
+        "id": 2,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10001,
+          "name": "M",
+          "description": "M",
+          "price": 27000
+        },
+        "amount": 2,
+        "price": 54000,
+        "note": "string",
+        "name": "Cà Phê ?á",
+        "drinkCakeId": 10001
+      }
+    ],
+    "createdAtFormatVN": "23/06/2022 15:28",
+    "updatedAtFormatVN": "23/06/2022 15:28"
+  },
+  {
+    "id": 4,
+    "employee": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "customer": {
+      "createdBy": {
+        "createdBy": null,
+        "updatedBy": null,
+        "id": 1,
+        "name": "admin",
+        "permission": "ADMIN",
+        "birthday": null,
+        "phone": null,
+        "address": null,
+        "username": "admin",
+        "branch": null,
+        "createdAtFormatVN": "23/06/2022 14:34",
+        "updatedAtFormatVN": "23/06/2022 14:34"
+      },
+      "updatedBy": {
+        "createdBy": null,
+        "updatedBy": null,
+        "id": 1,
+        "name": "admin",
+        "permission": "ADMIN",
+        "birthday": null,
+        "phone": null,
+        "address": null,
+        "username": "admin",
+        "branch": null,
+        "createdAtFormatVN": "23/06/2022 14:34",
+        "updatedAtFormatVN": "23/06/2022 14:34"
+      },
+      "id": 10001,
+      "phone": "0934445332",
+      "name": "Hu?nh Quang Minh",
+      "point": 173,
+      "createdAtFormatVN": "22/06/2022 00:00",
+      "updatedAtFormatVN": "23/06/2022 16:18"
+    },
+    "totalPrice": 84000,
+    "originalPrice": 84000,
+    "paymentType": "NA",
+    "serviceType": "AWAY",
+    "customerPay": 0,
+    "voucher": null,
+    "discountPrice": 0,
+    "branch": null,
+    "receiptDetails": [
+      {
+        "id": 3,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10001,
+          "name": "M",
+          "description": "M",
+          "price": 27000
+        },
+        "amount": 2,
+        "price": 54000,
+        "note": "string",
+        "name": "Cà Phê ?á",
+        "drinkCakeId": 10001
+      },
+      {
+        "id": 4,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10003,
+          "name": "M",
+          "description": "M",
+          "price": 30000
+        },
+        "amount": 1,
+        "price": 30000,
+        "note": "string",
+        "name": "B?c X?u",
+        "drinkCakeId": 10002
+      }
+    ],
+    "createdAtFormatVN": "23/06/2022 15:31",
+    "updatedAtFormatVN": "23/06/2022 15:31"
+  },
+  {
+    "id": 10,
+    "employee": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "customer": null,
+    "totalPrice": 35000,
+    "originalPrice": 35000,
+    "paymentType": "CASH",
+    "serviceType": "EATIN",
+    "customerPay": 0,
+    "voucher": null,
+    "discountPrice": 0,
+    "branch": null,
+    "receiptDetails": [
+      {
+        "id": 11,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10007,
+          "name": "M",
+          "description": "M",
+          "price": 35000
+        },
+        "amount": 1,
+        "price": 35000,
+        "note": "???ng 50 ?á 50 ",
+        "name": "Latte",
+        "drinkCakeId": 10004
+      }
+    ],
+    "createdAtFormatVN": "23/06/2022 16:13",
+    "updatedAtFormatVN": "23/06/2022 16:13"
+  },
+  {
+    "id": 11,
+    "employee": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "customer": {
+      "createdBy": {
+        "createdBy": null,
+        "updatedBy": null,
+        "id": 1,
+        "name": "admin",
+        "permission": "ADMIN",
+        "birthday": null,
+        "phone": null,
+        "address": null,
+        "username": "admin",
+        "branch": null,
+        "createdAtFormatVN": "23/06/2022 14:34",
+        "updatedAtFormatVN": "23/06/2022 14:34"
+      },
+      "updatedBy": {
+        "createdBy": null,
+        "updatedBy": null,
+        "id": 1,
+        "name": "admin",
+        "permission": "ADMIN",
+        "birthday": null,
+        "phone": null,
+        "address": null,
+        "username": "admin",
+        "branch": null,
+        "createdAtFormatVN": "23/06/2022 14:34",
+        "updatedAtFormatVN": "23/06/2022 14:34"
+      },
+      "id": 10001,
+      "phone": "0934445332",
+      "name": "Hu?nh Quang Minh",
+      "point": 173,
+      "createdAtFormatVN": "22/06/2022 00:00",
+      "updatedAtFormatVN": "23/06/2022 16:18"
+    },
+    "totalPrice": 33250,
+    "originalPrice": 35000,
+    "paymentType": "CASH",
+    "serviceType": "EATIN",
+    "customerPay": 0,
+    "voucher": null,
+    "discountPrice": 0,
+    "branch": null,
+    "receiptDetails": [
+      {
+        "id": 12,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10007,
+          "name": "M",
+          "description": "M",
+          "price": 35000
+        },
+        "amount": 1,
+        "price": 35000,
+        "note": "???ng 50 ?á 50 ",
+        "name": "Latte",
+        "drinkCakeId": 10004
+      }
+    ],
+    "createdAtFormatVN": "23/06/2022 16:18",
+    "updatedAtFormatVN": "23/06/2022 16:18"
+  },
+  {
+    "id": 12,
+    "employee": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "customer": null,
+    "totalPrice": 35000,
+    "originalPrice": 35000,
+    "paymentType": "CASH",
+    "serviceType": "EATIN",
+    "customerPay": 0,
+    "voucher": null,
+    "discountPrice": 0,
+    "branch": null,
+    "receiptDetails": [
+      {
+        "id": 13,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10007,
+          "name": "M",
+          "description": "M",
+          "price": 35000
+        },
+        "amount": 1,
+        "price": 35000,
+        "note": "  ",
+        "name": "Latte",
+        "drinkCakeId": 10004
+      }
+    ],
+    "createdAtFormatVN": "23/06/2022 16:57",
+    "updatedAtFormatVN": "23/06/2022 16:57"
+  },
+  {
+    "id": 13,
+    "employee": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "customer": null,
+    "totalPrice": 35000,
+    "originalPrice": 35000,
+    "paymentType": "CASH",
+    "serviceType": "EATIN",
+    "customerPay": 0,
+    "voucher": null,
+    "discountPrice": 0,
+    "branch": null,
+    "receiptDetails": [
+      {
+        "id": 14,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10017,
+          "name": "M",
+          "description": "M",
+          "price": 35000
+        },
+        "amount": 1,
+        "price": 35000,
+        "note": "  ",
+        "name": "S?a T??i Trân Châu ???ng ?en",
+        "drinkCakeId": 10009
+      }
+    ],
+    "createdAtFormatVN": "23/06/2022 17:07",
+    "updatedAtFormatVN": "23/06/2022 17:07"
+  },
+  {
+    "id": 14,
+    "employee": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "customer": null,
+    "totalPrice": 27000,
+    "originalPrice": 27000,
+    "paymentType": "CASH",
+    "serviceType": "EATIN",
+    "customerPay": 0,
+    "voucher": null,
+    "discountPrice": 0,
+    "branch": null,
+    "receiptDetails": [
+      {
+        "id": 15,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10001,
+          "name": "M",
+          "description": "M",
+          "price": 27000
+        },
+        "amount": 1,
+        "price": 27000,
+        "note": "  ",
+        "name": "Cà Phê ?á",
+        "drinkCakeId": 10001
+      }
+    ],
+    "createdAtFormatVN": "23/06/2022 17:16",
+    "updatedAtFormatVN": "23/06/2022 17:16"
+  },
+  {
+    "id": 15,
+    "employee": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "customer": null,
+    "totalPrice": 62000,
+    "originalPrice": 62000,
+    "paymentType": "CASH",
+    "serviceType": "EATIN",
+    "customerPay": 0,
+    "voucher": null,
+    "discountPrice": 0,
+    "branch": null,
+    "receiptDetails": [
+      {
+        "id": 16,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10001,
+          "name": "M",
+          "description": "M",
+          "price": 27000
+        },
+        "amount": 1,
+        "price": 27000,
+        "note": "  ",
+        "name": "Cà Phê ?á",
+        "drinkCakeId": 10001
+      },
+      {
+        "id": 17,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10021,
+          "name": "M",
+          "description": "M",
+          "price": 35000
+        },
+        "amount": 1,
+        "price": 35000,
+        "note": "  ",
+        "name": "Trà V?i",
+        "drinkCakeId": 10011
+      }
+    ],
+    "createdAtFormatVN": "23/06/2022 17:19",
+    "updatedAtFormatVN": "23/06/2022 17:19"
+  },
+  {
+    "id": 16,
+    "employee": {
+      "createdBy": null,
+      "updatedBy": null,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "branch": null,
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "customer": null,
+    "totalPrice": 62000,
+    "originalPrice": 62000,
+    "paymentType": "CASH",
+    "serviceType": "EATIN",
+    "customerPay": 0,
+    "voucher": null,
+    "discountPrice": 0,
+    "branch": null,
+    "receiptDetails": [
+      {
+        "id": 18,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10009,
+          "name": "M",
+          "description": "M",
+          "price": 35000
+        },
+        "amount": 1,
+        "price": 35000,
+        "note": "  ",
+        "name": "Mocha",
+        "drinkCakeId": 10005
+      },
+      {
+        "id": 19,
+        "receipt": null,
+        "drinkCakeVariation": {
+          "id": 10001,
+          "name": "M",
+          "description": "M",
+          "price": 27000
+        },
+        "amount": 1,
+        "price": 27000,
+        "note": "  ",
+        "name": "Cà Phê ?á",
+        "drinkCakeId": 10001
+      }
+    ],
+    "createdAtFormatVN": "23/06/2022 17:20",
+    "updatedAtFormatVN": "23/06/2022 17:20"
+  }
+]

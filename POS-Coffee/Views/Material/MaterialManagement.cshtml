@@ -1,4 +1,4 @@
-﻿@model List<POS_Coffe.Models.MaterialsModel>
+﻿@model PagedList<POS_Coffe.Models.MaterialsModel>
 @using PagedList
 @using PagedList.Mvc
 @{
@@ -47,11 +47,11 @@
                 </table>
             </div>
         </div>
-        @*<div class="column" style="text-align:center; display:inline-block">
+        <div class="column" style="text-align:center; display:inline-block">
             <div class="pagination ali">
                 @Html.PagedListPager(Model, pageNo => Url.Action("MaterialManagement", new { pageNo = pageNo }))
             </div>
-        </div>*@
+        </div>
     </div>
 </div>
 

@@ -23,17 +23,22 @@
                             <th>Name</th>
                             <th>Phone</th>
                             <th>Point</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
 
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <td>@item.Name</td>
-                                <td>@item.Phone</td>
-                                <td>@item.Point</td>
-                            </tr>
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Phone</td>
+                            <td>@item.Point</td>
+                            <td style="text-align:center">
+                                <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {ID = item.ID })"'> </button>
+                                <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.ID))" class="btn btn-danger fa fa-remove" />
+                            </td>
+                        </tr>
                         }
                     </tbody>
                 </table>

@@ -1,0 +1,79 @@
+﻿@model List<POS_Coffe.Models.ReceiptModel>
+@{
+    ViewBag.Title = "ReceiptManagement";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<div class="row">
+    <div class="column">
+        @using (Html.BeginForm("ReceiptManagement", "Receipt", FormMethod.Get))
+{
+         <div class="form-check-label">
+            <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
+            <button type="submit" class="form-check-input search-btn fa fa-search"></button>
+            <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()"></button>
+         </div>
+}
+        <div class="card">
+            <div class="card-block">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Voucher</th>
+                            <th>OriginalPrice</th>
+                            <th>DiscountPrice</th>
+                            <th>TotalPrice</th>
+                            <th>PaymentType</th>
+                            <th>CustomerPay</th>
+                            <th>ServiceType</th>
+
+                            <th>Phone</th>
+                            <th>Name</th>
+                            <th>Point</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.iD</td>
+                            <td>@item.Voucher</td>
+                            <td>@item.OriginalPrice</td>
+                            <td>@item.DiscountPrice</td>
+                            <td>@item.TotalPrice</td>
+                            <td>@item.PaymentType</td>
+                            <td>@item.CustomerPay</td>
+                            <td>@item.ServiceType</td>
+
+                            <td>@item.Phone</td>
+                            <td>@item.Name</td>
+                            <td>@item.Point</td>
+                            <td style="text-align:center">
+                                <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditVoucher", "VoucherManagement", new {iD = item.iD })"'></button>
+                                <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.iD))" class="btn btn-danger fa fa-remove" />
+                            </td>
+                        </tr>
+                            @*foreach (var data in item.ReceiptDetails)
+                            {
+                                <tr>
+                                    <td>@data.name</td>
+                                    <td>@data.price</td>
+                                    <td>@data.receipt</td>
+                                </tr>
+                            }*@
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        @*<div class="column" style="text-align:center; display:inline-block">
+            <div class="pagination ali">
+                @Html.PagedListPager(Model, pageNo => Url.Action("VoucherManagement", new { pageNo = pageNo }))
+            </div>
+        </div>*@
+    </div>
+
+</div>
+

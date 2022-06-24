@@ -17,27 +17,27 @@ namespace POS_Coffe.Controllers
             
             List<MaterialsModel> data = MaterialAPIHandlerData.GetInstance().ListMaterial.ToList();
 
-            //if (!String.IsNullOrWhiteSpace(StringSearch))
-            //{
-            //    data = data.Where(s => s.Name.ToLower().Contains(StringSearch.ToLower()) || s.Type.ToLower().Contains(StringSearch.ToLower())).ToList();
-            //}
+            if (!String.IsNullOrWhiteSpace(StringSearch))
+            {
+                data = data.Where(s => s.Name.ToLower().Contains(StringSearch.ToLower()) || s.Type.ToLower().Contains(StringSearch.ToLower())).ToList();
+            }
 
-            //switch (sortOrder)
-            //{
-            //    case "name_desc":
-            //        data = data.OrderBy(s => s.Name).ToList();
-            //        break;
-            //}
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    data = data.OrderBy(s => s.Name).ToList();
+                    break;
+            }
 
-            //foreach (MaterialsModel model in data)
-            //{
-            //    if (model != null)
-            //        continue;
-            //}
-            //data.ToList();
+            foreach (MaterialsModel model in data)
+            {
+                if (model != null)
+                    continue;
+            }
+            data.ToList();
 
-            //var Pagination = new PagedList<MaterialsModel>(data, pageNo ?? 1, pageSize);
-            return View(data);
+            var Pagination = new PagedList<MaterialsModel>(data, pageNo ?? 1, pageSize);
+            return View(Pagination);
         }
         [HttpGet]
         public ActionResult AddMaterial()

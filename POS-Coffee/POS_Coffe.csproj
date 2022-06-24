@@ -131,6 +131,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BranchController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\DrinkCakeController.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IngredientsController.cs" />
     <Compile Include="Controllers\MaterialController.cs" />
+    <Compile Include="Controllers\ReceiptController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
@@ -151,6 +153,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\BranchModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\DetailReceiptModel.cs" />
     <Compile Include="Models\DrinkCakeDetail.cs" />
@@ -255,6 +258,8 @@
     <Content Include="HistoryTracking.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Receipt.json" />
+    <Content Include="Branch.json" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -1064,6 +1069,8 @@
     <Content Include="Views\Customer\CustomerManagement.cshtml" />
     <Content Include="Views\DrinkCake\DrinkCakeManagement.cshtml" />
     <Content Include="Views\DrinkCake\AddDrinkCake.cshtml" />
+    <Content Include="Views\Receipt\ReceiptManagement.cshtml" />
+    <Content Include="Views\Branch\BranchManagement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

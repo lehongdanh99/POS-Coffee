@@ -1,6 +1,5 @@
-﻿@model List<POS_Coffe.Models.DrinkCakeModel>
+﻿@model List<POS_Coffe.Models.BranchModel>
 @{
-    ViewBag.Title = "DrinkCakeManagement";
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
 
@@ -16,31 +15,26 @@
 }
         <div class="card">
             <div class="card-block">
-                <table>
+                <table class="styled-table">
                     <thead>
                         <tr>
-                            <th>Picture</th>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Type</th>
+                            <th>Branch name</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
 
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            <td style="text-align:center ;width:80px; padding-left:20px; padding-right:0px">
-                                <img src=@item.Picture alt="profile photo" border-style="10px" class="circle float-left profile-photo" width="60" height="60">
-                            </td>
-                            <td>@item.Id</td>
-                            <td>@item.Name</td>
-                            <td>@item.Type</td>
-                            <td style="text-align:center">
-                                <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {Id = item.Id })"'> </button>
-                                <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.Id))" class="btn btn-danger fa fa-remove" />
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.BranchName</td>
+                                <td style="text-align:center">
+                                    <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {Id = item.Id })"'> </button>
+                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.Id))" class="btn btn-danger fa fa-remove" />
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>
@@ -57,13 +51,14 @@
 <script>
     function AddNew() {
         console.log()
-        window.location.href = "/DrinkCake/AddDrinkCake"
+        window.location.href = "/Material/AddMaterial"
     }
-    function btnConfirm(Id) {
+    function btnConfirm(ID) {
         if (confirm('Do you want to delete ?')) {
-            var url = '@Url.Action("DeleteMaterial", "Material")?Id=' + Id;
+            var url = '@Url.Action("DeleteMaterial", "Material")?ID=' + ID;
             window.location.href = url;
         }
     }
 
 </script>
+
