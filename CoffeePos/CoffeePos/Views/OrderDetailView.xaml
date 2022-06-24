@@ -65,16 +65,16 @@
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
                     <Label VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="10">Đường</Label>
 
-                    <RadioButton  Margin="10" GroupName="ready" IsChecked="True" Checked="SugarClick" x:Name="RadioBtnSugar100" Foreground="Black">100%</RadioButton>
-                    <RadioButton  Margin="10" GroupName="ready" Foreground="Black" Checked="SugarClick" x:Name="RadioBtnSugar70">70%</RadioButton>
-                    <RadioButton  Margin="10" GroupName="ready" Foreground="Black" Checked="SugarClick" x:Name="RadioBtnSugar50">50%</RadioButton>
+                    <RadioButton  Margin="10" GroupName="ready" IsChecked="True" Checked="SugarClick" x:Name="RadioBtnSugar100" Foreground="Black" Content="100%"></RadioButton>
+                    <RadioButton  Margin="10" GroupName="ready" Foreground="Black" IsChecked="{Binding RadSugar70}" Checked="SugarClick" x:Name="RadioBtnSugar70" Content="70%"></RadioButton>
+                    <RadioButton  Margin="10" GroupName="ready" Foreground="Black" IsChecked="{Binding RadSugar50}" Checked="SugarClick" x:Name="RadioBtnSugar50" Content="50%"></RadioButton>
                     
                     <Line X1="5" Y1="5" X2="5" Y2="50" Margin="50 0" VerticalAlignment="Center" Stroke="#FFC8C2C2" StrokeThickness="4"/>
 
                     <Label VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="10">Đá</Label>
                     <RadioButton  Margin="10" GroupName="sex" IsChecked="True" Foreground="Black" Checked="IceClick" x:Name="RadioBtnIce100">100%</RadioButton>
-                    <RadioButton  Margin="10" GroupName="sex" Foreground="Black" Click="IceClick" Checked="IceClick" x:Name="RadioBtnIce70">70%</RadioButton>
-                    <RadioButton  Margin="10" GroupName="sex" Foreground="Black" Click="IceClick" Checked="IceClick" x:Name="RadioBtnIce50">50%</RadioButton>
+                    <RadioButton  Margin="10" GroupName="sex" Foreground="Black" Click="IceClick" IsChecked="{Binding RadIce70}" Checked="IceClick" x:Name="RadioBtnIce70">70%</RadioButton>
+                    <RadioButton  Margin="10" GroupName="sex" Foreground="Black" Click="IceClick" IsChecked="{Binding RadIce50}" Checked="IceClick" x:Name="RadioBtnIce50">50%</RadioButton>
                 </StackPanel>
                
             </StackPanel>

@@ -19,9 +19,15 @@ namespace CoffeePos
 
         public List<FoodVariations> drinkCakeVariations { get; set; }
 
+        public FoodVariations drinkCakeVariation { get; set; }
+
         public string picture { get; set; }
 
         public string type { get; set; }
+
+        public string drinkCakeId { get; set; }
+
+        public string note { get; set; }
 
         public Foods(string foodName, double foodPrice, string foodImage, string foodType)
         {
@@ -186,30 +192,17 @@ namespace CoffeePos
 
     public class FoodHooby
     {
-        private string foodName;
+        public int id { get; set; }
+        public string name { get; set; }
+        public double FoodPrice { get; set; }
 
-        public string FoodName
-        {
-            get { return foodName; }
-            set { foodName = value; }
-        }
+        public FoodVariations drinkCakeVariations { get; set; }
 
-        private int price;
+        public string picture { get; set; }
 
-        public int Price
-        {
-            get { return price; }
-            set { price = value; }
-        }
+        public string type { get; set; }
 
-        private string note;
-
-        public string Note
-        {
-            get { return note; }
-            set { note = value; }
-        }
-
+      
 
     }    
 

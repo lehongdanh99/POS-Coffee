@@ -39,7 +39,7 @@
                 <TextBlock Text="{Binding EmployeeName}"/>
             </StackPanel>
             <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal">
-                <TextBlock Text="Bàn:  " FontWeight="Bold"/>
+                <TextBlock Text="SĐT KH:  " FontWeight="Bold"/>
                 <TextBlock Text="{Binding TableID}"/>
             </StackPanel>
             <!--<StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
@@ -51,7 +51,7 @@
                 <TextBlock Text="{Binding DateReceipt}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
-                <TextBlock Text="Giờ:  " FontWeight="Bold"/>
+                <TextBlock Text="Kiểu PV:  " FontWeight="Bold"/>
                 <TextBlock Text="{Binding TimeReceipt}"/>
             </StackPanel>
         </Grid>
@@ -160,7 +160,7 @@
                 <TextBlock Text="{Binding TotalPayment}" FontWeight="Bold" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
             </Grid>
             <Grid VerticalAlignment="Bottom">
-                <TextBlock Text="+ Thanh toán tiền mặt " Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock Text="{Binding TypePayment}" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                 <TextBlock Text="{Binding TotalPayment}" Foreground="Black" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"/>
             </Grid>
         </Grid>

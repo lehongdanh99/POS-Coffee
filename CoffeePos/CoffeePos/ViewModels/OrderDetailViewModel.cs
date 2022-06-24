@@ -42,12 +42,72 @@ namespace CoffeePos.ViewModels
             
         }
 
+        private bool radSugar50;
+
+        public bool RadSugar50
+        {
+            get { return radSugar50; }
+            set { radSugar50 = value; }
+        }
+
+        private bool radSugar70;
+
+        public bool RadSugar70
+        {
+            get { return radSugar70; }
+            set { radSugar70 = value; }
+        }
+
+        private bool radIce50;
+
+        public bool RadIce50
+        {
+            get { return radIce50; }
+            set { radIce50 = value; }
+        }
+
+        private bool radIce70;
+
+        public bool RadIce70
+        {
+            get { return radIce70; }
+            set { radIce70 = value; }
+        }
+
+
         private void GetFoodOrderDetail(Foods foodSelected = default, FoodOrder foodOrderSelected = default)
         {
+
             
-            
-            if(foodOrderSelected == default)
+
+
+            if (foodOrderSelected == default)
             {
+                if (!string.IsNullOrEmpty(foodSelected.note))
+                {
+                    if(!foodSelected.note.Equals("string"))
+                    {
+                        string[] notes = foodSelected.note.Split(' ');
+                        if (notes[1].Equals("50"))
+                        {
+                            RadSugar50 = true;
+                        }
+                        else if (notes[1].Equals(70))
+                        {
+                            RadSugar70 = true;
+                        }
+
+                        if (notes[3].Equals("50"))
+                        {
+                            RadIce50 = true;
+                        }
+                        else if (notes[3].Equals(70))
+                        {
+                            RadIce70 = true;
+                        }
+                    }
+                    
+                }
                 FoodName = foodSelected.name.ToString();
                 FoodImage = foodSelected.picture;
                 FoodVariations = foodSelected.drinkCakeVariations;
@@ -55,9 +115,12 @@ namespace CoffeePos.ViewModels
                 FoodID = foodSelected.id;
                 FoodType = foodSelected.type;
                 FoodPrice = foodSelected.FoodPrice;
+                
                 BgSmallSize = new SolidColorBrush(Colors.Orange);
                 bgMediumSize = new SolidColorBrush(Colors.LightGray);
                 isSizeSmall = true;
+
+                
             }
             else
             {

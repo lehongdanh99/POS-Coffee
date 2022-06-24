@@ -118,7 +118,7 @@ namespace CoffeePos.Models
 
             public int DiscountPrice { get; set; }
 
-            public DateTime createdAtFormatVN { get; set; }
+            public string createdAtFormatVN { get; set; }
         }
 
         public class ReceiptToPush

@@ -29,8 +29,8 @@ namespace CoffeePos.ViewModels
         }
         public ListOrderViewModel()
         {
-            
-            getDataListOrder();
+
+            Initialize();
         }
 
         public void getDataListOrder()
@@ -40,23 +40,54 @@ namespace CoffeePos.ViewModels
             VisibilityReceiptDone = Visibility.Hidden;
             VisibilityReceipt = Visibility.Visible;
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
+
+            ListReceiptsDone.Clear();
+
+
+            foreach (ReceiptDone receipt in RestAPIClient<ReceiptDone>.parseJsonToModel(GlobalDef.RECEIPTDONE_API))
+            {
+                //bool check = false;
+                //foreach (ReceiptDone receiptCheck in ListReceiptsDone)
+                //{
+                //    if(receiptCheck == receipt)
+                //    {
+                //        check = true;
+                //    }   
+                //}
+                //if (!check)
+                //{
+                    ListReceiptsDone.Add(receipt);
+                //}    
+            }
+        }
+
+        public void Initialize()
+        {
+            BackgroundShowList = new SolidColorBrush(Colors.White);
+            BackgroundShowListDone = new SolidColorBrush(Colors.DarkSlateGray);
+            VisibilityReceiptDone = Visibility.Hidden;
+            VisibilityReceipt = Visibility.Visible;
+            ListReceipts = ReceiptModel.GetInstance().ListReceipt;
+
+
+
             foreach (ReceiptDone receipt in RestAPIClient<ReceiptDone>.parseJsonToModel(GlobalDef.RECEIPTDONE_API))
             {
                 bool check = false;
                 foreach (ReceiptDone receiptCheck in RestAPIClient<ReceiptDone>.parseJsonToModel(GlobalDef.RECEIPTDONE_API))
                 {
-                    if(receiptCheck == receipt)
+                    if (receiptCheck == receipt)
                     {
                         check = true;
                     }
-                    else
-                    {
-                        check = false;
-                    }    
                 }
                 if (!check)
                 {
                     ListReceiptsDone.Add(receipt);
+                }
+                else
+                {
+                    break;
                 }
 
             }
@@ -173,7 +204,7 @@ namespace CoffeePos.ViewModels
             //TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
             //tableDetailViewModel.eventChange += HandleCallBack;
 
-            ReceiptSelectedDone = receipt;
+            GlobalDef.ReceiptDoneDetail = receipt;
             ReceiptReportViewModel.GetInstance().ClearDataReport();
             ReceiptReportViewModel.GetInstance().getDataDone();
             GlobalDef.windowManager.ShowDialogAsync(ReceiptReportViewModel.GetInstance());

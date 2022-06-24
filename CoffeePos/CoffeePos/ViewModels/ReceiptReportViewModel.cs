@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.ViewModels
 {
@@ -57,10 +58,14 @@ namespace CoffeePos.ViewModels
                 FoodPayment.Add(food.FoodOrderPrice);
             }
             TotalPayment = GlobalDef.ReceiptPayment.TotalPrice;
+            DateReceipt = DateTime.Now.ToString();
+            ReceiptID = GlobalDef.ReceiptPayment.Id;
+
         }
 
         public void getDataDone()
         {
+            List<ReceiptDetails> receiptDetail = new List<ReceiptDetails>();
             foreach (var food in GlobalDef.ReceiptDoneDetail.receiptDetails)
             {
                 int i = 1;
@@ -74,6 +79,14 @@ namespace CoffeePos.ViewModels
 
                 FoodPayment.Add(food.Price);
             }
+            if(GlobalDef.ReceiptDoneDetail.PaymentType == "ZALOPAY")
+            {
+                TypePayment = "+ Thanh toán bằng ZaloPay: ";
+            }
+            else
+            {
+                TypePayment = "+ Thanh toán tiền mặt: ";
+            }    
             TotalPayment = GlobalDef.ReceiptDoneDetail.TotalPrice;
             DateReceipt = GlobalDef.ReceiptDoneDetail.createdAtFormatVN;
             ReceiptID = GlobalDef.ReceiptDoneDetail.Id;
@@ -103,6 +116,13 @@ namespace CoffeePos.ViewModels
             set { foodSize = value; }
         }
 
+        private string typePayment;
+
+        public string TypePayment
+        {
+            get { return typePayment; }
+            set { typePayment = value; }
+        }
 
         private int receiptID;
 
@@ -112,17 +132,17 @@ namespace CoffeePos.ViewModels
             set { receiptID = value; }
         }
 
-        private DateTime dateReceipt;
+        private string dateReceipt;
 
-        public DateTime DateReceipt
+        public string DateReceipt
         {
             get { return dateReceipt; }
             set { dateReceipt = value; }
         }
 
-        private DateTime timeReceipt;
+        private string timeReceipt;
 
-        public DateTime TimeReceipt
+        public string TimeReceipt
         {
             get { return timeReceipt; }
             set { timeReceipt = value; }

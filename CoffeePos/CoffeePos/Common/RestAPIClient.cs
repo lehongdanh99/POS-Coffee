@@ -13,7 +13,8 @@ namespace CoffeePos.Common
     public class RestAPIClient<T> where T : class
     {
         internal static HttpClient client = new HttpClient();
-        internal static List<T> model = new List<T>();
+        internal static List<T> models = new List<T>();
+        internal static T model;
         public T data;
 
         public static List<T> parseJsonToModel(string path)
@@ -27,7 +28,30 @@ namespace CoffeePos.Common
                     if (result.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         var json = result.Content.ReadAsStringAsync().Result;
-                        model = JsonConvert.DeserializeObject<List<T>>(json);
+                        models = JsonConvert.DeserializeObject<List<T>>(json);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return models;
+        }
+
+        public static T GetDataById(string path, string token)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://34.126.139.165:8080/api/");
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                    var result = client.GetAsync(client.BaseAddress + path).Result;
+                    if(result.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var json = result.Content.ReadAsStringAsync().Result;
+                        model = JsonConvert.DeserializeObject<T>(json);
                     }
                 }
             }

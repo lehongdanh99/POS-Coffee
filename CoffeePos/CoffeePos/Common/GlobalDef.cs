@@ -55,6 +55,7 @@ namespace CoffeePos.Common
         public static string ZALOPAY_API = "zalo-pay/get-code";
         public static string CUSTOMER_CREATE_API = "customer";
         public static string CUSTOMER_API = "customer";
+
         public static string VOUCHER_API = "voucher/getList";
     }
 }

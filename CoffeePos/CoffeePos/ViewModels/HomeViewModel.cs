@@ -301,6 +301,15 @@ namespace CoffeePos.ViewModels
             }
         }
 
+        private string typeChoose;
+
+        public string TypeChoose
+        {
+            get { return typeChoose; }
+            set { typeChoose = value; }
+        }
+
+
         private bool enableOrder = false;
 
         public bool EnableOrder
@@ -323,6 +332,14 @@ namespace CoffeePos.ViewModels
         {
             get { return foods; }
             set { foods = value; NotifyOfPropertyChange(() => FoodsMenu); }
+        }
+
+        private ObservableCollection<Foods> foodsHooby = new ObservableCollection<Foods>();
+
+        public ObservableCollection<Foods> FoodsHooby
+        {
+            get { return foodsHooby; }
+            set { foodsHooby = value; NotifyOfPropertyChange(() => FoodsHooby); }
         }
 
         private ObservableCollection<Foods> allFoods;
@@ -411,17 +428,22 @@ namespace CoffeePos.ViewModels
 
         private ObservableCollection<Foods> GetFoodByType(string foodType)
         {
+            TypeChoose = foodType;
             ObservableCollection<Foods> Listfoods = new ObservableCollection<Foods>();
             if(foodType == "Sở thích")
             {
                 if(CustomerSearch != null)
                 {
 
-                    //foreach (FoodHooby food in RestAPIClient<FoodHooby>.parseJsonToModel(GlobalDef.FOODHOBBY_API + CustomerSearch.Id))
-                    //{
-                    //    food.FoodPrice = food.drinkCakeVariations[0].price;
-                    //    Listfoods.Add(food);
-                    //}
+                    foreach (Foods food in RestAPIClient<Foods>.parseJsonToModel(GlobalDef.FOODHOBBY_API + CustomerSearch.Id))
+                    {
+                        Foods foodAdd = RestAPIClient<Foods>.GetDataById(GlobalDef.FOOD_API+ @"/"+ food.drinkCakeId, GlobalDef.token);
+
+                        foodAdd.FoodPrice = foodAdd.drinkCakeVariations[0].price;
+                        foodAdd.note = food.note;
+                        Listfoods.Add(foodAdd);
+                        FoodsHooby.Add(food);
+                    }
                 }    
                 
             }    
@@ -521,7 +543,7 @@ namespace CoffeePos.ViewModels
 
         public void btOrderDetail_Click(Foods SelectedListFood)
         {
-
+             
             FoodSelected = SelectedListFood;
             if(SelectedListFood.type == "Bánh")
             {
