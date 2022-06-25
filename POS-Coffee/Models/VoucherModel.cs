@@ -17,12 +17,11 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        public int VoucherID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public int IDFood { get; set; }
         public int Value { get; set; }
-        public bool isValue { get; set; }
-        public string StrIDFood { get; set; }
+        public System.DateTime PublishDate { get; set; }
+        public System.DateTime EndDate { get; set; }
     }
     public class VoucherAPIHandlerFakeData
     {

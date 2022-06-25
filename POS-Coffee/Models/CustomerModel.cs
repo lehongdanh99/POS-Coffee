@@ -28,6 +28,7 @@ namespace POS_Coffe.Models
             return _instance;
         }
         private List<CustomerModel> listCustomer = RestAPIHandler<CustomerModel>.parseJsonToModel(GlobalDef.CUSTOMER_JSON_CONFIG_PATH);
+        //private List<CustomerModel> listCustomer = RestAPIHandler<CustomerModel>.GetDatabyId(GlobalDef.CUSTOMER_JSON_CONFIG_PATH+ @"/" + id);
         public List<CustomerModel> ListCustomer
         {
             get { return listCustomer; }

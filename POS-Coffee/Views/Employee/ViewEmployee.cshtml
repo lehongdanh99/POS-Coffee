@@ -26,7 +26,8 @@
                             <th>Permission</th>
                             <th>@Html.ActionLink("Birthday", "ViewEmployee", new { sortOrder = ViewBag.DateSortParm })</th>
                             <th>Phone</th>
-                            <th>Picture</th>
+                            <th>Address</th>
+                            @*<th>Picture</th>*@
                             <th>Username</th>
                             <th></th>
                         </tr>
@@ -37,7 +38,7 @@
                         {
                         <tr>
                             <th>@i</th>
-                            <td>@item.Name</td>
+                            <td>@item.name</td>
 
                             @*<td>
                                 @if (item.Permission == "ROLE_EMPLOYEE")
@@ -53,14 +54,15 @@
                                     <h5>Manager</h5>
                                 }
                             </td>*@
-                            <td>@item.Permission</td>
-                            <td>@item.Birthday</td>
-                            <td>@item.Phone</td>
-                            <td style="text-align:center"> <img src=@item.Picture alt="profile photo" class="float-left profile-photo" width="120" height="auto"></td>
-                            <td>@item.Username</td>
+                            <td>@item.permission</td>
+                            <td>@item.birthday</td>
+                            <td>@item.phone</td>
+                            <td>@item.address</td>
+                            @*<td style="text-align:center"> <img src=@item.Picture alt="profile photo" class="float-left profile-photo" width="120" height="auto"></td>*@
+                            <td>@item.username</td>
                             <td style="text-align: center">
-                                <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditEmployee", "Employee", new {EmployeeID = item.EmployeeID })"'></button>
-                                <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.EmployeeID))" class="btn btn-danger fa fa-remove" value="  Delete  "></button>
+                                <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditEmployee", "Employee", new {Id = item.id })"'></button>
+                                <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.id))" class="btn btn-danger fa fa-remove" value="  Delete  "></button>
                             </td>
                         </tr>
                             i++;
@@ -81,9 +83,9 @@
     function AddNew() {
         window.location.href = "/Employee/AddEmployee"
     }
-    function btnConfirm(EmployeeID) {
+    function btnConfirm(Id) {
         if (confirm('Do you want to delete ?')) {
-            var url = '@Url.Action("DeleteEmployee", "Employee")?EmployeeID=' + EmployeeID;
+            var url = '@Url.Action("DeleteEmployee", "Employee")?Id=' + Id;
             window.location.href = url;
         }
     }

@@ -13,6 +13,9 @@ namespace POS_Coffe.Controllers
         public ActionResult ReceiptManagement()
         {
             List<ReceiptModel> receiptModels = ReceiptAPIHandler.GetInstance().ListReipt.ToList();
+
+  
+
             return View(receiptModels);
         }
     }

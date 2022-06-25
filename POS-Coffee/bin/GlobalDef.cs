@@ -10,7 +10,7 @@ namespace POS_Coffe
         public static string CUSTOMER_JSON_CONFIG_PATH = "customer";
         public static string MATERIAL_JSON_CONFIG_PATH = "material";
         public static string RECIPE_JSON_CONFIG_PATH  = System.AppDomain.CurrentDomain.BaseDirectory + "Recipe.json";
-        public static string VOUCHER_JSON_CONFIG_PATH = System.AppDomain.CurrentDomain.BaseDirectory + "Voucher.json";
+        public static string VOUCHER_JSON_CONFIG_PATH = "voucher/getList";
         public static string HISTORYTRACKING_JSON_CONFIG_PATH = System.AppDomain.CurrentDomain.BaseDirectory + "HistoryTracking.json";
         public static string STATISTIC_JSON_CONFIG_PATH = System.AppDomain.CurrentDomain.BaseDirectory + "Statistic.json";
         public static string RECEIPT_JSON_CONFIG_PATH = "receipt";
@@ -21,5 +21,6 @@ namespace POS_Coffe
         public static string BASE_URI = "http://34.126.139.165:8080/api/";
         public static string TOKEN = "";
         public static int IDEMP = 0;
+        public static string NAME = "";
     }
 }

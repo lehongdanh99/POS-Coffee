@@ -1,34 +1,23 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace POS_Coffe.Models
 {
-
     public class EmployeeModel : BaseModel
     {
-        private static EmployeeModel _instance;
-        public static EmployeeModel GetInstance()
-        {
-            if (_instance == null)
-            {
-                if (_instance == null)
-                {
-                    _instance = new EmployeeModel();
-                }
-            }
-            return _instance;
-        }
-        public int EmployeeID { get; set; }
-        public string Name { get; set; }
-        public string Permission { get; set; }
-        public string Birthday { get; set; }
-        public string Phone { get; set; }
-        public string Picture { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string permission { get; set; }
+        public string birthday { get; set; }
+        public string phone { get; set; }
+        public string address { get; set; }
         public string username { get; set; }
         public string password { get; set; }
         public string Token { get; set; }
-
     }
+
     public class EmployeeAPIHandlerData
     {
 
@@ -44,7 +33,7 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        private List<EmployeeModel> listEmployee = CommonMethod.GetInstance().ReadJsonFileConfigEmployee();
+        private List<EmployeeModel> listEmployee = RestAPIHandler<EmployeeModel>.parseJsonToModel(GlobalDef.EMPLOYEE_JSON_CONFIG_PATH);
         public List<EmployeeModel> ListEmployee
         {
             get { return listEmployee; }
@@ -53,5 +42,17 @@ namespace POS_Coffe.Models
                 listEmployee = value;
             }
         }
+    }
+
+    public class EmployeeData
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string permission { get; set; }
+        public string birthday { get; set; }
+        public string phone { get; set; }
+        public string address { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
     }
 }

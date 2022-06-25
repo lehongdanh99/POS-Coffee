@@ -13,21 +13,21 @@ namespace POS_Coffe.Controllers
         public ActionResult AccountManagement(EmployeeModel datalogin)
         {
             string role = "Employee";
-            if (datalogin.Permission == "ROLE_ADMIN")
+            if (datalogin.permission == "ROLE_ADMIN")
             {
                 role = "Admin";
             }
-            else if (datalogin.Permission == "ROLE_MANAGER")
+            else if (datalogin.permission == "ROLE_MANAGER")
             {
                 role = "Manager";
             }
-            datalogin.Permission = role;
+            datalogin.permission = role;
 
-            Session["EmployeeID"] = datalogin.EmployeeID;
-            Session["Name"] = datalogin.Name;
+            Session["EmployeeID"] = datalogin.id;
+            Session["Name"] = datalogin.name;
             Session["Permission"] = role;
-            Session["Birthday"] = datalogin.Birthday;
-            Session["Phone"] = datalogin.Phone;
+            Session["Birthday"] = datalogin.birthday;
+            Session["Phone"] = datalogin.phone;
             Session["Username"] = datalogin.username;
             Session["Password"] = datalogin.password;
                 
@@ -36,19 +36,20 @@ namespace POS_Coffe.Controllers
         [HttpGet]
         public ActionResult EditAccount(int EmployeeID) 
         {
-            EmployeeModel model = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(e => e.EmployeeID == EmployeeID).FirstOrDefault();
+            EmployeeModel model = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(e => e.id == EmployeeID).FirstOrDefault();
             return View(model); 
         }
         [HttpPost]
         public ActionResult EditAccount(EmployeeModel dataEdit)
         {
-            var data = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.EmployeeID == dataEdit.EmployeeID);
+            var data = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.id == dataEdit.id);
             //MaterialsModel model = new MaterialsModel();
             //data.ToList().First().Name = data.First().Name;
-            data.ToList().First().Phone = data.First().Phone;
-            data.ToList().First().Permission = data.First().Permission;
-            data.ToList().First().Birthday = data.First().Birthday;
-            return RedirectToAction("AccountManagement", "Account");
+            //data.ToList().First().Phone = data.First().Phone;
+            //data.ToList().First().Permission = data.First().Permission;
+            //data.ToList().First().Birthday = data.First().Birthday;
+            //return RedirectToAction("AccountManagement", "Account");
+            return View();
         }
 
         public ActionResult DeleteAccount()

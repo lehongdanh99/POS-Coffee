@@ -23,11 +23,11 @@ namespace POS_Coffe.Controllers
             }
 
             
-            foreach(var item in data)
-            {
-                FoodModel foodModel = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodID == item.IDFood).FirstOrDefault();
-                item.StrIDFood = foodModel.FoodName;
-            }
+            //foreach(var item in data)
+            //{
+            //    FoodModel foodModel = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodID == item.IDFood).FirstOrDefault();
+            //    item.StrIDFood = foodModel.FoodName;
+            //}
 
             System.Console.WriteLine(data);
 
@@ -69,74 +69,77 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult AddVoucher(VoucherModel data)
         {
-            if (data.StrIDFood == "--none--")
-            {
-                ViewBag.error = GlobalDef.ERROR_MESSAGE_VOUCHER_VALUE_AND_IDFOOD;
-                List<string> dataIDFood = new List<string>();
-                dataIDFood.Add("--none--");
-                List<FoodModel> foodModel1 = FoodAPIHandlerData.GetInstance().ListFood.ToList();
-                foreach (var item in foodModel1)
-                {
-                    dataIDFood.Add(item.FoodName);
-                }
-                dataIDFood.Distinct();
-                ViewBag.StrIDFood = new SelectList(dataIDFood, "");
-                return View(data);
-            }
+            //if (data.StrIDFood == "--none--")
+            //{
+            //    ViewBag.error = GlobalDef.ERROR_MESSAGE_VOUCHER_VALUE_AND_IDFOOD;
+            //    List<string> dataIDFood = new List<string>();
+            //    dataIDFood.Add("--none--");
+            //    List<FoodModel> foodModel1 = FoodAPIHandlerData.GetInstance().ListFood.ToList();
+            //    foreach (var item in foodModel1)
+            //    {
+            //        dataIDFood.Add(item.FoodName);
+            //    }
+            //    dataIDFood.Distinct();
+            //    ViewBag.StrIDFood = new SelectList(dataIDFood, "");
+            //    return View(data);
+            //}
 
-            int count = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Count();
-            VoucherModel model = new VoucherModel();
-            model.VoucherID = count + 1;
-            model.Name = data.Name;
-            model.Value = data.Value;
+            //int count = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Count();
+            //VoucherModel model = new VoucherModel();
+            //model.Id = count + 1;
+            //model.Name = data.Name;
+            //model.Value = data.Value;
 
-            FoodModel foodModel = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodName.Equals(data.StrIDFood)).FirstOrDefault();
+            //FoodModel foodModel = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodName.Equals(data.StrIDFood)).FirstOrDefault();
 
-            model.IDFood = foodModel.FoodID;
+            //model.Id = foodModel.FoodID;
 
-            //EmployeeModel.GetInstance().LstEmpl.Add(model);
-            //return View(model);
-            VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Add(model);
-            return RedirectToAction("VoucherManagement", "VoucherManagement");
+            ////EmployeeModel.GetInstance().LstEmpl.Add(model);
+            ////return View(model);
+            //VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Add(model);
+            //return RedirectToAction("VoucherManagement", "VoucherManagement");
+            return View();
         }
         [HttpGet]
         public ActionResult EditVoucher(int VoucherID)
         {
-            List<string> dataIDFood = new List<string>();
-            dataIDFood.Add("--none--");
-            List<FoodModel> foodModel = FoodAPIHandlerData.GetInstance().ListFood.ToList();
-            foreach (var item in foodModel)
-            {
-                dataIDFood.Add(item.FoodName);
-            }
-            dataIDFood.Distinct();
-            ViewBag.StrIDFood = new SelectList(dataIDFood, "");
+            //List<string> dataIDFood = new List<string>();
+            //dataIDFood.Add("--none--");
+            //List<FoodModel> foodModel = FoodAPIHandlerData.GetInstance().ListFood.ToList();
+            //foreach (var item in foodModel)
+            //{
+            //    dataIDFood.Add(item.FoodName);
+            //}
+            //dataIDFood.Distinct();
+            //ViewBag.StrIDFood = new SelectList(dataIDFood, "");
 
-            var EditData = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == VoucherID);
-            VoucherModel data = new VoucherModel();
-            data.VoucherID = VoucherID;
-            data.Name = EditData.ToList().First().Name;
-            data.Value = EditData.ToList().First().Value;
-            //data.IDFood = EditData.ToList().First().IDFood;
-            data.isValue = EditData.ToList().First().isValue;
-            return View(data);
+            //var EditData = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == VoucherID);
+            //VoucherModel data = new VoucherModel();
+            //data.Id = VoucherID;
+            //data.Name = EditData.ToList().First().Name;
+            //data.Value = EditData.ToList().First().Value;
+            ////data.IDFood = EditData.ToList().First().IDFood;
+            ////data.isValue = EditData.ToList().First().isValue;
+            //return View(data);
+            return View();
         }
         [HttpPost]
         public ActionResult EditVoucher(VoucherModel data)
         {
-            FoodModel foodModel = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodName.Equals(data.StrIDFood)).FirstOrDefault();
+            //FoodModel foodModel = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodName.Equals(data.StrIDFood)).FirstOrDefault();
 
-            var EditData = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == data.VoucherID);
-            VoucherModel model = new VoucherModel();
-            EditData.ToList().First().Name = data.Name;
-            EditData.ToList().First().Value = data.Value;
-            EditData.ToList().First().IDFood = foodModel.FoodID;
-            EditData.ToList().First().isValue = data.isValue;
-            return RedirectToAction("VoucherManagement", "VoucherManagement");
+            //var EditData = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == data.VoucherID);
+            //VoucherModel model = new VoucherModel();
+            //EditData.ToList().First().Name = data.Name;
+            //EditData.ToList().First().Value = data.Value;
+            //EditData.ToList().First().IDFood = foodModel.FoodID;
+            ////EditData.ToList().First().isValue = data.isValue;
+            //return RedirectToAction("VoucherManagement", "VoucherManagement");
+            return View();
         }
         public ActionResult DeleteVoucher(int VoucherID)
         {
-            var data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.VoucherID == VoucherID).FirstOrDefault();
+            var data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.Id == VoucherID).FirstOrDefault();
             VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Remove(data);
             return RedirectToAction("VoucherManagement", "VoucherManagement");
         }

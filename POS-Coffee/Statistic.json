@@ -64,4 +64,16 @@
 		"TypePayment": "Self",
 		"TypeService": "none"
 	},
-]
+] {
+	"Id": 0,
+	"Name": "test_user2",
+	"permission": "EMPLOYEE",
+	"birthday": "01/02/2022",
+	"phone": "090909090",
+	"address": "237 nz",
+	"username": "test_user2",
+	"password": "123",
+	"Token": null,
+	"CreateBy": null,
+	"UpdateBy": null
+}

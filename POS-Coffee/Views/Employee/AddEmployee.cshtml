@@ -27,8 +27,8 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Name">Name</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -36,8 +36,13 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Permission">Permission</label>
                             <div class="col-sm-9">
-                                @Html.DropDownList("Permission", (IEnumerable<SelectListItem>)ViewBag.Permission, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Permission, "", new { @class = "text-danger" })
+                                @*@Html.DropDownList("Permission", (IEnumerable<SelectListItem>)ViewBag.Permission, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Permission, "", new { @class = "text-danger" })*@
+                                <select class="form-control" id="Permission" name="Permission">
+                                    <option value="ADMIN">ADMIN</option>
+                                    <option value="EMPLOYEE">EMPLOYEE</option>
+                                    <option value="MANAGER">MANAGER</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -45,8 +50,8 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Birthday">Birthday</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Birthday, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.birthday, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.birthday, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -54,22 +59,31 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Phone">Phone</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="Address">Address</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.address, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
                     @*<div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="Picture">Picture</label>
-                            <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Picture, new { @type = "picture",htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
-                                @Html.TextBoxFor(model => model.Picture, new { type = "file", accept = "~/Content/images" })
-                                @Html.ValidationMessageFor(model => model.Picture)
-                            </div>
-                        </div>
-                    </div>*@
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="Picture">Picture</label>
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.Picture, new { @type = "picture",htmlAttributes = new { @required = "required", @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.Picture, new { type = "file", accept = "~/Content/images" })
+                        @Html.ValidationMessageFor(model => model.Picture)
+                    </div>
+                </div>
+            </div>*@
                     <div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="username">Username</label>

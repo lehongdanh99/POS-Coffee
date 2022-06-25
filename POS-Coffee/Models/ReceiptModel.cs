@@ -7,7 +7,9 @@ namespace POS_Coffe.Models
 {
     public class ReceiptModel : BaseModel
     {
-        public int iD { get; set; }
+        public int id { get; set; }
+        public EmployeeModel employee { get; set; }
+        public CustomerModel customer { get; set; }
         public string Phone { get; set; }
         public string Name { get; set; }
         public int Point { get; set; }
@@ -19,19 +21,27 @@ namespace POS_Coffe.Models
         public string Voucher { get; set; }
         public int DiscountPrice { get; set; }
         public string Branch { get; set; }
-        //public List<ReceiptDetails> ReceiptDetails { get; set; }
+        public List<ReceiptDetails> receiptDetails { get; set; }
 
     }
     public class ReceiptDetails
     {
         public int id { get; set; }
         public string receipt { get; set; }
-        public List<DrinkCakeVariations> drinkCakeVariation { get; set; }
+        public DrinkCakeVariation drinkCakeVariation { get; set; }
         public int amount { get; set; }
         public int price { get; set; }
         public string note { get; set; }
         public string name { get; set; }
         public int drinkCakeId { get; set; }
+    }
+
+    public class DrinkCakeVariation
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public int price { set; get; }
     }
 
     public class ReceiptAPIHandler

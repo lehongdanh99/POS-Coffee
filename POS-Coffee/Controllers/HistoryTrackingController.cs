@@ -37,7 +37,7 @@ namespace POS_Coffe.Controllers
             HistoryTrackingModel dataTracking = HistoryTrackingAPIHandlerFakeData.GetInstance().ListHistoryTracking.Where(x => x.HistoryID == HistoryID).FirstOrDefault();
             if (dataTracking.TableEffect == "Employee")
             {
-                EmployeeModel dataEmp = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(x => x.EmployeeID == dataTracking.EmpID).FirstOrDefault();
+                EmployeeModel dataEmp = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(x => x.id == dataTracking.EmpID).FirstOrDefault();
                 return PartialView(dataEmp);
             }
             return PartialView();

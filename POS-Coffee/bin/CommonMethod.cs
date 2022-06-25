@@ -25,6 +25,7 @@ namespace POS_Coffe
             }
             return _instance;
         }
+
         private List<EmployeeModel> modelEmployee = new List<EmployeeModel>();
         public List<EmployeeModel> ReadJsonFileConfigEmployee()
         {
@@ -171,6 +172,8 @@ namespace POS_Coffe
                     {
                         token = response.Content.ReadAsStringAsync().Result;
                         EmployeeModel emp = JsonConvert.DeserializeObject<EmployeeModel>(token);
+                        GlobalDef.IDEMP = emp.id;
+                        GlobalDef.NAME = emp.name;
                         token = emp.Token;
                     }
                 }
@@ -184,3 +187,6 @@ namespace POS_Coffe
 
     }
 }
+
+
+

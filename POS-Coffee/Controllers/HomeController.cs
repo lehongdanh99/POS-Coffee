@@ -67,7 +67,7 @@ namespace POS_Coffe.Controllers
                         return View(dataLogin);
                     }
 
-                    //Session["EmployeeID"] = data.EmployeeID;
+                    Session["Name"] = GlobalDef.NAME;
                     //Session["Name"] = data.Name;
                     //Session["Permission"] = data.Permission;
                     //Session["Birthday"] = data.Birthday;
@@ -94,9 +94,9 @@ namespace POS_Coffe.Controllers
         {
             int count = EmployeeAPIHandlerData.GetInstance().ListEmployee.Count();
             EmployeeModel data = new EmployeeModel();
-            data.EmployeeID = count + 1;    
+            data.id = count + 1;    
             data.username = username;
-            data.Name = Name;
+            data.name = Name;
             data.password = password;
             EmployeeAPIHandlerData.GetInstance().ListEmployee.Add(data);
             return RedirectToAction("Login", "Home");
