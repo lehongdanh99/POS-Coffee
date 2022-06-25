@@ -53,7 +53,7 @@ namespace CoffeePos.Views
             }
             else if (MessageBoxText.Text.ToString() == "Đăng ký thành công")
             {
-
+                RegisterViewModel.GetInstance().TryCloseAsync();
             }    
 
 

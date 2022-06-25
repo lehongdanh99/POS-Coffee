@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:CoffeePos.Views"
         mc:Ignorable="d"
-        Title="RegisterView" Height="480" Width="300" WindowStyle="None" WindowStartupLocation="CenterScreen" materialDesign:ButtonAssist.CornerRadius="5">
+        Title="RegisterView" Height="500" Width="300" WindowStyle="None" WindowStartupLocation="CenterScreen" materialDesign:ButtonAssist.CornerRadius="5">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -20,7 +20,7 @@
 
         </Grid>
         <StackPanel Grid.Row="1" >
-            <TextBlock x:Name="errTxt" HorizontalAlignment="Center" Foreground="Red">Vui lòng nhập đầy đủ Tên và Số Điện thoại</TextBlock>
+            <TextBlock x:Name="errTxt" Visibility="{Binding ErrTxtVisible}" HorizontalAlignment="Center" Foreground="Red">Vui lòng nhập đầy đủ Tên và Số Điện thoại</TextBlock>
             <TextBox  Text="{Binding Name}" Height="50" Margin="10" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      materialDesign:HintAssist.Hint="{x:Static language:Lang.Register_Name}"/>
             <TextBox Text="{Binding Phone}" Height="50" Margin="10" Style="{StaticResource MaterialDesignFloatingHintTextBox}"

@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace CoffeePos.ViewModels
 {
@@ -45,6 +46,15 @@ namespace CoffeePos.ViewModels
             }
             
             SexSelected = 0;
+        }
+
+
+        private Visibility errTxtVisible = Visibility.Collapsed;
+
+        public Visibility ErrTxtVisible
+        {
+            get { return errTxtVisible; }
+            set { errTxtVisible = value; NotifyOfPropertyChange(() => ErrTxtVisible); }
         }
 
         //Public Method
@@ -100,7 +110,12 @@ namespace CoffeePos.ViewModels
 
         public void RegistCustomer()
         {
-            Customer customer = new Customer();
+            if(Name == null || Phone == null)
+            {
+                ErrTxtVisible = Visibility.Visible;
+                return;
+            }
+                Customer customer = new Customer();
             customer.name = Name;
             customer.phone = Phone;
             bool result = RestAPIClient<Customer>.PostData(customer, GlobalDef.CUSTOMER_CREATE_API, GlobalDef.token);
@@ -110,10 +125,12 @@ namespace CoffeePos.ViewModels
                 MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Đăng ký thành công");
                 //WindowManager windowManager = new WindowManager();
                 GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
+                this.TryCloseAsync();
             }
             else
             {
-                MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Lỗi cmnr");
+                MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Đăng kí thất bại");
+                GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
             }    
         }
     }
