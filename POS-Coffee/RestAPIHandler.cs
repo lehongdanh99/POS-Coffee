@@ -54,6 +54,30 @@ namespace POS_Coffe
             }
             return model;
         }
+
+        public static List<T> GetDate(string path, string token)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(GlobalDef.BASE_URI);
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                    var result = client.GetAsync(client.BaseAddress + path).Result;
+                    if (result.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var json = result.Content.ReadAsStringAsync().Result;
+                        model = JsonConvert.DeserializeObject<List<T>>(json);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string ErrorMessages = ex.Message;
+            }
+            return model;
+        }
+
         public static bool PostData(T data, string path, string token)
         {
             try

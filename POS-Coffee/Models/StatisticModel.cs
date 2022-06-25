@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
+
 
 namespace POS_Coffe.Models
 {
@@ -19,32 +17,31 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        public DateTime Day { get; set; }
-        public string VoucherName { get; set; }
-        public string Table { get; set; }
-        public int TotalPrice { get; set; }
-        public int DiscountPrice { get; set; }
-        public int CustomerPay { get; set; }
-        public string TypePayment { get; set; }
-        public string TypeService { get; set; }
-        public int Sum { get; set; }
+        public int day { get; set; }
+        public int month { get; set; }
+        public int year { get; set; }
+        public int receiptTotal { get; set; }
+        public int revenue { get; set; }
+        public List<ReceiptModel> receipts { get; set; }
     }
-    public class StatisticAPIHandlerFakeData
+    public class StatisticAPIHandlerData
     {
 
-        private static StatisticAPIHandlerFakeData _instance;
-        public static StatisticAPIHandlerFakeData GetInstance()
+        private static StatisticAPIHandlerData _instance;
+        public static StatisticAPIHandlerData GetInstance()
         {
             if (_instance == null)
             {
                 if (_instance == null)
                 {
-                    _instance = new StatisticAPIHandlerFakeData();
+                    _instance = new StatisticAPIHandlerData();
                 }
             }
             return _instance;
         }
-        private List<StatisticModel> listStatistic = RestAPIHandler<StatisticModel>.parseJsonToModel(GlobalDef.STATISTIC_JSON_CONFIG_PATH);
+
+        //private List<StatisticModel> listStatistic = RestAPIHandler<StatisticModel>.parseJsonToModel(GlobalDef.STATISTIC_JSON_CONFIG_PATH)
+        private List<StatisticModel> listStatistic = RestAPIHandler<StatisticModel>.GetDate(GlobalDef.STATISTIC_JSON_CONFIG_PATH + GlobalDef.PATHGETDATE, GlobalDef.TOKEN);
         public List<StatisticModel> ListStatistic
         {
             get { return listStatistic; }

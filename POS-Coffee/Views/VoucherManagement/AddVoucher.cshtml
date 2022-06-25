@@ -45,16 +45,6 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="StrIDFood">IDFood</label>
-                            <div class="col-sm-9">
-                                @Html.DropDownList("StrIDFood", (IEnumerable<SelectListItem>)ViewBag.StrIDFood, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.StrIDFood, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
-
                     <input class="button-primary" type="submit" value="Send" name="btnSaveChange" id="btnSaveChange" />
                     @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
                     <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />

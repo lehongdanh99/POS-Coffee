@@ -42,23 +42,23 @@ namespace POS_Coffe.Controllers
 
                 int idfood = item.FoodID;
 
-                List<RecipeModel> dataReceip = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.Drink_Cake_ID == idfood).ToList();
+                List<RecipeModel> dataReceip = RecipeAPIHandlereData.GetInstance().ListRecipe.Where(s => s.id == idfood).ToList();
 
                 List<FoodDetail> lstfood = new List<FoodDetail>();
 
                 foreach (var receip in dataReceip)
                 {
-                    int iditem = receip.RecipeID;
+                    int iditem = receip.id;
 
                     FoodDetail foodDetail = new FoodDetail();
 
-                    MaterialsModel model = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.ID == iditem).FirstOrDefault();
-                    if(model != null)
+                    MaterialsModel model = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.id == iditem).FirstOrDefault();
+                    if (model != null)
                     {
-                        foodDetail.MaterialName = model.Name;
+                        foodDetail.MaterialName = model.name;
                         //foodDetail.Quantity = model.Quantity;
-                        foodDetail.Amount = model.Amount;
-                        foodDetail.Type = model.Type;
+                        foodDetail.Amount = model.amount;
+                        foodDetail.Type = model.type;
                         foodDetail.Foodname = item.FoodName;
                         lstfood.Add(foodDetail);
                     }
@@ -71,15 +71,15 @@ namespace POS_Coffe.Controllers
                 allFoodList.Add(allFood);
             }
 
-            //switch (sortOrder)
-            //{
-            //    case "name_desc":
-            //        dataModel = dataModel.OrderBy(s => s.FoodName);
-            //        break;
-            //    case "Price_desc":
-            //        dataModel = dataModel.OrderBy(s => s.FoodPrice);
-            //        break;
-            //}
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    dataModel = dataModel.OrderBy(s => s.FoodName);
+                    break;
+                case "Price_desc":
+                    dataModel = dataModel.OrderBy(s => s.FoodPrice);
+                    break;
+            }
 
             foreach (AllFood model in allFoodList)
             {
@@ -99,7 +99,7 @@ namespace POS_Coffe.Controllers
             List<MaterialsModel> materialdata = MaterialAPIHandlerData.GetInstance().ListMaterial.ToList();
             foreach (var item in materialdata)
             {
-                string foodtypename = item.Type;
+                string foodtypename = item.type;
                 foodtype.Add(foodtypename);
             }
             foodtype = foodtype.Distinct().ToList();
@@ -133,7 +133,7 @@ namespace POS_Coffe.Controllers
             List<MaterialsModel> materialdata = MaterialAPIHandlerData.GetInstance().ListMaterial.ToList();
             foreach (var item in materialdata)
             {
-                string foodtypename = item.Type;
+                string foodtypename = item.type;
                 foodtype.Add(foodtypename);
             }
             foodtype = foodtype.Distinct().ToList();
@@ -172,19 +172,19 @@ namespace POS_Coffe.Controllers
             FoodModel dataFood = FoodAPIHandlerData.GetInstance().ListFood.Where((s) => s.FoodID == FoodID).FirstOrDefault();
             int idfood = dataFood.FoodID;
 
-            var dataReceip = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Where(s => s.Drink_Cake_ID == idfood);
+            var dataReceip = RecipeAPIHandlereData.GetInstance().ListRecipe.Where(s => s.id == idfood);
 
             List<FoodDetail> lstfood = new List<FoodDetail>();
 
             foreach (var item in dataReceip)
             {
                 FoodDetail foodDetail = new FoodDetail();
-                int iditem = item.RecipeID;
-                MaterialsModel model = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.ID == iditem).FirstOrDefault();
-                foodDetail.MaterialName = model.Name;
+                int iditem = item.id;
+                MaterialsModel model = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.id == iditem).FirstOrDefault();
+                foodDetail.MaterialName = model.name;
                 //foodDetail.Quantity = model.Quantity;
-                foodDetail.Amount = model.Amount;
-                foodDetail.Type = model.Type;
+                foodDetail.Amount = model.amount;
+                foodDetail.Type = model.type;
                 foodDetail.Foodname = dataFood.FoodName;
                 lstfood.Add(foodDetail);
             }

@@ -19,23 +19,24 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        public int HistoryID { get; set; }
-        public int EmpID { get; set; }
-        public string TableEffect { get; set; }
-        public string OccurTime { get; set; }
-        public string ActionType { get; set; }
+        public int id { get; set; }
+        public EmployeeModel employee { get; set; }
+        public string actionType { get; set; }
+        public string table { get; set; }
+        public int tableId { get; set; }
+        public System.DateTime occurTime { get; set; }
     }
-    public class HistoryTrackingAPIHandlerFakeData
+    public class HistoryTrackingAPIHandlerData
     {
 
-        private static HistoryTrackingAPIHandlerFakeData _instance;
-        public static HistoryTrackingAPIHandlerFakeData GetInstance()
+        private static HistoryTrackingAPIHandlerData _instance;
+        public static HistoryTrackingAPIHandlerData GetInstance()
         {
             if (_instance == null)
             {
                 if (_instance == null)
                 {
-                    _instance = new HistoryTrackingAPIHandlerFakeData();
+                    _instance = new HistoryTrackingAPIHandlerData();
                 }
             }
             return _instance;

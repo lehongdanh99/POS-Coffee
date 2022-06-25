@@ -14,32 +14,35 @@ namespace POS_Coffe.Controllers
         public int pageSize = 10;
         public ActionResult IndexOfHistoryTracking(string StringSearch, int? pageNo, string sortOrder)
         {
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.PriceSortParm = String.IsNullOrEmpty(sortOrder) ? "Price_desc" : "";
+            //ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            //ViewBag.PriceSortParm = String.IsNullOrEmpty(sortOrder) ? "Price_desc" : "";
 
-            IQueryable<HistoryTrackingModel> dataModel = HistoryTrackingAPIHandlerFakeData.GetInstance().ListHistoryTracking.AsQueryable();
+            //IQueryable<HistoryTrackingModel> dataModel = HistoryTrackingAPIHandlerFakeData.GetInstance().ListHistoryTracking.AsQueryable();
 
-            foreach (HistoryTrackingModel model in dataModel)
-            {
-                if (model != null)
-                    continue;
-            }
-            dataModel.ToList();
+            //foreach (HistoryTrackingModel model in dataModel)
+            //{
+            //    if (model != null)
+            //        continue;
+            //}
+            //dataModel.ToList();
 
-            var Pagination = new PagedList<HistoryTrackingModel>(dataModel, pageNo ?? 1, pageSize);
+            //var Pagination = new PagedList<HistoryTrackingModel>(dataModel, pageNo ?? 1, pageSize);
 
+            //return View(Pagination);
+            List<HistoryTrackingModel> LstHistory = HistoryTrackingAPIHandlerData.GetInstance().ListHistoryTracking.ToList();
+            var Pagination = new PagedList<HistoryTrackingModel>(LstHistory, pageNo ?? 1, pageSize);
             return View(Pagination);
         }
 
         [HttpGet]
         public PartialViewResult Details(int HistoryID)
         {
-            HistoryTrackingModel dataTracking = HistoryTrackingAPIHandlerFakeData.GetInstance().ListHistoryTracking.Where(x => x.HistoryID == HistoryID).FirstOrDefault();
-            if (dataTracking.TableEffect == "Employee")
-            {
-                EmployeeModel dataEmp = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(x => x.id == dataTracking.EmpID).FirstOrDefault();
-                return PartialView(dataEmp);
-            }
+            //HistoryTrackingModel dataTracking = HistoryTrackingAPIHandlerData.GetInstance().ListHistoryTracking.Where(x => x.HistoryID == HistoryID).FirstOrDefault();
+            //if (dataTracking.TableEffect == "Employee")
+            //{
+            //    EmployeeModel dataEmp = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(x => x.id == dataTracking.EmpID).FirstOrDefault();
+            //    return PartialView(dataEmp);
+            //}
             return PartialView();
         }
         public ActionResult SortDay()

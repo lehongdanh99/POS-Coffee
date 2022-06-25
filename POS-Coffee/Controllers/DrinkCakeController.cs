@@ -22,7 +22,7 @@ namespace POS_Coffe.Controllers
             List<MaterialsModel> materialdata = MaterialAPIHandlerData.GetInstance().ListMaterial.ToList();
             foreach (var item in materialdata)
             {
-                string foodtypename = item.Type;
+                string foodtypename = item.type;
                 foodtype.Add(foodtypename);
             }
             foodtype = foodtype.Distinct().ToList();
@@ -46,6 +46,11 @@ namespace POS_Coffe.Controllers
             //model.Picture = ;
             DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.Add(model);
             return RedirectToAction("DrinkCakeManagement", "DrinkCake", model);
+        }
+
+        public ActionResult EditDrinkCake(int id)
+        {
+            return View();
         }
     }
 }

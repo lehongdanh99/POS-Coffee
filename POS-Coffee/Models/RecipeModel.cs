@@ -7,23 +7,26 @@ namespace POS_Coffe.Models
 {
     public class RecipeModel : BaseModel
     {
-        public int RecipeID { get; set; }
-        public int Drink_Cake_ID { get; set; }
-        public int Amount_For_One { get; set; }
-        public string Size { get; set; }
-        public int MaterialID { get; set; }
+        public int id { get; set; }
+        public DrinkCakeVariation drinkCakeVariation { get; set; }
+        public List<recipeDetails> recipeDetails { get; set; }
     }
-    public class RecipeAPIHandlerFakeData
+    public class recipeDetails
+    {
+        public int id { get; set; }
+        public MaterialsModel material { get; set; }
+    }
+    public class RecipeAPIHandlereData
     {
 
-        private static RecipeAPIHandlerFakeData _instance;
-        public static RecipeAPIHandlerFakeData GetInstance()
+        private static RecipeAPIHandlereData _instance;
+        public static RecipeAPIHandlereData GetInstance()
         {
             if (_instance == null)
             {
                 if (_instance == null)
                 {
-                    _instance = new RecipeAPIHandlerFakeData();
+                    _instance = new RecipeAPIHandlereData();
                 }
             }
             return _instance;

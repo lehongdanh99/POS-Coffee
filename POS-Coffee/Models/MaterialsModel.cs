@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace POS_Coffe.Models
 {
@@ -19,11 +16,11 @@ namespace POS_Coffe.Models
             }
             return _instance;
         }
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public string Unit { get; set; }
-        public int Amount { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
+        public string unit { get; set; }
+        public int amount { get; set; }
     }
     public class MaterialAPIHandlerData
     {

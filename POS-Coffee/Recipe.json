@@ -1,152 +1,210 @@
 [
   {
-    "RecipeID": 1,
-    "Amount_for_one": "20",
-    "drink_cake_id": "1",
-    "material_id": "1"
+    "id": 10001,
+    "drinkCakeVariation": {
+      "id": 10001,
+      "name": "M",
+      "description": "M",
+      "price": 27000
+    },
+    "recipeDetails": [
+      {
+        "id": 10001,
+        "material": {
+          "id": 10001,
+          "name": "b?t cà phê th??ng",
+          "type": "cà phê",
+          "unit": "gam",
+          "amount": 10000,
+          "createdAtFormatVN": "22/06/2022 00:00",
+          "updatedAtFormatVN": "22/06/2022 00:00"
+        },
+        "amountForOne": 20.0
+      }
+    ],
+    "createdAtFormatVN": "24/06/2022 16:52",
+    "updatedAtFormatVN": "24/06/2022 16:52"
   },
   {
-    "RecipeID": 2,
-    "Amount_for_one": "20",
-    "drink_cake_id": "1",
-    "material_id": "4"
+    "id": 10004,
+    "drinkCakeVariation": {
+      "id": 10007,
+      "name": "M",
+      "description": "M",
+      "price": 35000
+    },
+    "recipeDetails": [
+      {
+        "id": 10006,
+        "material": {
+          "id": 10005,
+          "name": "trà gói",
+          "type": "trà",
+          "unit": "cái",
+          "amount": 200,
+          "createdAtFormatVN": "22/06/2022 00:00",
+          "updatedAtFormatVN": "22/06/2022 00:00"
+        },
+        "amountForOne": 10.0
+      },
+      {
+        "id": 10007,
+        "material": {
+          "id": 10008,
+          "name": "???ng",
+          "type": "trà",
+          "unit": "gam",
+          "amount": 1000,
+          "createdAtFormatVN": "22/06/2022 00:00",
+          "updatedAtFormatVN": "22/06/2022 00:00"
+        },
+        "amountForOne": 10.0
+      }
+    ],
+    "createdAtFormatVN": "24/06/2022 17:02",
+    "updatedAtFormatVN": "24/06/2022 17:02"
   },
   {
-    "RecipeID": 3,
-    "Amount_for_one": "10",
-    "drink_cake_id": "3",
-    "material_id": "1"
+    "id": 10003,
+    "drinkCakeVariation": {
+      "id": 10005,
+      "name": "M",
+      "description": "M",
+      "price": 35000
+    },
+    "recipeDetails": [
+      {
+        "id": 10004,
+        "material": {
+          "id": 10002,
+          "name": "b?t cà phê cao c?p",
+          "type": "cà phê",
+          "unit": "gam",
+          "amount": 10000,
+          "createdAtFormatVN": "22/06/2022 00:00",
+          "updatedAtFormatVN": "22/06/2022 00:00"
+        },
+        "amountForOne": 10.0
+      },
+      {
+        "id": 10005,
+        "material": {
+          "id": 10004,
+          "name": "s?a ??c",
+          "type": "cà phê",
+          "unit": "gam",
+          "amount": 10000,
+          "createdAtFormatVN": "22/06/2022 00:00",
+          "updatedAtFormatVN": "22/06/2022 00:00"
+        },
+        "amountForOne": 10.0
+      }
+    ],
+    "createdAtFormatVN": "24/06/2022 17:02",
+    "updatedAtFormatVN": "24/06/2022 17:02"
   },
   {
-    "RecipeID": 4,
-    "Amount_for_one": "10",
-    "drink_cake_id": "3",
-    "material_id": "4"
+    "id": 10002,
+    "drinkCakeVariation": {
+      "id": 10003,
+      "name": "M",
+      "description": "M",
+      "price": 30000
+    },
+    "recipeDetails": [
+      {
+        "id": 10002,
+        "material": {
+          "id": 10001,
+          "name": "b?t cà phê th??ng",
+          "type": "cà phê",
+          "unit": "gam",
+          "amount": 10000,
+          "createdAtFormatVN": "22/06/2022 00:00",
+          "updatedAtFormatVN": "22/06/2022 00:00"
+        },
+        "amountForOne": 10.0
+      },
+      {
+        "id": 10003,
+        "material": {
+          "id": 10004,
+          "name": "s?a ??c",
+          "type": "cà phê",
+          "unit": "gam",
+          "amount": 10000,
+          "createdAtFormatVN": "22/06/2022 00:00",
+          "updatedAtFormatVN": "22/06/2022 00:00"
+        },
+        "amountForOne": 10.0
+      }
+    ],
+    "createdAtFormatVN": "24/06/2022 17:02",
+    "updatedAtFormatVN": "24/06/2022 17:02"
   },
   {
-    "RecipeID": 5,
-    "Amount_for_one": "20",
-    "drink_cake_id": "3",
-    "material_id": "1"
+    "id": 10005,
+    "drinkCakeVariation": {
+      "id": 10002,
+      "name": "L",
+      "description": "L",
+      "price": 30000
+    },
+    "recipeDetails": [
+      {
+        "id": 10008,
+        "material": {
+          "id": 10001,
+          "name": "b?t cà phê th??ng",
+          "type": "cà phê",
+          "unit": "gam",
+          "amount": 10000,
+          "createdAtFormatVN": "22/06/2022 00:00",
+          "updatedAtFormatVN": "22/06/2022 00:00"
+        },
+        "amountForOne": 25.0
+      }
+    ],
+    "createdAtFormatVN": "24/06/2022 17:12",
+    "updatedAtFormatVN": "24/06/2022 17:12"
   },
   {
-    "RecipeID": 6,
-    "Amount_for_one": "20",
-    "drink_cake_id": "3",
-    "material_id": "4"
-  },
-  {
-    "RecipeID": 7,
-    "Amount_for_one": "30",
-    "drink_cake_id": "4",
-    "material_id": "2"
-  },
-  {
-    "RecipeID": 8,
-    "Amount_for_one": "30",
-    "drink_cake_id": "4",
-    "material_id": "4"
-  },
-  {
-    "RecipeID": 9,
-    "Amount_for_one": "30",
-    "drink_cake_id": "5",
-    "material_id": "2"
-  },
-  {
-    "RecipeID": 10,
-    "Amount_for_one": "30",
-    "drink_cake_id": "5",
-    "material_id": "4"
-  },
-  {
-    "RecipeID": 11,
-    "Amount_for_one": "30",
-    "drink_cake_id": "6",
-    "material_id": "5"
-  },
-  {
-    "RecipeID": 12,
-    "Amount_for_one": "30",
-    "drink_cake_id": "6",
-    "material_id": "8"
-  },
-  {
-    "RecipeID": 13,
-    "Amount_for_one": "30",
-    "drink_cake_id": "6",
-    "material_id": "5"
-  },
-  {
-    "RecipeID": 14,
-    "Amount_for_one": "30",
-    "drink_cake_id": "6",
-    "material_id": "8"
-  },
-  {
-    "RecipeID": 15,
-    "Amount_for_one": "30",
-    "drink_cake_id": "7",
-    "material_id": "7"
-  },
-  {
-    "RecipeID": 16,
-    "Amount_for_one": "30",
-    "drink_cake_id": "7",
-    "material_id": "8"
-  },
-  {
-    "RecipeID": 17,
-    "Amount_for_one": "30",
-    "drink_cake_id": "8",
-    "material_id": "6"
-  },
-  {
-    "RecipeID": 18,
-    "Amount_for_one": "30",
-    "drink_cake_id": "8",
-    "material_id": "8"
-  },
-  {
-    "RecipeID": 19,
-    "Amount_for_one": "30",
-    "drink_cake_id": "8",
-    "material_id": "6"
-  },
-  {
-    "RecipeID": 20,
-    "Amount_for_one": "30",
-    "drink_cake_id": "8",
-    "material_id": "8"
-  },
-  {
-    "RecipeID": 21,
-    "Amount_for_one": "30",
-    "drink_cake_id": "10",
-    "material_id": "6"
-  },
-  {
-    "RecipeID": 22,
-    "Amount_for_one": "30",
-    "drink_cake_id": "10",
-    "material_id": "8"
-  },
-  {
-    "RecipeID": 23,
-    "Amount_for_one": "30",
-    "drink_cake_id": "10",
-    "material_id": "9"
-  },
-  {
-    "RecipeID": 24,
-    "Amount_for_one": "30",
-    "drink_cake_id": "15",
-    "material_id": "14"
-  },
-  {
-    "RecipeID": 25,
-    "Amount_for_one": "30",
-    "drink_cake_id": "17",
-    "material_id": "15"
+    "id": 10006,
+    "drinkCakeVariation": {
+      "id": 10004,
+      "name": "L",
+      "description": "L",
+      "price": 35000
+    },
+    "recipeDetails": [
+      {
+        "id": 10009,
+        "material": {
+          "id": 10001,
+          "name": "b?t cà phê th??ng",
+          "type": "cà phê",
+          "unit": "gam",
+          "amount": 10000,
+          "createdAtFormatVN": "22/06/2022 00:00",
+          "updatedAtFormatVN": "22/06/2022 00:00"
+        },
+        "amountForOne": 20.0
+      },
+      {
+        "id": 10010,
+        "material": {
+          "id": 10004,
+          "name": "s?a ??c",
+          "type": "cà phê",
+          "unit": "gam",
+          "amount": 10000,
+          "createdAtFormatVN": "22/06/2022 00:00",
+          "updatedAtFormatVN": "22/06/2022 00:00"
+        },
+        "amountForOne": 20.0
+      }
+    ],
+    "createdAtFormatVN": "24/06/2022 17:13",
+    "updatedAtFormatVN": "24/06/2022 17:13"
   }
 ]

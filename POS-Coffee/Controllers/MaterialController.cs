@@ -19,13 +19,13 @@ namespace POS_Coffe.Controllers
 
             if (!String.IsNullOrWhiteSpace(StringSearch))
             {
-                data = data.Where(s => s.Name.ToLower().Contains(StringSearch.ToLower()) || s.Type.ToLower().Contains(StringSearch.ToLower())).ToList();
+                data = data.Where(s => s.name.ToLower().Contains(StringSearch.ToLower()) || s.type.ToLower().Contains(StringSearch.ToLower())).ToList();
             }
 
             switch (sortOrder)
             {
                 case "name_desc":
-                    data = data.OrderBy(s => s.Name).ToList();
+                    data = data.OrderBy(s => s.name).ToList();
                     break;
             }
 
@@ -61,9 +61,9 @@ namespace POS_Coffe.Controllers
             return RedirectToAction("MaterialManagement", "Material");
         }
         [HttpGet]
-        public ActionResult EditMaterial(int MaterialID)
+        public ActionResult EditMaterial(int id)
         {
-            var EditData = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.ID == MaterialID);
+            var EditData = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.id == id);
             MaterialsModel data = new MaterialsModel();
             //data.MaterialID = MaterialID; 
             //data.Name = EditData.ToList().First().Name;
@@ -76,7 +76,7 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult EditMaterial(MaterialsModel data)
         {
-            var EditData = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.ID == data.ID);
+            var EditData = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.id == data.id);
             MaterialsModel model = new MaterialsModel();
             //EditData.ToList().First().Name = data.Name;
             //EditData.ToList().First().Type = data.Type;
@@ -84,10 +84,10 @@ namespace POS_Coffe.Controllers
             //EditData.ToList().First().Quantity = data.Quantity;
             return RedirectToAction("MaterialManagement", "Material");
         }
-        public ActionResult DeleteMaterial(int ID)
+        public ActionResult DeleteMaterial(int id)
         {
-            var data = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.ID == ID).FirstOrDefault();
-            MaterialAPIHandlerData.GetInstance().ListMaterial.Remove(data);
+            //var data = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.ID == ID).FirstOrDefault();
+            //MaterialAPIHandlerData.GetInstance().ListMaterial.Remove(data);
             return RedirectToAction("MaterialManagement", "Material");
         }
 

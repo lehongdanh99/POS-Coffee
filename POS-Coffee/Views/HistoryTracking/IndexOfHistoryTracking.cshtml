@@ -14,11 +14,11 @@
                 <table class="styled-table">
                     <thead>
                         <tr>
-                            <th class="text-center">#</th>
+                            <th>Action type</th>
                             <th>OccurTime</th>
                             <th>Table Effect</th>
                             <th>Employee</th>
-                            <th>Action type</th>
+                         
                             <th></th>
                         </tr>
                         @{i = 1;}
@@ -27,14 +27,12 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <th class="text-center">@i</th>
-
-                                <td>@item.OccurTime</td>
-                                <td>@item.TableEffect</td>
-                                <td>@item.EmpID</td>
-                                <td>@item.ActionType</td>
+                                <td>@item.actionType</td>
+                                <td>@item.occurTime</td>
+                                <td>@item.table</td>
+                                <td>@item.employee.name</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "HistoryTracking", new {HistoryID = item.HistoryID })"'> </button>
+                                    <button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "HistoryTracking", new {id = item.id })"'> </button>
                                 </td>
                                 @*<td>
 
@@ -43,7 +41,6 @@
 
                     </td>*@
                             </tr>
-                            i++;
                         }
                     </tbody>
                 </table>

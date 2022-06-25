@@ -1,79 +1,491 @@
-[
-	{
-		"Day": "11/15/2022",
-		"VoucherName": "Table1",
-		"Table": "1",
-		"TotalPrice": 1000000,
-		"DiscountPrice": 50000,
-		"CustomerPay": 150000,
-		"TypePayment": "Self",
-		"TypeService": "none"
-	},
-	{
-
-		"Day": "11/15/2022",
-		"VoucherName": "Table2",
-		"Table": "2",
-		"TotalPrice": 300000,
-		"DiscountPrice": 40000,
-		"CustomerPay": 154200,
-		"TypePayment": "Delivery",
-		"TypeService": "none"
-	},
-	{
-
-		"Day": "10/15/2019",
-		"VoucherName": "Table3",
-		"Table": "3",
-		"TotalPrice": 303000,
-		"DiscountPrice": 402000,
-		"CustomerPay": 1541200,
-		"TypePayment": "Delivery",
-		"TypeService": "none"
-	},
-	{
-
-		"Day": "01/15/2012",
-		"VoucherName": "Table4",
-		"Table": "4",
-		"TotalPrice": 2300000,
-		"DiscountPrice": 240000,
-		"CustomerPay": 1354200,
-		"TypePayment": "Self",
-		"TypeService": "none"
-	},
-	{
-
-		"Day": "07/12/2018",
-		"VoucherName": "Table5",
-		"Table": "5",
-		"TotalPrice": 23031200,
-		"DiscountPrice": 23000,
-		"CustomerPay": 1565789200,
-		"TypePayment": "Self",
-		"TypeService": "none"
-	},
-	{
-
-		"Day": "11/22/2019",
-		"VoucherName": "Table6",
-		"Table": "6",
-		"TotalPrice": 331200,
-		"DiscountPrice": 23000,
-		"CustomerPay": 156500,
-		"TypePayment": "Self",
-		"TypeService": "none"
-	},
-] {
-	"Id": 0,
-	"Name": "test_user2",
-	"permission": "EMPLOYEE",
-	"birthday": "01/02/2022",
-	"phone": "090909090",
-	"address": "237 nz",
-	"username": "test_user2",
-	"password": "123",
-	"Token": null,
-	"CreateBy": null,
-	"UpdateBy": null
+{
+	"day": 0,
+	"month": 6,
+	"year": 2022,
+	"receiptTotal": 11,
+	"revenue": 489250,
+	"receipts": [
+		{
+			"id": 3,
+			"employee": {
+				"id": 1,
+				"name": "admin",
+				"permission": "ADMIN",
+				"birthday": null,
+				"phone": null,
+				"address": null,
+				"username": "admin",
+				"createdAtFormatVN": "23/06/2022 14:34",
+				"updatedAtFormatVN": "23/06/2022 14:34"
+			},
+			"customer": {
+				"id": 10001,
+				"phone": "0934445332",
+				"name": "Hu?nh Quang Minh",
+				"point": 173,
+				"createdAtFormatVN": "22/06/2022 00:00",
+				"updatedAtFormatVN": "23/06/2022 16:18"
+			},
+			"totalPrice": 54000,
+			"originalPrice": 54000,
+			"paymentType": "NA",
+			"serviceType": "AWAY",
+			"customerPay": 0,
+			"discountPrice": 0,
+			"branch": null,
+			"receiptDetails": [
+				{
+					"id": 2,
+					"drinkCakeVariation": {
+						"id": 10001,
+						"name": "M",
+						"description": "M",
+						"price": 27000
+					},
+					"amount": 2,
+					"price": 54000,
+					"note": "string"
+				}
+			],
+			"createdAtFormatVN": "23/06/2022 15:28",
+			"updatedAtFormatVN": "23/06/2022 15:28"
+		},
+		{
+			"id": 4,
+			"employee": {
+				"id": 1,
+				"name": "admin",
+				"permission": "ADMIN",
+				"birthday": null,
+				"phone": null,
+				"address": null,
+				"username": "admin",
+				"createdAtFormatVN": "23/06/2022 14:34",
+				"updatedAtFormatVN": "23/06/2022 14:34"
+			},
+			"customer": {
+				"id": 10001,
+				"phone": "0934445332",
+				"name": "Hu?nh Quang Minh",
+				"point": 173,
+				"createdAtFormatVN": "22/06/2022 00:00",
+				"updatedAtFormatVN": "23/06/2022 16:18"
+			},
+			"totalPrice": 84000,
+			"originalPrice": 84000,
+			"paymentType": "NA",
+			"serviceType": "AWAY",
+			"customerPay": 0,
+			"discountPrice": 0,
+			"branch": null,
+			"receiptDetails": [
+				{
+					"id": 3,
+					"drinkCakeVariation": {
+						"id": 10001,
+						"name": "M",
+						"description": "M",
+						"price": 27000
+					},
+					"amount": 2,
+					"price": 54000,
+					"note": "string"
+				},
+				{
+					"id": 4,
+					"drinkCakeVariation": {
+						"id": 10003,
+						"name": "M",
+						"description": "M",
+						"price": 30000
+					},
+					"amount": 1,
+					"price": 30000,
+					"note": "string"
+				}
+			],
+			"createdAtFormatVN": "23/06/2022 15:31",
+			"updatedAtFormatVN": "23/06/2022 15:31"
+		},
+		{
+			"id": 10,
+			"employee": {
+				"id": 1,
+				"name": "admin",
+				"permission": "ADMIN",
+				"birthday": null,
+				"phone": null,
+				"address": null,
+				"username": "admin",
+				"createdAtFormatVN": "23/06/2022 14:34",
+				"updatedAtFormatVN": "23/06/2022 14:34"
+			},
+			"customer": null,
+			"totalPrice": 35000,
+			"originalPrice": 35000,
+			"paymentType": "CASH",
+			"serviceType": "EATIN",
+			"customerPay": 0,
+			"discountPrice": 0,
+			"branch": null,
+			"receiptDetails": [
+				{
+					"id": 11,
+					"drinkCakeVariation": {
+						"id": 10007,
+						"name": "M",
+						"description": "M",
+						"price": 35000
+					},
+					"amount": 1,
+					"price": 35000,
+					"note": "???ng 50 ?á 50 "
+				}
+			],
+			"createdAtFormatVN": "23/06/2022 16:13",
+			"updatedAtFormatVN": "23/06/2022 16:13"
+		},
+		{
+			"id": 11,
+			"employee": {
+				"id": 1,
+				"name": "admin",
+				"permission": "ADMIN",
+				"birthday": null,
+				"phone": null,
+				"address": null,
+				"username": "admin",
+				"createdAtFormatVN": "23/06/2022 14:34",
+				"updatedAtFormatVN": "23/06/2022 14:34"
+			},
+			"customer": {
+				"id": 10001,
+				"phone": "0934445332",
+				"name": "Hu?nh Quang Minh",
+				"point": 173,
+				"createdAtFormatVN": "22/06/2022 00:00",
+				"updatedAtFormatVN": "23/06/2022 16:18"
+			},
+			"totalPrice": 33250,
+			"originalPrice": 35000,
+			"paymentType": "CASH",
+			"serviceType": "EATIN",
+			"customerPay": 0,
+			"discountPrice": 0,
+			"branch": null,
+			"receiptDetails": [
+				{
+					"id": 12,
+					"drinkCakeVariation": {
+						"id": 10007,
+						"name": "M",
+						"description": "M",
+						"price": 35000
+					},
+					"amount": 1,
+					"price": 35000,
+					"note": "???ng 50 ?á 50 "
+				}
+			],
+			"createdAtFormatVN": "23/06/2022 16:18",
+			"updatedAtFormatVN": "23/06/2022 16:18"
+		},
+		{
+			"id": 12,
+			"employee": {
+				"id": 1,
+				"name": "admin",
+				"permission": "ADMIN",
+				"birthday": null,
+				"phone": null,
+				"address": null,
+				"username": "admin",
+				"createdAtFormatVN": "23/06/2022 14:34",
+				"updatedAtFormatVN": "23/06/2022 14:34"
+			},
+			"customer": null,
+			"totalPrice": 35000,
+			"originalPrice": 35000,
+			"paymentType": "CASH",
+			"serviceType": "EATIN",
+			"customerPay": 0,
+			"discountPrice": 0,
+			"branch": null,
+			"receiptDetails": [
+				{
+					"id": 13,
+					"drinkCakeVariation": {
+						"id": 10007,
+						"name": "M",
+						"description": "M",
+						"price": 35000
+					},
+					"amount": 1,
+					"price": 35000,
+					"note": "  "
+				}
+			],
+			"createdAtFormatVN": "23/06/2022 16:57",
+			"updatedAtFormatVN": "23/06/2022 16:57"
+		},
+		{
+			"id": 13,
+			"employee": {
+				"id": 1,
+				"name": "admin",
+				"permission": "ADMIN",
+				"birthday": null,
+				"phone": null,
+				"address": null,
+				"username": "admin",
+				"createdAtFormatVN": "23/06/2022 14:34",
+				"updatedAtFormatVN": "23/06/2022 14:34"
+			},
+			"customer": null,
+			"totalPrice": 35000,
+			"originalPrice": 35000,
+			"paymentType": "CASH",
+			"serviceType": "EATIN",
+			"customerPay": 0,
+			"discountPrice": 0,
+			"branch": null,
+			"receiptDetails": [
+				{
+					"id": 14,
+					"drinkCakeVariation": {
+						"id": 10017,
+						"name": "M",
+						"description": "M",
+						"price": 35000
+					},
+					"amount": 1,
+					"price": 35000,
+					"note": "  "
+				}
+			],
+			"createdAtFormatVN": "23/06/2022 17:07",
+			"updatedAtFormatVN": "23/06/2022 17:07"
+		},
+		{
+			"id": 14,
+			"employee": {
+				"id": 1,
+				"name": "admin",
+				"permission": "ADMIN",
+				"birthday": null,
+				"phone": null,
+				"address": null,
+				"username": "admin",
+				"createdAtFormatVN": "23/06/2022 14:34",
+				"updatedAtFormatVN": "23/06/2022 14:34"
+			},
+			"customer": null,
+			"totalPrice": 27000,
+			"originalPrice": 27000,
+			"paymentType": "CASH",
+			"serviceType": "EATIN",
+			"customerPay": 0,
+			"discountPrice": 0,
+			"branch": null,
+			"receiptDetails": [
+				{
+					"id": 15,
+					"drinkCakeVariation": {
+						"id": 10001,
+						"name": "M",
+						"description": "M",
+						"price": 27000
+					},
+					"amount": 1,
+					"price": 27000,
+					"note": "  "
+				}
+			],
+			"createdAtFormatVN": "23/06/2022 17:16",
+			"updatedAtFormatVN": "23/06/2022 17:16"
+		},
+		{
+			"id": 15,
+			"employee": {
+				"id": 1,
+				"name": "admin",
+				"permission": "ADMIN",
+				"birthday": null,
+				"phone": null,
+				"address": null,
+				"username": "admin",
+				"createdAtFormatVN": "23/06/2022 14:34",
+				"updatedAtFormatVN": "23/06/2022 14:34"
+			},
+			"customer": null,
+			"totalPrice": 62000,
+			"originalPrice": 62000,
+			"paymentType": "CASH",
+			"serviceType": "EATIN",
+			"customerPay": 0,
+			"discountPrice": 0,
+			"branch": null,
+			"receiptDetails": [
+				{
+					"id": 16,
+					"drinkCakeVariation": {
+						"id": 10001,
+						"name": "M",
+						"description": "M",
+						"price": 27000
+					},
+					"amount": 1,
+					"price": 27000,
+					"note": "  "
+				},
+				{
+					"id": 17,
+					"drinkCakeVariation": {
+						"id": 10021,
+						"name": "M",
+						"description": "M",
+						"price": 35000
+					},
+					"amount": 1,
+					"price": 35000,
+					"note": "  "
+				}
+			],
+			"createdAtFormatVN": "23/06/2022 17:19",
+			"updatedAtFormatVN": "23/06/2022 17:19"
+		},
+		{
+			"id": 16,
+			"employee": {
+				"id": 1,
+				"name": "admin",
+				"permission": "ADMIN",
+				"birthday": null,
+				"phone": null,
+				"address": null,
+				"username": "admin",
+				"createdAtFormatVN": "23/06/2022 14:34",
+				"updatedAtFormatVN": "23/06/2022 14:34"
+			},
+			"customer": null,
+			"totalPrice": 62000,
+			"originalPrice": 62000,
+			"paymentType": "CASH",
+			"serviceType": "EATIN",
+			"customerPay": 0,
+			"discountPrice": 0,
+			"branch": null,
+			"receiptDetails": [
+				{
+					"id": 18,
+					"drinkCakeVariation": {
+						"id": 10009,
+						"name": "M",
+						"description": "M",
+						"price": 35000
+					},
+					"amount": 1,
+					"price": 35000,
+					"note": "  "
+				},
+				{
+					"id": 19,
+					"drinkCakeVariation": {
+						"id": 10001,
+						"name": "M",
+						"description": "M",
+						"price": 27000
+					},
+					"amount": 1,
+					"price": 27000,
+					"note": "  "
+				}
+			],
+			"createdAtFormatVN": "23/06/2022 17:20",
+			"updatedAtFormatVN": "23/06/2022 17:20"
+		},
+		{
+			"id": 17,
+			"employee": {
+				"id": 1,
+				"name": "admin",
+				"permission": "ADMIN",
+				"birthday": null,
+				"phone": null,
+				"address": null,
+				"username": "admin",
+				"createdAtFormatVN": "23/06/2022 14:34",
+				"updatedAtFormatVN": "23/06/2022 14:34"
+			},
+			"customer": {
+				"id": 2,
+				"phone": "0399998888",
+				"name": "anh Khanh",
+				"point": 27,
+				"createdAtFormatVN": "24/06/2022 16:33",
+				"updatedAtFormatVN": "24/06/2022 16:35"
+			},
+			"totalPrice": 27000,
+			"originalPrice": 27000,
+			"paymentType": "CASH",
+			"serviceType": "EATIN",
+			"customerPay": 0,
+			"discountPrice": 0,
+			"branch": null,
+			"receiptDetails": [
+				{
+					"id": 20,
+					"drinkCakeVariation": {
+						"id": 10001,
+						"name": "M",
+						"description": "M",
+						"price": 27000
+					},
+					"amount": 1,
+					"price": 27000,
+					"note": ""
+				}
+			],
+			"createdAtFormatVN": "24/06/2022 16:35",
+			"updatedAtFormatVN": "24/06/2022 16:35"
+		},
+		{
+			"id": 18,
+			"employee": {
+				"id": 1,
+				"name": "admin",
+				"permission": "ADMIN",
+				"birthday": null,
+				"phone": null,
+				"address": null,
+				"username": "admin",
+				"createdAtFormatVN": "23/06/2022 14:34",
+				"updatedAtFormatVN": "23/06/2022 14:34"
+			},
+			"customer": null,
+			"totalPrice": 35000,
+			"originalPrice": 35000,
+			"paymentType": "CASH",
+			"serviceType": "EATIN",
+			"customerPay": 0,
+			"discountPrice": 0,
+			"branch": null,
+			"receiptDetails": [
+				{
+					"id": 21,
+					"drinkCakeVariation": {
+						"id": 10007,
+						"name": "M",
+						"description": "M",
+						"price": 35000
+					},
+					"amount": 1,
+					"price": 35000,
+					"note": "  "
+				}
+			],
+			"createdAtFormatVN": "24/06/2022 17:45",
+			"updatedAtFormatVN": "24/06/2022 17:45"
+		}
+	]
 }

@@ -22,7 +22,7 @@
             <div class="card-block">
                 @using (Html.BeginForm("EditVoucher", "VoucherManagement", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-                    @Html.HiddenFor(s => s.VoucherID)
+                    @Html.HiddenFor(s => s.Id)
                     <div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Name">Name</label>
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    @*<div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="StrIDFood">IDFood</label>
                             <div class="col-sm-9">
@@ -49,8 +49,8 @@
                                 @Html.ValidationMessageFor(model => model.StrIDFood, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
+                    </div>*@
+                    @*<div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="isValue">isValue</label>
                             <div class="col-sm-9">
@@ -58,7 +58,7 @@
                                 @Html.ValidationMessageFor(model => model.isValue, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                     <input class="button-primary" type="submit" value="Send">
                     @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
                     <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />

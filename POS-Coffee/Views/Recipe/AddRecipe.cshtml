@@ -27,63 +27,84 @@
             <div class="card-block">
                 @using (Html.BeginForm("AddRecipe", "Recipe", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
+
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="FoodName">Food name</label>
+                            <label class="col-sm-3 col-form-label" for="name">Size</label>
                             <div class="col-sm-9">
-                                <select id="Food" name="Food">
-                                    @foreach (var item in ViewBag.Food)
-                                    {
-                                        <option value="@item.FoodID">@item.FoodName</option>
-                                    }
-                                    @Html.ValidationMessageFor(model => model.Drink_Cake_ID, "")
-                                </select>
+                                @Html.EditorFor(model => model.drinkCakeVariation.name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.drinkCakeVariation.name, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="Material">Material</label>
+                            <label class="col-sm-3 col-form-label" for="price">Price</label>
                             <div class="col-sm-9">
-                                <select id="Material" name="Material" multiple>
-                                    @foreach (var item in ViewBag.Materials)
-                                    {
-                                        <option value="@item.MaterialID">@item.Name</option>
-                                    }
-
-                                </select>
+                                @Html.EditorFor(model => model.drinkCakeVariation.price, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.drinkCakeVariation.price, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
 
                     @*<div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label" for="Type">Type</label>
-                                <div class="col-sm-9">
-                                    @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </div>*@
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="FoodName">Food name</label>
+                    <div class="col-sm-9">
+                        <select id="Food" name="Food">
+                            @foreach (var item in ViewBag.Food)
+                            {
+                                <option value="@item.FoodID">@item.FoodName</option>
+                            }
+                            @Html.ValidationMessageFor(model => model.Drink_Cake_ID, "")
+                        </select>
+                    </div>
+                </div>
+            </div>*@
 
                     @*<div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label" for="Picture">Picture</label>
-                                <div class="col-sm-9">
-                                    @Html.TextBoxFor(model => model.FoodImage, new { type = "file", accept = "~/Content/images" })
-                                    @Html.ValidationMessageFor(model => model.FoodImage)
-                                </div>
-                            </div>
-                        </div>*@
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="Material">Material</label>
+                    <div class="col-sm-9">
+                        <select id="Material" name="Material" multiple>
+                            @foreach (var item in ViewBag.Materials)
+                            {
+                                <option value="@item.MaterialID">@item.Name</option>
+                            }
+
+                        </select>
+                    </div>
+                </div>
+            </div>*@
+
                     @*<div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label" for="Picture">Picture</label>
-                                <div class="col-sm-9">
-                                    <input type="file" id="Picture" name="Picture" accept="image/*" class="form-control">
-                                </div>
-                            </div>
-                        </div>*@
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="Type">Type</label>
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>*@
+
+                    @*<div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="Picture">Picture</label>
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.FoodImage, new { type = "file", accept = "~/Content/images" })
+                        @Html.ValidationMessageFor(model => model.FoodImage)
+                    </div>
+                </div>
+            </div>*@
+                    @*<div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="Picture">Picture</label>
+                    <div class="col-sm-9">
+                        <input type="file" id="Picture" name="Picture" accept="image/*" class="form-control">
+                    </div>
+                </div>
+            </div>*@
 
 
                     <input class="button-primary" type="submit" value="Create recipe">

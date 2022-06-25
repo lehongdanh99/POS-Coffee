@@ -223,7 +223,9 @@ F:\POS-Coffee\POS-Coffee\bin\Microsoft.Web.Infrastructure.dll
 F:\POS-Coffee\POS-Coffee\bin\Newtonsoft.Json.dll
 F:\POS-Coffee\POS-Coffee\bin\PagedList.dll
 F:\POS-Coffee\POS-Coffee\bin\PagedList.Mvc.dll
+F:\POS-Coffee\POS-Coffee\bin\System.Net.Http.Formatting.dll
 F:\POS-Coffee\POS-Coffee\bin\System.Web.Helpers.dll
+F:\POS-Coffee\POS-Coffee\bin\System.Web.Http.dll
 F:\POS-Coffee\POS-Coffee\bin\System.Web.Mvc.dll
 F:\POS-Coffee\POS-Coffee\bin\System.Web.Optimization.dll
 F:\POS-Coffee\POS-Coffee\bin\System.Web.Razor.dll
@@ -231,8 +233,11 @@ F:\POS-Coffee\POS-Coffee\bin\System.Web.WebPages.Deployment.dll
 F:\POS-Coffee\POS-Coffee\bin\System.Web.WebPages.dll
 F:\POS-Coffee\POS-Coffee\bin\System.Web.WebPages.Razor.dll
 F:\POS-Coffee\POS-Coffee\bin\WebGrease.dll
+F:\POS-Coffee\POS-Coffee\bin\Newtonsoft.Json.xml
 F:\POS-Coffee\POS-Coffee\bin\PagedList.xml
 F:\POS-Coffee\POS-Coffee\bin\PagedList.Mvc.xml
+F:\POS-Coffee\POS-Coffee\bin\System.Net.Http.Formatting.xml
+F:\POS-Coffee\POS-Coffee\bin\System.Web.Http.xml
 F:\POS-Coffee\POS-Coffee\bin\System.Web.Helpers.xml
 F:\POS-Coffee\POS-Coffee\bin\System.Web.Mvc.xml
 F:\POS-Coffee\POS-Coffee\bin\System.Web.Optimization.xml
@@ -240,7 +245,6 @@ F:\POS-Coffee\POS-Coffee\bin\System.Web.Razor.xml
 F:\POS-Coffee\POS-Coffee\bin\System.Web.WebPages.xml
 F:\POS-Coffee\POS-Coffee\bin\System.Web.WebPages.Deployment.xml
 F:\POS-Coffee\POS-Coffee\bin\System.Web.WebPages.Razor.xml
-F:\POS-Coffee\POS-Coffee\bin\Newtonsoft.Json.xml
 F:\POS-Coffee\POS-Coffee\bin\Antlr3.Runtime.pdb
 F:\POS-Coffee\POS-Coffee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 F:\POS-Coffee\POS-Coffee\obj\Debug\POS_Coffe.csproj.AssemblyReference.cache

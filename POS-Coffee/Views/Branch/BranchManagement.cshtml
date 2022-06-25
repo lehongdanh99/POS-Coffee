@@ -5,12 +5,12 @@
 
 <div class="row">
     <div class="column">
-        @using (Html.BeginForm("MaterialManagement", "Material", FormMethod.Get@*, new { @class = "form-inline" }*@))
+        @using (Html.BeginForm("BranchManagement", "Branch", FormMethod.Get@*, new { @class = "form-inline" }*@))
 {
 <div class="form-check-label">
     <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
     <button type="submit" value="Search" class="form-check-input search-btn fa fa-search"></button>
-    <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />
+    @*<button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />*@
 </div>
 }
         <div class="card">
@@ -31,7 +31,7 @@
                                 <td>@item.Id</td>
                                 <td>@item.BranchName</td>
                                 <td style="text-align:center">
-                                    <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {Id = item.Id })"'> </button>
+                                    @*<button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditBranch", "Branch", new {Id = item.Id })"'> </button>*@
                                     <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.Id))" class="btn btn-danger fa fa-remove" />
                                 </td>
                             </tr>
@@ -51,11 +51,11 @@
 <script>
     function AddNew() {
         console.log()
-        window.location.href = "/Material/AddMaterial"
+        window.location.href = "/Branch/AddBranch"
     }
     function btnConfirm(ID) {
         if (confirm('Do you want to delete ?')) {
-            var url = '@Url.Action("DeleteMaterial", "Material")?ID=' + ID;
+            var url = '@Url.Action("DeleteBranch", "Branch")?ID=' + ID;
             window.location.href = url;
         }
     }

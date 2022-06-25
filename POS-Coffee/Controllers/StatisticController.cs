@@ -12,114 +12,142 @@ namespace POS_Coffe.Controllers
     {
         // GET: Statistic
         public int pageSize = 10;
-        public ActionResult Index(string FromDate, string ToDate, string sortOrder, int? pageNo)
+        public ActionResult Index(string daytime, string ToDate, string sortOrder, int? pageNo)
         {
-            ViewBag.ToDateSortParm = String.IsNullOrEmpty(sortOrder) ? "ToDate_desc" : "";
-            ViewBag.CustomerPaySortParm = sortOrder == "CustomerPay" ? "CustomerPay_desc" : "CustomerPay";
-            ViewBag.DiscountPriceSortParm = String.IsNullOrEmpty(sortOrder) ? "DiscountPrice_desc" : "";
-            ViewBag.TotalPriceSortParm = String.IsNullOrEmpty(sortOrder) ? "TotalPrice_desc" : "";
-            IQueryable<StatisticModel> lstStatistic = StatisticAPIHandlerFakeData.GetInstance().ListStatistic.AsQueryable();
-            int count = 0;
-            if (!String.IsNullOrWhiteSpace(FromDate) || !String.IsNullOrWhiteSpace(ToDate))
+            //ViewBag.ToDateSortParm = String.IsNullOrEmpty(sortOrder) ? "ToDate_desc" : "";
+            //ViewBag.CustomerPaySortParm = sortOrder == "CustomerPay" ? "CustomerPay_desc" : "CustomerPay";
+            //ViewBag.DiscountPriceSortParm = String.IsNullOrEmpty(sortOrder) ? "DiscountPrice_desc" : "";
+            //ViewBag.TotalPriceSortParm = String.IsNullOrEmpty(sortOrder) ? "TotalPrice_desc" : "";
+            //IQueryable<StatisticModel> lstStatistic = StatisticAPIHandlerFakeData.GetInstance().ListStatistic.AsQueryable();
+            //int count = 0;
+            //if (!String.IsNullOrWhiteSpace(FromDate) || !String.IsNullOrWhiteSpace(ToDate))
+            //{
+            //    DateTime FromDateSearch = DateTime.Now;
+            //    DateTime ToDateSearch = DateTime.Now;
+            //    try
+            //    {
+            //        FromDateSearch = DateTime.Parse(FromDate);
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+            //    }
+            //    try
+            //    {
+            //        ToDateSearch = DateTime.Parse(ToDate);
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+            //    }
+            //    System.Console.WriteLine(FromDateSearch);
+            //    System.Console.WriteLine(FromDateSearch);
+
+            //    //lstStatistic = lstStatistic.Where(s => s.FromDate > FromDateSearch);
+            //    //lstStatistic = lstStatistic.Where(s => s.ToDate < ToDateSearch);
+            //    lstStatistic = lstStatistic.Where(s => s.Day > FromDateSearch && s.Day < ToDateSearch);
+
+            //    switch (sortOrder)
+            //    {
+            //        //case "FromDate_desc":
+            //        //    //lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate.Year).ThenByDescending(s => s.FromDate.Month).ThenByDescending(s => s.FromDate.Day);
+            //        //    lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate.Date);
+            //        //    break;
+            //        case "ToDate_desc":
+            //            lstStatistic = lstStatistic.OrderByDescending(s => s.Day.Year).ThenByDescending(s => s.Day.Month).ThenByDescending(s => s.Day.Day);
+            //            break;
+            //        case "CustomerPay_desc":
+            //            lstStatistic = lstStatistic.OrderByDescending(s => s.CustomerPay);
+            //            break;
+            //        case "DiscountPrice_desc":
+            //            lstStatistic = lstStatistic.OrderByDescending(s => s.DiscountPrice);
+            //            break;
+            //        case "TotalPrice_desc":
+            //            lstStatistic = lstStatistic.OrderByDescending(s => s.TotalPrice);
+            //            break;
+            //    }
+
+            //    foreach (var item in lstStatistic)
+            //    {
+            //        count = item.CustomerPay + count;
+            //    }
+            //    ViewBag.Count = count;
+            //    foreach (StatisticModel model in lstStatistic)
+            //    {
+            //        if (model != null)
+            //            continue;
+            //    }
+
+            //    var Pagination1 = new PagedList<StatisticModel>(lstStatistic, pageNo ?? 1, pageSize);
+
+            //    return View(Pagination1);
+
+            //}
+            //switch (sortOrder)
+            //{
+            //    //case "FromDate_desc":
+            //    //    lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate);
+            //    //    break;
+            //    case "ToDate_desc":
+            //        lstStatistic = lstStatistic.OrderByDescending(s => s.Day);
+            //        break;
+            //    case "CustomerPay_desc":
+            //        lstStatistic = lstStatistic.OrderByDescending(s => s.CustomerPay);
+            //        break;
+            //    case "DiscountPrice_desc":
+            //        lstStatistic = lstStatistic.OrderByDescending(s => s.DiscountPrice);
+            //        break;
+            //    case "TotalPrice_desc":
+            //        lstStatistic = lstStatistic.OrderByDescending(s => s.TotalPrice);
+            //        break;
+            //}
+
+            //foreach (var item in lstStatistic)
+            //{
+            //    count = item.CustomerPay + count;
+            //}
+
+            //ViewBag.Count = count;
+            //foreach (StatisticModel model in lstStatistic)
+            //{
+            //    if (model != null)
+            //        continue;
+            //}
+
+            //return View(lstStatistic.ToList());
+
+            if (!String.IsNullOrWhiteSpace(daytime))
             {
-                DateTime FromDateSearch = DateTime.Now;
-                DateTime ToDateSearch = DateTime.Now;
-                try
-                {
-                    FromDateSearch = DateTime.Parse(FromDate);
-                }
-                catch (Exception ex)
-                {
-
-                }
-                try
-                {
-                    ToDateSearch = DateTime.Parse(ToDate);
-                }
-                catch (Exception ex)
-                {
-
-                }
-                System.Console.WriteLine(FromDateSearch);
-                System.Console.WriteLine(FromDateSearch);
-
-                //lstStatistic = lstStatistic.Where(s => s.FromDate > FromDateSearch);
-                //lstStatistic = lstStatistic.Where(s => s.ToDate < ToDateSearch);
-                lstStatistic = lstStatistic.Where(s => s.Day > FromDateSearch && s.Day < ToDateSearch);
-
-                switch (sortOrder)
-                {
-                    //case "FromDate_desc":
-                    //    //lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate.Year).ThenByDescending(s => s.FromDate.Month).ThenByDescending(s => s.FromDate.Day);
-                    //    lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate.Date);
-                    //    break;
-                    case "ToDate_desc":
-                        lstStatistic = lstStatistic.OrderByDescending(s => s.Day.Year).ThenByDescending(s => s.Day.Month).ThenByDescending(s => s.Day.Day);
-                        break;
-                    case "CustomerPay_desc":
-                        lstStatistic = lstStatistic.OrderByDescending(s => s.CustomerPay);
-                        break;
-                    case "DiscountPrice_desc":
-                        lstStatistic = lstStatistic.OrderByDescending(s => s.DiscountPrice);
-                        break;
-                    case "TotalPrice_desc":
-                        lstStatistic = lstStatistic.OrderByDescending(s => s.TotalPrice);
-                        break;
-                }
-
-                foreach (var item in lstStatistic)
-                {
-                    count = item.CustomerPay + count;
-                }
-                ViewBag.Count = count;
-                foreach (StatisticModel model in lstStatistic)
-                {
-                    if (model != null)
-                        continue;
-                }
-
-                var Pagination1 = new PagedList<StatisticModel>(lstStatistic, pageNo ?? 1, pageSize);
-
-                return View(Pagination1);
-     
+                string str = daytime;
+                string[] LstStr = str.Split('-');
+                GlobalDef.DAY = Convert.ToInt32(LstStr[2]);
+                GlobalDef.MONTH = Convert.ToInt32(LstStr[1]);
+                GlobalDef.YEAR = Convert.ToInt32(LstStr[0]);
             }
-            switch (sortOrder)
+            else
             {
-                //case "FromDate_desc":
-                //    lstStatistic = lstStatistic.OrderByDescending(s => s.FromDate);
-                //    break;
-                case "ToDate_desc":
-                    lstStatistic = lstStatistic.OrderByDescending(s => s.Day);
-                    break;
-                case "CustomerPay_desc":
-                    lstStatistic = lstStatistic.OrderByDescending(s => s.CustomerPay);
-                    break;
-                case "DiscountPrice_desc":
-                    lstStatistic = lstStatistic.OrderByDescending(s => s.DiscountPrice);
-                    break;
-                case "TotalPrice_desc":
-                    lstStatistic = lstStatistic.OrderByDescending(s => s.TotalPrice);
-                    break;
+                GlobalDef.DAY = DateTime.Now.Day;
+                GlobalDef.MONTH = DateTime.Now.Month;
+                GlobalDef.YEAR = DateTime.Now.Year;
             }
 
-            foreach (var item in lstStatistic)
+
+            List<StatisticModel> LstStatistic = StatisticAPIHandlerData.GetInstance().ListStatistic.ToList();
+            int sum = 0;
+            foreach(var item in LstStatistic)
             {
-                count = item.CustomerPay + count;
+                foreach(var data in item.receipts)
+                {
+                    sum = data.totalPrice;
+                }
             }
-
-            ViewBag.Count = count;
-            foreach (StatisticModel model in lstStatistic)
-            {
-                if (model != null)
-                    continue;
-            }
-
-            return View(lstStatistic.ToList());
+            ViewBag.Count = sum;
+            return View(LstStatistic);
         }
-        
-        public PartialViewResult GetDetails(string Table)
+
+        public PartialViewResult GetDetails(StatisticModel Data)
         {
-            StatisticModel lstStatistic = StatisticAPIHandlerFakeData.GetInstance().ListStatistic.Where(s => s.Table.Equals(Table)).FirstOrDefault();
+            List<StatisticModel> lstStatistic = StatisticAPIHandlerData.GetInstance().ListStatistic.Where(s => s.day==Data.day && s.month==Data.month && s.year == Data.year).ToList();
             return PartialView(lstStatistic);
         }
     }

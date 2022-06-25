@@ -79,7 +79,7 @@ namespace POS_Coffe.Controllers
         }
 
         [HttpGet]
-        public ActionResult EditEmployee(int EmployeeID)
+        public ActionResult EditEmployee(int id)
         {
             //var EditData = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.Id == EmployeeID);
             //EmployeeModel data = new EmployeeModel();
@@ -109,10 +109,10 @@ namespace POS_Coffe.Controllers
             //return RedirectToAction("ViewEmployee", "Employee");
             return View();
         }
-        public ActionResult DeleteEmployee(int EmployeeID)
+        public ActionResult DeleteEmployee(int id)
         {
         //    var deleteData = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.EmployeeID == EmployeeID).AsQueryable();
-            var data = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.id == EmployeeID).FirstOrDefault();
+            var data = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.id == id).FirstOrDefault();
             EmployeeAPIHandlerData.GetInstance().ListEmployee.Remove(data);
             return RedirectToAction("ViewEmployee", "Employee");
         }

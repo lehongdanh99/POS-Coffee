@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="column">
-        @using (Html.BeginForm("MaterialManagement", "Material", FormMethod.Get@*, new { @class = "form-inline" }*@))
+        @using (Html.BeginForm("DrinkCakeManagement", "DrinkCake", FormMethod.Get@*, new { @class = "form-inline" }*@))
 {
 <div class="form-check-label">
     <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
@@ -37,7 +37,7 @@
                             <td>@item.Name</td>
                             <td>@item.Type</td>
                             <td style="text-align:center">
-                                <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {Id = item.Id })"'> </button>
+                                <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditDrinkCake", "DrinkCake", new {Id = item.Id })"'> </button>
                                 <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.Id))" class="btn btn-danger fa fa-remove" />
                             </td>
                         </tr>
@@ -61,7 +61,7 @@
     }
     function btnConfirm(Id) {
         if (confirm('Do you want to delete ?')) {
-            var url = '@Url.Action("DeleteMaterial", "Material")?Id=' + Id;
+            var url = '@Url.Action("DeleteDrinkCake", "DrinkCake")?Id=' + Id;
             window.location.href = url;
         }
     }

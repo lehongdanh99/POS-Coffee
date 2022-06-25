@@ -10,11 +10,11 @@ namespace POS_Coffe.Models
         public int id { get; set; }
         public EmployeeModel employee { get; set; }
         public CustomerModel customer { get; set; }
-        public string Phone { get; set; }
-        public string Name { get; set; }
-        public int Point { get; set; }
-        public int TotalPrice { get; set; }
-        public int OriginalPrice { get; set; }
+        public string phone { get; set; }
+        public string name { get; set; }
+        public int point { get; set; }
+        public int totalPrice { get; set; }
+        public int originalPrice { get; set; }
         public string PaymentType { get; set; }
         public string ServiceType { get; set; }
         public int CustomerPay { get; set; }

@@ -15,5 +15,17 @@ namespace POS_Coffe.Controllers
             List<BranchModel> LstBranch = BranchAPIHandlerData.GetInstance().ListBranch.ToList();
             return View(LstBranch);
         }
+        public ActionResult AddBranch() 
+        {
+            return View();
+        }
+        public ActionResult EditBranch()
+        {
+            return View();
+        }
+        public ActionResult DeleteBranch()
+        {
+            return RedirectToAction("BranchManagement", "Branch");
+        }
     }
 }

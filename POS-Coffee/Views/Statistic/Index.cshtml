@@ -13,25 +13,25 @@
 @*<a class="button" href="#">Search</a>
     <input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />*@
 
+        <div class="form-check-label">
+            Day:
+            <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="daytime" id="daytime" />
+            @*Month:
+        <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="month" class="form-check-input" name="month" id="month" />
+        Year:
+        <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="text" class="form-check-input" name="year" id="year" />*@
+            <button type="submit" value="Search" class="btn fa fa-search"></button>
+            Filter:
+            <select class="form-check-input">
+                <option disabled selected>--none--</option>
+                <option>Day</option>
+                <option>Month</option>
+                <option>Year</option>
+            </select>
+            <button type="submit" value="Apply" class="btn fa fa-filter"></button>
+        </div>
 <div class="form-check-label">
-    From date:
-    <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="FromDate" id="FromDate" />
-    To date:
-    <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="ToDate" id="ToDate" />
 
-    <button type="submit" value="Search" class="btn fa fa-search"></button>
-
-
-</div>
-<div class="form-check-label">
-    Filter:
-    <select class="form-check-input">
-        <option disabled selected>--none--</option>
-        <option>Day</option>
-        <option>Month</option>
-        <option>Year</option>
-    </select>
-    <button type="submit" value="Apply" class="btn fa fa-filter"></button>
     <h4 class="form-check-input" style="color: palevioletred">Customer pay: @ViewBag.Count vnd</h4>
 </div>
 }
@@ -45,9 +45,11 @@
                             <th>@Html.ActionLink("Day", "Index", new { sortOrder = ViewBag.ToDateSortParm })</th>
                             @*<th>VoucherName</th>
                                 <th>Table</th>*@
-                            <th>@Html.ActionLink("TotalPrice", "Index", new { sortOrder = ViewBag.TotalPriceSortParm })</th>
-                            <th>@Html.ActionLink("DiscountPrice", "Index", new { sortOrder = ViewBag.DiscountPriceSortParm })</th>
-                            <th>@Html.ActionLink("CustomerPay", "Index", new { sortOrder = ViewBag.CustomerPaySortParm })</th>
+                            <th>@Html.ActionLink("Month", "Index", new { sortOrder = ViewBag.TotalPriceSortParm })</th>
+                            <th>@Html.ActionLink("Year", "Index", new { sortOrder = ViewBag.DiscountPriceSortParm })</th>
+                            <th>@Html.ActionLink("Receipt Total", "Index", new { sortOrder = ViewBag.CustomerPaySortParm })</th>
+                            <th>@Html.ActionLink("Revenue", "Index", new { sortOrder = ViewBag.CustomerPaySortParm })</th>
+
                             @*<th>TypePayment</th>
                                 <th>TypeService</th>*@
                             <th></th>
@@ -57,19 +59,15 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.Day.ToString("dd/MM/yyyy")</td>
-                                <td>@item.TotalPrice</td>
-                                <td>@item.DiscountPrice</td>
-                                <td>@item.CustomerPay</td>
-                                @*<td><button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("GetDetails", "Statistic", new {Table = item.Table })"'></button></td>*@
-                                <td><button type="button" class="btn btn-primary fa fa-sticky-note" onclick="changeStatus(@counting)"></button></td>
+                                <td>@item.day</td>
+                                <td>@item.month</td>
+                                <td>@item.year</td>
+                                <td>@item.receiptTotal</td>
+                                <td>@item.revenue</td>
+                                <td><button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("GetDetails", "Statistic", new {day = item.day, month = item.month, year = item.year })"'></button></td>
+                                @*<td><button type="button" class="btn btn-primary fa fa-sticky-note" onclick="changeStatus(@counting)"></button></td>*@
                             </tr>
 
-                            <tr style="display:none" name="@counting" id="@counting">
-                                <td>@item.VoucherName</td>
-                                <td>@counting</td>
-                            </tr>
-                            counting++;
 
                         }
                     </tbody>
@@ -98,7 +96,7 @@
         }
     }
 
-    function changeStatus(counting) { 
+    function changeStatus(counting) {
         if (document.getElementById(counting).style.display == "none") {
             document.getElementById(counting).style.display = "block";
         }
@@ -126,3 +124,5 @@
     //$('#Value').click(function () {
     //    document.getElementById("error").style.display = "none"
     //})*@
+
+

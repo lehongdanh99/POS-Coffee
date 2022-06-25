@@ -101,7 +101,7 @@ namespace POS_Coffe.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult EditVoucher(int VoucherID)
+        public ActionResult EditVoucher(int id)
         {
             //List<string> dataIDFood = new List<string>();
             //dataIDFood.Add("--none--");
@@ -137,10 +137,11 @@ namespace POS_Coffe.Controllers
             //return RedirectToAction("VoucherManagement", "VoucherManagement");
             return View();
         }
-        public ActionResult DeleteVoucher(int VoucherID)
+        public ActionResult DeleteVoucher(int id)
         {
-            var data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.Id == VoucherID).FirstOrDefault();
-            VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Remove(data);
+            //var data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.Id == VoucherID).FirstOrDefault();
+            //VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Remove(data);
+            //return RedirectToAction("VoucherManagement", "VoucherManagement");
             return RedirectToAction("VoucherManagement", "VoucherManagement");
         }
         public ActionResult FilterVoucher()

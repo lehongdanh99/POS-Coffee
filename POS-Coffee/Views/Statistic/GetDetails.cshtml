@@ -1,4 +1,4 @@
-﻿@model POS_Coffe.Models.StatisticModel
+﻿@model List<POS_Coffe.Models.StatisticModel>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -11,7 +11,7 @@
         <table class="styled-table">
             <thead>
                 <tr>
-                    <th>Day</th>
+                    <th>Employee</th>
                     <th>Voucher name</th>
                     <th>Table</th>
                     <th>Total Price</th>
@@ -22,16 +22,25 @@
                 </tr>
             </thead>
             <tbody>
-                    <tr>
-                        <td>@Model.Day.ToString("dd/MM/yyyy")</td>
-                        <td>@Model.VoucherName</td>
-                        <td>@Model.Table</td>
-                        <td>@Model.TotalPrice</td>
-                        <td>@Model.DiscountPrice</td>
-                        <td>@Model.CustomerPay</td>
-                        <td>@Model.TypePayment</td>
-                        <td>@Model.TypeService</td>
-                    </tr>
+                @foreach (var item in Model)
+                {
+                    foreach (var data in item.receipts)
+                    {
+                        <tr>
+                            <td></td>
+                            <td>@data.customer.Name</td>
+                            <td>@data.customer.Phone</td>
+                            <td>@data.customer.Point</td>
+                            <td>@data.employee.name</td>
+                            <td>@data.totalPrice</td>
+                            @foreach (var receiptDetails in data.receiptDetails)
+                            {
+                                <td>@receiptDetails.name</td>
+                                <td>@receiptDetails.price</td>
+                            }
+                        </tr>
+                    }
+                }
             </tbody>
         </table>
     </div>
