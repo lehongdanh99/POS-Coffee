@@ -54,6 +54,7 @@ namespace POS_Coffe.Controllers
                 type = data.type,
                 DrinkCakeVariations = LstDC,
             };
+
             if (RestAPIHandler<DrinkCakeModel>.PostData(DrinkCakeData, "drinkcake", GlobalDef.TOKEN) == true)
             {
                 DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake = RestAPIHandler<DrinkCakeModel>.parseJsonToModel(GlobalDef.DRINKCAKE_JSON_CONFIG_PATH);
