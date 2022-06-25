@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using POS_Coffe.Models;
+using PagedList;
 
 namespace POS_Coffe.Controllers
 {
@@ -13,7 +14,8 @@ namespace POS_Coffe.Controllers
         public ActionResult DrinkCakeManagement(string StringSearch, int? pageNo, string sortOrder)
         {
             List<DrinkCakeModel> LstDrinkCake = DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.ToList();
-            return View(LstDrinkCake);
+            var Pagination = new PagedList<DrinkCakeModel>(LstDrinkCake, pageNo ?? 1, pageSize);
+            return View(Pagination);
         }
         [HttpGet]
         public ActionResult AddDrinkCake()
@@ -29,28 +31,41 @@ namespace POS_Coffe.Controllers
             ViewBag.foodtype = new SelectList(foodtype, "");
 
             DrinkCakeModel model = new DrinkCakeModel();
+
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult AddDrinkCake(FoodModel data/*, HttpPostedFileWrapper Picture*/)
+        public ActionResult AddDrinkCake(DrinkCakeDetail data/*, HttpPostedFileWrapper Picture*/)
         {
-            //var test = Path.Combine(Server.MapPath("~/Content/images"), Picture.FileName);
-            int count = DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.Count();
-            DrinkCakeModel model = new DrinkCakeModel();
-            //model. = count + 1;
-            //model.FoodName = data.FoodName;
-            //model.FoodPrice = data.FoodPrice;
-            //model.FoodType = data.FoodType;
-            //model.FoodImage = test;
-            //model.Picture = ;
-            DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.Add(model);
-            return RedirectToAction("DrinkCakeManagement", "DrinkCake", model);
+            List<DrinkCakeVariations> LstDC = new List<DrinkCakeVariations>();
+            DrinkCakeVariations dataDC = new DrinkCakeVariations()
+            {
+                id = 0,
+                name = data.name1,
+                description =  data.description,
+                price = Convert.ToInt32(data.price),
+            };
+            LstDC.Add(dataDC);
+            DrinkCakeModel DrinkCakeData = new DrinkCakeModel()
+            {
+                id = 0,
+                name = data.name,
+                type = data.type,
+                DrinkCakeVariations = LstDC,
+            };
+            if (RestAPIHandler<DrinkCakeModel>.PostData(DrinkCakeData, "drinkcake", GlobalDef.TOKEN) == true)
+            {
+                DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake = RestAPIHandler<DrinkCakeModel>.parseJsonToModel(GlobalDef.DRINKCAKE_JSON_CONFIG_PATH);
+            }
+            return RedirectToAction("DrinkCakeManagement", "DrinkCake");
         }
 
         public ActionResult EditDrinkCake(int id)
         {
-            return View();
+            var data = DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.Where(s => s.id == id).FirstOrDefault();
+            DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.Remove(data);
+            return RedirectToAction("DrinkCakeManagement", "DrinkCake");
         }
     }
 }

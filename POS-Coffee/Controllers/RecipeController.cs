@@ -92,6 +92,8 @@ namespace POS_Coffe.Controllers
         }
 
         public ActionResult EditRecipe() { return View(); }
-        public ActionResult DeleteRecipe() { return View(); }
+        public ActionResult DeleteRecipe(
+            
+            ) { return View(); }
     }
 }

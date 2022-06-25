@@ -23,38 +23,33 @@
                 <h3>Add Food</h3>
             </div>
             <div class="card-block">
-                @using (Html.BeginForm("Add", "DrinkCake", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("AddDrinkCake", "DrinkCake", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="Name">Name</label>
+                            <label class="col-sm-3 col-form-label" for="name">Name</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="Type">Type</label>
+                            <label class="col-sm-3 col-form-label" for="type">Type</label>
                             <div class="col-sm-9">
-                                @Html.DropDownList("Type", (IEnumerable<SelectListItem>)ViewBag.foodtype, new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.type, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.type, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="name">Size</label>
+                            <label class="col-sm-3 col-form-label" for="description">Description</label>
                             <div class="col-sm-9">
-                                @*@Html.EditorFor(model => model., new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })*@
-                                <select>
-                                    <option value="M">Size M</option>
-                                    <option value="L">Size L</option>
-                                </select>
+                                <input type="text" class="form-control" name="description" id="description" />
                             </div>
                         </div>
                     </div>
@@ -63,7 +58,16 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="price">Price</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="price" id="price" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="name1">Type</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name1" id="name1" />
                             </div>
                         </div>
                     </div>

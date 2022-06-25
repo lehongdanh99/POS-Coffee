@@ -7,10 +7,10 @@ namespace POS_Coffe.Models
 {
     public class DrinkCakeModel :BaseModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Picture { get; set; }
-        public string Type { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string picture { get; set; }
+        public string type { get; set; }
         public List<DrinkCakeVariations> DrinkCakeVariations { get; set; }
     }
 
@@ -21,6 +21,7 @@ namespace POS_Coffe.Models
         public string description { get; set; }
         public int price { get; set; }
     }
+
     public class DrinkCakeAPIHandlerData
     {
 

@@ -33,13 +33,13 @@
                         {
                             <tr>
                                 
-                                <td>@item.Name</td>
-                                <td>@item.Type</td>
-                                <td>@item.Unit</td>
-                                <td>@item.Amount</td>
+                                <td>@item.name</td>
+                                <td>@item.type</td>
+                                <td>@item.unit</td>
+                                <td>@item.amount</td>
                                 <td style="text-align:center">
-                                    <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {ID = item.ID })"'> </button>
-                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.ID))" class="btn btn-danger fa fa-remove" />
+                                    <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {id = item.id })"'> </button>
+                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.id))" class="btn btn-danger fa fa-remove" />
                                 </td>
                             </tr>
                         }
@@ -60,9 +60,9 @@
         console.log()
         window.location.href = "/Material/AddMaterial"
     }
-    function btnConfirm(ID) {
+    function btnConfirm(id) {
         if (confirm('Do you want to delete ?')) {
-            var url = '@Url.Action("DeleteMaterial", "Material")?ID=' + ID;
+            var url = '@Url.Action("DeleteMaterial", "Material")?id=' + id;
             window.location.href = url;
         }
     }

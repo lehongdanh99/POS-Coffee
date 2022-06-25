@@ -31,9 +31,9 @@
                                 <td>@item.occurTime</td>
                                 <td>@item.table</td>
                                 <td>@item.employee.name</td>
-                                <td>
+                                @*<td>
                                     <button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "HistoryTracking", new {id = item.id })"'> </button>
-                                </td>
+                                </td>*@
                                 @*<td>
 
                         <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("IndexOfHistoryTracking", "HistoryTracking", new { HistoryID = item.HistoryID })"'> </button>

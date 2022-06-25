@@ -7,10 +7,12 @@ namespace POS_Coffe.Models
 {
     public class DrinkCakeDetail
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Picture { get; set; }
-        public string Type { get; set; }
-        public List<DrinkCakeVariations> DrinkCakeVariations { get; set; }
+        public List<DrinkCakeVariations> drinkCakeVariations { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
+        public string name1 { get; set; }
+        public string description { get; set; }
+        public string price { get; set; }
     }
 }
