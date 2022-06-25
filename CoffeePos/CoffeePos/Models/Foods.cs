@@ -17,6 +17,14 @@ namespace CoffeePos
         public string name { get; set; }
         public double FoodPrice { get; set; }
 
+        private string stringformatPrice;
+
+        public string StringformatPrice
+        {
+            get { return string.Format("{0:#,##0}", FoodPrice); }
+            set { stringformatPrice = value; }
+        }
+
         public List<FoodVariations> drinkCakeVariations { get; set; }
 
         public FoodVariations drinkCakeVariation { get; set; }

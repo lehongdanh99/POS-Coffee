@@ -35,7 +35,7 @@
             <Button Background="Green"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
-                           Click="BtnClose_Click"
+                           Click="BtnLogout_Click"
                     Height="50"
                     materialDesign:ButtonAssist.CornerRadius="25"
                            Style="{StaticResource MaterialDesignRaisedButton}"
@@ -172,7 +172,7 @@
                                             <Grid Grid.Column="1">
                                                 <StackPanel Width="140" Margin="0 5">
                                                     <TextBlock Text="{Binding name}" TextWrapping="Wrap" FontWeight="Bold" FontSize="14" Foreground="Black"></TextBlock>
-                                                    <TextBlock Text="{Binding FoodPrice, StringFormat={}{0:#.###}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
+                                                    <TextBlock Text="{Binding FoodPrice, StringFormat={}{0:#,##0}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
                                                 </StackPanel>
 
                                                 <Button Background="Orange" Height="25" Width="50"
@@ -356,7 +356,7 @@
                     <Grid Grid.Row="1" Margin="10 0" VerticalAlignment="Center">
                         <materialDesign:PackIcon Kind="Money" FontSize="500" Foreground="DarkSlateGray"/>
                         <TextBlock Foreground="Black" Margin="20 0" Text="{x:Static language:Lang.Home_Price}"></TextBlock>
-                        <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding AmountFood, Mode=TwoWay, IsAsync=true}"></TextBlock>
+                        <TextBlock Foreground="Black" HorizontalAlignment="Right" Text="{Binding HomePayment, StringFormat={}{0:#,##0}}"></TextBlock>
                     </Grid>
                     <Grid Grid.Row="2" Margin="10 0" VerticalAlignment="Center">
                         <materialDesign:PackIcon Kind="Discount" FontSize="500" Foreground="DarkSlateGray"/>
@@ -371,7 +371,7 @@
                     <Grid Grid.Row="3" Margin="10 0" VerticalAlignment="Center">
                         <materialDesign:PackIcon Kind="AttachMoney" Margin="0 5" Foreground="red"/>
                         <TextBlock Foreground="Red" FontSize="20" Margin="20 0" Text="{x:Static language:Lang.Home_Total}"></TextBlock>
-                        <TextBlock Foreground="Red" FontSize="20" HorizontalAlignment="Right" Text="{Binding TotalOrder, Mode=TwoWay, IsAsync=true}"></TextBlock>
+                        <TextBlock Foreground="Red" FontSize="20" HorizontalAlignment="Right" Text="{Binding TotalOrder, StringFormat={}{0:#,##0}}"></TextBlock>
                     </Grid>
                     <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
                         <StackPanel Margin="0 5 0 0">

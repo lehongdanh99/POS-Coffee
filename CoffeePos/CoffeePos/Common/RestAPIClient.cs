@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Windows;
 using static CoffeePos.Common.Enums;
+using static CoffeePos.Models.ReceiptModel;
 
 namespace CoffeePos.Common
 {
@@ -76,7 +77,12 @@ namespace CoffeePos.Common
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         var resul = response.Content.ReadAsStringAsync().Result;
-                        
+                        if (path == GlobalDef.ZALOPAY_API)
+                        {
+                            
+                            GlobalDef.zaloPayResult = JsonConvert.DeserializeObject<ZaloPayResult>(resul);
+                        }
+                        return true;
                     }
                     else
                     {

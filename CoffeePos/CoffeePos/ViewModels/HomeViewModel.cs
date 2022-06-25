@@ -97,7 +97,7 @@ namespace CoffeePos.ViewModels
             {
                 EnableOrder = false;
             }
-            DiscountOrder = 0;
+            //DiscountOrder = 0;
             NotifyOfPropertyChange(() => EnableOrder);
             NotifyOfPropertyChange(() => DiscountOrder);
             TotalOrder = HomePayment - (HomePayment*DiscountOrder/100);
@@ -434,7 +434,7 @@ namespace CoffeePos.ViewModels
             {
                 if(CustomerSearch != null)
                 {
-
+                    GlobalDef.cus = CustomerSearch;
                     foreach (Foods food in RestAPIClient<Foods>.parseJsonToModel(GlobalDef.FOODHOBBY_API + CustomerSearch.Id))
                     {
                         Foods foodAdd = RestAPIClient<Foods>.GetDataById(GlobalDef.FOOD_API+ @"/"+ food.drinkCakeId, GlobalDef.token);

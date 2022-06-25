@@ -1,4 +1,5 @@
 ﻿using CoffeePos.Common;
+using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,9 +58,12 @@ namespace CoffeePos.ViewModels
                 
                 FoodPayment.Add(food.FoodOrderPrice);
             }
+            CustomerPhone = GlobalDef.cusPhone;
+            EmployeeName = GlobalDef.employeeName;
             TotalPayment = GlobalDef.ReceiptPayment.TotalPrice;
             DateReceipt = DateTime.Now.ToString();
             ReceiptID = GlobalDef.ReceiptPayment.Id;
+            TypeService = GlobalDef.ReceiptPayment.ServiceType;
 
         }
 
@@ -86,10 +90,16 @@ namespace CoffeePos.ViewModels
             else
             {
                 TypePayment = "+ Thanh toán tiền mặt: ";
+            }
+            if(GlobalDef.ReceiptDoneDetail.Customer !=null)
+            {
+                CustomerPhone = GlobalDef.ReceiptDoneDetail.Customer.phone;
             }    
+            EmployeeName = GlobalDef.ReceiptDoneDetail.Employee.Name;
             TotalPayment = GlobalDef.ReceiptDoneDetail.TotalPrice;
             DateReceipt = GlobalDef.ReceiptDoneDetail.createdAtFormatVN;
             ReceiptID = GlobalDef.ReceiptDoneDetail.Id;
+            TypeService = GlobalDef.ReceiptDoneDetail.serviceType;
         }
 
         private string employeeName;
@@ -124,6 +134,15 @@ namespace CoffeePos.ViewModels
             set { typePayment = value; }
         }
 
+        private string typeService;
+
+        public string TypeService
+        {
+            get { return typeService; }
+            set { typeService = value; }
+        }
+
+
         private int receiptID;
 
         public int ReceiptID
@@ -147,6 +166,17 @@ namespace CoffeePos.ViewModels
             get { return timeReceipt; }
             set { timeReceipt = value; }
         }
+
+        private string customer;
+
+        public string CustomerPhone
+        {
+            get { return customer; }
+            set { customer = value; }
+        }
+
+
+
 
         private List<int> stt = new List<int>();
         public List<int> Stt

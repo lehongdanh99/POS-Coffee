@@ -102,7 +102,7 @@
                     <Grid Height="49">
                         <TextBlock Text="Tiền trả khách" Foreground="Black" FontSize="15" VerticalAlignment="Center" FontWeight="DemiBold"
                                Margin="20 0"></TextBlock>
-                        <TextBlock Text="{Binding RefundMoney}" x:Name="TxtRefundMoney" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
+                        <TextBlock Text="{Binding RefundMoney, StringFormat={}{0:#,##0}}" x:Name="TxtRefundMoney" Foreground="Black" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Right"
                                Margin="20 0" FontWeight="DemiBold"></TextBlock>
                     </Grid>
                 </StackPanel>
@@ -117,9 +117,12 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <TextBlock Text="Chi tiết hóa đơn" Foreground="Black" FontSize="15" VerticalAlignment="Center" Margin="20 0" FontWeight="DemiBold"/>
+                    <TextBlock Text="Chi tiết hóa đơn" Foreground="Black" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" FontWeight="DemiBold"/>
+                    <Button HorizontalAlignment="Right" Margin="10 0" Background="LightGray" Width="200" BorderBrush="{x:Null}"
+                            cal:Message.Attach="[Event Click] = [Action btRegister_Click()]">Đăng ký thành viên</Button>
                 </Grid>
                 <Line Grid.Row="2" X1="10" Y1="0" X2="300" Y2="0" Stroke="#FFC8C2C2" StrokeThickness="1"  Margin="50 30"/>
                 <Line Grid.Row="4" X1="10" Y1="0" X2="300" Y2="0" Stroke="#FFC8C2C2" StrokeThickness="1"  Margin="50 30"/>
@@ -156,7 +159,7 @@
                                                     <TextBlock Text="{Binding FoodOrderName}" TextWrapping="Wrap" FontWeight="Bold" FontSize="14" Foreground="Black"></TextBlock>
                                                     <TextBlock Text="{Binding FoodOrderMore}" Visibility="{Binding ViOrderMore}" TextWrapping="Wrap" FontSize="14" Foreground="Black"></TextBlock>
 
-                                                    <TextBlock Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
+                                                    <TextBlock Text="{Binding FoodOrderPrice, StringFormat={}{0:#,##0}}" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Foreground="#FFFCC800"></TextBlock>
                                                 </StackPanel>
                                                 <Grid Grid.Column="2">
                                                     <TextBlock Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" FontWeight="Bold" Text="{Binding FoodOrderCount}"></TextBlock>
@@ -206,7 +209,7 @@
                     <TextBlock Foreground="Orange" HorizontalAlignment="Right" FontSize="15" VerticalAlignment="Center" Text="%" Margin="20 0"></TextBlock>
                     <TextBlock Foreground="Orange" HorizontalAlignment="Center" FontSize="15" VerticalAlignment="Center" Text="{Binding CustomerName}" Margin="20 0"></TextBlock>
                 </Grid>
-                
+               
             </Grid>
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">

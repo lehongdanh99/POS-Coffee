@@ -145,6 +145,8 @@ namespace CoffeePos.Common
                         token = response.Content.ReadAsStringAsync().Result;
                         Employee emp = JsonConvert.DeserializeObject<Employee>(token);
                         token = emp.token;
+                        GlobalDef.employeeGlobal = emp;
+                        GlobalDef.employeeName = emp.Name;
                     }
                 }               
             }

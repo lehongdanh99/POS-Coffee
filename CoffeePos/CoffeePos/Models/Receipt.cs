@@ -55,6 +55,8 @@ namespace CoffeePos.Models
 
             public string CheckIn { get; set; }
 
+            public string ServiceType { get; set; }
+
             public string CheckOut { get; set; }
 
             public string Voucher { get; set; }
@@ -104,9 +106,20 @@ namespace CoffeePos.Models
 
             public double TotalPrice { get; set; }
 
+            private string stringformatPrice;
+
+            public string StringformatPrice
+            {
+                get { return string.Format("{0:#,##0}", TotalPrice); }
+                set { stringformatPrice = value; }
+            }
+
+
             public string PaymentType { get; set; }
 
-            public int customerId { get; set; }
+            public Customer Customer { get; set; }
+
+            public Employee Employee { get; set; }
 
             public string Note { get; set; }
 
@@ -191,5 +204,12 @@ namespace CoffeePos.Models
             public string note { get; set; }
 
         }
+
+        public class ZaloPayResult
+        {
+            public string return_message    { get; set; }
+
+            public string order_url { get; set; }
+        }    
     }
 }

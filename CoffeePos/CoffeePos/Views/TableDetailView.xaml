@@ -64,7 +64,7 @@
             <StackPanel Grid.Column="1" VerticalAlignment="Top">
                 <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{x:Static language:Lang.Table_Total}">
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{Binding TotalOrder}" FontWeight="Bold">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{Binding PaymentOrder, StringFormat={}{0:#,##0}}" FontWeight="Bold">
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center" Margin="0" Text="VND" FontWeight="DemiBold">
                 </TextBlock>
@@ -83,7 +83,7 @@
             <StackPanel Grid.Column="3" VerticalAlignment="Top">
                 <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{x:Static language:Lang.Table_Payment}">
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{Binding PaymentOrder}" Foreground="DarkSlateGray" FontWeight="Bold">
+                <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0" Text="{Binding TotalOrder, StringFormat={}{0:#,##0}}" Foreground="DarkSlateGray" FontWeight="Bold">
                 </TextBlock>
                 <TextBlock HorizontalAlignment="Center" Margin="0" Text="VND" FontWeight="DemiBold">
                 </TextBlock>
@@ -128,7 +128,7 @@
 
                                         </Grid>
                                         <Grid>
-                                            <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="DarkSlateGray"></TextBlock>
+                                            <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#,##0}}" FontWeight="Bold" FontSize="15" Foreground="DarkSlateGray"></TextBlock>
 
                                             <CheckBox IsChecked="{Binding ServedFood}" IsEnabled="{Binding IsEnable}" Checked="CheckBoxChanged" Unchecked="CheckBoxChanged"
                                                   HorizontalAlignment="Right" Margin="5" Content="Hoàn Thành" Visibility="{Binding VisibleCheckBox}"/>
@@ -170,7 +170,7 @@
 
                                         </Grid>
                                         <Grid>
-                                            <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#.###}}" FontWeight="Bold" FontSize="15" Foreground="DarkSlateGray"></TextBlock>
+                                            <TextBlock Margin="10 5" Text="{Binding FoodOrderPrice, StringFormat={}{0:#,##0}}" FontWeight="Bold" FontSize="15" Foreground="DarkSlateGray"></TextBlock>
 
                                         </Grid>
 

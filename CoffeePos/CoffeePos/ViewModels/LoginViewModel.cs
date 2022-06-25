@@ -14,6 +14,19 @@ namespace CoffeePos.ViewModels
         //Properties
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         //Constructor
+
+        private static LoginViewModel _instance;
+        public static LoginViewModel GetInstance()
+        {
+            if (_instance == null)
+            {
+                if (_instance == null)
+                {
+                    _instance = new LoginViewModel();
+                }
+            }
+            return _instance;
+        }
         public LoginViewModel()
         {
             Employee = getEmployees();
@@ -134,6 +147,7 @@ namespace CoffeePos.ViewModels
                 if(token != string.Empty)
                 {
                     GlobalDef.token = token;
+                    
                     ErrorVisible = Visibility.Hidden;
                     /*Code change language (Create new change language button and put it in)*/
                     if (language[LanguageSelected].ToString() == "English")

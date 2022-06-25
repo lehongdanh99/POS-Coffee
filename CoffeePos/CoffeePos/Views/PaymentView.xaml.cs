@@ -47,7 +47,7 @@ namespace CoffeePos.Views
         }
         private void PaymentZaloClick(object sender, RoutedEventArgs e)
         {
-            MoneyInput.Visibility = Visibility.Collapsed;
+            this.Hide();
         }
 
         private void textChangedEventHandler(object sender, EventArgs e)

@@ -50,8 +50,13 @@ namespace CoffeePos.Views
 
                 TableDetailViewModel.GetInstance().TryCloseAsync();
                 TablesViewModel.GetInstance().TablesAllList[Int32.Parse(GlobalDef.ReceiptDetail.Table)].TableStatus = false;
+            }
+            else if (MessageBoxText.Text.ToString() == "Đăng ký thành công")
+            {
+
             }    
-            
+
+
         }
 
         private void ConfirmDeleteClick(object sender, RoutedEventArgs e)

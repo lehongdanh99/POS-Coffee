@@ -203,7 +203,7 @@ namespace CoffeePos.ViewModels
             //GlobalDef.canEditDetail = isDone;
             //TableDetailViewModel tableDetailViewModel = new TableDetailViewModel();
             //tableDetailViewModel.eventChange += HandleCallBack;
-
+            GlobalDef.IsPaymentClick = false;
             GlobalDef.ReceiptDoneDetail = receipt;
             ReceiptReportViewModel.GetInstance().ClearDataReport();
             ReceiptReportViewModel.GetInstance().getDataDone();

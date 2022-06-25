@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using CoffeePos.Common;
 using CoffeePos.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -45,6 +46,13 @@ namespace CoffeePos.Views
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            GlobalDef.token = string.Empty;
+            this.Close();
+            GlobalDef.windowManager.ShowDialogAsync(LoginViewModel.GetInstance());
         }
 
         private void OrderCustom_Click(object sender, RoutedEventArgs e)

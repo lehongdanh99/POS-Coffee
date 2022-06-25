@@ -28,10 +28,14 @@ namespace CoffeePos.Views
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
-            //WindowManager windowManager = new WindowManager();
-            
-            GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
+            if(GlobalDef.IsPaymentClick)
+            {
+                MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
+                //WindowManager windowManager = new WindowManager();
+
+                GlobalDef.windowManager.ShowDialogAsync(messageBoxViewModel);
+            }    
+           
         }
     }
 }

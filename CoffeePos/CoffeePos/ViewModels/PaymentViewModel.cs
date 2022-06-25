@@ -105,6 +105,15 @@ namespace CoffeePos.ViewModels
             set { customerName = value; NotifyOfPropertyChange(() => CustomerName); }
         }
 
+        private string customerPhone;
+
+        public string CustomerPhone
+        {
+            get { return customerPhone; }
+            set { customerPhone = value; }
+        }
+
+
         private double customerPay;
 
         public double CustomerPay
@@ -150,6 +159,14 @@ namespace CoffeePos.ViewModels
                 new MoneySuggest(200000),
                 new MoneySuggest(500000),
             };
+        }
+
+        public void btRegister_Click()
+        {
+            RegisterViewModel registerViewModel = new RegisterViewModel();
+            //WindowManager windowManager = new WindowManager();
+            GlobalDef.windowManager.ShowDialogAsync(registerViewModel);
+            
         }
 
         private ObservableCollection<MoneySuggest> moneySuggest = new ObservableCollection<MoneySuggest>();
@@ -205,6 +222,7 @@ namespace CoffeePos.ViewModels
                     PointCustomer = customer.point;
                     TradePoint(PointCustomer);
                     CustomerName = customer.name;
+                    CustomerPhone = customer.phone;
                     Customer = customer;
                     break;
                 }
@@ -259,12 +277,14 @@ namespace CoffeePos.ViewModels
             if(GlobalDef.IsDeliveryPayment)
             {
                 receipt.serviceType = "AWAY";
+                GlobalDef.ReceiptPayment.ServiceType = "AWAY";
             }    
             else
             {
                 receipt.serviceType = "EATIN";
-            }    
-            
+                GlobalDef.ReceiptPayment.ServiceType = "EATIN";
+            }
+            receipt.employeeId = GlobalDef.employeeGlobal.Id;
             receipt.customerId = Customer.Id;
             receipt.paymentType = "ZALOPAY";
             receipt.voucherId = receiptPayment.DiscountPrice.id;
@@ -283,11 +303,12 @@ namespace CoffeePos.ViewModels
                 }
                 receipt.receiptDetail.Add(receiptDetails);
             }
-            System.Diagnostics.Process.Start("https://www.google.com.vn/?hl=vi");
+            
             bool result = RestAPIClient<ReceiptToPush>.PostData(receipt, GlobalDef.ZALOPAY_API, GlobalDef.token);
 
             if (result)
             {
+                System.Diagnostics.Process.Start(GlobalDef.zaloPayResult.order_url);
                 MessageBoxViewModel messageBoxViewModel = new MessageBoxViewModel("Thanh toán thành công");
                 //WindowManager windowManager = new WindowManager();
                 ClearDataPayment();
@@ -336,7 +357,17 @@ namespace CoffeePos.ViewModels
 
             ReceiptToPush receipt = new ReceiptToPush();
 
-            receipt.serviceType = "EATIN";
+            if (GlobalDef.IsDeliveryPayment)
+            {
+                receipt.serviceType = "AWAY";
+                GlobalDef.ReceiptPayment.ServiceType = "AWAY";
+            }
+            else
+            {
+                receipt.serviceType = "EATIN";
+                GlobalDef.ReceiptPayment.ServiceType = "EATIN";
+            }
+
             receipt.customerId = Customer.Id;
             receipt.paymentType = "CASH";
             receipt.voucherId = receiptPayment.DiscountPrice.id;
@@ -359,7 +390,10 @@ namespace CoffeePos.ViewModels
 
             if (result)
             {
+                GlobalDef.cusPhone = Customer.phone;
+                
                 ClearDataPayment();
+                GlobalDef.IsPaymentClick = true;
                 ReceiptReportViewModel.GetInstance().ClearDataReport();
                 ReceiptReportViewModel.GetInstance().getDataReport();
                 GlobalDef.windowManager.ShowDialogAsync(ReceiptReportViewModel.GetInstance());

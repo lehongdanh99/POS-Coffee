@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using CoffeePos.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -36,7 +37,17 @@ namespace CoffeePos.Common
         //
         public static bool IsEditing = false;
 
+        public static bool IsPaymentClick = false;
+
+        public static string cusPhone = string.Empty;
+
+        public static Customer cus = new Customer();
+
         public static string token = string.Empty;
+        public static string employeeName = string.Empty;
+        public static Employee employeeGlobal = new Employee();
+
+        public static ZaloPayResult zaloPayResult = new ZaloPayResult();
 
         public static Visibility IsCakeChoose = Visibility.Collapsed; 
         public static bool canEditDetail = false;
