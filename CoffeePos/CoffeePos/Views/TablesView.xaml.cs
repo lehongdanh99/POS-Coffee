@@ -35,6 +35,10 @@ namespace CoffeePos.Views
 
         private void PaymentTable_Click(object sender, RoutedEventArgs e)
         {
+            if (GlobalDef.IsChooseTableToOrder)
+            {
+                return;
+            }
             Table obj = ((FrameworkElement)sender).DataContext as Table;
             for (int i = 0; i < ReceiptModel.GetInstance().ListReceipt.Count; i++)
             {
@@ -109,12 +113,21 @@ namespace CoffeePos.Views
                 HomeViewModel.GetInstance().HandleCallBacChooseMoreTable(listTable);
                 this.Hide();
             }
+            else
+            {
+                this.Hide();
+            } 
+                
                 
             
         }
 
         private void DetailTableBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (GlobalDef.IsChooseTableToOrder)
+            {
+                return;
+            }
             Table obj = ((FrameworkElement)sender).DataContext as Table;
             //TablesViewModel.GetInstance.btTableSelected_Click(obj);
             if(obj.TableStatus == true)

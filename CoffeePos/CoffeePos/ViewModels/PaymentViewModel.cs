@@ -391,7 +391,7 @@ namespace CoffeePos.ViewModels
             if (result)
             {
                 GlobalDef.cusPhone = Customer.phone;
-                
+                //ReceiptModel.GetInstance().ListReceipt.RemoveAt()
                 ClearDataPayment();
                 GlobalDef.IsPaymentClick = true;
                 ReceiptReportViewModel.GetInstance().ClearDataReport();

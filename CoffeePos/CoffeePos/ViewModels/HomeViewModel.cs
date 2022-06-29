@@ -739,7 +739,7 @@ namespace CoffeePos.ViewModels
         {
             tableNum = TableChoose;
             NotifyOfPropertyChange(() => TableNum);
-            if (tableNum != "0")
+            if (tableNum != "0" && ListViewFoodOrders.Count != 0)
             {
                 EnableOrder = true;
             }
