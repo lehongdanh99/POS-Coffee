@@ -177,7 +177,7 @@ namespace CoffeePos.ViewModels
                             //tableDetailViewModel.eventSwitchTableCallBack += HandleSwitchTableCallBack;
                             GlobalDef.windowManager.ShowDialogAsync(TableDetailViewModel.GetInstance());
                             //this.TryCloseAsync();
-                            break;
+                            return;
                         }
                     }    
                     

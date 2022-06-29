@@ -35,30 +35,19 @@ namespace CoffeePos.ViewModels
 
         public void getDataListOrder()
         {
+            List<ReceiptDone> reverseList = new List<ReceiptDone>();
             BackgroundShowList = new SolidColorBrush(Colors.White);
             BackgroundShowListDone = new SolidColorBrush(Colors.DarkSlateGray);
             VisibilityReceiptDone = Visibility.Hidden;
             VisibilityReceipt = Visibility.Visible;
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
-
             ListReceiptsDone.Clear();
-
-
             foreach (ReceiptDone receipt in RestAPIClient<ReceiptDone>.parseJsonToModel(GlobalDef.RECEIPTDONE_API))
             {
-                //bool check = false;
-                //foreach (ReceiptDone receiptCheck in ListReceiptsDone)
-                //{
-                //    if(receiptCheck == receipt)
-                //    {
-                //        check = true;
-                //    }   
-                //}
-                //if (!check)
-                //{
-                    ListReceiptsDone.Add(receipt);
-                //}    
+                reverseList.Add(receipt);
             }
+            reverseList.Reverse();
+            ListReceiptsDone = new ObservableCollection<ReceiptDone>(reverseList);
         }
 
         public void Initialize()
@@ -68,9 +57,6 @@ namespace CoffeePos.ViewModels
             VisibilityReceiptDone = Visibility.Hidden;
             VisibilityReceipt = Visibility.Visible;
             ListReceipts = ReceiptModel.GetInstance().ListReceipt;
-
-
-
             foreach (ReceiptDone receipt in RestAPIClient<ReceiptDone>.parseJsonToModel(GlobalDef.RECEIPTDONE_API))
             {
                 bool check = false;
