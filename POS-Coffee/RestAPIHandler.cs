@@ -161,5 +161,35 @@ namespace POS_Coffe
             }
             return true;
         }
+
+        //public static bool DeleteData(int data, string path, string token)
+        //{
+        //    try
+        //    {
+        //        using (var client = new HttpClient())
+        //        {
+        //            client.BaseAddress = new Uri("http://34.126.139.165:8080/api/");
+        //            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+        //            var json = JsonConvert.SerializeObject(data);
+        //            var payload = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+        //            //var response = client.DeleteAsync(client.BaseAddress + path, payload).Result;
+        //            var response = client.DeleteAsync(client.BaseAddress + path, payload).Result;
+        //            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+        //            {
+        //                var resul = response.Content.ReadAsStringAsync().Result;
+        //                return true;
+        //            }
+        //            else
+        //            {
+        //                return false;
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //    return true;
+        //}
     }
 }

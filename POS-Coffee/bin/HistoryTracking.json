@@ -2,6 +2,7 @@
   {
     "id": 1,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -15,11 +16,13 @@
     "actionType": "ADD",
     "table": "CUSTOMER",
     "tableId": 2,
-    "occurTime": "2022-06-24T16:33:33.059+00:00"
+    "occurTime": "2022-06-24T16:33:33.059+00:00",
+    "active": true
   },
   {
     "id": 2,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -33,11 +36,13 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 17,
-    "occurTime": "2022-06-24T16:35:21.405+00:00"
+    "occurTime": "2022-06-24T16:35:21.405+00:00",
+    "active": true
   },
   {
     "id": 3,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -51,11 +56,13 @@
     "actionType": "ADD",
     "table": "EMPLOYEE",
     "tableId": 3,
-    "occurTime": "2022-06-24T17:16:16.508+00:00"
+    "occurTime": "2022-06-24T17:16:16.508+00:00",
+    "active": true
   },
   {
     "id": 4,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -69,11 +76,13 @@
     "actionType": "ADD",
     "table": "EMPLOYEE",
     "tableId": 4,
-    "occurTime": "2022-06-24T17:35:53.904+00:00"
+    "occurTime": "2022-06-24T17:35:53.904+00:00",
+    "active": true
   },
   {
     "id": 5,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -87,11 +96,13 @@
     "actionType": "ADD",
     "table": "EMPLOYEE",
     "tableId": 5,
-    "occurTime": "2022-06-24T17:37:44.752+00:00"
+    "occurTime": "2022-06-24T17:37:44.752+00:00",
+    "active": true
   },
   {
     "id": 6,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -105,11 +116,13 @@
     "actionType": "ADD",
     "table": "EMPLOYEE",
     "tableId": 6,
-    "occurTime": "2022-06-24T17:40:24.861+00:00"
+    "occurTime": "2022-06-24T17:40:24.861+00:00",
+    "active": true
   },
   {
     "id": 7,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -123,11 +136,13 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 18,
-    "occurTime": "2022-06-24T17:45:31.552+00:00"
+    "occurTime": "2022-06-24T17:45:31.552+00:00",
+    "active": true
   },
   {
     "id": 8,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -141,11 +156,13 @@
     "actionType": "ADD",
     "table": "EMPLOYEE",
     "tableId": 7,
-    "occurTime": "2022-06-24T17:50:09.302+00:00"
+    "occurTime": "2022-06-24T17:50:09.302+00:00",
+    "active": true
   },
   {
     "id": 9,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -159,11 +176,13 @@
     "actionType": "ADD",
     "table": "EMPLOYEE",
     "tableId": 8,
-    "occurTime": "2022-06-24T17:57:13.766+00:00"
+    "occurTime": "2022-06-24T17:57:13.766+00:00",
+    "active": true
   },
   {
     "id": 10,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -177,11 +196,13 @@
     "actionType": "ADD",
     "table": "EMPLOYEE",
     "tableId": 9,
-    "occurTime": "2022-06-24T18:19:15.545+00:00"
+    "occurTime": "2022-06-24T18:19:15.545+00:00",
+    "active": true
   },
   {
     "id": 11,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -195,11 +216,13 @@
     "actionType": "ADD",
     "table": "EMPLOYEE",
     "tableId": 10,
-    "occurTime": "2022-06-24T18:23:08.818+00:00"
+    "occurTime": "2022-06-24T18:23:08.818+00:00",
+    "active": true
   },
   {
     "id": 12,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -213,11 +236,13 @@
     "actionType": "ADD",
     "table": "EMPLOYEE",
     "tableId": 11,
-    "occurTime": "2022-06-24T18:25:10.690+00:00"
+    "occurTime": "2022-06-24T18:25:10.690+00:00",
+    "active": true
   },
   {
     "id": 13,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -231,11 +256,13 @@
     "actionType": "ADD",
     "table": "EMPLOYEE",
     "tableId": 12,
-    "occurTime": "2022-06-24T18:27:45.572+00:00"
+    "occurTime": "2022-06-24T18:27:45.572+00:00",
+    "active": true
   },
   {
     "id": 14,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -249,11 +276,13 @@
     "actionType": "ADD",
     "table": "EMPLOYEE",
     "tableId": 13,
-    "occurTime": "2022-06-24T18:29:43.215+00:00"
+    "occurTime": "2022-06-24T18:29:43.215+00:00",
+    "active": true
   },
   {
     "id": 15,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -267,11 +296,13 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 19,
-    "occurTime": "2022-06-25T01:58:28.907+00:00"
+    "occurTime": "2022-06-25T01:58:28.907+00:00",
+    "active": true
   },
   {
     "id": 16,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -285,11 +316,13 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 20,
-    "occurTime": "2022-06-25T02:03:24.524+00:00"
+    "occurTime": "2022-06-25T02:03:24.524+00:00",
+    "active": true
   },
   {
     "id": 17,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -303,11 +336,13 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 21,
-    "occurTime": "2022-06-25T02:35:10.206+00:00"
+    "occurTime": "2022-06-25T02:35:10.206+00:00",
+    "active": true
   },
   {
     "id": 18,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -321,11 +356,13 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 22,
-    "occurTime": "2022-06-25T03:01:00.365+00:00"
+    "occurTime": "2022-06-25T03:01:00.365+00:00",
+    "active": true
   },
   {
     "id": 19,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -339,11 +376,13 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 23,
-    "occurTime": "2022-06-25T03:02:45.018+00:00"
+    "occurTime": "2022-06-25T03:02:45.018+00:00",
+    "active": true
   },
   {
     "id": 20,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -357,11 +396,13 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 24,
-    "occurTime": "2022-06-25T03:03:31.537+00:00"
+    "occurTime": "2022-06-25T03:03:31.537+00:00",
+    "active": true
   },
   {
     "id": 21,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -375,11 +416,13 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 25,
-    "occurTime": "2022-06-25T10:36:29.272+00:00"
+    "occurTime": "2022-06-25T10:36:29.272+00:00",
+    "active": true
   },
   {
     "id": 22,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -393,11 +436,13 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 26,
-    "occurTime": "2022-06-25T10:39:02.553+00:00"
+    "occurTime": "2022-06-25T10:39:02.553+00:00",
+    "active": true
   },
   {
     "id": 23,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -411,11 +456,13 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 27,
-    "occurTime": "2022-06-25T03:41:38.560+00:00"
+    "occurTime": "2022-06-25T03:41:38.560+00:00",
+    "active": true
   },
   {
     "id": 24,
     "employee": {
+      "active": true,
       "id": 1,
       "name": "admin",
       "permission": "ADMIN",
@@ -429,6 +476,667 @@
     "actionType": "ADD",
     "table": "RECEIPT",
     "tableId": 28,
-    "occurTime": "2022-06-25T03:49:17.063+00:00"
+    "occurTime": "2022-06-25T03:49:17.063+00:00",
+    "active": true
+  },
+  {
+    "id": 25,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 3,
+    "occurTime": "2022-06-25T06:15:23.955+00:00",
+    "active": true
+  },
+  {
+    "id": 26,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 4,
+    "occurTime": "2022-06-25T06:17:26.471+00:00",
+    "active": true
+  },
+  {
+    "id": 27,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 29,
+    "occurTime": "2022-06-25T06:18:35.169+00:00",
+    "active": true
+  },
+  {
+    "id": 28,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 11,
+    "occurTime": "2022-06-25T06:19:15.143+00:00",
+    "active": true
+  },
+  {
+    "id": 29,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 30,
+    "occurTime": "2022-06-25T06:19:26.215+00:00",
+    "active": true
+  },
+  {
+    "id": 30,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 12,
+    "occurTime": "2022-06-25T06:21:25.155+00:00",
+    "active": true
+  },
+  {
+    "id": 31,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 13,
+    "occurTime": "2022-06-25T06:30:14.169+00:00",
+    "active": true
+  },
+  {
+    "id": 32,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 31,
+    "occurTime": "2022-06-25T06:38:10.987+00:00",
+    "active": true
+  },
+  {
+    "id": 33,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 32,
+    "occurTime": "2022-06-25T06:38:40.202+00:00",
+    "active": true
+  },
+  {
+    "id": 34,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 33,
+    "occurTime": "2022-06-25T06:38:54.945+00:00",
+    "active": true
+  },
+  {
+    "id": 35,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 34,
+    "occurTime": "2022-06-25T06:39:06.788+00:00",
+    "active": true
+  },
+  {
+    "id": 36,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 35,
+    "occurTime": "2022-06-25T06:39:44.260+00:00",
+    "active": true
+  },
+  {
+    "id": 37,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 36,
+    "occurTime": "2022-06-25T06:39:54.526+00:00",
+    "active": true
+  },
+  {
+    "id": 38,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 37,
+    "occurTime": "2022-06-25T07:45:26.850+00:00",
+    "active": true
+  },
+  {
+    "id": 39,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 38,
+    "occurTime": "2022-06-25T07:49:00.484+00:00",
+    "active": true
+  },
+  {
+    "id": 40,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 39,
+    "occurTime": "2022-06-25T07:49:13.481+00:00",
+    "active": true
+  },
+  {
+    "id": 41,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 40,
+    "occurTime": "2022-06-25T07:49:25.916+00:00",
+    "active": true
+  },
+  {
+    "id": 42,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 41,
+    "occurTime": "2022-06-25T07:49:31.279+00:00",
+    "active": true
+  },
+  {
+    "id": 43,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 42,
+    "occurTime": "2022-06-25T07:49:34.285+00:00",
+    "active": true
+  },
+  {
+    "id": 44,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 14,
+    "occurTime": "2022-06-26T00:49:25.273+00:00",
+    "active": true
+  },
+  {
+    "id": 45,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 16,
+    "occurTime": "2022-06-26T00:51:15.761+00:00",
+    "active": true
+  },
+  {
+    "id": 46,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 17,
+    "occurTime": "2022-06-26T00:52:14.624+00:00",
+    "active": true
+  },
+  {
+    "id": 47,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 18,
+    "occurTime": "2022-06-26T00:54:06.390+00:00",
+    "active": true
+  },
+  {
+    "id": 48,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 19,
+    "occurTime": "2022-06-26T01:23:44.393+00:00",
+    "active": true
+  },
+  {
+    "id": 49,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 20,
+    "occurTime": "2022-06-26T01:24:40.486+00:00",
+    "active": true
+  },
+  {
+    "id": 50,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "DRINKCAKE",
+    "tableId": 1,
+    "occurTime": "2022-06-26T01:25:19.203+00:00",
+    "active": true
+  },
+  {
+    "id": 51,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 43,
+    "occurTime": "2022-06-26T01:46:36.219+00:00",
+    "active": true
+  },
+  {
+    "id": 52,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 44,
+    "occurTime": "2022-06-26T01:52:41.096+00:00",
+    "active": true
+  },
+  {
+    "id": 53,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 45,
+    "occurTime": "2022-06-26T01:53:50.689+00:00",
+    "active": true
+  },
+  {
+    "id": 54,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 46,
+    "occurTime": "2022-06-26T01:54:58.237+00:00",
+    "active": true
+  },
+  {
+    "id": 55,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 47,
+    "occurTime": "2022-06-25T19:04:04.487+00:00",
+    "active": true
+  },
+  {
+    "id": 56,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "RECEIPT",
+    "tableId": 48,
+    "occurTime": "2022-06-28T23:58:44.060+00:00",
+    "active": true
+  },
+  {
+    "id": 57,
+    "employee": {
+      "active": true,
+      "id": 1,
+      "name": "admin",
+      "permission": "ADMIN",
+      "birthday": null,
+      "phone": null,
+      "address": null,
+      "username": "admin",
+      "createdAtFormatVN": "23/06/2022 14:34",
+      "updatedAtFormatVN": "23/06/2022 14:34"
+    },
+    "actionType": "ADD",
+    "table": "CUSTOMER",
+    "tableId": 22,
+    "occurTime": "2022-06-29T07:59:28.452+00:00",
+    "active": true
   }
 ]

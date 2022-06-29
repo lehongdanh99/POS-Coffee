@@ -9,17 +9,34 @@
 
 <div class="row">
     <div class="column">
-        <h2 style="margin-top: -100px; color: saddlebrown; font-weight: 700; margin-left: 350px">History Checking Management</h2>
+        @using (Html.BeginForm("indexOfHistoryTracking", "HisToryTracking", FormMethod.Get@*, new { @class = "form-inline" }*@))
+        {
+        <div class="form-check-label">
+            From Day:
+            <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="fromday" id="fromday" value="@ViewBag.fromday"/>
+            To Day:
+            <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="today" id="today" value="@ViewBag.today"/>
+
+            Filter:
+            <select class="form-check-input" name="filterValue" id="filterValue">
+                <option disabled selected value="NONE">--none--</option>
+                <option value="CUSTOMER">CUSTOMER</option>
+                <option value="ADMIN">ADMIN</option>
+                <option value="RECEIPT">RECEIPT</option>
+                <option value="EMPLOYEE">EMPLOYEE</option>
+
+            </select>
+            <button type="submit" value="Apply" class="btn fa fa-filter"></button>
+        </div>
+        }
         <div class="card">
             <div class="card-block">
                 <table class="styled-table">
                     <thead>
                         <tr>
-                            <th>Action type</th>
                             <th>OccurTime</th>
+                            <th>Action type</th>
                             <th>Table Effect</th>
-                            <th>Employee</th>
-
                             <th></th>
                         </tr>
                         @{i = 1;}
@@ -28,19 +45,13 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.actionType</td>
                                 <td>@item.occurTime</td>
+                                <td>@item.actionType</td>
                                 <td>@item.table</td>
-                                <td>@item.employee.name</td>
-                                @*<td>
-                                    <button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "HistoryTracking", new {id = item.id })"'> </button>
-                                </td>*@
-                                @*<td>
+                                <td>
+                                    <button type="button" class="btn btn-primary fa fa-info-circle" onclick='window.location.href = "@Url.Action("Details", "HistoryTracking", new { id = item.id })"'> </button>
 
-                                    <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("IndexOfHistoryTracking", "HistoryTracking", new { HistoryID = item.HistoryID })"'> </button>
-                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.HistoryID))" class="btn btn-danger fa fa-remove" />
-
-                                </td>*@
+                                </td>
                             </tr>
                         }
                     </tbody>

@@ -1,4 +1,6 @@
-﻿@model List<POS_Coffe.Models.CustomerModel>
+﻿@model PagedList<POS_Coffe.Models.CustomerModel>
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "CustomerManagement";
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
@@ -6,7 +8,7 @@
 
 <div class="row">
     <div class="column">
-        @using (Html.BeginForm("ViewEmployee", "Employee", FormMethod.Get@*, new { @class = "form-inline" }*@))
+        @using (Html.BeginForm("CustomerManagement", "Customer", FormMethod.Get@*, new { @class = "form-inline" }*@))
 {
         <div class="form-check-label">
             <h2 style="margin-top: -100px; color: saddlebrown; font-weight: 700; margin-left: 400px">Customer Management</h2>
@@ -31,25 +33,37 @@
 
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            <td>@item.Name</td>
-                            <td>@item.Phone</td>
-                            <td>@item.Point</td>
-                            <td style="text-align:center">
-                                @*<button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditMaterial", "Material", new {ID = item.ID })"'> </button>*@
-                                <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.ID))" class="btn btn-danger fa fa-remove" />
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>@item.name</td>
+                                <td>@item.phone</td>
+                                <td>@item.point</td>
+                                <td style="text-align:center">
+                                    <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditCustomer", "Customer", new {id = item.id })"'> </button>
+                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.id))" class="btn btn-danger fa fa-remove" />
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>
             </div>
         </div>
-        @*<div class="column" style="text-align:center; display:inline-block">
-            <div class="pagination ali">
-                @Html.PagedListPager(Model, pageNo => Url.Action("ViewEmployee", new { pageNo = pageNo }))
+        <div class="column" style="text-align:center; display:inline-block">
+                <div class="pagination ali">
+                    @Html.PagedListPager(Model, pageNo => Url.Action("CustomerManagement", new { pageNo = pageNo }))
+                </div>
             </div>
-        </div>*@
     </div>
 </div>
 
+<script>
+        function AddNew() {
+        console.log()
+        window.location.href = "/Customer/AddCustomer"
+    }
+    function btnConfirm(id) {
+        if (confirm('Do you want to delete ?')) {
+            var url = '@Url.Action("DeleteCustomer", "Customer")?id=' + id;
+            window.location.href = url;
+        }
+    }
+</script>

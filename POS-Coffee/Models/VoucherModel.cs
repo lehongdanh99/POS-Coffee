@@ -23,17 +23,17 @@ namespace POS_Coffe.Models
         public System.DateTime PublishDate { get; set; }
         public System.DateTime EndDate { get; set; }
     }
-    public class VoucherAPIHandlerFakeData
+    public class VoucherAPIHandlerData
     {
 
-        private static VoucherAPIHandlerFakeData _instance;
-        public static VoucherAPIHandlerFakeData GetInstance()
+        private static VoucherAPIHandlerData _instance;
+        public static VoucherAPIHandlerData GetInstance()
         {
             if (_instance == null)
             {
                 if (_instance == null)
                 {
-                    _instance = new VoucherAPIHandlerFakeData();
+                    _instance = new VoucherAPIHandlerData();
                 }
             }
             return _instance;

@@ -1068,7 +1068,6 @@
     </Content>
     <Content Include="Views\FoodManagement\Details.cshtml" />
     <Content Include="Statistic.json" />
-    <Content Include="Views\HistoryTracking\Details.cshtml" />
     <Content Include="Views\Statistic\GetDetails.cshtml" />
     <Content Include="Views\Recipe\RecipeManagement.cshtml" />
     <Content Include="Views\Recipe\AddRecipe.cshtml" />
@@ -1080,6 +1079,10 @@
     <Content Include="Views\Branch\AddBranch.cshtml" />
     <Content Include="Views\Branch\EditBranch.cshtml" />
     <Content Include="Views\DrinkCake\EditDrinkCake.cshtml" />
+    <Content Include="Views\Customer\AddCustomer.cshtml" />
+    <Content Include="Views\Customer\EditCustomer.cshtml" />
+    <Content Include="Views\DrinkCake\DetailDrinkCake.cshtml" />
+    <Content Include="Views\HistoryTracking\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

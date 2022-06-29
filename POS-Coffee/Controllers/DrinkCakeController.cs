@@ -39,14 +39,24 @@ namespace POS_Coffe.Controllers
         public ActionResult AddDrinkCake(DrinkCakeDetail data/*, HttpPostedFileWrapper Picture*/)
         {
             List<DrinkCakeVariations> LstDC = new List<DrinkCakeVariations>();
-            DrinkCakeVariations dataDC = new DrinkCakeVariations()
+            DrinkCakeVariations dataDCL = new DrinkCakeVariations()
             {
                 id = 0,
-                name = data.name1,
-                description =  data.description,
-                price = Convert.ToInt32(data.price),
+                name = data.nameL,
+                description =  data.descriptionL,
+                price = Convert.ToInt32(data.priceL),
             };
-            LstDC.Add(dataDC);
+            DrinkCakeVariations dataDCM = new DrinkCakeVariations()
+            {
+                id = 0,
+                name = data.nameM,
+                description = data.descriptionM,
+                price = Convert.ToInt32(data.priceM),
+            };
+
+            LstDC.Add(dataDCL);
+            LstDC.Add(dataDCM);
+
             DrinkCakeModel DrinkCakeData = new DrinkCakeModel()
             {
                 id = 0,
@@ -61,12 +71,80 @@ namespace POS_Coffe.Controllers
             }
             return RedirectToAction("DrinkCakeManagement", "DrinkCake");
         }
-
+        [HttpGet]
         public ActionResult EditDrinkCake(int id)
         {
             var data = DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.Where(s => s.id == id).FirstOrDefault();
-            DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.Remove(data);
-            return RedirectToAction("DrinkCakeManagement", "DrinkCake");
+            DrinkCakeDetail drinkCakeDetail = new DrinkCakeDetail();
+            foreach(var item in data.DrinkCakeVariations)
+            {
+                if (item.name.Contains("L"))
+                {
+                    drinkCakeDetail.idL = item.id;
+                    drinkCakeDetail.nameL = item.name;
+                    drinkCakeDetail.descriptionL = item.description;
+                    drinkCakeDetail.priceL = item.price.ToString();
+                }
+                else if (item.name.Contains("M"))
+                {
+                    drinkCakeDetail.idM = item.id;
+                    drinkCakeDetail.nameM = item.name;
+                    drinkCakeDetail.descriptionM = item.description;
+                    drinkCakeDetail.priceM = item.price.ToString();
+                }
+            }
+
+            drinkCakeDetail.name = data.name;
+            drinkCakeDetail.id = data.id;
+            drinkCakeDetail.type = data.type;
+            
+            return View(drinkCakeDetail);
         }
+
+        [HttpPost]
+        public ActionResult EditDrinkCake(DrinkCakeDetail editDrinkCake)
+        {
+            DrinkCakeModel PutDrinkCake = new DrinkCakeModel();
+
+            List<DrinkCakeVariations> LstdrinkCakeVariationDetail = new List<DrinkCakeVariations>();
+
+            DrinkCakeVariations drinkCakeVariationDetailL = new DrinkCakeVariations()
+            {
+                id = editDrinkCake.idL,
+                name = editDrinkCake.nameL,
+                description = editDrinkCake.descriptionL,
+                price = Convert.ToInt32(editDrinkCake.priceL),
+            };
+            LstdrinkCakeVariationDetail.Add(drinkCakeVariationDetailL);
+
+            DrinkCakeVariations drinkCakeVariationDetailM = new DrinkCakeVariations()
+            {
+                id = editDrinkCake.idM,
+                name = editDrinkCake.nameM,
+                description = editDrinkCake.descriptionM,
+                price = Convert.ToInt32(editDrinkCake.priceM),
+            };
+            LstdrinkCakeVariationDetail.Add(drinkCakeVariationDetailM);
+
+            PutDrinkCake.DrinkCakeVariations = LstdrinkCakeVariationDetail;
+
+            PutDrinkCake.name = editDrinkCake.name;
+            PutDrinkCake.id = editDrinkCake.id;
+            PutDrinkCake.type = editDrinkCake.type;
+
+            if (RestAPIHandler<DrinkCakeModel>.PutData(PutDrinkCake, "drinkcake"+@"/"+PutDrinkCake.id, GlobalDef.TOKEN) == true)
+            {
+                DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake = RestAPIHandler<DrinkCakeModel>.parseJsonToModel(GlobalDef.DRINKCAKE_JSON_CONFIG_PATH);
+            }
+            return View();
+        }
+
+        public ActionResult DetailDrinkCake(int id)
+        {
+            DrinkCakeModel dataDrinkCake = DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.Where(s => s.id == id).FirstOrDefault();
+            return View(dataDrinkCake);
+        }
+
+        public ActionResult DeleteDrinkCake() { return View(); }
     }
 }

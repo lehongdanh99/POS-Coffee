@@ -1,18 +1,24 @@
-﻿@model List<POS_Coffe.Models.BranchModel>
+﻿@model PagedList<POS_Coffe.Models.BranchModel>
+@using PagedList;
+@using PagedList.Mvc;
 @{
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
 
 <div class="row">
     <div class="column">
+        <div class="column column-30">
+            <div class="user-section">
+                <h4 style="padding-left:10px; font-weight:bold">BRANCH MANAGEMENT</h4>
+            </div>
+        </div>
         @using (Html.BeginForm("BranchManagement", "Branch", FormMethod.Get@*, new { @class = "form-inline" }*@))
 {
-        <div class="form-check-label">
-            <h2 style="margin-top: -100px; color: saddlebrown; font-weight: 700; margin-left: 400px">Branch Management</h2>
-            <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
-            <button type="submit" value="Search" class="form-check-input search-btn fa fa-search"></button>
-            @*<button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />*@
-        </div>
+<div class="form-check-label">
+    <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
+    <button type="submit" value="Search" class="form-check-input search-btn fa fa-search"></button>
+    <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />
+</div>
 }
         <div class="card">
             <div class="card-block">
@@ -29,11 +35,11 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.Id</td>
-                                <td>@item.BranchName</td>
+                                <td>@item.id</td>
+                                <td>@item.branchName</td>
                                 <td style="text-align:center">
-                                    @*<button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditBranch", "Branch", new {Id = item.Id })"'> </button>*@
-                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.Id))" class="btn btn-danger fa fa-remove" />
+                                    <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditBranch", "Branch", new {id = item.id })"'> </button>
+                                    <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.id))" class="btn btn-info fa fa-remove" style="background-color: #FF3131" />
                                 </td>
                             </tr>
                         }
@@ -41,11 +47,11 @@
                 </table>
             </div>
         </div>
-        @*<div class="column" style="text-align:center; display:inline-block">
-            <div class="pagination ali">
-                @Html.PagedListPager(Model, pageNo => Url.Action("MaterialManagement", new { pageNo = pageNo }))
+        <div class="column" style="text-align:center; display:inline-block">
+                <div class="pagination ali">
+                    @Html.PagedListPager(Model, pageNo => Url.Action("BranchManagement", new { pageNo = pageNo }))
+                </div>
             </div>
-        </div>*@
     </div>
 </div>
 
@@ -54,9 +60,9 @@
         console.log()
         window.location.href = "/Branch/AddBranch"
     }
-    function btnConfirm(ID) {
+    function btnConfirm(id) {
         if (confirm('Do you want to delete ?')) {
-            var url = '@Url.Action("DeleteBranch", "Branch")?ID=' + ID;
+            var url = '@Url.Action("DeleteBranch", "Branch")?id=' + id;
             window.location.href = url;
         }
     }

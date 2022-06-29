@@ -42,6 +42,7 @@
                                 <td>@item.name</td>
                                 <td>@item.type</td>
                                 <td style="text-align:center">
+                                    <button type="button" class="btn btn-primary fa fa-info-circle" onclick='window.location.href = "@Url.Action("DetailDrinkCake", "DrinkCake", new {id = item.id })"'> </button>
                                     <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditDrinkCake", "DrinkCake", new {id = item.id })"'> </button>
                                     <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.id))" class="btn btn-danger fa fa-remove" />
                                 </td>

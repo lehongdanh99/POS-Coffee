@@ -46,29 +46,80 @@
                         </div>
                     </div>
 
+                    <h1>Drink Cake Variation</h1>
+
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="description">Description</label>
+                            <label class="col-sm-3 col-form-label" for="sizeM">Size M</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="description" id="description" />
+                                <input type="checkbox" name="sizeM" id="sizeM" value="testM" onclick="CheckedSizeM()"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="AddingSizeM" name="AddingSizeM" style="display:none">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="name1">Name variation</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="nameM" id="nameM" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="price">Price</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="priceM" id="priceM" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="description">Description</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="descriptionM" id="descriptionM" />
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="price">Price</label>
+                            <label class="col-sm-3 col-form-label" for="sizeL">Size L</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="price" id="price" />
+                                <input type="checkbox" name="sizeL" id="sizeL" value="testL" onclick="CheckedSizeL()"/>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="name1">Type</label>
-                            <div class="col-sm-9">
-                                <input type="text" name="name1" id="name1" />
+                    <div id="AddingSizeL" name="AddingSizeL" style="display:none">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="nameL">Name variation</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="nameL" id="nameL" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="price">Price</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="priceL" id="priceL" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="description">Description</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="descriptionL" id="descriptionL" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -103,8 +154,8 @@
             </div>*@
 
 
-                    <input class="button-primary" type="submit" value="Save">
-                    @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
+                    @*<input class="button-primary" type="submit" value="Save">*@
+                    <input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Save" />
                     <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />
                 }
             </div>
@@ -122,39 +173,55 @@
 
     }
 
-    //$(function () {
-    //    $("#Birthday").datepicker({
-    //        dateFormat: "mm/dd/yy"
-    //    });
-    //});
+    $(document).ready(function () {
+        $(function () {
+            $('#btnSaveChange').click(function () {
+                var data = {
+                    name: $('#name').val(),
+                    type: $('#type').val(),
+                    nameL: $('#name').val(),
+                    nameM: $('#name').val(),
+                    descriptionL: $('#descriptionL').val(),
+                    descriptionM: $('#descriptionM').val(),
+                    priceL: $('#priceL').val(),
+                    priceM: $('#priceM').val(),
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "/DrinkCake/AddDrinkCake",
+                    data: data,
+                    success: function (data) {
+                        //GoBack();
+                        alert('Success!')
+                        location.reload();
+                    },
+                    error: function () {
+                        alert('Fail!')
+                    }
+                })
+            });
+        });
+    });
 
-    //$(document).ready(function () {
-    //    $(function () {
-    //        $('#btnSaveChange').click(function () {
-    //            var data = {
-    //                Name: $('#Name').val(),
-    //                Permission: $('#Permission').val(),
-    //                Birthday: $('#Birthday').val(),
-    //                Phone: $('#Phone').val(),
-    //                Username: $('#Username').val(),
-    //                Password: $('#Password').val(),
-    //            }
-    //            $.ajax({
-    //                type: "POST",
-    //                url: "/EmployeeManagament/AddEmployee",
-    //                data: data,
-    //                success: function (data) {
-    //                    //GoBack();
-    //                    alert('Success!')
-    //                    location.reload();
-    //                },
-    //                error: function () {
-    //                    alert('Fail!')
-    //                }
-    //            })
-    //        });
-    //    });
-    //});
+    function CheckedSizeL() {
+        if ($('#sizeL').is(':checked')) {
+            document.getElementById("AddingSizeL").style.display = "block";
+        }
+        else {
+            document.getElementById("AddingSizeL").style.display = "none";
+        }
+    }
+
+    function CheckedSizeM() {
+        if ($('#sizeM').is(':checked')) {
+            document.getElementById("AddingSizeM").style.display = "block";
+        }
+        else {
+            document.getElementById("AddingSizeM").style.display = "none";
+        }
+    }
+
+
 
 </script>
 
