@@ -21,10 +21,8 @@
                 <table class="styled-table">
                     <thead class="header-style">
                         <tr>
-                            <th>Name Material</th>
+                            <th>Food name</th>
                             <th>Type</th>
-                            <th>Unit</th>
-                            <th>Amount</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -37,10 +35,8 @@
                                 <tr class="items-style">
                                     <td>@data.material.name</td>
                                     <td>@data.material.type</td>
-                                    <td>@data.material.unit</td>
-                                    <td>@data.material.amount</td>
                                     <td style="text-align:center">
-                                        @*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "FoodManagement", new {FoodID = item.FoodID })"'> </button>*@
+                                        <button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("Details", "Recipe", new {id = item.id })"'> </button>
                                         @*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick="changeStatus(@counting)"></button>*@
                                         @*<button type="button" class="btn btn-primary fa fa-edit " onclick='window.location.href = "@Url.Action("EditRecipe", "RecipeManagement", new {id = item.id })"'></button>*@
                                         @*<button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.id))" class="btn btn-danger fa fa-remove" />*@

@@ -23,6 +23,7 @@
             <div class="card-block">
                 @using (Html.BeginForm("EditCustomer", "Customer", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
+                    @Html.HiddenFor(s => s.previousPoint)
                     <div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="name">Name</label>

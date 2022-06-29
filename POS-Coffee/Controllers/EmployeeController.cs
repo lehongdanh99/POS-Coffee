@@ -81,33 +81,31 @@ namespace POS_Coffe.Controllers
         [HttpGet]
         public ActionResult EditEmployee(int id)
         {
-            //var EditData = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.Id == EmployeeID);
-            //EmployeeModel data = new EmployeeModel();
-            //data.Id = EmployeeID;
-            //data.Name = EditData.ToList().First().Name;
-            //data.permission = EditData.ToList().First().permission;
-            //data.birthday = EditData.ToList().First().birthday;
-            //data.phone = EditData.ToList().First().phone;
-            //data.username = EditData.ToList().First().username;
-            //data.password = EditData.ToList().First().password;
-            //return View(data);
-            return View();
+            var dataEmployee = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(x => x.id == id).FirstOrDefault();
+            ViewBag.permission = dataEmployee.permission;
+            return View(dataEmployee);
         }
 
         [HttpPost]
         public ActionResult EditEmployee(EmployeeModel data)
         {
-            //var EditData = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.Id == data.Id);
-            //EmployeeModel model = new EmployeeModel();
-            //EditData.ToList().First().Name = data.Name;
-            //EditData.ToList().First().Permission = data.Permission;
-            //EditData.ToList().First().Birthday = data.Birthday;
-            //EditData.ToList().First().Phone = data.Phone;
-            //EditData.ToList().First().username = data.username;
-            //EditData.ToList().First().password = data.password;
-
-            //return RedirectToAction("ViewEmployee", "Employee");
-            return View();
+            //var data = BranchAPIHandlerData.GetInstance().ListBranch.Where(x => x.id == id).FirstOrDefault();
+            EmployeeModel putEmployee = new EmployeeModel()
+            {
+                address = data.address,
+                birthday=data.birthday,
+                id = 0,
+                name = data.name,
+                password = data.password,
+                permission = "ADMIN",
+                phone = data.phone,
+                username = data.username,
+            };
+            if (RestAPIHandler<EmployeeModel>.PutData(putEmployee, "employee" + @"/" + data.id, GlobalDef.TOKEN) == true)
+            {
+                EmployeeAPIHandlerData.GetInstance().ListEmployee = RestAPIHandler<EmployeeModel>.parseJsonToModel(GlobalDef.EMPLOYEE_JSON_CONFIG_PATH);
+            }
+            return RedirectToAction("ViewEmployee", "Employee");
         }
         public ActionResult DeleteEmployee(int id)
         {

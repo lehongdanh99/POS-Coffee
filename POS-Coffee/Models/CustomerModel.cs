@@ -11,6 +11,8 @@ namespace POS_Coffe.Models
         public string phone { get; set; }
         public string name { get; set; }
         public int point { get; set; }
+        public int previousPoint { get; set; }
+        public Boolean active { get; set; }
     }
     public class CustomerAPIHandlerData
     {

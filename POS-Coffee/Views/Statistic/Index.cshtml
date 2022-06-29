@@ -17,10 +17,7 @@
             <h2 style="margin-top: -100px; font-weight:700 ; color:saddlebrown ; margin-left:40px">STATICTICS</h2>
             Day:
             <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="daytime" id="daytime" />
-            @*Month:
-        <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="month" class="form-check-input" name="month" id="month" />
-        Year:
-        <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="text" class="form-check-input" name="year" id="year" />*@
+
             <button type="submit" value="Search" class="btn fa fa-search"></button>
             Filter:
             <select class="form-check-input">
@@ -65,8 +62,10 @@
                                 <td>@item.CustomerPay</td>
                                 <td>@item.Voucher</td>
                                 <td>@item.ServiceType</td>
-                                <td>@*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("GetDetails", "Statistic", new {day = item.day, month = item.month, year = item.year })"'></button>*@</td>
-                                @*<td><button type="button" class="btn btn-primary fa fa-sticky-note" onclick="changeStatus(@counting)"></button></td>*@
+                                <td>
+                                    @*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("GetDetails", "Statistic", new { id = item.id})"'></button>*@
+                                    @*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick="changeStatus(@counting)"></button>*@
+                                </td>
                             </tr>
 
 

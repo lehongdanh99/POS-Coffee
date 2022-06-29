@@ -12,41 +12,6 @@ namespace POS_Coffe.Controllers
         // GET: Recipe
         public ActionResult RecipeManagement()
         {
-            //List<RecipeModel> recipes = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.ToList();
-            //List<FoodModel> lstFood = FoodAPIHandlerData.GetInstance().ListFood.ToList();
-            //List<MaterialsModel> lstMaterial = MaterialAPIHandlerData.GetInstance().ListMaterial.ToList();
-
-            //List<ReceipDetail> LstReceipDetail = new List<ReceipDetail>();
-            //foreach (var recipe in recipes)
-            //{
-            //    FoodModel fooddata = lstFood.Where(s => s.FoodID == recipe.Drink_Cake_ID).FirstOrDefault(); 
-            //    MaterialsModel materialdata = lstMaterial.Where(s => s.id == recipe.MaterialID).FirstOrDefault();
-
-            //    var recipeDe = new ReceipDetail();
-            //    recipeDe.RecipeID = recipe.RecipeID;
-            //    recipeDe.MaterialID = recipe.MaterialID;
-            //    recipeDe.Drink_Cake_ID = recipe.Drink_Cake_ID;
-            //    if(fooddata == null)
-            //    {
-            //        recipeDe.FoodName = "";
-            //    }
-            //    else
-            //    {
-            //        recipeDe.FoodName = fooddata.FoodName;
-            //    }
-            //    if (materialdata == null)
-            //    {
-            //        recipeDe.MaterialName = "";
-            //    }
-            //    else
-            //    {
-            //        recipeDe.MaterialName = materialdata.name;
-            //    }
-
-            //    LstReceipDetail.Add(recipeDe);
-            //}
-
-            //return View(LstReceipDetail);
             List<RecipeModel> LstRecipe = RecipeAPIHandlereData.GetInstance().ListRecipe.ToList();
             return View(LstRecipe);
         }
@@ -54,46 +19,59 @@ namespace POS_Coffe.Controllers
         [HttpGet]
         public ActionResult AddRecipe()
         {
+            List<DrinkCakeModel> LstDrinkCake = DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.ToList();
+
+            ViewBag.LstDrinkCake = LstDrinkCake;
+
+            List<MaterialsModel> LstMaterial = MaterialAPIHandlerData.GetInstance().ListMaterial.ToList();
+            ViewBag.LstMaterial = LstMaterial;
+
             RecipeModel model = new RecipeModel();
-
-            List<FoodModel> foods = FoodAPIHandlerData.GetInstance().ListFood.ToList();
-            ViewBag.Food = foods;
-
-            List<MaterialsModel> materials = MaterialAPIHandlerData.GetInstance().ListMaterial.ToList();
-            materials.ForEach(material => material.name.Distinct());
-            ViewBag.Materials = materials;
-
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult AddRecipe(int Food, List<int> Material)
-        {
-            //List<FoodModel> foods = FoodAPIHandlerData.GetInstance().ListFood.Where(s => s.FoodID.ToString().Equals(Food)).ToList();
-
-            //List<RecipeModel> recipes = RecipeAPIHandlerFakeData.GetInstance().ListRecipe.ToList();
-            //int ID = recipes.Count;
-
-
-            //List<RecipeModel> LstRecipe = new List<RecipeModel>();
-            //int Count = 0, temp = 1;
-            //foreach(var item in Material)
-            //{
-            //    RecipeModel dataRecipe = new RecipeModel();
-            //    dataRecipe.RecipeID = ID + temp;
-            //    dataRecipe.MaterialID = item;
-            //    dataRecipe.Drink_Cake_ID = Food;
-            //    RecipeAPIHandlerFakeData.GetInstance().ListRecipe.Add(dataRecipe);
-            //    Count++;
-            //    temp++;
-            //}
-    
+        public ActionResult AddRecipe(RecipeModel data, string amountForOneM,string amountForOneL, string MaterialM,string MaterialL)
+        {    
             return RedirectToAction("RecipeManagement", "Recipe");
         }
-
+        [HttpGet]
+        public ActionResult EditRecipe(int id) { return View(); }
+        [HttpPost]
         public ActionResult EditRecipe() { return View(); }
         public ActionResult DeleteRecipe(
             
             ) { return View(); }
+
+        public JsonResult getDrinkVariation(string DrinkCakeDropdown)
+        {
+            List<DrinkCakeDetail> Lst = new List<DrinkCakeDetail>();
+            DrinkCakeModel LstDrinkCake = DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.Where(s => s.name.Equals(DrinkCakeDropdown)).FirstOrDefault();
+            foreach (var item in LstDrinkCake.DrinkCakeVariations)
+            {
+                DrinkCakeDetail drinkCakeDetail = new DrinkCakeDetail()
+                {
+                    name = item.name,
+                    id = item.id,
+                    
+                };
+                Lst.Add(drinkCakeDetail);
+            }
+            ViewBag.DrinkCakeVarID = Lst;
+            return Json(Lst, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public class DrinkCakeDetail
+        {
+            public int id { get; set; }
+            public string name { get; set; }
+        }
+
+        public PartialViewResult Details(int id) 
+        {
+            RecipeModel LstRecipe = RecipeAPIHandlereData.GetInstance().ListRecipe.Where(s => s.id == id).FirstOrDefault();
+            return PartialView(LstRecipe); 
+        }
     }
 }

@@ -27,87 +27,81 @@
             <div class="card-block">
                 @using (Html.BeginForm("AddRecipe", "Recipe", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="name">Size</label>
+                            <label class="col-sm-3 col-form-label" for="name">DrinkCake name</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.drinkCakeVariation.name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.drinkCakeVariation.name, "", new { @class = "text-danger" })
+                                <select name="DrinkCakeDropdown" id="DrinkCakeDropdown" @*onchange="SelectDropdown()*@>
+                                    @foreach (var item in ViewBag.LstDrinkCake)
+                                    {
+                                        <option>@item.name</option>
+                                    }
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="AddingSizeM" name="AddingSizeM">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="amountForOneM">Amount For One</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="amountForOneM" id="amountForOneM" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="materialId">Material</label>
+                                <div class="col-sm-9">
+                                    <select name="MaterialM" id="MaterialM">
+                                        @foreach(var item in ViewBag.LstMaterial)
+                                            {
+                                                <option value="@item.id">@item.name</option>
+                                            }
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="price">Price</label>
+                            <label class="col-sm-3 col-form-label" for="sizeL">Size L</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.drinkCakeVariation.price, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.drinkCakeVariation.price, "", new { @class = "text-danger" })
+                                <input type="checkbox" name="sizeL" id="sizeL" value="testL" onclick="CheckedSizeL()" />
                             </div>
                         </div>
                     </div>
 
-                    @*<div class="col-md-6">
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="FoodName">Food name</label>
-                    <div class="col-sm-9">
-                        <select id="Food" name="Food">
-                            @foreach (var item in ViewBag.Food)
-                            {
-                                <option value="@item.FoodID">@item.FoodName</option>
-                            }
-                            @Html.ValidationMessageFor(model => model.Drink_Cake_ID, "")
-                        </select>
+                    <div id="AddingSizeL" name="AddingSizeL">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="amountForOneL">Amount For One</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="amountForOneL" id="amountForOneL" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="materialId">Material</label>
+                                <div class="col-sm-9">
+                                    <select name="MaterialL" id="MaterialL">
+                                        @foreach (var item in ViewBag.LstMaterial)
+                                        {
+                                            <option value="@item.id">@item.name</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>*@
 
-                    @*<div class="col-md-6">
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="Material">Material</label>
-                    <div class="col-sm-9">
-                        <select id="Material" name="Material" multiple>
-                            @foreach (var item in ViewBag.Materials)
-                            {
-                                <option value="@item.MaterialID">@item.Name</option>
-                            }
-
-                        </select>
-                    </div>
-                </div>
-            </div>*@
-
-                    @*<div class="col-md-6">
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="Type">Type</label>
-                    <div class="col-sm-9">
-                        @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>*@
-
-                    @*<div class="col-md-6">
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="Picture">Picture</label>
-                    <div class="col-sm-9">
-                        @Html.TextBoxFor(model => model.FoodImage, new { type = "file", accept = "~/Content/images" })
-                        @Html.ValidationMessageFor(model => model.FoodImage)
-                    </div>
-                </div>
-            </div>*@
-                    @*<div class="col-md-6">
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" for="Picture">Picture</label>
-                    <div class="col-sm-9">
-                        <input type="file" id="Picture" name="Picture" accept="image/*" class="form-control">
-                    </div>
-                </div>
-            </div>*@
-
-
-                    <input class="button-primary" type="submit" value="Create recipe">
+                    <input class="button-primary" type="submit" value="Create recipe" name="btnSaveChange" id="btnSaveChange">
                     @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
                     <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />
                 }
@@ -123,10 +117,57 @@
 <script>
     function GoBack() {
         window.location.href = "/Recipe/RecipeManagement"
-
     }
 
     $("#Material").multipleSelect({
         filter: true
     });
+
+    //$(document).ready(function () {
+    //    $(function () {
+    //        $('#btnSaveChange').click(function () {
+    //            var data = {
+    //                amountForOneM: $("#amountForOneM").val(),
+    //                amountForOneL: $("#amountForOneL").val(),
+    //                MaterialM: $("#MaterialM").val(),
+    //                MaterialL: $("#MaterialL").val(),
+    //            }
+    //            $.ajax({
+    //                type: "POST",
+    //                url: "/Recipe/AddRecipe",
+    //                data: data,
+    //                success: function (data) {
+    //                    alert('Success!')
+    //                    location.reload();
+    //                },
+    //                error: function () {
+    //                    alert('Fail!')
+    //                }
+    //            })
+    //        });
+    //    });
+    //});
+
+    $(document).ready(function () {
+        $(function () {
+            $('#DrinkCakeDropdown').change(function () {
+                var data = {
+                    DrinkCakeDropdown: $('#DrinkCakeDropdown option:selected').text()
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: "/Recipe/getDrinkVariation",
+                    data: data,
+                    success: function (data) {
+                        $("#DrinkCakeVaritaion").empty();
+                        
+                        $.each(data, function (i, data) {
+                            /*$("#DrinkCakeVaritaion").append("<option value="+data.id+">" + data.name +"</option>")*/
+                            $("#IDVAR").appen("<p>"+data.id + data.name+"</p>")
+                        })
+                    }
+                })
+            })
+        })
+    })
 </script>

@@ -31,7 +31,8 @@ namespace POS_Coffe.Controllers
                 id = 0,
                 phone = DataCustomer.phone,
                 name = DataCustomer.name,
-                point = DataCustomer.point,
+                point = 0,
+                previousPoint = 0,
             };
 
             if (RestAPIHandler<CustomerModel>.PostData(postCustomer, "customer", GlobalDef.TOKEN) == true)
@@ -56,12 +57,13 @@ namespace POS_Coffe.Controllers
                 phone = DataCustomer.phone,
                 name = DataCustomer.name,
                 point = DataCustomer.point,
+                previousPoint=DataCustomer.previousPoint,
             };
-            if (RestAPIHandler<CustomerModel>.PutData(putBranch, "branch" + @"/" + DataCustomer.id, GlobalDef.TOKEN) == true)
+            if (RestAPIHandler<CustomerModel>.PutData(putBranch, "customer" + @"/" + DataCustomer.id, GlobalDef.TOKEN) == true)
             {
                 CustomerAPIHandlerData.GetInstance().ListCustomer = RestAPIHandler<CustomerModel>.parseJsonToModel(GlobalDef.CUSTOMER_JSON_CONFIG_PATH);
             }
-            return RedirectToAction("BranchManagement", "Branch");
+            return RedirectToAction("CustomerManagement", "Customer");
         }
         public ActionResult DeleteCustomer(int id) { return View(); }
     }

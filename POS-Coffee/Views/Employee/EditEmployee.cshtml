@@ -22,15 +22,7 @@
             <div class="card-block">
                 @using (Html.BeginForm("EditEmployee", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-                    <div class="col-md-6" hidden="hidden">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="id">EmployeeID</label>
-                            <div class="col-sm-9">
-                                @Html.EditorFor(model => model.id, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.id, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </div>
+                    @Html.HiddenFor(s => s.id)
                     <div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="name">Name</label>
@@ -47,7 +39,7 @@
                                 @*@Html.EditorFor(model => model.Permission, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Permission, "", new { @class = "text-danger" })*@
                                 @*@Html.DropDownList("Permission", (IEnumerable<SelectListItem>)ViewBag.Permission, new { @class = "form-control" })*@
-                                <select class="form-control" name="permission" id="permission">
+                                <select class="form-control" name="permission" id="permission" value="@ViewBag.permission">
                                     <option value="ADMIN">ADMIN</option>
                                     <option value="EMPLOYEE">EMPLOYEE</option>
                                     <option value="MANAGER">MANAGER</option>
@@ -69,8 +61,17 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="phone">Phone</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.phone, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
                                 @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="address">Address</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.address, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -84,14 +85,14 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="password">Password</label>
-                            <div class="col-sm-9">
-                                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="password">Password</label>
+                    <div class="col-sm-9">
+                        @Html.EditorFor(model => model.password, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                     </div>
+                </div>
+            </div>
                     <input class="button-primary" type="submit" value="Save">
                     @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
                     <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />
@@ -101,9 +102,13 @@
     </div>
 </div>
 
-
-
 <script>
+    $(function () {
+        $("#birthday").datepicker({
+            dateFormat: "mm/dd/yy"
+        });
+    });
+
     function GoBack() {
         window.location.href = "/Employee/ViewEmployee"
     }

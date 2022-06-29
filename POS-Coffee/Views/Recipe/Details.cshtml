@@ -1,0 +1,31 @@
+﻿@model POS_Coffe.Models.RecipeModel
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link href="~/Content/Table/Table.css" rel="stylesheet" />
+
+<div class="card">
+    <div class="card-block">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Materia name</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Unit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.recipeDetails)
+                {
+                    <tr>
+                        <td>@item.material.name</td>
+                        <td>@item.material.type</td>
+                        <td>@item.material.amount</td>
+                        <td>@item.material.unit</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

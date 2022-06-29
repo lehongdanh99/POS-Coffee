@@ -21,8 +21,8 @@ namespace POS_Coffe.Models
         public VoucherModel Voucher { get; set; }
         public int DiscountPrice { get; set; }
         public BranchPlace Branch { get; set; }
-        public int receiptTotal { get; set; }
-        public int revenue { get; set; }
+        public int receiptTotal { get; set; } //tong tien
+        public int revenue { get; set; } // tong hoa don
         public List<ReceiptDetails> receiptDetails { get; set; }
 
     }

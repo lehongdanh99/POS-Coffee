@@ -1,7 +1,18 @@
 [
   {
-    "createdBy": null,
-    "updatedBy": null,
+    "active": true,
+    "id": 14,
+    "name": "Nguyễn Trọng Khanh",
+    "permission": "EMPLOYEE",
+    "birthday": "string",
+    "phone": "0123456789",
+    "address": "string",
+    "username": "ntrongkhanh",
+    "createdAtFormatVN": "29/06/2022 21:41",
+    "updatedAtFormatVN": "29/06/2022 21:41"
+  },
+  {
+    "active": true,
     "id": 1,
     "name": "admin",
     "permission": "ADMIN",
@@ -13,32 +24,7 @@
     "updatedAtFormatVN": "23/06/2022 14:34"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
+    "active": true,
     "id": 10001,
     "name": "Lê Hồng Danh",
     "permission": "EMPLOYEE",
@@ -50,32 +36,7 @@
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
+    "active": true,
     "id": 10002,
     "name": "Đồng Thị Bảo Ngọc",
     "permission": "EMPLOYEE",
@@ -87,32 +48,7 @@
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
+    "active": true,
     "id": 10003,
     "name": "Phan Anh Tú",
     "permission": "EMPLOYEE",
@@ -124,32 +60,7 @@
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
+    "active": true,
     "id": 10004,
     "name": "Huỳnh Đăng Khoa",
     "permission": "EMPLOYEE",
@@ -161,32 +72,7 @@
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
+    "active": true,
     "id": 10005,
     "name": "Nguyễn Thị Mỹ Trâm",
     "permission": "EMPLOYEE",
@@ -198,32 +84,7 @@
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
+    "active": true,
     "id": 10006,
     "name": "Lê Ngọc Minh Thư",
     "permission": "EMPLOYEE",
@@ -235,32 +96,7 @@
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
+    "active": true,
     "id": 10007,
     "name": "Trương Quang Tín",
     "permission": "EMPLOYEE",
@@ -272,32 +108,7 @@
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
+    "active": true,
     "id": 10008,
     "name": "Đoàn Khắc Huy",
     "permission": "EMPLOYEE",
@@ -309,32 +120,7 @@
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
+    "active": true,
     "id": 10009,
     "name": "Hoàng Minh Long",
     "permission": "EMPLOYEE",
@@ -346,32 +132,7 @@
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
+    "active": true,
     "id": 10010,
     "name": "Nguyễn Hoàng Phúc",
     "permission": "EMPLOYEE",
@@ -383,32 +144,7 @@
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
+    "active": true,
     "id": 10011,
     "name": "Phạm Thanh Thư",
     "permission": "EMPLOYEE",
@@ -420,20 +156,7 @@
     "updatedAtFormatVN": "22/06/2022 00:00"
   },
   {
-    "createdBy": {
-      "createdBy": null,
-      "updatedBy": null,
-      "id": 1,
-      "name": "admin",
-      "permission": "ADMIN",
-      "birthday": null,
-      "phone": null,
-      "address": null,
-      "username": "admin",
-      "createdAtFormatVN": "23/06/2022 14:34",
-      "updatedAtFormatVN": "23/06/2022 14:34"
-    },
-    "updatedBy": null,
+    "active": true,
     "id": 2,
     "name": "string",
     "permission": "ADMIN",
@@ -443,5 +166,125 @@
     "username": "employee8963",
     "createdAtFormatVN": "23/06/2022 17:13",
     "updatedAtFormatVN": "23/06/2022 17:13"
+  },
+  {
+    "active": true,
+    "id": 3,
+    "name": null,
+    "permission": null,
+    "birthday": null,
+    "phone": null,
+    "address": null,
+    "username": "test123",
+    "createdAtFormatVN": "24/06/2022 17:16",
+    "updatedAtFormatVN": "24/06/2022 17:16"
+  },
+  {
+    "active": true,
+    "id": 4,
+    "name": null,
+    "permission": "EMPLOYEE",
+    "birthday": "01/02/2022",
+    "phone": null,
+    "address": null,
+    "username": "test123456",
+    "createdAtFormatVN": "24/06/2022 17:35",
+    "updatedAtFormatVN": "24/06/2022 17:35"
+  },
+  {
+    "active": true,
+    "id": 5,
+    "name": null,
+    "permission": "EMPLOYEE",
+    "birthday": "01/02/2022",
+    "phone": null,
+    "address": null,
+    "username": "test123123",
+    "createdAtFormatVN": "24/06/2022 17:37",
+    "updatedAtFormatVN": "24/06/2022 17:37"
+  },
+  {
+    "active": true,
+    "id": 6,
+    "name": null,
+    "permission": "EMPLOYEE",
+    "birthday": "02/02/2022",
+    "phone": null,
+    "address": null,
+    "username": "test_user1",
+    "createdAtFormatVN": "24/06/2022 17:40",
+    "updatedAtFormatVN": "24/06/2022 17:40"
+  },
+  {
+    "active": true,
+    "id": 7,
+    "name": null,
+    "permission": "EMPLOYEE",
+    "birthday": "01/02/2022",
+    "phone": null,
+    "address": null,
+    "username": "test_user2",
+    "createdAtFormatVN": "24/06/2022 17:50",
+    "updatedAtFormatVN": "24/06/2022 17:50"
+  },
+  {
+    "active": true,
+    "id": 8,
+    "name": "test3",
+    "permission": "ADMIN",
+    "birthday": "02/02/2020",
+    "phone": null,
+    "address": null,
+    "username": "test_user3",
+    "createdAtFormatVN": "24/06/2022 17:57",
+    "updatedAtFormatVN": "24/06/2022 17:57"
+  },
+  {
+    "active": true,
+    "id": 10,
+    "name": "test5",
+    "permission": "ADMIN",
+    "birthday": "02/03/2022",
+    "phone": null,
+    "address": null,
+    "username": "test5",
+    "createdAtFormatVN": "24/06/2022 18:23",
+    "updatedAtFormatVN": "24/06/2022 18:23"
+  },
+  {
+    "active": true,
+    "id": 11,
+    "name": "test6",
+    "permission": "ADMIN",
+    "birthday": "12/02/2022",
+    "phone": null,
+    "address": null,
+    "username": "test6",
+    "createdAtFormatVN": "24/06/2022 18:25",
+    "updatedAtFormatVN": "24/06/2022 18:25"
+  },
+  {
+    "active": true,
+    "id": 12,
+    "name": "test_7",
+    "permission": "ADMIN",
+    "birthday": "02/02/2020",
+    "phone": null,
+    "address": null,
+    "username": "test_7",
+    "createdAtFormatVN": "24/06/2022 18:27",
+    "updatedAtFormatVN": "24/06/2022 18:27"
+  },
+  {
+    "active": true,
+    "id": 15,
+    "name": "test8",
+    "permission": "EMPLOYEE",
+    "birthday": "01/01/1999",
+    "phone": "123123123",
+    "address": "123 rews",
+    "username": "test8",
+    "createdAtFormatVN": "29/06/2022 15:24",
+    "updatedAtFormatVN": "29/06/2022 15:24"
   }
 ]

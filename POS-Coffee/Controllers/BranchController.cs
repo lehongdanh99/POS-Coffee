@@ -59,10 +59,10 @@ namespace POS_Coffe.Controllers
         }
         public ActionResult DeleteBranch(int id)
         {
-            //if (RestAPIHandler<BranchModel>.DeleteData(id, "branch" + @"/" + id, GlobalDef.TOKEN) == true)
-            //{
-            //    BranchAPIHandlerData.GetInstance().ListBranch = RestAPIHandler<BranchModel>.parseJsonToModel(GlobalDef.BRANCH_JSON_CONFIG_PATH);
-            //}
+            if (RestAPIHandler<BranchModel>.DeleteData(id, "branch" + @"/" + id, GlobalDef.TOKEN) == true)
+            {
+                BranchAPIHandlerData.GetInstance().ListBranch = RestAPIHandler<BranchModel>.parseJsonToModel(GlobalDef.BRANCH_JSON_CONFIG_PATH);
+            }
             return RedirectToAction("BranchManagement", "Branch");
         }
         public class PostBranch
