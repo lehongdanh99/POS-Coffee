@@ -25,11 +25,13 @@
                 <table class="styled-table">
                     <thead>
                         <tr>
-                            
+
                             @*<th>Valid</th>*@
                             <th>Name</th>
                             <th>@Html.ActionLink("Value", "VoucherManagement", new { sortOrder = ViewBag.ValueSortParm })</th>
                             @*<th>IDFood</th>*@
+                            <th>From date</th>
+                            <th>To date</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -49,12 +51,14 @@
                                         <h5 style="color: red">Invalid</h5>
                                     }
                             </td>*@
-                            <td>@item.Name</td>
-                            <td>@item.Value</td>
+                            <td>@item.name</td>
+                            <td>@item.value</td>
+                                <td>@item.publishedDate</td>
+                                <td>@item.endDate</td>
                             @*<td>@item.StrIDFood</td>*@
                             <td style="text-align:center">
-                                <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditVoucher", "VoucherManagement", new {Id = item.Id })"'></button>
-                                <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.Id))" class="btn btn-danger fa fa-remove" />
+                                <button type="button" class="btn btn-primary fa fa-edit" onclick='window.location.href = "@Url.Action("EditVoucher", "VoucherManagement", new {id = item.id })"'></button>
+                                <button type="button" onclick="btnConfirm(@Html.DisplayFor(modelItem => item.id))" class="btn btn-danger fa fa-remove" />
                             </td>
                         </tr>
                             i++;
@@ -77,9 +81,9 @@
         console.log()
         window.location.href = "/VoucherManagement/AddVoucher"
     }
-    function btnConfirm(Id) {
+    function btnConfirm(id) {
         if (confirm('Do you want to delete ?')) {
-            var url = '@Url.Action("DeleteVoucher", "VoucherManagement")?Id=' + Id;
+            var url = '@Url.Action("DeleteVoucher", "VoucherManagement")?id=' + id;
             window.location.href = url;
         }
     }

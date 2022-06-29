@@ -1,8 +1,85 @@
-﻿
+﻿@model POS_Coffe.Models.BranchModel
 @{
-    ViewBag.Title = "EditBranch";
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
 
-<h2>EditBranch</h2>
+<style>
+    .user-section {
+        margin-top: -50px;
+        margin-right: 40px;
+    }
+</style>
 
+<div class="row grid-responsive">
+    <div class="column ">
+        <div class="card">
+            <div class="card-title">
+                <h4 style="font-weight:bold">UPDATE BRANCH</h4>
+            </div>
+            <div class="card-block">
+                @using (Html.BeginForm("EditBranch", "Branch", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.HiddenFor(model => model.id)
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="branchName">Name</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.branchName, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.branchName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <input class="button-primary" type="submit" value="Save">
+                    @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
+                    <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function GoBack() {
+        window.location.href = "/Branch/BranchManagement"
+    }
+                //$(function () {
+                //    $("#TuNgayStr").datepicker({
+                //        dateFormat: "dd/mm/yy"
+                //    });
+                //    $("#DenNgayStr").datepicker({
+                //        dateFormat: "dd/mm/yy"
+                //    });
+                //});
+
+/*                $('.select2').select2({ width: '100%' },"val", null)*/
+
+                @*<!--$(document).ready(function () {
+                    $(function () {
+                        $('#btnSave').click(function () {
+                            var dataGuidi = {-->
+                                EmployeeID: @Model.EmployeeID,
+                                <!--Name: $('#Name').val(),
+                                Username: $('#Username').val(),
+                                Permission: $('#Permission').val(),
+                                Birthday: $('#Birthday').val(),
+                                Phone: $('#Phone').val(),
+                            };
+                            $.ajax({
+                                type: "POST",
+                                url: "/Employee/EditEmployee",
+                                data: dataGuidi,
+                                success: function (dataGuidi) {
+                                    alert('OK!');
+                                    Redirect();
+                                },
+                                error: function () {
+                                    alert('Fail!');
+                                }
+                            })
+                        });
+                    });
+                });-->*@
+</script>

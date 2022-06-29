@@ -1,7 +1,10 @@
-﻿@model POS_Coffe.Models.DrinkCakeModel
+﻿@model POS_Coffe.Models.DrinkCakeDetail
 @{
+    ViewBag.Title = "AddDrinkCake";
     Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
 }
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
 <link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
@@ -17,32 +20,124 @@
     <div class="column ">
         <div class="card">
             <div class="card-title">
-                <h3>Update Food</h3>
+                <h3>Add Food</h3>
             </div>
             <div class="card-block">
                 @using (Html.BeginForm("EditDrinkCake", "DrinkCake", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-                    @Html.HiddenFor(s => s.Id)
+                    @Html.HiddenFor(model => model.id)
+                    @Html.HiddenFor(model => model.idL)
+                    @Html.HiddenFor(model => model.idM)
+
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="Name">Name</label>
+                            <label class="col-sm-3 col-form-label" for="name">Name</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label" for="Type">Type</label>
+                            <label class="col-sm-3 col-form-label" for="type">Type</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.type, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.type, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
-                    <input class="button-primary" type="submit" value="Save">
-                    @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
+
+                    <h1>Drink Cake Variation</h1>
+
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="sizeL">Size M</label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" name="sizeM" id="sizeM" value="testM" onclick="CheckedSizeM()" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="AddingSizeM" name="AddingSizeM" style="display:none">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="nameM">Name variation</label>
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.nameM, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.nameM, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="priceM">Price</label>
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.priceM, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.priceM, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="descriptionM">Description</label>
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.descriptionM, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.descriptionM, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="sizeL">Size L</label>
+                            <div class="col-sm-9">
+                                <input type="checkbox" name="sizeL" id="sizeL" value="testL" onclick="CheckedSizeL()" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="AddingSizeL" name="AddingSizeL" style="display:none">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="nameL">Name variation</label>
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.nameL, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.nameL, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="priceL">Price</label>
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.priceL, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.priceL, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label" for="descriptionL">Description</label>
+                                <div class="col-sm-9">
+                                    @Html.EditorFor(model => model.descriptionL, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.descriptionL, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @*<input class="button-primary" type="submit" value="Save">*@
+                    <input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Save" />
                     <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />
                 }
             </div>
@@ -50,51 +145,68 @@
     </div>
 </div>
 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
 
-
-<script>
+<script charset="UTF-8">
     function GoBack() {
         window.location.href = "/DrinkCake/DrinkCakeManagement"
+
     }
-                //$(function () {
-                //    $("#TuNgayStr").datepicker({
-                //        dateFormat: "dd/mm/yy"
-                //    });
-                //    $("#DenNgayStr").datepicker({
-                //        dateFormat: "dd/mm/yy"
-                //    });
-                //});
 
-/*                $('.select2').select2({ width: '100%' },"val", null)*/
+    $(document).ready(function () {
+        $(function () {
+            $('#btnSaveChange').click(function () {
+                var data = {
+                    id: $('#id').val(),
+                    idM: $('#idM').val(),
+                    idL: $('#idL').val(),
+                    name: $('#name').val(),
+                    type: $('#type').val(),
+                    nameL: $('#name').val(),
+                    nameM: $('#name').val(),
+                    descriptionL: $('#descriptionL').val(),
+                    descriptionM: $('#descriptionM').val(),
+                    priceL: $('#priceL').val(),
+                    priceM: $('#priceM').val(),
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "/DrinkCake/EditDrinkCake",
+                    data: data,
+                    success: function (data) {
+                        //GoBack();
+                        alert('Success!')
+                        location.reload();
+                    },
+                    error: function () {
+                        alert('Fail!')
+                    }
+                })
+            });
+        });
+    });
 
-                @*<!--$(document).ready(function () {
-                    $(function () {
-                        $('#btnSave').click(function () {
-                            var dataGuidi = {-->
-                                EmployeeID: @Model.EmployeeID,
-                                <!--Name: $('#Name').val(),
-                                Username: $('#Username').val(),
-                                Permission: $('#Permission').val(),
-                                Birthday: $('#Birthday').val(),
-                                Phone: $('#Phone').val(),
-                            };
-                            $.ajax({
-                                type: "POST",
-                                url: "/Employee/EditEmployee",
-                                data: dataGuidi,
-                                success: function (dataGuidi) {
-                                    alert('OK!');
-                                    Redirect();
-                                },
-                                error: function () {
-                                    alert('Fail!');
-                                }
-                            })
-                        });
-                    });
-                });-->*@
+    function CheckedSizeL() {
+        if ($('#sizeL').is(':checked')) {
+            document.getElementById("AddingSizeL").style.display = "block";
+        }
+        else {
+            document.getElementById("AddingSizeL").style.display = "none";
+        }
+    }
 
-                //function Redirect() {
-                //    window.location.href = "/NhapDuAn/XemDuAn"
-                //}
+    function CheckedSizeM() {
+        if ($('#sizeM').is(':checked')) {
+            document.getElementById("AddingSizeM").style.display = "block";
+        }
+        else {
+            document.getElementById("AddingSizeM").style.display = "none";
+        }
+    }
+
+
+
 </script>
+

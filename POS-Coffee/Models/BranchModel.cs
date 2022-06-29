@@ -7,8 +7,8 @@ namespace POS_Coffe.Models
 {
     public class BranchModel : BaseModel
     {
-        public int Id { get; set; }
-        public string BranchName { get; set; }
+        public int id { get; set; }
+        public string branchName { get; set; }
     }
     public class BranchAPIHandlerData
     {

@@ -48,40 +48,50 @@ namespace POS_Coffe.Controllers
         [HttpPost]
         public ActionResult AddMaterial(MaterialsModel data)
         {
-            IQueryable countall = MaterialAPIHandlerData.GetInstance().ListMaterial.AsQueryable();
-            var count = MaterialAPIHandlerData.GetInstance().ListMaterial.Count();
-
-            MaterialsModel material = new MaterialsModel();
-            //material.MaterialID = count + 1;
-            //material.Name = data.Name;
-            //material.Type = data.Type;
-            //material.Amount = data.Amount;
-            //material.Quantity = data.Quantity;
-            MaterialAPIHandlerData.GetInstance().ListMaterial.Add(material);
+            var EditData = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.id == data.id).FirstOrDefault();
+            MaterialsModel postMaterial = new MaterialsModel()
+            {
+                amount = EditData.amount,
+                name = EditData.name,
+                id = 0,
+                type = EditData.type,
+                unit = EditData.unit
+            };
+            if (RestAPIHandler<MaterialsModel>.PostData(postMaterial, "material" + @"/" + data.id, GlobalDef.TOKEN) == true)
+            {
+                MaterialAPIHandlerData.GetInstance().ListMaterial = RestAPIHandler<MaterialsModel>.parseJsonToModel(GlobalDef.MATERIAL_JSON_CONFIG_PATH);
+            }
             return RedirectToAction("MaterialManagement", "Material");
         }
         [HttpGet]
         public ActionResult EditMaterial(int id)
         {
-            var EditData = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.id == id);
-            MaterialsModel data = new MaterialsModel();
+            var EditData = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.id == id).FirstOrDefault();
+            //MaterialsModel data = new MaterialsModel();
             //data.MaterialID = MaterialID; 
             //data.Name = EditData.ToList().First().Name;
             //data.Type = EditData.ToList().First().Type;
             //data.Amount = EditData.ToList().First().Amount;
             //data.Quantity = EditData.ToList().First().Quantity;
            
-            return View(data);
+            return View(EditData);
         }
         [HttpPost]
         public ActionResult EditMaterial(MaterialsModel data)
         {
-            var EditData = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.id == data.id);
-            MaterialsModel model = new MaterialsModel();
-            //EditData.ToList().First().Name = data.Name;
-            //EditData.ToList().First().Type = data.Type;
-            //EditData.ToList().First().Amount = data.Amount;
-            //EditData.ToList().First().Quantity = data.Quantity;
+            var EditData = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.id == data.id).FirstOrDefault();
+            MaterialsModel postMaterial = new MaterialsModel()
+            {
+                amount = EditData.amount,
+                name = EditData.name,
+                id = EditData.id,
+                type = EditData.type,
+                unit = EditData.unit
+            };
+            if (RestAPIHandler<MaterialsModel>.PutData(postMaterial, "material" + @"/" + data.id, GlobalDef.TOKEN) == true)
+            {
+                MaterialAPIHandlerData.GetInstance().ListMaterial = RestAPIHandler<MaterialsModel>.parseJsonToModel(GlobalDef.MATERIAL_JSON_CONFIG_PATH);
+            }
             return RedirectToAction("MaterialManagement", "Material");
         }
         public ActionResult DeleteMaterial(int id)

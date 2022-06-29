@@ -29,8 +29,8 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Name">Name</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
@@ -39,13 +39,33 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label" for="Value">Value</label>
                             <div class="col-sm-9">
-                                @Html.EditorFor(model => model.Value, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Value, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.value, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.value, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </div>
 
-                    <input class="button-primary" type="submit" value="Send" name="btnSaveChange" id="btnSaveChange" />
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="PublishDate">From Day</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.publishedDate, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.publishedDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="EndDate">To Day</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.endDate, new { @type = "date", htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.endDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <input class="button-primary" type="submit" value="Save" name="btnSaveChange" id="btnSaveChange" />
                     @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
                     <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />
                     <h5 name="error" id="error" style="color:red">@ViewBag.error</h5>
@@ -62,6 +82,21 @@
     function GoBack() {
         window.location.href = "/VoucherManagement/VoucherManagement"
     }
+
+    $(function () {
+        $("#publishDate").datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+
+    $(function () {
+        $("#endDate").datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+
 
     $('#btnSaveChange').click(function () {
         var value = $('#StrIDFood').val();
