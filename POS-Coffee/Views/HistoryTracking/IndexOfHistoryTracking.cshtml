@@ -12,10 +12,11 @@
         @using (Html.BeginForm("indexOfHistoryTracking", "HisToryTracking", FormMethod.Get@*, new { @class = "form-inline" }*@))
         {
         <div class="form-check-label">
+            <h2 style="margin-top: -100px; color: saddlebrown; font-weight: 700; margin-left: 40px">HISTORY TRACKING MANAGEMENT</h2>
             From Day:
-            <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="fromday" id="fromday" value="@ViewBag.fromday"/>
+            <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="fromday" id="fromday" value="@ViewBag.fromday" />
             To Day:
-            <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="today" id="today" value="@ViewBag.today"/>
+            <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="today" id="today" value="@ViewBag.today" />
 
             Filter:
             <select class="form-check-input" name="filterValue" id="filterValue">
