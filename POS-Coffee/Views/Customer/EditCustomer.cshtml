@@ -1,0 +1,100 @@
+﻿@model POS_Coffe.Models.CustomerModel
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
+
+<style>
+    .user-section {
+        margin-top: -50px;
+        margin-right: 40px;
+    }
+</style>
+
+<div class="row grid-responsive">
+    <div class="column ">
+        <div class="card">
+            <div class="card-title">
+                <h4 style="font-weight:bold">EDIT CUSTOMER</h4>
+            </div>
+            <div class="card-block">
+                @using (Html.BeginForm("EditCustomer", "Customer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="name">Name</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="phone">Phone</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" for="point">Point</label>
+                            <div class="col-sm-9">
+                                @Html.EditorFor(model => model.point, new { htmlAttributes = new { @required = "required", @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.point, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <input class="button-primary" type="submit" value="Save">
+                    @*<input class="btn btn-primary" type="button" name="btnSaveChange" id="btnSaveChange" value="Add" />*@
+                    <input type="button" class="btn btn-gradient-success " value="Cancel" onclick="GoBack()" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script charset="UTF-8">
+    function GoBack() {
+        window.location.href = "/Customer/CustomerManagement"
+    }
+
+    //$(document).ready(function () {
+    //    $(function () {
+    //        $('#btnSaveChange').click(function () {
+    //            var data = {
+    //                Name: $('#Name').val(),
+    //                Permission: $('#Permission').val(),
+    //                Birthday: $('#Birthday').val(),
+    //                Phone: $('#Phone').val(),
+    //                Username: $('#Username').val(),
+    //                Password: $('#Password').val(),
+    //            }
+    //            $.ajax({
+    //                type: "POST",
+    //                url: "/EmployeeManagament/AddEmployee",
+    //                data: data,
+    //                success: function (data) {
+    //                    //GoBack();
+    //                    alert('Success!')
+    //                    location.reload();
+    //                },
+    //                error: function () {
+    //                    alert('Fail!')
+    //                }
+    //            })
+    //        });
+    //    });
+    //});
+
+</script>

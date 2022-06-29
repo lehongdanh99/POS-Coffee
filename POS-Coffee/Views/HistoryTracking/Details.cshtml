@@ -1,37 +1,44 @@
-﻿@model POS_Coffe.Models.EmployeeModel
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<link href="~/Content/Table/Table.css" rel="stylesheet" />
+﻿@model POS_Coffe.Models.HistoryTrackingModel
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <div class="card-block">
+                @*<div class="site-title"><h4 style="font-weight:bold">@Model.name</h4></div>*@
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Occur time</th>
+                            <th>Permission</th>
+                            <th>Birthday</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Username</th>
+                            <th>Action type</th>
+                            <th>Table effected</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-<div class="card">
-    <div class="card-block">
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th>Picture</th>
-                    <th>Name</th>
-                    <th>permission</th>
-                    <th>birthday</th>
-                    <th>phone</th>
-                    <th>Username</th>
-                    <th>password</th>
-                </tr>
-            </thead>
-            <tbody>
 
-                <tr>
-                    <td style="text-align:center ;width:80px; padding-left:20px; padding-right:0px">
-                        <img src=@Model.Picture alt="profile photo" border-style="10px" class="circle float-left profile-photo" width="60" height="60">
-                    </td>
-                    <td>@Model.Name</td>
-                    <td>@Model.Permission</td>
-                    <td>@Model.Birthday</td>
-                    <td>@Model.Phone</td>
-                    <td>@Model.Username</td>
-                    <td>@Model.Password</td>
-                </tr>
-            </tbody>
-        </table>
+                            <tr>
+                                <td>@Model.employee.name</td>
+                                <td>@Model.occurTime</td>
+                                <td>@Model.employee.permission</td>
+                                <td>@Model.employee.birthday</td>
+                                <td>@Model.employee.phone</td>
+                                <td>@Model.employee.address</td>
+                                <td>@Model.employee.username</td>
+                                <td>@Model.actionType</td>
+                                <td>@Model.table</td>
+                            </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

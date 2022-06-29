@@ -139,6 +139,12 @@ namespace POS_Coffe.Controllers
             return View();
         }
 
+        public ActionResult DetailDrinkCake(int id)
+        {
+            DrinkCakeModel dataDrinkCake = DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake.Where(s => s.id == id).FirstOrDefault();
+            return View(dataDrinkCake);
+        }
+
         public ActionResult DeleteDrinkCake() { return View(); }
     }
 }

@@ -12,38 +12,54 @@ namespace POS_Coffe.Controllers
     public class HistoryTrackingController : Controller
     {
         public int pageSize = 10;
-        public ActionResult IndexOfHistoryTracking(string StringSearch, int? pageNo, string sortOrder)
+        public ActionResult IndexOfHistoryTracking(string filterValue, int? pageNo, string sortOrder, string fromday, string today)
         {
-            //ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            //ViewBag.PriceSortParm = String.IsNullOrEmpty(sortOrder) ? "Price_desc" : "";
-
-            //IQueryable<HistoryTrackingModel> dataModel = HistoryTrackingAPIHandlerFakeData.GetInstance().ListHistoryTracking.AsQueryable();
-
-            //foreach (HistoryTrackingModel model in dataModel)
-            //{
-            //    if (model != null)
-            //        continue;
-            //}
-            //dataModel.ToList();
-
-            //var Pagination = new PagedList<HistoryTrackingModel>(dataModel, pageNo ?? 1, pageSize);
-
-            //return View(Pagination);
             List<HistoryTrackingModel> LstHistory = HistoryTrackingAPIHandlerData.GetInstance().ListHistoryTracking.ToList();
+            DateTime fromday1 = new DateTime();
+            DateTime today1 = new DateTime();
+            try
+            {
+                fromday1 = Convert.ToDateTime(fromday);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            try
+            {
+                today1 = Convert.ToDateTime(today);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            ViewBag.fromday = fromday;
+            ViewBag.today = today;
+
+            if (!String.IsNullOrEmpty(filterValue))
+            {
+                LstHistory = LstHistory.Where(s => s.table.Equals("filterValue")).ToList();
+            }
+
+            if (!String.IsNullOrEmpty(fromday))
+            {
+                LstHistory = LstHistory.Where(s => s.occurTime >= fromday1).ToList();
+            }
+
+            if (!String.IsNullOrEmpty(today))
+            {
+                LstHistory = LstHistory.Where(s => s.occurTime <= today1).ToList();
+            }
+
             var Pagination = new PagedList<HistoryTrackingModel>(LstHistory, pageNo ?? 1, pageSize);
             return View(Pagination);
         }
 
-        [HttpGet]
-        public PartialViewResult Details(int HistoryID)
+        public ActionResult Details(int id)
         {
-            //HistoryTrackingModel dataTracking = HistoryTrackingAPIHandlerData.GetInstance().ListHistoryTracking.Where(x => x.HistoryID == HistoryID).FirstOrDefault();
-            //if (dataTracking.TableEffect == "Employee")
-            //{
-            //    EmployeeModel dataEmp = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(x => x.id == dataTracking.EmpID).FirstOrDefault();
-            //    return PartialView(dataEmp);
-            //}
-            return PartialView();
+            HistoryTrackingModel LstHistory = HistoryTrackingAPIHandlerData.GetInstance().ListHistoryTracking.Where(s => s.id == id).FirstOrDefault();
+            return View(LstHistory);
         }
         public ActionResult SortDay()
         {

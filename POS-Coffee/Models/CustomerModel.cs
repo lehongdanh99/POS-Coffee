@@ -7,10 +7,10 @@ namespace POS_Coffe.Models
 {
     public class CustomerModel : BaseModel
     {
-        public int ID { get; set; }
-        public string Phone { get; set; }
-        public string Name { get; set; }
-        public int Point { get; set; }
+        public int id { get; set; }
+        public string phone { get; set; }
+        public string name { get; set; }
+        public int point { get; set; }
     }
     public class CustomerAPIHandlerData
     {
