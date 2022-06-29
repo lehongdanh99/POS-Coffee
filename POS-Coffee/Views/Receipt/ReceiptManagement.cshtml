@@ -8,17 +8,19 @@
     <div class="column">
         @using (Html.BeginForm("ReceiptManagement", "Receipt", FormMethod.Get))
 {
-         <div class="form-check-label">
+        <div class="form-check-label">
+            <h2 style="margin-top: -100px; color: saddlebrown; font-weight: 700; margin-left: 400px ">Receipt Management</h2>
             <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
             <button type="submit" class="form-check-input search-btn fa fa-search"></button>
             <button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()"></button>
-         </div>
+        </div>
 }
         <div class="card">
             <div class="card-block">
                 <table class="styled-table">
                     <thead>
                         <tr style="padding-top:5px">
+                            <th>No</th>
                             <th>OriginalPrice</th>
                             <th></th>
                             <th></th>
@@ -37,6 +39,7 @@
                         @foreach (var item in Model)
                         {
                         <tr>
+                            <td>@item.id</td>
                             <td>@item.originalPrice</td>
                             <td></td>
                             <td></td>

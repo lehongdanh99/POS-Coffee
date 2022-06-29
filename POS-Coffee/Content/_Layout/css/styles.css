@@ -220,7 +220,7 @@ select:focus {
     z-index: 1;
     width: 80%;
     padding-left: 80px;
-    background: #f9f9f9;
+    /* background: rgba(0,0,0,0.5); */
     height: 80px;
     margin-left: 20%;
     justify-self: end;

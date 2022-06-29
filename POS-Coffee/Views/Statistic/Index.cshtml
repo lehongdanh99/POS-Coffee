@@ -1,4 +1,4 @@
-﻿@model List<POS_Coffe.Models.StatisticModel>
+﻿@model List<POS_Coffe.Models.ReceiptModel>
 @using PagedList;
 @using PagedList.Mvc;
 @{
@@ -14,6 +14,7 @@
     <input type="button" class="btn btn-gradient-success " value="Add new" onclick="AddNew()" />*@
 
         <div class="form-check-label">
+            <h2 style="margin-top: -100px; font-weight:700 ; color:saddlebrown ; margin-left:400px">Statictis</h2>
             Day:
             <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="daytime" id="daytime" />
             @*Month:
@@ -59,12 +60,12 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@item.day</td>
-                                <td>@item.month</td>
-                                <td>@item.year</td>
-                                <td>@item.receiptTotal</td>
-                                <td>@item.revenue</td>
-                                <td><button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("GetDetails", "Statistic", new {day = item.day, month = item.month, year = item.year })"'></button></td>
+                                <td>@item.name</td>
+                                <td>@item.PaymentType</td>
+                                <td>@item.CustomerPay</td>
+                                <td>@item.Voucher</td>
+                                <td>@item.ServiceType</td>
+                                <td>@*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("GetDetails", "Statistic", new {day = item.day, month = item.month, year = item.year })"'></button>*@</td>
                                 @*<td><button type="button" class="btn btn-primary fa fa-sticky-note" onclick="changeStatus(@counting)"></button></td>*@
                             </tr>
 

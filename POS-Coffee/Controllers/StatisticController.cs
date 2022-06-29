@@ -132,22 +132,23 @@ namespace POS_Coffe.Controllers
             }
 
 
-            List<StatisticModel> LstStatistic = StatisticAPIHandlerData.GetInstance().ListStatistic.ToList();
+            //List<StatisticModel> LstStatistic = StatisticAPIHandlerData.GetInstance().ListStatistic.ToList();
+
+            StatisticModel LstStatistic = RestAPIHandler<StatisticModel>.GetData(GlobalDef.STATISTIC_JSON_CONFIG_PATH + GlobalDef.PATHGETDATE, GlobalDef.TOKEN);
+
             int sum = 0;
-            foreach(var item in LstStatistic)
+            foreach (var item in LstStatistic.receipts)
             {
-                foreach(var data in item.receipts)
-                {
-                    sum = data.totalPrice;
-                }
+                item.revenue = LstStatistic.revenue;
+                item.receiptTotal = LstStatistic.receiptTotal;
             }
             ViewBag.Count = sum;
-            return View(LstStatistic);
+            return View(LstStatistic.receipts);
         }
 
         public PartialViewResult GetDetails(StatisticModel Data)
         {
-            List<StatisticModel> lstStatistic = StatisticAPIHandlerData.GetInstance().ListStatistic.Where(s => s.day==Data.day && s.month==Data.month && s.year == Data.year).ToList();
+            List<StatisticModel> lstStatistic = StatisticAPIHandlerData.GetInstance().ListStatistic.Where(s => s.day == Data.day && s.month == Data.month && s.year == Data.year).ToList();
             return PartialView(lstStatistic);
         }
     }

@@ -12,9 +12,8 @@ namespace POS_Coffe.Controllers
         // GET: Receipt
         public ActionResult ReceiptManagement()
         {
-            List<ReceiptModel> receiptModels = ReceiptAPIHandler.GetInstance().ListReipt.ToList();
+            List<ReceiptModel> receiptModels = RestAPIHandler<ReceiptModel>.parseJsonToModel(GlobalDef.RECEIPT_JSON_CONFIG_PATH);
 
-  
 
             return View(receiptModels);
         }

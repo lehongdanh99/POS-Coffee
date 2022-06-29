@@ -7,11 +7,12 @@
     <div class="column">
         @using (Html.BeginForm("BranchManagement", "Branch", FormMethod.Get@*, new { @class = "form-inline" }*@))
 {
-<div class="form-check-label">
-    <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
-    <button type="submit" value="Search" class="form-check-input search-btn fa fa-search"></button>
-    @*<button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />*@
-</div>
+        <div class="form-check-label">
+            <h2 style="margin-top: -100px; color: saddlebrown; font-weight: 700; margin-left: 400px">Branch Management</h2>
+            <input class="form-control input-control-width" type="text" id="StringSearch" name="StringSearch" />
+            <button type="submit" value="Search" class="form-check-input search-btn fa fa-search"></button>
+            @*<button type="button" class="form-check-input btn btn-gradient-success fa fa-plus" value="Add new" onclick="AddNew()" />*@
+        </div>
 }
         <div class="card">
             <div class="card-block">

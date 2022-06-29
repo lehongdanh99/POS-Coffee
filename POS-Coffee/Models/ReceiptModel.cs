@@ -18,11 +18,20 @@ namespace POS_Coffe.Models
         public string PaymentType { get; set; }
         public string ServiceType { get; set; }
         public int CustomerPay { get; set; }
-        public string Voucher { get; set; }
+        public VoucherModel Voucher { get; set; }
         public int DiscountPrice { get; set; }
-        public string Branch { get; set; }
+        public BranchPlace Branch { get; set; }
+        public int receiptTotal { get; set; }
+        public int revenue { get; set; }
         public List<ReceiptDetails> receiptDetails { get; set; }
 
+    }
+
+    public class BranchPlace
+    {
+        public bool active { get; set; }
+        public int id { get; set; }
+        
     }
     public class ReceiptDetails
     {

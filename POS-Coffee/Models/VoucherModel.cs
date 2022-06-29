@@ -5,18 +5,18 @@ namespace POS_Coffe.Models
 {
     public class VoucherModel : BaseModel
     {
-        private static VoucherModel _instance;
-        public static VoucherModel GetInstance()
-        {
-            if (_instance == null)
-            {
-                if (_instance == null)
-                {
-                    _instance = new VoucherModel();
-                }
-            }
-            return _instance;
-        }
+        //private static VoucherModel _instance;
+        //public static VoucherModel GetInstance()
+        //{
+        //    if (_instance == null)
+        //    {
+        //        if (_instance == null)
+        //        {
+        //            _instance = new VoucherModel();
+        //        }
+        //    }
+        //    return _instance;
+        //}
         public int Id { get; set; }
         public string Name { get; set; }
         public int Value { get; set; }
