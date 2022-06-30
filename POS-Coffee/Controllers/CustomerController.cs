@@ -65,6 +65,14 @@ namespace POS_Coffe.Controllers
             }
             return RedirectToAction("CustomerManagement", "Customer");
         }
-        public ActionResult DeleteCustomer(int id) { return View(); }
+        public ActionResult DeleteCustomer(int id)
+        {
+            if (RestAPIHandler<CustomerModel>.DeleteData(id, "customer" + @"/" + id, GlobalDef.TOKEN) == true)
+            {
+                CustomerAPIHandlerData.GetInstance().ListCustomer = RestAPIHandler<CustomerModel>.parseJsonToModel(GlobalDef.CUSTOMER_JSON_CONFIG_PATH);
+            }
+            return RedirectToAction("CustomerManagement", "Customer");
+
+        }
     }
 }

@@ -136,7 +136,7 @@ namespace POS_Coffe.Controllers
             {
                 DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake = RestAPIHandler<DrinkCakeModel>.parseJsonToModel(GlobalDef.DRINKCAKE_JSON_CONFIG_PATH);
             }
-            return View();
+            return RedirectToAction("DrinkCakeManagement", "DrinkCake");
         }
 
         public ActionResult DetailDrinkCake(int id)
@@ -145,6 +145,13 @@ namespace POS_Coffe.Controllers
             return View(dataDrinkCake);
         }
 
-        public ActionResult DeleteDrinkCake() { return View(); }
+        public ActionResult DeleteDrinkCake(int id)
+        {
+            if (RestAPIHandler<DrinkCakeModel>.DeleteData(id, "drinkcake" + @"/" + id, GlobalDef.TOKEN) == true)
+            {
+                DrinkCakeAPIHandlerData.GetInstance().ListDrinkCake = RestAPIHandler<DrinkCakeModel>.parseJsonToModel(GlobalDef.DRINKCAKE_JSON_CONFIG_PATH);
+            }
+            return RedirectToAction("DrinkCakeManagement", "DrinkCake");
+        }
     }
 }

@@ -101,9 +101,10 @@ namespace POS_Coffe.Controllers
         }
         public ActionResult DeleteVoucher(int id)
         {
-            //var data = VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Where(s => s.Id == VoucherID).FirstOrDefault();
-            //VoucherAPIHandlerFakeData.GetInstance().ListVoucher.Remove(data);
-            //return RedirectToAction("VoucherManagement", "VoucherManagement");
+            if (RestAPIHandler<VoucherModel>.DeleteData(id, "voucher" + @"/" + id, GlobalDef.TOKEN) == true)
+            {
+                VoucherAPIHandlerData.GetInstance().ListVoucher = RestAPIHandler<VoucherModel>.parseJsonToModel(GlobalDef.VOUCHER_JSON_CONFIG_PATH);
+            }
             return RedirectToAction("VoucherManagement", "VoucherManagement");
         }
         public ActionResult FilterVoucher()

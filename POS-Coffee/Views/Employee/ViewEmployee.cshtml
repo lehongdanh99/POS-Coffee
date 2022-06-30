@@ -22,7 +22,7 @@
                 <table class="styled-table">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            
                             <th>@Html.ActionLink("Name", "ViewEmployee", new { sortOrder = ViewBag.NameSortParm })</th>
                             <th>Permission</th>
                             <th>@Html.ActionLink("Birthday", "ViewEmployee", new { sortOrder = ViewBag.DateSortParm })</th>
@@ -38,7 +38,7 @@
                         @foreach (var item in Model)
                         {
                         <tr>
-                            <th>@i</th>
+                           
                             <td>@item.name</td>
 
                             @*<td>

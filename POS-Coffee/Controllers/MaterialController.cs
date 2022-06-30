@@ -67,12 +67,6 @@ namespace POS_Coffe.Controllers
         public ActionResult EditMaterial(int id)
         {
             var EditData = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.id == id).FirstOrDefault();
-            //MaterialsModel data = new MaterialsModel();
-            //data.MaterialID = MaterialID; 
-            //data.Name = EditData.ToList().First().Name;
-            //data.Type = EditData.ToList().First().Type;
-            //data.Amount = EditData.ToList().First().Amount;
-            //data.Quantity = EditData.ToList().First().Quantity;
            
             return View(EditData);
         }
@@ -96,8 +90,10 @@ namespace POS_Coffe.Controllers
         }
         public ActionResult DeleteMaterial(int id)
         {
-            //var data = MaterialAPIHandlerData.GetInstance().ListMaterial.Where(s => s.ID == ID).FirstOrDefault();
-            //MaterialAPIHandlerData.GetInstance().ListMaterial.Remove(data);
+            if (RestAPIHandler<MaterialsModel>.DeleteData(id, "material" + @"/" + id, GlobalDef.TOKEN) == true)
+            {
+                MaterialAPIHandlerData.GetInstance().ListMaterial = RestAPIHandler<MaterialsModel>.parseJsonToModel(GlobalDef.MATERIAL_JSON_CONFIG_PATH);
+            }
             return RedirectToAction("MaterialManagement", "Material");
         }
 

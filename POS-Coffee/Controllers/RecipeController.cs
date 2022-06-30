@@ -62,6 +62,14 @@ namespace POS_Coffe.Controllers
 
         }
 
+        public ActionResult DeleteRecipe(int id) {
+            if (RestAPIHandler<RecipeModel>.DeleteData(id, "recipe" + @"/" + id, GlobalDef.TOKEN) == true)
+            {
+                RecipeAPIHandlereData.GetInstance().ListRecipe = RestAPIHandler<RecipeModel>.parseJsonToModel(GlobalDef.RECIPE_JSON_CONFIG_PATH);
+            }
+            return RedirectToAction("RecipeManagement", "Recipe");
+        }
+
         public class DrinkCakeDetail
         {
             public int id { get; set; }

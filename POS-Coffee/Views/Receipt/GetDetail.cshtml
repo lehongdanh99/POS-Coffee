@@ -1,21 +1,21 @@
 ﻿@model POS_Coffe.Models.ReceiptModel
+@{
+    ViewBag.Title = "GetDetail";
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <link href="~/Content/Table/Table.css" rel="stylesheet" />
 
-@{
-    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
-}
-
 <div class="card">
     <div class="card-block">
         <table class="styled-table">
             <thead>
                 <tr>
-                    <th>Customer</th>
-                    <th>Point</th>
+                    @*<th>Phone</th>
+                    <th>Point</th>*@
                     <th>Original price</th>
                     <th>Discount Price</th>
                     <th>Total price</th>
@@ -24,8 +24,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>@Model.customer.name</td>
-                    <td>@Model.customer.point</td>
+                    @*<td>@Model.customer.phone</td>
+                    <td>@Model.customer.point</td>*@
                     <td>@Model.originalPrice</td>
                     <td>@Model.DiscountPrice</td>
                     <td>@Model.totalPrice</td>

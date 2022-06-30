@@ -109,9 +109,10 @@ namespace POS_Coffe.Controllers
         }
         public ActionResult DeleteEmployee(int id)
         {
-        //    var deleteData = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.EmployeeID == EmployeeID).AsQueryable();
-            var data = EmployeeAPIHandlerData.GetInstance().ListEmployee.Where(s => s.id == id).FirstOrDefault();
-            EmployeeAPIHandlerData.GetInstance().ListEmployee.Remove(data);
+            if (RestAPIHandler<EmployeeModel>.DeleteData(id, "employee" + @"/" + id, GlobalDef.TOKEN) == true)
+            {
+                EmployeeAPIHandlerData.GetInstance().ListEmployee = RestAPIHandler<EmployeeModel>.parseJsonToModel(GlobalDef.EMPLOYEE_JSON_CONFIG_PATH);
+            }
             return RedirectToAction("ViewEmployee", "Employee");
         }
 

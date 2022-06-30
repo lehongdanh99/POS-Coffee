@@ -30,7 +30,7 @@ namespace POS_Coffe.Controllers
             }
 
             //StatisticModel LstStatistic = RestAPIHandler<StatisticModel>.GetData(GlobalDef.STATISTIC_JSON_CONFIG_PATH + GlobalDef.PATHGETDATE, GlobalDef.TOKEN);
-            StatisticModel LstStatistic = RestAPIHandler<StatisticModel>.GetData(GlobalDef.STATISTIC_JSON_CONFIG_PATH + @"//", GlobalDef.TOKEN);
+            StatisticModel LstStatistic = RestAPIHandler<StatisticModel>.GetData(GlobalDef.STATISTIC_JSON_CONFIG_PATH + @"?month=06&year=2022", GlobalDef.TOKEN);
             //int sum = 0;
             //    foreach(var item in LstStatistic)
             //    {
@@ -38,14 +38,15 @@ namespace POS_Coffe.Controllers
             //        item.receiptTotal = LstStatistic.receiptTotal;
             //    }
             //    ViewBag.Count = sum;
-
-            return View(LstStatistic.receipts);
+            return View(LstStatistic);
         }
 
-        //public PartialViewResult GetDetails(StatisticModel Data)
-        //{
-        //    List<StatisticModel> lstStatistic = StatisticAPIHandlerData.GetInstance().ListStatistic.Where(s => s.day == Data.day && s.month == Data.month && s.year == Data.year).ToList();
-        //    return PartialView(lstStatistic);
-        //}
+        public PartialViewResult GetDetails(int id)
+        {
+            StatisticModel LstStatistic = RestAPIHandler<StatisticModel>.GetData(GlobalDef.STATISTIC_JSON_CONFIG_PATH + @"?month=06&year=2022", GlobalDef.TOKEN);
+            List<ReceiptModel> receiptData = LstStatistic.receipts;
+            ReceiptModel data = receiptData.Where(s => s.id == id).FirstOrDefault();
+            return PartialView(data);
+        }
     }
 }

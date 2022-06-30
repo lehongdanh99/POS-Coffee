@@ -17,5 +17,10 @@ namespace POS_Coffe.Controllers
 
             return View(receiptModels);
         }
+        public PartialViewResult GetDetail(int id)
+        {
+            ReceiptModel dataReceipt = ReceiptAPIHandler.GetInstance().ListReipt.Where(s => s.id == id).FirstOrDefault();
+            return PartialView(dataReceipt);
+        }
     }
 }

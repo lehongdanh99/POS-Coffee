@@ -1,4 +1,4 @@
-﻿@model List<POS_Coffe.Models.ReceiptModel>
+﻿@model POS_Coffe.Models.StatisticModel
 @using PagedList;
 @using PagedList.Mvc;
 @{
@@ -19,51 +19,55 @@
             <input style="border-radius: 10px; border-width:2px; padding:5px ; margin-right:20px" type="date" class="form-check-input" name="daytime" id="daytime" />
 
             <button type="submit" value="Search" class="btn fa fa-search"></button>
-            Filter:
+            @*Filter:
             <select class="form-check-input">
                 <option disabled selected>--none--</option>
                 <option>Day</option>
                 <option>Month</option>
                 <option>Year</option>
-            </select>
+            </select>*@
             <button type="submit" value="Apply" class="btn fa fa-filter"></button>
         </div>
-<div class="form-check-label">
+        <div class="form-check-label" style="display:inline-block">
+            <div style="display:inline-block">
+                <img src="~/Content/money.png" />
+                <h4 class="form-check-input" style="font-weight:bold">Total Income: @Model.revenue vnđ</h4>
+            </div>
+            
+            <div style="display:inline-block; margin-left:20px">
+                <img src="~/Content/Receipts.png" />
+                <h4 class="form-check-input" style="font-weight:bold">Total receipts: @Model.receiptTotal</h4>
+            </div>
 
-    <h4 class="form-check-input" style="color: palevioletred">Customer pay: @ViewBag.Count vnd</h4>
-</div>
+        </div>
 }
         <div class="card">
             <div class="card-block">
                 <table class="styled-table">
                     <thead>
                         <tr>
-
-                            @*<th>@Html.ActionLink("FromDate", "Index", new { sortOrder = ViewBag.FromDateSortParm })</th>*@
-                            <th>@Html.ActionLink("Day", "Index", new { sortOrder = ViewBag.ToDateSortParm })</th>
-                            @*<th>VoucherName</th>
-                                <th>Table</th>*@
-                            <th>@Html.ActionLink("Month", "Index", new { sortOrder = ViewBag.TotalPriceSortParm })</th>
-                            <th>@Html.ActionLink("Year", "Index", new { sortOrder = ViewBag.DiscountPriceSortParm })</th>
-                            <th>@Html.ActionLink("Receipt Total", "Index", new { sortOrder = ViewBag.CustomerPaySortParm })</th>
-                            <th>@Html.ActionLink("Revenue", "Index", new { sortOrder = ViewBag.CustomerPaySortParm })</th>
-
-                            @*<th>TypePayment</th>
-                                <th>TypeService</th>*@
-                            <th></th>
+                            <th>Employee</th>
+                            @*<th>Point</th>*@
+                            <th>Original price</th>
+                            <th>Discount price</th>
+                            <th>Total price</th>
+                            <th>Customer pay</th>
+                            <th>Payment type</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.receipts)
                         {
                             <tr>
-                                <td>@item.name</td>
-                                <td>@item.PaymentType</td>
+                                <td>@item.employee.name</td>
+                                @*<td>@item.customer.point</td>*@
+                                <td>@item.originalPrice</td>
+                                <td>@item.DiscountPrice</td>
+                                <td>@item.totalPrice</td>
                                 <td>@item.CustomerPay</td>
-                                <td>@item.Voucher</td>
-                                <td>@item.ServiceType</td>
+                                <td>@item.PaymentType</td>
                                 <td>
-                                    @*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick='window.location.href = "@Url.Action("GetDetails", "Statistic", new { id = item.id})"'></button>*@
+                                    <button type="button" class="btn btn-primary fa fa-info-circle" onclick='window.location.href = "@Url.Action("GetDetails", "Statistic", new { id = item.id})"'></button>
                                     @*<button type="button" class="btn btn-primary fa fa-sticky-note" onclick="changeStatus(@counting)"></button>*@
                                 </td>
                             </tr>
