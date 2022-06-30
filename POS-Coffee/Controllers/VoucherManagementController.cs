@@ -73,7 +73,7 @@ namespace POS_Coffe.Controllers
             {
                 VoucherAPIHandlerData.GetInstance().ListVoucher = RestAPIHandler<VoucherModel>.parseJsonToModel(GlobalDef.VOUCHER_JSON_CONFIG_PATH); 
             }
-            return RedirectToAction("VoucherManagement", "Voucher");
+            return RedirectToAction("VoucherManagement", "VoucherManagement");
         }
         [HttpGet]
         public ActionResult EditVoucher(int id)
@@ -97,7 +97,7 @@ namespace POS_Coffe.Controllers
             {
                 VoucherAPIHandlerData.GetInstance().ListVoucher = RestAPIHandler<VoucherModel>.parseJsonToModel(GlobalDef.VOUCHER_JSON_CONFIG_PATH);
             }
-            return RedirectToAction("VoucherManagement", "Voucher");
+            return RedirectToAction("VoucherManagement", "VoucherManagement");
         }
         public ActionResult DeleteVoucher(int id)
         {

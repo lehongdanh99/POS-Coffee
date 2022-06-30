@@ -123,7 +123,7 @@ namespace POS_Coffe.Controllers
             model.FoodImage = test;
             //model.Picture = ;
             FoodAPIHandlerData.GetInstance().ListFood.Add(model);
-            return RedirectToAction("FoodManagement", "FoodManagement", model);
+            return RedirectToAction("FoodManagement", "FoodManagement");
         }
 
         [HttpGet]
